@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(c) XBRL Deutschland e.V. - see http://www.xbrl.de-->
+
+
+<xs:schema xmlns:de-gaap-ci="http://www.xbrl.de/taxonomies/de-gaap-ci-2011-09-14"
+           xmlns:link="http://www.xbrl.org/2003/linkbase"
+           xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+           xmlns:xbrli="http://www.xbrl.org/2003/instance"
+           xmlns:xl="http://www.xbrl.org/2003/XLink"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.xbrl.de/taxonomies/de-gaap-ci-2011-09-14">
+  <xsd:annotation>
+      <xsd:appinfo>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-gaap-ci-2011-09-14-dimensions-label-de.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-gaap-ci-2011-09-14-dimensions-label-en.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+                           xlink:type="simple"/>
+      </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance"
+               schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt"
+               schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xs:element name="table.eqCh" abstract="true" id="de-gaap-ci_table.eqCh" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="tab_eqCh" abstract="true" id="de-gaap-ci_tab_eqCh" nillable="true"
+               substitutionGroup="xbrldt:hypercubeItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_eqCh" abstract="true" id="de-gaap-ci_dim_eqCh" nillable="true"
+               substitutionGroup="xbrldt:dimensionItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh_primaryItem" abstract="true" id="de-gaap-ci_eqCh_primaryItem"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group_beginning" abstract="false"
+               id="de-gaap-ci_eqCh.group_beginning"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.corrections" abstract="false"
+               id="de-gaap-ci_eqCh.group.corrections"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.corrections.comment" abstract="false"
+               id="de-gaap-ci_eqCh.group.corrections.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.paidInCapital" abstract="false"
+               id="de-gaap-ci_eqCh.group.paidInCapital"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.ownSharesPurchase" abstract="false"
+               id="de-gaap-ci_eqCh.group.ownSharesPurchase"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.dividends" abstract="false"
+               id="de-gaap-ci_eqCh.group.dividends"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.taxWithdrawals" abstract="false"
+               id="de-gaap-ci_eqCh.group.taxWithdrawals"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.movements" abstract="false"
+               id="de-gaap-ci_eqCh.group.movements"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.movements.comment" abstract="false"
+               id="de-gaap-ci_eqCh.group.movements.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.consolidation" abstract="false"
+               id="de-gaap-ci_eqCh.group.consolidation"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.otherChanges" abstract="false"
+               id="de-gaap-ci_eqCh.group.otherChanges"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.otherChanges.currTransl" abstract="false"
+               id="de-gaap-ci_eqCh.group.otherChanges.currTransl"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.otherChanges.revaluation" abstract="false"
+               id="de-gaap-ci_eqCh.group.otherChanges.revaluation"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.otherChanges.revaluation.comment" abstract="false"
+               id="de-gaap-ci_eqCh.group.otherChanges.revaluation.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.otherChanges.other" abstract="false"
+               id="de-gaap-ci_eqCh.group.otherChanges.other"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.otherChanges.other.comment" abstract="false"
+               id="de-gaap-ci_eqCh.group.otherChanges.other.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.groupResult" abstract="false"
+               id="de-gaap-ci_eqCh.group.groupResult"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.netIncome" abstract="false"
+               id="de-gaap-ci_eqCh.group.netIncome"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group.otherResult" abstract="false"
+               id="de-gaap-ci_eqCh.group.otherResult"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="eqCh.group_all" abstract="false" id="de-gaap-ci_eqCh.group_all"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="credit"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.shares" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.shares"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.sharesRegular" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.sharesRegular"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.sharesPremium" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.sharesPremium"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.uncalled" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.uncalled"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.capitalReserve" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.capitalReserve"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.revenueRes" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.revenueRes"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.ownShares" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.ownShares"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.otherGroupResult" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.otherGroupResult"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.otherGroupResult.currTransl" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.otherGroupResult.currTransl"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement.otherGroupResult.other" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement.otherGroupResult.other"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.accGroupStatement" abstract="true"
+               id="de-gaap-ci_dim_parent.accGroupStatement"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent.otherOwnShares" abstract="true"
+               id="de-gaap-ci_dim_parent.otherOwnShares"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_parent" abstract="true" id="de-gaap-ci_dim_parent" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_minority.equity" abstract="true" id="de-gaap-ci_dim_minority.equity"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_minority.otherGroupResult" abstract="true"
+               id="de-gaap-ci_dim_minority.otherGroupResult"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_minority.otherGroupResult.currTransl" abstract="true"
+               id="de-gaap-ci_dim_minority.otherGroupResult.currTransl"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_minority.otherGroupResult.other" abstract="true"
+               id="de-gaap-ci_dim_minority.otherGroupResult.other"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_minority" abstract="true" id="de-gaap-ci_dim_minority"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_all" abstract="true" id="de-gaap-ci_dim_all" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="table.nt.ass.net" abstract="true" id="de-gaap-ci_table.nt.ass.net"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="cube_.nt.ass.net" abstract="true" id="de-gaap-ci_cube_.nt.ass.net"
+               nillable="true"
+               substitutionGroup="xbrldt:hypercubeItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_changes.nt.ass.net" abstract="true"
+               id="de-gaap-ci_dim_changes.nt.ass.net"
+               nillable="true"
+               substitutionGroup="xbrldt:dimensionItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_bs.ass" abstract="true" id="de-gaap-ci_net_bs.ass" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="debit"
+               xbrli:periodType="instant"/>
+  <xs:element name="table.nt.ass.gross" abstract="true" id="de-gaap-ci_table.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="table.nt.ass.gross_short" abstract="true"
+               id="de-gaap-ci_table.nt.ass.gross_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="cube_.nt.ass.gross" abstract="true" id="de-gaap-ci_cube_.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrldt:hypercubeItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="cube_.nt.ass.gross_short" abstract="true"
+               id="de-gaap-ci_cube_.nt.ass.gross_short"
+               nillable="true"
+               substitutionGroup="xbrldt:hypercubeItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_taxTrans" abstract="true" id="de-gaap-ci_dim_taxTrans"
+               nillable="true"
+               substitutionGroup="xbrldt:dimensionItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_comBal" abstract="true" id="de-gaap-ci_dim_comBal" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="instant"/>
+  <xs:element name="dim_taxBal" abstract="true" id="de-gaap-ci_dim_taxBal" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="instant"/>
+  <xs:element name="dim_diffComToTaxBal" abstract="true" id="de-gaap-ci_dim_diffComToTaxBal"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="instant"/>
+  <xs:element name="dim_changes.nt.ass.gross" abstract="true"
+               id="de-gaap-ci_dim_changes.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrldt:dimensionItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_changes.nt.ass.gross_short" abstract="true"
+               id="de-gaap-ci_dim_changes.nt.ass.gross_short"
+               nillable="true"
+               substitutionGroup="xbrldt:dimensionItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross_bs.ass" abstract="true" id="de-gaap-ci_gross_bs.ass"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="debit"
+               xbrli:periodType="instant"/>
+  <xs:element name="gross_bs.ass_short" abstract="true" id="de-gaap-ci_gross_bs.ass_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:balance="debit"
+               xbrli:periodType="instant"/>
+  <xs:element name="gross" id="de-gaap-ci_gross" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossCost.beginning" id="de-gaap-ci_grossCost.beginning" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossCost.beginning_short" id="de-gaap-ci_grossCost.beginning_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.diff" id="de-gaap-ci_gross.diff" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.diff.currDiff" id="de-gaap-ci_gross.diff.currDiff" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.diff.otherDiff" abstract="false"
+               id="de-gaap-ci_gross.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.diff.otherDiff.comment"
+               id="de-gaap-ci_gross.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.addition" id="de-gaap-ci_gross.addition" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.addition_short" id="de-gaap-ci_gross.addition_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.release" id="de-gaap-ci_gross.release" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.release_short" id="de-gaap-ci_gross.release_short" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.movements" id="de-gaap-ci_gross.movements" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.movements_short" id="de-gaap-ci_gross.movements_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.changeInConsolidation" id="de-gaap-ci_gross.changeInConsolidation"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.currChanges" id="de-gaap-ci_gross.currChanges" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluation" id="de-gaap-ci_revaluation" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="gross.revaluation_short" id="de-gaap-ci_gross.revaluation_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluation.comment" id="de-gaap-ci_revaluation.comment" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr" id="de-gaap-ci_accDepr" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="DeprPeriod_short" id="de-gaap-ci_DeprPeriod_short" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.beginning" id="de-gaap-ci_accDepr.beginning" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.diff" abstract="false" id="de-gaap-ci_accDepr.diff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.diff.currDiff" abstract="false"
+               id="de-gaap-ci_accDepr.diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.diff.otherDiff" id="de-gaap-ci_accDepr.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.diff.otherDiff.comment"
+               id="de-gaap-ci_accDepr.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.addition" id="de-gaap-ci_accDepr.addition" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.release" abstract="false" id="de-gaap-ci_accDepr.release"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.movements" id="de-gaap-ci_accDepr.movements" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.changeInConsolidation"
+               id="de-gaap-ci_accDepr.changeInConsolidation"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.currChanges" id="de-gaap-ci_accDepr.currChanges" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.DeprPeriod" abstract="false" id="de-gaap-ci_accDepr.DeprPeriod"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.DeprPeriod_short" abstract="false"
+               id="de-gaap-ci_accDepr.DeprPeriod_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.DeprPeriod.specific" abstract="false"
+               id="de-gaap-ci_accDepr.DeprPeriod.specific"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepr.DeprPeriod.specific_short" abstract="false"
+               id="de-gaap-ci_accDepr.DeprPeriod.specific_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="all_Prev_period" id="de-gaap-ci_all_Prev_period" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="all_Prev_period_short" id="de-gaap-ci_all_Prev_period_short"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="all" id="de-gaap-ci_all" nillable="true" substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="all_short" id="de-gaap-ci_all_short" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_diff" abstract="false" id="de-gaap-ci_net_diff" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_diff.currDiff" abstract="false" id="de-gaap-ci_net_diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_diff.otherDiff" id="de-gaap-ci_net_diff.otherDiff" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_diff.otherDiff.comment" id="de-gaap-ci_net_diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_addition" id="de-gaap-ci_net_addition" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_release" abstract="false" id="de-gaap-ci_net_release" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="depreciation" abstract="false" id="de-gaap-ci_depreciation"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_movements" id="de-gaap-ci_net_movements" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_changeInConsolidation" id="de-gaap-ci_net_changeInConsolidation"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_currChanges" id="de-gaap-ci_net_currChanges" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_revaluation" abstract="false" id="de-gaap-ci_net_revaluation"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_revaluation.comment" abstract="false"
+               id="de-gaap-ci_net_revaluation.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_all" id="de-gaap-ci_net_all" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="net_beginning" id="de-gaap-ci_net_beginning" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+</xs:schema>

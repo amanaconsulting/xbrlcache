@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(c) XBRL Deutschland e.V. - see http://www.xbrl.de-->
+
+
+<xs:schema xmlns:de-fi="http://www.xbrl.de/taxonomies/de-fi-2016-04-01"
+           xmlns:link="http://www.xbrl.org/2003/linkbase"
+           xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+           xmlns:xbrli="http://www.xbrl.org/2003/instance"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.xbrl.de/taxonomies/de-fi-2016-04-01">
+  <xs:annotation>
+      <xs:appinfo>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-fi-2016-04-01-dimensions-label-de.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-fi-2016-04-01-dimensions-label-en.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-fi-2016-04-01-dimensions-reference.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef"
+                           xlink:title="Reference Links, all"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-fi-2016-04-01-dimensions-reference-fiscal.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef"
+                           xlink:title="Reference Links, all"
+                           xlink:type="simple"/>
+      </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://www.xbrl.org/2003/instance"
+              schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xs:import namespace="http://xbrl.org/2005/xbrldt"
+              schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xs:element name="tableBanks.nt.ass" abstract="true" id="de-fi_tableBanks.nt.ass"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="cubeBanks.nt.ass.gross" abstract="true" id="de-fi_cubeBanks.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrldt:hypercubeItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_changesBanks.nt.ass" abstract="true"
+               id="de-fi_dim_changesBanks.nt.ass"
+               nillable="true"
+               substitutionGroup="xbrldt:dimensionItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="piTitleBanks.nt.ass.gross" abstract="true"
+               id="de-fi_piTitleBanks.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="allBanks" id="de-fi_allBanks" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="allBanks_Prev_period" id="de-fi_allBanks_Prev_period" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks" id="de-fi_grossBanks" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossCostBanks.beginning" id="de-fi_grossCostBanks.beginning"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks.diff" id="de-fi_grossBanks.diff" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks.diff.currDiff" id="de-fi_grossBanks.diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks.diff.otherDiff" abstract="false"
+               id="de-fi_grossBanks.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks.diff.otherDiff.comment"
+               id="de-fi_grossBanks.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks.addition" id="de-fi_grossBanks.addition" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks.release" id="de-fi_grossBanks.release" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks.movements" id="de-fi_grossBanks.movements" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanks.currChanges" id="de-fi_grossBanks.currChanges" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks" id="de-fi_accDeprBanks" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.beginning" id="de-fi_accDeprBanks.beginning" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.diff" abstract="false" id="de-fi_accDeprBanks.diff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.diff.currDiff" abstract="false"
+               id="de-fi_accDeprBanks.diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.diff.otherDiff" id="de-fi_accDeprBanks.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.diff.otherDiff.comment"
+               id="de-fi_accDeprBanks.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.DeprPeriod" abstract="false"
+               id="de-fi_accDeprBanks.DeprPeriod"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.DeprPeriod.specific" abstract="false"
+               id="de-fi_accDeprBanks.DeprPeriod.specific"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.addition" id="de-fi_accDeprBanks.addition" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.release" abstract="false" id="de-fi_accDeprBanks.release"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.movements" id="de-fi_accDeprBanks.movements" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanks.currChanges" id="de-fi_accDeprBanks.currChanges"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluationBanks" id="de-fi_revaluationBanks" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluationBanks.comment" id="de-fi_revaluationBanks.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="tableBanksTanIntan.nt.ass" abstract="true"
+               id="de-fi_tableBanksTanIntan.nt.ass"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="cubeBanksTanIntan.nt.ass.gross" abstract="true"
+               id="de-fi_cubeBanksTanIntan.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrldt:hypercubeItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_changesBanksTanIntan.nt.ass" abstract="true"
+               id="de-fi_dim_changesBanksTanIntan.nt.ass"
+               nillable="true"
+               substitutionGroup="xbrldt:dimensionItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="piTitleBanksTanIntan.nt.ass.gross" abstract="true"
+               id="de-fi_piTitleBanksTanIntan.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="allBanksTanIntan" id="de-fi_allBanksTanIntan" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="allBanks_Prev_periodTanIntan" id="de-fi_allBanks_Prev_periodTanIntan"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan" id="de-fi_grossBanksTanIntan" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossCostBanksTanIntan.beginning"
+               id="de-fi_grossCostBanksTanIntan.beginning"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan.diff" id="de-fi_grossBanksTanIntan.diff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan.diff.currDiff"
+               id="de-fi_grossBanksTanIntan.diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan.diff.otherDiff" abstract="false"
+               id="de-fi_grossBanksTanIntan.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan.diff.otherDiff.comment"
+               id="de-fi_grossBanksTanIntan.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan.addition" id="de-fi_grossBanksTanIntan.addition"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan.release" id="de-fi_grossBanksTanIntan.release"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan.movements" id="de-fi_grossBanksTanIntan.movements"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossBanksTanIntan.currChanges" id="de-fi_grossBanksTanIntan.currChanges"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan" id="de-fi_accDeprBanksTanIntan" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.beginning" id="de-fi_accDeprBanksTanIntan.beginning"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.diff" abstract="false"
+               id="de-fi_accDeprBanksTanIntan.diff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.diff.currDiff" abstract="false"
+               id="de-fi_accDeprBanksTanIntan.diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.diff.otherDiff"
+               id="de-fi_accDeprBanksTanIntan.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.diff.otherDiff.comment"
+               id="de-fi_accDeprBanksTanIntan.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.DeprPeriod" abstract="false"
+               id="de-fi_accDeprBanksTanIntan.DeprPeriod"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.DeprPeriod.specific" abstract="false"
+               id="de-fi_accDeprBanksTanIntan.DeprPeriod.specific"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.addition" id="de-fi_accDeprBanksTanIntan.addition"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.release" abstract="false"
+               id="de-fi_accDeprBanksTanIntan.release"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.movements" id="de-fi_accDeprBanksTanIntan.movements"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprBanksTanIntan.currChanges"
+               id="de-fi_accDeprBanksTanIntan.currChanges"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluationBanksTanIntan" id="de-fi_revaluationBanksTanIntan"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluationBanksFixedAssets.comment"
+               id="de-fi_revaluationBanksFixedAssets.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+</xs:schema>
