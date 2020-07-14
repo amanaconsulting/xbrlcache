@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external" xmlns:cfi="http://xbrl.org/2010/custom-function" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gen="http://xbrl.org/2008/generic" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo" xmlns:bde="http://www.fujitsu.com/xbrl/taxeditor/default2" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency" xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes" xmlns:mv="http://www.bde.es/aps/sif/validacion/mapa" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"/>
+    <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+
+        
+        <variable:function xlink:type="resource" xlink:label="function-categoria-activos" xlink:title="function-categoria-activos" name="fslv:categoria-activos" output="xs:string*">
+            <variable:input type="xs:string"/>
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-categoria-activos" xlink:title="implementation-codigo-autorizacion">
+            <cfi:input name="fact"/>
+            <cfi:input name="tabla"/>  
+            <cfi:step name="dimensionesMiembro">
+                for $i in $tabla return 
+                    if ((fn:substring-before($i,';'))= $fact) then 
+                        fn:substring(fn:substring-after($i,';'),3,2)
+                    else ()
+             </cfi:step>                  
+            <cfi:output>$dimensionesMiembro</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function-categoria-activos" xlink:to="implementation-categoria-activos" xlink:title="unknown: function-categoria-activos to implementation-categoria-activos" order="1.0"/>
+        
+        <variable:function xlink:type="resource" xlink:label="function-codigo-agrupacion" xlink:title="function-codigo-agrupacion" name="fslv:codigo-agrupacion" output="xs:string">
+            <variable:input type="item()"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-codigo-agrupacion" xlink:title="implementation-codigo-agrupacion">
+            <cfi:input name="fact"/>  
+            <cfi:step name="segment">fn:string(xfi:segment($fact))</cfi:step>
+            <cfi:step name="agrupacion">                
+                if ($segment = xs:string('es-be-cm-dim:AgrupacionGrupoConsolidado')) then '0'
+                else if ($segment = xs:string('es-be-cm-dim:AgrupacionSubgrupoConsolidado')) then '1'
+                else if ($segment = xs:string('es-be-cm-dim:AgrupacionIndividual')) then '2'
+                else if ($segment = xs:string('es-be-cm-dim:AgrupacionIndividualConInstrumentales')) then '3'
+                else $segment                
+            </cfi:step>                 
+            <cfi:output>$agrupacion</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function-codigo-agrupacion" xlink:to="implementation-codigo-agrupacion" xlink:title="unknown: function-codigo-agrupacion to implementation-codigo-agrupacion" order="2.0"/>
+
+	
+		<variable:function xlink:type="resource" xlink:label="function-recuperarImporteIFC" xlink:title="function-recuperarImporteIFC" name="fslv:recuperarImporteIFC" output="xs:double?">
+            <variable:input type="xs:string"/>
+            <variable:input type="xs:string"/>
+            <variable:input type="item()*"/>            
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-recuperarImporteIFC" xlink:title="implementation-recuperarImporteIFC">
+            <cfi:input name="estado"/>
+            <cfi:input name="clave"/>
+            <cfi:input name="item"/>
+            <cfi:step name="estadoAbreviado">if ($estado eq '3010') then 'S' else if ($estado eq '2001') then 'M' else 'X'</cfi:step>  
+            <cfi:step name="agrupacion">concat('0',fslv:codigo-agrupacion($item[1]))</cfi:step>
+            <cfi:step name="atributo">concat('IF-',$estadoAbreviado,$agrupacion,$clave)</cfi:step>
+            <cfi:output>fext:SolicitarAtributoEFNumerico($atributo)</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function-recuperarImporteIFC" xlink:to="implementation-recuperarImporteIFC" xlink:title="unknown: function-recuperarImporteIFC to implementation-recuperarImporteIFC" order="3.0"/>
+
+    </gen:link>
+</link:linkbase>

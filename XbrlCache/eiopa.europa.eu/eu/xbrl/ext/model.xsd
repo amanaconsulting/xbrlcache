@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(C) EIOPA - XBRL Taxonomy-->
+<?officialURI http://eiopa.europa.eu/eu/xbrl/ext/model.xsd?>
+<?taxonomy-version 2.4.0?>
+<?taxonomy-date 2019-07-15?>
+<schema targetNamespace="http://eiopa.europa.eu/xbrl/ext/model" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:gen="http://xbrl.org/2008/generic" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:eiopa_model="http://eiopa.europa.eu/xbrl/ext/model" xmlns:model="http://www.eurofiling.info/xbrl/ext/model" xmlns:label="http://xbrl.org/2008/label" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <import namespace="http://www.eurofiling.info/xbrl/ext/model" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd" />
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
+  <annotation>
+    <documentation>EIOPA extensions to the Eurofiling model</documentation>
+    <appinfo>
+      <!-- Role for blocking of default (rather than explicit) validity for metrics and filing indicators -->
+      <link:roleType roleURI="http://eiopa.europa.eu/eu/xbrl/ext/BlockDefaultUseOfMetricsSegment" id="BlockDefaultUseOfMetricsSegment">
+        <link:definition>Prevents default use of metrics (i.e. when not explicitly allowed) and block segment for filing indicators</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://eiopa.europa.eu/eu/xbrl/ext/BlockDefaultUseOfMetricsScenario" id="BlockDefaultUseOfMetricsScenario">
+        <link:definition>Prevents default use of metrics (i.e. when not explicitly allowed) and block scenario for filing indicators</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://eiopa.europa.eu/eu/xbrl/role/key-column-type" id="key-column-type">
+        <link:definition>The label to be used on key column in open table expressing the type of key</link:definition>
+        <link:usedOn>label:label</link:usedOn>
+      </link:roleType>
+    </appinfo>
+  </annotation>
+  <!-- Dummy dimension used in blocking default use of metrics and filing indicators -->
+  <element name="NullDimension" abstract="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="instant" nillable="true" model:creationDate="2014-12-23" id="eiopa_NULL" />
+  <!-- Dummy hypercube used in blocking use of filing indicators in dimensional constructs -->
+  <element name="NullHypercube" abstract="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="instant" nillable="true" model:creationDate="2015-07-31" id="eiopa_NULLHC" />
+</schema>

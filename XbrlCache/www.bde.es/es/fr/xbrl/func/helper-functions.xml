@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:gen="http://xbrl.org/2008/generic" 
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xbrli="http://www.xbrl.org/2003/instance"
+ xmlns:cfi="http://xbrl.org/2010/custom-function"
+ xmlns:behfn="http://www.bde.es/xbrl/func/helper-functions"
+ xmlns:variable="http://xbrl.org/2008/variable"
+ xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:instance="http://xbrl.org/2010/variable/instance"
+ xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+
+ <!-- Library with general purpose helper functions -->
+ 
+ <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation"
+  xlink:type="simple"
+  xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+ <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+  <!-- Footnotes handling functions: to avoid odd xfi function signature --> 
+  <variable:function xlink:type="resource" xlink:label="function_existe-nota" name="behfn:existe-nota" output="xs:boolean">
+   <variable:input type="schema-element(xbrli:item)"/>
+  </variable:function>
+  
+  <!-- La implementación es defectuosa: únicamente comprueba la existencia del id en el elemento.
+       Se actualizará en el futuro cuando xfi:fact-footnote contemplate las footnotes sin rol -->
+     
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_existe-nota">   
+   <cfi:input name="fact"/>
+   <cfi:output>exists($fact/@id)</cfi:output>
+  </cfi:implementation>
+  
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_existe-nota" xlink:to="implementation_existe-nota" order="1.0"/>
+  
+
+
+  <!-- Control del código INE de municipios --> 
+  <variable:function xlink:type="resource" xlink:label="function_codigo-municipio-valido" name="behfn:codigo-municipio-valido" output="xs:boolean">
+   <variable:input type="xs:integer"/>
+  </variable:function>
+  
+  <!-- se calcula el digito de ctrl del municipio según el siguiente algoritmo:
+   De izquierda a derecha se etiquetan las columnas como C, B, A, C, B, A…
+   Los números de cada columna se sustituyen por otros de acuerdo a la columna a la que pertenezcan. De 0 a 9:
+     A | 0 1 2 3 4 5 6 7 8 9 (se queda igual)
+     B | 0 3 8 2 7 4 1 5 9 6
+     C | 0 2 4 6 8 1 3 5 7 9
+   Se suman los números así obtenidos y el dígito de control es lo que falta para alcanzar el siguiente múltiplo de 10 (0 si es múltiplo de 10, 10 – [suma de los dígitos mod. 10] en otro caso)
+   Ejemplos (Verificados con el INE):
+     17141
+     CBACB
+     25183
+     2+5+1+8+3 = 19, el siguiente múltiplo de 10 es 20, luego el dígito de control es 20-19 = 1.
+     El código INE final es 171411 (Puigcerdá)
+     
+     24178
+     CBACB
+     47159
+     4+7+1+7+8 = 26, el siguiente múltiplo de 10 es 30, el DC es 30-26 = 4.
+     El código INE final es 241784 (Valdemora, en León).
+  
+  -->
+  
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_codigo-municipio-valido">   
+   <cfi:input name="codigo"/>
+   <cfi:step name="digitoCtrl">$codigo mod 10</cfi:step>
+    <cfi:step name="municipio">$codigo idiv 10</cfi:step>    
+    <cfi:step name="secuenciaA">(0,1,2,3,4,5,6,7,8,9)</cfi:step>
+    <cfi:step name="secuenciaB">(0,3,8,2,7,4,1,5,9,6)</cfi:step>
+    <cfi:step name="secuenciaC">(0,2,4,6,8,1,3,5,7,9)</cfi:step>
+    <cfi:step name="digitoB2">subsequence($secuenciaB,(($municipio idiv 1) mod 10)+1,1)</cfi:step>
+    <cfi:step name="digitoC2">subsequence($secuenciaC,(($municipio idiv 10) mod 10)+1,1)</cfi:step>
+    <cfi:step name="digitoA2">subsequence($secuenciaA,(($municipio idiv 100) mod 10)+1,1)</cfi:step>
+    <cfi:step name="digitoB1">subsequence($secuenciaB,(($municipio idiv 1000) mod 10)+1,1)</cfi:step>
+    <cfi:step name="digitoC1">subsequence($secuenciaC,(($municipio idiv 10000) mod 10)+1,1)</cfi:step>
+    <cfi:step name="digitoA1">subsequence($secuenciaA,(($municipio idiv 100000) mod 10)+1,1)</cfi:step>
+    <cfi:step name="suma">($digitoA1 + $digitoB2 + $digitoC2 + $digitoA2 + $digitoB1 + $digitoC1) mod 10</cfi:step>
+    <cfi:step name="calculoCtrl">if ($suma = 0) then 0 else 10 - $suma</cfi:step>
+   <cfi:output>$digitoCtrl eq $calculoCtrl</cfi:output>
+  </cfi:implementation>
+  
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_codigo-municipio-valido" xlink:to="implementation_codigo-municipio-valido" order="1.0"/>
+
+  <!-- Control de códigos postales --> 
+  <variable:function xlink:type="resource" xlink:label="function_codigo-postal-valido" name="behfn:codigo-postal-valido" output="xs:boolean">
+   <variable:input type="xs:integer"/>
+  </variable:function>
+  
+  <!-- La implementación actual se limita a verificar que está en el rango definido por las provincias -->
+  
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_codigo-postal-valido">   
+   <cfi:input name="codigo"/>
+   <cfi:output>$codigo ge 1000 and $codigo lt 53000 </cfi:output>
+  </cfi:implementation>
+  
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_codigo-postal-valido" xlink:to="implementation_codigo-postal-valido" order="1.0"/>
+
+
+
+
+ </gen:link>
+</link:linkbase>

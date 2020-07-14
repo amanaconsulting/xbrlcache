@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(C) EIOPA - XBRL Taxonomy-->
+<?officialURI http://eiopa.europa.eu/eu/xbrl/s2md/fws/solvency/solvency2/2019-07-15/mod/qrg-find-check.xml?>
+<?taxonomy-version 2.4.0?>
+<?taxonomy-date 2019-07-15?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd" xmlns:gen="http://xbrl.org/2008/generic" xmlns:variable="http://xbrl.org/2008/variable" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:valm="http://xbrl.org/2010/message/validation" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:find="http://www.eurofiling.info/xbrl/ext/filing-indicators" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msg="http://xbrl.org/2010/message" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:label="http://xbrl.org/2008/label" xmlns:gf="http://xbrl.org/2008/filter/general">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" />
+  <link:roleRef roleURI="http://www.xbrl.org/2010/role/message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="fc_qrg" id="fc_qrg" test="$filingIndicator = ('S.01.01','S.01.02','S.02.01','S.05.01','S.06.02','S.06.03','S.08.01','S.08.02','S.23.01','T.99.01')" aspectModel="dimensional" implicitFiltering="true" />
+    <variable:factVariable xlink:type="resource" xlink:label="fc.fv_qrg" id="fc.fv_qrg" bindAsSequence="false" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fc_qrg" xlink:to="fc.fv_qrg" name="filingIndicator" />
+    <cf:conceptName xlink:type="resource" xlink:label="fc.fv.cn_qrg" id="fc.fv.cn_qrg">
+      <cf:concept>
+        <cf:qname>find:filingIndicator</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fc.fv_qrg" xlink:to="fc.fv.cn_qrg" cover="true" complement="false" />
+    <va:valueAssertion xlink:type="resource" xlink:label="fc_qrg_f1" id="fc_qrg_f1" test="not(empty($f1))" aspectModel="dimensional" implicitFiltering="true" />
+    <variable:factVariable xlink:type="resource" xlink:label="fc.fv_qrg_f1" id="fc.fv_qrg_f1" bindAsSequence="false" fallbackValue="()" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fc_qrg_f1" xlink:to="fc.fv_qrg_f1" name="f1" order="1" />
+    <cf:conceptName xlink:type="resource" xlink:label="fc.fv.cn_qrg_f1" id="fc.fv.cn_qrg_f1">
+      <cf:concept>
+        <cf:qname>find:filingIndicator</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fc.fv_qrg_f1" xlink:to="fc.fv.cn_qrg_f1" cover="true" complement="false" order="1" />
+    <gf:general xlink:type="resource" xlink:label="fc_qrg_f1g" test=". = 'S.01.02'" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fc.fv_qrg_f1" xlink:to="fc_qrg_f1g" order="2" cover="true" complement="false" />
+    <link:loc xlink:type="locator" xlink:href="http://www.eurofiling.info/eu/fr/xbrl/ext/pivot-variable.xml#pivot-var" xlink:label="loc_pv" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fc_qrg_f1" xlink:to="loc_pv" name="pv" order="2" />
+    <va:valueAssertion xlink:type="resource" xlink:label="fc_qrg_f2" id="fc_qrg_f2" test="not(empty($f2))" aspectModel="dimensional" implicitFiltering="true" />
+    <variable:factVariable xlink:type="resource" xlink:label="fc.fv_qrg_f2" id="fc.fv_qrg_f2" bindAsSequence="false" fallbackValue="()" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fc_qrg_f2" xlink:to="fc.fv_qrg_f2" name="f2" order="1" />
+    <cf:conceptName xlink:type="resource" xlink:label="fc.fv.cn_qrg_f2" id="fc.fv.cn_qrg_f2">
+      <cf:concept>
+        <cf:qname>find:filingIndicator</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fc.fv_qrg_f2" xlink:to="fc.fv.cn_qrg_f2" cover="true" complement="false" order="1" />
+    <gf:general xlink:type="resource" xlink:label="fc_qrg_f2g" test=". = 'S.01.01'" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fc.fv_qrg_f2" xlink:to="fc_qrg_f2g" order="2" cover="true" complement="false" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fc_qrg_f2" xlink:to="loc_pv" name="pv" order="2" />
+  </gen:link>
+</link:linkbase>

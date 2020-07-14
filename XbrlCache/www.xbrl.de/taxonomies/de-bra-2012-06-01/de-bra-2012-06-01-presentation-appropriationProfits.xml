@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(c) XBRL Deutschland e.V. - see http://www.xbrl.de-->
+
+
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+   <roleRef xmlns:de-fi="http://www.xbrl.de/de/ins/2010-09-27"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            roleURI="http://www.xbrl.de/taxonomies/de-gaap-ci/role/appropriationProfits"
+            xlink:href="../de-gaap-ci-2012-06-01/de-gaap-ci-2012-06-01.xsd#role_appropriationProfits"
+            xlink:type="simple"/>
+   <presentationLink xmlns:xlink="http://www.w3.org/1999/xlink"
+                     xlink:role="http://www.xbrl.de/taxonomies/de-gaap-ci/role/appropriationProfits"
+                     xlink:type="extended">
+      <loc xlink:type="locator"
+           xlink:href="../de-gaap-ci-2012-06-01/de-gaap-ci-2012-06-01.xsd#de-gaap-ci_incomeUse.gainLoss"
+           xlink:label="de-gaap-ci_incomeUse.gainLoss"/>
+      <loc xlink:type="locator"
+           xlink:href="de-bra-2012-06-01.xsd#de-bra_incomeUse.gainLoss.paymentToInstitutionalOwner"
+           xlink:label="de-bra_incomeUse.gainLoss.paymentToInstitutionalOwner"/>
+      <loc xlink:type="locator"
+           xlink:href="de-bra-2012-06-01.xsd#de-bra_incomeUse.gainLoss.paymentFromInstitutionalOwner"
+           xlink:label="de-bra_incomeUse.gainLoss.paymentFromInstitutionalOwner"/>
+      <presentationArc xlink:from="de-gaap-ci_incomeUse.gainLoss"
+                       xlink:to="de-bra_incomeUse.gainLoss.paymentToInstitutionalOwner"
+                       order="11"
+                       xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child"
+                       xlink:type="arc"/>
+      <presentationArc xlink:from="de-gaap-ci_incomeUse.gainLoss"
+                       xlink:to="de-bra_incomeUse.gainLoss.paymentFromInstitutionalOwner"
+                       order="12"
+                       xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child"
+                       xlink:type="arc"/>
+   </presentationLink>
+</linkbase>

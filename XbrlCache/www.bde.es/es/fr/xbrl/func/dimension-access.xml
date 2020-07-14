@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->
+
+<!-- Funciones de acceso a ciertas dimensiones del modelo -->
+<link:linkbase
+    xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd"
+    xmlns:es_dim="http://www.bde.es/xbrl/dict/dim" xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    xmlns:estr_dim="http://www.bde.es/es/fr/xbrl/main/dim"
+    xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+    xmlns:variable="http://xbrl.org/2008/variable" xmlns:gen="http://xbrl.org/2008/generic"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:cfi="http://xbrl.org/2010/custom-function"
+    xmlns:es_dimfn="http://www.bde.es/xbrl/func/dimension-access"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:link="http://www.xbrl.org/2003/linkbase">
+    <link:arcroleRef
+        xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"
+        xlink:type="simple" arcroleURI="http://xbrl.org/arcrole/2010/function-implementation"/>
+    <gen:link xlink:role="http://www.xbrl.org/2003/role/link" xlink:type="extended">
+        
+        <variable:function xlink:type="resource" output="xs:integer" name="es_dimfn:MUS" xlink:label="function-mus">
+            <variable:input type="item()"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-mus">
+            <cfi:input name="item"/>
+            <cfi:output>xfi:fact-typed-dimension-value($item, xs:QName('es_dim:MUS'))/child::*</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:to="implementation-mus" xlink:from="function-mus" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
+        
+        <variable:function xlink:type="resource" output="xs:integer" name="es_dimfn:MUV" xlink:label="function-muv">
+            <variable:input type="item()"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-muv">
+            <cfi:input name="item"/>
+            <cfi:output>xfi:fact-typed-dimension-value($item, xs:QName('es_dim:MUV'))/child::*</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:to="implementation-muv" xlink:from="function-muv" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
+     
+        <variable:function xlink:type="resource" output="xs:string" name="es_dimfn:IIS" xlink:label="function-iis">
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-iis">
+            <cfi:input name="item"/>
+            <cfi:output>if ($item[1] instance of element()) then xfi:fact-typed-dimension-value($item[1], xs:QName('estr_dim:IIS'))/child::*[1]/text() else ''</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:to="implementation-iis" xlink:from="function-iis" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
+        
+        <variable:function xlink:type="resource" output="xs:string" name="es_dimfn:CIA" xlink:label="function-cia">
+            <variable:input type="item()"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-cia">
+            <cfi:input name="item"/>
+            <cfi:output>xfi:fact-typed-dimension-value($item, xs:QName('estr_dim:CIA'))/child::*</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:to="implementation-cia" xlink:from="function-cia" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
+
+        <variable:function xlink:type="resource" output="xs:integer" name="es_dimfn:POS" xlink:label="function-pos">
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-pos">
+            <cfi:input name="item"/>
+            <cfi:output>if ($item[1] instance of element()) then  xfi:fact-typed-dimension-value($item[1], xs:QName('estr_dim:POS'))/child::*  else ''</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:to="implementation-pos" xlink:from="function-pos" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
+        
+    </gen:link>
+</link:linkbase>

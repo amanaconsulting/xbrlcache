@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?taxonomy-version 2.4.0.0 ?> <?taxonomy-set-overall-version 2.9.0.0 ?>
+<!--(C) EBA-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:xff="http://www.xbrl.org/2010/function/formula" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:eba_met="http://www.eba.europa.eu/xbrl/crr/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:variable="http://xbrl.org/2008/variable" xmlns:eba_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:df="http://xbrl.org/2008/filter/dimension" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2016/assertion-severity http://www.xbrl.org/2016/assertion-severity.xsd" xmlns:sev="http://xbrl.org/2016/assertion-severity">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="eba_v6304_m" test="not(empty($a) or xff:has-fallback-value(QName('', 'a')))" aspectModel="dimensional" implicitFiltering="true" id="eba_v6304_m" />
+    <cf:conceptName xlink:type="resource" xlink:label="eba_v6304_m.f1" id="eba_v6304_m.f1">
+      <cf:concept>
+        <cf:qname>eba_met:si168</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="eba_v6304_m" xlink:to="eba_v6304_m.f1" complement="false" order="1" />
+    <df:typedDimension xlink:type="resource" xlink:label="eba_v6304_m.f2" id="eba_v6304_m.f2">
+      <df:dimension>
+        <df:qname>eba_dim:INC</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="eba_v6304_m" xlink:to="eba_v6304_m.f2" complement="false" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="eba_v6304_m.a" bindAsSequence="false" fallbackValue="''" id="eba_v6304_m.a" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="eba_v6304_m" xlink:to="eba_v6304_m.a" name="a" order="1" />
+    <link:loc xlink:type="locator" xlink:href="http://www.xbrl.org/2016/severities.xml#WARNING" xlink:label="sev_warning" />
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="eba_v6304_m" xlink:to="sev_warning" />
+  </gen:link>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:type="simple" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" />
+</link:linkbase>

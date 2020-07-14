@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfi="http://xbrl.org/2010/custom-function" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:reference="http://xbrl.org/2008/reference" xmlns:instance="http://xbrl.org/2010/variable/instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules" xmlns:gen="http://xbrl.org/2008/generic" xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias" xmlns:formula="http://xbrl.org/2008/formula" xmlns:variable="http://xbrl.org/2008/variable" xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:label="http://xbrl.org/2008/label" xmlns:uf="http://xbrl.org/2008/filter/unit" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:bde="http://www.fujitsu.com/xbrl/taxeditor/default2" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:ef="http://xbrl.org/2008/filter/entity" xmlns:e-gen="http://www.bde.es/es/fr/generic/e-generic" xmlns:tf="http://xbrl.org/2008/filter/tuple" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external" xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date" xmlns:ea="http://xbrl.org/2008/assertion/existence" xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes" xmlns:validation="http://xbrl.org/2008/validation" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:tax="http://www.fujitsu.com/xbrl/taxeditor/default" xmlns:pf="http://xbrl.org/2008/filter/period" xmlns:ca="http://xbrl.org/2008/assertion/consistency" xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar" xmlns:gf="http://xbrl.org/2008/filter/general" xmlns:mf="http://xbrl.org/2008/filter/match" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+    
+    <variable:function xlink:type="resource" xlink:label="function" xlink:title="function" name="fdat:convertirFechaString" output="xs:string">
+      <variable:input type="xs:decimal"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation" xlink:title="implementation">
+      <cfi:input name="fechaDecimal"/>
+      <cfi:step name="fechaString">xs:string($fechaDecimal)</cfi:step>
+      <cfi:step name="fecha">concat(substring($fechaString,1,4),"-",substring($fechaString,5,2),"-",substring($fechaString,7,2))</cfi:step>
+      <cfi:output>$fecha</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function" xlink:to="implementation" xlink:title="unknown: function to implementation" order="1.0"/>
+
+    
+    <variable:function xlink:type="resource" xlink:label="function_1" xlink:title="function" name="fdat:formarFechasAnteriores" output="xs:date*">
+      <variable:input type="xs:date"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_1" xlink:title="implementation">
+      <cfi:input name="fecha"/>
+      <cfi:step name="annoActual">year-from-date($fecha)</cfi:step>
+      <cfi:step name="mesAnterior">month-from-date($fecha)-1</cfi:step>
+      <cfi:step name="secuenciaFechas">reverse(for $j in 1 to ($mesAnterior) return
+        xs:date(concat($annoActual,'-',if ((string-length(xs:string($j))) = 1) then concat('0',$j)
+        else $j,'-01')))</cfi:step>
+      <cfi:output>$secuenciaFechas</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_1" xlink:to="implementation_1" xlink:title="unknown: function to implementation" order="1.0"/>
+
+    
+    <variable:function xlink:type="resource" xlink:label="function_2" xlink:title="function" name="fdat:restaFechas" output="xs:decimal">
+      <variable:input type="xs:decimal"/>
+      <variable:input type="xs:decimal"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_2" xlink:title="implementation">
+      <cfi:input name="fecha1"/>
+      <cfi:input name="fecha2"/>
+      <cfi:step name="fecha1String">xs:string($fecha1)</cfi:step>
+      <cfi:step name="fecha2String">xs:string($fecha2)</cfi:step>
+      <cfi:step name="fecha1Date">xs:date(concat(substring($fecha1String,1,4),"-",substring($fecha1String,5,2),"-",substring($fecha1String,7,2)))</cfi:step>
+      <cfi:step name="fecha2Date">xs:date(concat(substring($fecha2String,1,4),"-",substring($fecha2String,5,2),"-",substring($fecha2String,7,2)))</cfi:step>
+      <cfi:output>abs(fn:days-from-duration($fecha1Date - $fecha2Date))</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_2" xlink:to="implementation_2" xlink:title="unknown: function to implementation" order="1.0"/>
+
+    
+    <variable:function xlink:type="resource" xlink:label="function_3" xlink:title="function" name="fdat:comprobarFecha" output="xs:boolean">
+      <variable:input type="xs:string"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_3" xlink:title="implementation">
+      <cfi:input name="fechaString"/>
+      <cfi:step name="comprobacion">$fechaString castable as xs:date</cfi:step>
+      <cfi:output>$comprobacion</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_3" xlink:to="implementation_3" xlink:title="unknown: function to implementation" order="1.0"/>
+
+    
+    <variable:function xlink:type="resource" xlink:label="function_4" xlink:title="function" name="fdat:comprobarFechaEspecifica" output="xs:boolean">
+      <variable:input type="xs:string"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_4" xlink:title="implementation">
+      <cfi:input name="fechaString"/>
+      <cfi:step name="mes">substring($fechaString,6,2)</cfi:step>
+      <cfi:step name="dia">substring($fechaString,9,2)</cfi:step>
+      <cfi:step name="comprobacion">if (xs:integer($mes) lt 1 and xs:integer($mes) gt 12) then
+        false() else if ($dia eq '00') then true() else false()</cfi:step>
+      <cfi:output>$comprobacion</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_4" xlink:to="implementation_4" xlink:title="unknown: function to implementation" order="1.0"/>
+
+
+
+    
+    
+    <variable:function xlink:type="resource" xlink:label="function_5" xlink:title="function" name="fdat:esBisiesto" output="xs:integer">
+      <variable:input type="xs:decimal"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_5" xlink:title="implementation">
+      <cfi:input name="fecha"/>
+      <cfi:step name="annoFecha">xs:integer(substring(xs:string($fecha),1,4))</cfi:step>
+      <cfi:step name="bisiesto">(($annoFecha mod 4) eq 0) and ((($annoFecha mod 100) ne 0) or
+        (($annoFecha mod 400) eq 0))</cfi:step>
+      <cfi:step name="resultado">if ($bisiesto) then 1 else 0</cfi:step>
+      <cfi:output> $resultado</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_5" xlink:to="implementation_5" xlink:title="unknown: function to implementation" order="1.0"/>
+    
+    
+    <variable:function xlink:type="resource" xlink:label="function_6" xlink:title="function" name="fdat:esBisiestoInicio" output="xs:integer">
+      <variable:input type="xs:decimal"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_6" xlink:title="implementation">
+      <cfi:input name="fecha"/>
+      <cfi:step name="annoFecha">xs:integer(substring(xs:string($fecha),1,4))</cfi:step>
+      <cfi:step name="bisiesto">(($annoFecha mod 4) eq 0) and ((($annoFecha mod 100) ne 0) or
+        (($annoFecha mod 400) eq 0))</cfi:step>
+      <cfi:step name="mesDia">xs:integer(substring(xs:string($fecha),5,4))</cfi:step>
+      <cfi:step name="resultado">if (($bisiesto) and ($mesDia le 229)) then 1 else 0</cfi:step>
+      <cfi:output>$resultado</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_6" xlink:to="implementation_6" xlink:title="unknown: function to implementation" order="1.0"/>
+ 
+    
+    <variable:function xlink:type="resource" xlink:label="function_7" xlink:title="function" name="fdat:esBisiestoFinal" output="xs:integer">
+      <variable:input type="xs:decimal"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_7" xlink:title="implementation">
+      <cfi:input name="fecha"/>
+      <cfi:step name="annoFecha">xs:integer(substring(xs:string($fecha),1,4))</cfi:step>
+      <cfi:step name="bisiesto">(($annoFecha mod 4) eq 0) and ((($annoFecha mod 100) ne 0) or
+        (($annoFecha mod 400) eq 0))</cfi:step>
+      <cfi:step name="mesDia">xs:integer(substring(xs:string($fecha),5,4))</cfi:step>
+      <cfi:step name="resultado">if (($bisiesto) and ($mesDia ge 229)) then 1 else 0</cfi:step>
+      <cfi:output>$resultado</cfi:output>
+    </cfi:implementation>
+<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_7" xlink:to="implementation_7" xlink:title="unknown: function to implementation" order="1.0"/>
+
+    
+    <variable:function xlink:type="resource" xlink:label="function_8" xlink:title="function" name="fdat:calculoFlagBisiesto" output="xs:integer">
+      <variable:input type="xs:decimal"/>
+      <variable:input type="xs:decimal"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_8" xlink:title="implementation">
+      <cfi:input name="fechaInicio"/>
+      <cfi:input name="fechaFinal"/>
+      <cfi:step name="annoInicio">xs:integer(substring(xs:string($fechaInicio),1,4))</cfi:step>
+      <cfi:step name="annoFinal">xs:integer(substring(xs:string($fechaFinal),1,4))</cfi:step>
+      <cfi:step name="restaAnno">$annoFinal - $annoInicio</cfi:step>
+      <cfi:step name="resultInicio">fdat:esBisiestoInicio($fechaInicio)</cfi:step>
+      <cfi:step name="resultFinal">fdat:esBisiestoFinal($fechaFinal)</cfi:step>
+      <cfi:step name="resultIntermedio">($restaAnno = 2) and fdat:esBisiesto($annoInicio+1)</cfi:step>
+      <cfi:step name="resultado">if (($resultInicio = 1) or ($resultFinal = 1) or ($resultIntermedio = 1)) then 1 else 0</cfi:step>
+      <cfi:output>$resultado</cfi:output>
+    </cfi:implementation>
+<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_8" xlink:to="implementation_8" xlink:title="unknown: function to implementation" order="1.0"/>
+    
+<!--
+    <variable:function xlink:type="resource" xlink:label="function_9" xlink:title="function" name="fdat:mesAnterior" output="xs:date">
+      <variable:input type="xs:date"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_9" xlink:title="implementation">
+      <cfi:input name="fechaDeclaracion"/>
+      <cfi:step name="mesDeclaracion">month-from-date($fechaDeclaracion)</cfi:step>
+      <cfi:step name="mesAnterior">if ($mesDeclaracion = (2,4,6,9,11)) then ($fechaDeclaracion - xs:yearMonthDuration('P1M' ) + xs:dayTimeDuration('P1D')) else ($fechaDeclaracion - xs:yearMonthDuration('P1M'))</cfi:step>
+      <cfi:output>$mesAnterior</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_9" xlink:to="implementation_9" xlink:title="unknown: function to implementation" order="1.0"/>
+-->
+    <variable:function xlink:type="resource" xlink:label="function_9" xlink:title="function" name="fdat:mesAnterior" output="xs:date">
+      <variable:input type="xs:date"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_9" xlink:title="implementation">
+      <cfi:input name="fechaDeclaracion"/>
+      <cfi:step name="mesDeclaracion">month-from-date($fechaDeclaracion)</cfi:step>
+      <cfi:step name="mesAnterior">if ($mesDeclaracion = 2) then xs:date(concat(xs:string(year-from-date($fechaDeclaracion)),'-01-31'))
+        else if ($mesDeclaracion = (4,6,9,11)) then ($fechaDeclaracion - xs:yearMonthDuration('P1M' ) + xs:dayTimeDuration('P1D')) else ($fechaDeclaracion - xs:yearMonthDuration('P1M'))</cfi:step>
+      <cfi:output>$mesAnterior</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_9" xlink:to="implementation_9" xlink:title="unknown: function to implementation" order="1.0"/>
+    
+
+    <variable:function xlink:type="resource" xlink:label="function_10" xlink:title="function" name="fdat:trimestreAnterior" output="xs:date">
+      <variable:input type="xs:date"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_10" xlink:title="implementation">
+      <cfi:input name="fechaDeclaracion"/>
+      <cfi:step name="mesDeclaracion">month-from-date($fechaDeclaracion)</cfi:step>
+      <cfi:step name="trimAnterior">if ($mesDeclaracion = (3,9)) then ($fechaDeclaracion - xs:yearMonthDuration('P3M')) else (if($mesDeclaracion = 6)  then ($fechaDeclaracion - xs:yearMonthDuration('P3M') + xs:dayTimeDuration('P1D')) else ($fechaDeclaracion - xs:yearMonthDuration('P3M') - xs:dayTimeDuration('P1D')))</cfi:step>
+      <cfi:output>$trimAnterior</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_10" xlink:to="implementation_10" xlink:title="unknown: function to implementation" order="1.0"/>
+    
+    
+    <variable:function xlink:type="resource" xlink:label="function_11" xlink:title="function" name="fdat:semestreAnterior" output="xs:date">
+      <variable:input type="xs:date"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_11" xlink:title="implementation">
+      <cfi:input name="fechaDeclaracion"/>
+      <cfi:step name="mesDeclaracion">month-from-date($fechaDeclaracion)</cfi:step>
+      <cfi:step name="semestreAnterior">if ($mesDeclaracion = 12) then ($fechaDeclaracion - xs:yearMonthDuration('P6M') - + xs:dayTimeDuration('P1D')) else ($fechaDeclaracion - xs:yearMonthDuration('P6M') + xs:dayTimeDuration('P1D'))</cfi:step>
+      <cfi:output>$semestreAnterior</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_11" xlink:to="implementation_11" xlink:title="unknown: function to implementation" order="1.0"/>
+    
+
+    <variable:function xlink:type="resource" xlink:label="function_12" xlink:title="function" name="fdat:diciembreAnterior" output="xs:date">
+      <variable:input type="xs:date"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_12" xlink:title="implementation">
+      <cfi:input name="fechaDeclaracion"/>
+      <cfi:step name="dicAnterior">xs:date(concat(xs:string(year-from-date(xs:date($fechaDeclaracion) - xs:yearMonthDuration('P1Y'))),'-12-31'))</cfi:step>
+      <cfi:output>$dicAnterior</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_12" xlink:to="implementation_12" xlink:title="unknown: function to implementation" order="1.0"/>
+
+
+    <variable:function xlink:type="resource" xlink:label="function_13" xlink:title="function" name="fdat:periodoAnterior" output="xs:date">
+      <variable:input type="xs:date"/>
+      <variable:input type="xs:string"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_13" xlink:title="implementation">
+      <cfi:input name="fechaDeclaracion"/>
+      <cfi:input name="numMeses"/>
+      <cfi:step name="periodoResta">concat('P',$numMeses,'M')</cfi:step>
+      <cfi:step name="fechaCalculo">xs:date($fechaDeclaracion - xs:yearMonthDuration($periodoResta))</cfi:step>
+      <cfi:step name="difDia">(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)[month-from-date($fechaCalculo)] - day-from-date($fechaCalculo)</cfi:step>     
+      <cfi:step name="numDiaCalculo"> xs:string(if (($difDia) ge 0) then $difDia else 0) </cfi:step>
+      <cfi:step name="periodoAnt">$fechaCalculo + xs:dayTimeDuration(concat('P',$numDiaCalculo,'D'))</cfi:step>
+      <cfi:step name="annoaAnt">year-from-date($periodoAnt)</cfi:step>
+      <cfi:step name="mesAnt">if ((string-length(xs:string(month-from-date($periodoAnt)))) eq 1) then concat('0',xs:string(month-from-date($periodoAnt))) else month-from-date($periodoAnt)</cfi:step>
+      <cfi:step name="diaAnt">day-from-date($periodoAnt)</cfi:step>
+      <cfi:output>xs:date(concat($annoaAnt,'-',$mesAnt,'-',$diaAnt))</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_13" xlink:to="implementation_13" xlink:title="unknown: function to implementation" order="1.0"/>
+    
+    
+    
+    <variable:function xlink:type="resource" xlink:label="function_14" xlink:title="function" name="fdat:trimestreAnteriorMensual" output="xs:date">
+      <variable:input type="xs:date"/>
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="implementation_14" xlink:title="implementation">
+      <cfi:input name="fechaDeclaracion"/>
+      <cfi:step name="mesDeclaracion">month-from-date($fechaDeclaracion)</cfi:step>
+      <cfi:step name="annoDeclaracion">year-from-date($fechaDeclaracion)</cfi:step>
+      <cfi:step name="trimAnterior">if ($mesDeclaracion = (1,2,3)) then (concat($annoDeclaracion - 1,'-12-31')) else
+        (if($mesDeclaracion = (4,5,6))  then (concat($annoDeclaracion,'-03-31')) else
+        (if($mesDeclaracion = (7,8,9))  then (concat($annoDeclaracion,'-06-30')) else (concat($annoDeclaracion,'-09-30'))))</cfi:step>
+      <cfi:output>xs:date($trimAnterior)</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_14" xlink:to="implementation_14" xlink:title="unknown: function to implementation" order="1.0"/>
+    
+    
+  </gen:link>
+</link:linkbase>

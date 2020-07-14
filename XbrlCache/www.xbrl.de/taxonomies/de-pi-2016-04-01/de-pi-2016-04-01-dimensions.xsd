@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(c) XBRL Deutschland e.V. - see http://www.xbrl.de-->
+
+
+<xs:schema xmlns:de-pi="http://www.xbrl.de/taxonomies/de-pi-2016-04-01"
+           xmlns:link="http://www.xbrl.org/2003/linkbase"
+           xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+           xmlns:xbrli="http://www.xbrl.org/2003/instance"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.xbrl.de/taxonomies/de-pi-2016-04-01">
+  <xs:annotation>
+      <xs:appinfo>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-pi-2016-04-01-dimensions-label-de.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-pi-2016-04-01-dimensions-label-en.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-pi-2016-04-01-dimensions-reference.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef"
+                           xlink:title="Reference Links, all"
+                           xlink:type="simple"/>
+         <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                           xlink:href="de-pi-2016-04-01-dimensions-reference-fiscal.xml"
+                           xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef"
+                           xlink:title="Reference Links, all"
+                           xlink:type="simple"/>
+      </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://www.xbrl.org/2003/instance"
+              schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xs:import namespace="http://xbrl.org/2005/xbrldt"
+              schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xs:element name="tablePI.nt.ass" abstract="true" id="de-pi_tablePI.nt.ass" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="cubePI.nt.ass.gross" abstract="true" id="de-pi_cubePI.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrldt:hypercubeItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="dim_changesPI.nt.ass" abstract="true" id="de-pi_dim_changesPI.nt.ass"
+               nillable="true"
+               substitutionGroup="xbrldt:dimensionItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="piTitlePI.nt.ass.gross" abstract="true" id="de-pi_piTitlePI.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="allPI" id="de-pi_allPI" nillable="true" substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="allPI_Prev_period" id="de-pi_allPI_Prev_period" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI" id="de-pi_grossPI" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossCostPI.beginning" id="de-pi_grossCostPI.beginning" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI.diff" id="de-pi_grossPI.diff" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI.diff.currDiff" id="de-pi_grossPI.diff.currDiff" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI.diff.otherDiff" abstract="false"
+               id="de-pi_grossPI.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI.diff.otherDiff.comment" id="de-pi_grossPI.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI.addition" id="de-pi_grossPI.addition" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI.release" id="de-pi_grossPI.release" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI.movements" id="de-pi_grossPI.movements" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPI.currChanges" id="de-pi_grossPI.currChanges" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI" id="de-pi_accDeprPI" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.beginning" id="de-pi_accDeprPI.beginning" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.diff" abstract="false" id="de-pi_accDeprPI.diff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.diff.currDiff" abstract="false"
+               id="de-pi_accDeprPI.diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.diff.otherDiff" id="de-pi_accDeprPI.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.diff.otherDiff.comment"
+               id="de-pi_accDeprPI.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.DeprPeriod" abstract="false" id="de-pi_accDeprPI.DeprPeriod"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.DeprPeriod.specific" abstract="false"
+               id="de-pi_accDeprPI.DeprPeriod.specific"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.addition" id="de-pi_accDeprPI.addition" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.release" abstract="false" id="de-pi_accDeprPI.release"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.movements" id="de-pi_accDeprPI.movements" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPI.currChanges" id="de-pi_accDeprPI.currChanges" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluationPI" id="de-pi_revaluationPI" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluationPI.comment" id="de-pi_revaluationPI.comment" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="tablePITanIntan.nt.ass" abstract="true" id="de-pi_tablePITanIntan.nt.ass"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="cubePITanIntan.nt.ass.gross" abstract="true"
+               id="de-pi_cubePITanIntan.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrldt:hypercubeItem"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="piTitlePITanIntan.nt.ass.gross" abstract="true"
+               id="de-pi_piTitlePITanIntan.nt.ass.gross"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="allPITanIntan" id="de-pi_allPITanIntan" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="allPI_Prev_periodTanIntan" id="de-pi_allPI_Prev_periodTanIntan"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan" id="de-pi_grossPITanIntan" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossCostPITanIntan.beginning" id="de-pi_grossCostPITanIntan.beginning"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan.diff" id="de-pi_grossPITanIntan.diff" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan.diff.currDiff" id="de-pi_grossPITanIntan.diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan.diff.otherDiff" abstract="false"
+               id="de-pi_grossPITanIntan.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan.diff.otherDiff.comment"
+               id="de-pi_grossPITanIntan.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan.addition" id="de-pi_grossPITanIntan.addition"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan.release" id="de-pi_grossPITanIntan.release"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan.movements" id="de-pi_grossPITanIntan.movements"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="grossPITanIntan.currChanges" id="de-pi_grossPITanIntan.currChanges"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan" id="de-pi_accDeprPITanIntan" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.beginning" id="de-pi_accDeprPITanIntan.beginning"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.diff" abstract="false"
+               id="de-pi_accDeprPITanIntan.diff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.diff.currDiff" abstract="false"
+               id="de-pi_accDeprPITanIntan.diff.currDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.diff.otherDiff"
+               id="de-pi_accDeprPITanIntan.diff.otherDiff"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.diff.otherDiff.comment"
+               id="de-pi_accDeprPITanIntan.diff.otherDiff.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.DeprPeriod" abstract="false"
+               id="de-pi_accDeprPITanIntan.DeprPeriod"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.DeprPeriod.specific" abstract="false"
+               id="de-pi_accDeprPITanIntan.DeprPeriod.specific"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.addition" id="de-pi_accDeprPITanIntan.addition"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDepPITanIntan.release" abstract="false"
+               id="de-pi_accDepPITanIntan.release"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.movements" id="de-pi_accDeprPITanIntan.movements"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="accDeprPITanIntan.currChanges" id="de-pi_accDeprPITanIntan.currChanges"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluationPITanIntan" id="de-pi_revaluationPITanIntan" nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:monetaryItemType"
+               xbrli:periodType="duration"/>
+  <xs:element name="revaluationPIFixedAssets.comment"
+               id="de-pi_revaluationPIFixedAssets.comment"
+               nillable="true"
+               substitutionGroup="xbrli:item"
+               type="xbrli:stringItemType"
+               xbrli:periodType="duration"/>
+</xs:schema>

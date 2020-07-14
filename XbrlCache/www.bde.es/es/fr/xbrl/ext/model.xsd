@@ -1,0 +1,35 @@
+<schema targetNamespace="http://www.bde.es/xbrl/ext/model" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:gen="http://xbrl.org/2008/generic" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:es_model="http://www.bde.es/xbrl/ext/model" xmlns:label="http://xbrl.org/2008/label" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<annotation>
+		<documentation>Extensiones españolas al modelo de Eurofiling</documentation>
+		<appinfo>
+			<!-- Rol para códigos FIN -->
+			<link:roleType roleURI="http://www.bde.es/xbrl/role/fin-code" id="fin-code">
+				<link:definition>Code numérico que se aplica a los elementos de las tablas para obtener, por suma, los códigos FIN de celda por compatibilidad con aplicaciones anteriores</link:definition>
+				<link:usedOn>label:label</link:usedOn>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<!-- Rol para etiqueta de deshabilitación de cuadres -->
+			<link:roleType roleURI="http://www.bde.es/xbrl/role/disable" id="disable">
+				<link:definition>Etiqueta de deshabilitación de cuadres</link:definition>
+				<link:usedOn>label:label</link:usedOn>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<!-- Arcrole para indicar la taxonomia a la que referencia una tabla en un cuadre intermodulo -->
+			<link:arcroleType id="affected-table-taxonomy" cyclesAllowed="undirected" arcroleURI="http://www.bde.es/xbrl/arcrole/affected-table-taxonomy">
+			<link:definition>Taxonomia a la que referencia una tabla en un cuadre intermodulo</link:definition>
+			<link:usedOn>gen:arc</link:usedOn>
+			</link:arcroleType>
+    	</appinfo>
+	</annotation>
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>	
+	<complexType name="foreignCurrencyItemType" abstract="true" id="foreignCurrencyItemType">
+		<annotation>
+			<documentation xml:lang="en">A data type that represents a monetary item that is submitted in different units than the default one.
+			The unit used is usually constrained by a dimension that identifies the currency of an asset or any other amount
+			</documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType"/>
+		</simpleContent>
+	</complexType>	
+</schema>
