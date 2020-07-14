@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo" xmlns:es-be-dt="http://www.bde.es/es/fr/esrs/corep/2008/es-be-dt-2008-06-01" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:dt="http://xbrl.c-ebs.org/dt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="preambulo-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="preambulo-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="pivot-variable.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>      
+      <link:roleType roleURI="http://www.bde.es/2007/comun/preambulo" id="preambulo">
+        <link:definition>ELR para el esquema general preambulo</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:element name="EntidadPresentadora" id="es-be-cm-pblo_EntidadPresentadora" type="es-be-cm-pblo:EntidadPresentadoraItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Preambulo" id="es-be-cm-pblo_Preambulo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TipoEnvio" id="es-be-cm-pblo_TipoEnvio" type="es-be-cm-pblo:TipoEnvioItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CodigoEstado" id="es-be-cm-pblo_CodigoEstado" type="es-be-cm-pblo:PlantillaItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="EstadosReportados" id="es-be-cm-pblo_EstadosReportados" substitutionGroup="xbrli:tuple">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="es-be-cm-pblo:CodigoEstado"/>
+      </xsd:sequence>
+      <xsd:attribute name="id" use="optional" type="xsd:ID"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Matriz" id="es-be-cm-pblo_Matriz" type="es-be-cm-pblo:MatrizItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:attribute default="false" name="blanco" type="xsd:boolean"/>
+  <xsd:complexType name="PlantillaItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:stringItemType">
+        <xsd:attribute ref="es-be-cm-pblo:blanco"/>
+        <xsd:attribute name="id" use="optional" type="xsd:ID"/>
+        <xsd:attribute name="contextRef" use="required" type="xsd:IDREF"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="TipoEnvioItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:stringItemType">
+        <xsd:enumeration value="Ordinario"/>
+        <xsd:enumeration value="Correccion"/>
+        <xsd:attribute name="id" use="optional" type="xsd:ID"/>
+        <xsd:attribute name="contextRef" use="required" type="xsd:IDREF"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="EntidadPresentadoraItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:stringItemType">
+        <xsd:pattern value="[0-9]{4}"/>
+        <xsd:attribute name="id" use="optional" type="xsd:ID"/>
+        <xsd:attribute name="contextRef" use="required" type="xsd:IDREF"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="MatrizItemType">
+    <xsd:simpleContent>
+      <xsd:restriction base="xbrli:stringItemType">
+        <xsd:pattern value="[0-9]{4}"/>
+        <xsd:attribute name="id" type="xsd:ID"/>
+        <xsd:attribute name="contextRef" use="required" type="xsd:IDREF"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

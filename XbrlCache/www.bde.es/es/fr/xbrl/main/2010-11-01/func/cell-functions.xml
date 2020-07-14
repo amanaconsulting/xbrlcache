@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external" xmlns:cfi="http://xbrl.org/2010/custom-function" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gen="http://xbrl.org/2008/generic" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo" xmlns:bde="http://www.fujitsu.com/xbrl/taxeditor/default2" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:fce="http://www.bde.es/es/fr/xbrl/main/functions/cell" xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes" xmlns:mv="http://www.bde.es/aps/sif/validacion/mapa" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"/>
+    <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+        
+        <variable:function xlink:type="resource" xlink:label="function-cells-id" xlink:title="function-cells-id" name="fce:cells-id" output="xs:string*">
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-cells-id" xlink:title="implementation-cells-id">
+            <cfi:input name="items"/>
+            <cfi:step name="facts">$items[. instance of schema-element(xbrli:item)]</cfi:step>
+            <cfi:step name="cells">for $i in $facts return fce:fact-cell-id($i)</cfi:step>
+            <cfi:output>$cells</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function-cells-id" xlink:to="implementation-cells-id" xlink:title="unknown: function-cells-id to implementation-cells-id" order="1.0"/>
+        
+       
+       <variable:function xlink:type="resource" xlink:label="function-fact-cell-id" xlink:title="function-fact-cell-id" name="fce:fact-cell-id" output="xs:string*">
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-fact-cell-id" xlink:title="implementation-fact-cell-id">
+            <cfi:input name="fact"/>
+            <cfi:step name="primario">fce:nombre-extenso(resolve-QName(name($fact),$fact))</cfi:step>
+            <cfi:step name="scenario">xfi:scenario($fact)</cfi:step>
+            <cfi:step name="dimensionesMiembro">
+              for $dim in $scenario/* return if (local-name($dim) eq 'explicitMember')
+              then concat(fce:nombre-extenso(resolve-QName(string($dim/@dimension),$dim)),'=', fce:nombre-extenso(xfi:fact-explicit-dimension-value($fact,resolve-QName(string($dim/@dimension),$dim))))
+              else fce:nombre-extenso(resolve-QName(string($dim/@dimension),$dim))
+            </cfi:step>
+            <cfi:step name="elemIns">$fact/ancestor::xbrli:xbrl</cfi:step>
+            <cfi:step name="fechaDeclaracion">fce:period-from-context(xfi:context($elemIns/es-be-cm-pblo:EntidadPresentadora))</cfi:step>  
+            <cfi:step name="fechaHecho">fce:period-from-context(xfi:context($fact))</cfi:step>            
+            
+            <cfi:step name="period">
+            	if (xfi:is-duration-period(xfi:context-period(xfi:context($fact)))) then string('duracion')
+            	else string('instante')
+            </cfi:step>
+                        
+            <cfi:step name="ptoentrada">$elemIns/link:schemaRef/@xlink:href</cfi:step>
+            
+            <cfi:output>fext:ConsultaCeldas($primario,$dimensionesMiembro,$fechaDeclaracion,$fechaHecho,$period,$ptoentrada[1])</cfi:output>
+          
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function-fact-cell-id" xlink:to="implementation-fact-cell-id" xlink:title="unknown: function-fact-cell-id to implementation-fact-cell-id" order="2.0"/>
+        
+        
+        <variable:function xlink:type="resource" xlink:label="function-period-from-context" xlink:title="function-period-from-context" name="fce:period-from-context" output="xs:date">
+            <variable:input type="element()"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-period-from-context" xlink:title="implementation-period-from-context">
+            <cfi:input name="context"/>
+            <cfi:step name="periodo">xfi:context-period($context)</cfi:step>
+           <cfi:step name="periodoDate">if (xfi:is-duration-period($periodo)) then xfi:period-end($periodo) else xfi:period-instant($periodo)</cfi:step>
+            <cfi:output>xs:date($periodoDate)</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function-period-from-context" xlink:to="implementation-period-from-context" xlink:title="unknown: function-period-from-context to implementation-period-from-context" order="5.0"/>
+
+
+      <variable:function xlink:type="resource" xlink:label="function-nombre-extenso" xlink:title="function-nombre-extenso" name="fce:nombre-extenso" output="xs:string">
+        <variable:input type="xs:QName"/>
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation-nombre-extenso" xlink:title="implementation-nombre-extenso">
+        <cfi:input name="qName"/>
+        <cfi:output>concat(string(namespace-uri-from-QName($qName)), ':',string(local-name-from-QName($qName)))</cfi:output>
+      </cfi:implementation>
+      <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function-nombre-extenso" xlink:to="implementation-nombre-extenso" xlink:title="unknown: function-nombre-extenso to implementation-nombre-extenso" order="6.0"/>
+
+
+    </gen:link>
+</link:linkbase>

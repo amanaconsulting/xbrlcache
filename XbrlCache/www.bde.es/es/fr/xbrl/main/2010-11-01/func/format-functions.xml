@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?><!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfi="http://xbrl.org/2010/custom-function" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:reference="http://xbrl.org/2008/reference" xmlns:instance="http://xbrl.org/2010/variable/instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules" xmlns:gen="http://xbrl.org/2008/generic" xmlns:formula="http://xbrl.org/2008/formula" xmlns:variable="http://xbrl.org/2008/variable" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:label="http://xbrl.org/2008/label" xmlns:uf="http://xbrl.org/2008/filter/unit" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:ef="http://xbrl.org/2008/filter/entity" xmlns:tf="http://xbrl.org/2008/filter/tuple" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ea="http://xbrl.org/2008/assertion/existence" xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes" xmlns:validation="http://xbrl.org/2008/validation" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:tax="http://www.fujitsu.com/xbrl/taxeditor/default" xmlns:pf="http://xbrl.org/2008/filter/period" xmlns:ca="http://xbrl.org/2008/assertion/consistency" xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar" xmlns:gf="http://xbrl.org/2008/filter/general" xmlns:mf="http://xbrl.org/2008/filter/match" xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format" xmlns:fce="http://www.bde.es/es/fr/xbrl/main/functions/cell" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+    <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"/>
+    <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        
+        
+        <variable:function xlink:type="resource" xlink:label="function_f1" xlink:title="function_f1" name="fmt:valor" output="xs:string*">
+            <variable:input type="xs:anyAtomicType*"/>
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_f1" xlink:title="implementation">
+            <cfi:input name="v-atomic"/>
+            <cfi:input name="items"/>                     
+            <cfi:step name="facts">$items[. instance of schema-element(xbrli:item)]</cfi:step>
+            <cfi:step name="ismonetary">
+                if (count($facts)&gt;0) then fmt:is-monetary($facts)
+                else false()
+            </cfi:step>
+            <cfi:step name="ispure">
+                if (count($facts)&gt;0) then fmt:is-pure($facts)
+                else false()
+            </cfi:step>      
+                
+            <cfi:output>
+               if ($ismonetary) then for $i in $v-atomic return
+                	if (fn:contains(fn:string($i), ';')) then concat(fmt:format-number(xs:double(fn:substring-before($i, ';'))),' ',fmt:name-unit($facts))
+                	else concat(fmt:format-number(xs:double($i)),' ',fmt:name-unit($facts))                	
+                else if ($ispure) then  for $i in $v-atomic return 
+                	if (fn:contains(fn:string($i), ';')) then fmt:format-pure-number(xs:double(fn:substring-before($i, ';')),$facts) 
+                	else fmt:format-pure-number(xs:double($i),$facts)               
+                else for $i in $v-atomic return 
+                	if (fn:contains(fn:string($i), ';')) then fmt:format-number(xs:double(fn:substring-before($i, ';'))) 
+                	else fmt:format-number(xs:double($i))
+            </cfi:output>  
+          
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_f1" xlink:to="implementation_f1" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+        
+        
+            
+        <variable:function xlink:type="resource" xlink:label="function1" xlink:title="function1" name="fmt:format-number" output="xs:string">
+            <variable:input type="xs:double"/>            
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation1" xlink:title="implementation1">
+            <cfi:input name="value"/>
+            <cfi:output>translate(xfi:format-number($value, '#,##0.####'), '.,', ',.')</cfi:output>         
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function1" xlink:to="implementation1" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+        <variable:function xlink:type="resource" xlink:label="function_percent" xlink:title="function_percent" name="fmt:format-percent-number" output="xs:string">
+            <variable:input type="xs:double"/>            
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_percent" xlink:title="implementation_percent">
+            <cfi:input name="value"/>
+            <cfi:step name="format">translate(xfi:format-number(number($value*100),'#,##0.##'), '.,', ',.')</cfi:step>
+            <cfi:output>concat($format,' %')</cfi:output>         
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_percent" xlink:to="implementation_percent" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+        <variable:function xlink:type="resource" xlink:label="function_percent_3decimals" xlink:title="function_percent_3decimals" name="fmt:format-percent-number_3decimals" output="xs:string">
+            <variable:input type="xs:double"/>            
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_percent_3decimals" xlink:title="implementation_percent_3decimals">
+            <cfi:input name="value"/>
+            <cfi:step name="format">translate(xfi:format-number(number($value*100),'#,##0.###'), '.,', ',.')</cfi:step>
+            <cfi:output>concat($format,' %')</cfi:output>         
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_percent_3decimals" xlink:to="implementation_percent_3decimals" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+        
+         <variable:function xlink:type="resource" xlink:label="function7" xlink:title="function7" name="fmt:format-pure-number" output="xs:string">
+            <variable:input type="xs:double"/>
+            <variable:input type="item()*"/>            
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation7" xlink:title="implementation7">
+            <cfi:input name="value"/>
+            <cfi:input name="item"/>
+            <cfi:step name="precision">xfi:decimals($item[1])</cfi:step>			
+			<cfi:output>
+			if ($precision eq 0) then translate(xfi:format-number(number($value),'#,##0'), '.,', ',.')
+			else if ($precision eq 1) then translate(xfi:format-number(number($value),'#,##0.#'), '.,', ',.')
+			else if ($precision eq 2) then translate(xfi:format-number(number($value),'#,##0.##'), '.,', ',.')
+			else if ($precision eq 3) then translate(xfi:format-number(number($value),'#,##0.###'), '.,', ',.')
+			else if ($precision eq 4) then translate(xfi:format-number(number($value),'#,##0.####'), '.,', ',.')
+			else if ($precision eq 5) then translate(xfi:format-number(number($value),'#,##0.#####'), '.,', ',.')
+			else fn:string($value)
+			</cfi:output>
+		</cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function7" xlink:to="implementation7" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+        <variable:function xlink:type="resource" xlink:label="function_f2" xlink:title="function_f2" name="fmt:celdas" output="xs:string*">
+            <variable:input type="item()*"/>
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_f2" xlink:title="implementation">
+            <cfi:input name="facts1"/>
+            <cfi:input name="facts2"/>
+            <cfi:step name="cells">fce:cells-id($facts1)</cfi:step>
+            <cfi:output>                
+                distinct-values(for $cell in $cells return concat('e', substring('0000', 1, 4 - string-length(substring-before($cell,'/'))), substring-before($cell,'/'), 
+                                                                  'c', substring('0000', 1, 4 - string-length(substring-after($cell,'/'))),  substring-after($cell,'/')))
+            </cfi:output>  
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_f2" xlink:to="implementation_f2" xlink:title="unknown: function to implementation" order="1.0"/>
+       
+        <variable:function xlink:type="resource" xlink:label="function_f3" xlink:title="function_f3" name="fmt:contenido-comun-celdas" output="xs:string">            
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_f3" xlink:title="implementation">           
+            <cfi:input name="facts"/>
+            <cfi:output>
+               string(' ')              
+            </cfi:output>  
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_f3" xlink:to="implementation_f3" xlink:title="unknown: function to implementation" order="1.0"/>
+
+        
+                     
+        <variable:function xlink:type="resource" xlink:label="function_f4" xlink:title="function_f4" name="fmt:operador" output="xs:string">            
+            <variable:input type="xs:string"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_f4" xlink:title="implementation">
+            <cfi:input name="op"/>
+            <cfi:output>
+                if ($op eq 'eq') then string('=')                
+                else if ($op eq 'ne') then string("&lt;&gt;")
+                else if ($op eq 'le') then string("&lt;=")
+                else if ($op eq 'ge') then string("&gt;=")
+                else if ($op eq 'lt') then string("&lt;")
+                else if ($op eq 'gt') then string("&gt;")
+                else $op                       
+            
+            </cfi:output>  
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_f4" xlink:to="implementation_f4" xlink:title="unknown: function to implementation" order="1.0"/>
+      
+        
+            
+        <variable:function xlink:type="resource" xlink:label="function2" xlink:title="function2" name="fmt:miles" output="xs:double">
+            <variable:input type="xs:double"/>            
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation2" xlink:title="implementation2">
+            <cfi:input name="v-atomic"/>
+          
+            <cfi:output>
+                $v-atomic idiv 1000
+            </cfi:output>         
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function2" xlink:to="implementation2" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+        
+        
+       
+          
+        <variable:function xlink:type="resource" xlink:label="function3" xlink:title="function3" name="fmt:is-monetary" output="xs:boolean">           
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation3" xlink:title="implementation3">
+            <cfi:input name="facts"/>
+            <cfi:output>
+                some $i in $facts satisfies 
+                (
+                    if (fmt:is-numeric($i)) then (fn:namespace-uri-from-QName(xfi:measure-name(xfi:unit-numerator(xfi:unit($i)))) eq 'http://www.xbrl.org/2003/iso4217') 
+                    else false()
+                )   
+            </cfi:output>            
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function3" xlink:to="implementation3" xlink:title="unknown: function to implementation" order="1.0"/>   
+    
+          
+        
+          
+        <variable:function xlink:type="resource" xlink:label="function6" xlink:title="function6" name="fmt:is-pure" output="xs:boolean">           
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation6" xlink:title="implementation6">
+            <cfi:input name="facts"/>
+            <cfi:output> every $i in $facts satisfies (fmt:is-numeric($i) and xfi:measure-name(xfi:unit-numerator(xfi:unit($i))) = xs:QName('xbrli:pure'))</cfi:output>                        
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function6" xlink:to="implementation6" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+
+        
+        
+        
+        <variable:function xlink:type="resource" xlink:label="function_num" xlink:title="function_num" name="fmt:is-numeric" output="xs:boolean">           
+            <variable:input type="item()"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_num" xlink:title="implementation_num">
+            <cfi:input name="fact"/>
+            <cfi:step name="unitFact">xfi:unit($fact)</cfi:step>
+            <cfi:output>               
+                if (exists($unitFact)) then true()
+                else false()
+            </cfi:output>    
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_num" xlink:to="implementation_num" xlink:title="unknown: function to implementation" order="1.0"/>                
+        
+        
+        <variable:function xlink:type="resource" xlink:label="function5" xlink:title="function5" name="fmt:name-unit" output="xs:string">            
+            <variable:input type="item()*"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation5" xlink:title="implementation5">
+            <cfi:input name="facts"/>
+            <cfi:step name="localNames">distinct-values(for $fact in $facts return
+            if (fmt:is-numeric($fact) and fn:namespace-uri-from-QName(xfi:measure-name(xfi:unit-numerator(xfi:unit($fact)))) eq 'http://www.xbrl.org/2003/iso4217') 
+            then (local-name-from-QName(xfi:measure-name(xfi:unit-numerator(xfi:unit($fact))))) 
+            else '')</cfi:step>	
+            <cfi:output>if (count($localNames) gt 1) then ($localNames[. ne ''])[1] else $localNames</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function5" xlink:to="implementation5" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+        
+        
+  <variable:function xlink:type="resource" xlink:label="function_fu" xlink:title="function_fu" name="fmt:umbral" output="xs:string">
+            <variable:input type="xs:anyAtomicType"/>            
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_fu" xlink:title="implementation">
+            <cfi:input name="v-atomic"/>                     
+			<cfi:output>
+            concat(' (Umbral = ',translate(xfi:format-number(number($v-atomic),'#,##0.######'), '.,', ',.'),')')                
+            </cfi:output>
+        </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_fu" xlink:to="implementation_fu" xlink:title="unknown: function to implementation" order="1.0"/>
+  
+  
+  <variable:function xlink:type="resource" xlink:label="function_diferencia" xlink:title="function_diferencia" name="fmt:diferencia" output="xs:string">
+            <variable:input type="xs:anyAtomicType"/>            
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation_diferencia" xlink:title="implementation">
+            <cfi:input name="v-atomic"/>
+			<cfi:output>
+            concat(' (Diferencia = ',translate(xfi:format-number(number($v-atomic),'#,##0.######'), '.,', ',.'),')')                
+            </cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_diferencia" xlink:to="implementation_diferencia" xlink:title="unknown: function to implementation" order="1.0"/>
+        
+    </gen:link>
+</link:linkbase>

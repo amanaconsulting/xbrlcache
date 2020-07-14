@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:reference="http://xbrl.org/2008/reference" targetNamespace="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:roleType roleURI="http://bde.es/formulas/2010/modulodefinicion" id="modulodefinicion">
+        <link:definition>Módulo propietario y estados implicados en los asertos</link:definition>
+        <link:usedOn>reference:reference</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+ <xsd:annotation>
+    <xsd:appinfo>
+      <link:roleType roleURI="http://bde.es/formulas/2010/moduloexterno" id="moduloexterno">
+        <link:definition>Módulo externo y estados implicados en los asertos</link:definition>
+        <link:usedOn>reference:reference</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+   <xsd:annotation>
+    <xsd:appinfo>
+      <link:roleType roleURI="http://bde.es/formulas/2010/atributoscuadres" id="atributoscuadres">
+        <link:definition>Atributos</link:definition>
+        <link:usedOn>reference:reference</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>  
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <xsd:element name="Tipo" type="frRef:tipoType" substitutionGroup="link:part"/>
+  <xsd:element name="Visibilidad" type="frRef:visibilidadType" substitutionGroup="link:part"/>
+  <xsd:element name="VigenciaDesde" type="xsd:date" substitutionGroup="link:part"/>
+  <xsd:element name="VigenciaHasta" type="xsd:date" substitutionGroup="link:part"/>
+  <xsd:element name="Modulo" type="xsd:token" substitutionGroup="link:part"/>
+  <xsd:element name="Estado" type="xsd:token" substitutionGroup="link:part"/>
+  <xsd:element name="Dependiente" type="xsd:boolean" substitutionGroup="link:part"/>
+  <xsd:element name="Baja" type="xsd:boolean" substitutionGroup="link:part"/>
+  <xsd:element name="OffsetAbsoluto" type="xsd:int" substitutionGroup="link:part"/>
+  <xsd:element name="OffsetRelativo" type="xsd:int" substitutionGroup="link:part"/>
+  <xsd:element name="NMaxIteraciones" type="xsd:int" substitutionGroup="link:part"/>
+  <xsd:element name="MesesPorIteracion" type="xsd:int" substitutionGroup="link:part"/>
+  <xsd:element name="Instancia" type="xsd:token" substitutionGroup="link:part"/>
+  <xsd:element name="Agrupacion" type="xsd:string" substitutionGroup="link:part"/>
+  <xsd:element name="Entidad" type="xsd:QName" substitutionGroup="link:part"/>
+  <xsd:simpleType name="tipoType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="cuadres"/>
+      <xsd:enumeration value="predicados"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="visibilidadType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="publico"/>
+      <xsd:enumeration value="privado"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
