@@ -1,7 +1,7 @@
 # xbrlcache
 A single repository with all XBRL taxonomy files
 
-## Included taxonomis
+## Included taxonomies
 
 ### Bundesbank
 
@@ -36,6 +36,9 @@ A single repository with all XBRL taxonomy files
 * EBA 2.9 (Phase 1)
 * EBA 2.9 (Phase 2)
 * EBA 2.9.1
+* EBA 2.10.0.0 (Phase 1)
+* EBA 2.10.0.1 (Errata Sub-Package of Phase 2)
+* EBA 2.10.1.0 (Phase 2)
 
 ### EIOPA
 
