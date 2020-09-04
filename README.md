@@ -19,7 +19,10 @@ A single repository with all XBRL taxonomy files
 * Bundesbank 2.9.1.1 COR
 * Bundesbank 2.9.1.1 FIN CON
 * Bundesbank 2.9.1.1 FIN IND
+* Bundesbank 2.10 SBP
 * Bundesbank COREP/FINREP EZB-SFRDP 3.0.0.1
+
+### Bundesbank FinaRisikoV
 
 * Bundesbank FinaRisikoV 1.0
 * Bundesbank FinaRisikoV 1.1
@@ -40,9 +43,11 @@ A single repository with all XBRL taxonomy files
 * EBA 2.10.0.1 (Errata Sub-Package of Phase 2)
 * EBA 2.10.1.0 (Phase 2)
 
-### EIOPA
+### EIOPA Pension Funds
 
 * EIOPA Pension Funds 2.3.0
+
+### EIOPA Solvency II
 
 * EIOPA Solvency II 2.0.1
 * EIOPA Solvency II 2.1.0
@@ -83,29 +88,43 @@ A single repository with all XBRL taxonomy files
 * IFRS 2018-spanish
 * IFRS 2019
 
-### SEC
+### SEC Country
 
 * SEC Country 2016-01-31
 * SEC Country 2017-01-31
 
+### SEC Currency
+
 * SEC Currency 2016-01-31
 * SEC Currency 2017-01-31
 
+### SEC Document and Entity Information
+
 * SEC DEI 2014
 * SEC DEI 2018
+
+### SEC Exchange
 
 * SEC EXCH 2016-01-31
 * SEC EXCH 2017-01-31
 * SEC EXCH 2018-01-31
 
+### SEC Invest
+
 * SEC Invest 2013-01-31
+
+### SEC North American Industry Classification System
 
 * SEC NAICS 2017-01-31
 
-### SRB
+### SRB Liability Data Report
 
 * SRB LDR 3.0.2 - 2019
 
+### SRB Resolution Reporting
+
 * SRB RES 4.0.3.2 - 2020
+
+### SRB Single Resolution Fund
 
 * SRB SRF 3.0.1 - 2018
