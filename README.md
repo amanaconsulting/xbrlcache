@@ -50,6 +50,7 @@ A single repository with all XBRL taxonomy files
 
 ### EIOPA Solvency II
 
+* EIOPA Solvency II 1.5.2.c
 * EIOPA Solvency II 2.0.1
 * EIOPA Solvency II 2.1.0
 * EIOPA Solvency II 2.2.0 Hotfix

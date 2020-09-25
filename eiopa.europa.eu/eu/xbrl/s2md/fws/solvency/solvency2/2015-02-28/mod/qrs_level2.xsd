@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--(C) EIOPA
+    2015-02-28-v1.5.2.c-->
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/mod/qrs_level2"
+    xmlns:link="http://www.xbrl.org/2003/linkbase"
+    xmlns:model="http://www.eurofiling.info/xbrl/ext/model"
+    xmlns:s2md_mod_qrs_level2="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/mod/qrs_level2"
+    xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+    xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd http://www.eurofiling.info/xbrl/ext/model http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd http://www.xbrl.org/2003/instance http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd">
+    <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <xs:import
+        namespace="http://www.eurofiling.info/xbrl/ext/filing-indicators" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/ext/filing-indicators.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28" schemaLocation="../tax.xsd"/>
+    <xs:import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
+    <xs:import namespace="http://www.eurofiling.info/xbrl/ext/model" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab" schemaLocation="../tab/tab.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.01.01.02.01" schemaLocation="../tab/s.01.01.02.01/s.01.01.02.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.01.02.01.01" schemaLocation="../tab/s.01.02.01.01/s.01.02.01.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.02.01.05.01" schemaLocation="../tab/s.02.01.05.01/s.02.01.05.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.06.02.01.01" schemaLocation="../tab/s.06.02.01.01/s.06.02.01.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.06.02.01.02" schemaLocation="../tab/s.06.02.01.02/s.06.02.01.02.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.08.01.01.01" schemaLocation="../tab/s.08.01.01.01/s.08.01.01.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.08.01.01.02" schemaLocation="../tab/s.08.01.01.02/s.08.01.01.02.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.12.01.02.01" schemaLocation="../tab/s.12.01.02.01/s.12.01.02.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.17.01.02.01" schemaLocation="../tab/s.17.01.02.01/s.17.01.02.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.01" schemaLocation="../tab/s.23.01.01.01/s.23.01.01.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.02" schemaLocation="../tab/s.23.01.01.02/s.23.01.01.02.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.03" schemaLocation="../tab/s.23.01.01.03/s.23.01.01.03.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.04" schemaLocation="../tab/s.23.01.01.04/s.23.01.01.04.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.05" schemaLocation="../tab/s.23.01.01.05/s.23.01.01.05.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.06" schemaLocation="../tab/s.23.01.01.06/s.23.01.01.06.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.07" schemaLocation="../tab/s.23.01.01.07/s.23.01.01.07.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.08" schemaLocation="../tab/s.23.01.01.08/s.23.01.01.08.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.09" schemaLocation="../tab/s.23.01.01.09/s.23.01.01.09.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.23.01.01.10" schemaLocation="../tab/s.23.01.01.10/s.23.01.01.10.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.01.01.01" schemaLocation="../tab/s.28.01.01.01/s.28.01.01.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.01.01.02" schemaLocation="../tab/s.28.01.01.02/s.28.01.01.02.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.01.01.03" schemaLocation="../tab/s.28.01.01.03/s.28.01.01.03.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.01.01.04" schemaLocation="../tab/s.28.01.01.04/s.28.01.01.04.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.01.01.05" schemaLocation="../tab/s.28.01.01.05/s.28.01.01.05.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.02.01.01" schemaLocation="../tab/s.28.02.01.01/s.28.02.01.01.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.02.01.02" schemaLocation="../tab/s.28.02.01.02/s.28.02.01.02.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.02.01.03" schemaLocation="../tab/s.28.02.01.03/s.28.02.01.03.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.02.01.04" schemaLocation="../tab/s.28.02.01.04/s.28.02.01.04.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.02.01.05" schemaLocation="../tab/s.28.02.01.05/s.28.02.01.05.xsd"/>
+    <xs:import
+        namespace="http://eiopa.europa.eu/xbrl/s2md/fws/solvency/solvency2/2015-02-28/tab/S.28.02.01.06" schemaLocation="../tab/s.28.02.01.06/s.28.02.01.06.xsd"/>
+    <xs:import namespace="http://www.eurofiling.info/xbrl/func" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/func/func.xsd"/>
+    <xs:annotation>
+        <xs:appinfo>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="qrs_level2-lab-en.xml"
+                xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="qrs_level2-pre.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.28.02.01.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.28.02.01-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.28.02.01-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/find-params.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.01.02.01.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.01.02.01-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.01.02.01-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.06.02.01.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.06.02.01-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.06.02.01-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.08.01.01.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.08.01.01-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.08.01.01-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.28.01.01.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.28.01.01-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.28.01.01-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.12.01.02.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.12.01.02-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.12.01.02-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.17.01.02.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.17.01.02-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.17.01.02-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.23.01.01.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.23.01.01-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.23.01.01-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.23.01.01.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.23.01.01-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.23.01.01-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.17.01.02.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.17.01.02-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.17.01.02-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.12.01.02.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.12.01.02-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.02.01.05_s.12.01.02-lab-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.12.01.02_s.28.02.01.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.12.01.02_s.28.02.01-err-en.xml" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../val/val-s.12.01.02_s.28.02.01-lab-en.xml" xlink:type="simple"/>
+        </xs:appinfo>
+    </xs:annotation>
+    <xs:element abstract="true" id="s2md_qrs_level2"
+        model:creationDate="2014-07-07" name="qrs_level2"
+        nillable="true" substitutionGroup="xbrli:item"
+        type="model:moduleType" xbrli:periodType="instant"/>
+</xs:schema>
