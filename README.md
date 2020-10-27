@@ -36,10 +36,11 @@ A single repository with all XBRL taxonomy files
 * EBA 2.3.1
 * EBA 2.3.2 (FINREP Individual extension)
 * EBA 2.6.0.0
+* EBA 2.7.0.1
 * EBA 2.8.1.1
 * EBA 2.9 (Phase 1)
 * EBA 2.9 (Phase 2)
-* EBA 2.9.1
+* EBA 2.9.1.1
 * EBA 2.10.0.0 (Phase 1)
 * EBA 2.10.0.1 (Errata Sub-Package of Phase 2)
 * EBA 2.10.1.0 (Phase 2)
@@ -55,7 +56,7 @@ A single repository with all XBRL taxonomy files
 * EIOPA Solvency II 2.1.0
 * EIOPA Solvency II 2.2.0 Hotfix
 * EIOPA Solvency II 2.3.0 Hotfix
-* EIOPA Solvency II 2.4.0
+* EIOPA Solvency II 2.4.0 Hotfix
 * EIOPA Solvency II 2.5.0
 
 ### DNB
