@@ -28,6 +28,7 @@ A single repository with all XBRL taxonomy files
 * Bundesbank FinaRisikoV 1.0
 * Bundesbank FinaRisikoV 1.1
 * Bundesbank FinaRisikoV 1.2
+* Bundesbank FinaRisikoV 2.0 (incl. backwards compatible data dictionary)
 
 ### EBA
 
