@@ -1,0 +1,629 @@
+<!--
+UK-Business Data-Basic Schema  Version 1.0
+Copyright and other information - see http://xbrl.frc.org.uk/legal.html
+--><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:bus="http://xbrl.frc.org.uk/cd/2019-01-01/business" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:types="http://xbrl.frc.org.uk/general/2019-01-01/types" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" attributeFormDefault="unqualified" blockDefault="" elementFormDefault="qualified" finalDefault="" targetNamespace="http://xbrl.frc.org.uk/cd/2019-01-01/business">
+   <annotation>
+      <appinfo>
+      <link:roleType id="Taxonomy-Tagging-Information" roleURI="http://xbrl.frc.org.uk/cd/roles/Taxonomy-Tagging-Information">
+            <link:definition>001 - Taxonomy and Tagging Information</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Entity-Information" roleURI="http://xbrl.frc.org.uk/cd/roles/Entity-Information">
+            <link:definition>002 - Entity Information</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Report-Information" roleURI="http://xbrl.frc.org.uk/cd/roles/Report-Information">
+            <link:definition>003 - Report Information</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimensions-Content" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimensions-Content">
+            <link:definition>500 - Dimensions Content</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-GroupCompanyData" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-GroupCompanyData">
+            <link:definition>6010 - Dimension - Group and Company Data</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-MainIndustrySector" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-MainIndustrySector">
+            <link:definition>6011 - Dimension - Main Industry Sector</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-LegalFormEntity" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-LegalFormEntity">
+            <link:definition>6012 - Dimension - Legal Form of Entity</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-EntityTradingStatus" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-EntityTradingStatus">
+            <link:definition>6013 - Dimension - Entity Trading Status</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-EntitySpecialLegalStatus" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-EntitySpecialLegalStatus">
+            <link:definition>6014 - Dimension - Entity Special Legal Status</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-EntityShareClasses" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-EntityShareClasses">
+            <link:definition>6015 - Dimension - Entity Share Classes</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-ShareTypes" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-ShareTypes">
+            <link:definition>6016 - Dimension - Share Types</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-EntityOfficers" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-EntityOfficers">
+            <link:definition>6017 - Dimension - Entity Officers</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-EntityOfficerStatus" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-EntityOfficerStatus">
+            <link:definition>6018 - Dimension - Entity Officer Type</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-EntityContactType" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-EntityContactType">
+            <link:definition>6019 - Dimension - Entity Contact Type</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-AddressType" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-AddressType">
+            <link:definition>6020 - Dimension - Address Type</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-PhoneNumberType" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-PhoneNumberType">
+            <link:definition>6021 - Dimension - Phone Number Type</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-FormOfContact" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-FormOfContact">
+            <link:definition>6022 - Dimension - Form of Contact</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-ThirdPartyAgentStatus" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-ThirdPartyAgentStatus">
+            <link:definition>6023 - Dimension - Third Party Agent Status</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-ScopeAccounts" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-ScopeAccounts">
+            <link:definition>6024 - Dimension - Scope of Accounts</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-AccountingStandards" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-AccountingStandards">
+            <link:definition>6025 - Dimension - Accounting Standards</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-SORPs" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-SORPs">
+            <link:definition>6026 - Dimension - SORPs</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-ApplicableLegislation" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-ApplicableLegislation">
+            <link:definition>6027 - Dimension - Applicable Legislation</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-AccountsStatus" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-AccountsStatus">
+            <link:definition>6028 - Dimension - Accounts Status</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-AccountsType" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-AccountsType">
+            <link:definition>6029 - Dimension - Accounts Type</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Dimension-ReportPeriod" roleURI="http://xbrl.frc.org.uk/cd/roles/Dimension-ReportPeriod">
+            <link:definition>6030 - Dimension - Report Period</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-Basic" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-Basic">
+            <link:definition>9000 - Hypercube - Basic</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-BasicGrouping1" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-Basic-Grouping1">
+            <link:definition>90001 - Hypercube - Basic Grouping 1</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-Countries" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-Countries">
+            <link:definition>9001 - Hypercube - Countries</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-Currencies" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-Currencies">
+            <link:definition>9002 - Hypercube - Currencies</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-Languages" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-Languages">
+            <link:definition>9003 - Hypercube - Languages</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-MainIndustrySector" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-MainIndustrySector">
+            <link:definition>9009 - Hypercube - Main Industry Sector</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-LegalFormEntity" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-LegalFormEntity">
+            <link:definition>9010 - Hypercube - Legal Form of Entity</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-Shares" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-Shares">
+            <link:definition>9011 - Hypercube - Shares</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-EntityTradingStatus" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-EntityTradingStatus">
+            <link:definition>9012 - Hypercube - Entity Trading Status</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-EntitySpecialLegalStatus" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-EntitySpecialLegalStatus">
+            <link:definition>9013 - Hypercube - Entity Special Legal Status</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-EntityOfficers" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-EntityOfficers">
+            <link:definition>9014 - Hypercube - Entity Officers</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-GeneralContactInfo" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-EntityContactInfo">
+            <link:definition>9015 - Hypercube - Entity Contact Info</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-ThirdPartyAgentContactInfo" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-ThirdPartyAgents">
+            <link:definition>9016 - Hypercube - Third Party Agents</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-ScopeAccounts" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-ScopeAccounts">
+            <link:definition>9020 - Hypercube - Scope of Accounts</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-AccountingStandardsApplied" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountingStandardsApplied">
+            <link:definition>9021 - Hypercube - Accounting Standards Applied</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-SORPsApplied" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-SORPsApplied">
+            <link:definition>9022 - Hypercube - SORPs Applied</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-ApplicableLegislation" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-ApplicableLegislation">
+            <link:definition>9023 - Hypercube - Applicable Legislation</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-AccountsStatus" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountsStatus">
+            <link:definition>9024 - Hypercube - Accounts Status</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-AccountsType" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountsType">
+            <link:definition>9025 - Hypercube - Accounts Type</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-ReportPeriod" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-ReportPeriod">
+            <link:definition>9026 - Hypercube - Report Period</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:roleType id="Hypercube-Empty" roleURI="http://xbrl.frc.org.uk/cd/roles/Hypercube-Empty">
+            <link:definition>9990 - Hypercube - Empty</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="bus-2019-01-01-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:title="Definition Links, all" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="bus-2019-01-01-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:title="Label Links, all" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="bus-2019-01-01-reference.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:title="Reference Links, all" xlink:type="simple"/>
+    </appinfo>
+   </annotation>
+   <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+   <import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
+   <import namespace="http://xbrl.frc.org.uk/general/2019-01-01/types" schemaLocation="../../../general/2019-01-01/types/types-2019-01-01.xsd"/>
+   <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+   <import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+   <import namespace="http://xbrl.frc.org.uk/general/2019-01-01/ref" schemaLocation="../../../general/2019-01-01/ref/ref-2019-01-01.xsd"/>
+   <import namespace="http://xbrl.frc.org.uk/general/2019-01-01/common" schemaLocation="../../../general/2019-01-01/common/common-2019-01-01.xsd"/>
+   <import namespace="http://www.xbrl.org/2006/ref" schemaLocation="http://www.xbrl.org/2006/ref-2006-02-27.xsd"/>
+   <import namespace="http://xbrl.frc.org.uk/cd/2019-01-01/currencies" schemaLocation="../currencies/currencies-2019-01-01.xsd"/>
+   <import namespace="http://xbrl.frc.org.uk/cd/2019-01-01/countries" schemaLocation="../countries-regions/countries-2019-01-01.xsd"/>
+   <import namespace="http://xbrl.frc.org.uk/cd/2019-01-01/languages" schemaLocation="../languages/languages-2019-01-01.xsd"/>
+   <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+   <element abstract="false" id="bus_EntityFormerLegalOrRegisteredNameGroupingDimension.domain" name="EntityFormerLegalOrRegisteredNameGroupingDimension.domain" nillable="false" type="types:grouping"/>
+   <element abstract="true" id="bus_A-AgricultureForestryFishing" name="A-AgricultureForestryFishing" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AbbreviatedAccounts" name="AbbreviatedAccounts" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_AccountingStandardsApplied" name="AccountingStandardsApplied" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountingStandardsAppliedHypercube" name="AccountingStandardsAppliedHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountingStandardsAppliedPrimaryItems" name="AccountingStandardsAppliedPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountingStandardsDimension" name="AccountingStandardsDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountingStandardsHeading" name="AccountingStandardsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_AccountsStatusAuditedOrUnaudited" name="AccountsStatusAuditedOrUnaudited" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountsStatusDimension" name="AccountsStatusDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountsStatusHeading" name="AccountsStatusHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountsStatusHypercube" name="AccountsStatusHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountsStatusPrimaryItems" name="AccountsStatusPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountsTypeDimension" name="AccountsTypeDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_AccountsTypeFullOrAbbreviated" name="AccountsTypeFullOrAbbreviated" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountsTypeHeading" name="AccountsTypeHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountsTypeHypercube" name="AccountsTypeHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AccountsTypePrimaryItems" name="AccountsTypePrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AddressHeading" name="AddressHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_AddressLine1" name="AddressLine1" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_AddressLine2" name="AddressLine2" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_AddressLine3" name="AddressLine3" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AddressTypeDimension" name="AddressTypeDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AddressTypeHeading" name="AddressTypeHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent1" name="Agent1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent2" name="Agent2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent3" name="Agent3" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AllDeferredShares" name="AllDeferredShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AllEntityOfficerTypesDefault" name="AllEntityOfficerTypesDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AllEntityOfficersEntityOfficersTotalDefault" name="AllEntityOfficersEntityOfficersTotalDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AllOrdinaryShares" name="AllOrdinaryShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AllPreferenceShares" name="AllPreferenceShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AllShareClassesDefault" name="AllShareClassesDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AllShareTypesDefault" name="AllShareTypesDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AmericanDepositaryReceiptsInformation" name="AmericanDepositaryReceiptsInformation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ApplicableLegislation" name="ApplicableLegislation" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ApplicableLegislationDimension" name="ApplicableLegislationDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ApplicableLegislationHeading" name="ApplicableLegislationHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ApplicableLegislationHypercube" name="ApplicableLegislationHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ApplicableLegislationPrimaryItems" name="ApplicableLegislationPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_AreaCode" name="AreaCode" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AuditExempt-NoAccountantsReport" name="AuditExempt-NoAccountantsReport" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AuditExemptWithAccountantsReport" name="AuditExemptWithAccountantsReport" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Audited" name="Audited" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AuthorisedFundsSORP" name="AuthorisedFundsSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_B-MiningQuarrying" name="B-MiningQuarrying" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_BalanceSheetDate" name="BalanceSheetDate" nillable="true" substitutionGroup="xbrli:item" type="xbrli:dateItemType" xbrli:periodType="instant"/>
+   <element abstract="true" id="bus_BasicHypercube" name="BasicHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_BasicPrimaryItems" name="BasicPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_BranchTradingInUK" name="BranchTradingInUK" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_BusinessReport-specificDimensionsHeading" name="BusinessReport-specificDimensionsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_BusinessReportPublicationDate" name="BusinessReportPublicationDate" nillable="true" substitutionGroup="xbrli:item" type="xbrli:dateItemType" xbrli:periodType="instant"/>
+   <element abstract="true" id="bus_C-Manufacturing" name="C-Manufacturing" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CalendarYear" name="CalendarYear" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Chairman" name="Chairman" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ChairmanChiefExecutive" name="ChairmanChiefExecutive" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CharitiesSORP" name="CharitiesSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ChiefExecutive" name="ChiefExecutive" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CommunityInterestCompanyCIC" name="CommunityInterestCompanyCIC" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CompanyAccountsDefault" name="CompanyAccountsDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CompanyDefault" name="CompanyDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CompanyLimitedByGuarantee" name="CompanyLimitedByGuarantee" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CompanySecretary1" name="CompanySecretary1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CompanySecretary2" name="CompanySecretary2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CompanySecretaryDirector1" name="CompanySecretaryDirector1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CompanySecretaryDirector2" name="CompanySecretaryDirector2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Consolidated" name="Consolidated" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ConsolidatedGroupCompanyAccounts" name="ConsolidatedGroupCompanyAccounts" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ContactDepartmentOrPersonHeading" name="ContactDepartmentOrPersonHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ContactInformation-specificDimensionsHeading" name="ContactInformation-specificDimensionsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CountriesHypercube" name="CountriesHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CountriesPrimaryItems" name="CountriesPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_CountryCode" name="CountryCode" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_CountryFormationOrIncorporation" name="CountryFormationOrIncorporation" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_CountyRegion" name="CountyRegion" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CumulativeNon-redeemableShares" name="CumulativeNon-redeemableShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CumulativeRedeemableShares" name="CumulativeRedeemableShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CumulativeShares" name="CumulativeShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CurrenciesHypercube" name="CurrenciesHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_CurrenciesPrimaryItems" name="CurrenciesPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_D-ElectricityGasSteamAirConditioningSupply" name="D-ElectricityGasSteamAirConditioningSupply" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_DateFormationOrIncorporation" name="DateFormationOrIncorporation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:dateItemType" xbrli:periodType="instant"/>
+   <element abstract="false" id="bus_DateWhenCeasedToBeLegalOrRegisteredName" name="DateWhenCeasedToBeLegalOrRegisteredName" nillable="true" substitutionGroup="xbrli:item" type="xbrli:dateItemType" xbrli:periodType="instant"/>
+   <element abstract="true" id="bus_DeferredShareClass1" name="DeferredShareClass1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_DeferredShareClass2" name="DeferredShareClass2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_DeferredShareClass3" name="DeferredShareClass3" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_DeferredShareClass4" name="DeferredShareClass4" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_DeferredShareClass5" name="DeferredShareClass5" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_DescriptionAlternativeRegistrationIncludingNameBusinessRegistryNumber" name="DescriptionAlternativeRegistrationIncludingNameBusinessRegistryNumber" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_DescriptionOrOtherInformationOnEntityContact" name="DescriptionOrOtherInformationOnEntityContact" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_DescriptionOrOtherInformationOnWebsite" name="DescriptionOrOtherInformationOnWebsite" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_DescriptionPrincipalActivities" name="DescriptionPrincipalActivities" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_DescriptionRevisionsInAnAmendedRevisedVersionPreviouslyFiledReport" name="DescriptionRevisionsInAnAmendedRevisedVersionPreviouslyFiledReport" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_DescriptionShareType" name="DescriptionShareType" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_DimensionsContentHeading" name="DimensionsContentHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Direct" name="Direct" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director1" name="Director1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director10" name="Director10" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director11" name="Director11" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director12" name="Director12" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director13" name="Director13" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director14" name="Director14" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director15" name="Director15" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director16" name="Director16" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director17" name="Director17" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director18" name="Director18" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director19" name="Director19" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director2" name="Director2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director20" name="Director20" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director21" name="Director21" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director22" name="Director22" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director23" name="Director23" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director24" name="Director24" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director25" name="Director25" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director26" name="Director26" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director27" name="Director27" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director28" name="Director28" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director29" name="Director29" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director3" name="Director3" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director30" name="Director30" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director31" name="Director31" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director32" name="Director32" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director33" name="Director33" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director34" name="Director34" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director35" name="Director35" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director36" name="Director36" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director37" name="Director37" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director38" name="Director38" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director39" name="Director39" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director4" name="Director4" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director40" name="Director40" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director5" name="Director5" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director6" name="Director6" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director7" name="Director7" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director8" name="Director8" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Director9" name="Director9" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_E-WaterSupplySewerageWasteManagementRemediationActivities" name="E-WaterSupplySewerageWasteManagementRemediationActivities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_E-mailAddress" name="E-mailAddress" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EmptyHypercube" name="EmptyHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EmptyPrimaryItems" name="EmptyPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_EndDateForPeriodCoveredByReport" name="EndDateForPeriodCoveredByReport" nillable="true" substitutionGroup="xbrli:item" type="xbrli:dateItemType" xbrli:periodType="instant"/>
+   <element abstract="true" id="bus_Entity-specificDimensionsHeading" name="Entity-specificDimensionsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityActivitiesHeading" name="EntityActivitiesHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityContactInfoHypercube" name="EntityContactInfoHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityContactInfoPrimaryItems" name="EntityContactInfoPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityContactTypeDimension" name="EntityContactTypeDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityContactTypeHeading" name="EntityContactTypeHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityContactsWebsiteInformationHeading" name="EntityContactsWebsiteInformationHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_EntityCurrentLegalOrRegisteredName" name="EntityCurrentLegalOrRegisteredName" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_EntityDormantTruefalse" name="EntityDormantTruefalse" nillable="true" substitutionGroup="xbrli:item" type="xbrli:booleanItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_EntityFormerLegalOrRegisteredName" name="EntityFormerLegalOrRegisteredName" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityFormerLegalOrRegisteredNameGrouping" name="EntityFormerLegalOrRegisteredNameGrouping" nillable="true" substitutionGroup="xbrli:item" type="types:groupingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityHasNeverTraded" name="EntityHasNeverTraded" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityIdentifyingCodesHeading" name="EntityIdentifyingCodesHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityInAdministration" name="EntityInAdministration" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityInCompulsoryLiquidation" name="EntityInCompulsoryLiquidation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityInCreditorsVoluntaryLiquidation" name="EntityInCreditorsVoluntaryLiquidation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityInLiquidation" name="EntityInLiquidation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityInMembersVoluntaryLiquidation" name="EntityInMembersVoluntaryLiquidation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityInReceivership" name="EntityInReceivership" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityInformationHeading" name="EntityInformationHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityLegalFormHeading" name="EntityLegalFormHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityNamesHeading" name="EntityNamesHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityNoLongerTradingButTradedInPast" name="EntityNoLongerTradingButTradedInPast" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityOfficerStatusDimension" name="EntityOfficerStatusDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityOfficers-specificDimensionsHeading" name="EntityOfficers-specificDimensionsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityOfficersDimension" name="EntityOfficersDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityOfficersHypercube" name="EntityOfficersHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityOfficersIncludingDirectorsPartnersHeading" name="EntityOfficersIncludingDirectorsPartnersHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityOfficersPrimaryItems" name="EntityOfficersPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityShareClassesDimension" name="EntityShareClassesDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntitySharesHeading" name="EntitySharesHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntitySpecialLegalStatusDimension" name="EntitySpecialLegalStatusDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntitySpecialLegalStatusHeading" name="EntitySpecialLegalStatusHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntitySpecialLegalStatusHypercube" name="EntitySpecialLegalStatusHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntitySpecialLegalStatusPrimaryItems" name="EntitySpecialLegalStatusPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityTradingDefault" name="EntityTradingDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_EntityTradingName" name="EntityTradingName" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_EntityTradingStatus" name="EntityTradingStatus" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityTradingStatusDimension" name="EntityTradingStatusDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityTradingStatusHypercube" name="EntityTradingStatusHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityTradingStatusPrimaryItems" name="EntityTradingStatusPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_EntityUnderCompanyVoluntaryArrangement" name="EntityUnderCompanyVoluntaryArrangement" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_EntityUnderSpecialLegalStatus" name="EntityUnderSpecialLegalStatus" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ExecutiveOfficer" name="ExecutiveOfficer" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ExtensionNumber" name="ExtensionNumber" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_F-Construction" name="F-Construction" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FRS101" name="FRS101" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FRS102" name="FRS102" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FRSSE" name="FRSSE" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Fax" name="Fax" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FinancialYearDefault" name="FinancialYearDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FirstHalfH1" name="FirstHalfH1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ForGuidanceOnHowToUseTaxonomySeeGuidanceDocumentsPublishedHttpxbrl.frc.org.ukGuidance" name="ForGuidanceOnHowToUseTaxonomySeeGuidanceDocumentsPublishedHttpxbrl.frc.org.ukGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ForLegalInformationOnThisTaxonomySeeHttpxbrl.frc.org.uklegalGuidance" name="ForLegalInformationOnThisTaxonomySeeHttpxbrl.frc.org.uklegalGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FormContactDimension" name="FormContactDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FormContactHeading" name="FormContactHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FriendlySociety" name="FriendlySociety" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FullAccounts" name="FullAccounts" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FullIFRS" name="FullIFRS" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_FurtherHigherEducationSORP" name="FurtherHigherEducationSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_G-WholesaleRetailTradeRepairMotorVehiclesMotorcycles" name="G-WholesaleRetailTradeRepairMotorVehiclesMotorcycles" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_GeneralDimensionsHeading" name="GeneralDimensionsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_GroupAccountsOnly" name="GroupAccountsOnly" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_GroupCompanyDataDimension" name="GroupCompanyDataDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_H-TransportationStorage" name="H-TransportationStorage" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_HeadOfficeDefault" name="HeadOfficeDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_HighestPaidDirector" name="HighestPaidDirector" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_I-AccommodationFoodServiceActivities" name="I-AccommodationFoodServiceActivities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_IncorporatedByActParliament" name="IncorporatedByActParliament" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_IncorporatedByRoyalCharter" name="IncorporatedByRoyalCharter" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_IndependentExaminationCharity" name="IndependentExaminationCharity" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_IndustrialProvidentSociety" name="IndustrialProvidentSociety" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_InsuranceBusinessSORP" name="InsuranceBusinessSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_InvestmentCompaniesSORP" name="InvestmentCompaniesSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_InvestorRelations" name="InvestorRelations" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_J-InformationCommunication" name="J-InformationCommunication" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_JobTitlePositionContactPerson" name="JobTitlePositionContactPerson" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_K-FinancialInsuranceActivities" name="K-FinancialInsuranceActivities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_L-RealEstateActivities" name="L-RealEstateActivities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Landline" name="Landline" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LanguagesHypercube" name="LanguagesHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LanguagesPrimaryItems" name="LanguagesPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LargeMedium-sizedCompaniesRegimeForAccounts" name="LargeMedium-sizedCompaniesRegimeForAccounts" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LargeMedium-sizedCompaniesRegimeForDirectorsReport" name="LargeMedium-sizedCompaniesRegimeForDirectorsReport" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LeadAgentIfApplicable" name="LeadAgentIfApplicable" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_LegalFormEntity" name="LegalFormEntity" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LegalFormEntityDimension" name="LegalFormEntityDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LegalFormEntityHeading" name="LegalFormEntityHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LegalFormEntityHypercube" name="LegalFormEntityHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LegalFormEntityPrimaryItems" name="LegalFormEntityPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LimitedLiabilityPartnershipLLP" name="LimitedLiabilityPartnershipLLP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_LimitedLiabilityPartnershipsSORP" name="LimitedLiabilityPartnershipsSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_LocalNumber" name="LocalNumber" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_M-ProfessionalScientificTechnicalActivities" name="M-ProfessionalScientificTechnicalActivities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_MainAddressDefault" name="MainAddressDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_MainFormContactDefault" name="MainFormContactDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_MainIndustrySector" name="MainIndustrySector" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_MainIndustrySectorDimension" name="MainIndustrySectorDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_MainIndustrySectorHeading" name="MainIndustrySectorHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_MainIndustrySectorHypercube" name="MainIndustrySectorHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_MainIndustrySectorPrimaryItems" name="MainIndustrySectorPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_MeansContactHeading" name="MeansContactHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_MediaRelations" name="MediaRelations" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Micro-entities" name="Micro-entities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Mobile" name="Mobile" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_N-AdministrativeSupportServiceActivities" name="N-AdministrativeSupportServiceActivities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameContactDepartmentOrPerson" name="NameContactDepartmentOrPerson" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityAccountants" name="NameEntityAccountants" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityAdministrators" name="NameEntityAdministrators" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityAuditors" name="NameEntityAuditors" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityBankers" name="NameEntityBankers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityExaminers" name="NameEntityExaminers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityFinancialAdvisers" name="NameEntityFinancialAdvisers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityLawyersOrLegalAdvisers" name="NameEntityLawyersOrLegalAdvisers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityLiquidators" name="NameEntityLiquidators" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityOfficer" name="NameEntityOfficer" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityReceivers" name="NameEntityReceivers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityRegistrars" name="NameEntityRegistrars" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityStockbrokers" name="NameEntityStockbrokers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameEntityTaxAdvisers" name="NameEntityTaxAdvisers" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_NameProductionSoftware" name="NameProductionSoftware" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Non-cumulativeNon-redeemableShares" name="Non-cumulativeNon-redeemableShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Non-cumulativeRedeemableShares" name="Non-cumulativeRedeemableShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Non-cumulativeShares" name="Non-cumulativeShares" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Non-executiveOfficer" name="Non-executiveOfficer" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_O-PublicAdministrationDefenceCompulsorySocialSecurity" name="O-PublicAdministrationDefenceCompulsorySocialSecurity" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OilGasSORP" name="OilGasSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OperationalStatusEntityHeading" name="OperationalStatusEntityHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OrdinaryShareClass1" name="OrdinaryShareClass1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OrdinaryShareClass2" name="OrdinaryShareClass2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OrdinaryShareClass3" name="OrdinaryShareClass3" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OrdinaryShareClass4" name="OrdinaryShareClass4" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OrdinaryShareClass5" name="OrdinaryShareClass5" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_OtherCurrencyUsedInBusinessReport" name="OtherCurrencyUsedInBusinessReport" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherIncorporatedAssociation" name="OtherIncorporatedAssociation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherLegislation" name="OtherLegislation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherNon-UK" name="OtherNon-UK" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherPeriod" name="OtherPeriod" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherReportingRegime" name="OtherReportingRegime" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherShareClass1" name="OtherShareClass1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherShareClass2" name="OtherShareClass2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherShareClass3" name="OtherShareClass3" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherShareClass4" name="OtherShareClass4" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherShareType" name="OtherShareType" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherStandards" name="OtherStandards" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_OtherUK" name="OtherUK" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_P-Education" name="P-Education" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP1" name="PartnerLLP1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP10" name="PartnerLLP10" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP11" name="PartnerLLP11" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP12" name="PartnerLLP12" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP13" name="PartnerLLP13" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP14" name="PartnerLLP14" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP15" name="PartnerLLP15" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP16" name="PartnerLLP16" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP17" name="PartnerLLP17" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP18" name="PartnerLLP18" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP19" name="PartnerLLP19" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP2" name="PartnerLLP2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP20" name="PartnerLLP20" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP3" name="PartnerLLP3" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP4" name="PartnerLLP4" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP5" name="PartnerLLP5" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP6" name="PartnerLLP6" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP7" name="PartnerLLP7" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP8" name="PartnerLLP8" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnerLLP9" name="PartnerLLP9" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PartnersLimitedLiabilityPartnershipHeading" name="PartnersLimitedLiabilityPartnershipHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PensionFundsSORP" name="PensionFundsSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PhoneNumberHeading" name="PhoneNumberHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PhoneNumberTypeDimension" name="PhoneNumberTypeDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PhoneNumberTypeHeading" name="PhoneNumberTypeHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Postal" name="Postal" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_PostalCodeZip" name="PostalCodeZip" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PreferenceShareClass1" name="PreferenceShareClass1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PreferenceShareClass2" name="PreferenceShareClass2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PreferenceShareClass3" name="PreferenceShareClass3" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PreferenceShareClass4" name="PreferenceShareClass4" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PreferenceShareClass5" name="PreferenceShareClass5" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_PrincipalCurrencyUsedInBusinessReport" name="PrincipalCurrencyUsedInBusinessReport" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_PrincipalLocation-CityOrTown" name="PrincipalLocation-CityOrTown" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PrivateLimitedCompanyLtd" name="PrivateLimitedCompanyLtd" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PublicLimitedCompanyPLC" name="PublicLimitedCompanyPLC" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_PublicLimitedCompanyPLCNotQuotedOnAnyExchange" name="PublicLimitedCompanyPLCNotQuotedOnAnyExchange" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Q-HumanHealthSocialWorkActivities" name="Q-HumanHealthSocialWorkActivities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Quarter1" name="Quarter1" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Quarter2" name="Quarter2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Quarter3" name="Quarter3" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Quarter4" name="Quarter4" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_R-ArtsEntertainmentRecreation" name="R-ArtsEntertainmentRecreation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_RegisteredCharity" name="RegisteredCharity" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_RegisteredOffice" name="RegisteredOffice" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_RegistrarInformation" name="RegistrarInformation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportAnAmendedRevisedVersionPreviouslyFiledReportTruefalse" name="ReportAnAmendedRevisedVersionPreviouslyFiledReportTruefalse" nillable="true" substitutionGroup="xbrli:item" type="xbrli:booleanItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportAnInitialFinancialStatementFromPubliclyListedEntityTruefalse" name="ReportAnInitialFinancialStatementFromPubliclyListedEntityTruefalse" nillable="true" substitutionGroup="xbrli:item" type="xbrli:booleanItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportAnInterimFinancialStatementFromPubliclyListedEntityTruefalse" name="ReportAnInterimFinancialStatementFromPubliclyListedEntityTruefalse" nillable="true" substitutionGroup="xbrli:item" type="xbrli:booleanItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportCopyrightStatement" name="ReportCopyrightStatement" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ReportDatesPeriodsCoveredHeading" name="ReportDatesPeriodsCoveredHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportIncludesListSubsidiariesTruefalse" name="ReportIncludesListSubsidiariesTruefalse" nillable="true" substitutionGroup="xbrli:item" type="xbrli:booleanItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportIncludesStrategicReportTruefalse" name="ReportIncludesStrategicReportTruefalse" nillable="true" substitutionGroup="xbrli:item" type="xbrli:booleanItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ReportInformationHeading" name="ReportInformationHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportPeriod" name="ReportPeriod" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ReportPeriodDimension" name="ReportPeriodDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ReportPeriodHypercube" name="ReportPeriodHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ReportPeriodPrimaryItems" name="ReportPeriodPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportPrincipalLanguage" name="ReportPrincipalLanguage" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ReportTitle" name="ReportTitle" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ResidualCompaniesActDisclosuresWithIFRS" name="ResidualCompaniesActDisclosuresWithIFRS" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_S-OtherServiceActivities" name="S-OtherServiceActivities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_SICCodeRecordedUKCompaniesHouse1" name="SICCodeRecordedUKCompaniesHouse1" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_SICCodeRecordedUKCompaniesHouse2" name="SICCodeRecordedUKCompaniesHouse2" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_SICCodeRecordedUKCompaniesHouse3" name="SICCodeRecordedUKCompaniesHouse3" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_SICCodeRecordedUKCompaniesHouse4" name="SICCodeRecordedUKCompaniesHouse4" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_SORPsApplied" name="SORPsApplied" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SORPsAppliedHypercube" name="SORPsAppliedHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SORPsAppliedPrimaryItems" name="SORPsAppliedPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SORPsDimension" name="SORPsDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SORPsHeading" name="SORPsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_ScopeAccounts" name="ScopeAccounts" nillable="true" substitutionGroup="xbrli:item" type="types:fixedItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ScopeAccountsDimension" name="ScopeAccountsDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ScopeAccountsHypercube" name="ScopeAccountsHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ScopeAccountsPrimaryItems" name="ScopeAccountsPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ScottishPartnership" name="ScottishPartnership" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SecondHalfH2" name="SecondHalfH2" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SeniorPartnerLimitedLiabilityPartnership" name="SeniorPartnerLimitedLiabilityPartnership" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ShareCapitalDividends-specificDimensionsHeading" name="ShareCapitalDividends-specificDimensionsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ShareDealingInformation" name="ShareDealingInformation" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ShareTypesDimension" name="ShareTypesDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SharesHypercube" name="SharesHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SharesPrimaryItems" name="SharesPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SmallCompaniesRegimeForAccounts" name="SmallCompaniesRegimeForAccounts" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SmallCompaniesRegimeForDirectorsReport" name="SmallCompaniesRegimeForDirectorsReport" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SocialHousingProvidersSORP" name="SocialHousingProvidersSORP" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_StandardCountriesRegionsDimensionHeading" name="StandardCountriesRegionsDimensionHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_StandardCurrenciesDimensionHeading" name="StandardCurrenciesDimensionHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_StandardLanguagesDimensionHeading" name="StandardLanguagesDimensionHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_StartDateForPeriodCoveredByReport" name="StartDateForPeriodCoveredByReport" nillable="true" substitutionGroup="xbrli:item" type="xbrli:dateItemType" xbrli:periodType="instant"/>
+   <element abstract="true" id="bus_Street" name="Street" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Switchboard" name="Switchboard" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_TaxonomyInformationHeading" name="TaxonomyInformationHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ThirdPartyAgent-specificDimensionsHeading" name="ThirdPartyAgent-specificDimensionsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ThirdPartyAgentStatusDimension" name="ThirdPartyAgentStatusDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ThirdPartyAgentsHeading" name="ThirdPartyAgentsHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ThirdPartyAgentsHypercube" name="ThirdPartyAgentsHypercube" nillable="true" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_ThirdPartyAgentsPrimaryItems" name="ThirdPartyAgentsPrimaryItems" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_TotalAgentsDefault" name="TotalAgentsDefault" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_UKCompaniesHouseRegisteredNumber" name="UKCompaniesHouseRegisteredNumber" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_UKVATRegistrationNumber" name="UKVATRegistrationNumber" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UnlimitedCompany" name="UnlimitedCompany" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseAddressTypeDimensionToDistinguishMainPostalStreetAddressGuidance" name="UseAddressTypeDimensionToDistinguishMainPostalStreetAddressGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseCountriesDimensionTagAttachedToAllLinesAddressToIdentifyCountryGuidance" name="UseCountriesDimensionTagAttachedToAllLinesAddressToIdentifyCountryGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseCountriesDimensionToIdentifyCountriesOrRegionsWhereOperationalStatusAppliesGuidance" name="UseCountriesDimensionToIdentifyCountriesOrRegionsWhereOperationalStatusAppliesGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseCountriesLanguagesDimensionsToIdentifyLocationLanguageWebsiteGuidance" name="UseCountriesLanguagesDimensionsToIdentifyLocationLanguageWebsiteGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseEntityContactTypeDimensionToIdentifyTypeOrPurposeContactGuidance" name="UseEntityContactTypeDimensionToIdentifyTypeOrPurposeContactGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseEntityOfficerStatusDimensionToIdentifyExecutiveOrNon-executiveStatusGuidance" name="UseEntityOfficerStatusDimensionToIdentifyExecutiveOrNon-executiveStatusGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseEntityOfficersDimensionToIdentifyPositionEntityOfficerGuidance" name="UseEntityOfficersDimensionToIdentifyPositionEntityOfficerGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseEntityShareClassesDimensionToIdentifyIndividualShareClassGuidance" name="UseEntityShareClassesDimensionToIdentifyIndividualShareClassGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseFormContactDimensionToDistinguishFormContactSuchAsSwitchboardOrDirectGuidance" name="UseFormContactDimensionToDistinguishFormContactSuchAsSwitchboardOrDirectGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseGroupCompanyDataDimensionToDistinguishGroupCompanyData-CompanyDefaultSettingOnAllDataGuidance" name="UseGroupCompanyDataDimensionToDistinguishGroupCompanyData-CompanyDefaultSettingOnAllDataGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UsePhoneNumberTypeDimensionToDistinguishLandlineMobileFaxGuidance" name="UsePhoneNumberTypeDimensionToDistinguishLandlineMobileFaxGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseShareTypesDimensionToIdentifyIndividualShareTypeGuidance" name="UseShareTypesDimensionToIdentifyIndividualShareTypeGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_UseThirdPartyAgentStatusDimensionToIdentifyAgentsIfMultipleAgentsExistUnderAnyIndividualCategoryGuidance" name="UseThirdPartyAgentStatusDimensionToIdentifyAgentsIfMultipleAgentsExistUnderAnyIndividualCategoryGuidance" nillable="true" substitutionGroup="xbrli:item" type="types:guidanceItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_VOIPContact" name="VOIPContact" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_VersionProductionSoftware" name="VersionProductionSoftware" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_WebsiteInformationHeading" name="WebsiteInformationHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_WebsiteMainPageURL" name="WebsiteMainPageURL" nillable="true" substitutionGroup="xbrli:item" type="xbrli:anyURIItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_X-CompaniesHouseDocumentAuthentication" name="X-CompaniesHouseDocumentAuthentication" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_X-EntityFormerLegalOrRegisteredNameGroupingDimension" name="X-EntityFormerLegalOrRegisteredNameGroupingDimension" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrldt:typedDomainRef="bus-2019-01-01.xsd#bus_EntityFormerLegalOrRegisteredNameGroupingDimension.domain" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_XBRLProductionSoftwareHeading" name="XBRLProductionSoftwareHeading" nillable="true" substitutionGroup="xbrli:item" type="types:headingItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_SmallEntities" name="SmallEntities" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_AbridgedAccounts" name="AbridgedAccounts" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent4" name="Agent4" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent5" name="Agent5" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent6" name="Agent6" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent7" name="Agent7" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent8" name="Agent8" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent9" name="Agent9" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="true" id="bus_Agent10" name="Agent10" nillable="true" substitutionGroup="xbrli:item" type="nonnum:domainItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_VATRegistrationNumber" name="VATRegistrationNumber" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+   <element abstract="false" id="bus_LegalEntityIdentifier" name="LegalEntityIdentifier" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+</schema>

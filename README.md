@@ -75,6 +75,10 @@ A single repository with all XBRL taxonomy files
 * FASB SRT 2018
 * FASB SRT 2019
 
+### FRC
+
+* 2019 Taxonomy suite Version 1.1.0
+
 ### xbrl.de (HGB)
 
 * HGB 5.0
