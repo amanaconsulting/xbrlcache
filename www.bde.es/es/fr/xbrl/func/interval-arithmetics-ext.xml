@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:gen="http://xbrl.org/2008/generic" 
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:cfi="http://xbrl.org/2010/custom-function"
+ xmlns:iaf="http://www.eurofiling.info/xbrl/func/interval-arithmetics"
+ xmlns:variable="http://xbrl.org/2008/variable"
+ xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:instance="http://xbrl.org/2010/variable/instance"
+ xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+ <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation"
+  xlink:type="simple"
+  xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+ <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+  
+  	<variable:function xlink:type="resource" xlink:label="function_error-margin"
+	   xlink:title="function" name="iaf:error-margin" output="item()">
+	   <variable:input type="item()+"/>
+	  </variable:function>
+	  <cfi:implementation xlink:type="resource" xlink:label="implementation_error-margin"
+	   xlink:title="implementation">
+	   <cfi:input name="param"/>
+	   <cfi:step name="threshold">iaf:splitValueThreshold($param)</cfi:step>
+	   <cfi:output>$threshold[2]</cfi:output>
+	  </cfi:implementation>
+	  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+	   xlink:from="function_error-margin" xlink:to="implementation_error-margin"
+	   xlink:title="unknown: function to implementation" order="1.0"/>
+
+ </gen:link>
+</link:linkbase>

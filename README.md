@@ -80,6 +80,10 @@ A single repository with all XBRL taxonomy files
 * FASB SRT 2018
 * FASB SRT 2019
 
+### Finanzmarktaufsicht Liechtenstein (FMA)
+
+* Statutory Taxonomy
+
 ### FRC
 
 * 2019 Taxonomy suite Version 1.1.0

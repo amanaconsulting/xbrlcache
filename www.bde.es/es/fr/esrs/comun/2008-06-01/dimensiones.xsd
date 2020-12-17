@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-cm-dim="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dimensiones" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dimensiones" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="dimensiones-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="dimensiones-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="dimensiones-label-es.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>    
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:element name="Agrupacion" id="es-be-cm-dim_Agrupacion" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="AgrupacionIndividualConInstrumentales" id="es-be-cm-dim_AgrupacionIndividualConInstrumentales" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DeclaracionLegal" id="es-be-cm-dim_DeclaracionLegal" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DeclaracionParalela" id="es-be-cm-dim_DeclaracionParalela" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="AgrupacionSubgrupoConsolidado" id="es-be-cm-dim_AgrupacionSubgrupoConsolidado" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="AgrupacionIndividual" id="es-be-cm-dim_AgrupacionIndividual" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="AgrupacionGrupoConsolidado" id="es-be-cm-dim_AgrupacionGrupoConsolidado" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TipoDeclaracion" id="es-be-cm-dim_TipoDeclaracion" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="AgrupacionGestionDomain" id="es-be-cm-dim_AgrupacionGestionDomain">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="21"/>
+        <xsd:maxInclusive value="89"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="AgrupacionGestion" id="es-be-cm-dim_AgrupacionGestion" type="xbrli:stringItemType" xbrldt:typedDomainRef="#es-be-cm-dim_AgrupacionGestionDomain" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>
