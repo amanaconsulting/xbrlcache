@@ -65,6 +65,10 @@ A single repository with all XBRL taxonomy files
 
 * DNB Pension Funds 1.0.3 FTK reporting
 
+### KvK Taxonomy
+
+* nt12
+
 ### ESMA ESEF
 
 * ESMA ESEF 2017
