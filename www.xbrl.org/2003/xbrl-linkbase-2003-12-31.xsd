@@ -3,7 +3,7 @@
  
 This version is non-normative - it should be identical to the normative
 version that is contained in Appendix A of the specification RECOMMENDATION
-with errata corrections to 2008-07-02 except for this comment.
+with errata corrections to 2005-11-07 except for this comment.
 
 Following the schema maintenance policy of XBRL International, this version's 
 location on the web will be as follows:
@@ -15,7 +15,7 @@ http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd
 
 2) It will be archived in perpetuity at 
 
-http://www.xbrl.org/2003/2008-07-02/xbrl-linkbase-2003-12-31.xsd
+http://www.xbrl.org/2003/2005-11-07/xbrl-linkbase-2003-12-31.xsd
 
 -->
 <schema targetNamespace="http://www.xbrl.org/2003/linkbase" 
@@ -36,8 +36,7 @@ http://www.xbrl.org/2003/2008-07-02/xbrl-linkbase-2003-12-31.xsd
 
   <import namespace="http://www.w3.org/1999/xlink" 
     schemaLocation="xlink-2003-12-31.xsd"/>
-    
-  
+
   <element name="documentation"
     type="xl:documentationType"
     substitutionGroup="xl:documentation">
@@ -386,7 +385,7 @@ http://www.xbrl.org/2003/2008-07-02/xbrl-linkbase-2003-12-31.xsd
     <complexType>
       <complexContent>
         <extension base="xl:simpleType">
-          <attribute name="roleURI" type="xl:nonEmptyURI" use="required">
+          <attribute name="roleURI" type="xlink:nonEmptyURI" use="required">
             <annotation>
               <documentation>
                 This attribute contains the role name.
@@ -409,7 +408,7 @@ http://www.xbrl.org/2003/2008-07-02/xbrl-linkbase-2003-12-31.xsd
     <complexType>
       <complexContent>
         <extension base="xl:simpleType">
-          <attribute name="arcroleURI" type="xl:nonEmptyURI" use="required">
+          <attribute name="arcroleURI" type="xlink:nonEmptyURI" use="required">
             <annotation>
               <documentation>
                 This attribute contains the arc role name.
@@ -452,7 +451,7 @@ http://www.xbrl.org/2003/2008-07-02/xbrl-linkbase-2003-12-31.xsd
         <element ref="link:definition" minOccurs="0"/>
         <element ref="link:usedOn" maxOccurs="unbounded"/>
       </sequence>
-      <attribute name="roleURI" type="xl:nonEmptyURI" use="required"/>
+      <attribute name="roleURI" type="xlink:nonEmptyURI" use="required"/>
       <attribute name="id" type="ID"/>
     </complexType>
   </element>
@@ -469,7 +468,7 @@ http://www.xbrl.org/2003/2008-07-02/xbrl-linkbase-2003-12-31.xsd
         <element ref="link:definition" minOccurs="0"/>
         <element ref="link:usedOn" maxOccurs="unbounded"/>
       </sequence>
-      <attribute name="arcroleURI" type="xl:nonEmptyURI" use="required"/>
+      <attribute name="arcroleURI" type="xlink:nonEmptyURI" use="required"/>
       <attribute name="id" type="ID"/>
       <attribute name="cyclesAllowed" use="required">
         <simpleType>
