@@ -68,6 +68,7 @@ A single repository with all XBRL taxonomy files
 
 ### KvK Taxonomy
 
+* nt11
 * nt12
 
 ### ESMA ESEF

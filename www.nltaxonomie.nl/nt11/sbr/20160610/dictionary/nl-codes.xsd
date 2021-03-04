@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20160610
+  Release date: Fri Jun 10 09:00:00 2016
+-->
+<xs:schema xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nl-codes="http://www.nltaxonomie.nl/nt11/sbr/20160610/dictionary/nl-codes" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nltaxonomie.nl/nt11/sbr/20160610/dictionary/nl-codes">
+  <xs:annotation>
+    <xs:appinfo>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="nl-codes-generic-lab-en.xml" xlink:role="http://www.xbrl.org/2003/role/link" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="nl-codes-generic-lab-nl.xml" xlink:role="http://www.xbrl.org/2003/role/link" xlink:type="simple"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <xs:complexType id="nl-codes_genderItemType" name="genderItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:enumeration id="nl-codes_Sex_M" value="Man"/>
+        <xs:enumeration id="nl-codes_Sex_U" value="Onbekend"/>
+        <xs:enumeration id="nl-codes_Sex_F" value="Vrouw"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-codes_legalItemType" name="legalItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:enumeration id="nl-codes_Legal_BV" value="Besloten vennootschap"/>
+        <xs:enumeration id="nl-codes_Legal_BTLNNP" value="Buitenlandse NNP als functionaris"/>
+        <xs:enumeration id="nl-codes_Legal_BTLR" value="Buitenlandse rechtsvorm"/>
+        <xs:enumeration id="nl-codes_Legal_CVR" value="Commanditaire vennootschap met rechtspersoonlijkheid"/>
+        <xs:enumeration id="nl-codes_Legal_CV" value="Commanditaire vennootschap"/>
+        <xs:enumeration id="nl-codes_Legal_Coop" value="Cooperatie"/>
+        <xs:enumeration id="nl-codes_Legal_EenmanszaakMeer" value="Eenmanszaak met meerdere eigenaren"/>
+        <xs:enumeration id="nl-codes_Legal_Eenmanszaak" value="Eenmanszaak"/>
+        <xs:enumeration id="nl-codes_Legal_EES" value="Europees Economisch Samenwerkingsverband"/>
+        <xs:enumeration id="nl-codes_Legal_SCE" value="Europese cooperatieve vennootschap (SCE)"/>
+        <xs:enumeration id="nl-codes_Legal_SE" value="Europese naamloze vennootschap (SE)"/>
+        <xs:enumeration id="nl-codes_Legal_FBTLV" value="Formeel buitenlandse vennootschap"/>
+        <xs:enumeration id="nl-codes_Legal_KapV" value="Kapitaal vennootschap binnen EER"/>
+        <xs:enumeration id="nl-codes_Legal_Kerk" value="Kerkgenootschap"/>
+        <xs:enumeration id="nl-codes_Legal_Maatschap" value="Maatschap"/>
+        <xs:enumeration id="nl-codes_Legal_NV" value="Naamloze vennootschap"/>
+        <xs:enumeration id="nl-codes_Legal_NFBTLV" value="Niet formeel buitenlandse vennootschap"/>
+        <xs:enumeration id="nl-codes_Legal_OWM" value="Onderlinge waarborg maatschappij"/>
+        <xs:enumeration id="nl-codes_Legal_OVR" value="Openbare vennootschap met rechtspersoonlijkheid"/>
+        <xs:enumeration id="nl-codes_Legal_OV" value="Openbare vennootschap"/>
+        <xs:enumeration id="nl-codes_Legal_OvBTLR" value="Overige buitenlandse rechtsvorm"/>
+        <xs:enumeration id="nl-codes_Legal_Overige" value="Overige rechtsvorm"/>
+        <xs:enumeration id="nl-codes_Legal_Publiek" value="Publiekrechtelijke rechtspersoon"/>
+        <xs:enumeration id="nl-codes_Legal_IO" value="Rechtspersoon in oprichting"/>
+        <xs:enumeration id="nl-codes_Legal_Rederij" value="Rederij"/>
+        <xs:enumeration id="nl-codes_Legal_Stichting" value="Stichting"/>
+        <xs:enumeration id="nl-codes_Legal_VoF" value="Vennootschap onder firma"/>
+        <xs:enumeration id="nl-codes_Legal_VvE" value="Vereniging van eigenaars"/>
+        <xs:enumeration id="nl-codes_Legal_Vereniging" value="Vereniging"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-codes_personRoleItemType" name="personRoleItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:enumeration id="nl-codes_PersonRole_Berichtgever" value="Berichtgever"/>
+        <xs:enumeration id="nl-codes_PersonRole_Contactpersoon" value="Contactpersoon"/>
+        <xs:enumeration id="nl-codes_PersonRole_Informatieplichtige" value="Informatieplichtige"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-codes_yesNoItemType" name="yesNoItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:enumeration id="nl-codes_Yes" value="Ja"/>
+        <xs:enumeration id="nl-codes_No" value="Nee"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
