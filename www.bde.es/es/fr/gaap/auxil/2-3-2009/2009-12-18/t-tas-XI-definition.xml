@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/7214" xlink:type="simple" xlink:href="tas-rol.xsd#TasacionesInmueblesSingulares"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/tas/7214">
+    <link:loc xlink:type="locator" xlink:href="t-tas-XI.xsd#t-tas-XI_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_TipoInmueble" xlink:label="TipoInmueble" xlink:title="TipoInmueble"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="TipoInmueble" xlink:title="definition: Anejo to TipoInmueble" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_ValorTasaciones" xlink:label="ValorTasaciones" xlink:title="ValorTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="ValorTasaciones" xlink:title="definition: Anejo to ValorTasaciones" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_SuperficieUtilizableM2" xlink:label="SuperficieUtilizableM2" xlink:title="SuperficieUtilizableM2"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="SuperficieUtilizableM2" xlink:title="definition: Anejo to SuperficieUtilizableM2" use="optional" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-XI.xsd#t-tas-XI_InmueblesSingularesHypercube" xlink:label="InmueblesSingularesHypercube" xlink:title="InmueblesSingularesHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="InmueblesSingularesHypercube" xlink:title="definition: Anejo to InmueblesSingularesHypercube" use="optional" order="4.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-identificadores.xsd#d-tas-ide_IdentificacionTasacionInmuebleSingular" xlink:label="IdentificacionTasacionInmuebleSingular" xlink:title="IdentificacionTasacionInmuebleSingular"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="InmueblesSingularesHypercube" xlink:to="IdentificacionTasacionInmuebleSingular" xlink:title="definition: InmueblesSingularesHypercube to IdentificacionTasacionInmuebleSingular" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-identificadores.xsd#d-tas-ide_CodigoPostal" xlink:label="CodigoPostal" xlink:title="CodigoPostal"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="InmueblesSingularesHypercube" xlink:to="CodigoPostal" xlink:title="definition: InmueblesSingularesHypercube to CodigoPostal" order="2.0"/>
+  </link:definitionLink>
+</link:linkbase>

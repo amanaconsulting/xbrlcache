@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-p-gr="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-gr" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:es-be-dt="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-dt" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:cebs-ef-ele="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:cebs-ef-arc="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/arcroles" xmlns:dt="http://xbrl.c-ebs.org/dt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-gr" elementFormDefault="qualified">
+  <xsd:annotation>
+      <xsd:appinfo>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-gr-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-gr-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-gr-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/gr" id="rt_gr">
+            <link:definition>ELR para la presentación y definición</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-dt" schemaLocation="es-be-dt.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:import namespace="http://xbrl.c-ebs.org/dt" schemaLocation="http://www.c-ebs.org/eu/fr/esrs/corep/2011-12-31/dt-2005-06-30.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/elements.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/arcroles" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/arcroles.xsd"/>
+  <xsd:element name="TotalRiesgos" id="es-be-p-gr_TotalRiesgos" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TotalRiesgosDirectos" id="es-be-p-gr_TotalRiesgosDirectos" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TotalRiesgosAtribuidosClienteGrupoGarantiasPersonales" id="es-be-p-gr_TotalRiesgosAtribuidosClienteGrupoGarantiasPersonales" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TotalRiesgosReconocimientoTecnicasReduccionRC" id="es-be-p-gr_TotalRiesgosReconocimientoTecnicasReduccionRC" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DeduccionesRiesgos" id="es-be-p-gr_DeduccionesRiesgos" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DeduccionesRiesgosExentos" id="es-be-p-gr_DeduccionesRiesgosExentos" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DeduccionesRiesgosComputados50Porciento" id="es-be-p-gr_DeduccionesRiesgosComputados50Porciento" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TotalRiesgosAjustados" id="es-be-p-gr_TotalRiesgosAjustados" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TotalRiesgosAjustadosPorcentajeSobreRecursosPropios" id="es-be-p-gr_TotalRiesgosAjustadosPorcentajeSobreRecursosPropios" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="RP60Domain" id="es-be-p-gr_RP60Domain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ClientesIndividualesGrupos" id="es-be-p-gr_ClientesIndividualesGrupos" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="IdentificacionClienteIndividual" id="es-be-p-gr_IdentificacionClienteIndividual" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ComposicionGruposEfectosAgregacionRiesgos" id="es-be-p-gr_ComposicionGruposEfectosAgregacionRiesgos" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DenominacionClienteIndividual" id="es-be-p-gr_DenominacionClienteIndividual" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>

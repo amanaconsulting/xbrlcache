@@ -1,0 +1,2047 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:base="http://www.eurofiling.info/base"
+               xmlns:dim="http://www.eurofiling.info/dim"
+               xmlns:dMC="http://www.eurofiling.info/d/MC"
+               xmlns:dTI="http://www.eurofiling.info/d/TI"
+               xmlns:dLT="http://www.eurofiling.info/d/LT"
+               xmlns:dCT="http://www.eurofiling.info/d/CT"
+               xmlns:dCG="http://www.eurofiling.info/d/CG"
+               xmlns:dPI="http://www.eurofiling.info/d/PI"
+               xmlns:dAI="http://www.eurofiling.info/d/AI"
+               xmlns:dAT="http://www.eurofiling.info/d/AT"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_2175_cuadres_1"
+                           id="ref_atributosCuadres_2175_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_2175_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_2175_cuadres_1"
+                           id="ref_moduloDefinicion_2175_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>ind_tip</frRef:Modulo>
+         <frRef:Instancia>Mind_tip</frRef:Instancia>
+         <frRef:Estado>2175</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_2175_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="10"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="11"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="12"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="13"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_tipos_2175-or-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="14"/>
+      <link:loc xlink:href="comun.xml#var_UmbralBasico0" xlink:label="var_UmbralBasico0"
+                xlink:type="locator"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-1" test="$NDERorAAR_BV_APRC ge 0"
+                         id="val_tipos_2175-or-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="NDERorAAR_BV_APRC" xlink:from="val_tipos_2175-or-1"
+                            xlink:to="var_base_pd33_OrOthersd10e26"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-1" id="lab_val_tipos_2175-or-1"
+                   xlink:type="resource"
+                   xml:lang="es">
+Todas las claves han de ser mayor o igual 0
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-1" xlink:to="lab_val_tipos_2175-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_base_pd33_OrOthersd10e26" bindAsSequence="false"
+                             id="var_base_pd33_OrOthersd10e26"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd33_OrOthersd10e26"
+                                  xlink:to="fil_base_pd33_OrOthersd10e28"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_base_pd33_OrOthersd10e28" id="fil_base_pd33_OrOthersd10e28"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd33</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>base:md34</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-1" id="ref_val_tipos_2175-or-1"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-1" xlink:to="ref_val_tipos_2175-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-2" test="($SPUP - $Households) le $umbral"
+                         id="val_tipos_2175-or-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-2"
+                                     xlink:to="fil_base_md34d10e52"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-2"
+                                     xlink:to="fil_ASDim_x150d10e62"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-2"
+                                     xlink:to="fil_IFDim_x0_childd10e72"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-2"
+                                     xlink:to="fil_LTDim_x4d10e80"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <variable:variableArc name="Households" xlink:from="val_tipos_2175-or-2"
+                            xlink:to="var_CSDim_x21d10e95"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="SPUP" xlink:from="val_tipos_2175-or-2" xlink:to="var_CSDim_x36d10e113"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_tipos_2175-or-2" xlink:to="var_UmbralBasico0"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-2" id="lab_val_tipos_2175-or-2"
+                   xlink:type="resource"
+                   xml:lang="es">
+0091 menor o igual 0088
+0092 menor o igual 0089
+0093 menor o igual 0090
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-2" xlink:to="lab_val_tipos_2175-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_base_md34d10e52" id="fil_base_md34d10e52"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:md34</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_ASDim_x150d10e62" id="fil_ASDim_x150d10e62"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x150</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_IFDim_x0_childd10e72" id="fil_IFDim_x0_childd10e72"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+            <df:linkrole>http://www.eurofiling.info/d/TI/sta/complete/8</df:linkrole>
+            <df:arcrole>http://xbrl.org/int/dim/arcrole/domain-member</df:arcrole>
+            <df:axis>child</df:axis>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_LTDim_x4d10e80" id="fil_LTDim_x4d10e80" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dLT:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CSDim_x21d10e95" bindAsSequence="false"
+                             id="var_CSDim_x21d10e95"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CSDim_x21d10e95"
+                                  xlink:to="fil_CSDim_x21d10e97"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CSDim_x21d10e97" id="fil_CSDim_x21d10e97"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x21</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CSDim_x36d10e113" bindAsSequence="false"
+                             id="var_CSDim_x36d10e113"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CSDim_x36d10e113"
+                                  xlink:to="fil_CSDim_x36d10e115"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CSDim_x36d10e115" id="fil_CSDim_x36d10e115"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x36</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-2" id="ref_val_tipos_2175-or-2"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-2" xlink:to="ref_val_tipos_2175-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-3"
+                         test="($IF_f1y_OM_o1y - (sum($IF_f3m_3m1y_OM_all))) le $umbral"
+                         id="val_tipos_2175-or-3"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-3"
+                                     xlink:to="fil_base_md34d10e137"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-3"
+                                     xlink:to="fil_ASDim_x150d10e147"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-3"
+                                     xlink:to="fil_CSDim_x8d10e157"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="IF_f1y_OM_o1y" xlink:from="val_tipos_2175-or-3"
+                            xlink:to="var_IFDim_x18OMDim_x1d10e172"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="IF_f3m_3m1y_OM_all" xlink:from="val_tipos_2175-or-3"
+                            xlink:to="var_IFDim_x19OMDim_x0d10e200"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_tipos_2175-or-3" xlink:to="var_UmbralBasico0"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-3" id="lab_val_tipos_2175-or-3"
+                   xlink:type="resource"
+                   xml:lang="es">
+0104 menor o igual 0098 + 0099
+0112 menor o igual 0106 + 0107
+0120 menor o igual 0114 + 0115
+0329 menor o igual 0323 + 0324
+0337 menor o igual 0331 + 0332
+0345 menor o igual 0339 + 0340
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-3" xlink:to="lab_val_tipos_2175-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_base_md34d10e137" id="fil_base_md34d10e137"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:md34</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_ASDim_x150d10e147" id="fil_ASDim_x150d10e147"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x150</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x8d10e157" id="fil_CSDim_x8d10e157"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x8</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_IFDim_x18OMDim_x1d10e172" bindAsSequence="false"
+                             id="var_IFDim_x18OMDim_x1d10e172"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_IFDim_x18OMDim_x1d10e172"
+                                  xlink:to="fil_IFDim_x18d10e174"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_IFDim_x18OMDim_x1d10e172"
+                                  xlink:to="fil_OMDim_x1d10e184"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_IFDim_x18d10e174" id="fil_IFDim_x18d10e174"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x18</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x1d10e184" id="fil_OMDim_x1d10e184"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_IFDim_x19OMDim_x0d10e200" bindAsSequence="true"
+                             id="var_IFDim_x19OMDim_x0d10e200"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_IFDim_x19OMDim_x0d10e200"
+                                  xlink:to="fil_IFDim_x19d10e202"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_IFDim_x19OMDim_x0d10e200"
+                                  xlink:to="fil_OMDim_x0d10e216"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_IFDim_x19d10e202" id="fil_IFDim_x19d10e202"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x19</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x11</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e216" id="fil_OMDim_x0d10e216"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-3" id="ref_val_tipos_2175-or-3"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-3" xlink:to="ref_val_tipos_2175-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-4" test="($BV_CG - $BV) le $umbral"
+                         id="val_tipos_2175-or-4"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-4"
+                                     xlink:to="fil_LTDim_x1d10e236"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="BV" xlink:from="val_tipos_2175-or-4"
+                            xlink:to="var_base_md34CGDim_d10e254"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="BV_CG" xlink:from="val_tipos_2175-or-4"
+                            xlink:to="var_base_md34CGDim_x1LNDim_x1d10e278"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_tipos_2175-or-4" xlink:to="var_UmbralBasico0"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-4" id="lab_val_tipos_2175-or-4"
+                   xlink:type="resource"
+                   xml:lang="es">
+0304 menor o igual 0079
+0305 menor o igual 0080
+0306 menor o igual 0081
+0307 menor o igual 0082
+0309 menor o igual 0084
+0310 menor o igual 0085
+0311 menor o igual 0086
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-4" xlink:to="lab_val_tipos_2175-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_LTDim_x1d10e236" id="fil_LTDim_x1d10e236"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dLT:x1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dLT:x3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_md34CGDim_d10e254" bindAsSequence="false"
+                             id="var_base_md34CGDim_d10e254"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34CGDim_d10e254"
+                                  xlink:to="fil_base_md34d10e256"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_base_md34CGDim_d10e254"
+                                  xlink:to="fil_CGDim_d10e266"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_md34d10e256" id="fil_base_md34d10e256"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:md34</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_d10e266" id="fil_CGDim_d10e266" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_md34CGDim_x1LNDim_x1d10e278" bindAsSequence="false"
+                             id="var_base_md34CGDim_x1LNDim_x1d10e278"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34CGDim_x1LNDim_x1d10e278"
+                                  xlink:to="fil_base_md34d10e280"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34CGDim_x1LNDim_x1d10e278"
+                                  xlink:to="fil_CGDim_x1d10e290"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34CGDim_x1LNDim_x1d10e278"
+                                  xlink:to="fil_LNDim_x1d10e300"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_base_md34d10e280" id="fil_base_md34d10e280"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:md34</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_x1d10e290" id="fil_CGDim_x1d10e290"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCG:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_LNDim_x1d10e300" id="fil_LNDim_x1d10e300"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dPI:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-4" id="ref_val_tipos_2175-or-4"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-4</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-4" xlink:to="ref_val_tipos_2175-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-5" test="($BV_CG - $BV) le $umbral"
+                         id="val_tipos_2175-or-5"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-5"
+                                     xlink:to="fil_SZDim_x1d10e322"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="BV" xlink:from="val_tipos_2175-or-5"
+                            xlink:to="var_base_md34CGDim_d10e344"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="BV_CG" xlink:from="val_tipos_2175-or-5"
+                            xlink:to="var_base_md34CGDim_x1LNDim_x1d10e368"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_tipos_2175-or-5" xlink:to="var_UmbralBasico0"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-5" id="lab_val_tipos_2175-or-5"
+                   xlink:type="resource"
+                   xml:lang="es">
+0323 menor o igual 0098
+0324 menor o igual 0099
+0325 menor o igual 0100
+0326 menor o igual 0101
+0327 menor o igual 0102
+0328 menor o igual 0103
+0329 menor o igual 0104
+0331 menor o igual 0106
+0332 menor o igual 0107
+0333 menor o igual 0108
+0334 menor o igual 0109
+0335 menor o igual 0110
+0336 menor o igual 0111
+0337 menor o igual 0112
+0339 menor o igual 0114
+0340 menor o igual 0115
+0341 menor o igual 0116
+0342 menor o igual 0117
+0343 menor o igual 0118
+0344 menor o igual 0119
+0345 menor o igual 0120
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-5" xlink:to="lab_val_tipos_2175-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_SZDim_x1d10e322" id="fil_SZDim_x1d10e322"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:SZ</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAI:x1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dAI:x2</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dAI:x3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_md34CGDim_d10e344" bindAsSequence="false"
+                             id="var_base_md34CGDim_d10e344"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34CGDim_d10e344"
+                                  xlink:to="fil_base_md34d10e346"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_base_md34CGDim_d10e344"
+                                  xlink:to="fil_CGDim_d10e356"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_md34d10e346" id="fil_base_md34d10e346"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:md34</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_d10e356" id="fil_CGDim_d10e356" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_md34CGDim_x1LNDim_x1d10e368" bindAsSequence="false"
+                             id="var_base_md34CGDim_x1LNDim_x1d10e368"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34CGDim_x1LNDim_x1d10e368"
+                                  xlink:to="fil_base_md34d10e370"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34CGDim_x1LNDim_x1d10e368"
+                                  xlink:to="fil_CGDim_x1d10e380"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34CGDim_x1LNDim_x1d10e368"
+                                  xlink:to="fil_LNDim_x1d10e390"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_base_md34d10e370" id="fil_base_md34d10e370"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:md34</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_x1d10e380" id="fil_CGDim_x1d10e380"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCG:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_LNDim_x1d10e390" id="fil_LNDim_x1d10e390"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dPI:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-5" id="ref_val_tipos_2175-or-5"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-5</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-5" xlink:to="ref_val_tipos_2175-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-7" test="($BV ne 0) and ($NDER ne 0)"
+                         id="val_tipos_2175-or-7"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-7"
+                                     xlink:to="fil_ASDim_x152d10e413"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-7"
+                                     xlink:to="fil_ATDim_x67d10e427"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableArc name="BV" xlink:from="val_tipos_2175-or-7" xlink:to="var_base_md34d10e441"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="NDER" xlink:from="val_tipos_2175-or-7" xlink:to="var_base_pd35d10e465"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-7" id="lab_val_tipos_2175-or-7"
+                   xlink:type="resource"
+                   xml:lang="es"> 
+Si existe importe en: 	debe existir importe en:
+0001 					0076 y viceversa
+0002 					0077 y viceversa
+0020 					0095 y viceversa
+0021 					0096 y viceversa
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-7" xlink:to="lab_val_tipos_2175-or-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x152d10e413" id="fil_ASDim_x152d10e413"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x152</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dMC:x146</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e427" id="fil_ATDim_x67d10e427"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_md34d10e441" bindAsSequence="false"
+                             id="var_base_md34d10e441"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34d10e441"
+                                  xlink:to="fil_base_md34d10e443"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_md34d10e441" xlink:to="fil_d10e453"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_md34d10e443" id="fil_base_md34d10e443"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:md34</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <uf:generalMeasures test="true()" xlink:label="fil_d10e453" id="fil_d10e453" xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_base_pd35d10e465" bindAsSequence="false"
+                             id="var_base_pd35d10e465"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35d10e465"
+                                  xlink:to="fil_base_pd35d10e467"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35d10e465" xlink:to="fil_d10e477"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e467" id="fil_base_pd35d10e467"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <uf:generalMeasures test="true()" xlink:label="fil_d10e477" id="fil_d10e477" xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-7" id="ref_val_tipos_2175-or-7"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-7</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-7" xlink:to="ref_val_tipos_2175-or-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-8" test="($APRC ne 0) and (sum($NDER) ne 0)"
+                         id="val_tipos_2175-or-8"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-8"
+                                     xlink:to="fil_LTDim_x1d10e490"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-8"
+                                     xlink:to="fil_CSDim_x21d10e508"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="true" xlink:from="val_tipos_2175-or-8" xlink:to="fil_CGDim_d10e518"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="APRC" xlink:from="val_tipos_2175-or-8" xlink:to="var_base_pd33d10e528"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="NDER" xlink:from="val_tipos_2175-or-8"
+                            xlink:to="var_base_pd35IFDim_x18d10e546"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-8" id="lab_val_tipos_2175-or-8"
+                   xlink:type="resource"
+                   xml:lang="es">
+Si existe importe en: 		debe existir importe en:
+0004 + 0005 + 0006 + 0007 	0153 y viceversa
+0009 + 0010 + 0011 			0158 y viceversa
+0013 + 0014 + 0015 			0162 y viceversa
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-8" xlink:to="lab_val_tipos_2175-or-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_LTDim_x1d10e490" id="fil_LTDim_x1d10e490"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dLT:x1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dLT:x3</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dLT:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x21d10e508" id="fil_CSDim_x21d10e508"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x21</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CGDim_d10e518" id="fil_CGDim_d10e518" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd33d10e528" bindAsSequence="false"
+                             id="var_base_pd33d10e528"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd33d10e528"
+                                  xlink:to="fil_base_pd33d10e530"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_base_pd33d10e530" id="fil_base_pd33d10e530"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd33</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_base_pd35IFDim_x18d10e546" bindAsSequence="true"
+                             id="var_base_pd35IFDim_x18d10e546"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x18d10e546"
+                                  xlink:to="fil_base_pd35d10e548"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x18d10e546"
+                                  xlink:to="fil_IFDim_x18d10e558"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e548" id="fil_base_pd35d10e548"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_IFDim_x18d10e558" id="fil_IFDim_x18d10e558"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x18</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x4</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x14</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x5</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x13</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-8" id="ref_val_tipos_2175-or-8"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-8</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-8" xlink:to="ref_val_tipos_2175-or-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-9"
+                         test="if ($SPUP ne 0) then ($Households ne 0) else true()"
+                         id="val_tipos_2175-or-9"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-9"
+                                     xlink:to="fil_base_pd35d10e593"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-9"
+                                     xlink:to="fil_ASDim_x150d10e603"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-9"
+                                     xlink:to="fil_IFDim_x0_childd10e613"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-9"
+                                     xlink:to="fil_LTDim_x4d10e621"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <variable:variableArc name="Households" xlink:from="val_tipos_2175-or-9"
+                            xlink:to="var_CSDim_x21d10e636"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="SPUP" xlink:from="val_tipos_2175-or-9" xlink:to="var_CSDim_x36d10e654"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-9" id="lab_val_tipos_2175-or-9"
+                   xlink:type="resource"
+                   xml:lang="es">
+Si existe importe en: 	debe existir importe en:
+0016					0013
+0017					0014
+0018					0015
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-9" xlink:to="lab_val_tipos_2175-or-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e593" id="fil_base_pd35d10e593"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_ASDim_x150d10e603" id="fil_ASDim_x150d10e603"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x150</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_IFDim_x0_childd10e613" id="fil_IFDim_x0_childd10e613"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+            <df:linkrole>http://www.eurofiling.info/d/TI/sta/complete/8</df:linkrole>
+            <df:arcrole>http://xbrl.org/int/dim/arcrole/domain-member</df:arcrole>
+            <df:axis>child</df:axis>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_LTDim_x4d10e621" id="fil_LTDim_x4d10e621"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dLT:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CSDim_x21d10e636" bindAsSequence="false"
+                             id="var_CSDim_x21d10e636"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CSDim_x21d10e636"
+                                  xlink:to="fil_CSDim_x21d10e638"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CSDim_x21d10e638" id="fil_CSDim_x21d10e638"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x21</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CSDim_x36d10e654" bindAsSequence="false"
+                             id="var_CSDim_x36d10e654"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CSDim_x36d10e654"
+                                  xlink:to="fil_CSDim_x36d10e656"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CSDim_x36d10e656" id="fil_CSDim_x36d10e656"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x36</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-9" id="ref_val_tipos_2175-or-9"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-9</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-9" xlink:to="ref_val_tipos_2175-or-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-10" test="($APRC ne 0) and (sum($NDER) ne 0)"
+                         id="val_tipos_2175-or-10"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-10"
+                                     xlink:to="fil_SZDim_x1d10e674"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="true" xlink:from="val_tipos_2175-or-10"
+                                     xlink:to="fil_CGDim_d10e692"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableArc name="APRC" xlink:from="val_tipos_2175-or-10" xlink:to="var_base_pd33d10e701"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="NDER" xlink:from="val_tipos_2175-or-10"
+                            xlink:to="var_base_pd35IFDim_x19d10e720"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-10" id="lab_val_tipos_2175-or-10"
+                   xlink:type="resource"
+                   xml:lang="es">
+Si existe importe en: 						debe existir importe en:
+0023 + 0024 + 0025 + 0026 + 0027 + 0028 	0172 y viceversa
+0031 + 0032 + 0033 + 0034 + 0035 + 0036 	0180 y viceversa
+0039 + 0040 + 0041 + 0042 + 0043 + 0044 	0188 y viceversa
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-10" xlink:to="lab_val_tipos_2175-or-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_SZDim_x1d10e674" id="fil_SZDim_x1d10e674"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:SZ</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAI:x1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dAI:x2</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dAI:x3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CGDim_d10e692" id="fil_CGDim_d10e692" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd33d10e701" bindAsSequence="false"
+                             id="var_base_pd33d10e701"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd33d10e701"
+                                  xlink:to="fil_base_pd33d10e703"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_base_pd33d10e703" id="fil_base_pd33d10e703"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd33</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_base_pd35IFDim_x19d10e720" bindAsSequence="true"
+                             id="var_base_pd35IFDim_x19d10e720"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x19d10e720"
+                                  xlink:to="fil_base_pd35d10e722"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x19d10e720"
+                                  xlink:to="fil_IFDim_x19d10e732"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e722" id="fil_base_pd35d10e722"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_IFDim_x19d10e732" id="fil_IFDim_x19d10e732"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x19</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x11</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x3</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x12</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x14</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x5</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-10" id="ref_val_tipos_2175-or-10"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-10</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-10" xlink:to="ref_val_tipos_2175-or-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-11"
+                         test="if ($IF_f1y_OM_o1y ne 0) then (sum($IF_f3m_3m1y_OM_all) ne 0) else true()"
+                         id="val_tipos_2175-or-11"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-11"
+                                     xlink:to="fil_base_pd35d10e771"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-11"
+                                     xlink:to="fil_ASDim_x150d10e781"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-11"
+                                     xlink:to="fil_CSDim_x8d10e791"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="IF_f1y_OM_o1y" xlink:from="val_tipos_2175-or-11"
+                            xlink:to="var_IFDim_x18OMDim_x1d10e806"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="IF_f3m_3m1y_OM_all" xlink:from="val_tipos_2175-or-11"
+                            xlink:to="var_IFDim_x19OMDim_x0d10e834"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-11" id="lab_val_tipos_2175-or-11"
+                   xlink:type="resource"
+                   xml:lang="es">
+Si existe importe en: 		debe existir importe en:
+0029 						0023 + 0024
+0037 						0031 + 0032
+0045 						0039 + 0040
+0254 						0248 + 0249
+0262 						0256 + 0257
+0270 						0264 + 0265
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-11" xlink:to="lab_val_tipos_2175-or-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e771" id="fil_base_pd35d10e771"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_ASDim_x150d10e781" id="fil_ASDim_x150d10e781"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x150</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x8d10e791" id="fil_CSDim_x8d10e791"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x8</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_IFDim_x18OMDim_x1d10e806" bindAsSequence="false"
+                             id="var_IFDim_x18OMDim_x1d10e806"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_IFDim_x18OMDim_x1d10e806"
+                                  xlink:to="fil_IFDim_x18d10e808"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_IFDim_x18OMDim_x1d10e806"
+                                  xlink:to="fil_OMDim_x1d10e818"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_IFDim_x18d10e808" id="fil_IFDim_x18d10e808"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x18</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x1d10e818" id="fil_OMDim_x1d10e818"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_IFDim_x19OMDim_x0d10e834" bindAsSequence="true"
+                             id="var_IFDim_x19OMDim_x0d10e834"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_IFDim_x19OMDim_x0d10e834"
+                                  xlink:to="fil_IFDim_x19d10e836"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_IFDim_x19OMDim_x0d10e834"
+                                  xlink:to="fil_OMDim_x0d10e850"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_IFDim_x19d10e836" id="fil_IFDim_x19d10e836"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x19</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x11</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e850" id="fil_OMDim_x0d10e850"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-11" id="ref_val_tipos_2175-or-11"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-11</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-11" xlink:to="ref_val_tipos_2175-or-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-12"
+                         test="if ($NDER_CG ne 0) then ($NDER ne 0) else true()"
+                         id="val_tipos_2175-or-12"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-12"
+                                     xlink:to="fil_LTDim_x1d10e866"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="NDER" xlink:from="val_tipos_2175-or-12"
+                            xlink:to="var_base_pd35CGDim_d10e884"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="NDER_CG" xlink:from="val_tipos_2175-or-12"
+                            xlink:to="var_base_pd35CGDim_x1LNDim_x1d10e908"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-12" id="lab_val_tipos_2175-or-12"
+                   xlink:type="resource"
+                   xml:lang="es">
+Si existe importe en: 		debe existir importe en:
+0229 						0004
+0230 						0005
+0231 						0006
+0232 						0007
+0234 						0009
+0235 						0010
+0236 						0011
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-12" xlink:to="lab_val_tipos_2175-or-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_LTDim_x1d10e866" id="fil_LTDim_x1d10e866"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dLT:x1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dLT:x3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd35CGDim_d10e884" bindAsSequence="false"
+                             id="var_base_pd35CGDim_d10e884"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35CGDim_d10e884"
+                                  xlink:to="fil_base_pd35d10e886"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_base_pd35CGDim_d10e884"
+                                  xlink:to="fil_CGDim_d10e896"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e886" id="fil_base_pd35d10e886"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_d10e896" id="fil_CGDim_d10e896" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd35CGDim_x1LNDim_x1d10e908" bindAsSequence="false"
+                             id="var_base_pd35CGDim_x1LNDim_x1d10e908"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35CGDim_x1LNDim_x1d10e908"
+                                  xlink:to="fil_base_pd35d10e910"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35CGDim_x1LNDim_x1d10e908"
+                                  xlink:to="fil_CGDim_x1d10e920"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35CGDim_x1LNDim_x1d10e908"
+                                  xlink:to="fil_LNDim_x1d10e930"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e910" id="fil_base_pd35d10e910"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_x1d10e920" id="fil_CGDim_x1d10e920"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCG:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_LNDim_x1d10e930" id="fil_LNDim_x1d10e930"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dPI:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-12" id="ref_val_tipos_2175-or-12"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-12</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-12" xlink:to="ref_val_tipos_2175-or-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-13"
+                         test="if ($NDER_CG ne 0) then ($NDER ne 0) else true()"
+                         id="val_tipos_2175-or-13"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-13"
+                                     xlink:to="fil_SZDim_x1d10e949"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="NDER" xlink:from="val_tipos_2175-or-13"
+                            xlink:to="var_base_pd35CGDim_d10e971"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="NDER_CG" xlink:from="val_tipos_2175-or-13"
+                            xlink:to="var_base_pd35CGDim_x1LNDim_x1d10e995"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-13" id="lab_val_tipos_2175-or-13"
+                   xlink:type="resource"
+                   xml:lang="es">
+Si existe importe en: 		debe existir importe en:
+0248 						0023
+0249 						0024
+0250 						0025
+0251 						0026
+0252 						0027
+0253 						0028
+0254 						0029
+0256 						0031
+0257 						0032
+0258 						0033
+0259 						0034
+0260 						0035
+0261 						0036
+0262 						0037
+0264 						0039
+0265 						0040
+0266 						0041
+0267 						0042
+0268 						0043
+0269 						0044
+0270 						0045
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-13" xlink:to="lab_val_tipos_2175-or-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_SZDim_x1d10e949" id="fil_SZDim_x1d10e949"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:SZ</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAI:x1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dAI:x2</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dAI:x3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd35CGDim_d10e971" bindAsSequence="false"
+                             id="var_base_pd35CGDim_d10e971"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35CGDim_d10e971"
+                                  xlink:to="fil_base_pd35d10e973"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_base_pd35CGDim_d10e971"
+                                  xlink:to="fil_CGDim_d10e983"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e973" id="fil_base_pd35d10e973"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_d10e983" id="fil_CGDim_d10e983" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd35CGDim_x1LNDim_x1d10e995" bindAsSequence="false"
+                             id="var_base_pd35CGDim_x1LNDim_x1d10e995"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35CGDim_x1LNDim_x1d10e995"
+                                  xlink:to="fil_base_pd35d10e997"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35CGDim_x1LNDim_x1d10e995"
+                                  xlink:to="fil_CGDim_x1d10e1007"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35CGDim_x1LNDim_x1d10e995"
+                                  xlink:to="fil_LNDim_x1d10e1017"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e997" id="fil_base_pd35d10e997"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_x1d10e1007" id="fil_CGDim_x1d10e1007"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCG:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_LNDim_x1d10e1017" id="fil_LNDim_x1d10e1017"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dPI:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-13" id="ref_val_tipos_2175-or-13"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-13</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-13" xlink:to="ref_val_tipos_2175-or-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-14"
+                         test="if (sum($NDER_CG) ne 0) then ($APRC ne 0) else true()"
+                         id="val_tipos_2175-or-14"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-14"
+                                     xlink:to="fil_LTDim_x1d10e1035"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-14"
+                                     xlink:to="fil_CSDim_x21d10e1049"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableArc name="APRC" xlink:from="val_tipos_2175-or-14"
+                            xlink:to="var_base_pd33CGDim_d10e1063"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="NDER_CG" xlink:from="val_tipos_2175-or-14"
+                            xlink:to="var_base_pd35IFDim_x18CGDim_x1LNDim_x1d10e1087"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-14" id="lab_val_tipos_2175-or-14"
+                   xlink:type="resource"
+                   xml:lang="es">
+Si existe importe en: 		debe existir importe en:
+0229 + 0230 + 0231 + 0232 	0153
+0234 + 0235 + 0236 			0158
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-14" xlink:to="lab_val_tipos_2175-or-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_LTDim_x1d10e1035" id="fil_LTDim_x1d10e1035"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dLT:x1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dLT:x3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x21d10e1049" id="fil_CSDim_x21d10e1049"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x21</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd33CGDim_d10e1063" bindAsSequence="false"
+                             id="var_base_pd33CGDim_d10e1063"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd33CGDim_d10e1063"
+                                  xlink:to="fil_base_pd33d10e1065"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_base_pd33CGDim_d10e1063"
+                                  xlink:to="fil_CGDim_d10e1075"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_pd33d10e1065" id="fil_base_pd33d10e1065"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd33</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_d10e1075" id="fil_CGDim_d10e1075" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd35IFDim_x18CGDim_x1LNDim_x1d10e1087"
+                             bindAsSequence="true"
+                             id="var_base_pd35IFDim_x18CGDim_x1LNDim_x1d10e1087"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x18CGDim_x1LNDim_x1d10e1087"
+                                  xlink:to="fil_base_pd35d10e1089"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x18CGDim_x1LNDim_x1d10e1087"
+                                  xlink:to="fil_IFDim_x18d10e1099"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x18CGDim_x1LNDim_x1d10e1087"
+                                  xlink:to="fil_CGDim_x1d10e1126"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x18CGDim_x1LNDim_x1d10e1087"
+                                  xlink:to="fil_LNDim_x1d10e1136"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e1089" id="fil_base_pd35d10e1089"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_IFDim_x18d10e1099" id="fil_IFDim_x18d10e1099"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x18</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x4</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x14</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x5</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x13</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CGDim_x1d10e1126" id="fil_CGDim_x1d10e1126"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCG:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_LNDim_x1d10e1136" id="fil_LNDim_x1d10e1136"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dPI:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-14" id="ref_val_tipos_2175-or-14"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-14</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-14" xlink:to="ref_val_tipos_2175-or-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_tipos_2175-or-15"
+                         test="if (sum($NDER_CG) ne 0) then ($APRC ne 0) else true()"
+                         id="val_tipos_2175-or-15"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_tipos_2175-or-15"
+                                     xlink:to="fil_SZDim_x1d10e1154"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="APRC" xlink:from="val_tipos_2175-or-15"
+                            xlink:to="var_base_pd33CGDim_d10e1176"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="NDER_CG" xlink:from="val_tipos_2175-or-15"
+                            xlink:to="var_base_pd35IFDim_x19CGDim_x1LNDim_x1d10e1200"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_tipos_2175-or-15" id="lab_val_tipos_2175-or-15"
+                   xlink:type="resource"
+                   xml:lang="es">
+Si existe importe en: 						debe existir importe en:
+0248 + 0249 + 0250 + 0251 + 0252 + 0253 	0172
+0256 + 0257 + 0258 + 0259 + 0260 + 0261 	0180
+0264 + 0265 + 0266 + 0267 + 0268 + 0269 	0188
+</label:label>
+      <generic:arc xlink:from="val_tipos_2175-or-15" xlink:to="lab_val_tipos_2175-or-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_SZDim_x1d10e1154" id="fil_SZDim_x1d10e1154"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:SZ</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAI:x1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dAI:x2</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dAI:x3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd33CGDim_d10e1176" bindAsSequence="false"
+                             id="var_base_pd33CGDim_d10e1176"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd33CGDim_d10e1176"
+                                  xlink:to="fil_base_pd33d10e1178"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_base_pd33CGDim_d10e1176"
+                                  xlink:to="fil_CGDim_d10e1188"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_base_pd33d10e1178" id="fil_base_pd33d10e1178"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd33</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CGDim_d10e1188" id="fil_CGDim_d10e1188" xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_base_pd35IFDim_x19CGDim_x1LNDim_x1d10e1200"
+                             bindAsSequence="true"
+                             id="var_base_pd35IFDim_x19CGDim_x1LNDim_x1d10e1200"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x19CGDim_x1LNDim_x1d10e1200"
+                                  xlink:to="fil_base_pd35d10e1202"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x19CGDim_x1LNDim_x1d10e1200"
+                                  xlink:to="fil_IFDim_x19d10e1212"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x19CGDim_x1LNDim_x1d10e1200"
+                                  xlink:to="fil_CGDim_x1d10e1243"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_base_pd35IFDim_x19CGDim_x1LNDim_x1d10e1200"
+                                  xlink:to="fil_LNDim_x1d10e1253"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <cf:conceptName xlink:label="fil_base_pd35d10e1202" id="fil_base_pd35d10e1202"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>base:pd35</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_IFDim_x19d10e1212" id="fil_IFDim_x19d10e1212"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x19</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x11</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x3</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x12</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x14</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x5</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CGDim_x1d10e1243" id="fil_CGDim_x1d10e1243"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCG:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_LNDim_x1d10e1253" id="fil_LNDim_x1d10e1253"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dPI:x1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_tipos_2175-or-15" id="ref_val_tipos_2175-or-15"
+                           xlink:type="resource">
+         <ref:Number>tipos:2175-or-15</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_tipos_2175-or-15" xlink:to="ref_val_tipos_2175-or-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

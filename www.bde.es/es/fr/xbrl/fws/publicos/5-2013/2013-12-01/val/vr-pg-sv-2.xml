@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:estr_base="http://www.bde.es/es/fr/xbrl/main/base" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_pg-sv-2" test="abs($totalRdo - ($gastosPersonal + $otrosGastosGralesAdministracion)) le $threshold" aspectModel="dimensional" implicitFiltering="true" id="es_pg-sv-2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_pg-sv-2.gastosPersonal" bindAsSequence="false" fallbackValue="0" id="es_pg-sv-2.gastosPersonal" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_pg-sv-2.gastosPersonal.fil_ifrs-gp_EmployeeExpensesd10e36" id="es_pg-sv-2.gastosPersonal.fil_ifrs-gp_EmployeeExpensesd10e36">
+      <cf:concept>
+        <cf:qname>estr_base:md52252</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_pg-sv-2.gastosPersonal" xlink:to="es_pg-sv-2.gastosPersonal.fil_ifrs-gp_EmployeeExpensesd10e36" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-2" xlink:to="es_pg-sv-2.gastosPersonal" name="gastosPersonal" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_pg-sv-2.otrosGastosGralesAdministracion" bindAsSequence="false" fallbackValue="0" id="es_pg-sv-2.otrosGastosGralesAdministracion" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_pg-sv-2.otrosGastosGralesAdministracion.fil_ifrs-gp_OtherAdministrativeExpensesd10e50" id="es_pg-sv-2.otrosGastosGralesAdministracion.fil_ifrs-gp_OtherAdministrativeExpensesd10e50">
+      <cf:concept>
+        <cf:qname>estr_base:md94048</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_pg-sv-2.otrosGastosGralesAdministracion" xlink:to="es_pg-sv-2.otrosGastosGralesAdministracion.fil_ifrs-gp_OtherAdministrativeExpensesd10e50" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-2" xlink:to="es_pg-sv-2.otrosGastosGralesAdministracion" name="otrosGastosGralesAdministracion" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_pg-sv-2.totalRdo" bindAsSequence="false" fallbackValue="0" id="es_pg-sv-2.totalRdo" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_pg-sv-2.totalRdo.fil_p-FINREP_AdministrationCostsd10e64" id="es_pg-sv-2.totalRdo.fil_p-FINREP_AdministrationCostsd10e64">
+      <cf:concept>
+        <cf:qname>estr_base:md90885</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_pg-sv-2.totalRdo" xlink:to="es_pg-sv-2.totalRdo.fil_p-FINREP_AdministrationCostsd10e64" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-2" xlink:to="es_pg-sv-2.totalRdo" name="totalRdo" order="3" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_pg-sv-2.threshold" bindAsSequence="false" select="(2 idiv 2 + 1) * 1000" id="es_pg-sv-2.threshold" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-2" xlink:to="es_pg-sv-2.threshold" name="threshold" order="4" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_pg-sv-2" id="ref_es_pg-sv-2">
+      <ref:Number>publicos:pg-sv-2</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_pg-sv-2" xlink:to="ref_es_pg-sv-2" />
+  </gen:link>
+</link:linkbase>

@@ -1,0 +1,1616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:ifrs-gp="http://xbrl.iasb.org/int/fr/ifrs/gp/2006-08-15"
+               xmlns:es-be-p-FINREP="http://www.bde.es/es/fr/esrs/finrep/6-2008/2008-11-26/es-be-p-FINREP"
+               xmlns:p-FINREP="http://www.c-ebs.org/eu/fr/esrs/finrep/p-FINREP/2008-01-01"
+               xmlns:es-be-d-FR-dist="http://www.bde.es/es/fr/esrs/finrep/6-2008/2008-11-26/es-be-d-FINREP-distribucion"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_cm.4310.6360.6620_cuadres_1"
+                           id="ref_atributosCuadres_cm.4310.6360.6620_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_atributosCuadres_cm.4310.6360.6620_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_1"
+                           id="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>ind_pub_1</frRef:Modulo>
+         <frRef:Instancia>Mind_pub_1</frRef:Instancia>
+         <frRef:Estado>4310</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-sv-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-sv-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-sv-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-sv-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-sv-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-sv-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-sv-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-sv-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_pg-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_2" id="assertionSet_2"/>
+      <reference:reference xlink:label="ref_atributosCuadres_cm.4310.6360.6620_cuadres_2"
+                           id="ref_atributosCuadres_cm.4310.6360.6620_cuadres_2"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_2"
+                   xlink:to="ref_atributosCuadres_cm.4310.6360.6620_cuadres_2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_2"
+                           id="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_2"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>cons_t-1</frRef:Modulo>
+         <frRef:Instancia>Mcons_t-1</frRef:Instancia>
+         <frRef:Estado>6360</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_2"
+                   xlink:to="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-sv-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-sv-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-sv-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-sv-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-sv-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-sv-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-sv-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-sv-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_2" xlink:to="val_publicos_pg-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_3" id="assertionSet_3"/>
+      <reference:reference xlink:label="ref_atributosCuadres_cm.4310.6360.6620_cuadres_3"
+                           id="ref_atributosCuadres_cm.4310.6360.6620_cuadres_3"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_3"
+                   xlink:to="ref_atributosCuadres_cm.4310.6360.6620_cuadres_3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_3"
+                           id="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_3"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>cons_t-1</frRef:Modulo>
+         <frRef:Instancia>Mcons_t-1</frRef:Instancia>
+         <frRef:Estado>6620</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_3"
+                   xlink:to="ref_moduloDefinicion_cm.4310.6360.6620_cuadres_3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-sv-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-sv-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-sv-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-sv-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-sv-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-sv-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-sv-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-sv-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_3" xlink:to="val_publicos_pg-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <link:loc xlink:href="params_es.xml#var_UmbralBasico4" xlink:label="var_UmbralBasico4"
+                xlink:type="locator"/>
+      <link:loc xlink:href="params_es.xml#var_UmbralBasico2" xlink:label="var_UmbralBasico2"
+                xlink:type="locator"/>
+      <link:loc xlink:href="params_es.xml#var_UmbralBasico3" xlink:label="var_UmbralBasico3"
+                xlink:type="locator"/>
+      <link:loc xlink:href="params_es.xml#var_UmbralBasico9" xlink:label="var_UmbralBasico9"
+                xlink:type="locator"/>
+      <link:loc xlink:href="params_es.xml#var_UmbralBasico5" xlink:label="var_UmbralBasico5"
+                xlink:type="locator"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-sv-1"
+                         test="abs($totalRdo - ($carteraNegociacion + $otrosInstrumentosFinancierosValorRazonableCambiosPyG +  $instrumentosFinancierosNoValoradosCambiosPyG + $otros)) le $threshold"
+                         id="val_publicos_pg-sv-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="carteraNegociacion" xlink:from="val_publicos_pg-sv-1"
+                            xlink:to="var_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e41"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="otrosInstrumentosFinancierosValorRazonableCambiosPyG"
+                            xlink:from="val_publicos_pg-sv-1"
+                            xlink:to="var_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e55"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="instrumentosFinancierosNoValoradosCambiosPyG"
+                            xlink:from="val_publicos_pg-sv-1"
+                            xlink:to="var_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e69"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="otros" xlink:from="val_publicos_pg-sv-1"
+                            xlink:to="var_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e83"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_pg-sv-1"
+                            xlink:to="var_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e98"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_pg-sv-1" xlink:to="var_UmbralBasico4"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <label:label xlink:label="lab_val_publicos_pg-sv-1" id="lab_val_publicos_pg-sv-1"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la columna TOTAL pero aplica para todas las columnas:   0040=0041+0042+0043+0044 </label:label>
+      <generic:arc xlink:from="val_publicos_pg-sv-1" xlink:to="lab_val_publicos_pg-sv-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e41"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e41"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e41"
+                                  xlink:to="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e43"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e43"
+                      id="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e43"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:GainsLossesOnFinancialInstrumentsHeldForTradingTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e55"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e55"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e55"
+                                  xlink:to="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e57"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e57"
+                      id="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e57"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlows</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e69"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e69"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e69"
+                                  xlink:to="fil_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e71"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e71"
+                      id="fil_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e71"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e83"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e83"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e83"
+                                  xlink:to="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e85"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e85"
+                      id="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e85"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:ResultadoOperacionesFinancierasOtros</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e98"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e98"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e98"
+                                  xlink:to="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e100"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e100"
+                      id="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e100"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:ResultadoOperacionesFinancieras</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_pg-sv-1" id="ref_val_publicos_pg-sv-1"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-sv-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-sv-1" xlink:to="ref_val_publicos_pg-sv-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-sv-3"
+                         test="abs($totalRdo - ($inversionesCrediticias + $otrosInstrumentosFinancierosNoValoradosValorRazonableCambiosPyG)) le $threshold"
+                         id="val_publicos_pg-sv-3"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="inversionesCrediticias" xlink:from="val_publicos_pg-sv-3"
+                            xlink:to="var_ifrs-gp_ImpairmentLossesReversalsFinancialInstrumentsLoansAndReceivablesNetd10e120"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="otrosInstrumentosFinancierosNoValoradosValorRazonableCambiosPyG"
+                            xlink:from="val_publicos_pg-sv-3"
+                            xlink:to="var_es-be-p-FINREP_OtrosInstrumentosFinancierosNoValoradosValorRazonableCambiosd10e134"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_pg-sv-3"
+                            xlink:to="var_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e148"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_pg-sv-3" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <label:label xlink:label="lab_val_publicos_pg-sv-3" id="lab_val_publicos_pg-sv-3"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la columna TOTAL pero aplica para todas las columnas:   0095=0096+0100 </label:label>
+      <generic:arc xlink:from="val_publicos_pg-sv-3" xlink:to="lab_val_publicos_pg-sv-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_ifrs-gp_ImpairmentLossesReversalsFinancialInstrumentsLoansAndReceivablesNetd10e120"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_ImpairmentLossesReversalsFinancialInstrumentsLoansAndReceivablesNetd10e120"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_ImpairmentLossesReversalsFinancialInstrumentsLoansAndReceivablesNetd10e120"
+                                  xlink:to="fil_ifrs-gp_ImpairmentLossesReversalsFinancialInstrumentsLoansAndReceivablesNetd10e122"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_ImpairmentLossesReversalsFinancialInstrumentsLoansAndReceivablesNetd10e122"
+                      id="fil_ifrs-gp_ImpairmentLossesReversalsFinancialInstrumentsLoansAndReceivablesNetd10e122"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:ImpairmentLossesReversalsFinancialInstrumentsLoansAndReceivablesNet</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_OtrosInstrumentosFinancierosNoValoradosValorRazonableCambiosd10e134"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_OtrosInstrumentosFinancierosNoValoradosValorRazonableCambiosd10e134"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_OtrosInstrumentosFinancierosNoValoradosValorRazonableCambiosd10e134"
+                                  xlink:to="fil_es-be-p-FINREP_OtrosInstrumentosFinancierosNoValoradosValorRazonableCambiosd10e136"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_OtrosInstrumentosFinancierosNoValoradosValorRazonableCambiosd10e136"
+                      id="fil_es-be-p-FINREP_OtrosInstrumentosFinancierosNoValoradosValorRazonableCambiosd10e136"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:OtrosInstrumentosFinancierosNoValoradosValorRazonableCambios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e148"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e148"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e148"
+                                  xlink:to="fil_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e150"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e150"
+                      id="fil_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e150"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:PerdidasDeteriorosActivosFinancieros</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_pg-sv-3" id="ref_val_publicos_pg-sv-3"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-sv-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-sv-3" xlink:to="ref_val_publicos_pg-sv-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-sv-4"
+                         test="abs($totalRdo - ($fondoComercioOtroActivoIntangible + $otrosActivos)) le $threshold"
+                         id="val_publicos_pg-sv-4"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="fondoComercioOtroActivoIntangible" xlink:from="val_publicos_pg-sv-4"
+                            xlink:to="var_es-be-p-FINREP_FondoComercioOtroActivoIntangibled10e170"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="otrosActivos" xlink:from="val_publicos_pg-sv-4"
+                            xlink:to="var_es-be-p-FINREP_PerdidasDeterioroRestoActivosOtrosActivosd10e184"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_pg-sv-4"
+                            xlink:to="var_p-FINREP_ImpairmentOnNonFinancialAssetsd10e198"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_pg-sv-4" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <label:label xlink:label="lab_val_publicos_pg-sv-4" id="lab_val_publicos_pg-sv-4"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la columna TOTAL pero aplica para todas las columnas:   0110=0111+0115 </label:label>
+      <generic:arc xlink:from="val_publicos_pg-sv-4" xlink:to="lab_val_publicos_pg-sv-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_FondoComercioOtroActivoIntangibled10e170"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_FondoComercioOtroActivoIntangibled10e170"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_FondoComercioOtroActivoIntangibled10e170"
+                                  xlink:to="fil_es-be-p-FINREP_FondoComercioOtroActivoIntangibled10e172"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_FondoComercioOtroActivoIntangibled10e172"
+                      id="fil_es-be-p-FINREP_FondoComercioOtroActivoIntangibled10e172"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:FondoComercioOtroActivoIntangible</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_PerdidasDeterioroRestoActivosOtrosActivosd10e184"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_PerdidasDeterioroRestoActivosOtrosActivosd10e184"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_PerdidasDeterioroRestoActivosOtrosActivosd10e184"
+                                  xlink:to="fil_es-be-p-FINREP_PerdidasDeterioroRestoActivosOtrosActivosd10e186"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_PerdidasDeterioroRestoActivosOtrosActivosd10e186"
+                      id="fil_es-be-p-FINREP_PerdidasDeterioroRestoActivosOtrosActivosd10e186"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:PerdidasDeterioroRestoActivosOtrosActivos</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_ImpairmentOnNonFinancialAssetsd10e198"
+                             bindAsSequence="false"
+                             id="var_p-FINREP_ImpairmentOnNonFinancialAssetsd10e198"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-FINREP_ImpairmentOnNonFinancialAssetsd10e198"
+                                  xlink:to="fil_p-FINREP_ImpairmentOnNonFinancialAssetsd10e200"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_ImpairmentOnNonFinancialAssetsd10e200"
+                      id="fil_p-FINREP_ImpairmentOnNonFinancialAssetsd10e200"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:ImpairmentOnNonFinancialAssets</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_pg-sv-4" id="ref_val_publicos_pg-sv-4"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-sv-4</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-sv-4" xlink:to="ref_val_publicos_pg-sv-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-sv-5"
+                         test="abs($totalRdo - ($interesesRendimientos - $interesesCargas -  $remuneracionCapital)) le $threshold"
+                         id="val_publicos_pg-sv-5"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="interesesRendimientos" xlink:from="val_publicos_pg-sv-5"
+                            xlink:to="var_ifrs-gp_InterestIncomeTotalFinancialInstitutionsd10e220"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="interesesCargas" xlink:from="val_publicos_pg-sv-5"
+                            xlink:to="var_p-FINREP_InterestExpenseTotalFinancialInstitutionsd10e234"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="remuneracionCapital" xlink:from="val_publicos_pg-sv-5"
+                            xlink:to="var_p-FINREP_ExpensesOnShareCapitalRepayableOnDemandd10e248"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_pg-sv-5"
+                            xlink:to="var_es-be-p-FINREP_MargenInteresesd10e262"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_pg-sv-5" xlink:to="var_UmbralBasico3"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_pg-sv-5" id="lab_val_publicos_pg-sv-5"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la columna TOTAL pero aplica para todas las columnas:   0015=0001-0005-0010 </label:label>
+      <generic:arc xlink:from="val_publicos_pg-sv-5" xlink:to="lab_val_publicos_pg-sv-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_ifrs-gp_InterestIncomeTotalFinancialInstitutionsd10e220"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_InterestIncomeTotalFinancialInstitutionsd10e220"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_InterestIncomeTotalFinancialInstitutionsd10e220"
+                                  xlink:to="fil_ifrs-gp_InterestIncomeTotalFinancialInstitutionsd10e222"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_InterestIncomeTotalFinancialInstitutionsd10e222"
+                      id="fil_ifrs-gp_InterestIncomeTotalFinancialInstitutionsd10e222"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:InterestIncomeTotalFinancialInstitutions</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_InterestExpenseTotalFinancialInstitutionsd10e234"
+                             bindAsSequence="false"
+                             id="var_p-FINREP_InterestExpenseTotalFinancialInstitutionsd10e234"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-FINREP_InterestExpenseTotalFinancialInstitutionsd10e234"
+                                  xlink:to="fil_p-FINREP_InterestExpenseTotalFinancialInstitutionsd10e236"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_InterestExpenseTotalFinancialInstitutionsd10e236"
+                      id="fil_p-FINREP_InterestExpenseTotalFinancialInstitutionsd10e236"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:InterestExpenseTotalFinancialInstitutions</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_ExpensesOnShareCapitalRepayableOnDemandd10e248"
+                             bindAsSequence="false"
+                             id="var_p-FINREP_ExpensesOnShareCapitalRepayableOnDemandd10e248"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-FINREP_ExpensesOnShareCapitalRepayableOnDemandd10e248"
+                                  xlink:to="fil_p-FINREP_ExpensesOnShareCapitalRepayableOnDemandd10e250"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_ExpensesOnShareCapitalRepayableOnDemandd10e250"
+                      id="fil_p-FINREP_ExpensesOnShareCapitalRepayableOnDemandd10e250"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:ExpensesOnShareCapitalRepayableOnDemand</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_MargenInteresesd10e262" bindAsSequence="false"
+                             id="var_es-be-p-FINREP_MargenInteresesd10e262"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-FINREP_MargenInteresesd10e262"
+                                  xlink:to="fil_es-be-p-FINREP_MargenInteresesd10e264"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_MargenInteresesd10e264"
+                      id="fil_es-be-p-FINREP_MargenInteresesd10e264"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:MargenIntereses</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_pg-sv-5" id="ref_val_publicos_pg-sv-5"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-sv-5</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-sv-5" xlink:to="ref_val_publicos_pg-sv-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-sv-6"
+                         test="abs($totalRdo - ($margenIntereses + $rendimientoInstrumentoCapital + $valoradas + $comisionesPercibidas - $comisionesPagadas + $rdoOpFinancieras + $diferenciasCambioNeto + $otrosProductosExplotacion - $otrasCargasExplotacion)) le $threshold"
+                         id="val_publicos_pg-sv-6"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="margenIntereses" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_es-be-p-FINREP_MargenInteresesd10e285"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="rendimientoInstrumentoCapital" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_ifrs-gp_DividendIncomeTotald10e299"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="valoradas" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_ifrs-gp_ShareOfProfitLossFromEquityAccountedInvestmentsd10e313"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="comisionesPercibidas" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_ifrs-gp_FeesAndCommissionIncomeTotald10e327"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="comisionesPagadas" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_ifrs-gp_FeesAndCommissionExpenseTotald10e342"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="rdoOpFinancieras" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e356"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <variable:variableArc name="diferenciasCambioNeto" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_ifrs-gp_GainsLossesOnFinancialInstrumentsExchangeDifferenceRevaluationsd10e370"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="7"/>
+      <variable:variableArc name="otrosProductosExplotacion" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_p-FINREP_OtherOperatingIncomed10e384"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="8"/>
+      <variable:variableArc name="otrasCargasExplotacion" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_p-FINREP_OtherOperatingExpensesd10e398"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="9"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_pg-sv-6"
+                            xlink:to="var_es-be-p-FINREP_MargenBrutod10e412"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="10"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_pg-sv-6" xlink:to="var_UmbralBasico9"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="11"/>
+      <label:label xlink:label="lab_val_publicos_pg-sv-6" id="lab_val_publicos_pg-sv-6"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la columna TOTAL pero aplica para todas las columnas:   0075=0015+0020+0025+0030-0035+0040+0050+0055-0065 </label:label>
+      <generic:arc xlink:from="val_publicos_pg-sv-6" xlink:to="lab_val_publicos_pg-sv-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_MargenInteresesd10e285" bindAsSequence="false"
+                             id="var_es-be-p-FINREP_MargenInteresesd10e285"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-FINREP_MargenInteresesd10e285"
+                                  xlink:to="fil_es-be-p-FINREP_MargenInteresesd10e287"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_MargenInteresesd10e287"
+                      id="fil_es-be-p-FINREP_MargenInteresesd10e287"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:MargenIntereses</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_DividendIncomeTotald10e299" bindAsSequence="false"
+                             id="var_ifrs-gp_DividendIncomeTotald10e299"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_ifrs-gp_DividendIncomeTotald10e299"
+                                  xlink:to="fil_ifrs-gp_DividendIncomeTotald10e301"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_DividendIncomeTotald10e301"
+                      id="fil_ifrs-gp_DividendIncomeTotald10e301"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:DividendIncomeTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_ShareOfProfitLossFromEquityAccountedInvestmentsd10e313"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_ShareOfProfitLossFromEquityAccountedInvestmentsd10e313"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_ShareOfProfitLossFromEquityAccountedInvestmentsd10e313"
+                                  xlink:to="fil_ifrs-gp_ShareOfProfitLossFromEquityAccountedInvestmentsd10e315"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_ShareOfProfitLossFromEquityAccountedInvestmentsd10e315"
+                      id="fil_ifrs-gp_ShareOfProfitLossFromEquityAccountedInvestmentsd10e315"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:ShareOfProfitLossFromEquityAccountedInvestments</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_FeesAndCommissionIncomeTotald10e327"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_FeesAndCommissionIncomeTotald10e327"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_ifrs-gp_FeesAndCommissionIncomeTotald10e327"
+                                  xlink:to="fil_ifrs-gp_FeesAndCommissionIncomeTotald10e329"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_FeesAndCommissionIncomeTotald10e329"
+                      id="fil_ifrs-gp_FeesAndCommissionIncomeTotald10e329"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:FeesAndCommissionIncomeTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_FeesAndCommissionExpenseTotald10e342"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_FeesAndCommissionExpenseTotald10e342"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_FeesAndCommissionExpenseTotald10e342"
+                                  xlink:to="fil_ifrs-gp_FeesAndCommissionExpenseTotald10e344"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_FeesAndCommissionExpenseTotald10e344"
+                      id="fil_ifrs-gp_FeesAndCommissionExpenseTotald10e344"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:FeesAndCommissionExpenseTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e356"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e356"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e356"
+                                  xlink:to="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e358"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e358"
+                      id="fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e358"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:ResultadoOperacionesFinancieras</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_GainsLossesOnFinancialInstrumentsExchangeDifferenceRevaluationsd10e370"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_GainsLossesOnFinancialInstrumentsExchangeDifferenceRevaluationsd10e370"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_GainsLossesOnFinancialInstrumentsExchangeDifferenceRevaluationsd10e370"
+                                  xlink:to="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsExchangeDifferenceRevaluationsd10e372"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsExchangeDifferenceRevaluationsd10e372"
+                      id="fil_ifrs-gp_GainsLossesOnFinancialInstrumentsExchangeDifferenceRevaluationsd10e372"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:GainsLossesOnFinancialInstrumentsExchangeDifferenceRevaluations</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_OtherOperatingIncomed10e384" bindAsSequence="false"
+                             id="var_p-FINREP_OtherOperatingIncomed10e384"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-FINREP_OtherOperatingIncomed10e384"
+                                  xlink:to="fil_p-FINREP_OtherOperatingIncomed10e386"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_OtherOperatingIncomed10e386"
+                      id="fil_p-FINREP_OtherOperatingIncomed10e386"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:OtherOperatingIncome</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_OtherOperatingExpensesd10e398" bindAsSequence="false"
+                             id="var_p-FINREP_OtherOperatingExpensesd10e398"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-FINREP_OtherOperatingExpensesd10e398"
+                                  xlink:to="fil_p-FINREP_OtherOperatingExpensesd10e400"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_OtherOperatingExpensesd10e400"
+                      id="fil_p-FINREP_OtherOperatingExpensesd10e400"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:OtherOperatingExpenses</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_MargenBrutod10e412" bindAsSequence="false"
+                             id="var_es-be-p-FINREP_MargenBrutod10e412"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-FINREP_MargenBrutod10e412"
+                                  xlink:to="fil_es-be-p-FINREP_MargenBrutod10e414"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_MargenBrutod10e414"
+                      id="fil_es-be-p-FINREP_MargenBrutod10e414"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:MargenBruto</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_pg-sv-6" id="ref_val_publicos_pg-sv-6"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-sv-6</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-sv-6" xlink:to="ref_val_publicos_pg-sv-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-sv-7"
+                         test="abs($totalRdo - ($margenBruto - $gastosAdministracion -  $amortizacion - $dotacionesProvisionesNeto - $perdidasDeterioroActivoNeto)) le $threshold"
+                         id="val_publicos_pg-sv-7"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="margenBruto" xlink:from="val_publicos_pg-sv-7"
+                            xlink:to="var_es-be-p-FINREP_MargenBrutod10e436"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="gastosAdministracion" xlink:from="val_publicos_pg-sv-7"
+                            xlink:to="var_p-FINREP_AdministrationCostsd10e450"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="amortizacion" xlink:from="val_publicos_pg-sv-7"
+                            xlink:to="var_ifrs-gp_DepreciationAmortisationd10e464"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="dotacionesProvisionesNeto" xlink:from="val_publicos_pg-sv-7"
+                            xlink:to="var_p-FINREP_Provisionsd10e478"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="perdidasDeterioroActivoNeto" xlink:from="val_publicos_pg-sv-7"
+                            xlink:to="var_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e493"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_pg-sv-7"
+                            xlink:to="var_es-be-p-FINREP_ResultadoActividadExplotaciond10e507"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_pg-sv-7" xlink:to="var_UmbralBasico5"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="7"/>
+      <label:label xlink:label="lab_val_publicos_pg-sv-7" id="lab_val_publicos_pg-sv-7"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la columna TOTAL pero aplica para todas las columnas:   0105=0075-0080-0085-0090-0095 </label:label>
+      <generic:arc xlink:from="val_publicos_pg-sv-7" xlink:to="lab_val_publicos_pg-sv-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_MargenBrutod10e436" bindAsSequence="false"
+                             id="var_es-be-p-FINREP_MargenBrutod10e436"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-FINREP_MargenBrutod10e436"
+                                  xlink:to="fil_es-be-p-FINREP_MargenBrutod10e438"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_MargenBrutod10e438"
+                      id="fil_es-be-p-FINREP_MargenBrutod10e438"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:MargenBruto</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_AdministrationCostsd10e450" bindAsSequence="false"
+                             id="var_p-FINREP_AdministrationCostsd10e450"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-FINREP_AdministrationCostsd10e450"
+                                  xlink:to="fil_p-FINREP_AdministrationCostsd10e452"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_AdministrationCostsd10e452"
+                      id="fil_p-FINREP_AdministrationCostsd10e452"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:AdministrationCosts</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_DepreciationAmortisationd10e464"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_DepreciationAmortisationd10e464"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_ifrs-gp_DepreciationAmortisationd10e464"
+                                  xlink:to="fil_ifrs-gp_DepreciationAmortisationd10e466"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_DepreciationAmortisationd10e466"
+                      id="fil_ifrs-gp_DepreciationAmortisationd10e466"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:DepreciationAmortisation</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_Provisionsd10e478" bindAsSequence="false"
+                             id="var_p-FINREP_Provisionsd10e478"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-FINREP_Provisionsd10e478"
+                                  xlink:to="fil_p-FINREP_Provisionsd10e480"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_Provisionsd10e480"
+                      id="fil_p-FINREP_Provisionsd10e480"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:Provisions</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e493"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e493"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e493"
+                                  xlink:to="fil_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e495"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e495"
+                      id="fil_es-be-p-FINREP_PerdidasDeteriorosActivosFinancierosd10e495"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:PerdidasDeteriorosActivosFinancieros</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_ResultadoActividadExplotaciond10e507"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_ResultadoActividadExplotaciond10e507"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_ResultadoActividadExplotaciond10e507"
+                                  xlink:to="fil_es-be-p-FINREP_ResultadoActividadExplotaciond10e509"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_ResultadoActividadExplotaciond10e509"
+                      id="fil_es-be-p-FINREP_ResultadoActividadExplotaciond10e509"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:ResultadoActividadExplotacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_pg-sv-7" id="ref_val_publicos_pg-sv-7"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-sv-7</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-sv-7" xlink:to="ref_val_publicos_pg-sv-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-sv-8"
+                         test="abs($totalRdo - ($resultadoActividadExplotacion - $perdidasDeterioroRestoActivo +  $gananciasBajaActivosNoClasificadosNoCorrientesVta + $diferenciaNegativaCombinacionesNegocios + $gananciasPerdidasActivosNoCorrientesVentaNoClasificadosOperacionesInterrumpidas)) le $threshold"
+                         id="val_publicos_pg-sv-8"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="resultadoActividadExplotacion" xlink:from="val_publicos_pg-sv-8"
+                            xlink:to="var_es-be-p-FINREP_ResultadoActividadExplotaciond10e529"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="perdidasDeterioroRestoActivo" xlink:from="val_publicos_pg-sv-8"
+                            xlink:to="var_p-FINREP_ImpairmentOnNonFinancialAssetsd10e543"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="gananciasBajaActivosNoClasificadosNoCorrientesVta"
+                            xlink:from="val_publicos_pg-sv-8"
+                            xlink:to="var_ifrs-gp_GainLossOnDerecognitionOfNonCurrentAssetsNotHeldForSaleTotald10e557"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="diferenciaNegativaCombinacionesNegocios"
+                            xlink:from="val_publicos_pg-sv-8"
+                            xlink:to="var_es-be-p-FINREP_DiferenciaNegativaCombinacionesNegocios_OrOthersd10e571"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="gananciasPerdidasActivosNoCorrientesVentaNoClasificadosOperacionesInterrumpidas"
+                            xlink:from="val_publicos_pg-sv-8"
+                            xlink:to="var_p-FINREP_TotalProfitLossFromNonCurrentAssetsAndDisposalGroupsClassifiedAsHeldForSaleNotQualifyingAsDiscontinuedOperationsd10e588"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_pg-sv-8"
+                            xlink:to="var_ifrs-gp_ProfitLossBeforeTaxd10e602"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_pg-sv-8" xlink:to="var_UmbralBasico5"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="7"/>
+      <label:label xlink:label="lab_val_publicos_pg-sv-8" id="lab_val_publicos_pg-sv-8"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la columna TOTAL pero aplica para todas las columnas:   0145=0105-0110+0125+0130+0140 </label:label>
+      <generic:arc xlink:from="val_publicos_pg-sv-8" xlink:to="lab_val_publicos_pg-sv-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_ResultadoActividadExplotaciond10e529"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_ResultadoActividadExplotaciond10e529"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_ResultadoActividadExplotaciond10e529"
+                                  xlink:to="fil_es-be-p-FINREP_ResultadoActividadExplotaciond10e531"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_ResultadoActividadExplotaciond10e531"
+                      id="fil_es-be-p-FINREP_ResultadoActividadExplotaciond10e531"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:ResultadoActividadExplotacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_ImpairmentOnNonFinancialAssetsd10e543"
+                             bindAsSequence="false"
+                             id="var_p-FINREP_ImpairmentOnNonFinancialAssetsd10e543"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-FINREP_ImpairmentOnNonFinancialAssetsd10e543"
+                                  xlink:to="fil_p-FINREP_ImpairmentOnNonFinancialAssetsd10e545"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_ImpairmentOnNonFinancialAssetsd10e545"
+                      id="fil_p-FINREP_ImpairmentOnNonFinancialAssetsd10e545"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:ImpairmentOnNonFinancialAssets</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_GainLossOnDerecognitionOfNonCurrentAssetsNotHeldForSaleTotald10e557"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_GainLossOnDerecognitionOfNonCurrentAssetsNotHeldForSaleTotald10e557"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_GainLossOnDerecognitionOfNonCurrentAssetsNotHeldForSaleTotald10e557"
+                                  xlink:to="fil_ifrs-gp_GainLossOnDerecognitionOfNonCurrentAssetsNotHeldForSaleTotald10e559"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_GainLossOnDerecognitionOfNonCurrentAssetsNotHeldForSaleTotald10e559"
+                      id="fil_ifrs-gp_GainLossOnDerecognitionOfNonCurrentAssetsNotHeldForSaleTotald10e559"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:GainLossOnDerecognitionOfNonCurrentAssetsNotHeldForSaleTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_DiferenciaNegativaCombinacionesNegocios_OrOthersd10e571"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_DiferenciaNegativaCombinacionesNegocios_OrOthersd10e571"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_DiferenciaNegativaCombinacionesNegocios_OrOthersd10e571"
+                                  xlink:to="fil_es-be-p-FINREP_DiferenciaNegativaCombinacionesNegocios_OrOthersd10e573"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_DiferenciaNegativaCombinacionesNegocios_OrOthersd10e573"
+                      id="fil_es-be-p-FINREP_DiferenciaNegativaCombinacionesNegocios_OrOthersd10e573"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:DiferenciaNegativaCombinacionesNegocios</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:NegativeGoodwillImmediatelyRecognised</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-FINREP_TotalProfitLossFromNonCurrentAssetsAndDisposalGroupsClassifiedAsHeldForSaleNotQualifyingAsDiscontinuedOperationsd10e588"
+                             bindAsSequence="false"
+                             id="var_p-FINREP_TotalProfitLossFromNonCurrentAssetsAndDisposalGroupsClassifiedAsHeldForSaleNotQualifyingAsDiscontinuedOperationsd10e588"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-FINREP_TotalProfitLossFromNonCurrentAssetsAndDisposalGroupsClassifiedAsHeldForSaleNotQualifyingAsDiscontinuedOperationsd10e588"
+                                  xlink:to="fil_p-FINREP_TotalProfitLossFromNonCurrentAssetsAndDisposalGroupsClassifiedAsHeldForSaleNotQualifyingAsDiscontinuedOperationsd10e590"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-FINREP_TotalProfitLossFromNonCurrentAssetsAndDisposalGroupsClassifiedAsHeldForSaleNotQualifyingAsDiscontinuedOperationsd10e590"
+                      id="fil_p-FINREP_TotalProfitLossFromNonCurrentAssetsAndDisposalGroupsClassifiedAsHeldForSaleNotQualifyingAsDiscontinuedOperationsd10e590"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-FINREP:TotalProfitLossFromNonCurrentAssetsAndDisposalGroupsClassifiedAsHeldForSaleNotQualifyingAsDiscontinuedOperations</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_ProfitLossBeforeTaxd10e602" bindAsSequence="false"
+                             id="var_ifrs-gp_ProfitLossBeforeTaxd10e602"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_ifrs-gp_ProfitLossBeforeTaxd10e602"
+                                  xlink:to="fil_ifrs-gp_ProfitLossBeforeTaxd10e604"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_ProfitLossBeforeTaxd10e604"
+                      id="fil_ifrs-gp_ProfitLossBeforeTaxd10e604"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:ProfitLossBeforeTax</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_pg-sv-8" id="ref_val_publicos_pg-sv-8"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-sv-8</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-sv-8" xlink:to="ref_val_publicos_pg-sv-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-sv-9"
+                         test="abs($totalRdo - ($rdoAntesImpuestos - $impuestoSobreBeneficios -  $dotacionObligatoriaObrasFondosSociales)) le $threshold"
+                         id="val_publicos_pg-sv-9"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="rdoAntesImpuestos" xlink:from="val_publicos_pg-sv-9"
+                            xlink:to="var_ifrs-gp_ProfitLossBeforeTaxd10e624"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="impuestoSobreBeneficios" xlink:from="val_publicos_pg-sv-9"
+                            xlink:to="var_ifrs-gp_IncomeTaxExpenseIncomed10e638"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="dotacionObligatoriaObrasFondosSociales" xlink:from="val_publicos_pg-sv-9"
+                            xlink:to="var_es-be-p-FINREP_DotacionObligatoriaObrasFondosSocialesd10e652"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_pg-sv-9"
+                            xlink:to="var_ifrs-gp_ProfitLossAfterTaxFromContinuingOperationsd10e666"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_pg-sv-9" xlink:to="var_UmbralBasico3"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_pg-sv-9" id="lab_val_publicos_pg-sv-9"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la columna TOTAL pero aplica para todas las columnas:   0160=0145-0150-0155 </label:label>
+      <generic:arc xlink:from="val_publicos_pg-sv-9" xlink:to="lab_val_publicos_pg-sv-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_ifrs-gp_ProfitLossBeforeTaxd10e624" bindAsSequence="false"
+                             id="var_ifrs-gp_ProfitLossBeforeTaxd10e624"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_ifrs-gp_ProfitLossBeforeTaxd10e624"
+                                  xlink:to="fil_ifrs-gp_ProfitLossBeforeTaxd10e626"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_ProfitLossBeforeTaxd10e626"
+                      id="fil_ifrs-gp_ProfitLossBeforeTaxd10e626"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:ProfitLossBeforeTax</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_IncomeTaxExpenseIncomed10e638" bindAsSequence="false"
+                             id="var_ifrs-gp_IncomeTaxExpenseIncomed10e638"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_ifrs-gp_IncomeTaxExpenseIncomed10e638"
+                                  xlink:to="fil_ifrs-gp_IncomeTaxExpenseIncomed10e640"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_IncomeTaxExpenseIncomed10e640"
+                      id="fil_ifrs-gp_IncomeTaxExpenseIncomed10e640"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:IncomeTaxExpenseIncome</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_DotacionObligatoriaObrasFondosSocialesd10e652"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_DotacionObligatoriaObrasFondosSocialesd10e652"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_DotacionObligatoriaObrasFondosSocialesd10e652"
+                                  xlink:to="fil_es-be-p-FINREP_DotacionObligatoriaObrasFondosSocialesd10e654"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_DotacionObligatoriaObrasFondosSocialesd10e654"
+                      id="fil_es-be-p-FINREP_DotacionObligatoriaObrasFondosSocialesd10e654"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:DotacionObligatoriaObrasFondosSociales</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_ifrs-gp_ProfitLossAfterTaxFromContinuingOperationsd10e666"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_ProfitLossAfterTaxFromContinuingOperationsd10e666"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_ProfitLossAfterTaxFromContinuingOperationsd10e666"
+                                  xlink:to="fil_ifrs-gp_ProfitLossAfterTaxFromContinuingOperationsd10e668"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_ProfitLossAfterTaxFromContinuingOperationsd10e668"
+                      id="fil_ifrs-gp_ProfitLossAfterTaxFromContinuingOperationsd10e668"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:ProfitLossAfterTaxFromContinuingOperations</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_pg-sv-9" id="ref_val_publicos_pg-sv-9"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-sv-9</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-sv-9" xlink:to="ref_val_publicos_pg-sv-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_pg-or-1" test="$elemento ge 0"
+                         id="val_publicos_pg-or-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_publicos_pg-or-1" xlink:to="fil_d10e687"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="true" xlink:from="val_publicos_pg-or-1"
+                                     xlink:to="fil_DistribucionDim_AjustesEliminacionesd10e692"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableArc name="elemento" xlink:from="val_publicos_pg-or-1"
+                            xlink:to="var_ifrs-gp_InterestIncomeTotalFinancialInstitutions_OrOthersd10e702"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <generic:arc xlink:from="val_publicos_pg-or-1" xlink:to="pre_d10e768"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_publicos_pg-or-1" id="lab_val_publicos_pg-or-1"
+                   xlink:type="resource"
+                   xml:lang="es">Importe mayor o igual a 0</label:label>
+      <generic:arc xlink:from="val_publicos_pg-or-1" xlink:to="lab_val_publicos_pg-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptDataType strict="false" xlink:label="fil_d10e687" id="fil_d10e687" xlink:type="resource">
+         <cf:type>
+            <cf:qname>xbrli:monetaryItemType</cf:qname>
+         </cf:type>
+      </cf:conceptDataType>
+      <df:explicitDimension xlink:label="fil_DistribucionDim_AjustesEliminacionesd10e692"
+                            id="fil_DistribucionDim_AjustesEliminacionesd10e692"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-dist:DistribucionDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-dist:AjustesEliminaciones</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_ifrs-gp_InterestIncomeTotalFinancialInstitutions_OrOthersd10e702"
+                             bindAsSequence="false"
+                             id="var_ifrs-gp_InterestIncomeTotalFinancialInstitutions_OrOthersd10e702"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_ifrs-gp_InterestIncomeTotalFinancialInstitutions_OrOthersd10e702"
+                                  xlink:to="fil_ifrs-gp_InterestIncomeTotalFinancialInstitutions_OrOthersd10e704"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_InterestIncomeTotalFinancialInstitutions_OrOthersd10e704"
+                      id="fil_ifrs-gp_InterestIncomeTotalFinancialInstitutions_OrOthersd10e704"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:InterestIncomeTotalFinancialInstitutions</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:InterestExpenseTotalFinancialInstitutions</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:ExpensesOnShareCapitalRepayableOnDemand</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:DividendIncomeTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:DividendIncomeFinancialAssetsHeldForTrading</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:DividendIncomeFinancialAssetsDesignatedAsFairValueThroughProfitOrLoss</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:DividendIncomeAvailableForSaleFinancialAssets</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:FeesAndCommissionIncomeTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:FeesAndCommissionExpenseTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:OtherOperatingIncome</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:IngresosContratosSegurosReasegurosEmitidos</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:VentasIngresosPrestacionServiciosNoFinancieros</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:RestoProductosExplotacion</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:GastosContratosSegurosReaseguros</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:RestoOtrasCargasExplotacion</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:AdministrationCosts</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:EmployeeExpenses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:OtherAdministrativeExpenses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:DepreciationAmortisation</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:DepreciationOnPropertyPlantAndEquipment</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-FINREP:DepreciationOnInvestmentProperty</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:AmortisationOfIntangibleAssets</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:ImpairmentLossesGoodwill</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:NegativeGoodwillImmediatelyRecognised</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:DiferenciaNegativaCombinacionesNegocios</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:DotacionObligatoriaObrasFondosSociales</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:precondition test="$elemento lt 0" xlink:label="pre_d10e768" id="pre_d10e768"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_publicos_pg-or-1" id="ref_val_publicos_pg-or-1"
+                           xlink:type="resource">
+         <ref:Number>publicos:pg-or-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_pg-or-1" xlink:to="ref_val_publicos_pg-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

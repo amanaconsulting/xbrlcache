@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:estr_base="http://www.bde.es/es/fr/xbrl/main/base" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_pg-sv-1" test="abs($totalRdo - ($carteraNegociacion + $otrosInstrumentosFinancierosValorRazonableCambiosPyG + $instrumentosFinancierosNoValoradosCambiosPyG + $otros)) le $threshold" aspectModel="dimensional" implicitFiltering="true" id="es_pg-sv-1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_pg-sv-1.carteraNegociacion" bindAsSequence="false" fallbackValue="0" id="es_pg-sv-1.carteraNegociacion" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_pg-sv-1.carteraNegociacion.fil_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e43" id="es_pg-sv-1.carteraNegociacion.fil_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e43">
+      <cf:concept>
+        <cf:qname>estr_base:md63754</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_pg-sv-1.carteraNegociacion" xlink:to="es_pg-sv-1.carteraNegociacion.fil_ifrs-gp_GainsLossesOnFinancialInstrumentsHeldForTradingTotald10e43" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-1" xlink:to="es_pg-sv-1.carteraNegociacion" name="carteraNegociacion" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_pg-sv-1.otrosInstrumentosFinancierosValorRazonableCambiosPyG" bindAsSequence="false" fallbackValue="0" id="es_pg-sv-1.otrosInstrumentosFinancierosValorRazonableCambiosPyG" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_pg-sv-1.otrosInstrumentosFinancierosValorRazonableCambiosPyG.fil_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e57" id="es_pg-sv-1.otrosInstrumentosFinancierosValorRazonableCambiosPyG.fil_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e57">
+      <cf:concept>
+        <cf:qname>estr_base:md85999</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_pg-sv-1.otrosInstrumentosFinancierosValorRazonableCambiosPyG" xlink:to="es_pg-sv-1.otrosInstrumentosFinancierosValorRazonableCambiosPyG.fil_ifrs-gp_GainsLossesOnFinancialInstrumentsDesignatedAsFairValueThroughProfitOrLossExcludingInterestFlowsd10e57" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-1" xlink:to="es_pg-sv-1.otrosInstrumentosFinancierosValorRazonableCambiosPyG" name="otrosInstrumentosFinancierosValorRazonableCambiosPyG" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_pg-sv-1.instrumentosFinancierosNoValoradosCambiosPyG" bindAsSequence="false" fallbackValue="0" id="es_pg-sv-1.instrumentosFinancierosNoValoradosCambiosPyG" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_pg-sv-1.instrumentosFinancierosNoValoradosCambiosPyG.fil_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e71" id="es_pg-sv-1.instrumentosFinancierosNoValoradosCambiosPyG.fil_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e71">
+      <cf:concept>
+        <cf:qname>estr_base:md54206</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_pg-sv-1.instrumentosFinancierosNoValoradosCambiosPyG" xlink:to="es_pg-sv-1.instrumentosFinancierosNoValoradosCambiosPyG.fil_ifrs-gp_RealisedGainsLossesOnFinancialInstrumentsExcludingInterestFlowsTotald10e71" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-1" xlink:to="es_pg-sv-1.instrumentosFinancierosNoValoradosCambiosPyG" name="instrumentosFinancierosNoValoradosCambiosPyG" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_pg-sv-1.otros" bindAsSequence="false" fallbackValue="0" id="es_pg-sv-1.otros" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_pg-sv-1.otros.fil_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e85" id="es_pg-sv-1.otros.fil_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e85">
+      <cf:concept>
+        <cf:qname>estr_base:md48343</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_pg-sv-1.otros" xlink:to="es_pg-sv-1.otros.fil_es-be-p-FINREP_ResultadoOperacionesFinancierasOtrosd10e85" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-1" xlink:to="es_pg-sv-1.otros" name="otros" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_pg-sv-1.totalRdo" bindAsSequence="false" fallbackValue="0" id="es_pg-sv-1.totalRdo" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_pg-sv-1.totalRdo.fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e100" id="es_pg-sv-1.totalRdo.fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e100">
+      <cf:concept>
+        <cf:qname>estr_base:md74302</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_pg-sv-1.totalRdo" xlink:to="es_pg-sv-1.totalRdo.fil_es-be-p-FINREP_ResultadoOperacionesFinancierasd10e100" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-1" xlink:to="es_pg-sv-1.totalRdo" name="totalRdo" order="5" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_pg-sv-1.threshold" bindAsSequence="false" select="(4 idiv 2 + 1) * 1000" id="es_pg-sv-1.threshold" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_pg-sv-1" xlink:to="es_pg-sv-1.threshold" name="threshold" order="6" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_pg-sv-1" id="ref_es_pg-sv-1">
+      <ref:Number>publicos:pg-sv-1</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_pg-sv-1" xlink:to="ref_es_pg-sv-1" />
+  </gen:link>
+</link:linkbase>

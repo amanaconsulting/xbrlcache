@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:es-be-d-FR-pn="http://www.bde.es/es/fr/esrs/finrep/6-2008/2008-11-26/es-be-d-FR-pn"
+               xmlns:es-be-p-FINREP="http://www.bde.es/es/fr/esrs/finrep/6-2008/2008-11-26/es-be-p-FINREP"
+               xmlns:ifrs-gp="http://xbrl.iasb.org/int/fr/ifrs/gp/2006-08-15"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_7360_cuadres_1"
+                           id="ref_atributosCuadres_7360_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_7360_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_7360_cuadres_1"
+                           id="ref_moduloDefinicion_7360_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>ind_pub_1</frRef:Modulo>
+         <frRef:Instancia>Mind_pub_1</frRef:Instancia>
+         <frRef:Estado>7360</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_7360_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7360-sh-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7360-or-1a"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7360-or-1b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7360-or-1c"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7360-or-1d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7360-or-1e"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7360-or-1f"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <link:loc xlink:href="params_es.xml#var_UmbralBasico7" xlink:label="var_UmbralBasico7"
+                xlink:type="locator"/>
+      <link:loc xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xml#var_refPeriodEndDate"
+                xlink:label="var_statementEndPeriod"
+                xlink:type="locator"/>
+      <va:valueAssertion xlink:label="val_publicos_7360-sh-1"
+                         test="abs($totalRdo - (sum($secuencia) - sum($secuencia2))) le $threshold"
+                         id="val_publicos_7360-sh-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="secuencia" xlink:from="val_publicos_7360-sh-1"
+                            xlink:to="var_PatrimonioNetoDim_CapitalFondoDotaciond10e24"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="secuencia2" xlink:from="val_publicos_7360-sh-1"
+                            xlink:to="var_PatrimonioNetoDim_MenosValoresPropiosd10e46"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_publicos_7360-sh-1"
+                            xlink:to="var_PatrimonioNetoDim_TotalFondosPropiosd10e62"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7360-sh-1"
+                            xlink:to="var_UmbralBasico7"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <label:label xlink:label="lab_val_publicos_7360-sh-1" id="lab_val_publicos_7360-sh-1"
+                   xlink:type="resource"
+                   xml:lang="es">Se define la relación para la primera fila pero aplica para todas las filas del estado: 0701 = 0001 + 0051 + 0101 + 0351 - 0551 + 0601 - 0651</label:label>
+      <generic:arc xlink:from="val_publicos_7360-sh-1" xlink:to="lab_val_publicos_7360-sh-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_CapitalFondoDotaciond10e24"
+                             bindAsSequence="true"
+                             id="var_PatrimonioNetoDim_CapitalFondoDotaciond10e24"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_CapitalFondoDotaciond10e24"
+                                  xlink:to="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e26"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e26"
+                            id="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e26"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:CapitalFondoDotacion</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:PrimaEmision</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:TotalReservas</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:TotalOtrosInstrumentosCapital</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:ResultadoEjercicio</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_MenosValoresPropiosd10e46"
+                             bindAsSequence="true"
+                             id="var_PatrimonioNetoDim_MenosValoresPropiosd10e46"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PatrimonioNetoDim_MenosValoresPropiosd10e46"
+                                  xlink:to="fil_PatrimonioNetoDim_MenosValoresPropiosd10e48"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_MenosValoresPropiosd10e48"
+                            id="fil_PatrimonioNetoDim_MenosValoresPropiosd10e48"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:MenosValoresPropios</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:MenosDividendosRetribuciones</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_TotalFondosPropiosd10e62"
+                             bindAsSequence="false"
+                             id="var_PatrimonioNetoDim_TotalFondosPropiosd10e62"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PatrimonioNetoDim_TotalFondosPropiosd10e62"
+                                  xlink:to="fil_PatrimonioNetoDim_TotalFondosPropiosd10e64"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_TotalFondosPropiosd10e64"
+                            id="fil_PatrimonioNetoDim_TotalFondosPropiosd10e64"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:TotalFondosPropios</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_publicos_7360-sh-1" id="ref_val_publicos_7360-sh-1"
+                           xlink:type="resource">
+         <ref:Number>publicos:7360-sh-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7360-sh-1" xlink:to="ref_val_publicos_7360-sh-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7360-or-1a" test="($saldo ge 0)"
+                         id="val_publicos_7360-or-1a"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="saldo" xlink:from="val_publicos_7360-or-1a"
+                            xlink:to="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_PatrimonioNetoSaldoIniciald10e84"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_publicos_7360-or-1a" id="lab_val_publicos_7360-or-1a"
+                   xlink:type="resource"
+                   xml:lang="es">Habrán de presentar importe positivo las siguientes claves: 0001, 0051, 0551, 0651</label:label>
+      <generic:arc xlink:from="val_publicos_7360-or-1a" xlink:to="lab_val_publicos_7360-or-1a"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_PatrimonioNetoSaldoIniciald10e84"
+                             bindAsSequence="false"
+                             id="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_PatrimonioNetoSaldoIniciald10e84"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_PatrimonioNetoSaldoIniciald10e84"
+                                  xlink:to="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e86"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_PatrimonioNetoSaldoIniciald10e84"
+                                  xlink:to="fil_es-be-p-FINREP_PatrimonioNetoSaldoIniciald10e100"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e86"
+                            id="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e86"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:CapitalFondoDotacion</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:PrimaEmision</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:MenosValoresPropios</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:MenosDividendosRetribuciones</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_PatrimonioNetoSaldoIniciald10e100"
+                      id="fil_es-be-p-FINREP_PatrimonioNetoSaldoIniciald10e100"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:PatrimonioNetoSaldoInicial</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_7360-or-1a" id="ref_val_publicos_7360-or-1a"
+                           xlink:type="resource">
+         <ref:Number>publicos:7360-or-1a</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7360-or-1a" xlink:to="ref_val_publicos_7360-or-1a"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7360-or-1b" test="($capital ge 0)"
+                         id="val_publicos_7360-or-1b"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="capital" xlink:from="val_publicos_7360-or-1b"
+                            xlink:to="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_AumentosCapitalFondoDotacion_OrOthersd10e118"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_publicos_7360-or-1b" id="lab_val_publicos_7360-or-1b"
+                   xlink:type="resource"
+                   xml:lang="es">Habrán de presentar importe positivo las siguientes claves: 0016,0017,0018</label:label>
+      <generic:arc xlink:from="val_publicos_7360-or-1b" xlink:to="lab_val_publicos_7360-or-1b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_AumentosCapitalFondoDotacion_OrOthersd10e118"
+                             bindAsSequence="false"
+                             id="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_AumentosCapitalFondoDotacion_OrOthersd10e118"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_AumentosCapitalFondoDotacion_OrOthersd10e118"
+                                  xlink:to="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e120"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_CapitalFondoDotaciones-be-p-FINREP_AumentosCapitalFondoDotacion_OrOthersd10e118"
+                                  xlink:to="fil_es-be-p-FINREP_AumentosCapitalFondoDotacion_OrOthersd10e128"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e120"
+                            id="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e120"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:CapitalFondoDotacion</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_AumentosCapitalFondoDotacion_OrOthersd10e128"
+                      id="fil_es-be-p-FINREP_AumentosCapitalFondoDotacion_OrOthersd10e128"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:AumentosCapitalFondoDotacion</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:CapitalReductionTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:ConversionOfDebtToEquityTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_7360-or-1b" id="ref_val_publicos_7360-or-1b"
+                           xlink:type="resource">
+         <ref:Number>publicos:7360-or-1b</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7360-or-1b" xlink:to="ref_val_publicos_7360-or-1b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7360-or-1c" test="($aux ge 0)"
+                         id="val_publicos_7360-or-1c"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="aux" xlink:from="val_publicos_7360-or-1c"
+                            xlink:to="var_PatrimonioNetoDim_TotalOtrosInstrumentosCapitales-be-p-FINREP_IncrementosOtrosIntrumentosCapital_OrOthersd10e150"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_publicos_7360-or-1c" id="lab_val_publicos_7360-or-1c"
+                   xlink:type="resource"
+                   xml:lang="es">Habrán de presentar importe positivo las siguientes claves: 0369,0370,0371</label:label>
+      <generic:arc xlink:from="val_publicos_7360-or-1c" xlink:to="lab_val_publicos_7360-or-1c"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_TotalOtrosInstrumentosCapitales-be-p-FINREP_IncrementosOtrosIntrumentosCapital_OrOthersd10e150"
+                             bindAsSequence="false"
+                             id="var_PatrimonioNetoDim_TotalOtrosInstrumentosCapitales-be-p-FINREP_IncrementosOtrosIntrumentosCapital_OrOthersd10e150"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_TotalOtrosInstrumentosCapitales-be-p-FINREP_IncrementosOtrosIntrumentosCapital_OrOthersd10e150"
+                                  xlink:to="fil_PatrimonioNetoDim_TotalOtrosInstrumentosCapitald10e152"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_TotalOtrosInstrumentosCapitales-be-p-FINREP_IncrementosOtrosIntrumentosCapital_OrOthersd10e150"
+                                  xlink:to="fil_es-be-p-FINREP_IncrementosOtrosIntrumentosCapital_OrOthersd10e160"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_TotalOtrosInstrumentosCapitald10e152"
+                            id="fil_PatrimonioNetoDim_TotalOtrosInstrumentosCapitald10e152"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:TotalOtrosInstrumentosCapital</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_IncrementosOtrosIntrumentosCapital_OrOthersd10e160"
+                      id="fil_es-be-p-FINREP_IncrementosOtrosIntrumentosCapital_OrOthersd10e160"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:IncrementosOtrosIntrumentosCapital</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:ReclassificationOfFinancialInstrumentsFromLiabilityToEquityTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>ifrs-gp:ReclassificationOfFinancialInstrumentsFromEquityToLiabilityTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_7360-or-1c" id="ref_val_publicos_7360-or-1c"
+                           xlink:type="resource">
+         <ref:Number>publicos:7360-or-1c</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7360-or-1c" xlink:to="ref_val_publicos_7360-or-1c"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7360-or-1d" test="($aux ge 0)"
+                         id="val_publicos_7360-or-1d"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="aux" xlink:from="val_publicos_7360-or-1d"
+                            xlink:to="var_PatrimonioNetoDim_PrimaEmisiones-be-p-FINREP_DistribucionDividendosRemuneracionSociosd10e182"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_publicos_7360-or-1d" id="lab_val_publicos_7360-or-1d"
+                   xlink:type="resource"
+                   xml:lang="es">Habrán de presentar importe positivo las siguientes claves: 0072,0122,0622</label:label>
+      <generic:arc xlink:from="val_publicos_7360-or-1d" xlink:to="lab_val_publicos_7360-or-1d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_PrimaEmisiones-be-p-FINREP_DistribucionDividendosRemuneracionSociosd10e182"
+                             bindAsSequence="false"
+                             id="var_PatrimonioNetoDim_PrimaEmisiones-be-p-FINREP_DistribucionDividendosRemuneracionSociosd10e182"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_PrimaEmisiones-be-p-FINREP_DistribucionDividendosRemuneracionSociosd10e182"
+                                  xlink:to="fil_PatrimonioNetoDim_PrimaEmisiond10e184"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_PrimaEmisiones-be-p-FINREP_DistribucionDividendosRemuneracionSociosd10e182"
+                                  xlink:to="fil_es-be-p-FINREP_DistribucionDividendosRemuneracionSociosd10e196"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_PrimaEmisiond10e184"
+                            id="fil_PatrimonioNetoDim_PrimaEmisiond10e184"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:PrimaEmision</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:TotalReservas</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:ResultadoEjercicio</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_DistribucionDividendosRemuneracionSociosd10e196"
+                      id="fil_es-be-p-FINREP_DistribucionDividendosRemuneracionSociosd10e196"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:DistribucionDividendosRemuneracionSocios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_7360-or-1d" id="ref_val_publicos_7360-or-1d"
+                           xlink:type="resource">
+         <ref:Number>publicos:7360-or-1d</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7360-or-1d" xlink:to="ref_val_publicos_7360-or-1d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7360-or-1e" test="($aux ge 0)"
+                         id="val_publicos_7360-or-1e"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="aux" xlink:from="val_publicos_7360-or-1e"
+                            xlink:to="var_PatrimonioNetoDim_TotalReservases-be-p-FINREP_DotacionDiscrecionalObrasFondosSocialesd10e215"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_publicos_7360-or-1e" id="lab_val_publicos_7360-or-1e"
+                   xlink:type="resource"
+                   xml:lang="es">Habrán de presentar importe positivo las siguientes claves: 0126,0626</label:label>
+      <generic:arc xlink:from="val_publicos_7360-or-1e" xlink:to="lab_val_publicos_7360-or-1e"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_TotalReservases-be-p-FINREP_DotacionDiscrecionalObrasFondosSocialesd10e215"
+                             bindAsSequence="false"
+                             id="var_PatrimonioNetoDim_TotalReservases-be-p-FINREP_DotacionDiscrecionalObrasFondosSocialesd10e215"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_TotalReservases-be-p-FINREP_DotacionDiscrecionalObrasFondosSocialesd10e215"
+                                  xlink:to="fil_PatrimonioNetoDim_TotalReservasd10e217"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_TotalReservases-be-p-FINREP_DotacionDiscrecionalObrasFondosSocialesd10e215"
+                                  xlink:to="fil_es-be-p-FINREP_DotacionDiscrecionalObrasFondosSocialesd10e227"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_TotalReservasd10e217"
+                            id="fil_PatrimonioNetoDim_TotalReservasd10e217"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:TotalReservas</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:ResultadoEjercicio</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_DotacionDiscrecionalObrasFondosSocialesd10e227"
+                      id="fil_es-be-p-FINREP_DotacionDiscrecionalObrasFondosSocialesd10e227"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:DotacionDiscrecionalObrasFondosSociales</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_7360-or-1e" id="ref_val_publicos_7360-or-1e"
+                           xlink:type="resource">
+         <ref:Number>publicos:7360-or-1e</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7360-or-1e" xlink:to="ref_val_publicos_7360-or-1e"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7360-or-1f" test="($saldo ge 0)"
+                         id="val_publicos_7360-or-1f"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_publicos_7360-or-1f"
+                                     xlink:to="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e243"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="saldo" xlink:from="val_publicos_7360-or-1f"
+                            xlink:to="var_ifrs-gp_EquityTotald10e259"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="total" xlink:from="val_publicos_7360-or-1f"
+                            xlink:to="var_es-be-p-FINREP_OtrasVariacionesPatrimonioNetod10e278"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="endPeriod" xlink:from="val_publicos_7360-or-1f"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_publicos_7360-or-1f" id="lab_val_publicos_7360-or-1f"
+                   xlink:type="resource"
+                   xml:lang="es">Habrán de presentar importe positivo las siguientes claves: 0050, 0100, 0600, 0700</label:label>
+      <generic:arc xlink:from="val_publicos_7360-or-1f" xlink:to="lab_val_publicos_7360-or-1f"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e243"
+                            id="fil_PatrimonioNetoDim_CapitalFondoDotaciond10e243"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-FR-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:CapitalFondoDotacion</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:PrimaEmision</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:MenosValoresPropios</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-d-FR-pn:MenosDividendosRetribuciones</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_ifrs-gp_EquityTotald10e259" bindAsSequence="false"
+                             id="var_ifrs-gp_EquityTotald10e259"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_ifrs-gp_EquityTotald10e259"
+                                  xlink:to="fil_d10e261"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_ifrs-gp_EquityTotald10e259"
+                                  xlink:to="fil_ifrs-gp_EquityTotald10e266"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <pf:periodInstant xlink:label="fil_d10e261" id="fil_d10e261" xlink:type="resource"
+                        date="xs:date($endPeriod)"/>
+      <cf:conceptName xlink:label="fil_ifrs-gp_EquityTotald10e266"
+                      id="fil_ifrs-gp_EquityTotald10e266"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>ifrs-gp:EquityTotal</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-FINREP_OtrasVariacionesPatrimonioNetod10e278"
+                             bindAsSequence="false"
+                             id="var_es-be-p-FINREP_OtrasVariacionesPatrimonioNetod10e278"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-FINREP_OtrasVariacionesPatrimonioNetod10e278"
+                                  xlink:to="fil_es-be-p-FINREP_OtrasVariacionesPatrimonioNetod10e280"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_es-be-p-FINREP_OtrasVariacionesPatrimonioNetod10e280"
+                      id="fil_es-be-p-FINREP_OtrasVariacionesPatrimonioNetod10e280"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-FINREP:OtrasVariacionesPatrimonioNeto</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_publicos_7360-or-1f" id="ref_val_publicos_7360-or-1f"
+                           xlink:type="resource">
+         <ref:Number>publicos:7360-or-1f</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7360-or-1f" xlink:to="ref_val_publicos_7360-or-1f"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

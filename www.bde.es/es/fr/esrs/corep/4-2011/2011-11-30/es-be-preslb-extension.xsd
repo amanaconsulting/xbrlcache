@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.bde.es/2007/preslb-extension" targetNamespace="http://www.bde.es/2007/preslb-extension" elementFormDefault="qualified">
+	  <xs:element name="DataCell">
+		    <xs:annotation>
+			      <xs:documentation>Celda de datos con la lista de pares dimensión / valor asociados</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="DimensionValueRef" minOccurs="0" maxOccurs="unbounded"/>
+				        <xs:element ref="InvalidSection" minOccurs="0" maxOccurs="unbounded"/>
+			      </xs:sequence>
+			      <xs:attribute name="code" type="xs:token" use="optional"/>
+			      <xs:attribute name="primaryItem" type="xs:QName" use="required"/>
+			      <xs:attributeGroup ref="CellCommonAttrs"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="DimensionRef">
+		    <xs:annotation>
+			      <xs:documentation>Referencia a dimension</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:attribute name="name" type="xs:QName" use="required"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="DimensionValueRef">
+		    <xs:annotation>
+			      <xs:documentation>Par dimensión / valor de la dimensión</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:attribute name="dimension" type="xs:QName" use="required"/>
+			      <xs:attribute name="value" type="xs:QName" use="required"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="DimensionsUsed">
+		    <xs:annotation>
+			      <xs:documentation>Dimensiones utilizadas en el formulario</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:choice minOccurs="0" maxOccurs="unbounded">
+				        <xs:element ref="TypedDimension"/>
+				        <xs:element ref="ExplicitDimension"/>
+			      </xs:choice>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="DomainMember">
+		    <xs:annotation>
+			      <xs:documentation>Miembros de la dimensión explícita utilizados en el formulario. El atributo code utilizado en la interfaz FIN se obtendrán del atributo orden del arco</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:attribute name="name" type="xs:QName" use="required"/>
+			      <xs:attribute name="label" type="xs:string" use="required"/>
+			      <xs:attribute name="code" type="xs:token" use="required"/>
+			      <xs:attribute name="indent" type="xs:unsignedInt" use="optional"/>
+			      <xs:attribute name="default" type="xs:boolean" use="optional" default="false"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="ExplicitDimension">
+		    <xs:annotation>
+			      <xs:documentation>Descripción de dimensión explícita. Este elemento incluye los atributos no estándares del arco destino a la dimensión: como por ejemplo idFIN o lenFIN</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="DomainMember" maxOccurs="unbounded"/>
+			      </xs:sequence>
+			      <xs:attribute name="name" type="xs:QName" use="required"/>
+			      <xs:attribute name="label" type="xs:string" use="required"/>
+			      <xs:anyAttribute processContents="lax"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="Form">
+		    <xs:annotation>
+			      <xs:documentation>Definición de un formulario</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="DimensionsUsed"/>
+				        <xs:element ref="ZAxys"/>
+				        <xs:element ref="Matrix"/>
+			      </xs:sequence>
+			      <xs:attribute name="name" type="xs:QName" use="required"/>
+			      <xs:attribute name="label" type="xs:string" use="optional"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="FormSet">
+		    <xs:annotation>
+			      <xs:documentation>Conjunto de formularios</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="Form" maxOccurs="unbounded"/>
+			      </xs:sequence>
+			      <xs:attribute name="taxURI" type="xs:anyURI" use="optional"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="InvalidSection">
+		    <xs:annotation>
+			      <xs:documentation>Combinación específica de dimensiones para las cuales la celda no es válida</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="DimensionValueRef" maxOccurs="unbounded"/>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="Matrix">
+		    <xs:annotation>
+			      <xs:documentation>Definición de la matriz del formulario. Se compone de una secuencia de filas</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:choice maxOccurs="unbounded">
+				        <xs:element ref="FixedRow"/>
+				        <xs:element ref="OpenRow"/>
+			      </xs:choice>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="FixedRow">
+		    <xs:annotation>
+			      <xs:documentation>Fila standar de la matriz. Es decir, fila asociada a una posición fija</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:choice maxOccurs="unbounded">
+				        <xs:element ref="TextCell"/>
+				        <xs:element ref="DataCell"/>
+			      </xs:choice>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="TextCell">
+		    <xs:annotation>
+			      <xs:documentation>Celda de texto. Se utiliza tanot para celdas de tipo cabecera como para celdas grises (generales al formulario)</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:attribute name="indent" type="xs:unsignedInt" use="optional"/>
+			      <xs:attribute name="label" type="xs:string" use="optional"/>
+			      <xs:attributeGroup ref="CellCommonAttrs"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="TypedDimension">
+		    <xs:annotation>
+			      <xs:documentation>Descripción de una dimension tipada. Este elemento incluye los atributos no estándares del arco destino a la dimensión: como por ejemplo idFIN o lenFIN</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:attribute name="name" type="xs:QName" use="required"/>
+			      <xs:attribute name="label" type="xs:string" use="required"/>
+			      <xs:anyAttribute processContents="lax"/>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="ZAxys">
+		    <xs:annotation>
+			      <xs:documentation>Sección de dimensiones a mostrar en el eje Z</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:sequence>
+				        <xs:element ref="DimensionRef" minOccurs="0" maxOccurs="unbounded"/>
+			      </xs:sequence>
+		    </xs:complexType>
+	  </xs:element>
+	  <xs:attributeGroup name="CellCommonAttrs">
+		    <xs:annotation>
+			      <xs:documentation>Atributos comunes a las celdas de texto y datos</xs:documentation>
+		    </xs:annotation>
+		    <xs:attribute name="colspan" type="xs:unsignedInt" use="optional" default="1"/>
+		    <xs:attribute name="rowspan" type="xs:unsignedInt" use="optional" default="1"/>
+		    <xs:attribute name="width" type="xs:unsignedInt" use="optional"/>
+		    <xs:attribute name="class" type="xs:token" use="optional"/>
+	  </xs:attributeGroup>
+	  <xs:element name="OpenRow">
+		    <xs:annotation>
+			      <xs:documentation>Fila abierta. Es decir, sección que admite un conjunto indeterminado de filas en función del valor de una clave. La clave es el conjunto de dimensiones referenciadas por elementos DimValueCell contenidos</xs:documentation>
+		    </xs:annotation>
+		    <xs:complexType>
+			      <xs:choice maxOccurs="unbounded">
+				        <xs:element ref="TextCell"/>
+				        <xs:element name="DimValueCell">
+					          <xs:annotation>
+						            <xs:documentation>Referencia a una dimensión (normalmente tipada). La celda contendrá un valor encontrado en la instancia para esa dimensión</xs:documentation>
+					          </xs:annotation>
+					          <xs:complexType>
+						            <xs:attribute name="name" type="xs:QName" use="required"/>
+						            <xs:attribute name="indent" type="xs:unsignedInt" use="required"/>
+						            <xs:attributeGroup ref="CellCommonAttrs"/>
+					          </xs:complexType>
+				        </xs:element>
+				        <xs:element ref="DataCell"/>
+			      </xs:choice>
+		    </xs:complexType>
+	  </xs:element>
+</xs:schema>

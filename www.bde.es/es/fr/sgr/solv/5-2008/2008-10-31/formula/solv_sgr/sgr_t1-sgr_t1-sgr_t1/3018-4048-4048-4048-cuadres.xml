@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:p-rpsgr="http://www.bde.es/es/fr/sgr/solv/5-2008/2008-10-31/p-rpsgr"
+               xmlns:d-sgr-se="http://www.bde.es/es/fr/esrs/sgr/EHA-1327-2009/2009-05-28/d-sgr-se"
+               xmlns:d-sgr-ga="http://www.bde.es/es/fr/esrs/sgr/EHA-1327-2009/2009-05-28/d-sgr-ga"
+               xmlns:d-sgr-na="http://www.bde.es/es/fr/esrs/sgr/EHA-1327-2009/2009-05-28/d-sgr-na"
+               xmlns:d-sgr-pn="http://www.bde.es/es/fr/esrs/sgr/EHA-1327-2009/2009-05-28/d-sgr-pn"
+               xmlns:d-sgr-ea="http://www.bde.es/es/fr/esrs/sgr/EHA-1327-2009/2009-05-28/d-sgr-ea"
+               xmlns:p-sgr="http://www.bde.es/es/fr/esrs/sgr/EHA-1327-2009/2009-05-28/p-sgr"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-msolv_sgr.xml#Msolv_sgr"
+                xlink:label="Msolv_sgr"/>
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-msgr_t1.t12.xml#Msgr_t1.T12"
+                xlink:label="Msgr_t1.T12"/>
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-msgr_t1.t24.xml#Msgr_t1.T24"
+                xlink:label="Msgr_t1.T24"/>
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-msgr_t1.xml#Msgr_t1"
+                xlink:label="Msgr_t1"/>
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_3018_4048_4048_4048_cuadres_1"
+                           id="ref_atributosCuadres_3018_4048_4048_4048_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_atributosCuadres_3018_4048_4048_4048_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_3018_4048_4048_4048_cuadres_1"
+                           id="ref_moduloDefinicion_3018_4048_4048_4048_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>solv_sgr</frRef:Modulo>
+         <frRef:Instancia>Msolv_sgr</frRef:Instancia>
+         <frRef:Estado>3018</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloDefinicion_3018_4048_4048_4048_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloExterno_3018_4048_4048_4048_cuadres_2"
+                           id="ref_moduloExterno_3018_4048_4048_4048_cuadres_2"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/moduloexterno">
+         <frRef:Modulo>sgr_t1</frRef:Modulo>
+         <frRef:Instancia>Msgr_t1</frRef:Instancia>
+         <frRef:Estado>4048?</frRef:Estado>
+         <frRef:Dependiente>false</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloExterno_3018_4048_4048_4048_cuadres_2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="2"/>
+      <reference:reference xlink:label="ref_moduloExterno_3018_4048_4048_4048_cuadres_3"
+                           id="ref_moduloExterno_3018_4048_4048_4048_cuadres_3"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/moduloexterno">
+         <frRef:Modulo>sgr_t1</frRef:Modulo>
+         <frRef:Instancia>Msgr_t1.T12</frRef:Instancia>
+         <frRef:Estado>4048?</frRef:Estado>
+         <frRef:Dependiente>false</frRef:Dependiente>
+         <frRef:OffsetAbsoluto>12</frRef:OffsetAbsoluto>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloExterno_3018_4048_4048_4048_cuadres_3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="3"/>
+      <reference:reference xlink:label="ref_moduloExterno_3018_4048_4048_4048_cuadres_4"
+                           id="ref_moduloExterno_3018_4048_4048_4048_cuadres_4"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/moduloexterno">
+         <frRef:Modulo>sgr_t1</frRef:Modulo>
+         <frRef:Instancia>Msgr_t1.T24</frRef:Instancia>
+         <frRef:Estado>4048?</frRef:Estado>
+         <frRef:Dependiente>false</frRef:Dependiente>
+         <frRef:OffsetAbsoluto>24</frRef:OffsetAbsoluto>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloExterno_3018_4048_4048_4048_cuadres_4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_solv_sgr_3018-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <link:loc xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xml#var_refPeriodEndDate"
+                xlink:label="var_statementEndPeriod"
+                xlink:type="locator"/>
+      <link:loc xlink:href="../../parametros.xml#var_UmbralBasico6"
+                xlink:label="var_UmbralBasico6"
+                xlink:type="locator"/>
+      <va:valueAssertion xlink:label="val_solv_sgr_3018-oe-16"
+                         test="abs($celda0025_3018 - (($max_anno_anterior + $max_anno_2_anterior + $max_anno_3_actual) div ($ingresos_pos_anterior + $ingresos_pos_2_anterior + $ingresos_pos_3_actual))) le $threshold"
+                         id="val_solv_sgr_3018-oe-16"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msolv_sgr" xlink:to="var_p-rpsgr_i10025d10e37"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1.T12"
+                   xlink:to="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1.T24"
+                   xlink:to="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1"
+                   xlink:to="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="Msgr_t1"
+                   xlink:to="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="5"/>
+      <variable:variableArc name="celda0025_3018" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_p-rpsgr_i10025d10e37"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celdas_4048_Anno_Ant" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="anno_anterior" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_d10e133"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celdas_4048_Anno_2_Ant" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="dos_annos_antes" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_d10e216"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="celdas_4048_Anno_3_Act" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <variable:variableArc name="_celda0001_4048_Act" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="7"/>
+      <variable:variableArc name="max_anno_anterior" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_d10e348"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="8"/>
+      <variable:variableArc name="max_anno_2_anterior" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_d10e353"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="9"/>
+      <variable:variableArc name="max_anno_3_actual" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_d10e358"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="10"/>
+      <variable:variableArc name="ingresos_pos_anterior" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_d10e364"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="11"/>
+      <variable:variableArc name="ingresos_pos_2_anterior" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_d10e369"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="12"/>
+      <variable:variableArc name="ingresos_pos_3_actual" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_d10e374"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="13"/>
+      <variable:variableArc name="fechaDeclaracion" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="14"/>
+      <variable:variableArc name="threshold" xlink:from="val_solv_sgr_3018-oe-16"
+                            xlink:to="var_UmbralBasico6"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="15"/>
+      <generic:arc xlink:from="val_solv_sgr_3018-oe-16" xlink:to="pre_d10e381"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="val_solv_sgr_3018-oe-16" xlink:to="pre_d10e384"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="2"/>
+      <label:label xlink:label="lab_val_solv_sgr_3018-oe-16" id="lab_val_solv_sgr_3018-oe-16"
+                   xlink:type="resource"
+                   xml:lang="es">0025 (3018) = [MAX [15%× (0001 + 0005 + 0015 + 0065 + 0070 + 0075 + 0080 + 0085 +
+                0090) (4048 diciembre dos años antes); 0] + [MAX [15%× (0001 + 0005 + 0015 + 0065 +
+                0070 + 0075 + 0080 + 0085 + 0090) (4048 diciembre un año antes); 0] + [MAX [15%×
+                (0001 + 0005 + 0015 + 0065 + 0070 + 0075 + 0080 + 0085 + 0090) (4048 último
+                diciembre); 0]] / (al número de años con ingresos positivos, es decir, que para el
+                4048 de diciembre se cumpla: 0001 + 0005 + 0015 + 0065 + 0070 + 0075 + 0080 + 0085 +
+                0090 mayor que 0)</label:label>
+      <generic:arc xlink:from="val_solv_sgr_3018-oe-16" xlink:to="lab_val_solv_sgr_3018-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-rpsgr_i10025d10e37" bindAsSequence="false"
+                             id="var_p-rpsgr_i10025d10e37"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-rpsgr_i10025d10e37"
+                                  xlink:to="fil_p-rpsgr_i10025d10e39"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-rpsgr_i10025d10e37" xlink:to="fil_d10e47"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-rpsgr_i10025d10e39" id="fil_p-rpsgr_i10025d10e39"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-rpsgr:i10025</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e47" id="fil_d10e47" xlink:type="resource"
+                        date="xs:date($fechaDeclaracion)"/>
+      <variable:factVariable xlink:label="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                             bindAsSequence="true"
+                             id="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                                  xlink:to="fil_sectorDim_D2009005d10e58"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                                  xlink:to="fil_GarantiaDim_D2009006d10e66"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                                  xlink:to="fil_naturalezaDim_D2009010d10e74"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                                  xlink:to="fil_PatrimonioNetoDim_D2009001d10e82"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                                  xlink:to="fil_entidadAnteAvalaDim_D2009009d10e90"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                                  xlink:to="fil_p-sgr_I2009000185_OrOthersd10e99"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e56"
+                                  xlink:to="fil_d10e124"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="7"/>
+      <df:explicitDimension xlink:label="fil_sectorDim_D2009005d10e58" id="fil_sectorDim_D2009005d10e58"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-se:sectorDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-se:D2009005</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_GarantiaDim_D2009006d10e66"
+                            id="fil_GarantiaDim_D2009006d10e66"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-ga:GarantiaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-ga:D2009006</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_naturalezaDim_D2009010d10e74"
+                            id="fil_naturalezaDim_D2009010d10e74"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-na:naturalezaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-na:D2009010</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_D2009001d10e82"
+                            id="fil_PatrimonioNetoDim_D2009001d10e82"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-pn:D2009001</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_entidadAnteAvalaDim_D2009009d10e90"
+                            id="fil_entidadAnteAvalaDim_D2009009d10e90"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-ea:entidadAnteAvalaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-ea:D2009009</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000185_OrOthersd10e99"
+                      id="fil_p-sgr_I2009000185_OrOthersd10e99"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000185</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000188</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000193</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000206</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000209</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000210</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000211</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000212</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000215</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodEnd xlink:label="fil_d10e124" id="fil_d10e124" xlink:type="resource"
+                    date="$anno_anterior"/>
+      <variable:generalVariable select="(xs:date($fechaDeclaracion) - xs:yearMonthDuration('P12M'))"
+                                xlink:label="var_d10e133"
+                                bindAsSequence="true"
+                                id="var_d10e133"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                             bindAsSequence="true"
+                             id="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                                  xlink:to="fil_sectorDim_D2009005d10e140"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                                  xlink:to="fil_GarantiaDim_D2009006d10e148"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                                  xlink:to="fil_naturalezaDim_D2009010d10e156"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                                  xlink:to="fil_PatrimonioNetoDim_D2009001d10e164"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                                  xlink:to="fil_entidadAnteAvalaDim_D2009009d10e172"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                                  xlink:to="fil_p-sgr_I2009000185_OrOthersd10e181"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e138"
+                                  xlink:to="fil_d10e206"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="7"/>
+      <df:explicitDimension xlink:label="fil_sectorDim_D2009005d10e140" id="fil_sectorDim_D2009005d10e140"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-se:sectorDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-se:D2009005</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_GarantiaDim_D2009006d10e148"
+                            id="fil_GarantiaDim_D2009006d10e148"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-ga:GarantiaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-ga:D2009006</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_naturalezaDim_D2009010d10e156"
+                            id="fil_naturalezaDim_D2009010d10e156"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-na:naturalezaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-na:D2009010</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_D2009001d10e164"
+                            id="fil_PatrimonioNetoDim_D2009001d10e164"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-pn:D2009001</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_entidadAnteAvalaDim_D2009009d10e172"
+                            id="fil_entidadAnteAvalaDim_D2009009d10e172"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-ea:entidadAnteAvalaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-ea:D2009009</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000185_OrOthersd10e181"
+                      id="fil_p-sgr_I2009000185_OrOthersd10e181"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000185</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000188</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000193</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000206</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000209</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000210</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000211</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000212</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000215</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodEnd xlink:label="fil_d10e206" id="fil_d10e206" xlink:type="resource"
+                    date="xs:date($dos_annos_antes)"/>
+      <variable:generalVariable select="concat((year-from-date($fechaDeclaracion) - 2),'-12-31')"
+                                xlink:label="var_d10e216"
+                                bindAsSequence="true"
+                                id="var_d10e216"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                             bindAsSequence="true"
+                             id="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                                  xlink:to="fil_sectorDim_D2009005d10e223"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                                  xlink:to="fil_GarantiaDim_D2009006d10e231"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                                  xlink:to="fil_naturalezaDim_D2009010d10e239"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                                  xlink:to="fil_PatrimonioNetoDim_D2009001d10e247"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                                  xlink:to="fil_entidadAnteAvalaDim_D2009009d10e255"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185_OrOthersd10e221"
+                                  xlink:to="fil_p-sgr_I2009000185_OrOthersd10e264"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_sectorDim_D2009005d10e223" id="fil_sectorDim_D2009005d10e223"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-se:sectorDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-se:D2009005</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_GarantiaDim_D2009006d10e231"
+                            id="fil_GarantiaDim_D2009006d10e231"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-ga:GarantiaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-ga:D2009006</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_naturalezaDim_D2009010d10e239"
+                            id="fil_naturalezaDim_D2009010d10e239"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-na:naturalezaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-na:D2009010</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_D2009001d10e247"
+                            id="fil_PatrimonioNetoDim_D2009001d10e247"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-pn:D2009001</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_entidadAnteAvalaDim_D2009009d10e255"
+                            id="fil_entidadAnteAvalaDim_D2009009d10e255"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-ea:entidadAnteAvalaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-ea:D2009009</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000185_OrOthersd10e264"
+                      id="fil_p-sgr_I2009000185_OrOthersd10e264"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000185</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000188</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000193</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000206</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000209</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000210</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000211</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000212</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000215</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                             bindAsSequence="false"
+                             id="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                                  xlink:to="fil_sectorDim_D2009005d10e295"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                                  xlink:to="fil_GarantiaDim_D2009006d10e303"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                                  xlink:to="fil_naturalezaDim_D2009010d10e311"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                                  xlink:to="fil_PatrimonioNetoDim_D2009001d10e319"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                                  xlink:to="fil_entidadAnteAvalaDim_D2009009d10e327"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_sectorDim_D2009005GarantiaDim_D2009006naturalezaDim_D2009010PatrimonioNetoDim_D2009001entidadAnteAvalaDim_D2009009p-sgr_I2009000185d10e293"
+                                  xlink:to="fil_p-sgr_I2009000185d10e336"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_sectorDim_D2009005d10e295" id="fil_sectorDim_D2009005d10e295"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-se:sectorDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-se:D2009005</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_GarantiaDim_D2009006d10e303"
+                            id="fil_GarantiaDim_D2009006d10e303"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-ga:GarantiaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-ga:D2009006</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_naturalezaDim_D2009010d10e311"
+                            id="fil_naturalezaDim_D2009010d10e311"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-na:naturalezaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-na:D2009010</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_D2009001d10e319"
+                            id="fil_PatrimonioNetoDim_D2009001d10e319"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-pn:D2009001</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_entidadAnteAvalaDim_D2009009d10e327"
+                            id="fil_entidadAnteAvalaDim_D2009009d10e327"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-ea:entidadAnteAvalaDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-ea:D2009009</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000185d10e336" id="fil_p-sgr_I2009000185d10e336"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000185</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:generalVariable select="max((0.15 * (sum($celdas_4048_Anno_Ant)), 0))"
+                                xlink:label="var_d10e348"
+                                bindAsSequence="true"
+                                id="var_d10e348"
+                                xlink:type="resource"/>
+      <variable:generalVariable select="max((0.15 * (sum($celdas_4048_Anno_2_Ant)), 0))"
+                                xlink:label="var_d10e353"
+                                bindAsSequence="true"
+                                id="var_d10e353"
+                                xlink:type="resource"/>
+      <variable:generalVariable select="max((0.15 * (sum($celdas_4048_Anno_3_Act)), 0))"
+                                xlink:label="var_d10e358"
+                                bindAsSequence="true"
+                                id="var_d10e358"
+                                xlink:type="resource"/>
+      <variable:generalVariable select="if ($max_anno_anterior gt 0) then 1 else 0" xlink:label="var_d10e364"
+                                bindAsSequence="true"
+                                id="var_d10e364"
+                                xlink:type="resource"/>
+      <variable:generalVariable select="if ($max_anno_2_anterior gt 0) then 1 else 0" xlink:label="var_d10e369"
+                                bindAsSequence="true"
+                                id="var_d10e369"
+                                xlink:type="resource"/>
+      <variable:generalVariable select="if ($max_anno_3_actual gt 0) then 1 else 0" xlink:label="var_d10e374"
+                                bindAsSequence="true"
+                                id="var_d10e374"
+                                xlink:type="resource"/>
+      <variable:precondition test="month-from-date($fechaDeclaracion) eq 12" xlink:label="pre_d10e381"
+                             id="pre_d10e381"
+                             xlink:type="resource"/>
+      <variable:precondition test="sum($celdas_4048_Anno_Ant) gt 0" xlink:label="pre_d10e384"
+                             id="pre_d10e384"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_solv_sgr_3018-oe-16" id="ref_val_solv_sgr_3018-oe-16"
+                           xlink:type="resource">
+         <ref:Number>solv_sgr:3018-oe-16</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_solv_sgr_3018-oe-16" xlink:to="ref_val_solv_sgr_3018-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/sgr/role/DimensionDefault" xlink:type="simple" xlink:href="sgr-rol.xsd#DimensionDefault"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-default"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/sgr/role/DimensionDefault">
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_GarantiaDimension" xlink:label="GarantiaDimension" xlink:title="GarantiaDimension"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_D2009006" xlink:label="TotalGarantiasComplementariasRecibidas" xlink:title="TotalGarantiasComplementariasRecibidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="GarantiaDimension" xlink:to="TotalGarantiasComplementariasRecibidas" xlink:title="definition: GarantiaDimension to TotalGarantiasComplementariasRecibidas" order="1.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_GarantiaDimension" xlink:label="GarantiaDimension" xlink:title="GarantiaDimension"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_D2009006" xlink:label="Total" xlink:title="TotalGarantiasComplementariasRecibidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="GarantiaDimension" xlink:to="Total" xlink:title="definition: GarantiaDimension to Total" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_D2009001" xlink:label="Real" xlink:title="Real"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="Real" xlink:title="definition: Total to Real" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_D2009002" xlink:label="Hipotecaria" xlink:title="Hipotecaria"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Real" xlink:to="Hipotecaria" xlink:title="definition: Real to Hipotecaria" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_D2009003" xlink:label="Otras" xlink:title="Otras"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Real" xlink:to="Otras" xlink:title="definition: Real to Otras" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_D2009004" xlink:label="Personal" xlink:title="Personal"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="Personal" xlink:title="definition: Total to Personal" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-garantia.xsd#d-sgr-ga_D2009005" xlink:label="SinGarantiasAdicionales" xlink:title="SinGarantiasAdicionales"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SinGarantiasAdicionales" xlink:title="definition: Total to SinGarantiasAdicionales" use="optional" order="3.0"/>
+  </link:definitionLink>
+</link:linkbase>

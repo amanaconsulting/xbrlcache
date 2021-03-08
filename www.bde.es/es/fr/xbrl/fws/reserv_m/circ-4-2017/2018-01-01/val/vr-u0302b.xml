@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:iaf="http://www.eurofiling.info/xbrl/func/interval-arithmetics" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:ebacrr_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:ebacrr_CT="http://www.eba.europa.eu/xbrl/crr/dict/dom/CT" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:ebacrr_MC="http://www.eba.europa.eu/xbrl/crr/dict/dom/MC" xmlns:es_dim="http://www.bde.es/xbrl/dict/dim" xmlns:ebacrr_TI="http://www.eba.europa.eu/xbrl/crr/dict/dom/TI" xmlns:es_met="http://www.bde.es/xbrl/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ebacrr_BA="http://www.eba.europa.eu/xbrl/crr/dict/dom/BA" xmlns:es_ebacrr_CT="http://www.bde.es/xbrl/dict/dom/ebacrr_CT" xmlns:ebacrr_CU="http://www.eba.europa.eu/xbrl/crr/dict/dom/CU" xmlns:ebacrr_GA="http://www.eba.europa.eu/xbrl/crr/dict/dom/GA" xmlns:es_ebacrr_GA="http://www.bde.es/xbrl/dict/dom/ebacrr_GA" xmlns:ebacrr_met="http://www.eba.europa.eu/xbrl/crr/dict/met" xmlns:es_ebacrr_CU="http://www.bde.es/xbrl/dict/dom/ebacrr_CU" xmlns:behfn="http://www.bde.es/xbrl/func/helper-functions" xmlns:es_ebacrr_MC="http://www.bde.es/xbrl/dict/dom/ebacrr_MC" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_u0302b" test="if ($esEstadoReportado2607) then iaf:numeric-less-equal-than($a, iaf:sum((iaf:sum($b), iaf:numeric-unary-minus((iaf:sum(($c, iaf:numeric-unary-minus($d))))), iaf:numeric-unary-minus($f), $l))) else iaf:numeric-less-equal-than($a, iaf:sum((iaf:sum($g), iaf:numeric-unary-minus((iaf:sum(($h, iaf:numeric-unary-minus($i))))), iaf:numeric-unary-minus($k), $l)))" aspectModel="dimensional" implicitFiltering="true" id="es_u0302b" />
+    <link:loc xlink:type="locator" xlink:href="prec.xml#es_trimestre" xlink:label="loc_es_trimestre" />
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:from="es_u0302b" xlink:to="loc_es_trimestre" order="1" />
+    <link:loc xlink:type="locator" xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/filt.xml#eu_fnumeric" xlink:label="loc_eu_fnumeric" />
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_u0302b" xlink:to="loc_eu_fnumeric" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f1275" id="es_u0302b.f1275">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPZ</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CT:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_u0302b" xlink:to="es_u0302b.f1275" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f1276" id="es_u0302b.f1276">
+      <df:dimension>
+        <df:qname>ebacrr_dim:SUB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_u0302b" xlink:to="es_u0302b.f1276" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f1277" id="es_u0302b.f1277">
+      <df:dimension>
+        <df:qname>es_dim:TIB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_TI:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_u0302b" xlink:to="es_u0302b.f1277" complement="false" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.a" bindAsSequence="false" fallbackValue="0" xlink:title="../../../../bsi/2014/2015-02-24/mod/ind_umem.xsd" id="es_u0302b.a" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.a.f1274" id="es_u0302b.a.f1274">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.a" xlink:to="es_u0302b.a.f1274" cover="true" complement="false" order="1" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.a.f699" id="es_u0302b.a.f699">
+      <cf:concept>
+        <cf:qname>es_met:mi1250</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.a" xlink:to="es_u0302b.a.f699" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.a.f700" id="es_u0302b.a.f700">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x7</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.a" xlink:to="es_u0302b.a.f700" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.a.f703" id="es_u0302b.a.f703">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x21</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.a" xlink:to="es_u0302b.a.f703" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.a.f705" id="es_u0302b.a.f705">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:EUR</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.a" xlink:to="es_u0302b.a.f705" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.a.f706" id="es_u0302b.a.f706">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:ES</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.a" xlink:to="es_u0302b.a.f706" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.a.f711" id="es_u0302b.a.f711">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x97</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.a" xlink:to="es_u0302b.a.f711" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.a.f714" id="es_u0302b.a.f714">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1055</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.a" xlink:to="es_u0302b.a.f714" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.a" name="a" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.b" bindAsSequence="true" fallbackValue="()" xlink:title="../mod/fi_m1.xsd#0-0-0-0-1--" id="es_u0302b.b" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.b.f726" id="es_u0302b.b.f726">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi195</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.b" xlink:to="es_u0302b.b.f726" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.b.f727" id="es_u0302b.b.f727">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x7</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.b" xlink:to="es_u0302b.b.f727" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.b.f734" id="es_u0302b.b.f734">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x1073</df:qname>
+      </df:member>
+      <df:member>
+        <df:qname>ebacrr_CT:x18</df:qname>
+      </df:member>
+      <df:member>
+        <df:qname>ebacrr_CT:x20</df:qname>
+      </df:member>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x6</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.b" xlink:to="es_u0302b.b.f734" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.b.f736" id="es_u0302b.b.f736">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.b" xlink:to="es_u0302b.b.f736" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.b.f739" id="es_u0302b.b.f739">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:ES</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.b" xlink:to="es_u0302b.b.f739" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.b.f744" id="es_u0302b.b.f744">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x810</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.b" xlink:to="es_u0302b.b.f744" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.b.f747" id="es_u0302b.b.f747">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.b" xlink:to="es_u0302b.b.f747" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.b.f757" id="es_u0302b.b.f757">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.b" xlink:to="es_u0302b.b.f757" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.b" name="b" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.c" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/fi_m1.xsd#0-0-0-0-1--" id="es_u0302b.c" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.c.f771" id="es_u0302b.c.f771">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi195</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.c" xlink:to="es_u0302b.c.f771" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.c.f772" id="es_u0302b.c.f772">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x7</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.c" xlink:to="es_u0302b.c.f772" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.c.f779" id="es_u0302b.c.f779">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x1104</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.c" xlink:to="es_u0302b.c.f779" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.c.f781" id="es_u0302b.c.f781">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.c" xlink:to="es_u0302b.c.f781" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.c.f784" id="es_u0302b.c.f784">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:ES</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.c" xlink:to="es_u0302b.c.f784" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.c.f789" id="es_u0302b.c.f789">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x810</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.c" xlink:to="es_u0302b.c.f789" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.c.f792" id="es_u0302b.c.f792">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.c" xlink:to="es_u0302b.c.f792" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.c.f802" id="es_u0302b.c.f802">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.c" xlink:to="es_u0302b.c.f802" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.c" name="c" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.d" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/fi_m1.xsd#0-0-0-0-1--" id="es_u0302b.d" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.d.f816" id="es_u0302b.d.f816">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi195</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.d" xlink:to="es_u0302b.d.f816" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.d.f817" id="es_u0302b.d.f817">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x7</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.d" xlink:to="es_u0302b.d.f817" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.d.f824" id="es_u0302b.d.f824">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x1104</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.d" xlink:to="es_u0302b.d.f824" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.d.f826" id="es_u0302b.d.f826">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CU:x1005</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.d" xlink:to="es_u0302b.d.f826" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.d.f829" id="es_u0302b.d.f829">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:ES</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.d" xlink:to="es_u0302b.d.f829" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.d.f834" id="es_u0302b.d.f834">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.d" xlink:to="es_u0302b.d.f834" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.d.f837" id="es_u0302b.d.f837">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.d" xlink:to="es_u0302b.d.f837" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.d.f847" id="es_u0302b.d.f847">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.d" xlink:to="es_u0302b.d.f847" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.d" name="d" order="4" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_u0302b.esEstadoReportado2607" bindAsSequence="false" select="behfn:es-estado-reportado('2607',.)" xlink:title="../mod/fi_m1.xsd" id="es_u0302b.esEstadoReportado2607" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.esEstadoReportado2607" name="esEstadoReportado2607" order="5" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.f" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/fi_m1.xsd#0-0-0-0-1--" id="es_u0302b.f" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.f.f861" id="es_u0302b.f.f861">
+      <cf:concept>
+        <cf:qname>es_met:mi1354</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.f" xlink:to="es_u0302b.f.f861" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f.f862" id="es_u0302b.f.f862">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x17</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.f" xlink:to="es_u0302b.f.f862" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f.f869" id="es_u0302b.f.f869">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CT:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.f" xlink:to="es_u0302b.f.f869" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f.f871" id="es_u0302b.f.f871">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.f" xlink:to="es_u0302b.f.f871" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f.f874" id="es_u0302b.f.f874">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:ES</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.f" xlink:to="es_u0302b.f.f874" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f.f879" id="es_u0302b.f.f879">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_MC:x1029</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.f" xlink:to="es_u0302b.f.f879" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f.f882" id="es_u0302b.f.f882">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.f" xlink:to="es_u0302b.f.f882" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.f.f892" id="es_u0302b.f.f892">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.f" xlink:to="es_u0302b.f.f892" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.f" name="f" order="6" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.g" bindAsSequence="true" fallbackValue="()" xlink:title="../mod/fi_m1.xsd" id="es_u0302b.g" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.g.f906" id="es_u0302b.g.f906">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi195</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.g" xlink:to="es_u0302b.g.f906" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.g.f907" id="es_u0302b.g.f907">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x7</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.g" xlink:to="es_u0302b.g.f907" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.g.f914" id="es_u0302b.g.f914">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x1073</df:qname>
+      </df:member>
+      <df:member>
+        <df:qname>ebacrr_CT:x18</df:qname>
+      </df:member>
+      <df:member>
+        <df:qname>ebacrr_CT:x20</df:qname>
+      </df:member>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x6</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.g" xlink:to="es_u0302b.g.f914" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.g.f916" id="es_u0302b.g.f916">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.g" xlink:to="es_u0302b.g.f916" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.g.f919" id="es_u0302b.g.f919">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.g" xlink:to="es_u0302b.g.f919" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.g.f924" id="es_u0302b.g.f924">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x810</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.g" xlink:to="es_u0302b.g.f924" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.g.f927" id="es_u0302b.g.f927">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.g" xlink:to="es_u0302b.g.f927" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.g.f937" id="es_u0302b.g.f937">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.g" xlink:to="es_u0302b.g.f937" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.g" name="g" order="7" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.h" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/fi_m1.xsd" id="es_u0302b.h" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.h.f951" id="es_u0302b.h.f951">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi195</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.h" xlink:to="es_u0302b.h.f951" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.h.f952" id="es_u0302b.h.f952">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x7</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.h" xlink:to="es_u0302b.h.f952" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.h.f959" id="es_u0302b.h.f959">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x1104</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.h" xlink:to="es_u0302b.h.f959" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.h.f961" id="es_u0302b.h.f961">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.h" xlink:to="es_u0302b.h.f961" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.h.f964" id="es_u0302b.h.f964">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.h" xlink:to="es_u0302b.h.f964" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.h.f969" id="es_u0302b.h.f969">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x810</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.h" xlink:to="es_u0302b.h.f969" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.h.f972" id="es_u0302b.h.f972">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.h" xlink:to="es_u0302b.h.f972" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.h.f982" id="es_u0302b.h.f982">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.h" xlink:to="es_u0302b.h.f982" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.h" name="h" order="8" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.i" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/fi_m1.xsd" id="es_u0302b.i" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.i.f1004" id="es_u0302b.i.f1004">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x1104</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.i" xlink:to="es_u0302b.i.f1004" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.i.f1006" id="es_u0302b.i.f1006">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CU:x1005</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.i" xlink:to="es_u0302b.i.f1006" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.i.f1009" id="es_u0302b.i.f1009">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.i" xlink:to="es_u0302b.i.f1009" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.i.f1014" id="es_u0302b.i.f1014">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.i" xlink:to="es_u0302b.i.f1014" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.i.f1017" id="es_u0302b.i.f1017">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.i" xlink:to="es_u0302b.i.f1017" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.i.f1027" id="es_u0302b.i.f1027">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.i" xlink:to="es_u0302b.i.f1027" cover="true" complement="false" order="6" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.i.f996" id="es_u0302b.i.f996">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi195</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.i" xlink:to="es_u0302b.i.f996" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.i.f997" id="es_u0302b.i.f997">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x7</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.i" xlink:to="es_u0302b.i.f997" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.i" name="i" order="9" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.k" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/fi_m1.xsd" id="es_u0302b.k" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.k.f1041" id="es_u0302b.k.f1041">
+      <cf:concept>
+        <cf:qname>es_met:mi1354</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.k" xlink:to="es_u0302b.k.f1041" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.k.f1042" id="es_u0302b.k.f1042">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x17</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.k" xlink:to="es_u0302b.k.f1042" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.k.f1049" id="es_u0302b.k.f1049">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CT:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.k" xlink:to="es_u0302b.k.f1049" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.k.f1051" id="es_u0302b.k.f1051">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.k" xlink:to="es_u0302b.k.f1051" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.k.f1054" id="es_u0302b.k.f1054">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.k" xlink:to="es_u0302b.k.f1054" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.k.f1059" id="es_u0302b.k.f1059">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_MC:x1029</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.k" xlink:to="es_u0302b.k.f1059" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.k.f1062" id="es_u0302b.k.f1062">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.k" xlink:to="es_u0302b.k.f1062" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.k.f1072" id="es_u0302b.k.f1072">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.k" xlink:to="es_u0302b.k.f1072" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.k" name="k" order="10" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_u0302b.l" bindAsSequence="false" fallbackValue="0" xlink:title="../../../../reserv_t/circ-4-2017/2017-10-17/mod/fi_t2.xsd#0-0-0-0-1--" id="es_u0302b.l" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_u0302b.l.f1086" id="es_u0302b.l.f1086">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi195</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.l" xlink:to="es_u0302b.l.f1086" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.l.f1089" id="es_u0302b.l.f1089">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x7</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.l" xlink:to="es_u0302b.l.f1089" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.l.f1104" id="es_u0302b.l.f1104">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x1122</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.l" xlink:to="es_u0302b.l.f1104" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.l.f1108" id="es_u0302b.l.f1108">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:EUR</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.l" xlink:to="es_u0302b.l.f1108" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.l.f1113" id="es_u0302b.l.f1113">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:ES</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.l" xlink:to="es_u0302b.l.f1113" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.l.f1125" id="es_u0302b.l.f1125">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.l" xlink:to="es_u0302b.l.f1125" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.l.f1132" id="es_u0302b.l.f1132">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x135</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.l" xlink:to="es_u0302b.l.f1132" cover="true" complement="false" order="7" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_u0302b.l.f1146" id="es_u0302b.l.f1146">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RCP</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_u0302b.l" xlink:to="es_u0302b.l.f1146" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_u0302b" xlink:to="es_u0302b.l" name="l" order="11" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_u0302b" id="ref_es_u0302b">
+      <ref:Number>reserv_m:u0302b</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_u0302b" xlink:to="ref_es_u0302b" />
+  </gen:link>
+</link:linkbase>

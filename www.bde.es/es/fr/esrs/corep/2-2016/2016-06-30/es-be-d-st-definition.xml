@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="http://www.c-ebs.org/eu/fr/esrs/corep/2011-12-31/d-st-2006-07-01.xsd#d-st_SecuritisationTypeDomain" xlink:label="SecuritisationTypeDomain" xlink:title="SecuritisationTypeDomain"/>
+    <link:loc xlink:type="locator" xlink:href="http://www.c-ebs.org/eu/fr/esrs/corep/2011-12-31/d-st-2006-07-01.xsd#d-st_TotalSecuritisation" xlink:label="d-st_TotalSecuritisation" xlink:title="definition: SecuritisationTypeDomain to TotalSecuritisation"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="SecuritisationTypeDomain" xlink:to="d-st_TotalSecuritisation" xlink:title="definition: SecuritisationTypeDomain to TotalSecuritisation" use="prohibited" priority="1" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="http://www.c-ebs.org/eu/fr/esrs/corep/2011-12-31/d-st-2006-07-01.xsd#d-st_TraditionalSecuritisation" xlink:label="TraditionalSecuritisation" xlink:title="TraditionalSecuritisation"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="d-st_TotalSecuritisation" xlink:to="TraditionalSecuritisation" xlink:title="definition: TotalSecuritisation to TraditionalSecuritisation" use="prohibited" priority="1" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="http://www.c-ebs.org/eu/fr/esrs/corep/2011-12-31/d-st-2006-07-01.xsd#d-st_SyntheticSecuritisation" xlink:label="SyntheticSecuritisation" xlink:title="SyntheticSecuritisation"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="d-st_TotalSecuritisation" xlink:to="SyntheticSecuritisation" xlink:title="definition: TotalSecuritisation to SyntheticSecuritisation" use="prohibited" priority="1" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="http://www.c-ebs.org/eu/fr/esrs/corep/2011-12-31/d-st-2006-07-01.xsd#d-st_SecuritizationTypeDimension" xlink:label="SecuritizationTypeDimension" xlink:title="SecuritizationTypeDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="SecuritizationTypeDimension" xlink:to="TraditionalSecuritisation" xlink:title="definition: SecuritizationTypeDimension to TraditionalSecuritisation" order="2.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="SecuritizationTypeDimension" xlink:to="SyntheticSecuritisation" xlink:title="definition: SecuritizationTypeDimension to SyntheticSecuritisation" order="3.0"/>
+  </link:definitionLink>
+</link:linkbase>

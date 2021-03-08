@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:estr_base="http://www.bde.es/es/fr/xbrl/main/base" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_efe-sv-7" test="abs($totalRdo - ($dividendos + $pasivosSubordinados + $amortizacionInstrumentosCapitalPropio + $adquisicionInstrumentosCapitalPropio + $otrosPagosRelacionadosActividadesFinanciacion)) le $threshold" aspectModel="dimensional" implicitFiltering="true" id="es_efe-sv-7" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_efe-sv-7.dividendos" bindAsSequence="false" fallbackValue="0" id="es_efe-sv-7.dividendos" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_efe-sv-7.dividendos.fil_p-FINREP_DividendsPaidd10e256" id="es_efe-sv-7.dividendos.fil_p-FINREP_DividendsPaidd10e256">
+      <cf:concept>
+        <cf:qname>estr_base:md92572</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_efe-sv-7.dividendos" xlink:to="es_efe-sv-7.dividendos.fil_p-FINREP_DividendsPaidd10e256" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_efe-sv-7" xlink:to="es_efe-sv-7.dividendos" name="dividendos" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_efe-sv-7.pasivosSubordinados" bindAsSequence="false" fallbackValue="0" id="es_efe-sv-7.pasivosSubordinados" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_efe-sv-7.pasivosSubordinados.fil_ifrs-gp_RepaymentOfSubordinatedLiabilitiesd10e270" id="es_efe-sv-7.pasivosSubordinados.fil_ifrs-gp_RepaymentOfSubordinatedLiabilitiesd10e270">
+      <cf:concept>
+        <cf:qname>estr_base:md94012</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_efe-sv-7.pasivosSubordinados" xlink:to="es_efe-sv-7.pasivosSubordinados.fil_ifrs-gp_RepaymentOfSubordinatedLiabilitiesd10e270" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_efe-sv-7" xlink:to="es_efe-sv-7.pasivosSubordinados" name="pasivosSubordinados" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_efe-sv-7.amortizacionInstrumentosCapitalPropio" bindAsSequence="false" fallbackValue="0" id="es_efe-sv-7.amortizacionInstrumentosCapitalPropio" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_efe-sv-7.amortizacionInstrumentosCapitalPropio.fil_p-FINREP_CashPaymentsToRedeemSharesOrOtherEquityInstrumentsd10e284" id="es_efe-sv-7.amortizacionInstrumentosCapitalPropio.fil_p-FINREP_CashPaymentsToRedeemSharesOrOtherEquityInstrumentsd10e284">
+      <cf:concept>
+        <cf:qname>estr_base:md83837</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_efe-sv-7.amortizacionInstrumentosCapitalPropio" xlink:to="es_efe-sv-7.amortizacionInstrumentosCapitalPropio.fil_p-FINREP_CashPaymentsToRedeemSharesOrOtherEquityInstrumentsd10e284" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_efe-sv-7" xlink:to="es_efe-sv-7.amortizacionInstrumentosCapitalPropio" name="amortizacionInstrumentosCapitalPropio" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_efe-sv-7.adquisicionInstrumentosCapitalPropio" bindAsSequence="false" fallbackValue="0" id="es_efe-sv-7.adquisicionInstrumentosCapitalPropio" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_efe-sv-7.adquisicionInstrumentosCapitalPropio.fil_ifrs-gp_PurchaseOfTreasurySharesd10e298" id="es_efe-sv-7.adquisicionInstrumentosCapitalPropio.fil_ifrs-gp_PurchaseOfTreasurySharesd10e298">
+      <cf:concept>
+        <cf:qname>estr_base:md52421</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_efe-sv-7.adquisicionInstrumentosCapitalPropio" xlink:to="es_efe-sv-7.adquisicionInstrumentosCapitalPropio.fil_ifrs-gp_PurchaseOfTreasurySharesd10e298" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_efe-sv-7" xlink:to="es_efe-sv-7.adquisicionInstrumentosCapitalPropio" name="adquisicionInstrumentosCapitalPropio" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_efe-sv-7.otrosPagosRelacionadosActividadesFinanciacion" bindAsSequence="false" fallbackValue="0" id="es_efe-sv-7.otrosPagosRelacionadosActividadesFinanciacion" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_efe-sv-7.otrosPagosRelacionadosActividadesFinanciacion.fil_es-be-p-FINREP_OtrosPagosActividadesFinanciaciond10e313" id="es_efe-sv-7.otrosPagosRelacionadosActividadesFinanciacion.fil_es-be-p-FINREP_OtrosPagosActividadesFinanciaciond10e313">
+      <cf:concept>
+        <cf:qname>estr_base:md79201</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_efe-sv-7.otrosPagosRelacionadosActividadesFinanciacion" xlink:to="es_efe-sv-7.otrosPagosRelacionadosActividadesFinanciacion.fil_es-be-p-FINREP_OtrosPagosActividadesFinanciaciond10e313" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_efe-sv-7" xlink:to="es_efe-sv-7.otrosPagosRelacionadosActividadesFinanciacion" name="otrosPagosRelacionadosActividadesFinanciacion" order="5" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_efe-sv-7.totalRdo" bindAsSequence="false" fallbackValue="0" id="es_efe-sv-7.totalRdo" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_efe-sv-7.totalRdo.fil_es-be-p-FINREP_PagosFlujosEfectivoActividadesFinanciaciond10e327" id="es_efe-sv-7.totalRdo.fil_es-be-p-FINREP_PagosFlujosEfectivoActividadesFinanciaciond10e327">
+      <cf:concept>
+        <cf:qname>estr_base:md99794</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_efe-sv-7.totalRdo" xlink:to="es_efe-sv-7.totalRdo.fil_es-be-p-FINREP_PagosFlujosEfectivoActividadesFinanciaciond10e327" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_efe-sv-7" xlink:to="es_efe-sv-7.totalRdo" name="totalRdo" order="6" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_efe-sv-7.threshold" bindAsSequence="false" select="(5 idiv 2 + 1) * 1000" id="es_efe-sv-7.threshold" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_efe-sv-7" xlink:to="es_efe-sv-7.threshold" name="threshold" order="7" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_efe-sv-7" id="ref_es_efe-sv-7">
+      <ref:Number>publicos:efe-sv-7</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_efe-sv-7" xlink:to="ref_es_efe-sv-7" />
+  </gen:link>
+</link:linkbase>

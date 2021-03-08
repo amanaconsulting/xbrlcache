@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:es-be-cm-xpst="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4909" xlink:type="simple" xlink:href="ecm-rol.xsd#CompraVentaBilletes"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4929" xlink:type="simple" xlink:href="ecm-rol.xsd#VolumenVentas"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4939" xlink:type="simple" xlink:href="ecm-rol.xsd#VolumenCompras"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4949" xlink:type="simple" xlink:href="ecm-rol.xsd#TransferenciasOrdenadas"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4959" xlink:type="simple" xlink:href="ecm-rol.xsd#TransferenciasRecibidas"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4969" xlink:type="simple" xlink:href="ecm-rol.xsd#TransferenciasExterior"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4979" xlink:type="simple" xlink:href="ecm-rol.xsd#PrincipalesAgentes"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/notAll" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#notAll"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4929">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_DenominacionSocial" xlink:label="DenominacionSocial" xlink:title="DenominacionSocial"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="DenominacionSocial" xlink:title="definition: Anejo to DenominacionSocial" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Ventas" xlink:label="Ventas" xlink:title="Ventas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="Ventas" xlink:title="definition: Anejo to Ventas" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_VentasNumeroOperaciones" xlink:label="VentasNumeroOperaciones" xlink:title="VentasNumeroOperaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Ventas" xlink:to="VentasNumeroOperaciones" xlink:title="definition: Ventas to VentasNumeroOperaciones" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_VentasPorcentajeTotalVentas" xlink:label="VentasPorcentajeTotalVentas" xlink:title="VentasPorcentajeTotalVentas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Ventas" xlink:to="VentasPorcentajeTotalVentas" xlink:title="definition: Ventas to VentasPorcentajeTotalVentas" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_VolumenVentasHypercube" xlink:label="VolumenVentasHypercube" xlink:title="VolumenVentasHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="VolumenVentasHypercube" xlink:title="definition: Anejo to VolumenVentasHypercube" use="optional" order="3.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_DimensionCodigoIdentificacion" xlink:label="DimensionCodigoIdentificacion" xlink:title="DimensionCodigoIdentificacion"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="VolumenVentasHypercube" xlink:to="DimensionCodigoIdentificacion" xlink:title="definition: VolumenVentasHypercube to DimensionCodigoIdentificacion" order="1.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4939">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_DenominacionSocial" xlink:label="DenominacionSocial" xlink:title="DenominacionSocial"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="DenominacionSocial" xlink:title="definition: Anejo to DenominacionSocial" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Compras" xlink:label="Compras" xlink:title="Compras"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="Compras" xlink:title="definition: Anejo to Compras" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ComprasNumeroOperaciones" xlink:label="ComprasNumeroOperaciones" xlink:title="ComprasNumeroOperaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Compras" xlink:to="ComprasNumeroOperaciones" xlink:title="definition: Compras to ComprasNumeroOperaciones" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ComprasPorcentajeTotalCompras" xlink:label="ComprasPorcentajeTotalCompras" xlink:title="ComprasPorcentajeTotalCompras"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Compras" xlink:to="ComprasPorcentajeTotalCompras" xlink:title="definition: Compras to ComprasPorcentajeTotalCompras" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_VolumenComprasHypercube" xlink:label="VolumenComprasHypercube" xlink:title="VolumenComprasHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="VolumenComprasHypercube" xlink:title="definition: Anejo to VolumenComprasHypercube" use="optional" order="3.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_DimensionCodigoIdentificacion" xlink:label="DimensionCodigoIdentificacion" xlink:title="DimensionCodigoIdentificacion"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="VolumenComprasHypercube" xlink:to="DimensionCodigoIdentificacion" xlink:title="definition: VolumenComprasHypercube to DimensionCodigoIdentificacion" order="1.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4949">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasOrdenadas" xlink:label="TransferenciasOrdenadas" xlink:title="TransferenciasOrdenadas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="TransferenciasOrdenadas" xlink:title="definition: Anejo to TransferenciasOrdenadas" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasOrdenadasNumeroOperaciones" xlink:label="TransferenciasOrdenadasNumeroOperaciones" xlink:title="TransferenciasOrdenadasNumeroOperaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TransferenciasOrdenadas" xlink:to="TransferenciasOrdenadasNumeroOperaciones" xlink:title="definition: TransferenciasOrdenadas to TransferenciasOrdenadasNumeroOperaciones" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasOrdenadasPorcentajeTotalOrdenado" xlink:label="TransferenciasOrdenadasPorcentajeTotalOrdenado" xlink:title="TransferenciasOrdenadasPorcentajeTotalOrdenado"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TransferenciasOrdenadas" xlink:to="TransferenciasOrdenadasPorcentajeTotalOrdenado" xlink:title="definition: TransferenciasOrdenadas to TransferenciasOrdenadasPorcentajeTotalOrdenado" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_VolumenTransferenciasOrdenadasHypercube" xlink:label="VolumenTransferenciasOrdenadasHypercube" xlink:title="VolumenTransferenciasOrdenadasHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="VolumenTransferenciasOrdenadasHypercube" xlink:title="definition: Anejo to VolumenTransferenciasOrdenadasHypercube" use="optional" order="2.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_PaisDimension" xlink:label="PaisDimension" xlink:title="PaisDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="VolumenTransferenciasOrdenadasHypercube" xlink:to="PaisDimension" xlink:title="definition: VolumenTransferenciasOrdenadasHypercube to PaisDimension" order="1.0" xbrldt:targetRole="http://www.xbrl.org/2003/role/link"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4959">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasRecibidas" xlink:label="TransferenciasRecibidas" xlink:title="TransferenciasRecibidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="TransferenciasRecibidas" xlink:title="definition: Anejo to TransferenciasRecibidas" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasRecibidasNumeroOperaciones" xlink:label="TransferenciasRecibidasNumeroOperaciones" xlink:title="TransferenciasRecibidasNumeroOperaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TransferenciasRecibidas" xlink:to="TransferenciasRecibidasNumeroOperaciones" xlink:title="definition: TransferenciasRecibidas to TransferenciasRecibidasNumeroOperaciones" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasRecibidasPorcentajeTotalRecibido" xlink:label="TransferenciasRecibidasPorcentajeTotalRecibido" xlink:title="TransferenciasRecibidasPorcentajeTotalRecibido"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TransferenciasRecibidas" xlink:to="TransferenciasRecibidasPorcentajeTotalRecibido" xlink:title="definition: TransferenciasRecibidas to TransferenciasRecibidasPorcentajeTotalRecibido" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_VolumenTransferenciasRecibidasHypercube" xlink:label="VolumenTransferenciasRecibidasHypercube" xlink:title="VolumenTransferenciasRecibidasHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="VolumenTransferenciasRecibidasHypercube" xlink:title="definition: Anejo to VolumenTransferenciasRecibidasHypercube" use="optional" order="2.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_PaisDimension" xlink:label="PaisDimension" xlink:title="PaisDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="VolumenTransferenciasRecibidasHypercube" xlink:to="PaisDimension" xlink:title="definition: VolumenTransferenciasRecibidasHypercube to PaisDimension" order="1.0" xbrldt:targetRole="http://www.xbrl.org/2003/role/link"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4969">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ImporteTransferenciasRecibidas" xlink:label="ImporteTransferenciasRecibidas" xlink:title="ImporteTransferenciasRecibidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="ImporteTransferenciasRecibidas" xlink:title="definition: Anejo to ImporteTransferenciasRecibidas" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ImporteTransferenciasEmitidas" xlink:label="ImporteTransferenciasEmitidas" xlink:title="ImporteTransferenciasEmitidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="ImporteTransferenciasEmitidas" xlink:title="definition: Anejo to ImporteTransferenciasEmitidas" use="optional" order="2.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4979">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_NombreRazonSocialAgente" xlink:label="NombreRazonSocialAgente" xlink:title="NombreRazonSocialAgente"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="NombreRazonSocialAgente" xlink:title="definition: Anejo to NombreRazonSocialAgente" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_NumeroLocales" xlink:label="NumeroLocales" xlink:title="NumeroLocales"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="NumeroLocales" xlink:title="definition: Anejo to NumeroLocales" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" xlink:label="PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" xlink:title="PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" xlink:title="definition: Anejo to PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" use="optional" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" xlink:label="PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" xlink:title="PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" xlink:title="definition: Anejo to PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" use="optional" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_PrincipalesAgentesHypercube" xlink:label="PrincipalesAgentesHypercube" xlink:title="PrincipalesAgentesHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="PrincipalesAgentesHypercube" xlink:title="definition: Anejo to PrincipalesAgentesHypercube" use="optional" order="5.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_DimensionCodigoAgente" xlink:label="DimensionCodigoAgente" xlink:title="DimensionCodigoAgente"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="PrincipalesAgentesHypercube" xlink:to="DimensionCodigoAgente" xlink:title="definition: PrincipalesAgentesHypercube to DimensionCodigoAgente" order="1.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4909">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Ventas" xlink:label="Ventas" xlink:title="Ventas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="Ventas" xlink:title="definition: Anejo to Ventas" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" xlink:label="OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" xlink:title="OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Ventas" xlink:to="OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" xlink:title="definition: Ventas to OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ClientesVentas" xlink:label="ClientesVentas" xlink:title="ClientesVentas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Ventas" xlink:to="ClientesVentas" xlink:title="definition: Ventas to ClientesVentas" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Compras" xlink:label="Compras" xlink:title="Compras"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="Compras" xlink:title="definition: Anejo to Compras" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ClientesCompras" xlink:label="ClientesCompras" xlink:title="ClientesCompras"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Compras" xlink:to="ClientesCompras" xlink:title="definition: Compras to ClientesCompras" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" xlink:label="OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" xlink:title="OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Compras" xlink:to="OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" xlink:title="definition: Compras to OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Transferencias" xlink:label="Transferencias" xlink:title="Transferencias"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="Transferencias" xlink:title="definition: Anejo to Transferencias" use="optional" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TranferenciasRecibidas" xlink:label="TranferenciasRecibidas" xlink:title="TranferenciasRecibidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Transferencias" xlink:to="TranferenciasRecibidas" xlink:title="definition: Transferencias to TranferenciasRecibidas" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_NumeroRecibidas" xlink:label="NumeroRecibidas" xlink:title="NumeroRecibidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TranferenciasRecibidas" xlink:to="NumeroRecibidas" xlink:title="definition: TranferenciasRecibidas to NumeroRecibidas" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_NumeroHypercubeExclusion" xlink:label="NumeroHypercubeExclusion" xlink:title="NumeroHypercubeExclusion"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/notAll" xlink:from="NumeroRecibidas" xlink:to="NumeroHypercubeExclusion" xlink:title="definition: NumeroRecibidas to NumeroHypercubeExclusion" order="1.0" xbrldt:contextElement="scenario"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-divisas.xsd#d-ecm-bill_MonedaDimension" xlink:label="MonedaDimension" xlink:title="MonedaDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="NumeroHypercubeExclusion" xlink:to="MonedaDimension" xlink:title="definition: NumeroHypercubeExclusion to MonedaDimension" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-divisas.xsd#d-ecm-bill_Contravalores" xlink:label="Contravalores" xlink:title="Contravalores"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="MonedaDimension" xlink:to="Contravalores" xlink:title="definition: MonedaDimension to Contravalores" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ImporteRecibidas" xlink:label="ImporteRecibidas" xlink:title="ImporteRecibidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TranferenciasRecibidas" xlink:to="ImporteRecibidas" xlink:title="definition: TranferenciasRecibidas to ImporteRecibidas" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasEmitidas" xlink:label="TransferenciasEmitidas" xlink:title="TransferenciasEmitidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Transferencias" xlink:to="TransferenciasEmitidas" xlink:title="definition: Transferencias to TransferenciasEmitidas" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_NumeroEmitidas" xlink:label="NumeroEmitidas" xlink:title="NumeroEmitidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TransferenciasEmitidas" xlink:to="NumeroEmitidas" xlink:title="definition: TransferenciasEmitidas to NumeroEmitidas" order="1.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/notAll" xlink:from="NumeroEmitidas" xlink:to="NumeroHypercubeExclusion" xlink:title="definition: NumeroEmitidas to NumeroHypercubeExclusion" order="1.0" xbrldt:contextElement="scenario"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ImporteEmitidas" xlink:label="ImporteEmitidas" xlink:title="ImporteEmitidas"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="TransferenciasEmitidas" xlink:to="ImporteEmitidas" xlink:title="definition: TransferenciasEmitidas to ImporteEmitidas" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_CompraVentaBilletesHypercube" xlink:label="CompraVentaBilletesHypercube" xlink:title="CompraVentaBilletesHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="CompraVentaBilletesHypercube" xlink:title="definition: Anejo to CompraVentaBilletesHypercube" use="optional" order="4.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="CompraVentaBilletesHypercube" xlink:to="MonedaDimension" xlink:title="definition: CompraVentaBilletesHypercube to MonedaDimension" use="optional" order="1.0" xbrldt:targetRole="http://www.xbrl.org/2003/role/link"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dominios/divisas.xsd#es-be-cm-div_DivisasDomain" xlink:label="DivisasDomain" xlink:title="DivisasDomain"/>
+    <link:loc xlink:type="locator" xlink:href="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dominios/divisas.xsd#es-be-cm-div_Total" xlink:label="Total" xlink:title="Total"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DivisasDomain" xlink:to="Total" xlink:title="definition: DivisasDomain to Total" use="prohibited" priority="1" order="150.0"/>
+  </link:definitionLink>
+</link:linkbase>

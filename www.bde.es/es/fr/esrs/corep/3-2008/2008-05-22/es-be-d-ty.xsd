@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-d-ty="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-ty" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:d-ty="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-ty-2006-07-01" xmlns:ref="http://www.xbrl.org/2004/ref" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:ref-corep="http://www.c-ebs.org/eu/fr/esrs/corep/2005-09-30/ref-corep-2005-09-30" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-ty" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="es-be-d-ty-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-ty-2006-07-01" schemaLocation="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-ty-2006-07-01.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:element name="ClientesIndividualesGrupos" id="es-be-d-ty_ClientesIndividualesGrupos" type="xbrli:stringItemType" xbrldt:typedDomainRef="es-be-d-ty.xsd#es-be-d-ty_IndividualesGrupos" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="IndividualesGrupos" id="es-be-d-ty_IndividualesGrupos">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[0-9]{4}"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="CodigoEntidad" id="es-be-d-ty_CodigoEntidad">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="IdentificadorClienteIndividual" id="es-be-d-ty_IdentificadorClienteIndividual" type="xbrli:stringItemType" xbrldt:typedDomainRef="es-be-d-ty.xsd#es-be-d-ty_IdentificadorIndividual" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="IdentificadorIndividual" id="es-be-d-ty_IdentificadorIndividual" type="xsd:string"/>
+  <xsd:element name="DimensionCodigoEntidad" id="es-be-d-ty_DimensionCodigoEntidad" type="xbrli:stringItemType" xbrldt:typedDomainRef="#es-be-d-ty_CodigoEntidad" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>

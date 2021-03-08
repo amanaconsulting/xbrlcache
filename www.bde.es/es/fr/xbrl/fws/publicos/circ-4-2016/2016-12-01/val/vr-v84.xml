@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:iaf="http://www.eurofiling.info/xbrl/func/interval-arithmetics" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:ebacrr_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:ebacrr_MC="http://www.eba.europa.eu/xbrl/crr/dict/dom/MC" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:ebacrr_NC="http://www.eba.europa.eu/xbrl/crr/dict/dom/NC" xmlns:es_ebacrr_PU="http://www.bde.es/xbrl/dict/dom/ebacrr_PU" xmlns:ebacrr_met="http://www.eba.europa.eu/xbrl/crr/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:es_met="http://www.bde.es/xbrl/dict/met" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_v84" test="iaf:numeric-greater-equal-than($a, $b)" aspectModel="dimensional" implicitFiltering="true" id="es_v84" />
+    <link:loc xlink:type="locator" xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/filt.xml#eu_fnumeric" xlink:label="loc_eu_fnumeric" />
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v84" xlink:to="loc_eu_fnumeric" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v84.f52" id="es_v84.f52">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCG</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v84" xlink:to="es_v84.f52" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v84.f53" id="es_v84.f53">
+      <df:dimension>
+        <df:qname>ebacrr_dim:NAC</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_NC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v84" xlink:to="es_v84.f53" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v84.f54" id="es_v84.f54">
+      <df:dimension>
+        <df:qname>ebacrr_dim:PUR</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_PU:x41</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v84" xlink:to="es_v84.f54" complement="false" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v84.a" bindAsSequence="false" fallbackValue="0" id="es_v84.a" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_v84.a.f3" id="es_v84.a.f3">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi136</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v84.a" xlink:to="es_v84.a.f3" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v84" xlink:to="es_v84.a" name="a" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v84.b" bindAsSequence="false" fallbackValue="0" id="es_v84.b" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_v84.b.f51" id="es_v84.b.f51">
+      <cf:concept>
+        <cf:qname>es_met:mi1</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v84.b" xlink:to="es_v84.b.f51" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v84" xlink:to="es_v84.b" name="b" order="2" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_v84" id="ref_es_v84">
+      <ref:Number>publicos:v84</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_v84" xlink:to="ref_es_v84" />
+  </gen:link>
+</link:linkbase>

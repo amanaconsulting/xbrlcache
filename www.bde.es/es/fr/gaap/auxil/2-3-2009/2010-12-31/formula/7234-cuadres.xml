@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:p-aux="http://www.bde.es/es/fr/gaap/auxil/p-aux"
+               xmlns:pgc-07-c-bs="http://www.icac.meh.es/es/fr/gaap/pgc07/comun-base/2008-01-01"
+               xmlns:pgc-07-n="http://www.icac.meh.es/es/fr/gaap/pgc07/normal/2008-01-01"
+               xmlns:cebs-ef-sub="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/subs-group-elements"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_7234_cuadres_1"
+                           id="ref_atributosCuadres_7234_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_7234_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_7234_cuadres_1"
+                           id="ref_moduloDefinicion_7234_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>tas_a1</frRef:Modulo>
+         <frRef:Instancia>Mtas_a1</frRef:Instancia>
+         <frRef:Estado>7234</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_7234_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_aux_7234-sv-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_aux_7234-sv-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_aux_7234-sv-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_aux_gen-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_aux_7234-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_aux_7234-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <link:loc xlink:href="parametros.xml#var_UmbralBasico3" xlink:label="var_UmbralBasico3"
+                xlink:type="locator"/>
+      <link:loc xlink:href="parametros.xml#var_UmbralBasico2" xlink:label="var_UmbralBasico2"
+                xlink:type="locator"/>
+      <link:loc xlink:href="parametros.xml#var_UmbralBasico4" xlink:label="var_UmbralBasico4"
+                xlink:type="locator"/>
+      <uf:generalMeasures test="true()" xlink:label="fil_AnyUnit" id="fil_AnyUnit" xlink:type="resource"/>
+      <va:valueAssertion xlink:label="val_aux_7234-sv-1"
+                         test="abs($totalRdo - ($bienesInmuebles + $otrosServiciosVal +  $otrosServicios)) le $threshold"
+                         id="val_aux_7234-sv-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="bienesInmuebles" xlink:from="val_aux_7234-sv-1"
+                            xlink:to="var_p-aux_ImporteNetoCifraNegociosTasacionesBienesInmueblesd10e27"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="otrosServiciosVal" xlink:from="val_aux_7234-sv-1"
+                            xlink:to="var_p-aux_ImporteNetoCifraNegociosOtrosServiciosValoraciond10e41"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="otrosServicios" xlink:from="val_aux_7234-sv-1"
+                            xlink:to="var_p-aux_ImporteNetoCifraNegociosOtrosServiciosd10e55"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_aux_7234-sv-1"
+                            xlink:to="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e69"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_aux_7234-sv-1" xlink:to="var_UmbralBasico3"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_aux_7234-sv-1" id="lab_val_aux_7234-sv-1"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia en importe neto de la cifra de
+				negocios</label:label>
+      <generic:arc xlink:from="val_aux_7234-sv-1" xlink:to="lab_val_aux_7234-sv-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-aux_ImporteNetoCifraNegociosTasacionesBienesInmueblesd10e27"
+                             bindAsSequence="false"
+                             id="var_p-aux_ImporteNetoCifraNegociosTasacionesBienesInmueblesd10e27"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_ImporteNetoCifraNegociosTasacionesBienesInmueblesd10e27"
+                                  xlink:to="fil_p-aux_ImporteNetoCifraNegociosTasacionesBienesInmueblesd10e29"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_ImporteNetoCifraNegociosTasacionesBienesInmueblesd10e29"
+                      id="fil_p-aux_ImporteNetoCifraNegociosTasacionesBienesInmueblesd10e29"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:ImporteNetoCifraNegociosTasacionesBienesInmuebles</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-aux_ImporteNetoCifraNegociosOtrosServiciosValoraciond10e41"
+                             bindAsSequence="false"
+                             id="var_p-aux_ImporteNetoCifraNegociosOtrosServiciosValoraciond10e41"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_ImporteNetoCifraNegociosOtrosServiciosValoraciond10e41"
+                                  xlink:to="fil_p-aux_ImporteNetoCifraNegociosOtrosServiciosValoraciond10e43"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_ImporteNetoCifraNegociosOtrosServiciosValoraciond10e43"
+                      id="fil_p-aux_ImporteNetoCifraNegociosOtrosServiciosValoraciond10e43"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:ImporteNetoCifraNegociosOtrosServiciosValoracion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-aux_ImporteNetoCifraNegociosOtrosServiciosd10e55"
+                             bindAsSequence="false"
+                             id="var_p-aux_ImporteNetoCifraNegociosOtrosServiciosd10e55"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_ImporteNetoCifraNegociosOtrosServiciosd10e55"
+                                  xlink:to="fil_p-aux_ImporteNetoCifraNegociosOtrosServiciosd10e57"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_ImporteNetoCifraNegociosOtrosServiciosd10e57"
+                      id="fil_p-aux_ImporteNetoCifraNegociosOtrosServiciosd10e57"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:ImporteNetoCifraNegociosOtrosServicios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e69"
+                             bindAsSequence="false"
+                             id="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e69"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e69"
+                                  xlink:to="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e71"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e71"
+                      id="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e71"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>pgc-07-c-bs:PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegocios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_aux_7234-sv-1" id="ref_val_aux_7234-sv-1"
+                           xlink:type="resource">
+         <ref:Number>aux:7234-sv-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_aux_7234-sv-1" xlink:to="ref_val_aux_7234-sv-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_aux_7234-sv-2"
+                         test="abs($totalRdo - ($tasadores + $otroTipoProf)) le $threshold"
+                         id="val_aux_7234-sv-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="tasadores" xlink:from="val_aux_7234-sv-2"
+                            xlink:to="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesTasadoresd10e92"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="otroTipoProf" xlink:from="val_aux_7234-sv-2"
+                            xlink:to="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesOtrosd10e106"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_aux_7234-sv-2"
+                            xlink:to="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e120"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="threshold" xlink:from="val_aux_7234-sv-2" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <label:label xlink:label="lab_val_aux_7234-sv-2" id="lab_val_aux_7234-sv-2"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia en servicio de profesionales
+				independientes</label:label>
+      <generic:arc xlink:from="val_aux_7234-sv-2" xlink:to="lab_val_aux_7234-sv-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesTasadoresd10e92"
+                             bindAsSequence="false"
+                             id="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesTasadoresd10e92"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesTasadoresd10e92"
+                                  xlink:to="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesTasadoresd10e94"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesTasadoresd10e94"
+                      id="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesTasadoresd10e94"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesTasadores</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesOtrosd10e106"
+                             bindAsSequence="false"
+                             id="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesOtrosd10e106"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesOtrosd10e106"
+                                  xlink:to="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesOtrosd10e108"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesOtrosd10e108"
+                      id="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesOtrosd10e108"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesOtros</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e120"
+                             bindAsSequence="false"
+                             id="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e120"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e120"
+                                  xlink:to="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e122"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e122"
+                      id="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e122"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_aux_7234-sv-2" id="ref_val_aux_7234-sv-2"
+                           xlink:type="resource">
+         <ref:Number>aux:7234-sv-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_aux_7234-sv-2" xlink:to="ref_val_aux_7234-sv-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_aux_7234-sv-3"
+                         test="abs($totalRdo - ($servProfIndep + $arrendCan +  $primaPoliza + $otros)) le $threshold"
+                         id="val_aux_7234-sv-3"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="servProfIndep" xlink:from="val_aux_7234-sv-3"
+                            xlink:to="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e142"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="arrendCan" xlink:from="val_aux_7234-sv-3"
+                            xlink:to="var_p-aux_OtrosGastosExplotacionServiciosExterioresArrendamientosCanonesd10e156"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="primaPoliza" xlink:from="val_aux_7234-sv-3"
+                            xlink:to="var_p-aux_OtrosGastosExplotacionServiciosExterioresSeguroResponsabilidadCivild10e170"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="otros" xlink:from="val_aux_7234-sv-3"
+                            xlink:to="var_p-aux_OtrosGastosExplotacionServiciosExterioresOtrosTasadorasd10e184"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="totalRdo" xlink:from="val_aux_7234-sv-3"
+                            xlink:to="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e199"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="threshold" xlink:from="val_aux_7234-sv-3" xlink:to="var_UmbralBasico4"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <label:label xlink:label="lab_val_aux_7234-sv-3" id="lab_val_aux_7234-sv-3"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia en servicios exteriores</label:label>
+      <generic:arc xlink:from="val_aux_7234-sv-3" xlink:to="lab_val_aux_7234-sv-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e142"
+                             bindAsSequence="false"
+                             id="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e142"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e142"
+                                  xlink:to="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e144"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e144"
+                      id="fil_p-aux_OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientesd10e144"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:OtrosGastosExplotacionServiciosExterioresProfesionalesIndependientes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-aux_OtrosGastosExplotacionServiciosExterioresArrendamientosCanonesd10e156"
+                             bindAsSequence="false"
+                             id="var_p-aux_OtrosGastosExplotacionServiciosExterioresArrendamientosCanonesd10e156"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_OtrosGastosExplotacionServiciosExterioresArrendamientosCanonesd10e156"
+                                  xlink:to="fil_p-aux_OtrosGastosExplotacionServiciosExterioresArrendamientosCanonesd10e158"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_OtrosGastosExplotacionServiciosExterioresArrendamientosCanonesd10e158"
+                      id="fil_p-aux_OtrosGastosExplotacionServiciosExterioresArrendamientosCanonesd10e158"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:OtrosGastosExplotacionServiciosExterioresArrendamientosCanones</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-aux_OtrosGastosExplotacionServiciosExterioresSeguroResponsabilidadCivild10e170"
+                             bindAsSequence="false"
+                             id="var_p-aux_OtrosGastosExplotacionServiciosExterioresSeguroResponsabilidadCivild10e170"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_OtrosGastosExplotacionServiciosExterioresSeguroResponsabilidadCivild10e170"
+                                  xlink:to="fil_p-aux_OtrosGastosExplotacionServiciosExterioresSeguroResponsabilidadCivild10e172"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_OtrosGastosExplotacionServiciosExterioresSeguroResponsabilidadCivild10e172"
+                      id="fil_p-aux_OtrosGastosExplotacionServiciosExterioresSeguroResponsabilidadCivild10e172"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:OtrosGastosExplotacionServiciosExterioresSeguroResponsabilidadCivil</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-aux_OtrosGastosExplotacionServiciosExterioresOtrosTasadorasd10e184"
+                             bindAsSequence="false"
+                             id="var_p-aux_OtrosGastosExplotacionServiciosExterioresOtrosTasadorasd10e184"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-aux_OtrosGastosExplotacionServiciosExterioresOtrosTasadorasd10e184"
+                                  xlink:to="fil_p-aux_OtrosGastosExplotacionServiciosExterioresOtrosTasadorasd10e186"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-aux_OtrosGastosExplotacionServiciosExterioresOtrosTasadorasd10e186"
+                      id="fil_p-aux_OtrosGastosExplotacionServiciosExterioresOtrosTasadorasd10e186"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-aux:OtrosGastosExplotacionServiciosExterioresOtrosTasadoras</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e199"
+                             bindAsSequence="false"
+                             id="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e199"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e199"
+                                  xlink:to="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e201"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e201"
+                      id="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e201"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>pgc-07-n:PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExteriores</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_aux_7234-sv-3" id="ref_val_aux_7234-sv-3"
+                           xlink:type="resource">
+         <ref:Number>aux:7234-sv-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_aux_7234-sv-3" xlink:to="ref_val_aux_7234-sv-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_aux_gen-or-2" test="$element le 0" id="val_aux_gen-or-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="element" xlink:from="val_aux_gen-or-2" xlink:to="var_d10e221"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <generic:arc xlink:from="val_aux_gen-or-2" xlink:to="pre_d10e230"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_aux_gen-or-2" id="lab_val_aux_gen-or-2"
+                   xlink:type="resource"
+                   xml:lang="es">Importe menor o igual a 0</label:label>
+      <generic:arc xlink:from="val_aux_gen-or-2" xlink:to="lab_val_aux_gen-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_d10e221" bindAsSequence="false" id="var_d10e221"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e221" xlink:to="fil_d10e223" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptSubstitutionGroup strict="false" xlink:label="fil_d10e223" id="fil_d10e223" xlink:type="resource">
+         <cf:substitutionGroup>
+            <cf:qname>cebs-ef-sub:negativeItem</cf:qname>
+         </cf:substitutionGroup>
+      </cf:conceptSubstitutionGroup>
+      <variable:precondition test="$element gt 0" xlink:label="pre_d10e230" id="pre_d10e230"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_aux_gen-or-2" id="ref_val_aux_gen-or-2"
+                           xlink:type="resource">
+         <ref:Number>aux:gen-or-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_aux_gen-or-2" xlink:to="ref_val_aux_gen-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_aux_7234-or-1"
+                         test="($importeNetoCifraNegocios ge 0) and ($otrosIngresosExplotacion ge 0)"
+                         id="val_aux_7234-or-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="importeNetoCifraNegocios" xlink:from="val_aux_7234-or-1"
+                            xlink:to="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e241"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="otrosIngresosExplotacion" xlink:from="val_aux_7234-or-1"
+                            xlink:to="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasOtrosIngresosExplotaciond10e255"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_aux_7234-or-1" id="lab_val_aux_7234-or-1"
+                   xlink:type="resource"
+                   xml:lang="es">Mayor o igual a 0</label:label>
+      <generic:arc xlink:from="val_aux_7234-or-1" xlink:to="lab_val_aux_7234-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e241"
+                             bindAsSequence="false"
+                             id="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e241"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e241"
+                                  xlink:to="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e243"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e243"
+                      id="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegociosd10e243"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>pgc-07-c-bs:PerdidasGananciasOperacionesContinuadasImporteNetoCifraNegocios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasOtrosIngresosExplotaciond10e255"
+                             bindAsSequence="false"
+                             id="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasOtrosIngresosExplotaciond10e255"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasOtrosIngresosExplotaciond10e255"
+                                  xlink:to="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasOtrosIngresosExplotaciond10e257"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasOtrosIngresosExplotaciond10e257"
+                      id="fil_pgc-07-c-bs_PerdidasGananciasOperacionesContinuadasOtrosIngresosExplotaciond10e257"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>pgc-07-c-bs:PerdidasGananciasOperacionesContinuadasOtrosIngresosExplotacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_aux_7234-or-1" id="ref_val_aux_7234-or-1"
+                           xlink:type="resource">
+         <ref:Number>aux:7234-or-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_aux_7234-or-1" xlink:to="ref_val_aux_7234-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_aux_7234-or-2"
+                         test="($serviciosExteriores le 0) and ($otrosGastosGestionCorriente le 0)"
+                         id="val_aux_7234-or-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="serviciosExteriores" xlink:from="val_aux_7234-or-2"
+                            xlink:to="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e275"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="otrosGastosGestionCorriente" xlink:from="val_aux_7234-or-2"
+                            xlink:to="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionOtrosGastosGestionCorriented10e289"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_aux_7234-or-2" id="lab_val_aux_7234-or-2"
+                   xlink:type="resource"
+                   xml:lang="es">Menor o igual a 0</label:label>
+      <generic:arc xlink:from="val_aux_7234-or-2" xlink:to="lab_val_aux_7234-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e275"
+                             bindAsSequence="false"
+                             id="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e275"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e275"
+                                  xlink:to="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e277"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e277"
+                      id="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExterioresd10e277"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>pgc-07-n:PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionServiciosExteriores</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionOtrosGastosGestionCorriented10e289"
+                             bindAsSequence="false"
+                             id="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionOtrosGastosGestionCorriented10e289"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionOtrosGastosGestionCorriented10e289"
+                                  xlink:to="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionOtrosGastosGestionCorriented10e291"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionOtrosGastosGestionCorriented10e291"
+                      id="fil_pgc-07-n_PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionOtrosGastosGestionCorriented10e291"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>pgc-07-n:PerdidasGananciasOperacionesContinuadasOtrosGastosExplotacionOtrosGastosGestionCorriente</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_aux_7234-or-2" id="ref_val_aux_7234-or-2"
+                           xlink:type="resource">
+         <ref:Number>aux:7234-or-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_aux_7234-or-2" xlink:to="ref_val_aux_7234-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:p-ecm="http://www.bde.es/es/fr/gaap/auxil/p-ecm" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:pgc-07-c-na="http://www.icac.meh.es/es/fr/gaap/pgc07/comun-normalabreviado/2008-01-01" xmlns:pgc-07-roles="http://www.icac.meh.es/es/fr/gaap/pgc07/roles/2008-01-01" xmlns:ecm-rol="http://www.bde.es/es/fr/gaap/auxil/ecm-rol" xmlns:p-aux="http://www.bde.es/es/fr/gaap/auxil/p-aux" xmlns:cebs-ef-ele="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:pgc-07-ref="http://www.icac.meh.es/es/fr/gaap/pgc07/referenceParts/2008-01-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:pgc-07-n="http://www.icac.meh.es/es/fr/gaap/pgc07/normal/2008-01-01" xmlns:pgc-07-types="http://www.icac.meh.es/es/fr/gaap/pgc07/types/2008-01-01" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/gaap/auxil/p-ecm" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="p-ecm-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="p-ecm-label-es.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/gaap/auxil/ecm-rol" schemaLocation="ecm-rol.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/gaap/auxil/p-aux" schemaLocation="p-aux.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/attributes.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/elements.xsd"/>
+  <xsd:element name="Compras" id="p-ecm_Compras" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ClientesCompras" id="p-ecm_ClientesCompras" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" id="p-ecm_OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Ventas" id="p-ecm_Ventas" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ClientesVentas" id="p-ecm_ClientesVentas" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" id="p-ecm_OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Transferencias" id="p-ecm_Transferencias" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TranferenciasRecibidas" id="p-ecm_TranferenciasRecibidas" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NumeroRecibidas" id="p-ecm_NumeroRecibidas" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ImporteRecibidas" id="p-ecm_ImporteRecibidas" type="xbrli:monetaryItemType" cebs-ef-att:currency="d-ecm-bill:MonedaDimension" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TransferenciasEmitidas" id="p-ecm_TransferenciasEmitidas" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NumeroEmitidas" id="p-ecm_NumeroEmitidas" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ImporteEmitidas" id="p-ecm_ImporteEmitidas" type="xbrli:monetaryItemType" cebs-ef-att:currency="d-ecm-bill:MonedaDimension" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Codigo" id="p-ecm_Codigo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DenominacionSocial" id="p-ecm_DenominacionSocial" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="VentasNumeroOperaciones" id="p-ecm_VentasNumeroOperaciones" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="VentasPorcentajeTotalVentas" id="p-ecm_VentasPorcentajeTotalVentas" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ComprasNumeroOperaciones" id="p-ecm_ComprasNumeroOperaciones" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ComprasPorcentajeTotalCompras" id="p-ecm_ComprasPorcentajeTotalCompras" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TransferenciasOrdenadas" id="p-ecm_TransferenciasOrdenadas" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TransferenciasOrdenadasNumeroOperaciones" id="p-ecm_TransferenciasOrdenadasNumeroOperaciones" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TransferenciasOrdenadasPorcentajeTotalOrdenado" id="p-ecm_TransferenciasOrdenadasPorcentajeTotalOrdenado" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TransferenciasRecibidas" id="p-ecm_TransferenciasRecibidas" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TransferenciasRecibidasNumeroOperaciones" id="p-ecm_TransferenciasRecibidasNumeroOperaciones" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TransferenciasRecibidasPorcentajeTotalRecibido" id="p-ecm_TransferenciasRecibidasPorcentajeTotalRecibido" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ImporteTransferenciasRecibidas" id="p-ecm_ImporteTransferenciasRecibidas" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ImporteTransferenciasEmitidas" id="p-ecm_ImporteTransferenciasEmitidas" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NombreRazonSocialAgente" id="p-ecm_NombreRazonSocialAgente" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NumeroLocales" id="p-ecm_NumeroLocales" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" id="p-ecm_PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" id="p-ecm_PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>

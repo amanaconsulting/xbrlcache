@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-p-gx="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-gx" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:es-be-p-cm-ca="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-cm-ca" xmlns:es-be-dt="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-dt" xmlns:p-cm-ca="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-cm-ca-2006-07-01" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:ref="http://www.xbrl.org/2004/ref" xmlns:cebs-ef-ele="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:ref-corep="http://www.c-ebs.org/eu/fr/esrs/corep/2005-09-30/ref-corep-2005-09-30" xmlns:dt="http://xbrl.c-ebs.org/dt" xmlns:cebs-ef-arc="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/arcroles" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-gx" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-gx-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-gx-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-gx-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:roleType roleURI="http://www.bde.es/2008/corep/gx" id="rt_gx">
+        <link:definition>ELR para la presentación y la definición</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>link:labelLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-cm-ca" schemaLocation="es-be-p-cm-ca.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-dt" schemaLocation="es-be-dt.xsd"/>
+  <xsd:import namespace="http://xbrl.c-ebs.org/dt" schemaLocation="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/dt-2005-06-30.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/arcroles" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/arcroles.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/elements.xsd"/>
+  <xsd:element name="RecursosPropios" id="es-be-p-gx_RecursosPropios" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="PatrimonioPropioNoComprometidoEntidadesAseguradorasGrupoConsolidableEntidadesAseguradoras" id="es-be-p-gx_PatrimonioPropioNoComprometidoEntidadesAseguradorasGrupoConsolidableEntidadesAseguradoras" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ParticipacionesAccionarialesEntreEntidadesNoDeducidasAnteriormente" id="es-be-p-gx_ParticipacionesAccionarialesEntreEntidadesNoDeducidasAnteriormente" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ParticipacionesEntidadEnEntidadesAseguradoras" id="es-be-p-gx_ParticipacionesEntidadEnEntidadesAseguradoras" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ParticipacionesEntidadesAseguradorasEnEntidad" id="es-be-p-gx_ParticipacionesEntidadesAseguradorasEnEntidad" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ParticipacionesEntreEntidadesAseguradoras" id="es-be-p-gx_ParticipacionesEntreEntidadesAseguradoras" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExcesoElementosIntegrantesPatrimonioPropioNoComprometidoEntidadesAseguradoras" id="es-be-p-gx_ExcesoElementosIntegrantesPatrimonioPropioNoComprometidoEntidadesAseguradoras" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="RecursosPropiosDeducidosBdE" id="es-be-p-gx_RecursosPropiosDeducidosBdE" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExigenciasRecursosPropios" id="es-be-p-gx_ExigenciasRecursosPropios" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExigenciasMargenSolvenciaEntidadesAseguradorasGrupoConsolidableEntidadesAseguradoras" id="es-be-p-gx_ExigenciasMargenSolvenciaEntidadesAseguradorasGrupoConsolidableEntidadesAseguradoras" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExigenciasRecursosPropiosParticipacionesAccionarialesEntreEntidadesDeducidas" id="es-be-p-gx_ExigenciasRecursosPropiosParticipacionesAccionarialesEntreEntidadesDeducidas" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExigenciasOtrasOperacionesInternas" id="es-be-p-gx_ExigenciasOtrasOperacionesInternas" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExigenciasOtrasOperacionesInternasDeEntidadAEntidadesAseguradoras" id="es-be-p-gx_ExigenciasOtrasOperacionesInternasDeEntidadAEntidadesAseguradoras" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExigenciasOtrasOperacionesInternasDeEntidadesAseguradorasAEntidad" id="es-be-p-gx_ExigenciasOtrasOperacionesInternasDeEntidadesAseguradorasAEntidad" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExigenciasOtrasOperacionesInternasEntreEntidadesAseguradoras" id="es-be-p-gx_ExigenciasOtrasOperacionesInternasEntreEntidadesAseguradoras" type="dt:nonPositiveMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="SuperavitDeficitConglomeradoFinancieroNogruposMixtos" id="es-be-p-gx_SuperavitDeficitConglomeradoFinancieroNogruposMixtos" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="AbstractProMemoria" id="es-be-p-gx_AbstractProMemoria" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="BalanceTotalSectorAsegurador" id="es-be-p-gx_BalanceTotalSectorAsegurador" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="BalanceTotalEntidadesSectorFinancieroGrupo" id="es-be-p-gx_BalanceTotalEntidadesSectorFinancieroGrupo" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TotalSectorAseguradorDivididoTotalEntidadesSectorFinancieroGrupoPorCien" id="es-be-p-gx_TotalSectorAseguradorDivididoTotalEntidadesSectorFinancieroGrupoPorCien" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="PorcentajeRequisitosSolvenciaSectorAseguradorSobreRequisitosTotalesSolvenciaEntidadesSectorFinancieroGrupo" id="es-be-p-gx_PorcentajeRequisitosSolvenciaSectorAseguradorSobreRequisitosTotalesSolvenciaEntidadesSectorFinancieroGrupo" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ValorMedio" id="es-be-p-gx_ValorMedio" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="RP90" id="es-be-p-gx_RP90" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>
