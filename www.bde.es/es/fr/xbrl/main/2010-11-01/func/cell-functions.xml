@@ -25,25 +25,26 @@
         <cfi:implementation xlink:type="resource" xlink:label="implementation-fact-cell-id" xlink:title="implementation-fact-cell-id">
             <cfi:input name="fact"/>
             <cfi:step name="primario">fce:nombre-extenso(resolve-QName(name($fact),$fact))</cfi:step>
+            
             <cfi:step name="scenario">xfi:scenario($fact)</cfi:step>
             <cfi:step name="dimensionesMiembro">
               for $dim in $scenario/* return if (local-name($dim) eq 'explicitMember')
               then concat(fce:nombre-extenso(resolve-QName(string($dim/@dimension),$dim)),'=', fce:nombre-extenso(xfi:fact-explicit-dimension-value($fact,resolve-QName(string($dim/@dimension),$dim))))
               else fce:nombre-extenso(resolve-QName(string($dim/@dimension),$dim))
             </cfi:step>
-            <cfi:step name="elemIns">$fact/ancestor::xbrli:xbrl</cfi:step>
-            <cfi:step name="fechaDeclaracion">fce:period-from-context(xfi:context($elemIns/es-be-cm-pblo:EntidadPresentadora))</cfi:step>  
-            <cfi:step name="fechaHecho">fce:period-from-context(xfi:context($fact))</cfi:step>            
             
-            <cfi:step name="period">
-            	if (xfi:is-duration-period(xfi:context-period(xfi:context($fact)))) then string('duracion')
-            	else string('instante')
-            </cfi:step>
+            <cfi:step name="elemIns">$fact/ancestor::xbrli:xbrl</cfi:step>
+            <cfi:step name="fechaDeclaracion">xfi:period-instant(xfi:context-period(xfi:context($elemIns/es-be-cm-pblo:EntidadPresentadora))) - xs:dayTimeDuration('P1D')</cfi:step>
+
+            <cfi:step name="periodo">xfi:context-period(xfi:context($fact))</cfi:step>
+            <cfi:step name="esDurationPeriod">xfi:is-duration-period($periodo)</cfi:step>          
+            <cfi:step name="fechaHecho">if ($esDurationPeriod) then null else xfi:period-instant($periodo) - xs:dayTimeDuration('P1D')</cfi:step>
+            <cfi:step name="fechaInicioHecho">if ($esDurationPeriod) then xfi:period-start($periodo) else null</cfi:step>
+            <cfi:step name="fechaFinHecho">if ($esDurationPeriod) then xfi:period-end($periodo) - xs:dayTimeDuration('P1D') else null</cfi:step>  
                         
             <cfi:step name="ptoentrada">$elemIns/link:schemaRef/@xlink:href</cfi:step>
             
-            <cfi:output>fext:ConsultaCeldas($primario,$dimensionesMiembro,$fechaDeclaracion,$fechaHecho,$period,$ptoentrada[1])</cfi:output>
-          
+            <cfi:output>fext:ConsultaCeldas($primario,$dimensionesMiembro,$fechaDeclaracion,$fechaHecho,$fechaInicioHecho,$fechaFinHecho,$ptoentrada[1])</cfi:output>            
         </cfi:implementation>
         <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function-fact-cell-id" xlink:to="implementation-fact-cell-id" xlink:title="unknown: function-fact-cell-id to implementation-fact-cell-id" order="2.0"/>
         

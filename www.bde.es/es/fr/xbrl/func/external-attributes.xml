@@ -97,17 +97,70 @@
          <cfi:output>fext:_atributo-agr($nombre, $patron, $entidad, $agrupacion, $fecha)</cfi:output>
       </cfi:implementation>
       <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-agrupacion3" xlink:to="implementation_atributo-agrupacion3" xlink:title="unknown: function to implementation" order="7.0"/>
+      
+      <!-- fext:atributo-grupo-ent(nombre) => item()* -->
+      <variable:function xlink:type="resource" xlink:label="function_atributo-grupo-ent" xlink:title="function" name="fext:atributo-grent" output="item()*">
+         <variable:input type="xs:string"/>         
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation_atributo-grupo-ent" xlink:title="implementation">
+         <cfi:input name="nombre"/>                  
+         <cfi:output>fext:_atributo-grent($nombre)</cfi:output>
+      </cfi:implementation>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-grupo-ent" xlink:to="implementation_atributo-grupo-ent" xlink:title="unknown: function to implementation" order="8.0"/>
+
+	  <!-- fext:atributo-grupo-ent(nombre, agrupacion) => item()* -->
+      <variable:function xlink:type="resource" xlink:label="function_atributo-grupo-ent2" xlink:title="function" name="fext:atributo-grent" output="item()*">
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>         
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation_atributo-grupo-ent2" xlink:title="implementation">
+         <cfi:input name="nombre"/>       
+         <cfi:input name="agrupacion"/>                  
+         <cfi:output>fext:_atributo-grent($nombre, $agrupacion)</cfi:output>
+      </cfi:implementation>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-grupo-ent2" xlink:to="implementation_atributo-grupo-ent2" xlink:title="unknown: function to implementation" order="9.0"/>
+      
+      
+      <!-- fext:atributo-grupo-ent(nombre, agrupacion, entidad) => item()* -->
+      <variable:function xlink:type="resource" xlink:label="function_atributo-grupo-ent3" xlink:title="function" name="fext:atributo-grent" output="item()*">
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>         
+         <variable:input type="xs:string"/>         
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation_atributo-grupo-ent3" xlink:title="implementation">
+         <cfi:input name="nombre"/>
+         <cfi:input name="agrupacion"/>         
+         <cfi:input name="entidad"/>                
+         <cfi:output>fext:_atributo-grent($nombre, $agrupacion, $entidad)</cfi:output>
+      </cfi:implementation>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-grupo-ent3" xlink:to="implementation_atributo-grupo-ent3" xlink:title="unknown: function to implementation" order="10.0"/>
+      
+      <!-- fext:atributo-grupo-ent(nombre, agrupacion, entidad, fecha) => item()* -->
+      <variable:function xlink:type="resource" xlink:label="function_atributo-grupo-ent4" xlink:title="function" name="fext:atributo-grent" output="item()*">
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>         
+         <variable:input type="xs:string"/> 
+         <variable:input type="xs:date"/>         
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation_atributo-grupo-ent4" xlink:title="implementation">
+         <cfi:input name="nombre"/>
+         <cfi:input name="agrupacion"/>         
+         <cfi:input name="entidad"/>                
+         <cfi:input name="fecha"/>                
+         <cfi:output>fext:_atributo-grent($nombre, $agrupacion, $entidad, $fecha)</cfi:output>
+      </cfi:implementation>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-grupo-ent4" xlink:to="implementation_atributo-grupo-ent4" xlink:title="unknown: function to implementation" order="11.0"/>
 
       
 <!-- Funciones para tratar atributos múltiples - FUNCIONES COBERTURA C#-->
 <!--      fext:_atributo-str(nombre, tipo_objeto) => xs:string*-->
-      <variable:function xlink:type="resource" xlink:label="fext_atributo" name="fext:_atributo-str" output="xs:string*">
+      <variable:function xlink:type="resource" xlink:label="fext_atributo1" name="fext:_atributo-str" output="xs:string*">
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>      
       </variable:function>
       
 <!--      fext:_atributo-str(nombre, tipo_objeto, objeto) => xs:string*-->
-      <variable:function xlink:type="resource" xlink:label="fext_atributo" name="fext:_atributo-str" output="xs:string*">
+      <variable:function xlink:type="resource" xlink:label="fext_atributo2" name="fext:_atributo-str" output="xs:string*">
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>      
@@ -115,7 +168,7 @@
       
       
       <!-- fext:_atributo-str(nombre, tipo_objeto, objeto?, fecha?) => xs:string* -->
-       <variable:function xlink:type="resource" xlink:label="fext_atributo" name="fext:_atributo-str" output="xs:string*">
+       <variable:function xlink:type="resource" xlink:label="fext_atributo3" name="fext:_atributo-str" output="xs:string*">
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>
@@ -123,7 +176,7 @@
        </variable:function>
       
       <!-- fext:_atributo-agr-str(nombre, patron, entidad?, agrupacion?, fecha?) => xs:string* -->
-      <variable:function xlink:type="resource" xlink:label="fext_atributo" name="fext:_atributo-agr-str" output="xs:string*">
+      <variable:function xlink:type="resource" xlink:label="fext_atributo4" name="fext:_atributo-agr-str" output="xs:string*">
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>
@@ -132,12 +185,39 @@
       </variable:function>
       
       <!-- fext:_atributo-agr-str(nombre, patron, entidad?, agrupacion?) => xs:string* -->
-      <variable:function xlink:type="resource" xlink:label="fext_atributo" name="fext:_atributo-agr-str" output="xs:string*">
+      <variable:function xlink:type="resource" xlink:label="fext_atributo5" name="fext:_atributo-agr-str" output="xs:string*">
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>
          <variable:input type="xs:string"/>         
       </variable:function>
+      
+      <!-- fext:_atributo-grent-str(nombre) => xs:string* -->
+       <variable:function xlink:type="resource" xlink:label="fext_atributo6" name="fext:_atributo-grent-str" output="xs:string*">
+         <variable:input type="xs:string"/>         
+       </variable:function>
+       
+       <!-- fext:_atributo-grent-str(nombre, agrupacion) => xs:string* -->
+       <variable:function xlink:type="resource" xlink:label="fext_atributo7" name="fext:_atributo-grent-str" output="xs:string*">
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>         
+       </variable:function>
+       
+       <!-- fext:_atributo-grent-str(nombre, agrupacion, entidad) => xs:string* -->
+       <variable:function xlink:type="resource" xlink:label="fext_atributo8" name="fext:_atributo-grent-str" output="xs:string*">
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>         
+       </variable:function>
+       
+       <!-- fext:_atributo-grent-str(nombre, agrupacion, entidad, fecha) => xs:string* -->
+       <variable:function xlink:type="resource" xlink:label="fext_atributo9" name="fext:_atributo-grent-str" output="xs:string*">
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:date"/>
+       </variable:function>
+      
       
  <!-- Funciones para tratar atributos múltiples - FUNCIONES INTERNAS (OCULTAS PARA EL USUARIO)-->
       
@@ -156,7 +236,7 @@
          <cfi:step name="cadena">fext:_atributo-str($nombre, $tipo_objeto, $objeto, $fecha)</cfi:step>
          <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>
       </cfi:implementation>
-      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo_privada" xlink:to="implementation_atributo_privada" xlink:title="unknown: function to implementation" order="8.0"/>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo_privada" xlink:to="implementation_atributo_privada" xlink:title="unknown: function to implementation" order="12.0"/>
 
       <!--     fext:_atributo(nombre, tipo_objeto) => item()* -->
       <variable:function xlink:type="resource" xlink:label="function_atributo_privada2" xlink:title="function" name="fext:_atributo" output="item()*">
@@ -169,7 +249,7 @@
          <cfi:step name="cadena">fext:_atributo-str($nombre, $tipo_objeto)</cfi:step>
          <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>
       </cfi:implementation>
-      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo_privada2" xlink:to="implementation_atributo_privada2" xlink:title="unknown: function to implementation" order="9.0"/>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo_privada2" xlink:to="implementation_atributo_privada2" xlink:title="unknown: function to implementation" order="13.0"/>
       
       <!--     fext:_atributo(nombre, tipo_objeto, objeto) => item()* -->
       <variable:function xlink:type="resource" xlink:label="function_atributo_privada3" xlink:title="function" name="fext:_atributo" output="item()*">
@@ -184,7 +264,7 @@
          <cfi:step name="cadena">fext:_atributo-str($nombre, $tipo_objeto, $objeto)</cfi:step>
          <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>
       </cfi:implementation>
-      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo_privada3" xlink:to="implementation_atributo_privada3" xlink:title="unknown: function to implementation" order="10.0"/>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo_privada3" xlink:to="implementation_atributo_privada3" xlink:title="unknown: function to implementation" order="14.0"/>
       
       <!-- fext:_atributo-agr(nombre, patron, entidad?, agrupacion?, fecha?) => item()* -->
       <variable:function xlink:type="resource" xlink:label="function_atributo-agr" name="fext:_atributo-agr" output="item()*">
@@ -203,7 +283,7 @@
          <cfi:step name="cadena">fext:_atributo-agr-str($nombre, $patron, $entidad, $agrupacion, $fecha)</cfi:step>
          <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>         
       </cfi:implementation>
-      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-agr" xlink:to="implementation_atributo-agr" xlink:title="unknown: function to implementation" order="11.0"/>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-agr" xlink:to="implementation_atributo-agr" xlink:title="unknown: function to implementation" order="15.0"/>
       
       <!-- fext:_atributo-agr(nombre, patron, entidad?, agrupacion?) => item()* -->
       <variable:function xlink:type="resource" xlink:label="function_atributo-agr2" name="fext:_atributo-agr" output="item()*">
@@ -220,7 +300,64 @@
          <cfi:step name="cadena">fext:_atributo-agr-str($nombre, $patron, $entidad, $agrupacion)</cfi:step>
          <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>
       </cfi:implementation>
-      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-agr2" xlink:to="implementation_atributo-agr2" xlink:title="unknown: function to implementation" order="12.0"/>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-agr2" xlink:to="implementation_atributo-agr2" xlink:title="unknown: function to implementation" order="16.0"/>
+      
+      <!--     fext:_atributo-grent(nombre) => item()* -->
+      <variable:function xlink:type="resource" xlink:label="function_atributo-grent_privada" xlink:title="function" name="fext:_atributo-grent" output="item()*">
+         <variable:input type="xs:string"/>         
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation_atributo-grent_privada" xlink:title="implementation">
+         <cfi:input name="nombre"/>
+         <cfi:step name="cadena">fext:_atributo-grent-str($nombre)</cfi:step>
+         <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>
+      </cfi:implementation>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-grent_privada" xlink:to="implementation_atributo-grent_privada" xlink:title="unknown: function to implementation" order="17.0"/>
+      
+      <!--     fext:_atributo-grent(nombre, agrupacion) => item()* -->
+      <variable:function xlink:type="resource" xlink:label="function_atributo-grent_privada2" xlink:title="function" name="fext:_atributo-grent" output="item()*">
+         <variable:input type="xs:string"/>         
+         <variable:input type="xs:string"/>         
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation_atributo-grent_privada2" xlink:title="implementation">
+         <cfi:input name="nombre"/>         
+         <cfi:input name="agrupacion"/>         
+         <cfi:step name="cadena">fext:_atributo-grent-str($nombre, $agrupacion)</cfi:step>
+         <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>         
+      </cfi:implementation>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-grent_privada2" xlink:to="implementation_atributo-grent_privada2" xlink:title="unknown: function to implementation" order="18.0"/>
+      
+      <!--     fext:_atributo-grent(nombre, agrupacion, entidad) => item()* -->
+      <variable:function xlink:type="resource" xlink:label="function_atributo-grent_privada3" xlink:title="function" name="fext:_atributo-grent" output="item()*">
+         <variable:input type="xs:string"/>         
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>         
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation_atributo-grent_privada3" xlink:title="implementation">
+         <cfi:input name="nombre"/>         
+         <cfi:input name="agrupacion"/>       
+         <cfi:input name="entidad"/>         
+         <cfi:step name="cadena">fext:_atributo-grent-str($nombre, $agrupacion, $entidad)</cfi:step>
+         <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>
+         
+      </cfi:implementation>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-grent_privada3" xlink:to="implementation_atributo-grent_privada3" xlink:title="unknown: function to implementation" order="19.0"/>
+      
+<!--     fext:_atributo-grent(nombre, agrupacion, entidad, fecha) => item()* -->
+      <variable:function xlink:type="resource" xlink:label="function_atributo-grent_privada4" xlink:title="function" name="fext:_atributo-grent" output="item()*">
+         <variable:input type="xs:string"/>         
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:string"/>
+         <variable:input type="xs:date"/>         
+      </variable:function>
+      <cfi:implementation xlink:type="resource" xlink:label="implementation_atributo-grent_privada4" xlink:title="implementation">
+         <cfi:input name="nombre"/>         
+         <cfi:input name="agrupacion"/>       
+         <cfi:input name="entidad"/>
+         <cfi:input name="fecha"/>         
+         <cfi:step name="cadena">fext:_atributo-grent-str($nombre, $agrupacion, $entidad, $fecha)</cfi:step>  
+         <cfi:output>fext:_str-to-typed-seq($cadena)</cfi:output>       
+      </cfi:implementation>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_atributo-grent_privada4" xlink:to="implementation_atributo-grent_privada4" xlink:title="unknown: function to implementation" order="20.0"/>
             
       <!-- fext:_str-to-typed-seq(xs:string*) => item()* -->
       <variable:function xlink:type="resource" xlink:label="function_str-to-typed-seq" xlink:title="function" name="fext:_str-to-typed-seq" output="item()*">
@@ -230,15 +367,16 @@
          <cfi:input name="cadena"/>
          <cfi:step name="tipoDato">if (count($cadena) > 0) then $cadena[1] else 'T'</cfi:step>
          <cfi:step name="datos">if (count($cadena) > 0) then fn:remove($cadena,1) else $cadena</cfi:step>
-         <cfi:output>
-            if ($tipoDato = 'B') then for $i in $datos return (xs:boolean($i))
-            else if ($tipoDato = 'N') then for $i in $datos return (xs:numeric($i))
+		 <cfi:output>
+            if ($tipoDato = 'B') then for $i in $datos return if($i = 'S') then true() else if ($i = 'N') then false() else ()
+            else if ($tipoDato = 'N') then for $i in $datos return (xs:decimal(fn:replace($i,',','.')))
             else if ($tipoDato = 'T') then for $i in $datos return (xs:string($i))
             else if ($tipoDato = 'F') then for $i in $datos return (xs:date($i))
-            else ''
-         </cfi:output>         
+            else if ($tipoDato = 'E') then fn:error(fn:QName('http://www.bde.es/xbrl/func/external-functions', 'ObjetoSolicitadoNoExiste'), $datos[1]) 
+            else ()
+         </cfi:output>
       </cfi:implementation>
-      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_str-to-typed-seq" xlink:to="implementation_str-to-typed-seq" xlink:title="unknown: function to implementation" order="13.0"/>
+      <generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_str-to-typed-seq" xlink:to="implementation_str-to-typed-seq" xlink:title="unknown: function to implementation" order="21.0"/>
            
    </generic:link>
 </link:linkbase>

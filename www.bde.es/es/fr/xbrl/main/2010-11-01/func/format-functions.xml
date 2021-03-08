@@ -24,7 +24,7 @@
                 else false()
             </cfi:step>      
                 
-            <cfi:output>
+            <cfi:output> <!-- se ha quedado en que asumimos que si tiene decimal= 0 va a ser un entero (consultado con Víctor) -->
                if ($ismonetary) then for $i in $v-atomic return
                 	if (fn:contains(fn:string($i), ';')) then concat(fmt:format-number(xs:double(fn:substring-before($i, ';'))),' ',fmt:name-unit($facts))
                 	else concat(fmt:format-number(xs:double($i)),' ',fmt:name-unit($facts))                	
