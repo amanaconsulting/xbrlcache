@@ -150,3 +150,7 @@ A single repository with all XBRL taxonomy files
 ### SRB Single Resolution Fund
 
 * SRB SRF 3.0.1 - 2018
+
+### DCCA Danish GAAP
+
+* Danish GAAP 2020
