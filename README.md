@@ -139,17 +139,12 @@ A single repository with all XBRL taxonomy files
 
 * SEC NAICS 2017-01-31
 
-### SRB Liability Data Report
-
-* SRB LDR 3.0.2 - 2019
-
-### SRB Resolution Reporting
-
-* SRB RES 4.0.3.2 - 2020
-
-### SRB Single Resolution Fund
+### Single Resolution Board
 
 * SRB SRF 3.0.1 - 2018
+* SRB LDR 3.0.2 - 2019
+* SRB RES 4.0.3.2 - 2020
+* SRB Full 5.0.7 - 2021
 
 ### DCCA Danish GAAP
 

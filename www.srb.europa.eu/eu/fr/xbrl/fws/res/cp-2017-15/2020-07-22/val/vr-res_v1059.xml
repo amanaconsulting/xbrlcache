@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--(c) Single Resolution Board-->
+<?taxonomy-version 5.0.7 ?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:gf="http://xbrl.org/2008/filter/general" xmlns:eba_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:eba_typ="http://www.eba.europa.eu/xbrl/crr/dict/typ" xmlns:df="http://xbrl.org/2008/filter/dimension" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd">
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<va:valueAssertion xlink:type="resource" xlink:label="srb_res_v1059" test="empty($at)" aspectModel="dimensional" implicitFiltering="true" id="srb_res_v1059"/>
+		<variable:factVariable xlink:type="resource" xlink:label="srb_res_v1059.at" bindAsSequence="false" fallbackValue="()" id="srb_res_v1059.at"/>
+		<gf:general xlink:type="resource" xlink:label="srb_res_v1059.at.et" test="string(xfi:fact-typed-dimension-value(., QName('http://www.eba.europa.eu/xbrl/crr/dict/dim', 'PCS'))/eba_typ:LE) eq ''" id="srb_res_v1059.at.et"/>
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="srb_res_v1059.at" xlink:to="srb_res_v1059.at.et" cover="true" complement="false" order="1"/>
+		<df:typedDimension xlink:type="resource" xlink:label="srb_res_v1059.at.f1" id="srb_res_v1059.at.f1">
+			<df:dimension>
+				<df:qname>eba_dim:PCS</df:qname>
+			</df:dimension>
+		</df:typedDimension>
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="srb_res_v1059.at" xlink:to="srb_res_v1059.at.f1" cover="true" complement="false" order="2"/>
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="srb_res_v1059" xlink:to="srb_res_v1059.at" name="at" order="1"/>
+		<link:loc xlink:href="http://www.xbrl.org/2016/severities.xml#ERROR" xlink:type="locator" xlink:label="severity"/><gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:type="arc" xlink:from="srb_res_v1059" xlink:to="severity"/></gen:link>
+	<link:arcroleRef xlink:type="simple" arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity"/></link:linkbase>
