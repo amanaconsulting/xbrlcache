@@ -19,6 +19,7 @@ A single repository with all XBRL taxonomy files
 * Bundesbank 2.9.1.1 COR
 * Bundesbank 2.9.1.1 FIN CON
 * Bundesbank 2.9.1.1 FIN IND
+* Bundesbank 2.10 FP
 * Bundesbank 2.10 SBP
 * Bundesbank 2.10 COVID 19
 * Bundesbank COREP/FINREP EZB-SFRDP 3.0.0.1
