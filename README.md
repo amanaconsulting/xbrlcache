@@ -97,6 +97,8 @@ A single repository with all XBRL taxonomy files
 ### FRC
 
 * 2019 Taxonomy suite Version 1.1.0
+* 2021 SECR Taxonomy 
+* 2021 UKSEF 1.0
 
 ### xbrl.de (HGB)
 
@@ -116,6 +118,10 @@ A single repository with all XBRL taxonomy files
 * IFRS 2018
 * IFRS 2018-spanish
 * IFRS 2019
+
+### SASB
+
+* 2021 SASB Draft Taxonomy
 
 ### SEC Country
 
