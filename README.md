@@ -159,6 +159,12 @@ A single repository with all XBRL taxonomy files
 * SRB LDR 3.0.2 - 2019
 * SRB RES 4.0.3.2 - 2020
 * SRB Full 5.0.7 - 2021
+* SRB Ex-ante contributions 2021 6.0.2
+* SRB Ex-ante contributions 2020 5.1.1
+* SRB Ex-ante contributions 2019 4.0.3
+* SRB Ex-ante contributions 2018 3.0.1
+* SRB Ex-ante contributions 2017 2.1.3
+* SRB Ex-ante contributions 2016 1.0.3
 
 ### DCCA Danish GAAP
 
