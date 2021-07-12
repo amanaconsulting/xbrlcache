@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:d-tas-fin="http://www.bde.es/es/fr/gaap/auxil/d-tas-fin" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/DimensionDefault" xlink:type="simple" xlink:href="tas-rol.xsd#DimensionDefault"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-default"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/tas/DimensionDefault">
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_FinalidadDimension" xlink:label="ActivosDimension" xlink:title="ActivosDimension"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_FinalidadTotal" xlink:label="ClientelaTotal" xlink:title="ClientelaTotal"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="ActivosDimension" xlink:to="ClientelaTotal" xlink:title="definition: ActivosDimension to ClientelaTotal" order="1.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_FinalidadDimension" xlink:label="FinalidadDimension" xlink:title="FinalidadDimension"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_ConstruirGarantiaHipotecariaPrestamos" xlink:label="ConstruirGarantiaHipotecariaPrestamos" xlink:title="ConstruirGarantiaHipotecariaPrestamos"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="ConstruirGarantiaHipotecariaPrestamos" xlink:title="definition: FinalidadDimension to ConstruirGarantiaHipotecariaPrestamos" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_PrestamosSujetosLey1981" xlink:label="PrestamosSujetosLey1981" xlink:title="PrestamosSujetosLey1981"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ConstruirGarantiaHipotecariaPrestamos" xlink:to="PrestamosSujetosLey1981" xlink:title="definition: ConstruirGarantiaHipotecariaPrestamos to PrestamosSujetosLey1981" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_RestantesPrestamos" xlink:label="RestantesPrestamos" xlink:title="RestantesPrestamos"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ConstruirGarantiaHipotecariaPrestamos" xlink:to="RestantesPrestamos" xlink:title="definition: ConstruirGarantiaHipotecariaPrestamos to RestantesPrestamos" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_RequeridosNormasContablesEntidadesCredito" xlink:label="RequeridosNormasContablesEntidadesCredito" xlink:title="RequeridosNormasContablesEntidadesCredito"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="RequeridosNormasContablesEntidadesCredito" xlink:title="definition: FinalidadDimension to RequeridosNormasContablesEntidadesCredito" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_InmovilizadoCoberturaProvisionesTecnicasEntidadesAseguradoras" xlink:label="InmovilizadoCoberturaProvisionesTecnicasEntidadesAseguradoras" xlink:title="InmovilizadoCoberturaProvisionesTecnicasEntidadesAseguradoras"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="InmovilizadoCoberturaProvisionesTecnicasEntidadesAseguradoras" xlink:title="definition: FinalidadDimension to InmovilizadoCoberturaProvisionesTecnicasEntidadesAseguradoras" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_PatrimonioInstitucionesInversionColectivaInmobiliarias" xlink:label="PatrimonioInstitucionesInversionColectivaInmobiliarias" xlink:title="PatrimonioInstitucionesInversionColectivaInmobiliarias"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="PatrimonioInstitucionesInversionColectivaInmobiliarias" xlink:title="definition: FinalidadDimension to PatrimonioInstitucionesInversionColectivaInmobiliarias" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_PatrimonioFondosPensiones" xlink:label="PatrimonioFondosPensiones" xlink:title="PatrimonioFondosPensiones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="PatrimonioFondosPensiones" xlink:title="definition: FinalidadDimension to PatrimonioFondosPensiones" order="5.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_OtrasValoracionesMercantilesContables" xlink:label="OtrasValoracionesMercantilesContables" xlink:title="OtrasValoracionesMercantilesContables"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="OtrasValoracionesMercantilesContables" xlink:title="definition: FinalidadDimension to OtrasValoracionesMercantilesContables" order="6.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_AdquisicionVenta" xlink:label="AdquisicionVenta" xlink:title="AdquisicionVenta"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="AdquisicionVenta" xlink:title="definition: FinalidadDimension to AdquisicionVenta" order="7.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_Expropiaciones" xlink:label="Expropiaciones" xlink:title="Expropiaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="Expropiaciones" xlink:title="definition: FinalidadDimension to Expropiaciones" order="8.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_OtrasFinalidades" xlink:label="OtrasFinalidades" xlink:title="OtrasFinalidades"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="OtrasFinalidades" xlink:title="definition: FinalidadDimension to OtrasFinalidades" order="9.0"/>
+  </link:definitionLink>
+</link:linkbase>

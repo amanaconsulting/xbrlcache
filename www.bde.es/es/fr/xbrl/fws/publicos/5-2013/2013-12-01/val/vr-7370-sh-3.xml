@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:estr_dim="http://www.bde.es/es/fr/xbrl/main/dim" xmlns:estr_PSR="http://www.bde.es/es/fr/xbrl/main/d/PSR" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_7370-sh-3" test="abs($rdo - $fondosPropios - $ajusteValoracion) le $threshold" aspectModel="dimensional" implicitFiltering="true" id="es_7370-sh-3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-3.fondosPropios" bindAsSequence="false" id="es_7370-sh-3.fondosPropios" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-3.fondosPropios.fil_PatrimonioNetoDim_TotalFondosPropiosd10e126" id="es_7370-sh-3.fondosPropios.fil_PatrimonioNetoDim_TotalFondosPropiosd10e126">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x64962</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-3.fondosPropios" xlink:to="es_7370-sh-3.fondosPropios.fil_PatrimonioNetoDim_TotalFondosPropiosd10e126" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-3" xlink:to="es_7370-sh-3.fondosPropios" name="fondosPropios" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-3.ajusteValoracion" bindAsSequence="false" id="es_7370-sh-3.ajusteValoracion" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-3.ajusteValoracion.fil_PatrimonioNetoDim_TotalAjustesValoraciond10e140" id="es_7370-sh-3.ajusteValoracion.fil_PatrimonioNetoDim_TotalAjustesValoraciond10e140">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x19154</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-3.ajusteValoracion" xlink:to="es_7370-sh-3.ajusteValoracion.fil_PatrimonioNetoDim_TotalAjustesValoraciond10e140" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-3" xlink:to="es_7370-sh-3.ajusteValoracion" name="ajusteValoracion" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-3.rdo" bindAsSequence="false" id="es_7370-sh-3.rdo" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-3.rdo.fil_PatrimonioNetoDim_TotalPatrimonioNetoEntidadDominanted10e154" id="es_7370-sh-3.rdo.fil_PatrimonioNetoDim_TotalPatrimonioNetoEntidadDominanted10e154">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x46377</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-3.rdo" xlink:to="es_7370-sh-3.rdo.fil_PatrimonioNetoDim_TotalPatrimonioNetoEntidadDominanted10e154" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-3" xlink:to="es_7370-sh-3.rdo" name="rdo" order="3" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_7370-sh-3.threshold" bindAsSequence="false" select="(2 idiv 2 + 1) * 1000" id="es_7370-sh-3.threshold" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-3" xlink:to="es_7370-sh-3.threshold" name="threshold" order="4" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_7370-sh-3" id="ref_es_7370-sh-3">
+      <ref:Number>publicos:7370-sh-3</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_7370-sh-3" xlink:to="ref_es_7370-sh-3" />
+  </gen:link>
+</link:linkbase>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:t-tas-IV="http://www.bde.es/es/fr/gaap/auxil/t-tas-IV" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/7124" xlink:type="simple" xlink:href="tas-rol.xsd#DistribucionClientela"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/Activo-Sub1" xlink:type="simple" xlink:href="tas-rol.xsd#Activo-Sub1"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/tas/7124">
+    <link:loc xlink:type="locator" xlink:href="t-tas-IV.xsd#t-tas-IV_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_NumeroTasaciones" xlink:label="NumeroTasaciones" xlink:title="NumeroTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="NumeroTasaciones" xlink:title="definition: Anejo to NumeroTasaciones" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_ValorTasaciones" xlink:label="ValorTasaciones" xlink:title="ValorTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="ValorTasaciones" xlink:title="definition: Anejo to ValorTasaciones" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-IV.xsd#t-tas-IV_DistribucionClientelaHypercube" xlink:label="DistribucionClientelaHypercube" xlink:title="DistribucionClientelaHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="DistribucionClientelaHypercube" xlink:title="definition: Anejo to DistribucionClientelaHypercube" use="optional" order="3.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-activos.xsd#d-tas-act_ActivosDimension" xlink:label="ActivosDimension" xlink:title="ActivosDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DistribucionClientelaHypercube" xlink:to="ActivosDimension" xlink:title="definition: DistribucionClientelaHypercube to ActivosDimension" order="1.0" xbrldt:targetRole="http://www.bde.es/2009/tas/Activo-Sub1"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-clientela.xsd#d-tas-cli_ClientelaDimension" xlink:label="ClientelaDimension" xlink:title="ClientelaDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DistribucionClientelaHypercube" xlink:to="ClientelaDimension" xlink:title="definition: DistribucionClientelaHypercube to ClientelaDimension" order="2.0" xbrldt:targetRole="http://www.xbrl.org/2003/role/link"/>
+  </link:definitionLink>
+</link:linkbase>

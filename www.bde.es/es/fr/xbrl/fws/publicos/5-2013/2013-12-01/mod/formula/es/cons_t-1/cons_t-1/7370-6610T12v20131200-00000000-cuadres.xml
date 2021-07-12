@@ -1,0 +1,1993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:estr_dim="http://www.bde.es/es/fr/xbrl/main/dim"
+               xmlns:estr_PSR="http://www.bde.es/es/fr/xbrl/main/d/PSR"
+               xmlns:estr_base="http://www.bde.es/es/fr/xbrl/main/base"
+               xmlns:estr_PZW="http://www.bde.es/es/fr/xbrl/main/d/PZW"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-mcons_t-1.xml#Mcons_t-1"
+                xlink:label="Mcons_t-1"/>
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-mcons_t-1.t12.xml#Mcons_t-1.T12"
+                xlink:label="Mcons_t-1.T12"/>
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_7370-6610T12v20131200-00000000_cuadres_1"
+                           id="ref_atributosCuadres_7370-6610T12v20131200-00000000_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:VigenciaDesde>2014-01-01</frRef:VigenciaDesde>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_atributosCuadres_7370-6610T12v20131200-00000000_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_7370-6610T12v20131200-00000000_cuadres_1"
+                           id="ref_moduloDefinicion_7370-6610T12v20131200-00000000_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>cons_t-1</frRef:Modulo>
+         <frRef:Instancia>Mcons_t-1</frRef:Instancia>
+         <frRef:Estado>7370</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloDefinicion_7370-6610T12v20131200-00000000_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloExterno_7370-6610T12v20131200-00000000_cuadres_2"
+                           id="ref_moduloExterno_7370-6610T12v20131200-00000000_cuadres_2"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/moduloexterno">
+         <frRef:Modulo>cons_t-1</frRef:Modulo>
+         <frRef:Instancia>Mcons_t-1.T12</frRef:Instancia>
+         <frRef:Estado>6610?</frRef:Estado>
+         <frRef:Dependiente>false</frRef:Dependiente>
+         <frRef:OffsetAbsoluto>12</frRef:OffsetAbsoluto>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloExterno_7370-6610T12v20131200-00000000_cuadres_2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="10"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="11"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_publicos_7370-oe-18"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="12"/>
+      <link:loc xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xml#var_refPeriodEndDate"
+                xlink:label="var_statementEndPeriod"
+                xlink:type="locator"/>
+      <link:loc xlink:href="../../params_es.xml#var_UmbralBasico1"
+                xlink:label="var_UmbralBasico1"
+                xlink:type="locator"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-7"
+                         test="abs($celda0001 - $celda1021) le $threshold"
+                         id="val_publicos_7370-oe-7"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x108909estr_base_mi22907d10e38"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi108909d10e60"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-7"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-7" xlink:to="var_d10e33"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0001" xlink:from="val_publicos_7370-oe-7"
+                            xlink:to="var_PXADim_x108909estr_base_mi22907d10e38"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1021" xlink:from="val_publicos_7370-oe-7"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi108909d10e60"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-7"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-7" id="lab_val_publicos_7370-oe-7"
+                   xlink:type="resource"
+                   xml:lang="es">0001 (Anejo III.4) = 1021 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-7" xlink:to="lab_val_publicos_7370-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e33"
+                                bindAsSequence="true"
+                                id="var_d10e33"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x108909estr_base_mi22907d10e38" bindAsSequence="false"
+                             id="var_PXADim_x108909estr_base_mi22907d10e38"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x108909estr_base_mi22907d10e38"
+                                  xlink:to="fil_PXADim_x108909d10e40"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x108909estr_base_mi22907d10e38"
+                                  xlink:to="fil_estr_base_mi22907d10e48"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x108909d10e40" id="fil_PXADim_x108909d10e40"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x108909</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e48" id="fil_estr_base_mi22907d10e48"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi108909d10e60"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi108909d10e60"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi108909d10e60"
+                                  xlink:to="fil_PXADim_x22809d10e62"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi108909d10e60"
+                                  xlink:to="fil_POGDim_x46998d10e70"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi108909d10e60"
+                                  xlink:to="fil_estr_base_mi108909d10e78"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi108909d10e60"
+                                  xlink:to="fil_d10e86"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e62" id="fil_PXADim_x22809d10e62"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e70" id="fil_POGDim_x46998d10e70"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi108909d10e78" id="fil_estr_base_mi108909d10e78"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi108909</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e86" id="fil_d10e86" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-7" id="ref_val_publicos_7370-oe-7"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-7</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-7" xlink:to="ref_val_publicos_7370-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-8"
+                         test="abs($celda0051 - $celda1030) le $threshold"
+                         id="val_publicos_7370-oe-8"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x102122estr_base_mi22907d10e111"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi84167d10e133"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-8"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-8" xlink:to="var_d10e106"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0051" xlink:from="val_publicos_7370-oe-8"
+                            xlink:to="var_PXADim_x102122estr_base_mi22907d10e111"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1030" xlink:from="val_publicos_7370-oe-8"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi84167d10e133"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-8"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-8" id="lab_val_publicos_7370-oe-8"
+                   xlink:type="resource"
+                   xml:lang="es">0051 (Anejo III.4) = 1030 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-8" xlink:to="lab_val_publicos_7370-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e106"
+                                bindAsSequence="true"
+                                id="var_d10e106"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x102122estr_base_mi22907d10e111" bindAsSequence="false"
+                             id="var_PXADim_x102122estr_base_mi22907d10e111"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x102122estr_base_mi22907d10e111"
+                                  xlink:to="fil_PXADim_x102122d10e113"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x102122estr_base_mi22907d10e111"
+                                  xlink:to="fil_estr_base_mi22907d10e121"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x102122d10e113" id="fil_PXADim_x102122d10e113"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x102122</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e121" id="fil_estr_base_mi22907d10e121"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi84167d10e133"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi84167d10e133"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi84167d10e133"
+                                  xlink:to="fil_PXADim_x22809d10e135"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi84167d10e133"
+                                  xlink:to="fil_POGDim_x46998d10e143"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi84167d10e133"
+                                  xlink:to="fil_estr_base_mi84167d10e151"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi84167d10e133"
+                                  xlink:to="fil_d10e159"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e135" id="fil_PXADim_x22809d10e135"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e143" id="fil_POGDim_x46998d10e143"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi84167d10e151" id="fil_estr_base_mi84167d10e151"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi84167</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e159" id="fil_d10e159" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-8" id="ref_val_publicos_7370-oe-8"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-8</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-8" xlink:to="ref_val_publicos_7370-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-9"
+                         test="abs($celda0151 - $celda1033) le $threshold"
+                         id="val_publicos_7370-oe-9"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x12537estr_base_mi22907d10e184"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi12537d10e206"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-9"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-9" xlink:to="var_d10e179"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0151" xlink:from="val_publicos_7370-oe-9"
+                            xlink:to="var_PXADim_x12537estr_base_mi22907d10e184"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1033" xlink:from="val_publicos_7370-oe-9"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi12537d10e206"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-9"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-9" id="lab_val_publicos_7370-oe-9"
+                   xlink:type="resource"
+                   xml:lang="es">0151 (Anejo III.4) = 1033 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-9" xlink:to="lab_val_publicos_7370-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e179"
+                                bindAsSequence="true"
+                                id="var_d10e179"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x12537estr_base_mi22907d10e184" bindAsSequence="false"
+                             id="var_PXADim_x12537estr_base_mi22907d10e184"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x12537estr_base_mi22907d10e184"
+                                  xlink:to="fil_PXADim_x12537d10e186"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x12537estr_base_mi22907d10e184"
+                                  xlink:to="fil_estr_base_mi22907d10e194"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x12537d10e186" id="fil_PXADim_x12537d10e186"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x12537</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e194" id="fil_estr_base_mi22907d10e194"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi12537d10e206"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi12537d10e206"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi12537d10e206"
+                                  xlink:to="fil_PXADim_x22809d10e208"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi12537d10e206"
+                                  xlink:to="fil_POGDim_x46998d10e216"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi12537d10e206"
+                                  xlink:to="fil_estr_base_mi12537d10e224"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi12537d10e206"
+                                  xlink:to="fil_d10e232"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e208" id="fil_PXADim_x22809d10e208"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e216" id="fil_POGDim_x46998d10e216"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi12537d10e224" id="fil_estr_base_mi12537d10e224"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi12537</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e232" id="fil_d10e232" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-9" id="ref_val_publicos_7370-oe-9"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-9</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-9" xlink:to="ref_val_publicos_7370-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-10"
+                         test="abs($celda0301 - $celda1036) le $threshold"
+                         id="val_publicos_7370-oe-10"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x62448estr_base_mi22907d10e257"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi62448d10e279"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-10"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-10" xlink:to="var_d10e252"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0301" xlink:from="val_publicos_7370-oe-10"
+                            xlink:to="var_PXADim_x62448estr_base_mi22907d10e257"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1036" xlink:from="val_publicos_7370-oe-10"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi62448d10e279"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-10"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-10" id="lab_val_publicos_7370-oe-10"
+                   xlink:type="resource"
+                   xml:lang="es">0301 (Anejo III.4) = 1036 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-10" xlink:to="lab_val_publicos_7370-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e252"
+                                bindAsSequence="true"
+                                id="var_d10e252"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x62448estr_base_mi22907d10e257" bindAsSequence="false"
+                             id="var_PXADim_x62448estr_base_mi22907d10e257"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x62448estr_base_mi22907d10e257"
+                                  xlink:to="fil_PXADim_x62448d10e259"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x62448estr_base_mi22907d10e257"
+                                  xlink:to="fil_estr_base_mi22907d10e267"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x62448d10e259" id="fil_PXADim_x62448d10e259"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x62448</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e267" id="fil_estr_base_mi22907d10e267"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi62448d10e279"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi62448d10e279"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi62448d10e279"
+                                  xlink:to="fil_PXADim_x22809d10e281"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi62448d10e279"
+                                  xlink:to="fil_POGDim_x46998d10e289"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi62448d10e279"
+                                  xlink:to="fil_estr_base_mi62448d10e297"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi62448d10e279"
+                                  xlink:to="fil_d10e305"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e281" id="fil_PXADim_x22809d10e281"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e289" id="fil_POGDim_x46998d10e289"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi62448d10e297" id="fil_estr_base_mi62448d10e297"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi62448</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e305" id="fil_d10e305" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-10" id="ref_val_publicos_7370-oe-10"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-10</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-10" xlink:to="ref_val_publicos_7370-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-11"
+                         test="abs($celda0351 - $celda1040) le $threshold"
+                         id="val_publicos_7370-oe-11"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x53391estr_base_mi22907d10e331"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi79813d10e353"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-11"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-11" xlink:to="var_d10e326"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0351" xlink:from="val_publicos_7370-oe-11"
+                            xlink:to="var_PXADim_x53391estr_base_mi22907d10e331"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1040" xlink:from="val_publicos_7370-oe-11"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi79813d10e353"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-11"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-11" id="lab_val_publicos_7370-oe-11"
+                   xlink:type="resource"
+                   xml:lang="es">0351 (Anejo III.4) = 1040 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-11" xlink:to="lab_val_publicos_7370-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e326"
+                                bindAsSequence="true"
+                                id="var_d10e326"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x53391estr_base_mi22907d10e331" bindAsSequence="false"
+                             id="var_PXADim_x53391estr_base_mi22907d10e331"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x53391estr_base_mi22907d10e331"
+                                  xlink:to="fil_PXADim_x53391d10e333"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x53391estr_base_mi22907d10e331"
+                                  xlink:to="fil_estr_base_mi22907d10e341"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x53391d10e333" id="fil_PXADim_x53391d10e333"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x53391</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e341" id="fil_estr_base_mi22907d10e341"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi79813d10e353"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi79813d10e353"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi79813d10e353"
+                                  xlink:to="fil_PXADim_x22809d10e355"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi79813d10e353"
+                                  xlink:to="fil_POGDim_x46998d10e363"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi79813d10e353"
+                                  xlink:to="fil_estr_base_mi79813d10e371"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi79813d10e353"
+                                  xlink:to="fil_d10e379"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e355" id="fil_PXADim_x22809d10e355"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e363" id="fil_POGDim_x46998d10e363"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi79813d10e371" id="fil_estr_base_mi79813d10e371"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi79813</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e379" id="fil_d10e379" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-11" id="ref_val_publicos_7370-oe-11"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-11</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-11" xlink:to="ref_val_publicos_7370-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-12"
+                         test="abs($celda0551 - $celda1050) le $threshold"
+                         id="val_publicos_7370-oe-12"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x85616estr_base_mi22907d10e404"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi57210d10e426"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-12"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-12" xlink:to="var_d10e399"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0551" xlink:from="val_publicos_7370-oe-12"
+                            xlink:to="var_PXADim_x85616estr_base_mi22907d10e404"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1050" xlink:from="val_publicos_7370-oe-12"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi57210d10e426"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-12"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-12" id="lab_val_publicos_7370-oe-12"
+                   xlink:type="resource"
+                   xml:lang="es">0551 (Anejo III.4) = 1050 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-12" xlink:to="lab_val_publicos_7370-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e399"
+                                bindAsSequence="true"
+                                id="var_d10e399"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x85616estr_base_mi22907d10e404" bindAsSequence="false"
+                             id="var_PXADim_x85616estr_base_mi22907d10e404"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x85616estr_base_mi22907d10e404"
+                                  xlink:to="fil_PXADim_x85616d10e406"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x85616estr_base_mi22907d10e404"
+                                  xlink:to="fil_estr_base_mi22907d10e414"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x85616d10e406" id="fil_PXADim_x85616d10e406"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x85616</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e414" id="fil_estr_base_mi22907d10e414"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi57210d10e426"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi57210d10e426"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi57210d10e426"
+                                  xlink:to="fil_PXADim_x22809d10e428"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi57210d10e426"
+                                  xlink:to="fil_POGDim_x46998d10e436"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi57210d10e426"
+                                  xlink:to="fil_estr_base_mi57210d10e444"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi57210d10e426"
+                                  xlink:to="fil_d10e452"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e428" id="fil_PXADim_x22809d10e428"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e436" id="fil_POGDim_x46998d10e436"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi57210d10e444" id="fil_estr_base_mi57210d10e444"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi57210</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e452" id="fil_d10e452" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-12" id="ref_val_publicos_7370-oe-12"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-12</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-12" xlink:to="ref_val_publicos_7370-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-13"
+                         test="abs($celda0601 - $celda1065) le $threshold"
+                         id="val_publicos_7370-oe-13"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x76408estr_base_mi22907d10e477"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi94368d10e499"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-13"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-13" xlink:to="var_d10e472"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0601" xlink:from="val_publicos_7370-oe-13"
+                            xlink:to="var_PXADim_x76408estr_base_mi22907d10e477"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1065" xlink:from="val_publicos_7370-oe-13"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi94368d10e499"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-13"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-13" id="lab_val_publicos_7370-oe-13"
+                   xlink:type="resource"
+                   xml:lang="es">0601 (Anejo III.4) = 1065 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-13" xlink:to="lab_val_publicos_7370-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e472"
+                                bindAsSequence="true"
+                                id="var_d10e472"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x76408estr_base_mi22907d10e477" bindAsSequence="false"
+                             id="var_PXADim_x76408estr_base_mi22907d10e477"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x76408estr_base_mi22907d10e477"
+                                  xlink:to="fil_PXADim_x76408d10e479"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x76408estr_base_mi22907d10e477"
+                                  xlink:to="fil_estr_base_mi22907d10e487"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x76408d10e479" id="fil_PXADim_x76408d10e479"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x76408</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e487" id="fil_estr_base_mi22907d10e487"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi94368d10e499"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi94368d10e499"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi94368d10e499"
+                                  xlink:to="fil_PXADim_x22809d10e501"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi94368d10e499"
+                                  xlink:to="fil_POGDim_x46998d10e509"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi94368d10e499"
+                                  xlink:to="fil_estr_base_mi94368d10e517"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi94368d10e499"
+                                  xlink:to="fil_d10e525"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e501" id="fil_PXADim_x22809d10e501"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e509" id="fil_POGDim_x46998d10e509"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi94368d10e517" id="fil_estr_base_mi94368d10e517"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi94368</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e525" id="fil_d10e525" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-13" id="ref_val_publicos_7370-oe-13"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-13</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-13" xlink:to="ref_val_publicos_7370-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-14"
+                         test="abs($celda0651 - $celda1070) le $threshold"
+                         id="val_publicos_7370-oe-14"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x10113estr_base_mi22907d10e550"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi99013d10e572"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-14"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-14" xlink:to="var_d10e545"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0651" xlink:from="val_publicos_7370-oe-14"
+                            xlink:to="var_PXADim_x10113estr_base_mi22907d10e550"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1070" xlink:from="val_publicos_7370-oe-14"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi99013d10e572"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-14"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-14" id="lab_val_publicos_7370-oe-14"
+                   xlink:type="resource"
+                   xml:lang="es">0651 (Anejo III.4) = 1070 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-14" xlink:to="lab_val_publicos_7370-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e545"
+                                bindAsSequence="true"
+                                id="var_d10e545"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x10113estr_base_mi22907d10e550" bindAsSequence="false"
+                             id="var_PXADim_x10113estr_base_mi22907d10e550"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x10113estr_base_mi22907d10e550"
+                                  xlink:to="fil_PXADim_x10113d10e552"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x10113estr_base_mi22907d10e550"
+                                  xlink:to="fil_estr_base_mi22907d10e560"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x10113d10e552" id="fil_PXADim_x10113d10e552"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x10113</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e560" id="fil_estr_base_mi22907d10e560"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi99013d10e572"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi99013d10e572"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi99013d10e572"
+                                  xlink:to="fil_PXADim_x22809d10e574"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi99013d10e572"
+                                  xlink:to="fil_POGDim_x46998d10e582"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi99013d10e572"
+                                  xlink:to="fil_estr_base_mi99013d10e590"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi99013d10e572"
+                                  xlink:to="fil_d10e598"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e574" id="fil_PXADim_x22809d10e574"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e582" id="fil_POGDim_x46998d10e582"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi99013d10e590" id="fil_estr_base_mi99013d10e590"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi99013</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e598" id="fil_d10e598" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-14" id="ref_val_publicos_7370-oe-14"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-14</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-14" xlink:to="ref_val_publicos_7370-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-15"
+                         test="abs($celda0701 - $celda1020) le $threshold"
+                         id="val_publicos_7370-oe-15"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x64962estr_base_mi22907d10e623"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi104218d10e645"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-15"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-15" xlink:to="var_d10e618"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda0701" xlink:from="val_publicos_7370-oe-15"
+                            xlink:to="var_PXADim_x64962estr_base_mi22907d10e623"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1020" xlink:from="val_publicos_7370-oe-15"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi104218d10e645"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-15"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-15" id="lab_val_publicos_7370-oe-15"
+                   xlink:type="resource"
+                   xml:lang="es">0701 (Anejo III.4) = 1020 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-15" xlink:to="lab_val_publicos_7370-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e618"
+                                bindAsSequence="true"
+                                id="var_d10e618"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x64962estr_base_mi22907d10e623" bindAsSequence="false"
+                             id="var_PXADim_x64962estr_base_mi22907d10e623"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x64962estr_base_mi22907d10e623"
+                                  xlink:to="fil_PXADim_x64962d10e625"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x64962estr_base_mi22907d10e623"
+                                  xlink:to="fil_estr_base_mi22907d10e633"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x64962d10e625" id="fil_PXADim_x64962d10e625"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x64962</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e633" id="fil_estr_base_mi22907d10e633"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi104218d10e645"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi104218d10e645"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi104218d10e645"
+                                  xlink:to="fil_PXADim_x22809d10e647"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi104218d10e645"
+                                  xlink:to="fil_POGDim_x46998d10e655"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi104218d10e645"
+                                  xlink:to="fil_estr_base_mi104218d10e663"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi104218d10e645"
+                                  xlink:to="fil_d10e671"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e647" id="fil_PXADim_x22809d10e647"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e655" id="fil_POGDim_x46998d10e655"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi104218d10e663" id="fil_estr_base_mi104218d10e663"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi104218</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e671" id="fil_d10e671" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-15" id="ref_val_publicos_7370-oe-15"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-15</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-15" xlink:to="ref_val_publicos_7370-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-16"
+                         test="abs($celda1101 - $celda1005) le $threshold"
+                         id="val_publicos_7370-oe-16"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x19154estr_base_mi22907d10e696"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi40395d10e718"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-16"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-16" xlink:to="var_d10e691"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda1101" xlink:from="val_publicos_7370-oe-16"
+                            xlink:to="var_PXADim_x19154estr_base_mi22907d10e696"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1005" xlink:from="val_publicos_7370-oe-16"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi40395d10e718"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-16"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-16" id="lab_val_publicos_7370-oe-16"
+                   xlink:type="resource"
+                   xml:lang="es">1101 (Anejo III.4) = 1005 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-16" xlink:to="lab_val_publicos_7370-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e691"
+                                bindAsSequence="true"
+                                id="var_d10e691"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x19154estr_base_mi22907d10e696" bindAsSequence="false"
+                             id="var_PXADim_x19154estr_base_mi22907d10e696"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x19154estr_base_mi22907d10e696"
+                                  xlink:to="fil_PXADim_x19154d10e698"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x19154estr_base_mi22907d10e696"
+                                  xlink:to="fil_estr_base_mi22907d10e706"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x19154d10e698" id="fil_PXADim_x19154d10e698"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x19154</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e706" id="fil_estr_base_mi22907d10e706"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi40395d10e718"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi40395d10e718"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi40395d10e718"
+                                  xlink:to="fil_PXADim_x22809d10e720"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi40395d10e718"
+                                  xlink:to="fil_POGDim_x46998d10e728"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi40395d10e718"
+                                  xlink:to="fil_estr_base_mi40395d10e736"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi40395d10e718"
+                                  xlink:to="fil_d10e744"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e720" id="fil_PXADim_x22809d10e720"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e728" id="fil_POGDim_x46998d10e728"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi40395d10e736" id="fil_estr_base_mi40395d10e736"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi40395</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e744" id="fil_d10e744" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-16" id="ref_val_publicos_7370-oe-16"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-16</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-16" xlink:to="ref_val_publicos_7370-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-17"
+                         test="abs($celda1201 - $celda1001) le $threshold"
+                         id="val_publicos_7370-oe-17"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x93199estr_base_mi22907d10e770"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi42148d10e792"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-17"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-17" xlink:to="var_d10e765"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda1201" xlink:from="val_publicos_7370-oe-17"
+                            xlink:to="var_PXADim_x93199estr_base_mi22907d10e770"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1001" xlink:from="val_publicos_7370-oe-17"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi42148d10e792"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-17"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-17" id="lab_val_publicos_7370-oe-17"
+                   xlink:type="resource"
+                   xml:lang="es">1201 (Anejo III.4) = 1001 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-17" xlink:to="lab_val_publicos_7370-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e765"
+                                bindAsSequence="true"
+                                id="var_d10e765"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x93199estr_base_mi22907d10e770" bindAsSequence="false"
+                             id="var_PXADim_x93199estr_base_mi22907d10e770"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x93199estr_base_mi22907d10e770"
+                                  xlink:to="fil_PXADim_x93199d10e772"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x93199estr_base_mi22907d10e770"
+                                  xlink:to="fil_estr_base_mi22907d10e780"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x93199d10e772" id="fil_PXADim_x93199d10e772"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x93199</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e780" id="fil_estr_base_mi22907d10e780"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi42148d10e792"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi42148d10e792"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi42148d10e792"
+                                  xlink:to="fil_PXADim_x22809d10e794"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi42148d10e792"
+                                  xlink:to="fil_POGDim_x46998d10e802"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi42148d10e792"
+                                  xlink:to="fil_estr_base_mi42148d10e810"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi42148d10e792"
+                                  xlink:to="fil_d10e818"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e794" id="fil_PXADim_x22809d10e794"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e802" id="fil_POGDim_x46998d10e802"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi42148d10e810" id="fil_estr_base_mi42148d10e810"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi42148</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e818" id="fil_d10e818" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-17" id="ref_val_publicos_7370-oe-17"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-17</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-17" xlink:to="ref_val_publicos_7370-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_publicos_7370-oe-18"
+                         test="abs($celda1401 - $celda1095) le $threshold"
+                         id="val_publicos_7370-oe-18"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Mcons_t-1" xlink:to="var_PXADim_x22809estr_base_mi22907d10e843"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mcons_t-1.T12"
+                   xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi90391d10e865"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="annoCurso" xlink:from="val_publicos_7370-oe-18"
+                            xlink:to="var_statementEndPeriod"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="annoAnterior" xlink:from="val_publicos_7370-oe-18" xlink:to="var_d10e838"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="celda1401" xlink:from="val_publicos_7370-oe-18"
+                            xlink:to="var_PXADim_x22809estr_base_mi22907d10e843"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="celda1095" xlink:from="val_publicos_7370-oe-18"
+                            xlink:to="var_PXADim_x22809POGDim_x46998estr_base_mi90391d10e865"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_publicos_7370-oe-18"
+                            xlink:to="var_UmbralBasico1"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_publicos_7370-oe-18" id="lab_val_publicos_7370-oe-18"
+                   xlink:type="resource"
+                   xml:lang="es">1401 (Anejo III.4) = 1095 (6610 diciembre anterior)</label:label>
+      <generic:arc xlink:from="val_publicos_7370-oe-18" xlink:to="lab_val_publicos_7370-oe-18"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:generalVariable select="concat(xs:string(year-from-date(xs:date($annoCurso) - xs:yearMonthDuration('P1Y'))),'-12-31')"
+                                xlink:label="var_d10e838"
+                                bindAsSequence="true"
+                                id="var_d10e838"
+                                xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_PXADim_x22809estr_base_mi22907d10e843" bindAsSequence="false"
+                             id="var_PXADim_x22809estr_base_mi22907d10e843"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x22809estr_base_mi22907d10e843"
+                                  xlink:to="fil_PXADim_x22809d10e845"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_PXADim_x22809estr_base_mi22907d10e843"
+                                  xlink:to="fil_estr_base_mi22907d10e853"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e845" id="fil_PXADim_x22809d10e845"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi22907d10e853" id="fil_estr_base_mi22907d10e853"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi22907</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PXADim_x22809POGDim_x46998estr_base_mi90391d10e865"
+                             bindAsSequence="false"
+                             id="var_PXADim_x22809POGDim_x46998estr_base_mi90391d10e865"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi90391d10e865"
+                                  xlink:to="fil_PXADim_x22809d10e867"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi90391d10e865"
+                                  xlink:to="fil_POGDim_x46998d10e875"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi90391d10e865"
+                                  xlink:to="fil_estr_base_mi90391d10e883"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PXADim_x22809POGDim_x46998estr_base_mi90391d10e865"
+                                  xlink:to="fil_d10e891"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_PXADim_x22809d10e867" id="fil_PXADim_x22809d10e867"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:PXA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PSR:x22809</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_POGDim_x46998d10e875" id="fil_POGDim_x46998d10e875"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>estr_dim:POG</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>estr_PZW:x46998</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_estr_base_mi90391d10e883" id="fil_estr_base_mi90391d10e883"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>estr_base:mi90391</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:periodInstant xlink:label="fil_d10e891" id="fil_d10e891" xlink:type="resource"
+                        date="xs:date($annoAnterior)"/>
+      <reference:reference xlink:label="ref_val_publicos_7370-oe-18" id="ref_val_publicos_7370-oe-18"
+                           xlink:type="resource">
+         <ref:Number>publicos:7370-oe-18</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_publicos_7370-oe-18" xlink:to="ref_val_publicos_7370-oe-18"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:es-be-cm-xpst="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4909" xlink:type="simple" xlink:href="ecm-rol.xsd#CompraVentaBilletes"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4929" xlink:type="simple" xlink:href="ecm-rol.xsd#VolumenVentas"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4939" xlink:type="simple" xlink:href="ecm-rol.xsd#VolumenCompras"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4949" xlink:type="simple" xlink:href="ecm-rol.xsd#TransferenciasOrdenadas"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4959" xlink:type="simple" xlink:href="ecm-rol.xsd#TransferenciasRecibidas"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4969" xlink:type="simple" xlink:href="ecm-rol.xsd#TransferenciasExterior"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/ecm/4979" xlink:type="simple" xlink:href="ecm-rol.xsd#PrincipalesAgentes"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4929">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Formulario2" xlink:label="Formulario2" xlink:title="Formulario2"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Fila1" xlink:label="Fila1" xlink:title="Fila1"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Formulario2" xlink:to="Fila1" xlink:title="presentation: Formulario2 to Fila1" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Ventas" xlink:label="Ventas" xlink:title="Ventas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Ventas" xlink:title="presentation: Fila1 to Ventas" use="optional" order="1.0" es-be-cm-xpst:usable="false"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_VentasPorcentajeTotalVentas" xlink:label="VentasPorcentajeTotalVentas" xlink:title="VentasPorcentajeTotalVentas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Ventas" xlink:to="VentasPorcentajeTotalVentas" xlink:title="presentation: Ventas to VentasPorcentajeTotalVentas" order="2.0" es-be-cm-xpst:decimales="4"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_VentasNumeroOperaciones" xlink:label="VentasNumeroOperaciones" xlink:title="VentasNumeroOperaciones"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Ventas" xlink:to="VentasNumeroOperaciones" xlink:title="presentation: Ventas to VentasNumeroOperaciones" order="1.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Codigo" xlink:label="Codigo" xlink:title="Codigo"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Codigo" xlink:title="presentation: Fila1 to Codigo" use="optional" order="0.0" es-be-cm-xpst:usable="false"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_DimensionCodigoIdentificacion" xlink:label="DimensionCodigoIdentificacion" xlink:title="DimensionCodigoIdentificacion"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Codigo" xlink:to="DimensionCodigoIdentificacion" xlink:title="presentation: Codigo to DimensionCodigoIdentificacion" order="0.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_DenominacionSocial" xlink:label="DenominacionSocial" xlink:title="DenominacionSocial"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="DenominacionSocial" xlink:title="presentation: Fila1 to DenominacionSocial" use="optional" order="0.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4939">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Fila1" xlink:label="Fila1" xlink:title="Fila1"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Codigo" xlink:label="Codigo" xlink:title="Codigo"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Codigo" xlink:title="presentation: Fila1 to Codigo" use="optional" order="0.0" es-be-cm-xpst:usable="false"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_DimensionCodigoIdentificacion" xlink:label="DimensionCodigoIdentificacion" xlink:title="DimensionCodigoIdentificacion"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Codigo" xlink:to="DimensionCodigoIdentificacion" xlink:title="presentation: Codigo to DimensionCodigoIdentificacion" use="optional" order="0.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_DenominacionSocial" xlink:label="DenominacionSocial" xlink:title="DenominacionSocial"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="DenominacionSocial" xlink:title="presentation: Fila1 to DenominacionSocial" use="optional" order="0.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Compras" xlink:label="Compras" xlink:title="Compras"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Compras" xlink:title="presentation: Fila1 to Compras" use="optional" order="1.0" es-be-cm-xpst:usable="false"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ComprasNumeroOperaciones" xlink:label="ComprasNumeroOperaciones" xlink:title="ComprasNumeroOperaciones"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Compras" xlink:to="ComprasNumeroOperaciones" xlink:title="presentation: Compras to ComprasNumeroOperaciones" order="1.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ComprasPorcentajeTotalCompras" xlink:label="ComprasPorcentajeTotalCompras" xlink:title="ComprasPorcentajeTotalCompras"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Compras" xlink:to="ComprasPorcentajeTotalCompras" xlink:title="presentation: Compras to ComprasPorcentajeTotalCompras" order="2.0" es-be-cm-xpst:decimales="4"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Formulario3" xlink:label="Formulario3" xlink:title="Formulario3"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Formulario3" xlink:to="Fila1" xlink:title="presentation: Formulario3 to Fila1" order="1.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4949">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Fila1" xlink:label="Fila1" xlink:title="Fila1"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasOrdenadas" xlink:label="TransferenciasOrdenadas" xlink:title="TransferenciasOrdenadas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="TransferenciasOrdenadas" xlink:title="presentation: Fila1 to TransferenciasOrdenadas" order="1.0" es-be-cm-xpst:usable="false"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasOrdenadasNumeroOperaciones" xlink:label="TransferenciasOrdenadasNumeroOperaciones" xlink:title="TransferenciasOrdenadasNumeroOperaciones"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="TransferenciasOrdenadas" xlink:to="TransferenciasOrdenadasNumeroOperaciones" xlink:title="presentation: TransferenciasOrdenadas to TransferenciasOrdenadasNumeroOperaciones" order="1.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasOrdenadasPorcentajeTotalOrdenado" xlink:label="TransferenciasOrdenadasPorcentajeTotalOrdenado" xlink:title="TransferenciasOrdenadasPorcentajeTotalOrdenado"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="TransferenciasOrdenadas" xlink:to="TransferenciasOrdenadasPorcentajeTotalOrdenado" xlink:title="presentation: TransferenciasOrdenadas to TransferenciasOrdenadasPorcentajeTotalOrdenado" order="2.0" es-be-cm-xpst:decimales="4"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Pais" xlink:label="Pais" xlink:title="Pais"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Pais" xlink:title="presentation: Fila1 to Pais" order="0.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_PaisDimension" xlink:label="PaisDimension" xlink:title="PaisDimension"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Pais" xlink:to="PaisDimension" xlink:title="presentation: Pais to PaisDimension" use="optional" order="0.0" es-be-cm-xpst:targetRole="http://www.xbrl.org/2003/role/link" es-be-cm-xpst:open="true"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Formulario4" xlink:label="Formulario4" xlink:title="Formulario4"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Formulario4" xlink:to="Fila1" xlink:title="presentation: Formulario4 to Fila1" use="optional" order="2.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4959">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Fila1" xlink:label="Fila1" xlink:title="Fila1"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Pais" xlink:label="Pais" xlink:title="Pais"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Pais" xlink:title="presentation: Fila1 to Pais" order="0.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_PaisDimension" xlink:label="PaisDimension" xlink:title="PaisDimension"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Pais" xlink:to="PaisDimension" xlink:title="presentation: Pais to PaisDimension" use="optional" order="0.0" es-be-cm-xpst:targetRole="http://www.xbrl.org/2003/role/link" es-be-cm-xpst:open="true"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasRecibidas" xlink:label="TransferenciasRecibidas" xlink:title="TransferenciasRecibidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="TransferenciasRecibidas" xlink:title="presentation: Fila1 to TransferenciasRecibidas" order="1.0" es-be-cm-xpst:usable="false"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasRecibidasNumeroOperaciones" xlink:label="TransferenciasRecibidasNumeroOperaciones" xlink:title="TransferenciasRecibidasNumeroOperaciones"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="TransferenciasRecibidas" xlink:to="TransferenciasRecibidasNumeroOperaciones" xlink:title="presentation: TransferenciasRecibidas to TransferenciasRecibidasNumeroOperaciones" order="1.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasRecibidasPorcentajeTotalRecibido" xlink:label="TransferenciasRecibidasPorcentajeTotalRecibido" xlink:title="TransferenciasRecibidasPorcentajeTotalRecibido"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="TransferenciasRecibidas" xlink:to="TransferenciasRecibidasPorcentajeTotalRecibido" xlink:title="presentation: TransferenciasRecibidas to TransferenciasRecibidasPorcentajeTotalRecibido" order="2.0" es-be-cm-xpst:decimales="4"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Formulario5" xlink:label="Formulario5" xlink:title="Formulario5"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Formulario5" xlink:to="Fila1" xlink:title="presentation: Formulario5 to Fila1" use="optional" order="1.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4969">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Formulario6" xlink:label="Formulario6" xlink:title="Formulario6"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Columna1" xlink:label="Columna1" xlink:title="Columna1"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Formulario6" xlink:to="Columna1" xlink:title="presentation: Formulario6 to Columna1" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ImporteTransferenciasEmitidas" xlink:label="ImporteTransferenciasEmitidas" xlink:title="ImporteTransferenciasEmitidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Columna1" xlink:to="ImporteTransferenciasEmitidas" xlink:title="presentation: Columna1 to ImporteTransferenciasEmitidas" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ImporteTransferenciasRecibidas" xlink:label="ImporteTransferenciasRecibidas" xlink:title="ImporteTransferenciasRecibidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Columna1" xlink:to="ImporteTransferenciasRecibidas" xlink:title="presentation: Columna1 to ImporteTransferenciasRecibidas" order="1.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4979">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Fila1" xlink:label="Fila1" xlink:title="Fila1"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Codigo" xlink:label="Codigo" xlink:title="Codigo"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Codigo" xlink:title="presentation: Fila1 to Codigo" use="optional" order="0.0" es-be-cm-xpst:usable="false"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-identificadores.xsd#d-ecm-iden_DimensionCodigoAgente" xlink:label="DimensionCodigoAgente" xlink:title="DimensionCodigoAgente"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Codigo" xlink:to="DimensionCodigoAgente" xlink:title="presentation: Codigo to DimensionCodigoAgente" order="0.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" xlink:label="PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" xlink:title="PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" xlink:title="presentation: Fila1 to PorcentajeSobreImporteTotalEurosTransferenciasEmitidasOrdenadasAgentes" use="optional" order="3.0" es-be-cm-xpst:decimales="4"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" xlink:label="PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" xlink:title="PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" xlink:title="presentation: Fila1 to PorcentajeSobreImporteTotalEurosTransferenciasRecibidasPagadasAgentes" use="optional" order="2.0" es-be-cm-xpst:decimales="4"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_NumeroLocales" xlink:label="NumeroLocales" xlink:title="NumeroLocales"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="NumeroLocales" xlink:title="presentation: Fila1 to NumeroLocales" use="optional" order="1.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_NombreRazonSocialAgente" xlink:label="NombreRazonSocialAgente" xlink:title="NombreRazonSocialAgente"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="NombreRazonSocialAgente" xlink:title="presentation: Fila1 to NombreRazonSocialAgente" use="optional" order="0.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Formulario7" xlink:label="Formulario7" xlink:title="Formulario7"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Formulario7" xlink:to="Fila1" xlink:title="presentation: Formulario7 to Fila1" order="1.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.bde.es/2009/ecm/4909">
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Fila1" xlink:label="Fila1" xlink:title="Fila1"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Ventas" xlink:label="Ventas" xlink:title="Ventas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Ventas" xlink:title="presentation: Fila1 to Ventas" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" xlink:label="OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" xlink:title="OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Ventas" xlink:to="OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" xlink:title="presentation: Ventas to OtrosTitularesEstablecimientosCambioEntidadesRegistradasVentas" order="4.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ClientesVentas" xlink:label="ClientesVentas" xlink:title="ClientesVentas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Ventas" xlink:to="ClientesVentas" xlink:title="presentation: Ventas to ClientesVentas" order="3.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Compras" xlink:label="Compras" xlink:title="Compras"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Compras" xlink:title="presentation: Fila1 to Compras" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ClientesCompras" xlink:label="ClientesCompras" xlink:title="ClientesCompras"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Compras" xlink:to="ClientesCompras" xlink:title="presentation: Compras to ClientesCompras" order="1.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" xlink:label="OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" xlink:title="OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Compras" xlink:to="OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" xlink:title="presentation: Compras to OtrosTitularesEstablecimientosCambioEntidadesRegistradasCompras" order="2.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_Transferencias" xlink:label="Transferencias" xlink:title="Transferencias"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="Transferencias" xlink:title="presentation: Fila1 to Transferencias" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TranferenciasRecibidas" xlink:label="TranferenciasRecibidas" xlink:title="TranferenciasRecibidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Transferencias" xlink:to="TranferenciasRecibidas" xlink:title="presentation: Transferencias to TranferenciasRecibidas" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_NumeroRecibidas" xlink:label="NumeroRecibidas" xlink:title="NumeroRecibidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="TranferenciasRecibidas" xlink:to="NumeroRecibidas" xlink:title="presentation: TranferenciasRecibidas to NumeroRecibidas" order="5.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ImporteRecibidas" xlink:label="ImporteRecibidas" xlink:title="ImporteRecibidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="TranferenciasRecibidas" xlink:to="ImporteRecibidas" xlink:title="presentation: TranferenciasRecibidas to ImporteRecibidas" order="6.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_TransferenciasEmitidas" xlink:label="TransferenciasEmitidas" xlink:title="TransferenciasEmitidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Transferencias" xlink:to="TransferenciasEmitidas" xlink:title="presentation: Transferencias to TransferenciasEmitidas" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_NumeroEmitidas" xlink:label="NumeroEmitidas" xlink:title="NumeroEmitidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="TransferenciasEmitidas" xlink:to="NumeroEmitidas" xlink:title="presentation: TransferenciasEmitidas to NumeroEmitidas" order="7.0" es-be-cm-xpst:decimales="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-ecm.xsd#p-ecm_ImporteEmitidas" xlink:label="ImporteEmitidas" xlink:title="ImporteEmitidas"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="TransferenciasEmitidas" xlink:to="ImporteEmitidas" xlink:title="presentation: TransferenciasEmitidas to ImporteEmitidas" order="8.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_ClaseMoneda" xlink:label="ClaseMoneda" xlink:title="ClaseMoneda"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Fila1" xlink:to="ClaseMoneda" xlink:title="presentation: Fila1 to ClaseMoneda" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-ecm-divisas.xsd#d-ecm-bill_MonedaDimension" xlink:label="MonedaDimension" xlink:title="MonedaDimension"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="ClaseMoneda" xlink:to="MonedaDimension" xlink:title="presentation: ClaseMoneda to MonedaDimension" use="optional" order="1.0" es-be-cm-xpst:targetRole="http://www.xbrl.org/2003/role/link" es-be-cm-xpst:open="true"/>
+    <link:loc xlink:type="locator" xlink:href="t-ecm-OEC-5.xsd#t-ecm-cvb_Formulario1" xlink:label="Formulario1" xlink:title="Formulario1"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Formulario1" xlink:to="Fila1" xlink:title="presentation: Formulario1 to Fila1" order="1.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dominios/divisas.xsd#es-be-cm-div_DivisasDomain" xlink:label="DivisasDomain" xlink:title="DivisasDomain"/>
+    <link:loc xlink:type="locator" xlink:href="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dominios/divisas.xsd#es-be-cm-div_Total" xlink:label="Total" xlink:title="Total"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="DivisasDomain" xlink:to="Total" xlink:title="presentation: DivisasDomain to Total" use="prohibited" priority="1" order="9001.0"/>
+  </link:presentationLink>
+</link:linkbase>

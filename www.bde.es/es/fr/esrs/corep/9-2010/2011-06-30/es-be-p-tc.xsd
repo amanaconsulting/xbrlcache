@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-p-tc="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-tc" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:es-be-dt="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-dt" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:cebs-ef-ele="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:cebs-ef-arc="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/arcroles" xmlns:dt="http://xbrl.c-ebs.org/dt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-tc" elementFormDefault="qualified">
+  <xsd:annotation>
+      <xsd:appinfo>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-tc-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-tc-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-tc-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/tc" id="rt_tc">
+            <link:definition>ELR para los primary items de presentación y definición</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-dt" schemaLocation="es-be-dt.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:import namespace="http://xbrl.c-ebs.org/dt" schemaLocation="http://www.c-ebs.org/eu/fr/esrs/corep/pre-2010-01-06/dt-2005-06-30.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/elements.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/arcroles" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/arcroles.xsd"/>
+  <xsd:element name="RP53Domain" id="es-be-p-tc_RP53Domain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ImporteTotal" id="es-be-p-tc_ImporteTotal" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DiferenciaTIMedio" id="es-be-p-tc_DiferenciaTIMedio" type="xbrli:pureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="PlazoMedioVencimientoMeses" id="es-be-p-tc_PlazoMedioVencimientoMeses" type="xbrli:positiveIntegerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="AntiguedadMediaMeses" id="es-be-p-tc_AntiguedadMediaMeses" type="xbrli:positiveIntegerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="PorcentajeComisionCancelacion" id="es-be-p-tc_PorcentajeComisionCancelacion" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>

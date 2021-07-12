@@ -100,8 +100,8 @@
         </variable:function>
         <cfi:implementation xlink:type="resource" xlink:label="implementation_percent" xlink:title="implementation_percent">
             <cfi:input name="value"/>
-            <cfi:step name="format">xfi:format-number(number($value*100),'#,##0.##')</cfi:step>
-            <cfi:output>concat($format,' %')</cfi:output>         
+            <cfi:step name="format">translate(xfi:format-number(number($value*100),'#,##0.##'),'.,',',.')</cfi:step>
+            <cfi:output>concat($format,' %')</cfi:output>
         </cfi:implementation>
         <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_percent" xlink:to="implementation_percent" xlink:title="unknown: function to implementation" order="1.0"/>
         
@@ -267,20 +267,21 @@
         <cfi:implementation xlink:type="resource" xlink:label="implementation_threshold" xlink:title="implementation">
             <cfi:input name="v-atomic"/>                     
 			<cfi:output>
-			concat(' (Umbral = ',translate(xfi:format-number(number($v-atomic),'#,##0.######'), '.,', ',.'),')')
+			concat(' (Umbral = ',translate(xfi:format-number(number($v-atomic),'#,##0.#########'), '.,', ',.'),')')
             </cfi:output>
         </cfi:implementation>
   	<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_threshold" xlink:to="implementation_threshold" xlink:title="unknown: function to implementation" order="1.0"/>
-        
+   	
   	<variable:function xlink:type="resource" xlink:label="function_difference" xlink:title="function_difference" name="fmt:difference" output="xs:string">
             <variable:input type="xs:anyAtomicType"/>            
         </variable:function>
         <cfi:implementation xlink:type="resource" xlink:label="implementation_difference" xlink:title="implementation">
             <cfi:input name="v-atomic"/>                     
 			<cfi:output>
-			concat(' (Diferencia = ',translate(xfi:format-number(number($v-atomic),'#,##0.######'), '.,', ',.'),')')
+			concat(' (Diferencia = ',translate(xfi:format-number(number($v-atomic),'#,##0.#########'), '.,', ',.'),')')
             </cfi:output>
         </cfi:implementation>
   	<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_difference" xlink:to="implementation_difference" xlink:title="unknown: function to implementation" order="1.0"/>
+
     </gen:link>
 </link:linkbase>

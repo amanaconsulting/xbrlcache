@@ -1,0 +1,2380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:d-cu="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-cu-2006-07-01"
+               xmlns:es-be-p-ri="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-ri"
+               xmlns:es-be-cm-dim="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dimensiones"
+               xmlns:es-be-d-lw="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-lw"
+               xmlns:es-be-p-tc="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-tc"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_3051_3053_cuadres_1"
+                           id="ref_atributosCuadres_3051_3053_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_3051_3053_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_3051_3053_cuadres_1"
+                           id="ref_moduloDefinicion_3051_3053_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>solv_ii</frRef:Modulo>
+         <frRef:Instancia>Msolv_ii</frRef:Instancia>
+         <frRef:Estado>3051</frRef:Estado>
+         <frRef:Estado>3053</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_3051_3053_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3051-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3051-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3051-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3051-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3051-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3051-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <link:loc xlink:href="comun.xml#var_GrupoInternacional"
+                xlink:label="var_GrupoInternacional"
+                xlink:type="locator"/>
+      <link:loc xlink:href="comun.xml#var_TipoIdentificador0"
+                xlink:label="var_TipoIdentificador0"
+                xlink:type="locator"/>
+      <uf:generalMeasures test="true()" xlink:label="fil_AnyUnit" id="fil_AnyUnit" xlink:type="resource"/>
+      <va:valueAssertion xlink:label="val_corep_3051-oe-5"
+                         test="(count($_estadoRp53Id2) ne 0) or ($_noExistRP53 and $_id)"
+                         id="val_corep_3051-oe-5"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="col5Rp51" xlink:from="val_corep_3051-oe-5"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e38"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="col6Rp51" xlink:from="val_corep_3051-oe-5"
+                            xlink:to="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e62"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="col3Rp51" xlink:from="val_corep_3051-oe-5"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e83"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="_estadoRp53Id2" xlink:from="val_corep_3051-oe-5"
+                            xlink:to="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="_estadoRp53" xlink:from="val_corep_3051-oe-5"
+                            xlink:to="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="_noExistRP53" xlink:from="val_corep_3051-oe-5" xlink:to="var_d10e211"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <variable:variableArc name="_id" xlink:from="val_corep_3051-oe-5" xlink:to="var_d10e216"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="7"/>
+      <generic:arc xlink:from="val_corep_3051-oe-5" xlink:to="pre_d10e219"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3051-oe-5" id="lab_val_corep_3051-oe-5"
+                   xlink:type="resource"
+                   xml:lang="es">) Para aquellas declaraciones de RP51 con Tipo de Identificador 2 los importes de las columnas 5 y 6 solo pueden ser positivos 
+            o negativos si para dada divisa existe una declaración de RP53 con Tipo de Identificador 2 o bien sin existir RP53 la columna 3 
+            es en valor absoluto inferior o igual al 2,00%.</label:label>
+      <generic:arc xlink:from="val_corep_3051-oe-5" xlink:to="lab_val_corep_3051-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_val_corep_3051-oe-5" id="men_val_corep_3051-oe-5"
+                   xlink:role="http://www.xbrl.org/2010/role/verboseMessage"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($col5Rp51,$col6Rp51))} Los importes {fmt:valor(($col5Rp51),($col5Rp51))} [{fmt:celdas(($col5Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] y {fmt:valor(($col6Rp51),($col6Rp51))} [{fmt:celdas(($col6Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] pueden ser ambos positivos si para dada divisa existe RP53 o si no existe RP53 {fmt:valor(($col3Rp51),($col3Rp51))} [{fmt:celdas(($col3Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] es inferior o igual 2%</msg:message>
+      <generic:arc xlink:from="val_corep_3051-oe-5" xlink:to="men_val_corep_3051-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e38"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e38"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e38"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e38"
+                                  xlink:to="fil_CurrencyDim_Totald10e42"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e38"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e50"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e42" id="fil_CurrencyDim_Totald10e42"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e50"
+                      id="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e50"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoDetalleDivisasImporteAnteSubidasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e62"
+                             bindAsSequence="false"
+                             id="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e62"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e62"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e62"
+                                  xlink:to="fil_d10e66"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e62"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e71"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e66"
+                  id="fil_d10e66"
+                  xlink:type="resource"/>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e71"
+                      id="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e71"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoDetalleDivisasImporteAnteBajadasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e83"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e83"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e83"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e83"
+                                  xlink:to="fil_CurrencyDim_Totald10e87"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e83"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e95"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e87" id="fil_CurrencyDim_Totald10e87"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e95"
+                      id="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e95"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoGlobalPorcentajeRecursosPropios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionIndividuald10e112"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                                  xlink:to="fil_d10e122"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                                  xlink:to="fil_CurrencyDim_d10e127"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e132"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e108"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e138"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionIndividuald10e112"
+                            id="fil_AgrupacionDim_AgrupacionIndividuald10e112"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividual</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e122"
+                  id="fil_d10e122"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e127" id="fil_CurrencyDim_d10e127"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e132"
+                            id="fil_OpcionesTipoInteresDim_d10e132"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e138"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e138"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e162"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                                  xlink:to="fil_d10e175"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                                  xlink:to="fil_CurrencyDim_d10e180"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e185"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e158"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e191"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e162"
+                            id="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e162"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionGrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionSubgrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividualConInstrumentales</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e175"
+                  id="fil_d10e175"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e180" id="fil_CurrencyDim_d10e180"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e185"
+                            id="fil_OpcionesTipoInteresDim_d10e185"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e191"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e191"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:generalVariable select="if (count($_estadoRp53Id2) eq 0) then ((0 lt $col3Rp51) and ($col3Rp51 le 0.02)) else false()"
+                                xlink:label="var_d10e211"
+                                bindAsSequence="true"
+                                id="var_d10e211"
+                                xlink:type="resource"/>
+      <variable:generalVariable select="if ($_noExistRP53) then $col5Rp51/@id else false()"
+                                xlink:label="var_d10e216"
+                                bindAsSequence="true"
+                                id="var_d10e216"
+                                xlink:type="resource"/>
+      <variable:precondition test="($col5Rp51 gt 0 and $col6Rp51 gt 0)" xlink:label="pre_d10e219"
+                             id="pre_d10e219"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3051-oe-5" id="ref_val_corep_3051-oe-5"
+                           xlink:type="resource">
+         <ref:Number>corep:3051-oe-5</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3051-oe-5" xlink:to="ref_val_corep_3051-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3051-oe-6"
+                         test="(count($_estadoRp53Id2) ne 0) or ($_noExistRP53 and $_id)"
+                         id="val_corep_3051-oe-6"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="col5Rp51" xlink:from="val_corep_3051-oe-6"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e233"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="col6Rp51" xlink:from="val_corep_3051-oe-6"
+                            xlink:to="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e257"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="col3Rp51" xlink:from="val_corep_3051-oe-6"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e278"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="_estadoRp53Id2" xlink:from="val_corep_3051-oe-6"
+                            xlink:to="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="_estadoRp53" xlink:from="val_corep_3051-oe-6"
+                            xlink:to="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="_noExistRP53" xlink:from="val_corep_3051-oe-6" xlink:to="var_d10e406"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <variable:variableArc name="_id" xlink:from="val_corep_3051-oe-6" xlink:to="var_d10e411"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="7"/>
+      <generic:arc xlink:from="val_corep_3051-oe-6" xlink:to="pre_d10e414"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3051-oe-6" id="lab_val_corep_3051-oe-6"
+                   xlink:type="resource"
+                   xml:lang="es">Los importes de las columnas 5 y 6 sólo pueden ser negativas si para dada divisa existe RP53, excepto grupos internacionales o 
+            bien sin existir RP53 la columna 3 es igual o inferior al 2,00%.</label:label>
+      <generic:arc xlink:from="val_corep_3051-oe-6" xlink:to="lab_val_corep_3051-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_val_corep_3051-oe-6" id="men_val_corep_3051-oe-6"
+                   xlink:role="http://www.xbrl.org/2010/role/verboseMessage"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($col5Rp51,$col6Rp51))} Los importes {fmt:valor(($col5Rp51),($col5Rp51))} [{fmt:celdas(($col5Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] y {fmt:valor(($col6Rp51),($col6Rp51))} [{fmt:celdas(($col6Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] pueden ser ambos negativos si para dada divisa existe RP53 excepto grupos internacionales o si no existe RP53 {fmt:valor(($col3Rp51),($col3Rp51))} [{fmt:celdas(($col3Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] es inferior o igual 2% en valor absoluto</msg:message>
+      <generic:arc xlink:from="val_corep_3051-oe-6" xlink:to="men_val_corep_3051-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e233"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e233"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e233"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e233"
+                                  xlink:to="fil_CurrencyDim_Totald10e237"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e233"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e245"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e237" id="fil_CurrencyDim_Totald10e237"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e245"
+                      id="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e245"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoDetalleDivisasImporteAnteSubidasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e257"
+                             bindAsSequence="false"
+                             id="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e257"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e257"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e257"
+                                  xlink:to="fil_d10e261"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e257"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e266"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e261"
+                  id="fil_d10e261"
+                  xlink:type="resource"/>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e266"
+                      id="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e266"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoDetalleDivisasImporteAnteBajadasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e278"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e278"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e278"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e278"
+                                  xlink:to="fil_CurrencyDim_Totald10e282"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e278"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e290"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e282" id="fil_CurrencyDim_Totald10e282"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e290"
+                      id="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e290"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoGlobalPorcentajeRecursosPropios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionIndividuald10e307"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                                  xlink:to="fil_d10e317"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                                  xlink:to="fil_CurrencyDim_d10e322"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e327"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e303"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e333"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionIndividuald10e307"
+                            id="fil_AgrupacionDim_AgrupacionIndividuald10e307"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividual</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e317"
+                  id="fil_d10e317"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e322" id="fil_CurrencyDim_d10e322"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e327"
+                            id="fil_OpcionesTipoInteresDim_d10e327"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e333"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e333"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e357"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                                  xlink:to="fil_d10e370"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                                  xlink:to="fil_CurrencyDim_d10e375"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e380"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e353"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e386"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e357"
+                            id="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e357"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionGrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionSubgrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividualConInstrumentales</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e370"
+                  id="fil_d10e370"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e375" id="fil_CurrencyDim_d10e375"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e380"
+                            id="fil_OpcionesTipoInteresDim_d10e380"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e386"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e386"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:generalVariable select="if (count($_estadoRp53Id2) eq 0) then ((-0.02 le $col3Rp51) and ($col3Rp51 lt 0)) else false()"
+                                xlink:label="var_d10e406"
+                                bindAsSequence="true"
+                                id="var_d10e406"
+                                xlink:type="resource"/>
+      <variable:generalVariable select="if ($_noExistRP53) then $col5Rp51/@id else false()"
+                                xlink:label="var_d10e411"
+                                bindAsSequence="true"
+                                id="var_d10e411"
+                                xlink:type="resource"/>
+      <variable:precondition test="($col5Rp51 lt 0 and $col6Rp51 lt 0)" xlink:label="pre_d10e414"
+                             id="pre_d10e414"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3051-oe-6" id="ref_val_corep_3051-oe-6"
+                           xlink:type="resource">
+         <ref:Number>corep:3051-oe-6</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3051-oe-6" xlink:to="ref_val_corep_3051-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3051-oe-7"
+                         test="((count($_estadoRp53Id0) ne 0) or ((count($_estadoRp53Id0) eq 0) and $grupoInt) or ())"
+                         id="val_corep_3051-oe-7"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="col5Rp51" xlink:from="val_corep_3051-oe-7"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e427"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="col6Rp51" xlink:from="val_corep_3051-oe-7"
+                            xlink:to="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e451"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="col3Rp51" xlink:from="val_corep_3051-oe-7"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e472"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="_estadoRp53Id0" xlink:from="val_corep_3051-oe-7"
+                            xlink:to="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="_estadoRp53Id2" xlink:from="val_corep_3051-oe-7"
+                            xlink:to="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="_estadoRp53" xlink:from="val_corep_3051-oe-7"
+                            xlink:to="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <variable:variableArc name="_noExistRP53" xlink:from="val_corep_3051-oe-7" xlink:to="var_d10e650"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="7"/>
+      <variable:variableArc name="_id" xlink:from="val_corep_3051-oe-7" xlink:to="var_d10e655"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="8"/>
+      <variable:variableArc name="grupoInt" xlink:from="val_corep_3051-oe-7"
+                            xlink:to="var_GrupoInternacional"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="9"/>
+      <generic:arc xlink:from="val_corep_3051-oe-7" xlink:to="pre_d10e661"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3051-oe-7" id="lab_val_corep_3051-oe-7"
+                   xlink:type="resource"
+                   xml:lang="es">Los importes de las columnas 5 y 6 sólo pueden ser positivas si para dada divisa existe RP53, excepto grupos internacionales o 
+            bien sin existir RP53 la columna 3 es igual o inferior al 2,00%.</label:label>
+      <generic:arc xlink:from="val_corep_3051-oe-7" xlink:to="lab_val_corep_3051-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_val_corep_3051-oe-7" id="men_val_corep_3051-oe-7"
+                   xlink:role="http://www.xbrl.org/2010/role/verboseMessage"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($col5Rp51,$col6Rp51))} Los importes {fmt:valor(($col5Rp51),($col5Rp51))} [{fmt:celdas(($col5Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] y {fmt:valor(($col6Rp51),($col6Rp51))} [{fmt:celdas(($col6Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] pueden ser ambos positivos si para dada divisa existe RP53 o si no existe RP53 {fmt:valor(($col3Rp51),($col3Rp51))} [{fmt:celdas(($col3Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] es inferior o igual 2%</msg:message>
+      <generic:arc xlink:from="val_corep_3051-oe-7" xlink:to="men_val_corep_3051-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e427"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e427"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e427"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e427"
+                                  xlink:to="fil_CurrencyDim_Totald10e431"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e427"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e439"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e431" id="fil_CurrencyDim_Totald10e431"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e439"
+                      id="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e439"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoDetalleDivisasImporteAnteSubidasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e451"
+                             bindAsSequence="false"
+                             id="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e451"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e451"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e451"
+                                  xlink:to="fil_d10e455"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e451"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e460"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e455"
+                  id="fil_d10e455"
+                  xlink:type="resource"/>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e460"
+                      id="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e460"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoDetalleDivisasImporteAnteBajadasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e472"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e472"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e472"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e472"
+                                  xlink:to="fil_CurrencyDim_Totald10e476"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e472"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e484"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e476" id="fil_CurrencyDim_Totald10e476"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e484"
+                      id="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e484"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoGlobalPorcentajeRecursosPropios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e501"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                                  xlink:to="fil_d10e511"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                                  xlink:to="fil_CurrencyDim_d10e516"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e521"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e497"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e527"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e501"
+                            id="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e501"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionGrupoConsolidado</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e511"
+                  id="fil_d10e511"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e516" id="fil_CurrencyDim_d10e516"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e521"
+                            id="fil_OpcionesTipoInteresDim_d10e521"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e527"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e527"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionIndividuald10e551"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                                  xlink:to="fil_d10e561"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                                  xlink:to="fil_CurrencyDim_d10e566"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e571"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e547"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e577"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionIndividuald10e551"
+                            id="fil_AgrupacionDim_AgrupacionIndividuald10e551"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividual</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e561"
+                  id="fil_d10e561"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e566" id="fil_CurrencyDim_d10e566"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e571"
+                            id="fil_OpcionesTipoInteresDim_d10e571"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e577"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e577"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionSubgrupoConsolidadod10e601"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                                  xlink:to="fil_d10e614"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                                  xlink:to="fil_CurrencyDim_d10e619"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e624"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionSubgrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e597"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e630"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionSubgrupoConsolidadod10e601"
+                            id="fil_AgrupacionDim_AgrupacionSubgrupoConsolidadod10e601"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionSubgrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividualConInstrumentales</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividual</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e614"
+                  id="fil_d10e614"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e619" id="fil_CurrencyDim_d10e619"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e624"
+                            id="fil_OpcionesTipoInteresDim_d10e624"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e630"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e630"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:generalVariable select="if ((count($_estadoRp53Id0) eq 0) or not($_estadoReportado)) then ((-0.02 le $col3Rp51) and ($col3Rp51 lt 0)) else false()"
+                                xlink:label="var_d10e650"
+                                bindAsSequence="true"
+                                id="var_d10e650"
+                                xlink:type="resource"/>
+      <variable:generalVariable select="if ($_noExistRP53) then $col5Rp51/@id else false()"
+                                xlink:label="var_d10e655"
+                                bindAsSequence="true"
+                                id="var_d10e655"
+                                xlink:type="resource"/>
+      <variable:precondition test="($col5Rp51 gt 0 and $col6Rp51 gt 0) and (not($grupoInt))"
+                             xlink:label="pre_d10e661"
+                             id="pre_d10e661"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3051-oe-7" id="ref_val_corep_3051-oe-7"
+                           xlink:type="resource">
+         <ref:Number>corep:3051-oe-7</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3051-oe-7" xlink:to="ref_val_corep_3051-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3051-oe-8" test="false()" id="val_corep_3051-oe-8"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="col5Rp51" xlink:from="val_corep_3051-oe-8"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e674"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="col6Rp51" xlink:from="val_corep_3051-oe-8"
+                            xlink:to="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e698"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="col3Rp51" xlink:from="val_corep_3051-oe-8"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e719"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="_estadoRp53" xlink:from="val_corep_3051-oe-8"
+                            xlink:to="var_CurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e744"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="grupoInt" xlink:from="val_corep_3051-oe-8"
+                            xlink:to="var_GrupoInternacional"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="tipoIdentificador0" xlink:from="val_corep_3051-oe-8"
+                            xlink:to="var_TipoIdentificador0"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <generic:arc xlink:from="val_corep_3051-oe-8" xlink:to="pre_d10e785"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3051-oe-8" id="lab_val_corep_3051-oe-8"
+                   xlink:type="resource"
+                   xml:lang="es">Los importes de las columnas 5 y 6 sólo pueden ser positivas si para dada divisa existe RP53, excepto grupos internacionales o 
+            bien sin existir RP53 la columna 3 es igual o inferior al 2,00%.</label:label>
+      <generic:arc xlink:from="val_corep_3051-oe-8" xlink:to="lab_val_corep_3051-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_val_corep_3051-oe-8" id="men_val_corep_3051-oe-8"
+                   xlink:role="http://www.xbrl.org/2010/role/verboseMessage"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($col5Rp51,$col6Rp51))} Los importes {fmt:valor(($col5Rp51),($col5Rp51))} [{fmt:celdas(($col5Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] y {fmt:valor(($col6Rp51),($col6Rp51))} [{fmt:celdas(($col6Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] pueden ser ambos negativos si para dada divisa existe RP53 excepto grupos internacionales o si no existe RP53 {fmt:valor(($col3Rp51),($col3Rp51))} [{fmt:celdas(($col3Rp51),($col5Rp51,$col6Rp51,$col3Rp51))}] es inferior o igual 2% en valor absoluto</msg:message>
+      <generic:arc xlink:from="val_corep_3051-oe-8" xlink:to="men_val_corep_3051-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e674"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e674"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e674"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e674"
+                                  xlink:to="fil_CurrencyDim_Totald10e678"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e674"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e686"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e678" id="fil_CurrencyDim_Totald10e678"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e686"
+                      id="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteSubidasTId10e686"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoDetalleDivisasImporteAnteSubidasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e698"
+                             bindAsSequence="false"
+                             id="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e698"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e698"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e698"
+                                  xlink:to="fil_d10e702"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e698"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e707"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e702"
+                  id="fil_d10e702"
+                  xlink:type="resource"/>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e707"
+                      id="fil_es-be-p-ri_ERIValorEconomicoDetalleDivisasImporteAnteBajadasTId10e707"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoDetalleDivisasImporteAnteBajadasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e719"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e719"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e719"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e719"
+                                  xlink:to="fil_CurrencyDim_Totald10e723"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e719"
+                                  xlink:to="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e731"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e723" id="fil_CurrencyDim_Totald10e723"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e731"
+                      id="fil_es-be-p-ri_ERIValorEconomicoGlobalPorcentajeRecursosPropiosd10e731"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIValorEconomicoGlobalPorcentajeRecursosPropios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e744"
+                             bindAsSequence="true"
+                             id="var_CurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e744"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e744"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e744"
+                                  xlink:to="fil_d10e748"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e744"
+                                  xlink:to="fil_CurrencyDim_d10e753"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e744"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e758"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e744"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e763"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <gf:general test="xfi:fact-dimension-s-equal2($col5Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e748"
+                  id="fil_d10e748"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e753" id="fil_CurrencyDim_d10e753"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e758"
+                            id="fil_OpcionesTipoInteresDim_d10e758"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e763"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e763"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:precondition test="($col5Rp51 lt 0 and $col6Rp51 lt 0) and (not($grupoInt)) and $tipoIdentificador0"
+                             xlink:label="pre_d10e785"
+                             id="pre_d10e785"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3051-oe-8" id="ref_val_corep_3051-oe-8"
+                           xlink:type="resource">
+         <ref:Number>corep:3051-oe-8</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3051-oe-8" xlink:to="ref_val_corep_3051-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3051-oe-9" test="(count($_estadoRp53Id2) ne 0) or $_id"
+                         id="val_corep_3051-oe-9"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="col9Rp51" xlink:from="val_corep_3051-oe-9"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e798"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="col10Rp51" xlink:from="val_corep_3051-oe-9"
+                            xlink:to="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e822"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="_estadoRp53Id2" xlink:from="val_corep_3051-oe-9"
+                            xlink:to="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="_estadoRp53" xlink:from="val_corep_3051-oe-9"
+                            xlink:to="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="_id" xlink:from="val_corep_3051-oe-9" xlink:to="var_d10e947"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <generic:arc xlink:from="val_corep_3051-oe-9" xlink:to="pre_d10e950"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3051-oe-9" id="lab_val_corep_3051-oe-9"
+                   xlink:type="resource"
+                   xml:lang="es">Para aquellas declaraciones con Tipo de Identificador 2 los importes de las columnas 9 y 10 solo pueden 
+            ser positivos si para dada divisa existe una declaración de RP53 con Tipo de Identificador 2 o bien sin 
+            existir RP53 debe existir un comentario asociado explicando el motivo.</label:label>
+      <generic:arc xlink:from="val_corep_3051-oe-9" xlink:to="lab_val_corep_3051-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_val_corep_3051-oe-9" id="men_val_corep_3051-oe-9"
+                   xlink:role="http://www.xbrl.org/2010/role/verboseMessage"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($col5Rp51,$col6Rp51))} Los importes {fmt:valor(($col9Rp51),($col9Rp51))} [{fmt:celdas(($col9Rp51),($col9Rp51,$col10Rp51))}] y {fmt:valor(($col10Rp51),($col10Rp51))} [{fmt:celdas(($col10Rp51),($col9Rp51,$col10Rp51))}] pueden ser ambos positivos si para dada divisa existe RP53 o si no existe RP53 debe existir un comentario asociado a {fmt:valor(($col10Rp51),($col10Rp51))} [{fmt:celdas(($col10Rp51),($col9Rp51,$col10Rp51))}]</msg:message>
+      <generic:arc xlink:from="val_corep_3051-oe-9" xlink:to="men_val_corep_3051-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e798"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e798"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e798"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e798"
+                                  xlink:to="fil_CurrencyDim_Totald10e802"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e798"
+                                  xlink:to="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e810"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e802" id="fil_CurrencyDim_Totald10e802"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e810"
+                      id="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e810"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e822"
+                             bindAsSequence="false"
+                             id="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e822"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e822"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e822"
+                                  xlink:to="fil_d10e826"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e822"
+                                  xlink:to="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e831"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <gf:general test="xfi:fact-dimension-s-equal2($col9Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e826"
+                  id="fil_d10e826"
+                  xlink:type="resource"/>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e831"
+                      id="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e831"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionIndividuald10e847"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                                  xlink:to="fil_d10e857"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                                  xlink:to="fil_CurrencyDim_d10e862"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e867"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e843"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e873"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionIndividuald10e847"
+                            id="fil_AgrupacionDim_AgrupacionIndividuald10e847"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividual</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col9Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e857"
+                  id="fil_d10e857"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e862" id="fil_CurrencyDim_d10e862"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e867"
+                            id="fil_OpcionesTipoInteresDim_d10e867"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e873"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e873"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e898"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                                  xlink:to="fil_d10e911"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                                  xlink:to="fil_CurrencyDim_d10e916"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e921"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e894"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e927"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e898"
+                            id="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e898"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionGrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionSubgrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividualConInstrumentales</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col9Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e911"
+                  id="fil_d10e911"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e916" id="fil_CurrencyDim_d10e916"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e921"
+                            id="fil_OpcionesTipoInteresDim_d10e921"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e927"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e927"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:generalVariable select="if (count($_estadoRp53Id2) eq 0) then $col9Rp51/@id else false()"
+                                xlink:label="var_d10e947"
+                                bindAsSequence="true"
+                                id="var_d10e947"
+                                xlink:type="resource"/>
+      <variable:precondition test="($col9Rp51 gt 0 and $col10Rp51 gt 0)" xlink:label="pre_d10e950"
+                             id="pre_d10e950"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3051-oe-9" id="ref_val_corep_3051-oe-9"
+                           xlink:type="resource">
+         <ref:Number>corep:3051-oe-9</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3051-oe-9" xlink:to="ref_val_corep_3051-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3051-oe-10" test="(count($_estadoRp53Id2) ne 0) or $_id"
+                         id="val_corep_3051-oe-10"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="col9Rp51" xlink:from="val_corep_3051-oe-10"
+                            xlink:to="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e963"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="col10Rp51" xlink:from="val_corep_3051-oe-10"
+                            xlink:to="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e987"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="_estadoRp53Id2" xlink:from="val_corep_3051-oe-10"
+                            xlink:to="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="_estadoRp53" xlink:from="val_corep_3051-oe-10"
+                            xlink:to="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="_id" xlink:from="val_corep_3051-oe-10" xlink:to="var_d10e1112"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <generic:arc xlink:from="val_corep_3051-oe-10" xlink:to="pre_d10e1114"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3051-oe-10" id="lab_val_corep_3051-oe-10"
+                   xlink:type="resource"
+                   xml:lang="es">Los importes de las columnas 5 y 6 sólo pueden ser negativas si para dada divisa existe RP53, excepto grupos internacionales o 
+            bien sin existir RP53 la columna 3 es igual o inferior al 2,00%.</label:label>
+      <generic:arc xlink:from="val_corep_3051-oe-10" xlink:to="lab_val_corep_3051-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_val_corep_3051-oe-10" id="men_val_corep_3051-oe-10"
+                   xlink:role="http://www.xbrl.org/2010/role/verboseMessage"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($col5Rp51,$col6Rp51))} Los importes {fmt:valor(($col9Rp51),($col9Rp51))} [{fmt:celdas(($col9Rp51),($col9Rp51,$col10Rp51))}] y {fmt:valor(($col10Rp51),($col10Rp51))} [{fmt:celdas(($col10Rp51),($col9Rp51,$col10Rp51))}] pueden ser ambos positivos si para dada divisa existe RP53 o si no existe RP53 debe existir un comentario asociado a {fmt:valor(($col10Rp51),($col10Rp51))} [{fmt:celdas(($col10Rp51),($col9Rp51,$col10Rp51))}]</msg:message>
+      <generic:arc xlink:from="val_corep_3051-oe-10" xlink:to="men_val_corep_3051-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:factVariable xlink:label="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e963"
+                             bindAsSequence="false"
+                             id="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e963"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e963"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e963"
+                                  xlink:to="fil_CurrencyDim_Totald10e967"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CurrencyDim_Totales-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e963"
+                                  xlink:to="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e975"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_Totald10e967" id="fil_CurrencyDim_Totald10e967"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cu:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e975"
+                      id="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTId10e975"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteSubidasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e987"
+                             bindAsSequence="false"
+                             id="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e987"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e987"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e987"
+                                  xlink:to="fil_d10e991"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e987"
+                                  xlink:to="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e996"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <gf:general test="xfi:fact-dimension-s-equal2($col9Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e991"
+                  id="fil_d10e991"
+                  xlink:type="resource"/>
+      <cf:conceptName xlink:label="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e996"
+                      id="fil_es-be-p-ri_ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTId10e996"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-ri:ERIMargenIntermediacionSensibleTIUnAnoDetalleDivisasImporteAnteBajadasTI</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionIndividuald10e1012"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                                  xlink:to="fil_d10e1022"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                                  xlink:to="fil_CurrencyDim_d10e1027"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e1032"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionIndividualCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1008"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e1038"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionIndividuald10e1012"
+                            id="fil_AgrupacionDim_AgrupacionIndividuald10e1012"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividual</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col9Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e1022"
+                  id="fil_d10e1022"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e1027" id="fil_CurrencyDim_d10e1027"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e1032"
+                            id="fil_OpcionesTipoInteresDim_d10e1032"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e1038"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e1038"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                             bindAsSequence="true"
+                             id="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                                  xlink:to="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e1063"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                                  xlink:to="fil_d10e1076"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                                  xlink:to="fil_CurrencyDim_d10e1081"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                                  xlink:to="fil_OpcionesTipoInteresDim_d10e1086"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="5"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_AgrupacionDim_AgrupacionGrupoConsolidadoCurrencyDim_OpcionesTipoInteresDim_es-be-p-tc_ImporteTotal_OrOthersd10e1059"
+                                  xlink:to="fil_es-be-p-tc_ImporteTotal_OrOthersd10e1092"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="6"/>
+      <df:explicitDimension xlink:label="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e1063"
+                            id="fil_AgrupacionDim_AgrupacionGrupoConsolidadod10e1063"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionGrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionSubgrupoConsolidado</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>es-be-cm-dim:AgrupacionIndividualConInstrumentales</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <gf:general test="xfi:fact-dimension-s-equal2($col9Rp51, ., xs:QName('d-cu:CurrencyDimension'))"
+                  xlink:label="fil_d10e1076"
+                  id="fil_d10e1076"
+                  xlink:type="resource"/>
+      <df:explicitDimension xlink:label="fil_CurrencyDim_d10e1081" id="fil_CurrencyDim_d10e1081"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cu:CurrencyDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OpcionesTipoInteresDim_d10e1086"
+                            id="fil_OpcionesTipoInteresDim_d10e1086"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-lw:OpcionesTipoInteresDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_es-be-p-tc_ImporteTotal_OrOthersd10e1092"
+                      id="fil_es-be-p-tc_ImporteTotal_OrOthersd10e1092"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-tc:ImporteTotal</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:DiferenciaTIMedio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PlazoMedioVencimientoMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:AntiguedadMediaMeses</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>es-be-p-tc:PorcentajeComisionCancelacion</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:generalVariable select="if (count($_estadoRp53Id2) eq 0) then $col9Rp51/@id else false()"
+                                xlink:label="var_d10e1112"
+                                bindAsSequence="true"
+                                id="var_d10e1112"
+                                xlink:type="resource"/>
+      <variable:precondition test="($col9Rp51 lt 0 and $col10Rp51 lt 0)" xlink:label="pre_d10e1114"
+                             id="pre_d10e1114"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3051-oe-10" id="ref_val_corep_3051-oe-10"
+                           xlink:type="resource">
+         <ref:Number>corep:3051-oe-10</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3051-oe-10" xlink:to="ref_val_corep_3051-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

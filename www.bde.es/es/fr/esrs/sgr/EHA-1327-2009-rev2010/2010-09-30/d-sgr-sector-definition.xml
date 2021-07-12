@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/sgr/role/DimensionDefault" xlink:type="simple" xlink:href="sgr-rol.xsd#DimensionDefault"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-default"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/sgr/role/DimensionDefault">
+    <link:loc xlink:type="locator" xlink:href="d-sgr-sector.xsd#d-sgr-se_sectorDimension" xlink:label="sectorDimension" xlink:title="sectorDimension"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-sector.xsd#d-sgr-se_D2009005" xlink:label="Total" xlink:title="Total"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="sectorDimension" xlink:to="Total" xlink:title="definition: sectorDimension to Total" order="1.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="d-sgr-sector.xsd#d-sgr-se_sectorDimension" xlink:label="sectorDimension" xlink:title="sectorDimension"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-sector.xsd#d-sgr-se_D2009005" xlink:label="Total" xlink:title="TotalSectorAvalado"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="sectorDimension" xlink:to="Total" xlink:title="definition: sectorDimension to Total" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-sector.xsd#d-sgr-se_D2009001" xlink:label="SectorPrimario" xlink:title="SectorPrimario"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SectorPrimario" xlink:title="definition: Total to SectorPrimario" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-sector.xsd#d-sgr-se_D2009002" xlink:label="SectorIndustrial" xlink:title="SectorIndustrial"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SectorIndustrial" xlink:title="definition: Total to SectorIndustrial" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-sector.xsd#d-sgr-se_D2009003" xlink:label="SectorConstruccion" xlink:title="SectorConstruccion"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SectorConstruccion" xlink:title="definition: Total to SectorConstruccion" use="optional" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-sgr-sector.xsd#d-sgr-se_D2009004" xlink:label="SectorTerciario" xlink:title="SectorTerciario"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Total" xlink:to="SectorTerciario" xlink:title="definition: Total to SectorTerciario" use="optional" order="4.0"/>
+  </link:definitionLink>
+</link:linkbase>

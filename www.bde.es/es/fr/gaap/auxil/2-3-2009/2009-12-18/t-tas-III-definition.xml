@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:es-be-cm-xpst="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/7114c" xlink:type="simple" xlink:href="tas-rol.xsd#DistribucionMayoresTasaciones"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/7114a" xlink:type="simple" xlink:href="tas-rol.xsd#DistribucionTasaciones"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/Activo-Sub2" xlink:type="simple" xlink:href="tas-rol.xsd#Activo-Sub2"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/Activo-Sub3" xlink:type="simple" xlink:href="tas-rol.xsd#Activo-Sub3"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/Activo-Sub10" xlink:type="simple" xlink:href="tas-rol.xsd#Activo-Exclusion3"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/Activo-Sub11" xlink:type="simple" xlink:href="tas-rol.xsd#Activo-Sub11"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/7114b" xlink:type="simple" xlink:href="tas-rol.xsd#OtrasValoraciones"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/notAll" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#notAll"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/tas/7114a">
+    <link:loc xlink:type="locator" xlink:href="t-tas-III.xsd#t-tas-III_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_NumeroTasaciones" xlink:label="NumeroTasaciones" xlink:title="NumeroTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="NumeroTasaciones" xlink:title="definition: Anejo to NumeroTasaciones" use="optional" order="1.0" es-be-cm-xpst:code="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_ValorTasaciones" xlink:label="ValorTasaciones" xlink:title="ValorTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="ValorTasaciones" xlink:title="definition: Anejo to ValorTasaciones" use="optional" order="2.0" es-be-cm-xpst:code="20"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_SuperficieUtilizableM2" xlink:label="SuperficieUtilizableM2" xlink:title="SuperficieUtilizableM2"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="SuperficieUtilizableM2" xlink:title="definition: Anejo to SuperficieUtilizableM2" use="optional" order="3.0" es-be-cm-xpst:code="40"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-III.xsd#t-tas-III_SuperficieDistribucionTasacionesHypercubeExc" xlink:label="SuperficieDistribucionTasacionesHypercubeExc" xlink:title="SuperficieDistribucionTasacionesHypercubeExc"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/notAll" xlink:from="SuperficieUtilizableM2" xlink:to="SuperficieDistribucionTasacionesHypercubeExc" xlink:title="definition: SuperficieUtilizableM2 to SuperficieDistribucionTasacionesHypercubeExc" use="optional" order="1.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-activos.xsd#d-tas-act_ActivosDimension" xlink:label="ActivosDimension" xlink:title="ActivosDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="SuperficieDistribucionTasacionesHypercubeExc" xlink:to="ActivosDimension" xlink:title="definition: SuperficieDistribucionTasacionesHypercubeExc to ActivosDimension" use="optional" order="1.0" xbrldt:targetRole="http://www.bde.es/2009/tas/Activo-Sub10"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-III.xsd#t-tas-III_DistribucionTasacionesHypercube" xlink:label="DistribucionTasacionesHypercube" xlink:title="DistribucionTasacionesHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="DistribucionTasacionesHypercube" xlink:title="definition: Anejo to DistribucionTasacionesHypercube" use="optional" order="4.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DistribucionTasacionesHypercube" xlink:to="ActivosDimension" xlink:title="definition: DistribucionTasacionesHypercube to ActivosDimension" order="1.0" xbrldt:targetRole="http://www.bde.es/2009/tas/Activo-Sub2"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/tas/7114c">
+    <link:loc xlink:type="locator" xlink:href="t-tas-III.xsd#t-tas-III_Anejo2" xlink:label="Anejo2" xlink:title="Anejo2"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_NumeroMayoresTasaciones" xlink:label="NumeroMayoresTasaciones" xlink:title="NumeroMayoresTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo2" xlink:to="NumeroMayoresTasaciones" xlink:title="definition: Anejo2 to NumeroMayoresTasaciones" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_ValorMayoresTasaciones" xlink:label="ValorMayoresTasaciones" xlink:title="ValorMayoresTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo2" xlink:to="ValorMayoresTasaciones" xlink:title="definition: Anejo2 to ValorMayoresTasaciones" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_SuperficieUtilizableM2Mayores" xlink:label="SuperficieUtilizableM2Mayores" xlink:title="SuperficieUtilizableM2Mayores"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo2" xlink:to="SuperficieUtilizableM2Mayores" xlink:title="definition: Anejo2 to SuperficieUtilizableM2Mayores" use="optional" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_DesviacionTipicaPrecioM2" xlink:label="DesviacionTipicaPrecioM2" xlink:title="DesviacionTipicaPrecioM2"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo2" xlink:to="DesviacionTipicaPrecioM2" xlink:title="definition: Anejo2 to DesviacionTipicaPrecioM2" use="optional" order="4.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-III.xsd#t-tas-III_DistribucionMayoresTasacionesHypercube" xlink:label="DistribucionMayoresTasacionesHypercube" xlink:title="DistribucionMayoresTasacionesHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo2" xlink:to="DistribucionMayoresTasacionesHypercube" xlink:title="definition: Anejo2 to DistribucionMayoresTasacionesHypercube" use="optional" order="5.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-activos.xsd#d-tas-act_ActivosDimension" xlink:label="ActivosDimension" xlink:title="ActivosDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DistribucionMayoresTasacionesHypercube" xlink:to="ActivosDimension" xlink:title="definition: DistribucionMayoresTasacionesHypercube to ActivosDimension" order="1.0" xbrldt:targetRole="http://www.bde.es/2009/tas/Activo-Sub3"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/tas/7114b">
+    <link:loc xlink:type="locator" xlink:href="t-tas-III.xsd#t-tas-III_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_NumeroTasaciones" xlink:label="NumeroTasaciones" xlink:title="NumeroTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="NumeroTasaciones" xlink:title="definition: Anejo to NumeroTasaciones" use="optional" order="1.0" es-be-cm-xpst:code="0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_ValorTasaciones" xlink:label="ValorTasaciones" xlink:title="ValorTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="ValorTasaciones" xlink:title="definition: Anejo to ValorTasaciones" use="optional" order="2.0" es-be-cm-xpst:code="20"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_SuperficieUtilizableM2" xlink:label="SuperficieUtilizableM2" xlink:title="SuperficieUtilizableM2"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="SuperficieUtilizableM2" xlink:title="definition: Anejo to SuperficieUtilizableM2" use="optional" order="3.0" es-be-cm-xpst:code="40"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-III.xsd#t-tas-III_SuperficieDistribucionTasacionesHypercubeExc" xlink:label="SuperficieDistribucionTasacionesHypercubeExc" xlink:title="SuperficieDistribucionTasacionesHypercubeExc"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/notAll" xlink:from="SuperficieUtilizableM2" xlink:to="SuperficieDistribucionTasacionesHypercubeExc" xlink:title="definition: SuperficieUtilizableM2 to SuperficieDistribucionTasacionesHypercubeExc" use="optional" order="1.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-activos.xsd#d-tas-act_ActivosDimension" xlink:label="ActivosDimension" xlink:title="ActivosDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="SuperficieDistribucionTasacionesHypercubeExc" xlink:to="ActivosDimension" xlink:title="definition: SuperficieDistribucionTasacionesHypercubeExc to ActivosDimension" use="optional" order="1.0" xbrldt:targetRole="http://www.bde.es/2009/tas/Activo-Sub10"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-III.xsd#t-tas-III_DistribucionTasacionesHypercube" xlink:label="DistribucionTasacionesHypercube" xlink:title="DistribucionTasacionesHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="DistribucionTasacionesHypercube" xlink:title="definition: Anejo to DistribucionTasacionesHypercube" order="4.0" xbrldt:contextElement="scenario"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="DistribucionTasacionesHypercube" xlink:to="ActivosDimension" xlink:title="definition: DistribucionTasacionesHypercube to ActivosDimension" order="1.0" xbrldt:targetRole="http://www.bde.es/2009/tas/Activo-Sub11"/>
+  </link:definitionLink>
+</link:linkbase>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-rp00="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-rp00" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:es-be-d-so="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-so" xmlns:es-be-cm-xpst="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:es-be-ty="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-ty" xmlns:es-be-p-ev="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-ev" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-rp00" elementFormDefault="qualified">
+  <xsd:annotation>
+      <xsd:appinfo>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-rp00-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-rp00-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-rp00-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-rp00-reference.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp00" id="rt_rp00">
+            <link:definition>Presentación de la Plantillas RP00</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp00/SectionBalanceContabilidadSolvencia" id="rt_rp00_SectionBalanceContabilidadSolvencia">
+            <link:definition>Sección Balance "Enlace Contabilidad-Solvencia"</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp00/SectionBalanceContabilidadSolvenciaHypercube" id="rt_rp00_SectionBalanceContabilidadSolvenciaHypercube">
+            <link:definition>Hipercubo praa el Balance "Enlace Contabilidad-Solvencia"</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp00/ExcTotalesHypercube" id="rt_rp00_ExcTotalesHypercube">
+            <link:definition>Exclusión de los "Totales"</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp00/ExcCuentasOrdenOtrosSaldosHypercube" id="rt_rp00_ExcCuentasOrdenOtrosSaldosHypercube">
+            <link:definition>Exclusión de las "Cuentas de Orden" y "Otros Saldos no Contabilizados"</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-ev" schemaLocation="es-be-p-ev.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-so" schemaLocation="es-be-d-so.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types.xsd"/>
+  <xsd:import namespace="http://www.xbrl.org/2006/ref" schemaLocation="http://www.xbrl.org/2006/ref-2006-02-27.xsd"/>
+  <xsd:element name="FormRp00" id="es-be-rp00_FormRp00" type="xbrli:stringItemType" substitutionGroup="es-be-cm-xpst:formItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Row1Rp00" id="es-be-rp00_Row1Rp00" type="xbrli:stringItemType" substitutionGroup="es-be-cm-xpst:rowItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Column1Rp00" id="es-be-rp00_Column1Rp00" type="xbrli:stringItemType" substitutionGroup="es-be-cm-xpst:columnItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="BalanceContabilidadSolvenciaHypercube" id="es-be-rp00_BalanceContabilidadSolvenciaHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExcTotalesHypercube" id="es-be-rp00_ExcTotalesHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ExcCuentasOrdenOtrosSaldosHypercube" id="es-be-rp00_ExcCuentasOrdenOtrosSaldosHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>

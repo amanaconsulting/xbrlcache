@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<link:linkbase xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:xd="http://www.pnp-software.com/XSLTdoc"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e1"
+                xlink:label="val_publicos_2300-oe-e1"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e1" xlink:to="men_publicos_2300-oe-e1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e1" id="men_publicos_2300-oe-e1"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0001_2300,$celda0001_2002))} {fmt:valor(($celda0001_2300),($celda0001_2300))} [{fmt:celdas(($celda0001_2300),($celda0001_2300,$celda0001_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0001_2002),($celda0001_2002))} [{fmt:celdas(($celda0001_2002),($celda0001_2300,$celda0001_2002))}]{fmt:diferencia(abs($celda0001_2300 - $celda0001_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e2"
+                xlink:label="val_publicos_2300-oe-e2"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e2" xlink:to="men_publicos_2300-oe-e2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e2" id="men_publicos_2300-oe-e2"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0020_2002,$celdas_2300))} {fmt:valor(($celda0020_2002),($celda0020_2002))} [{fmt:celdas(($celda0020_2002),($celda0020_2002,$celdas_2300))}] {fmt:operador('le')} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celda0020_2002,$celdas_2300))}]{fmt:diferencia(abs($celda0020_2002 - sum ( $celdas_2300 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e3"
+                xlink:label="val_publicos_2300-oe-e3"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e3" xlink:to="men_publicos_2300-oe-e3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="3"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e3" id="men_publicos_2300-oe-e3"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2300,$celdas_2002))} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2300,$celdas_2002))}] {fmt:operador('le')} {fmt:valor(( ( sum ( $celdas_2002 ) ) ),($celdas_2002))} [{fmt:celdas(($celdas_2002),($celdas_2300,$celdas_2002))}]{fmt:diferencia(abs( sum ( $celdas_2300 ) - ( sum ( $celdas_2002 ) ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e4"
+                xlink:label="val_publicos_2300-oe-e4"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e4" xlink:to="men_publicos_2300-oe-e4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="4"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e4" id="men_publicos_2300-oe-e4"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0070_2002,$celdas_2300))} {fmt:valor(($celda0070_2002),($celda0070_2002))} [{fmt:celdas(($celda0070_2002),($celda0070_2002,$celdas_2300))}] {fmt:operador('le')} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celda0070_2002,$celdas_2300))}]{fmt:diferencia(abs($celda0070_2002 - sum ( $celdas_2300 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e5"
+                xlink:label="val_publicos_2300-oe-e5"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e5" xlink:to="men_publicos_2300-oe-e5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="5"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e5" id="men_publicos_2300-oe-e5"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2002,$celdas_2300))} {fmt:valor(( sum ( $celdas_2002 ) ),($celdas_2002))} [{fmt:celdas(($celdas_2002),($celdas_2002,$celdas_2300))}] {fmt:operador('le')} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2002,$celdas_2300))}]{fmt:diferencia(abs( sum ( $celdas_2002 ) - sum ( $celdas_2300 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e6"
+                xlink:label="val_publicos_2300-oe-e6"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e6" xlink:to="men_publicos_2300-oe-e6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="6"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e6" id="men_publicos_2300-oe-e6"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2002,$celdas_2300))} {fmt:valor(( sum ( $celdas_2002 ) ),($celdas_2002))} [{fmt:celdas(($celdas_2002),($celdas_2002,$celdas_2300))}] {fmt:operador('eq')} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2002,$celdas_2300))}]{fmt:diferencia(abs( sum ( $celdas_2002 ) - sum ( $celdas_2300 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e7"
+                xlink:label="val_publicos_2300-oe-e7"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e7" xlink:to="men_publicos_2300-oe-e7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="7"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e7" id="men_publicos_2300-oe-e7"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2300,$celda0235_2002))} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2300,$celda0235_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0235_2002),($celda0235_2002))} [{fmt:celdas(($celda0235_2002),($celdas_2300,$celda0235_2002))}]{fmt:diferencia(abs( sum ( $celdas_2300 ) - $celda0235_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e8"
+                xlink:label="val_publicos_2300-oe-e8"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e8" xlink:to="men_publicos_2300-oe-e8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="8"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e8" id="men_publicos_2300-oe-e8"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2300,$celda0350_2002))} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2300,$celda0350_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0350_2002),($celda0350_2002))} [{fmt:celdas(($celda0350_2002),($celdas_2300,$celda0350_2002))}]{fmt:diferencia(abs( sum ( $celdas_2300 ) - $celda0350_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e9"
+                xlink:label="val_publicos_2300-oe-e9"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e9" xlink:to="men_publicos_2300-oe-e9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="9"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e9" id="men_publicos_2300-oe-e9"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0360_2300,$celda0360_2002))} {fmt:valor(($celda0360_2300),($celda0360_2300))} [{fmt:celdas(($celda0360_2300),($celda0360_2300,$celda0360_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0360_2002),($celda0360_2002))} [{fmt:celdas(($celda0360_2002),($celda0360_2300,$celda0360_2002))}]{fmt:diferencia(abs($celda0360_2300 - $celda0360_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e10"
+                xlink:label="val_publicos_2300-oe-e10"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e10" xlink:to="men_publicos_2300-oe-e10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="10"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e10" id="men_publicos_2300-oe-e10"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0390_2300,$celda0390_2002))} {fmt:valor(($celda0390_2300),($celda0390_2300))} [{fmt:celdas(($celda0390_2300),($celda0390_2300,$celda0390_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0390_2002),($celda0390_2002))} [{fmt:celdas(($celda0390_2002),($celda0390_2300,$celda0390_2002))}]{fmt:diferencia(abs($celda0390_2300 - $celda0390_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e11"
+                xlink:label="val_publicos_2300-oe-e11"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e11" xlink:to="men_publicos_2300-oe-e11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="11"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e11" id="men_publicos_2300-oe-e11"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0019_2300,$celda0405_2002))} {fmt:valor(($celda0019_2300),($celda0019_2300))} [{fmt:celdas(($celda0019_2300),($celda0019_2300,$celda0405_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0405_2002),($celda0405_2002))} [{fmt:celdas(($celda0405_2002),($celda0019_2300,$celda0405_2002))}]{fmt:diferencia(abs($celda0019_2300 - $celda0405_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e12"
+                xlink:label="val_publicos_2300-oe-e12"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e12" xlink:to="men_publicos_2300-oe-e12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="12"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e12" id="men_publicos_2300-oe-e12"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0420_2300,$celda0420_2002))} {fmt:valor(($celda0420_2300),($celda0420_2300))} [{fmt:celdas(($celda0420_2300),($celda0420_2300,$celda0420_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0420_2002),($celda0420_2002))} [{fmt:celdas(($celda0420_2002),($celda0420_2300,$celda0420_2002))}]{fmt:diferencia(abs($celda0420_2300 - $celda0420_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e13"
+                xlink:label="val_publicos_2300-oe-e13"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e13" xlink:to="men_publicos_2300-oe-e13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="13"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e13" id="men_publicos_2300-oe-e13"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0421_2300,$celda0421_2002))} {fmt:valor(($celda0421_2300),($celda0421_2300))} [{fmt:celdas(($celda0421_2300),($celda0421_2300,$celda0421_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0421_2002),($celda0421_2002))} [{fmt:celdas(($celda0421_2002),($celda0421_2300,$celda0421_2002))}]{fmt:diferencia(abs($celda0421_2300 - $celda0421_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e14"
+                xlink:label="val_publicos_2300-oe-e14"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e14" xlink:to="men_publicos_2300-oe-e14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="14"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e14" id="men_publicos_2300-oe-e14"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0430_2300,$celda0430_2002))} {fmt:valor(($celda0430_2300),($celda0430_2300))} [{fmt:celdas(($celda0430_2300),($celda0430_2300,$celda0430_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0430_2002),($celda0430_2002))} [{fmt:celdas(($celda0430_2002),($celda0430_2300,$celda0430_2002))}]{fmt:diferencia(abs($celda0430_2300 - $celda0430_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e15"
+                xlink:label="val_publicos_2300-oe-e15"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e15" xlink:to="men_publicos_2300-oe-e15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="15"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e15" id="men_publicos_2300-oe-e15"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0440_2300,$celda0440_2002))} {fmt:valor(($celda0440_2300),($celda0440_2300))} [{fmt:celdas(($celda0440_2300),($celda0440_2300,$celda0440_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0440_2002),($celda0440_2002))} [{fmt:celdas(($celda0440_2002),($celda0440_2300,$celda0440_2002))}]{fmt:diferencia(abs($celda0440_2300 - $celda0440_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e16"
+                xlink:label="val_publicos_2300-oe-e16"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e16" xlink:to="men_publicos_2300-oe-e16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="16"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e16" id="men_publicos_2300-oe-e16"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0465_2300,$celda0465_2002))} {fmt:valor(($celda0465_2300),($celda0465_2300))} [{fmt:celdas(($celda0465_2300),($celda0465_2300,$celda0465_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0465_2002),($celda0465_2002))} [{fmt:celdas(($celda0465_2002),($celda0465_2300,$celda0465_2002))}]{fmt:diferencia(abs($celda0465_2300 - $celda0465_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e17"
+                xlink:label="val_publicos_2300-oe-e17"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e17" xlink:to="men_publicos_2300-oe-e17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="17"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e17" id="men_publicos_2300-oe-e17"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0521_2300,$celdas_2002))} {fmt:valor(($celda0521_2300),($celda0521_2300))} [{fmt:celdas(($celda0521_2300),($celda0521_2300,$celdas_2002))}] {fmt:operador('eq')} {fmt:valor(( sum ( $celdas_2002 ) ),($celdas_2002))} [{fmt:celdas(($celdas_2002),($celda0521_2300,$celdas_2002))}]{fmt:diferencia(abs($celda0521_2300 - sum ( $celdas_2002 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e18"
+                xlink:label="val_publicos_2300-oe-e18"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e18" xlink:to="men_publicos_2300-oe-e18"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="18"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e18" id="men_publicos_2300-oe-e18"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0466_2300,$celda0466_2002))} {fmt:valor(($celda0466_2300),($celda0466_2300))} [{fmt:celdas(($celda0466_2300),($celda0466_2300,$celda0466_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0466_2002),($celda0466_2002))} [{fmt:celdas(($celda0466_2002),($celda0466_2300,$celda0466_2002))}]{fmt:diferencia(abs($celda0466_2300 - $celda0466_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e19"
+                xlink:label="val_publicos_2300-oe-e19"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e19" xlink:to="men_publicos_2300-oe-e19"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="19"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e19" id="men_publicos_2300-oe-e19"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0481_2300,$celda0481_2002))} {fmt:valor(($celda0481_2300),($celda0481_2300))} [{fmt:celdas(($celda0481_2300),($celda0481_2300,$celda0481_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0481_2002),($celda0481_2002))} [{fmt:celdas(($celda0481_2002),($celda0481_2300,$celda0481_2002))}]{fmt:diferencia(abs($celda0481_2300 - $celda0481_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e20"
+                xlink:label="val_publicos_2300-oe-e20"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e20" xlink:to="men_publicos_2300-oe-e20"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="20"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e20" id="men_publicos_2300-oe-e20"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0475_2300,$celda0475_2002))} {fmt:valor(($celda0475_2300),($celda0475_2300))} [{fmt:celdas(($celda0475_2300),($celda0475_2300,$celda0475_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0475_2002),($celda0475_2002))} [{fmt:celdas(($celda0475_2002),($celda0475_2300,$celda0475_2002))}]{fmt:diferencia(abs($celda0475_2300 - $celda0475_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e21"
+                xlink:label="val_publicos_2300-oe-e21"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e21" xlink:to="men_publicos_2300-oe-e21"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="21"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e21" id="men_publicos_2300-oe-e21"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0495_2300,$celda0495_2002))} {fmt:valor(($celda0495_2300),($celda0495_2300))} [{fmt:celdas(($celda0495_2300),($celda0495_2300,$celda0495_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0495_2002),($celda0495_2002))} [{fmt:celdas(($celda0495_2002),($celda0495_2300,$celda0495_2002))}]{fmt:diferencia(abs($celda0495_2300 - $celda0495_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e22"
+                xlink:label="val_publicos_2300-oe-e22"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e22" xlink:to="men_publicos_2300-oe-e22"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="22"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e22" id="men_publicos_2300-oe-e22"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0496_2300,$celda0496_2002))} {fmt:valor(($celda0496_2300),($celda0496_2300))} [{fmt:celdas(($celda0496_2300),($celda0496_2300,$celda0496_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0496_2002),($celda0496_2002))} [{fmt:celdas(($celda0496_2002),($celda0496_2300,$celda0496_2002))}]{fmt:diferencia(abs($celda0496_2300 - $celda0496_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e23"
+                xlink:label="val_publicos_2300-oe-e23"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e23" xlink:to="men_publicos_2300-oe-e23"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="23"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e23" id="men_publicos_2300-oe-e23"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0500_2300,$celda0500_2002))} {fmt:valor(($celda0500_2300),($celda0500_2300))} [{fmt:celdas(($celda0500_2300),($celda0500_2300,$celda0500_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0500_2002),($celda0500_2002))} [{fmt:celdas(($celda0500_2002),($celda0500_2300,$celda0500_2002))}]{fmt:diferencia(abs($celda0500_2300 - $celda0500_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e24"
+                xlink:label="val_publicos_2300-oe-e24"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e24" xlink:to="men_publicos_2300-oe-e24"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="24"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e24" id="men_publicos_2300-oe-e24"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0505_2300,$celda0505_2002))} {fmt:valor(($celda0505_2300),($celda0505_2300))} [{fmt:celdas(($celda0505_2300),($celda0505_2300,$celda0505_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0505_2002),($celda0505_2002))} [{fmt:celdas(($celda0505_2002),($celda0505_2300,$celda0505_2002))}]{fmt:diferencia(abs($celda0505_2300 - $celda0505_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e25"
+                xlink:label="val_publicos_2300-oe-e25"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e25" xlink:to="men_publicos_2300-oe-e25"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="25"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e25" id="men_publicos_2300-oe-e25"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0506_2300,$celda0506_2002))} {fmt:valor(($celda0506_2300),($celda0506_2300))} [{fmt:celdas(($celda0506_2300),($celda0506_2300,$celda0506_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0506_2002),($celda0506_2002))} [{fmt:celdas(($celda0506_2002),($celda0506_2300,$celda0506_2002))}]{fmt:diferencia(abs($celda0506_2300 - $celda0506_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e26"
+                xlink:label="val_publicos_2300-oe-e26"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e26" xlink:to="men_publicos_2300-oe-e26"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="26"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e26" id="men_publicos_2300-oe-e26"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0507_2300,$celda0507_2002))} {fmt:valor(($celda0507_2300),($celda0507_2300))} [{fmt:celdas(($celda0507_2300),($celda0507_2300,$celda0507_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0507_2002),($celda0507_2002))} [{fmt:celdas(($celda0507_2002),($celda0507_2300,$celda0507_2002))}]{fmt:diferencia(abs($celda0507_2300 - $celda0507_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e27"
+                xlink:label="val_publicos_2300-oe-e27"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e27" xlink:to="men_publicos_2300-oe-e27"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="27"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e27" id="men_publicos_2300-oe-e27"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0526_2300,$celdas_2002))} {fmt:valor(($celda0526_2300),($celda0526_2300))} [{fmt:celdas(($celda0526_2300),($celda0526_2300,$celdas_2002))}] {fmt:operador('eq')} {fmt:valor(( sum ( $celdas_2002 ) ),($celdas_2002))} [{fmt:celdas(($celdas_2002),($celda0526_2300,$celdas_2002))}]{fmt:diferencia(abs($celda0526_2300 - sum ( $celdas_2002 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e28"
+                xlink:label="val_publicos_2300-oe-e28"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e28" xlink:to="men_publicos_2300-oe-e28"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="28"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e28" id="men_publicos_2300-oe-e28"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0550_2300,$celda0550_2002))} {fmt:valor(($celda0550_2300),($celda0550_2300))} [{fmt:celdas(($celda0550_2300),($celda0550_2300,$celda0550_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0550_2002),($celda0550_2002))} [{fmt:celdas(($celda0550_2002),($celda0550_2300,$celda0550_2002))}]{fmt:diferencia(abs($celda0550_2300 - $celda0550_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e29"
+                xlink:label="val_publicos_2300-oe-e29"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e29" xlink:to="men_publicos_2300-oe-e29"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="29"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e29" id="men_publicos_2300-oe-e29"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2300,$celda0570_2002))} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2300,$celda0570_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0570_2002),($celda0570_2002))} [{fmt:celdas(($celda0570_2002),($celdas_2300,$celda0570_2002))}]{fmt:diferencia(abs( sum ( $celdas_2300 ) - $celda0570_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e30"
+                xlink:label="val_publicos_2300-oe-e30"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e30" xlink:to="men_publicos_2300-oe-e30"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="30"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e30" id="men_publicos_2300-oe-e30"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2300,$celda0615_2002))} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2300,$celda0615_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0615_2002),($celda0615_2002))} [{fmt:celdas(($celda0615_2002),($celdas_2300,$celda0615_2002))}]{fmt:diferencia(abs( sum ( $celdas_2300 ) - $celda0615_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e31"
+                xlink:label="val_publicos_2300-oe-e31"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e31" xlink:to="men_publicos_2300-oe-e31"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="31"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e31" id="men_publicos_2300-oe-e31"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0795_2300,$celda0795_2002))} {fmt:valor(($celda0795_2300),($celda0795_2300))} [{fmt:celdas(($celda0795_2300),($celda0795_2300,$celda0795_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0795_2002),($celda0795_2002))} [{fmt:celdas(($celda0795_2002),($celda0795_2300,$celda0795_2002))}]{fmt:diferencia(abs($celda0795_2300 - $celda0795_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e32"
+                xlink:label="val_publicos_2300-oe-e32"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e32" xlink:to="men_publicos_2300-oe-e32"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="32"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e32" id="men_publicos_2300-oe-e32"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0800_2300,$celda0800_2002))} {fmt:valor(($celda0800_2300),($celda0800_2300))} [{fmt:celdas(($celda0800_2300),($celda0800_2300,$celda0800_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0800_2002),($celda0800_2002))} [{fmt:celdas(($celda0800_2002),($celda0800_2300,$celda0800_2002))}]{fmt:diferencia(abs($celda0800_2300 - $celda0800_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e33"
+                xlink:label="val_publicos_2300-oe-e33"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e33" xlink:to="men_publicos_2300-oe-e33"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="33"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e33" id="men_publicos_2300-oe-e33"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2300,$celda0865_2002))} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2300,$celda0865_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0865_2002),($celda0865_2002))} [{fmt:celdas(($celda0865_2002),($celdas_2300,$celda0865_2002))}]{fmt:diferencia(abs( sum ( $celdas_2300 ) - $celda0865_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e34"
+                xlink:label="val_publicos_2300-oe-e34"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e34" xlink:to="men_publicos_2300-oe-e34"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="34"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e34" id="men_publicos_2300-oe-e34"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2300,$celda0840_2002))} {fmt:valor(( sum ( $celdas_2300 ) ),($celdas_2300))} [{fmt:celdas(($celdas_2300),($celdas_2300,$celda0840_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0840_2002),($celda0840_2002))} [{fmt:celdas(($celda0840_2002),($celdas_2300,$celda0840_2002))}]{fmt:diferencia(abs( sum ( $celdas_2300 ) - $celda0840_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e35"
+                xlink:label="val_publicos_2300-oe-e35"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e35" xlink:to="men_publicos_2300-oe-e35"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="35"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e35" id="men_publicos_2300-oe-e35"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0895_2300,$celda0895_2002))} {fmt:valor(($celda0895_2300),($celda0895_2300))} [{fmt:celdas(($celda0895_2300),($celda0895_2300,$celda0895_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0895_2002),($celda0895_2002))} [{fmt:celdas(($celda0895_2002),($celda0895_2300,$celda0895_2002))}]{fmt:diferencia(abs($celda0895_2300 - $celda0895_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e36"
+                xlink:label="val_publicos_2300-oe-e36"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e36" xlink:to="men_publicos_2300-oe-e36"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="36"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e36" id="men_publicos_2300-oe-e36"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0915_2300,$celda0915_2002))} {fmt:valor(($celda0915_2300),($celda0915_2300))} [{fmt:celdas(($celda0915_2300),($celda0915_2300,$celda0915_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0915_2002),($celda0915_2002))} [{fmt:celdas(($celda0915_2002),($celda0915_2300,$celda0915_2002))}]{fmt:diferencia(abs($celda0915_2300 - $celda0915_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e37"
+                xlink:label="val_publicos_2300-oe-e37"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e37" xlink:to="men_publicos_2300-oe-e37"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="37"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e37" id="men_publicos_2300-oe-e37"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0916_2300,$celda0916_2002))} {fmt:valor(($celda0916_2300),($celda0916_2300))} [{fmt:celdas(($celda0916_2300),($celda0916_2300,$celda0916_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0916_2002),($celda0916_2002))} [{fmt:celdas(($celda0916_2002),($celda0916_2300,$celda0916_2002))}]{fmt:diferencia(abs($celda0916_2300 - $celda0916_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e38"
+                xlink:label="val_publicos_2300-oe-e38"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e38" xlink:to="men_publicos_2300-oe-e38"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="38"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e38" id="men_publicos_2300-oe-e38"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0922_2300,$celda0922_2002))} {fmt:valor(($celda0922_2300),($celda0922_2300))} [{fmt:celdas(($celda0922_2300),($celda0922_2300,$celda0922_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0922_2002),($celda0922_2002))} [{fmt:celdas(($celda0922_2002),($celda0922_2300,$celda0922_2002))}]{fmt:diferencia(abs($celda0922_2300 - $celda0922_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e39"
+                xlink:label="val_publicos_2300-oe-e39"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e39" xlink:to="men_publicos_2300-oe-e39"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="39"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e39" id="men_publicos_2300-oe-e39"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0923_2300,$celda0923_2002))} {fmt:valor(($celda0923_2300),($celda0923_2300))} [{fmt:celdas(($celda0923_2300),($celda0923_2300,$celda0923_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0923_2002),($celda0923_2002))} [{fmt:celdas(($celda0923_2002),($celda0923_2300,$celda0923_2002))}]{fmt:diferencia(abs($celda0923_2300 - $celda0923_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e40"
+                xlink:label="val_publicos_2300-oe-e40"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e40" xlink:to="men_publicos_2300-oe-e40"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="40"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e40" id="men_publicos_2300-oe-e40"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0927_2300,$celda0927_2002))} {fmt:valor(($celda0927_2300),($celda0927_2300))} [{fmt:celdas(($celda0927_2300),($celda0927_2300,$celda0927_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0927_2002),($celda0927_2002))} [{fmt:celdas(($celda0927_2002),($celda0927_2300,$celda0927_2002))}]{fmt:diferencia(abs($celda0927_2300 - $celda0927_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e41"
+                xlink:label="val_publicos_2300-oe-e41"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e41" xlink:to="men_publicos_2300-oe-e41"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="41"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e41" id="men_publicos_2300-oe-e41"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0930_2300,$celda0930_2002))} {fmt:valor(($celda0930_2300),($celda0930_2300))} [{fmt:celdas(($celda0930_2300),($celda0930_2300,$celda0930_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0930_2002),($celda0930_2002))} [{fmt:celdas(($celda0930_2002),($celda0930_2300,$celda0930_2002))}]{fmt:diferencia(abs($celda0930_2300 - $celda0930_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e42"
+                xlink:label="val_publicos_2300-oe-e42"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e42" xlink:to="men_publicos_2300-oe-e42"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="42"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e42" id="men_publicos_2300-oe-e42"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0931_2300,$celda0931_2002))} {fmt:valor(($celda0931_2300),($celda0931_2300))} [{fmt:celdas(($celda0931_2300),($celda0931_2300,$celda0931_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0931_2002),($celda0931_2002))} [{fmt:celdas(($celda0931_2002),($celda0931_2300,$celda0931_2002))}]{fmt:diferencia(abs($celda0931_2300 - $celda0931_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e43"
+                xlink:label="val_publicos_2300-oe-e43"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e43" xlink:to="men_publicos_2300-oe-e43"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="43"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e43" id="men_publicos_2300-oe-e43"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0932_2300,$celda0932_2002))} {fmt:valor(($celda0932_2300),($celda0932_2300))} [{fmt:celdas(($celda0932_2300),($celda0932_2300,$celda0932_2002))}] {fmt:operador('eq')} {fmt:valor(($celda0932_2002),($celda0932_2002))} [{fmt:celdas(($celda0932_2002),($celda0932_2300,$celda0932_2002))}]{fmt:diferencia(abs($celda0932_2300 - $celda0932_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e44"
+                xlink:label="val_publicos_2300-oe-e44"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e44" xlink:to="men_publicos_2300-oe-e44"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="44"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e44" id="men_publicos_2300-oe-e44"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0956_2300,$celdas_2002))} {fmt:valor(($celda0956_2300),($celda0956_2300))} [{fmt:celdas(($celda0956_2300),($celda0956_2300,$celdas_2002))}] {fmt:operador('eq')} {fmt:valor(( sum ( $celdas_2002 ) ),($celdas_2002))} [{fmt:celdas(($celdas_2002),($celda0956_2300,$celdas_2002))}]{fmt:diferencia(abs($celda0956_2300 - sum ( $celdas_2002 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e45"
+                xlink:label="val_publicos_2300-oe-e45"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e45" xlink:to="men_publicos_2300-oe-e45"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="45"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e45" id="men_publicos_2300-oe-e45"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1000_2300,$celda1000_2002))} {fmt:valor(($celda1000_2300),($celda1000_2300))} [{fmt:celdas(($celda1000_2300),($celda1000_2300,$celda1000_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1000_2002),($celda1000_2002))} [{fmt:celdas(($celda1000_2002),($celda1000_2300,$celda1000_2002))}]{fmt:diferencia(abs($celda1000_2300 - $celda1000_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e46"
+                xlink:label="val_publicos_2300-oe-e46"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e46" xlink:to="men_publicos_2300-oe-e46"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="46"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e46" id="men_publicos_2300-oe-e46"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1020_2300,$celda1020_2002))} {fmt:valor(($celda1020_2300),($celda1020_2300))} [{fmt:celdas(($celda1020_2300),($celda1020_2300,$celda1020_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1020_2002),($celda1020_2002))} [{fmt:celdas(($celda1020_2002),($celda1020_2300,$celda1020_2002))}]{fmt:diferencia(abs($celda1020_2300 - $celda1020_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e47"
+                xlink:label="val_publicos_2300-oe-e47"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e47" xlink:to="men_publicos_2300-oe-e47"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="47"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e47" id="men_publicos_2300-oe-e47"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1021_2300,$celda1021_2002))} {fmt:valor(($celda1021_2300),($celda1021_2300))} [{fmt:celdas(($celda1021_2300),($celda1021_2300,$celda1021_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1021_2002),($celda1021_2002))} [{fmt:celdas(($celda1021_2002),($celda1021_2300,$celda1021_2002))}]{fmt:diferencia(abs($celda1021_2300 - $celda1021_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e48"
+                xlink:label="val_publicos_2300-oe-e48"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e48" xlink:to="men_publicos_2300-oe-e48"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="48"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e48" id="men_publicos_2300-oe-e48"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1022_2300,$celda1022_2002))} {fmt:valor(($celda1022_2300),($celda1022_2300))} [{fmt:celdas(($celda1022_2300),($celda1022_2300,$celda1022_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1022_2002),($celda1022_2002))} [{fmt:celdas(($celda1022_2002),($celda1022_2300,$celda1022_2002))}]{fmt:diferencia(abs($celda1022_2300 - $celda1022_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e49"
+                xlink:label="val_publicos_2300-oe-e49"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e49" xlink:to="men_publicos_2300-oe-e49"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="49"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e49" id="men_publicos_2300-oe-e49"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1027_2300,$celda1027_2002))} {fmt:valor(($celda1027_2300),($celda1027_2300))} [{fmt:celdas(($celda1027_2300),($celda1027_2300,$celda1027_2002))}] {fmt:operador('eq')} {fmt:valor(( abs ( $celda1027_2002 ) ),($celda1027_2002))} [{fmt:celdas(($celda1027_2002),($celda1027_2300,$celda1027_2002))}]{fmt:diferencia(abs($celda1027_2300 - abs ( $celda1027_2002 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e50"
+                xlink:label="val_publicos_2300-oe-e50"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e50" xlink:to="men_publicos_2300-oe-e50"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="50"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e50" id="men_publicos_2300-oe-e50"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1030_2300,$celda1030_2002))} {fmt:valor(($celda1030_2300),($celda1030_2300))} [{fmt:celdas(($celda1030_2300),($celda1030_2300,$celda1030_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1030_2002),($celda1030_2002))} [{fmt:celdas(($celda1030_2002),($celda1030_2300,$celda1030_2002))}]{fmt:diferencia(abs($celda1030_2300 - $celda1030_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e51"
+                xlink:label="val_publicos_2300-oe-e51"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e51" xlink:to="men_publicos_2300-oe-e51"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="51"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e51" id="men_publicos_2300-oe-e51"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1031_2300,$celda1031_2002))} {fmt:valor(($celda1031_2300),($celda1031_2300))} [{fmt:celdas(($celda1031_2300),($celda1031_2300,$celda1031_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1031_2002),($celda1031_2002))} [{fmt:celdas(($celda1031_2002),($celda1031_2300,$celda1031_2002))}]{fmt:diferencia(abs($celda1031_2300 - $celda1031_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e52"
+                xlink:label="val_publicos_2300-oe-e52"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e52" xlink:to="men_publicos_2300-oe-e52"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="52"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e52" id="men_publicos_2300-oe-e52"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1040_2300,$celda1040_2002))} {fmt:valor(($celda1040_2300),($celda1040_2300))} [{fmt:celdas(($celda1040_2300),($celda1040_2300,$celda1040_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1040_2002),($celda1040_2002))} [{fmt:celdas(($celda1040_2002),($celda1040_2300,$celda1040_2002))}]{fmt:diferencia(abs($celda1040_2300 - $celda1040_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e53"
+                xlink:label="val_publicos_2300-oe-e53"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e53" xlink:to="men_publicos_2300-oe-e53"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="53"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e53" id="men_publicos_2300-oe-e53"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1050_2300,$celda1050_2002))} {fmt:valor(($celda1050_2300),($celda1050_2300))} [{fmt:celdas(($celda1050_2300),($celda1050_2300,$celda1050_2002))}] {fmt:operador('eq')} {fmt:valor(( abs ( $celda1050_2002 ) ),($celda1050_2002))} [{fmt:celdas(($celda1050_2002),($celda1050_2300,$celda1050_2002))}]{fmt:diferencia(abs($celda1050_2300 - abs ( $celda1050_2002 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e54"
+                xlink:label="val_publicos_2300-oe-e54"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e54" xlink:to="men_publicos_2300-oe-e54"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="54"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e54" id="men_publicos_2300-oe-e54"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1060_2300,$celda1060_2002))} {fmt:valor(($celda1060_2300),($celda1060_2300))} [{fmt:celdas(($celda1060_2300),($celda1060_2300,$celda1060_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1060_2002),($celda1060_2002))} [{fmt:celdas(($celda1060_2002),($celda1060_2300,$celda1060_2002))}]{fmt:diferencia(abs($celda1060_2300 - $celda1060_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e55"
+                xlink:label="val_publicos_2300-oe-e55"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e55" xlink:to="men_publicos_2300-oe-e55"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="55"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e55" id="men_publicos_2300-oe-e55"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1070_2300,$celda1070_2002))} {fmt:valor(($celda1070_2300),($celda1070_2300))} [{fmt:celdas(($celda1070_2300),($celda1070_2300,$celda1070_2002))}] {fmt:operador('eq')} {fmt:valor(( abs ( $celda1070_2002 ) ),($celda1070_2002))} [{fmt:celdas(($celda1070_2002),($celda1070_2300,$celda1070_2002))}]{fmt:diferencia(abs($celda1070_2300 - abs ( $celda1070_2002 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e56"
+                xlink:label="val_publicos_2300-oe-e56"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e56" xlink:to="men_publicos_2300-oe-e56"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="56"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e56" id="men_publicos_2300-oe-e56"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1005_2300,$celda1005_2002))} {fmt:valor(($celda1005_2300),($celda1005_2300))} [{fmt:celdas(($celda1005_2300),($celda1005_2300,$celda1005_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1005_2002),($celda1005_2002))} [{fmt:celdas(($celda1005_2002),($celda1005_2300,$celda1005_2002))}]{fmt:diferencia(abs($celda1005_2300 - $celda1005_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e57"
+                xlink:label="val_publicos_2300-oe-e57"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e57" xlink:to="men_publicos_2300-oe-e57"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="57"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e57" id="men_publicos_2300-oe-e57"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1095_2300,$celda1095_2002))} {fmt:valor(($celda1095_2300),($celda1095_2300))} [{fmt:celdas(($celda1095_2300),($celda1095_2300,$celda1095_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1095_2002),($celda1095_2002))} [{fmt:celdas(($celda1095_2002),($celda1095_2300,$celda1095_2002))}]{fmt:diferencia(abs($celda1095_2300 - $celda1095_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e58"
+                xlink:label="val_publicos_2300-oe-e58"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e58" xlink:to="men_publicos_2300-oe-e58"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="58"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e58" id="men_publicos_2300-oe-e58"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1100_2300,$celda1100_2002))} {fmt:valor(($celda1100_2300),($celda1100_2300))} [{fmt:celdas(($celda1100_2300),($celda1100_2300,$celda1100_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1100_2002),($celda1100_2002))} [{fmt:celdas(($celda1100_2002),($celda1100_2300,$celda1100_2002))}]{fmt:diferencia(abs($celda1100_2300 - $celda1100_2002))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="2300-2002-cuadres.xml#val_publicos_2300-oe-e59"
+                xlink:label="val_publicos_2300-oe-e59"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_publicos_2300-oe-e59" xlink:to="men_publicos_2300-oe-e59"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="59"/>
+      <msg:message xlink:label="men_publicos_2300-oe-e59" id="men_publicos_2300-oe-e59"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda1125_2300,$celda1125_2002))} {fmt:valor(($celda1125_2300),($celda1125_2300))} [{fmt:celdas(($celda1125_2300),($celda1125_2300,$celda1125_2002))}] {fmt:operador('eq')} {fmt:valor(($celda1125_2002),($celda1125_2002))} [{fmt:celdas(($celda1125_2002),($celda1125_2300,$celda1125_2002))}]{fmt:diferencia(abs($celda1125_2300 - $celda1125_2002))}{fmt:umbral($threshold)}</msg:message>
+   </generic:link>
+</link:linkbase>

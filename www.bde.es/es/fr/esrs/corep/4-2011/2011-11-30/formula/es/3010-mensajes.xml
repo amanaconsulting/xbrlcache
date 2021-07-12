@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<link:linkbase xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:xd="http://www.pnp-software.com/XSLTdoc"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-32"
+                xlink:label="val_corep_3010-sv-32"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-32" xlink:to="men_corep_3010-sv-32"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_corep_3010-sv-32" id="men_corep_3010-sv-32"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$resInclAjuPorVal,$resParASerFilEnAjuPorVal))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$resInclAjuPorVal,$resParASerFilEnAjuPorVal))}] {fmt:operador('eq')} {fmt:valor(( ( $resInclAjuPorVal + $resParASerFilEnAjuPorVal ) ),($resInclAjuPorVal,$resParASerFilEnAjuPorVal))} [{fmt:celdas(($resInclAjuPorVal,$resParASerFilEnAjuPorVal),($totalRdo,$resInclAjuPorVal,$resParASerFilEnAjuPorVal))}]{fmt:diferencia(abs($totalRdo - ( $resInclAjuPorVal + $resParASerFilEnAjuPorVal ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-33"
+                xlink:label="val_corep_3010-sv-33"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-33" xlink:to="men_corep_3010-sv-33"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <msg:message xlink:label="men_corep_3010-sv-33" id="men_corep_3010-sv-33"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$intMinIncAjuPorVal,$intMinParASerFilEnAjuPorVal,$intMinCorr))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$intMinIncAjuPorVal,$intMinParASerFilEnAjuPorVal,$intMinCorr))}] {fmt:operador('eq')} {fmt:valor(( ( $intMinIncAjuPorVal + $intMinParASerFilEnAjuPorVal + $intMinCorr ) ),($intMinIncAjuPorVal,$intMinParASerFilEnAjuPorVal,$intMinCorr))} [{fmt:celdas(($intMinIncAjuPorVal,$intMinParASerFilEnAjuPorVal,$intMinCorr),($totalRdo,$intMinIncAjuPorVal,$intMinParASerFilEnAjuPorVal,$intMinCorr))}]{fmt:diferencia(abs($totalRdo - ( $intMinIncAjuPorVal + $intMinParASerFilEnAjuPorVal + $intMinCorr ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-35"
+                xlink:label="val_corep_3010-sv-35"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-35" xlink:to="men_corep_3010-sv-35"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="3"/>
+      <msg:message xlink:label="men_corep_3010-sv-35" id="men_corep_3010-sv-35"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeSupAddOwnFunds))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeSupAddOwnFunds))}] {fmt:operador('eq')} {fmt:valor(( ( - ( $couSpeCorAddOwnFundsIMRRes + $couSpeCorAddOwnFundsIMRAcc + $couSpeCorAddOwnFundsOtrIMTran + $couSpeSupAddOwnFunds ) ) ),($couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeSupAddOwnFunds))} [{fmt:celdas(($couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeSupAddOwnFunds),($totalRdo,$couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeSupAddOwnFunds))}]{fmt:diferencia(abs($totalRdo - ( - ( $couSpeCorAddOwnFundsIMRRes + $couSpeCorAddOwnFundsIMRAcc + $couSpeCorAddOwnFundsOtrIMTran + $couSpeSupAddOwnFunds ) ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-36"
+                xlink:label="val_corep_3010-sv-36"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-36" xlink:to="men_corep_3010-sv-36"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="4"/>
+      <msg:message xlink:label="men_corep_3010-sv-36" id="men_corep_3010-sv-36"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($valDifInAFSEquities,$valDifAFSAssets,$valDifFVOFinLiabOwnCrRisk,$valDifCashFlowHedNotRelAFSAss,$othValDifAffEliRes,$resParASerFilEnAjuPorVal,$intMinASerFilEnAjuPorVal,$parIncPosCurYearFilOutValDif,$parUnaIncCurYearFilOutValDif,$parIncNegCurYearFilOutValDif,$threshold))} {fmt:valor(( abs ( $valDifInAFSEquities + $valDifAFSAssets + $valDifFVOFinLiabOwnCrRisk + $valDifCashFlowHedNotRelAFSAss + $othValDifAffEliRes + ( $resParASerFilEnAjuPorVal + $intMinASerFilEnAjuPorVal + $parIncPosCurYearFilOutValDif + $parUnaIncCurYearFilOutValDif + $parIncNegCurYearFilOutValDif ) ) ),($valDifInAFSEquities,$valDifAFSAssets,$valDifFVOFinLiabOwnCrRisk,$valDifCashFlowHedNotRelAFSAss,$othValDifAffEliRes,$resParASerFilEnAjuPorVal,$intMinASerFilEnAjuPorVal,$parIncPosCurYearFilOutValDif,$parUnaIncCurYearFilOutValDif,$parIncNegCurYearFilOutValDif))} [{fmt:celdas(($valDifInAFSEquities,$valDifAFSAssets,$valDifFVOFinLiabOwnCrRisk,$valDifCashFlowHedNotRelAFSAss,$othValDifAffEliRes,$resParASerFilEnAjuPorVal,$intMinASerFilEnAjuPorVal,$parIncPosCurYearFilOutValDif,$parUnaIncCurYearFilOutValDif,$parIncNegCurYearFilOutValDif),($valDifInAFSEquities,$valDifAFSAssets,$valDifFVOFinLiabOwnCrRisk,$valDifCashFlowHedNotRelAFSAss,$othValDifAffEliRes,$resParASerFilEnAjuPorVal,$intMinASerFilEnAjuPorVal,$parIncPosCurYearFilOutValDif,$parUnaIncCurYearFilOutValDif,$parIncNegCurYearFilOutValDif,$threshold))}] {fmt:operador('le')} {fmt:valor(($threshold),($threshold))} [{fmt:celdas(($threshold),($valDifInAFSEquities,$valDifAFSAssets,$valDifFVOFinLiabOwnCrRisk,$valDifCashFlowHedNotRelAFSAss,$othValDifAffEliRes,$resParASerFilEnAjuPorVal,$intMinASerFilEnAjuPorVal,$parIncPosCurYearFilOutValDif,$parUnaIncCurYearFilOutValDif,$parIncNegCurYearFilOutValDif,$threshold))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-37"
+                xlink:label="val_corep_3010-sv-37"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-37" xlink:to="men_corep_3010-sv-37"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="5"/>
+      <msg:message xlink:label="men_corep_3010-sv-37" id="men_corep_3010-sv-37"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$parIncPosCurrYearFilOutValDiff,$parUnaudIncCurrYearFilOutValDiff,$parIncNegCurrYearFilOutValDiff))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$parIncPosCurrYearFilOutValDiff,$parUnaudIncCurrYearFilOutValDiff,$parIncNegCurrYearFilOutValDiff))}] {fmt:operador('eq')} {fmt:valor(( ( - ( $parIncPosCurrYearFilOutValDiff + $parUnaudIncCurrYearFilOutValDiff + $parIncNegCurrYearFilOutValDiff ) ) ),($parIncPosCurrYearFilOutValDiff,$parUnaudIncCurrYearFilOutValDiff,$parIncNegCurrYearFilOutValDiff))} [{fmt:celdas(($parIncPosCurrYearFilOutValDiff,$parUnaudIncCurrYearFilOutValDiff,$parIncNegCurrYearFilOutValDiff),($totalRdo,$parIncPosCurrYearFilOutValDiff,$parUnaudIncCurrYearFilOutValDiff,$parIncNegCurrYearFilOutValDiff))}]{fmt:diferencia(abs($totalRdo - ( - ( $parIncPosCurrYearFilOutValDiff + $parUnaudIncCurrYearFilOutValDiff + $parIncNegCurrYearFilOutValDiff ) ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-39"
+                xlink:label="val_corep_3010-sv-39"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-39" xlink:to="men_corep_3010-sv-39"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="6"/>
+      <msg:message xlink:label="men_corep_3010-sv-39" id="men_corep_3010-sv-39"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cobExpBajoMetodoEstandar,$cobGenExpBajoIRBTitul,$otrosElementosOtros))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cobExpBajoMetodoEstandar,$cobGenExpBajoIRBTitul,$otrosElementosOtros))}] {fmt:operador('eq')} {fmt:valor(( ( $cobExpBajoMetodoEstandar + $cobGenExpBajoIRBTitul + $otrosElementosOtros ) ),($cobExpBajoMetodoEstandar,$cobGenExpBajoIRBTitul,$otrosElementosOtros))} [{fmt:celdas(($cobExpBajoMetodoEstandar,$cobGenExpBajoIRBTitul,$otrosElementosOtros),($totalRdo,$cobExpBajoMetodoEstandar,$cobGenExpBajoIRBTitul,$otrosElementosOtros))}]{fmt:diferencia(abs($totalRdo - ( $cobExpBajoMetodoEstandar + $cobGenExpBajoIRBTitul + $otrosElementosOtros ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-40"
+                xlink:label="val_corep_3010-sv-40"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-40" xlink:to="men_corep_3010-sv-40"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="7"/>
+      <msg:message xlink:label="men_corep_3010-sv-40" id="men_corep_3010-sv-40"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeCorAddOwnFunFonObrSoc))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeCorAddOwnFunFonObrSoc))}] {fmt:operador('eq')} {fmt:valor(( ( $couSpeCorAddOwnFundsIMRRes + $couSpeCorAddOwnFundsIMRAcc + $couSpeCorAddOwnFundsOtrIMTran + $couSpeCorAddOwnFunFonObrSoc ) ),($couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeCorAddOwnFunFonObrSoc))} [{fmt:celdas(($couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeCorAddOwnFunFonObrSoc),($totalRdo,$couSpeCorAddOwnFundsIMRRes,$couSpeCorAddOwnFundsIMRAcc,$couSpeCorAddOwnFundsOtrIMTran,$couSpeCorAddOwnFunFonObrSoc))}]{fmt:diferencia(abs($totalRdo - ( $couSpeCorAddOwnFundsIMRRes + $couSpeCorAddOwnFundsIMRAcc + $couSpeCorAddOwnFundsOtrIMTran + $couSpeCorAddOwnFunFonObrSoc ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-41"
+                xlink:label="val_corep_3010-sv-41"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-41" xlink:to="men_corep_3010-sv-41"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="8"/>
+      <msg:message xlink:label="men_corep_3010-sv-41" id="men_corep_3010-sv-41"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$couSpeSupAddOwnFundsIMAccPre,$couSpeSupAddOwnFundsOtrIM))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$couSpeSupAddOwnFundsIMAccPre,$couSpeSupAddOwnFundsOtrIM))}] {fmt:operador('eq')} {fmt:valor(( ( $couSpeSupAddOwnFundsIMAccPre + $couSpeSupAddOwnFundsOtrIM ) ),($couSpeSupAddOwnFundsIMAccPre,$couSpeSupAddOwnFundsOtrIM))} [{fmt:celdas(($couSpeSupAddOwnFundsIMAccPre,$couSpeSupAddOwnFundsOtrIM),($totalRdo,$couSpeSupAddOwnFundsIMAccPre,$couSpeSupAddOwnFundsOtrIM))}]{fmt:diferencia(abs($totalRdo - ( $couSpeSupAddOwnFundsIMAccPre + $couSpeSupAddOwnFundsOtrIM ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-42"
+                xlink:label="val_corep_3010-sv-42"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-42" xlink:to="men_corep_3010-sv-42"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="9"/>
+      <msg:message xlink:label="men_corep_3010-sv-42" id="men_corep_3010-sv-42"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$ofWhichOriginalOwnFunds,$ofWhichFromAdditionalOwnFunds))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$ofWhichOriginalOwnFunds,$ofWhichFromAdditionalOwnFunds))}] {fmt:operador('eq')} {fmt:valor(( ( $ofWhichOriginalOwnFunds + $ofWhichFromAdditionalOwnFunds ) ),($ofWhichOriginalOwnFunds,$ofWhichFromAdditionalOwnFunds))} [{fmt:celdas(($ofWhichOriginalOwnFunds,$ofWhichFromAdditionalOwnFunds),($totalRdo,$ofWhichOriginalOwnFunds,$ofWhichFromAdditionalOwnFunds))}]{fmt:diferencia(abs($totalRdo - ( $ofWhichOriginalOwnFunds + $ofWhichFromAdditionalOwnFunds ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-43"
+                xlink:label="val_corep_3010-sv-43"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-43" xlink:to="men_corep_3010-sv-43"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="10"/>
+      <msg:message xlink:label="men_corep_3010-sv-43" id="men_corep_3010-sv-43"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$originalOwnFunds,$additionalOwnFunds,$iRBProvisionExcess,$insAmoMor10PerCap,$insHolExc10PerCap,$creFinInsHol10PerCap,$undInsHolComp,$undInsHolCompParIsMai))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$originalOwnFunds,$additionalOwnFunds,$iRBProvisionExcess,$insAmoMor10PerCap,$insHolExc10PerCap,$creFinInsHol10PerCap,$undInsHolComp,$undInsHolCompParIsMai))}] {fmt:operador('eq')} {fmt:valor(( ( $originalOwnFunds + ( $additionalOwnFunds - $iRBProvisionExcess ) + $insAmoMor10PerCap + $insHolExc10PerCap + $creFinInsHol10PerCap + $undInsHolComp + $undInsHolCompParIsMai ) ),($originalOwnFunds,$additionalOwnFunds,$iRBProvisionExcess,$insAmoMor10PerCap,$insHolExc10PerCap,$creFinInsHol10PerCap,$undInsHolComp,$undInsHolCompParIsMai))} [{fmt:celdas(($originalOwnFunds,$additionalOwnFunds,$iRBProvisionExcess,$insAmoMor10PerCap,$insHolExc10PerCap,$creFinInsHol10PerCap,$undInsHolComp,$undInsHolCompParIsMai),($totalRdo,$originalOwnFunds,$additionalOwnFunds,$iRBProvisionExcess,$insAmoMor10PerCap,$insHolExc10PerCap,$creFinInsHol10PerCap,$undInsHolComp,$undInsHolCompParIsMai))}]{fmt:diferencia(abs($totalRdo - ( $originalOwnFunds + ( $additionalOwnFunds - $iRBProvisionExcess ) + $insAmoMor10PerCap + $insHolExc10PerCap + $creFinInsHol10PerCap + $undInsHolComp + $undInsHolCompParIsMai ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-44"
+                xlink:label="val_corep_3010-sv-44"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-44" xlink:to="men_corep_3010-sv-44"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="11"/>
+      <msg:message xlink:label="men_corep_3010-sv-44" id="men_corep_3010-sv-44"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$excLimSupAddOwnFunds,$excLimAddOwnFunds))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$excLimSupAddOwnFunds,$excLimAddOwnFunds))}] {fmt:operador('eq')} {fmt:valor(( ( - ( $excLimSupAddOwnFunds + $excLimAddOwnFunds ) ) ),($excLimSupAddOwnFunds,$excLimAddOwnFunds))} [{fmt:celdas(($excLimSupAddOwnFunds,$excLimAddOwnFunds),($totalRdo,$excLimSupAddOwnFunds,$excLimAddOwnFunds))}]{fmt:diferencia(abs($totalRdo - ( - ( $excLimSupAddOwnFunds + $excLimAddOwnFunds ) ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-45"
+                xlink:label="val_corep_3010-sv-45"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-45" xlink:to="men_corep_3010-sv-45"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="12"/>
+      <msg:message xlink:label="men_corep_3010-sv-45" id="men_corep_3010-sv-45"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$ofWhichGenProColImp,$speProIndImp,$otrEleOtr))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$ofWhichGenProColImp,$speProIndImp,$otrEleOtr))}] {fmt:operador('eq')} {fmt:valor(( ( $ofWhichGenProColImp + $speProIndImp + $otrEleOtr ) ),($ofWhichGenProColImp,$speProIndImp,$otrEleOtr))} [{fmt:celdas(($ofWhichGenProColImp,$speProIndImp,$otrEleOtr),($totalRdo,$ofWhichGenProColImp,$speProIndImp,$otrEleOtr))}]{fmt:diferencia(abs($totalRdo - ( $ofWhichGenProColImp + $speProIndImp + $otrEleOtr ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-24"
+                xlink:label="val_corep_3010-sv-24"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-24" xlink:to="men_corep_3010-sv-24"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="13"/>
+      <msg:message xlink:label="men_corep_3010-sv-24" id="men_corep_3010-sv-24"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$creditRiskCapitalRequirementsSA,$creditRiskCapitalRequirementsSATI))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$creditRiskCapitalRequirementsSA,$creditRiskCapitalRequirementsSATI))}] {fmt:operador('eq')} {fmt:valor(( ( $creditRiskCapitalRequirementsSA + $creditRiskCapitalRequirementsSATI ) ),($creditRiskCapitalRequirementsSA,$creditRiskCapitalRequirementsSATI))} [{fmt:celdas(($creditRiskCapitalRequirementsSA,$creditRiskCapitalRequirementsSATI),($totalRdo,$creditRiskCapitalRequirementsSA,$creditRiskCapitalRequirementsSATI))}]{fmt:diferencia(abs($totalRdo - ( $creditRiskCapitalRequirementsSA + $creditRiskCapitalRequirementsSATI ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-53"
+                xlink:label="val_corep_3010-sv-53"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-53" xlink:to="men_corep_3010-sv-53"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="14"/>
+      <msg:message xlink:label="men_corep_3010-sv-53" id="men_corep_3010-sv-53"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cRCapReqSATraSec,$cRCapReqSASynSec))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cRCapReqSATraSec,$cRCapReqSASynSec))}] {fmt:operador('eq')} {fmt:valor(( ( $cRCapReqSATraSec + $cRCapReqSASynSec ) ),($cRCapReqSATraSec,$cRCapReqSASynSec))} [{fmt:celdas(($cRCapReqSATraSec,$cRCapReqSASynSec),($totalRdo,$cRCapReqSATraSec,$cRCapReqSASynSec))}]{fmt:diferencia(abs($totalRdo - ( $cRCapReqSATraSec + $cRCapReqSASynSec ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-54"
+                xlink:label="val_corep_3010-sv-54"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-54" xlink:to="men_corep_3010-sv-54"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="15"/>
+      <msg:message xlink:label="men_corep_3010-sv-54" id="men_corep_3010-sv-54"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp))}] {fmt:operador('eq')} {fmt:valor(( ( $cRCapReqIRBCentGovAndCenBan + $cRCapReqIRBIns + $cRCapReqIRBCorp ) ),($cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp))} [{fmt:celdas(($cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp),($totalRdo,$cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp))}]{fmt:diferencia(abs($totalRdo - ( $cRCapReqIRBCentGovAndCenBan + $cRCapReqIRBIns + $cRCapReqIRBCorp ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-46"
+                xlink:label="val_corep_3010-sv-46"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-46" xlink:to="men_corep_3010-sv-46"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="16"/>
+      <msg:message xlink:label="men_corep_3010-sv-46" id="men_corep_3010-sv-46"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME))}] {fmt:operador('eq')} {fmt:valor(( ( $cRCapReqIRBEmpTot + $cRCapReqIRBECOfWhichSpeLen + $cRCapReqIRBECCorpOfWhichSME ) ),($cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME))} [{fmt:celdas(($cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME),($totalRdo,$cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME))}]{fmt:diferencia(abs($totalRdo - ( $cRCapReqIRBEmpTot + $cRCapReqIRBECOfWhichSpeLen + $cRCapReqIRBECCorpOfWhichSME ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-55"
+                xlink:label="val_corep_3010-sv-55"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-55" xlink:to="men_corep_3010-sv-55"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="17"/>
+      <msg:message xlink:label="men_corep_3010-sv-55" id="men_corep_3010-sv-55"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp,$cRCapReqIRBRet))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp,$cRCapReqIRBRet))}] {fmt:operador('eq')} {fmt:valor(( ( $cRCapReqIRBCentGovAndCenBan + $cRCapReqIRBIns + $cRCapReqIRBCorp + $cRCapReqIRBRet ) ),($cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp,$cRCapReqIRBRet))} [{fmt:celdas(($cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp,$cRCapReqIRBRet),($totalRdo,$cRCapReqIRBCentGovAndCenBan,$cRCapReqIRBIns,$cRCapReqIRBCorp,$cRCapReqIRBRet))}]{fmt:diferencia(abs($totalRdo - ( $cRCapReqIRBCentGovAndCenBan + $cRCapReqIRBIns + $cRCapReqIRBCorp + $cRCapReqIRBRet ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-47"
+                xlink:label="val_corep_3010-sv-47"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-47" xlink:to="men_corep_3010-sv-47"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="18"/>
+      <msg:message xlink:label="men_corep_3010-sv-47" id="men_corep_3010-sv-47"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME))}] {fmt:operador('eq')} {fmt:valor(( ( $cRCapReqIRBEmpTot + $cRCapReqIRBECOfWhichSpeLen + $cRCapReqIRBECCorpOfWhichSME ) ),($cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME))} [{fmt:celdas(($cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME),($totalRdo,$cRCapReqIRBEmpTot,$cRCapReqIRBECOfWhichSpeLen,$cRCapReqIRBECCorpOfWhichSME))}]{fmt:diferencia(abs($totalRdo - ( $cRCapReqIRBEmpTot + $cRCapReqIRBECOfWhichSpeLen + $cRCapReqIRBECCorpOfWhichSME ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-51"
+                xlink:label="val_corep_3010-sv-51"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-51" xlink:to="men_corep_3010-sv-51"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="19"/>
+      <msg:message xlink:label="men_corep_3010-sv-51" id="men_corep_3010-sv-51"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cRCapReqIRBECSecByRealEst,$cRCapReqIRBECQuaRev,$cRCapReqIRBECOthRet))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cRCapReqIRBECSecByRealEst,$cRCapReqIRBECQuaRev,$cRCapReqIRBECOthRet))}] {fmt:operador('eq')} {fmt:valor(( ( $cRCapReqIRBECSecByRealEst + $cRCapReqIRBECQuaRev + $cRCapReqIRBECOthRet ) ),($cRCapReqIRBECSecByRealEst,$cRCapReqIRBECQuaRev,$cRCapReqIRBECOthRet))} [{fmt:celdas(($cRCapReqIRBECSecByRealEst,$cRCapReqIRBECQuaRev,$cRCapReqIRBECOthRet),($totalRdo,$cRCapReqIRBECSecByRealEst,$cRCapReqIRBECQuaRev,$cRCapReqIRBECOthRet))}]{fmt:diferencia(abs($totalRdo - ( $cRCapReqIRBECSecByRealEst + $cRCapReqIRBECQuaRev + $cRCapReqIRBECOthRet ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-52"
+                xlink:label="val_corep_3010-sv-52"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-52" xlink:to="men_corep_3010-sv-52"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="20"/>
+      <msg:message xlink:label="men_corep_3010-sv-52" id="men_corep_3010-sv-52"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cRCapReqIRBECRetOfWhichSME,$cRCapReqIRBExpMinNoPymHipInm,$cRCapReqIRBOtrExpMinNoPym,$cRCapReqIRBQualRevolving))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cRCapReqIRBECRetOfWhichSME,$cRCapReqIRBExpMinNoPymHipInm,$cRCapReqIRBOtrExpMinNoPym,$cRCapReqIRBQualRevolving))}] {fmt:operador('eq')} {fmt:valor(( ( $cRCapReqIRBECRetOfWhichSME + $cRCapReqIRBExpMinNoPymHipInm + $cRCapReqIRBOtrExpMinNoPym + $cRCapReqIRBQualRevolving ) ),($cRCapReqIRBECRetOfWhichSME,$cRCapReqIRBExpMinNoPymHipInm,$cRCapReqIRBOtrExpMinNoPym,$cRCapReqIRBQualRevolving))} [{fmt:celdas(($cRCapReqIRBECRetOfWhichSME,$cRCapReqIRBExpMinNoPymHipInm,$cRCapReqIRBOtrExpMinNoPym,$cRCapReqIRBQualRevolving),($totalRdo,$cRCapReqIRBECRetOfWhichSME,$cRCapReqIRBExpMinNoPymHipInm,$cRCapReqIRBOtrExpMinNoPym,$cRCapReqIRBQualRevolving))}]{fmt:diferencia(abs($totalRdo - ( $cRCapReqIRBECRetOfWhichSME + $cRCapReqIRBExpMinNoPymHipInm + $cRCapReqIRBOtrExpMinNoPym + $cRCapReqIRBQualRevolving ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-48"
+                xlink:label="val_corep_3010-sv-48"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-48" xlink:to="men_corep_3010-sv-48"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="21"/>
+      <msg:message xlink:label="men_corep_3010-sv-48" id="men_corep_3010-sv-48"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$cRCapReqIRBTraSec,$cRCapReqIRBSynSec))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$cRCapReqIRBTraSec,$cRCapReqIRBSynSec))}] {fmt:operador('eq')} {fmt:valor(( ( $cRCapReqIRBTraSec + $cRCapReqIRBSynSec ) ),($cRCapReqIRBTraSec,$cRCapReqIRBSynSec))} [{fmt:celdas(($cRCapReqIRBTraSec,$cRCapReqIRBSynSec),($totalRdo,$cRCapReqIRBTraSec,$cRCapReqIRBSynSec))}]{fmt:diferencia(abs($totalRdo - ( $cRCapReqIRBTraSec + $cRCapReqIRBSynSec ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-49"
+                xlink:label="val_corep_3010-sv-49"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-49" xlink:to="men_corep_3010-sv-49"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="22"/>
+      <msg:message xlink:label="men_corep_3010-sv-49" id="men_corep_3010-sv-49"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$otherCountry,$reqAdi,$otherCountryOtros))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$otherCountry,$reqAdi,$otherCountryOtros))}] {fmt:operador('eq')} {fmt:valor(( ( $otherCountry + $reqAdi + $otherCountryOtros ) ),($otherCountry,$reqAdi,$otherCountryOtros))} [{fmt:celdas(($otherCountry,$reqAdi,$otherCountryOtros),($totalRdo,$otherCountry,$reqAdi,$otherCountryOtros))}]{fmt:diferencia(abs($totalRdo - ( $otherCountry + $reqAdi + $otherCountryOtros ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-50"
+                xlink:label="val_corep_3010-sv-50"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-50" xlink:to="men_corep_3010-sv-50"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="23"/>
+      <msg:message xlink:label="men_corep_3010-sv-50" id="men_corep_3010-sv-50"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$intAssCapital,$intAssCapNeeds))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$intAssCapital,$intAssCapNeeds))}] {fmt:operador('eq')} {fmt:valor(( ( $intAssCapital - $intAssCapNeeds ) ),($intAssCapital,$intAssCapNeeds))} [{fmt:celdas(($intAssCapital,$intAssCapNeeds),($totalRdo,$intAssCapital,$intAssCapNeeds))}]{fmt:diferencia(abs($totalRdo - ( $intAssCapital - $intAssCapNeeds ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-56"
+                xlink:label="val_corep_3010-sv-56"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-56" xlink:to="men_corep_3010-sv-56"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="24"/>
+      <msg:message xlink:label="men_corep_3010-sv-56" id="men_corep_3010-sv-56"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$reqAjuEmpSerInv,$ReqAjuSocGes,$reqAjuSocInvCapRiesgo,$reqAjuRestoGrupo))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$reqAjuEmpSerInv,$ReqAjuSocGes,$reqAjuSocInvCapRiesgo,$reqAjuRestoGrupo))}] {fmt:operador('eq')} {fmt:valor(( ( $reqAjuEmpSerInv + $ReqAjuSocGes + $reqAjuSocInvCapRiesgo + $reqAjuRestoGrupo ) ),($reqAjuEmpSerInv,$ReqAjuSocGes,$reqAjuSocInvCapRiesgo,$reqAjuRestoGrupo))} [{fmt:celdas(($reqAjuEmpSerInv,$ReqAjuSocGes,$reqAjuSocInvCapRiesgo,$reqAjuRestoGrupo),($totalRdo,$reqAjuEmpSerInv,$ReqAjuSocGes,$reqAjuSocInvCapRiesgo,$reqAjuRestoGrupo))}]{fmt:diferencia(abs($totalRdo - ( $reqAjuEmpSerInv + $ReqAjuSocGes + $reqAjuSocInvCapRiesgo + $reqAjuRestoGrupo ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-57"
+                xlink:label="val_corep_3010-sv-57"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-57" xlink:to="men_corep_3010-sv-57"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="25"/>
+      <msg:message xlink:label="men_corep_3010-sv-57" id="men_corep_3010-sv-57"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest))}] {fmt:operador('eq')} {fmt:valor(( ( $reqRecProMinEspecificos + $ajudifRegProComp + $ajuOpeIntGruSocGest ) ),($reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest))} [{fmt:celdas(($reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest),($totalRdo,$reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest))}]{fmt:diferencia(abs($totalRdo - ( $reqRecProMinEspecificos + $ajudifRegProComp + $ajuOpeIntGruSocGest ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-58"
+                xlink:label="val_corep_3010-sv-58"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-58" xlink:to="men_corep_3010-sv-58"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="26"/>
+      <msg:message xlink:label="men_corep_3010-sv-58" id="men_corep_3010-sv-58"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest))}] {fmt:operador('eq')} {fmt:valor(( ( $reqRecProMinEspecificos + $ajudifRegProComp + $ajuOpeIntGruSocGest ) ),($reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest))} [{fmt:celdas(($reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest),($totalRdo,$reqRecProMinEspecificos,$ajudifRegProComp,$ajuOpeIntGruSocGest))}]{fmt:diferencia(abs($totalRdo - ( $reqRecProMinEspecificos + $ajudifRegProComp + $ajuOpeIntGruSocGest ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-59"
+                xlink:label="val_corep_3010-sv-59"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-59" xlink:to="men_corep_3010-sv-59"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="27"/>
+      <msg:message xlink:label="men_corep_3010-sv-59" id="men_corep_3010-sv-59"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$reqRecProMinEstablecidos,$difPosCapMinConReqEst,$ajuOpeIntGruSocInvCapRiesgo))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$reqRecProMinEstablecidos,$difPosCapMinConReqEst,$ajuOpeIntGruSocInvCapRiesgo))}] {fmt:operador('eq')} {fmt:valor(( ( $reqRecProMinEstablecidos + $difPosCapMinConReqEst + $ajuOpeIntGruSocInvCapRiesgo ) ),($reqRecProMinEstablecidos,$difPosCapMinConReqEst,$ajuOpeIntGruSocInvCapRiesgo))} [{fmt:celdas(($reqRecProMinEstablecidos,$difPosCapMinConReqEst,$ajuOpeIntGruSocInvCapRiesgo),($totalRdo,$reqRecProMinEstablecidos,$difPosCapMinConReqEst,$ajuOpeIntGruSocInvCapRiesgo))}]{fmt:diferencia(abs($totalRdo - ( $reqRecProMinEstablecidos + $difPosCapMinConReqEst + $ajuOpeIntGruSocInvCapRiesgo ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-60"
+                xlink:label="val_corep_3010-sv-60"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-60" xlink:to="men_corep_3010-sv-60"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="28"/>
+      <msg:message xlink:label="men_corep_3010-sv-60" id="men_corep_3010-sv-60"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$reqRecProMinestablecidos,$ajuOpeIntGruprestoGrupo))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$reqRecProMinestablecidos,$ajuOpeIntGruprestoGrupo))}] {fmt:operador('eq')} {fmt:valor(( ( $reqRecProMinestablecidos + $ajuOpeIntGruprestoGrupo ) ),($reqRecProMinestablecidos,$ajuOpeIntGruprestoGrupo))} [{fmt:celdas(($reqRecProMinestablecidos,$ajuOpeIntGruprestoGrupo),($totalRdo,$reqRecProMinestablecidos,$ajuOpeIntGruprestoGrupo))}]{fmt:diferencia(abs($totalRdo - ( $reqRecProMinestablecidos + $ajuOpeIntGruprestoGrupo ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-61"
+                xlink:label="val_corep_3010-sv-61"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-61" xlink:to="men_corep_3010-sv-61"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="29"/>
+      <msg:message xlink:label="men_corep_3010-sv-61" id="men_corep_3010-sv-61"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($ActFiscDiferidos,$ActFiscDiferidosPerdidas,$ActFiscDiferidosDiferencias,$ActFiscDiferidosOtras))} {fmt:valor(($ActFiscDiferidos),($ActFiscDiferidos))} [{fmt:celdas(($ActFiscDiferidos),($ActFiscDiferidos,$ActFiscDiferidosPerdidas,$ActFiscDiferidosDiferencias,$ActFiscDiferidosOtras))}] {fmt:operador('eq')} {fmt:valor(( ai:numeric-add ( ( $ActFiscDiferidosPerdidas , $ActFiscDiferidosDiferencias , $ActFiscDiferidosOtras ) ) ),($ActFiscDiferidosPerdidas,$ActFiscDiferidosDiferencias,$ActFiscDiferidosOtras))} [{fmt:celdas(($ActFiscDiferidosPerdidas,$ActFiscDiferidosDiferencias,$ActFiscDiferidosOtras),($ActFiscDiferidos,$ActFiscDiferidosPerdidas,$ActFiscDiferidosDiferencias,$ActFiscDiferidosOtras))}]{fmt:diferencia(ai:numeric-difference($ActFiscDiferidos, ai:numeric-add(($ActFiscDiferidosPerdidas, $ActFiscDiferidosDiferencias, $ActFiscDiferidosOtras))))}{fmt:umbral(ai:numeric-threshold($ActFiscDiferidos, ai:numeric-add(($ActFiscDiferidosPerdidas, $ActFiscDiferidosDiferencias, $ActFiscDiferidosOtras))))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-sv-62"
+                xlink:label="val_corep_3010-sv-62"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-sv-62" xlink:to="men_corep_3010-sv-62"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="30"/>
+      <msg:message xlink:label="men_corep_3010-sv-62" id="men_corep_3010-sv-62"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($PartAseguradoras,$PartAseguradorasFiliales,$PartAseguradorasMultigrupo,$PartAseguradorasAsociadas,$PartAseguradorasParticipadas))} {fmt:valor(($PartAseguradoras),($PartAseguradoras))} [{fmt:celdas(($PartAseguradoras),($PartAseguradoras,$PartAseguradorasFiliales,$PartAseguradorasMultigrupo,$PartAseguradorasAsociadas,$PartAseguradorasParticipadas))}] {fmt:operador('eq')} {fmt:valor(( ai:numeric-add ( ( $PartAseguradorasFiliales , $PartAseguradorasMultigrupo , $PartAseguradorasAsociadas , $PartAseguradorasParticipadas ) ) ),($PartAseguradorasFiliales,$PartAseguradorasMultigrupo,$PartAseguradorasAsociadas,$PartAseguradorasParticipadas))} [{fmt:celdas(($PartAseguradorasFiliales,$PartAseguradorasMultigrupo,$PartAseguradorasAsociadas,$PartAseguradorasParticipadas),($PartAseguradoras,$PartAseguradorasFiliales,$PartAseguradorasMultigrupo,$PartAseguradorasAsociadas,$PartAseguradorasParticipadas))}]{fmt:diferencia(ai:numeric-difference($PartAseguradoras, ai:numeric-add(($PartAseguradorasFiliales, $PartAseguradorasMultigrupo, $PartAseguradorasAsociadas, $PartAseguradorasParticipadas))))}{fmt:umbral(ai:numeric-threshold($PartAseguradoras, ai:numeric-add(($PartAseguradorasFiliales, $PartAseguradorasMultigrupo, $PartAseguradorasAsociadas, $PartAseguradorasParticipadas))))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-43"
+                xlink:label="val_corep_3010-or-43"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-43" xlink:to="men_corep_3010-or-43"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="31"/>
+      <msg:message xlink:label="men_corep_3010-or-43" id="men_corep_3010-or-43"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($reqRRPP))} {fmt:valor(($reqRRPP),($reqRRPP))} [{fmt:celdas(($reqRRPP),($reqRRPP))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-59"
+                xlink:label="val_corep_3010-or-59"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-59" xlink:to="men_corep_3010-or-59"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="32"/>
+      <msg:message xlink:label="men_corep_3010-or-59" id="men_corep_3010-or-59"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($OtherCountrySpecificOwnFundsRequirementsOtros))} {fmt:valor(($OtherCountrySpecificOwnFundsRequirementsOtros),($OtherCountrySpecificOwnFundsRequirementsOtros))} [{fmt:celdas(($OtherCountrySpecificOwnFundsRequirementsOtros),($OtherCountrySpecificOwnFundsRequirementsOtros))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-31b"
+                xlink:label="val_corep_3010-or-31b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-31b" xlink:to="men_corep_3010-or-31b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="33"/>
+      <msg:message xlink:label="men_corep_3010-or-31b" id="men_corep_3010-or-31b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($capitalInicial))} {fmt:valor(($capitalInicial),($capitalInicial))} [{fmt:celdas(($capitalInicial),($capitalInicial))}] {fmt:operador('=')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-91"
+                xlink:label="val_corep_3010-or-91"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-91" xlink:to="men_corep_3010-or-91"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="34"/>
+      <msg:message xlink:label="men_corep_3010-or-91" id="men_corep_3010-or-91"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda31))} {fmt:valor(($celda31),($celda31))} [{fmt:celdas(($celda31),($celda31))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-35"
+                xlink:label="val_corep_3010-or-35"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-35" xlink:to="men_corep_3010-or-35"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="35"/>
+      <msg:message xlink:label="men_corep_3010-or-35" id="men_corep_3010-or-35"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($base))} {fmt:valor(($base),($base))} [{fmt:celdas(($base),($base))}] {fmt:operador('gt')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-78"
+                xlink:label="val_corep_3010-or-78"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-78" xlink:to="men_corep_3010-or-78"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="36"/>
+      <msg:message xlink:label="men_corep_3010-or-78" id="men_corep_3010-or-78"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($c0108))} {fmt:valor(($c0108),($c0108))} [{fmt:celdas(($c0108),($c0108))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-41"
+                xlink:label="val_corep_3010-or-41"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-41" xlink:to="men_corep_3010-or-41"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="37"/>
+      <msg:message xlink:label="men_corep_3010-or-41" id="men_corep_3010-or-41"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe))} {fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-46"
+                xlink:label="val_corep_3010-or-46"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-46" xlink:to="men_corep_3010-or-46"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="38"/>
+      <msg:message xlink:label="men_corep_3010-or-46" id="men_corep_3010-or-46"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas))} {fmt:valor(($celdas),($celdas))} [{fmt:celdas(($celdas),($celdas))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-60"
+                xlink:label="val_corep_3010-or-60"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-60" xlink:to="men_corep_3010-or-60"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="39"/>
+      <msg:message xlink:label="men_corep_3010-or-60" id="men_corep_3010-or-60"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($InternalAssessmentCapital,$InternalAssessmentCapitalNeeds))}({fmt:valor(($InternalAssessmentCapital),($InternalAssessmentCapital))} [{fmt:celdas(($InternalAssessmentCapital),($InternalAssessmentCapital,$InternalAssessmentCapitalNeeds))}] {fmt:operador('ne')} {fmt:valor((0),(0))}) and ({fmt:valor(($InternalAssessmentCapitalNeeds),($InternalAssessmentCapitalNeeds))} [{fmt:celdas(($InternalAssessmentCapitalNeeds),($InternalAssessmentCapital,$InternalAssessmentCapitalNeeds))}] {fmt:operador('ne')} {fmt:valor((0),(0))}) and ({fmt:valor(($InternalAssessmentCapital),($InternalAssessmentCapital))} [{fmt:celdas(($InternalAssessmentCapital),($InternalAssessmentCapital,$InternalAssessmentCapitalNeeds))}] {fmt:operador('ne')} {fmt:valor(($InternalAssessmentCapitalNeeds),($InternalAssessmentCapitalNeeds))} [{fmt:celdas(($InternalAssessmentCapitalNeeds),($InternalAssessmentCapital,$InternalAssessmentCapitalNeeds))}])</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-47"
+                xlink:label="val_corep_3010-or-47"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-47" xlink:to="men_corep_3010-or-47"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="40"/>
+      <msg:message xlink:label="men_corep_3010-or-47" id="men_corep_3010-or-47"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas))} todos {fmt:valor(($celdas),($celdas))} [{fmt:celdas(($celdas),($celdas))}] {fmt:operador('=')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-79"
+                xlink:label="val_corep_3010-or-79"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-79" xlink:to="men_corep_3010-or-79"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="41"/>
+      <msg:message xlink:label="men_corep_3010-or-79" id="men_corep_3010-or-79"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas))} todos {fmt:valor(($celdas),($celdas))} [{fmt:celdas(($celdas),($celdas))}] {fmt:operador('=')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-39"
+                xlink:label="val_corep_3010-or-39"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-39" xlink:to="men_corep_3010-or-39"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="42"/>
+      <msg:message xlink:label="men_corep_3010-or-39" id="men_corep_3010-or-39"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe))} {fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe))}] {fmt:operador('=')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-2"
+                xlink:label="val_corep_3010-or-2"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-2" xlink:to="men_corep_3010-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="43"/>
+      <msg:message xlink:label="men_corep_3010-or-2" id="men_corep_3010-or-2"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($income))} {fmt:valor(( count ( $income [ . ne 0 ] ) ),($income))} [{fmt:celdas(($income),($income))}] {fmt:operador('le')} {fmt:valor((1),(1))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-10"
+                xlink:label="val_corep_3010-or-10"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-10" xlink:to="men_corep_3010-or-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="44"/>
+      <msg:message xlink:label="men_corep_3010-or-10" id="men_corep_3010-or-10"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($excIntMin10RRPP,$exc50RecPropElemDisCapRes,$othCouSpeDedOriOwnFundsOth))} {fmt:valor(( ( abs ( data ( $excIntMin10RRPP ) ) + abs ( data ( $exc50RecPropElemDisCapRes ) ) ) ),($excIntMin10RRPP,$exc50RecPropElemDisCapRes))} [{fmt:celdas(($excIntMin10RRPP,$exc50RecPropElemDisCapRes),($excIntMin10RRPP,$exc50RecPropElemDisCapRes,$othCouSpeDedOriOwnFundsOth))}] {fmt:operador('le')} {fmt:valor(( abs ( data ( $othCouSpeDedOriOwnFundsOth ) ) ),($othCouSpeDedOriOwnFundsOth))} [{fmt:celdas(($othCouSpeDedOriOwnFundsOth),($excIntMin10RRPP,$exc50RecPropElemDisCapRes,$othCouSpeDedOriOwnFundsOth))}]{fmt:diferencia(abs( ( abs ( data ( $excIntMin10RRPP ) ) + abs ( data ( $exc50RecPropElemDisCapRes ) ) ) - abs ( data ( $othCouSpeDedOriOwnFundsOth ) ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-13"
+                xlink:label="val_corep_3010-or-13"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-13" xlink:to="men_corep_3010-or-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="45"/>
+      <msg:message xlink:label="men_corep_3010-or-13" id="men_corep_3010-or-13"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($cRCapReqIRBRetail,$cRCapReqIRBRetOfWhichSME))} {fmt:valor(($cRCapReqIRBRetail),($cRCapReqIRBRetail))} [{fmt:celdas(($cRCapReqIRBRetail),($cRCapReqIRBRetail,$cRCapReqIRBRetOfWhichSME))}] {fmt:operador('ge')} {fmt:valor(($cRCapReqIRBRetOfWhichSME),($cRCapReqIRBRetOfWhichSME))} [{fmt:celdas(($cRCapReqIRBRetOfWhichSME),($cRCapReqIRBRetail,$cRCapReqIRBRetOfWhichSME))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-14"
+                xlink:label="val_corep_3010-or-14"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-14" xlink:to="men_corep_3010-or-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="46"/>
+      <msg:message xlink:label="men_corep_3010-or-14" id="men_corep_3010-or-14"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($cRCapReqIRBSecByRealEst,$cRCapReqIRBExpMinNoPymesHipInm))} {fmt:valor(($cRCapReqIRBSecByRealEst),($cRCapReqIRBSecByRealEst))} [{fmt:celdas(($cRCapReqIRBSecByRealEst),($cRCapReqIRBSecByRealEst,$cRCapReqIRBExpMinNoPymesHipInm))}] {fmt:operador('ge')} {fmt:valor(($cRCapReqIRBExpMinNoPymesHipInm),($cRCapReqIRBExpMinNoPymesHipInm))} [{fmt:celdas(($cRCapReqIRBExpMinNoPymesHipInm),($cRCapReqIRBSecByRealEst,$cRCapReqIRBExpMinNoPymesHipInm))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-15"
+                xlink:label="val_corep_3010-or-15"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-15" xlink:to="men_corep_3010-or-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="47"/>
+      <msg:message xlink:label="men_corep_3010-or-15" id="men_corep_3010-or-15"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($cRCapReqIRBECOtherRetail,$cRCapReqIRBOtrExpMinNoPymes))} {fmt:valor(($cRCapReqIRBECOtherRetail),($cRCapReqIRBECOtherRetail))} [{fmt:celdas(($cRCapReqIRBECOtherRetail),($cRCapReqIRBECOtherRetail,$cRCapReqIRBOtrExpMinNoPymes))}] {fmt:operador('ge')} {fmt:valor(($cRCapReqIRBOtrExpMinNoPymes),($cRCapReqIRBOtrExpMinNoPymes))} [{fmt:celdas(($cRCapReqIRBOtrExpMinNoPymes),($cRCapReqIRBECOtherRetail,$cRCapReqIRBOtrExpMinNoPymes))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-61"
+                xlink:label="val_corep_3010-or-61"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-61" xlink:to="men_corep_3010-or-61"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="48"/>
+      <msg:message xlink:label="men_corep_3010-or-61" id="men_corep_3010-or-61"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($ValuationDifferencesFVOFinancialLiabilitiesOwnCreditRisk,$AdjustmentValuationDifferencesFVOFinanciaLiabilitiesOwnCreditRisk))}({fmt:valor(($ValuationDifferencesFVOFinancialLiabilitiesOwnCreditRisk),($ValuationDifferencesFVOFinancialLiabilitiesOwnCreditRisk))} [{fmt:celdas(($ValuationDifferencesFVOFinancialLiabilitiesOwnCreditRisk),($ValuationDifferencesFVOFinancialLiabilitiesOwnCreditRisk,$AdjustmentValuationDifferencesFVOFinanciaLiabilitiesOwnCreditRisk))}] {fmt:operador('ne')} {fmt:valor((0),(0))}) or ({fmt:valor(($AdjustmentValuationDifferencesFVOFinanciaLiabilitiesOwnCreditRisk),($AdjustmentValuationDifferencesFVOFinanciaLiabilitiesOwnCreditRisk))} [{fmt:celdas(($AdjustmentValuationDifferencesFVOFinanciaLiabilitiesOwnCreditRisk),($ValuationDifferencesFVOFinancialLiabilitiesOwnCreditRisk,$AdjustmentValuationDifferencesFVOFinanciaLiabilitiesOwnCreditRisk))}] {fmt:operador('ne')} {fmt:valor((0),(0))})</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-17"
+                xlink:label="val_corep_3010-or-17"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-17" xlink:to="men_corep_3010-or-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="49"/>
+      <msg:message xlink:label="men_corep_3010-or-17" id="men_corep_3010-or-17"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$incCurYearUnaudited,$parUnaIncCurYearFilOutValDif))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$incCurYearUnaudited,$parUnaIncCurYearFilOutValDif))}] {fmt:operador('eq')} {fmt:valor(( ( min ( ( ( $incCurYearUnaudited + $parUnaIncCurYearFilOutValDif ) , 0 ) ) ) ),($incCurYearUnaudited,$parUnaIncCurYearFilOutValDif))} [{fmt:celdas(($incCurYearUnaudited,$parUnaIncCurYearFilOutValDif),($totalRdo,$incCurYearUnaudited,$parUnaIncCurYearFilOutValDif))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-18"
+                xlink:label="val_corep_3010-or-18"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-18" xlink:to="men_corep_3010-or-18"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="50"/>
+      <msg:message xlink:label="men_corep_3010-or-18" id="men_corep_3010-or-18"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$valDifInAFSEquities))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$valDifInAFSEquities))}] {fmt:operador('eq')} {fmt:valor(( ( min ( ( - $valDifInAFSEquities , 0 ) ) ) ),($valDifInAFSEquities))} [{fmt:celdas(($valDifInAFSEquities),($totalRdo,$valDifInAFSEquities))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-19"
+                xlink:label="val_corep_3010-or-19"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-19" xlink:to="men_corep_3010-or-19"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="51"/>
+      <msg:message xlink:label="men_corep_3010-or-19" id="men_corep_3010-or-19"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$valDifAFSAssets))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$valDifAFSAssets))}] {fmt:operador('eq')} {fmt:valor(( ( min ( ( - $valDifAFSAssets , 0 ) ) ) ),($valDifAFSAssets))} [{fmt:celdas(($valDifAFSAssets),($totalRdo,$valDifAFSAssets))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-75"
+                xlink:label="val_corep_3010-or-75"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-75" xlink:to="men_corep_3010-or-75"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="52"/>
+      <msg:message xlink:label="men_corep_3010-or-75" id="men_corep_3010-or-75"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($valDifAFSAssets,$adjValDiffAFAssets,$adjValDiffOthAFAssTranCorAddOwnFunds))}() and ({fmt:valor(($adjValDiffOthAFAssTranCorAddOwnFunds),($adjValDiffOthAFAssTranCorAddOwnFunds))} [{fmt:celdas(($adjValDiffOthAFAssTranCorAddOwnFunds),($valDifAFSAssets,$adjValDiffAFAssets,$adjValDiffOthAFAssTranCorAddOwnFunds))}] {fmt:operador('eq')} {fmt:valor((0),(0))})</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-20"
+                xlink:label="val_corep_3010-or-20"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-20" xlink:to="men_corep_3010-or-20"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="53"/>
+      <msg:message xlink:label="men_corep_3010-or-20" id="men_corep_3010-or-20"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$valDifFVOFinLiaOwnCR))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$valDifFVOFinLiaOwnCR))}] {fmt:operador('eq')} {fmt:valor(( ( - $valDifFVOFinLiaOwnCR ) ),($valDifFVOFinLiaOwnCR))} [{fmt:celdas(($valDifFVOFinLiaOwnCR),($totalRdo,$valDifFVOFinLiaOwnCR))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-21"
+                xlink:label="val_corep_3010-or-21"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-21" xlink:to="men_corep_3010-or-21"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="54"/>
+      <msg:message xlink:label="men_corep_3010-or-21" id="men_corep_3010-or-21"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$valDifCashFlowHedNotRelAFSAss))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$valDifCashFlowHedNotRelAFSAss))}] {fmt:operador('eq')} {fmt:valor(( ( - $valDifCashFlowHedNotRelAFSAss ) ),($valDifCashFlowHedNotRelAFSAss))} [{fmt:celdas(($valDifCashFlowHedNotRelAFSAss),($totalRdo,$valDifCashFlowHedNotRelAFSAss))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-22"
+                xlink:label="val_corep_3010-or-22"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-22" xlink:to="men_corep_3010-or-22"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="55"/>
+      <msg:message xlink:label="men_corep_3010-or-22" id="men_corep_3010-or-22"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$othValDifAffEliRes))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$othValDifAffEliRes))}] {fmt:operador('eq')} {fmt:valor(( ( min ( ( - $othValDifAffEliRes , 0 ) ) ) ),($othValDifAffEliRes))} [{fmt:celdas(($othValDifAffEliRes),($totalRdo,$othValDifAffEliRes))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-7"
+                xlink:label="val_corep_3010-or-7"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-7" xlink:to="men_corep_3010-or-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="56"/>
+      <msg:message xlink:label="men_corep_3010-or-7" id="men_corep_3010-or-7"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$othCouSpeDedOriOwnFundsOth))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$othCouSpeDedOriOwnFundsOth))}] {fmt:operador('eq')} {fmt:valor(( ( $othCouSpeDedOriOwnFundsOth ) ),($othCouSpeDedOriOwnFundsOth))} [{fmt:celdas(($othCouSpeDedOriOwnFundsOth),($totalRdo,$othCouSpeDedOriOwnFundsOth))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-23"
+                xlink:label="val_corep_3010-or-23"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-23" xlink:to="men_corep_3010-or-23"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="57"/>
+      <msg:message xlink:label="men_corep_3010-or-23" id="men_corep_3010-or-23"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($adjValDifAFSEquTraCorAddOwnFunds,$adjValDifAFSEquities))} {fmt:valor(($adjValDifAFSEquTraCorAddOwnFunds),($adjValDifAFSEquTraCorAddOwnFunds))} [{fmt:celdas(($adjValDifAFSEquTraCorAddOwnFunds),($adjValDifAFSEquTraCorAddOwnFunds,$adjValDifAFSEquities))}] {fmt:operador('le')} {fmt:valor(( ( ( $adjValDifAFSEquities div 0.7 ) * - 0.45 ) ),($adjValDifAFSEquities))} [{fmt:celdas(($adjValDifAFSEquities),($adjValDifAFSEquTraCorAddOwnFunds,$adjValDifAFSEquities))}]{fmt:diferencia(abs($adjValDifAFSEquTraCorAddOwnFunds - ( ( $adjValDifAFSEquities div 0.7 ) * - 0.45 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-24"
+                xlink:label="val_corep_3010-or-24"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-24" xlink:to="men_corep_3010-or-24"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="58"/>
+      <msg:message xlink:label="men_corep_3010-or-24" id="men_corep_3010-or-24"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($adjValDifOthAFSAssTraCorAddOwnFunds,$adjValDifAFSAssets))} {fmt:valor(($adjValDifOthAFSAssTraCorAddOwnFunds),($adjValDifOthAFSAssTraCorAddOwnFunds))} [{fmt:celdas(($adjValDifOthAFSAssTraCorAddOwnFunds),($adjValDifOthAFSAssTraCorAddOwnFunds,$adjValDifAFSAssets))}] {fmt:operador('le')} - {fmt:valor(( ( ( $adjValDifAFSAssets div 0.7 ) * 0.35 ) ),($adjValDifAFSAssets))} [{fmt:celdas(($adjValDifAFSAssets),($adjValDifOthAFSAssTraCorAddOwnFunds,$adjValDifAFSAssets))}]{fmt:diferencia(abs($adjValDifOthAFSAssTraCorAddOwnFunds - ( ( $adjValDifAFSAssets div 0.7 ) * 0.35 ) ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-44"
+                xlink:label="val_corep_3010-or-44"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-44" xlink:to="men_corep_3010-or-44"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="59"/>
+      <msg:message xlink:label="men_corep_3010-or-44" id="men_corep_3010-or-44"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($c112,$c190,$c241c248,$umbral))} {fmt:valor(($c112),($c112))} [{fmt:celdas(($c112),($c112,$c190,$c241c248,$umbral))}] {fmt:operador('le')} {fmt:valor(( min ( ( max ( ( $c190 , 0 ) ) , 0.006 * sum ( $c241c248 ) * 12.5 ) ) + $umbral ),($c190,$c241c248,$umbral))} [{fmt:celdas(($c190,$c241c248,$umbral),($c112,$c190,$c241c248,$umbral))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-26"
+                xlink:label="val_corep_3010-or-26"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-26" xlink:to="men_corep_3010-or-26"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="60"/>
+      <msg:message xlink:label="men_corep_3010-or-26" id="men_corep_3010-or-26"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($excLimSupAddOwnFunds,$efeAmpTraLimRecProSegCatAdi,$fixTerCumPrefShares,$subLoanCap,$couSpeSupAddOwnFunds,$originalOwnFunds,$threshold))} {fmt:valor(( abs ( $excLimSupAddOwnFunds - $efeAmpTraLimRecProSegCatAdi + max ( ( ( $fixTerCumPrefShares + $subLoanCap + $couSpeSupAddOwnFunds ) - ( 0.50 * $originalOwnFunds ) , 0 ) ) ) ),($excLimSupAddOwnFunds,$efeAmpTraLimRecProSegCatAdi,$fixTerCumPrefShares,$subLoanCap,$couSpeSupAddOwnFunds,$originalOwnFunds))} [{fmt:celdas(($excLimSupAddOwnFunds,$efeAmpTraLimRecProSegCatAdi,$fixTerCumPrefShares,$subLoanCap,$couSpeSupAddOwnFunds,$originalOwnFunds),($excLimSupAddOwnFunds,$efeAmpTraLimRecProSegCatAdi,$fixTerCumPrefShares,$subLoanCap,$couSpeSupAddOwnFunds,$originalOwnFunds,$threshold))}] {fmt:operador('le')} {fmt:valor(($threshold),($threshold))} [{fmt:celdas(($threshold),($excLimSupAddOwnFunds,$efeAmpTraLimRecProSegCatAdi,$fixTerCumPrefShares,$subLoanCap,$couSpeSupAddOwnFunds,$originalOwnFunds,$threshold))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-28"
+                xlink:label="val_corep_3010-or-28"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-28" xlink:to="men_corep_3010-or-28"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="61"/>
+      <msg:message xlink:label="men_corep_3010-or-28" id="men_corep_3010-or-28"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($totalRdo,$couSpeDedTotalOwnFunds))} {fmt:valor(($totalRdo),($totalRdo))} [{fmt:celdas(($totalRdo),($totalRdo,$couSpeDedTotalOwnFunds))}] {fmt:operador('eq')} {fmt:valor(($couSpeDedTotalOwnFunds),($couSpeDedTotalOwnFunds))} [{fmt:celdas(($couSpeDedTotalOwnFunds),($totalRdo,$couSpeDedTotalOwnFunds))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-37"
+                xlink:label="val_corep_3010-or-37"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-37" xlink:to="men_corep_3010-or-37"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="62"/>
+      <msg:message xlink:label="men_corep_3010-or-37" id="men_corep_3010-or-37"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($coeficiente,$rrpp,$superavit))} {fmt:valor(($coeficiente),($coeficiente))} [{fmt:celdas(($coeficiente),($coeficiente,$rrpp,$superavit))}] {fmt:operador('eq')} {fmt:valor(( ( $rrpp div ( $rrpp - $superavit ) ) * 0.08 ),($rrpp,$rrpp,$superavit))} [{fmt:celdas(($rrpp,$rrpp,$superavit),($coeficiente,$rrpp,$superavit))}]{fmt:diferencia(abs($coeficiente - ( $rrpp div ( $rrpp - $superavit ) ) * 0.08 ))}{fmt:umbral($threshold)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-57"
+                xlink:label="val_corep_3010-or-57"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-57" xlink:to="men_corep_3010-or-57"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="63"/>
+      <msg:message xlink:label="men_corep_3010-or-57" id="men_corep_3010-or-57"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($superavit))} {fmt:valor(($superavit),($superavit))} [{fmt:celdas(($superavit),($superavit))}] {fmt:operador('ne')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-38"
+                xlink:label="val_corep_3010-or-38"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-38" xlink:to="men_corep_3010-or-38"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="64"/>
+      <msg:message xlink:label="men_corep_3010-or-38" id="men_corep_3010-or-38"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($ratio))} {fmt:valor(($ratio),($ratio))} [{fmt:celdas(($ratio),($ratio))}] {fmt:operador('ge')} {fmt:valor((0.08),(0.08))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-93"
+                xlink:label="val_corep_3010-or-93"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-93" xlink:to="men_corep_3010-or-93"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="65"/>
+      <msg:message xlink:label="men_corep_3010-or-93" id="men_corep_3010-or-93"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($c310,$c350,$c205,$c445,$c275,$c295,$c309,$c311))} {fmt:valor(($c310),($c310))} [{fmt:celdas(($c310),($c310,$c350,$c205,$c445,$c275,$c295,$c309,$c311))}] {fmt:operador('eq')} max {fmt:valor(( 0 , $c350 - ( $c205 + $c445 + $c275 + $c295 + $c309 + $c311 ) ),($c350,$c205,$c445,$c275,$c295,$c309,$c311))} [{fmt:celdas(($c350,$c205,$c445,$c275,$c295,$c309,$c311),($c310,$c350,$c205,$c445,$c275,$c295,$c309,$c311))}]{fmt:diferencia(abs($c310 - max ( ( 0 , $c350 - ( $c205 + $c445 + $c275 + $c295 + $c309 + $c311 ) ) ) ))}{fmt:umbral($umbral)}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-40"
+                xlink:label="val_corep_3010-or-40"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-40" xlink:to="men_corep_3010-or-40"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="66"/>
+      <msg:message xlink:label="men_corep_3010-or-40" id="men_corep_3010-or-40"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($reqAjustados,$reqAjustadosResto))}({fmt:valor(( sum ( $reqAjustados ) ),($reqAjustados))} [{fmt:celdas(($reqAjustados),($reqAjustados,$reqAjustadosResto))}] {fmt:operador('gt')} {fmt:valor((0),(0))}) and ({fmt:valor(($reqAjustadosResto),($reqAjustadosResto))} [{fmt:celdas(($reqAjustadosResto),($reqAjustados,$reqAjustadosResto))}] {fmt:operador('gt')} {fmt:valor((0),(0))}) or ({fmt:valor(( sum ( $reqAjustados ) ),($reqAjustados))} [{fmt:celdas(($reqAjustados),($reqAjustados,$reqAjustadosResto))}] {fmt:operador('le')} {fmt:valor((0),(0))}) and ({fmt:valor(($reqAjustadosResto),($reqAjustadosResto))} [{fmt:celdas(($reqAjustadosResto),($reqAjustados,$reqAjustadosResto))}] {fmt:operador('le')} {fmt:valor((0),(0))})</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-62"
+                xlink:label="val_corep_3010-or-62"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-62" xlink:to="men_corep_3010-or-62"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="67"/>
+      <msg:message xlink:label="men_corep_3010-or-62" id="men_corep_3010-or-62"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($PartAseguradorasParticipadasProMemoria,$PartAseguradoras))} {fmt:valor(($PartAseguradorasParticipadasProMemoria),($PartAseguradorasParticipadasProMemoria))} [{fmt:celdas(($PartAseguradorasParticipadasProMemoria),($PartAseguradorasParticipadasProMemoria,$PartAseguradoras))}] {fmt:operador('le')} {fmt:valor(($PartAseguradoras),($PartAseguradoras))} [{fmt:celdas(($PartAseguradoras),($PartAseguradorasParticipadasProMemoria,$PartAseguradoras))}]{fmt:diferencia(ai:numeric-difference($PartAseguradorasParticipadasProMemoria, $PartAseguradoras))}{fmt:umbral(ai:numeric-threshold($PartAseguradorasParticipadasProMemoria, $PartAseguradoras))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-63"
+                xlink:label="val_corep_3010-or-63"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-63" xlink:to="men_corep_3010-or-63"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="68"/>
+      <msg:message xlink:label="men_corep_3010-or-63" id="men_corep_3010-or-63"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($PartNoAseguradorasInf10Acciones,$PartNoAseguradorasInf10))} {fmt:valor(($PartNoAseguradorasInf10Acciones),($PartNoAseguradorasInf10Acciones))} [{fmt:celdas(($PartNoAseguradorasInf10Acciones),($PartNoAseguradorasInf10Acciones,$PartNoAseguradorasInf10))}] {fmt:operador('le')} {fmt:valor(($PartNoAseguradorasInf10),($PartNoAseguradorasInf10))} [{fmt:celdas(($PartNoAseguradorasInf10),($PartNoAseguradorasInf10Acciones,$PartNoAseguradorasInf10))}]{fmt:diferencia(ai:numeric-difference($PartNoAseguradorasInf10Acciones, $PartNoAseguradorasInf10))}{fmt:umbral(ai:numeric-threshold($PartNoAseguradorasInf10Acciones, $PartNoAseguradorasInf10))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-64"
+                xlink:label="val_corep_3010-or-64"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-64" xlink:to="men_corep_3010-or-64"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="69"/>
+      <msg:message xlink:label="men_corep_3010-or-64" id="men_corep_3010-or-64"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($PartNoAseguradorasInf10Otras,$PartNoAseguradorasInf10))} {fmt:valor(($PartNoAseguradorasInf10Otras),($PartNoAseguradorasInf10Otras))} [{fmt:celdas(($PartNoAseguradorasInf10Otras),($PartNoAseguradorasInf10Otras,$PartNoAseguradorasInf10))}] {fmt:operador('le')} {fmt:valor(($PartNoAseguradorasInf10),($PartNoAseguradorasInf10))} [{fmt:celdas(($PartNoAseguradorasInf10),($PartNoAseguradorasInf10Otras,$PartNoAseguradorasInf10))}]{fmt:diferencia(ai:numeric-difference($PartNoAseguradorasInf10Otras, $PartNoAseguradorasInf10))}{fmt:umbral(ai:numeric-threshold($PartNoAseguradorasInf10Otras, $PartNoAseguradorasInf10))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-65"
+                xlink:label="val_corep_3010-or-65"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-65" xlink:to="men_corep_3010-or-65"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="70"/>
+      <msg:message xlink:label="men_corep_3010-or-65" id="men_corep_3010-or-65"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($PartNoAseguradorasInf10ProMemoria,$PartNoAseguradorasInf10))} {fmt:valor(($PartNoAseguradorasInf10ProMemoria),($PartNoAseguradorasInf10ProMemoria))} [{fmt:celdas(($PartNoAseguradorasInf10ProMemoria),($PartNoAseguradorasInf10ProMemoria,$PartNoAseguradorasInf10))}] {fmt:operador('le')} {fmt:valor(($PartNoAseguradorasInf10),($PartNoAseguradorasInf10))} [{fmt:celdas(($PartNoAseguradorasInf10),($PartNoAseguradorasInf10ProMemoria,$PartNoAseguradorasInf10))}]{fmt:diferencia(ai:numeric-difference($PartNoAseguradorasInf10ProMemoria, $PartNoAseguradorasInf10))}{fmt:umbral(ai:numeric-threshold($PartNoAseguradorasInf10ProMemoria, $PartNoAseguradorasInf10))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-66"
+                xlink:label="val_corep_3010-or-66"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-66" xlink:to="men_corep_3010-or-66"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="71"/>
+      <msg:message xlink:label="men_corep_3010-or-66" id="men_corep_3010-or-66"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($PartNoAseguradorasSup10Acciones,$PartNoAseguradorasSup10))} {fmt:valor(($PartNoAseguradorasSup10Acciones),($PartNoAseguradorasSup10Acciones))} [{fmt:celdas(($PartNoAseguradorasSup10Acciones),($PartNoAseguradorasSup10Acciones,$PartNoAseguradorasSup10))}] {fmt:operador('le')} {fmt:valor(($PartNoAseguradorasSup10),($PartNoAseguradorasSup10))} [{fmt:celdas(($PartNoAseguradorasSup10),($PartNoAseguradorasSup10Acciones,$PartNoAseguradorasSup10))}]{fmt:diferencia(ai:numeric-difference($PartNoAseguradorasSup10Acciones, $PartNoAseguradorasSup10))}{fmt:umbral(ai:numeric-threshold($PartNoAseguradorasSup10Acciones, $PartNoAseguradorasSup10))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-67"
+                xlink:label="val_corep_3010-or-67"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-67" xlink:to="men_corep_3010-or-67"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="72"/>
+      <msg:message xlink:label="men_corep_3010-or-67" id="men_corep_3010-or-67"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($PartNoAseguradorasSup10Otras,$PartNoAseguradorasSup10))} {fmt:valor(($PartNoAseguradorasSup10Otras),($PartNoAseguradorasSup10Otras))} [{fmt:celdas(($PartNoAseguradorasSup10Otras),($PartNoAseguradorasSup10Otras,$PartNoAseguradorasSup10))}] {fmt:operador('le')} {fmt:valor(($PartNoAseguradorasSup10),($PartNoAseguradorasSup10))} [{fmt:celdas(($PartNoAseguradorasSup10),($PartNoAseguradorasSup10Otras,$PartNoAseguradorasSup10))}]{fmt:diferencia(ai:numeric-difference($PartNoAseguradorasSup10Otras, $PartNoAseguradorasSup10))}{fmt:umbral(ai:numeric-threshold($PartNoAseguradorasSup10Otras, $PartNoAseguradorasSup10))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-68"
+                xlink:label="val_corep_3010-or-68"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-68" xlink:to="men_corep_3010-or-68"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="73"/>
+      <msg:message xlink:label="men_corep_3010-or-68" id="men_corep_3010-or-68"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($PartNoAseguradorasSup10ProMemoria,$PartNoAseguradorasSup10))} {fmt:valor(($PartNoAseguradorasSup10ProMemoria),($PartNoAseguradorasSup10ProMemoria))} [{fmt:celdas(($PartNoAseguradorasSup10ProMemoria),($PartNoAseguradorasSup10ProMemoria,$PartNoAseguradorasSup10))}] {fmt:operador('le')} {fmt:valor(($PartNoAseguradorasSup10),($PartNoAseguradorasSup10))} [{fmt:celdas(($PartNoAseguradorasSup10),($PartNoAseguradorasSup10ProMemoria,$PartNoAseguradorasSup10))}]{fmt:diferencia(ai:numeric-difference($PartNoAseguradorasSup10ProMemoria, $PartNoAseguradorasSup10))}{fmt:umbral(ai:numeric-threshold($PartNoAseguradorasSup10ProMemoria, $PartNoAseguradorasSup10))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-70a"
+                xlink:label="val_corep_3010-or-70a"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-70a" xlink:to="men_corep_3010-or-70a"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="74"/>
+      <msg:message xlink:label="men_corep_3010-or-70a" id="men_corep_3010-or-70a"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($OtherInstrumentsEligibleCapital))} {fmt:valor(($OtherInstrumentsEligibleCapital),($OtherInstrumentsEligibleCapital))} [{fmt:celdas(($OtherInstrumentsEligibleCapital),($OtherInstrumentsEligibleCapital))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-70b"
+                xlink:label="val_corep_3010-or-70b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-70b" xlink:to="men_corep_3010-or-70b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="75"/>
+      <msg:message xlink:label="men_corep_3010-or-70b" id="men_corep_3010-or-70b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($OtherInstrumentsEligibleCapital))} {fmt:valor(($OtherInstrumentsEligibleCapital),($OtherInstrumentsEligibleCapital))} [{fmt:celdas(($OtherInstrumentsEligibleCapital),($OtherInstrumentsEligibleCapital))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-71"
+                xlink:label="val_corep_3010-or-71"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-71" xlink:to="men_corep_3010-or-71"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="76"/>
+      <msg:message xlink:label="men_corep_3010-or-71" id="men_corep_3010-or-71"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($clave0009))} {fmt:valor(($clave0009),($clave0009))} [{fmt:celdas(($clave0009),($clave0009))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-72"
+                xlink:label="val_corep_3010-or-72"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-72" xlink:to="men_corep_3010-or-72"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="77"/>
+      <msg:message xlink:label="men_corep_3010-or-72" id="men_corep_3010-or-72"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($clave0009))} {fmt:valor(($clave0009),($clave0009))} [{fmt:celdas(($clave0009),($clave0009))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-73"
+                xlink:label="val_corep_3010-or-73"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-73" xlink:to="men_corep_3010-or-73"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="78"/>
+      <msg:message xlink:label="men_corep_3010-or-73" id="men_corep_3010-or-73"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($clave0010))} {fmt:valor(($clave0010),($clave0010))} [{fmt:celdas(($clave0010),($clave0010))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-74"
+                xlink:label="val_corep_3010-or-74"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-74" xlink:to="men_corep_3010-or-74"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="79"/>
+      <msg:message xlink:label="men_corep_3010-or-74" id="men_corep_3010-or-74"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($clave0011))} {fmt:valor(($clave0011),($clave0011))} [{fmt:celdas(($clave0011),($clave0011))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-oe-86"
+                xlink:label="val_corep_3010-oe-86"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-oe-86" xlink:to="men_corep_3010-oe-86"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="80"/>
+      <msg:message xlink:label="men_corep_3010-oe-86" id="men_corep_3010-oe-86"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($clave0381Rp10))} {fmt:valor(($clave0381Rp10),($clave0381Rp10))} [{fmt:celdas(($clave0381Rp10),($clave0381Rp10))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-oe-87"
+                xlink:label="val_corep_3010-oe-87"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-oe-87" xlink:to="men_corep_3010-oe-87"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="81"/>
+      <msg:message xlink:label="men_corep_3010-oe-87" id="men_corep_3010-oe-87"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($clave0383Rp10))} {fmt:valor(($clave0383Rp10),($clave0383Rp10))} [{fmt:celdas(($clave0383Rp10),($clave0383Rp10))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-54"
+                xlink:label="val_corep_3010-or-54"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-54" xlink:to="men_corep_3010-or-54"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="82"/>
+      <msg:message xlink:label="men_corep_3010-or-54" id="men_corep_3010-or-54"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($AdditionalOwnFunds,$OriginalOwnFunds))} {fmt:valor(($AdditionalOwnFunds),($AdditionalOwnFunds))} [{fmt:celdas(($AdditionalOwnFunds),($AdditionalOwnFunds,$OriginalOwnFunds))}] {fmt:operador('le')} {fmt:valor(($OriginalOwnFunds),($OriginalOwnFunds))} [{fmt:celdas(($OriginalOwnFunds),($AdditionalOwnFunds,$OriginalOwnFunds))}]</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-55"
+                xlink:label="val_corep_3010-or-55"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-55" xlink:to="men_corep_3010-or-55"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="83"/>
+      <msg:message xlink:label="men_corep_3010-or-55" id="men_corep_3010-or-55"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($AdditionalOwnFunds,$OriginalOwnFunds,$ExcessLimitsAdditionalOwnFunds,$CoreAdditionalOwnFunds,$SupplementaryAdditionalOwnFunds,$OtherCountrySpecificDeductionsAdditionalOwnFunds))}({fmt:valor(($AdditionalOwnFunds),($AdditionalOwnFunds))} [{fmt:celdas(($AdditionalOwnFunds),($AdditionalOwnFunds,$OriginalOwnFunds,$ExcessLimitsAdditionalOwnFunds,$CoreAdditionalOwnFunds,$SupplementaryAdditionalOwnFunds,$OtherCountrySpecificDeductionsAdditionalOwnFunds))}] {fmt:operador('eq')} {fmt:valor(($OriginalOwnFunds),($OriginalOwnFunds))} [{fmt:celdas(($OriginalOwnFunds),($AdditionalOwnFunds,$OriginalOwnFunds,$ExcessLimitsAdditionalOwnFunds,$CoreAdditionalOwnFunds,$SupplementaryAdditionalOwnFunds,$OtherCountrySpecificDeductionsAdditionalOwnFunds))}]) and ({fmt:valor(($ExcessLimitsAdditionalOwnFunds),($ExcessLimitsAdditionalOwnFunds))} [{fmt:celdas(($ExcessLimitsAdditionalOwnFunds),($AdditionalOwnFunds,$OriginalOwnFunds,$ExcessLimitsAdditionalOwnFunds,$CoreAdditionalOwnFunds,$SupplementaryAdditionalOwnFunds,$OtherCountrySpecificDeductionsAdditionalOwnFunds))}] {fmt:operador('eq')} {fmt:valor(( ( $OriginalOwnFunds - $CoreAdditionalOwnFunds - $SupplementaryAdditionalOwnFunds - $OtherCountrySpecificDeductionsAdditionalOwnFunds ) ),($OriginalOwnFunds,$CoreAdditionalOwnFunds,$SupplementaryAdditionalOwnFunds,$OtherCountrySpecificDeductionsAdditionalOwnFunds))} [{fmt:celdas(($OriginalOwnFunds,$CoreAdditionalOwnFunds,$SupplementaryAdditionalOwnFunds,$OtherCountrySpecificDeductionsAdditionalOwnFunds),($AdditionalOwnFunds,$OriginalOwnFunds,$ExcessLimitsAdditionalOwnFunds,$CoreAdditionalOwnFunds,$SupplementaryAdditionalOwnFunds,$OtherCountrySpecificDeductionsAdditionalOwnFunds))}])</msg:message>
+      <link:loc xlink:href="3010-cuadres.xml#val_corep_3010-or-56"
+                xlink:label="val_corep_3010-or-56"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3010-or-56" xlink:to="men_corep_3010-or-56"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="84"/>
+      <msg:message xlink:label="men_corep_3010-or-56" id="men_corep_3010-or-56"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($ExcessLimitsAdditionalOwnFunds))} {fmt:valor(($ExcessLimitsAdditionalOwnFunds),($ExcessLimitsAdditionalOwnFunds))} [{fmt:celdas(($ExcessLimitsAdditionalOwnFunds),($ExcessLimitsAdditionalOwnFunds))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+   </generic:link>
+</link:linkbase>

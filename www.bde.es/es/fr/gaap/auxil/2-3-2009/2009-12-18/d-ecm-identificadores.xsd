@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:d-ecm-iden="http://www.bde.es/es/fr/gaap/auxil/d-ecm-identificadores" xmlns:es-be-cm-geo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dominios/geografica" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:es-be-cm-xpst="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:ref="http://www.xbrl.org/2004/ref" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/gaap/auxil/d-ecm-identificadores" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="d-ecm-identificadores-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="d-ecm-identificadores-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="d-ecm-identificadores-label-es.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dominios/geografica" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dominios/geografica.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types.xsd"/>
+  <xsd:element name="DimensionCodigoIdentificacion" id="d-ecm-iden_DimensionCodigoIdentificacion" type="xbrli:stringItemType" xbrldt:typedDomainRef="#d-ecm-iden_CodigoId" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CodigoId" id="d-ecm-iden_CodigoId">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="DimensionCodigoAgente" id="d-ecm-iden_DimensionCodigoAgente" type="xbrli:stringItemType" xbrldt:typedDomainRef="#d-ecm-iden_CodigoIdAgente" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CodigoIdAgente" id="d-ecm-iden_CodigoIdAgente">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string"/>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="PaisDimension" id="d-ecm-iden_PaisDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Sumas" id="d-ecm-iden_Sumas" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+</xsd:schema>

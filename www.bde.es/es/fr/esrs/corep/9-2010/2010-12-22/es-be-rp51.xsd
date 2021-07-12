@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-rp51="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-rp51" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:es-be-cm-xpst="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" xmlns:d-cu="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-cu-2006-07-01" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:es-be-d-cu="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-cu" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:es-be-p-ri="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-ri" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-rp51" elementFormDefault="qualified">
+  <xsd:annotation>
+      <xsd:appinfo>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-rp51-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-rp51-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-rp51-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-rp51-reference.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp51" id="rt_rp51">
+            <link:definition>Presentación de la Plantillas RP51</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp51/SectionGlobal" id="rt_rp51_SectionGlobal">
+            <link:definition>Sección para el Global de las Divisas</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp51/SectionGlobalHypercube" id="rt_rp51_SectionGlobalHypercube">
+            <link:definition>Hipercubo donde se trata la sección del Global</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp51/SectionUnicas" id="rt_rp51_SectionUnicas">
+            <link:definition>Sección para las Divisas Individuales</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp51/SectionUnicasHypercube" id="rt_rp51_SectionUnicasHypercube">
+            <link:definition>Hipercubo donde se trata la sección de Divisas individuales</link:definition>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp51/ClavesUnicas" id="rt_rp51_ClavesUnicas">
+            <link:definition>Presentación para la parte de Claves Individuales</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+         </link:roleType>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/rp51/Total" id="rt_rp51_Total">
+            <link:definition>Presentación para la parte del Global</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+         </link:roleType>
+      </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-ri" schemaLocation="es-be-p-ri.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-cu" schemaLocation="es-be-d-cu.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types.xsd"/>
+  <xsd:import namespace="http://www.xbrl.org/2006/ref" schemaLocation="http://www.xbrl.org/2006/ref-2006-02-27.xsd"/>
+  <xsd:element name="FormRp51" id="es-be-rp51_FormRp51" type="xbrli:stringItemType" substitutionGroup="es-be-cm-xpst:formItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="ClaveDivisa" id="es-be-rp51_ClaveDivisa" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Row1Rp51" id="es-be-rp51_Row1Rp51" type="xbrli:stringItemType" substitutionGroup="es-be-cm-xpst:rowItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Column1Rp51" id="es-be-rp51_Column1Rp51" type="xbrli:stringItemType" substitutionGroup="es-be-cm-xpst:columnItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="SectionGlobalHypercube" id="es-be-rp51_SectionGlobalHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="SectionUnicasHypercube" id="es-be-rp51_SectionUnicasHypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DivisaGlobalAbstract" id="es-be-rp51_DivisaGlobalAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>

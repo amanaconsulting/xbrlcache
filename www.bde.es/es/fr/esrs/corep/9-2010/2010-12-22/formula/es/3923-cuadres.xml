@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:d-ty="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-ty-2006-07-01"
+               xmlns:p-cm-cr="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-cm-cr-2006-07-01"
+               xmlns:d-cr="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-cr-2006-07-01"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_3923_cuadres_1"
+                           id="ref_atributosCuadres_3923_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_3923_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_3923_cuadres_1"
+                           id="ref_moduloDefinicion_3923_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>solv_i</frRef:Modulo>
+         <frRef:Instancia>Msolv_i</frRef:Instancia>
+         <frRef:Estado>3923</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_3923_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3923-or-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3923-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3923-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3923-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3923-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3923-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3923-or-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3923-sh-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <link:loc xlink:href="comun.xml#var_UmbralBasico2" xlink:label="var_UmbralBasico2"
+                xlink:type="locator"/>
+      <link:loc xlink:href="comun.xml#var_UmbralBasico3" xlink:label="var_UmbralBasico3"
+                xlink:type="locator"/>
+      <uf:generalMeasures test="true()" xlink:label="fil_AnyUnit" id="fil_AnyUnit" xlink:type="resource"/>
+      <va:valueAssertion xlink:label="val_corep_3923-or-9"
+                         test="every $i in $pdGradoDeudores satisfies $i lt 0.8"
+                         id="val_corep_3923-or-9"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="pdGradoDeudores" xlink:from="val_corep_3923-or-9"
+                            xlink:to="var_p-cm-cr_PdAssignedObligorGradePoold10e31"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_corep_3923-or-9" id="lab_val_corep_3923-or-9"
+                   xlink:type="resource"
+                   xml:lang="es">PD no superior a 80%</label:label>
+      <generic:arc xlink:from="val_corep_3923-or-9" xlink:to="lab_val_corep_3923-or-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-cm-cr_PdAssignedObligorGradePoold10e31"
+                             bindAsSequence="true"
+                             id="var_p-cm-cr_PdAssignedObligorGradePoold10e31"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_PdAssignedObligorGradePoold10e31"
+                                  xlink:to="fil_d10e33"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_PdAssignedObligorGradePoold10e31"
+                                  xlink:to="fil_p-cm-cr_PdAssignedObligorGradePoold10e38"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_PdAssignedObligorGradePoold10e31"
+                                  xlink:to="fil_d10e46"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:typedDimension xlink:label="fil_d10e33" id="fil_d10e33" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <cf:conceptName xlink:label="fil_p-cm-cr_PdAssignedObligorGradePoold10e38"
+                      id="fil_p-cm-cr_PdAssignedObligorGradePoold10e38"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:PdAssignedObligorGradePool</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <gf:general test=". ne 1" xlink:label="fil_d10e46" id="fil_d10e46" xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3923-or-9" id="ref_val_corep_3923-or-9"
+                           xlink:type="resource">
+         <ref:Number>corep:3923-or-9</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3923-or-9" xlink:to="ref_val_corep_3923-or-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3923-or-1"
+                         test="(($expectedLossAmount * 12.5) + $riskWeightedExposureAmounts) - ($exposureValue * 12.5) le $threshold "
+                         id="val_corep_3923-or-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-or-1" xlink:to="fil_d10e64"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-or-1"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBEquityPD-LGDApproachd10e69"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableArc name="expectedLossAmount" xlink:from="val_corep_3923-or-1"
+                            xlink:to="var_p-cm-cr_ExpectedLossAmountd10e83"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="riskWeightedExposureAmounts" xlink:from="val_corep_3923-or-1"
+                            xlink:to="var_p-cm-cr_RiskWeightedExposureAmountsd10e100"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="exposureValue" xlink:from="val_corep_3923-or-1"
+                            xlink:to="var_p-cm-cr_ExposureValued10e116"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="threshold" xlink:from="val_corep_3923-or-1" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <label:label xlink:label="lab_val_corep_3923-or-1" id="lab_val_corep_3923-or-1"
+                   xlink:type="resource"
+                   xml:lang="es">Para cada grado de deudores: Columna 14 x 12,5 + Columna 12 menor o igual a Columna 9
+            x 12,5</label:label>
+      <generic:arc xlink:from="val_corep_3923-or-1" xlink:to="lab_val_corep_3923-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:typedDimension xlink:label="fil_d10e64" id="fil_d10e64" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBEquityPD-LGDApproachd10e69"
+                            id="fil_CreditRiskDim_CreditRiskIRBEquityPD-LGDApproachd10e69"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBEquityPD-LGDApproach</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-cr_ExpectedLossAmountd10e83" bindAsSequence="false"
+                             id="var_p-cm-cr_ExpectedLossAmountd10e83"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_ExpectedLossAmountd10e83"
+                                  xlink:to="fil_p-cm-cr_ExpectedLossAmountd10e85"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExpectedLossAmountd10e85"
+                      id="fil_p-cm-cr_ExpectedLossAmountd10e85"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExpectedLossAmount</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-cm-cr_RiskWeightedExposureAmountsd10e100"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_RiskWeightedExposureAmountsd10e100"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_RiskWeightedExposureAmountsd10e100"
+                                  xlink:to="fil_p-cm-cr_RiskWeightedExposureAmountsd10e102"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_RiskWeightedExposureAmountsd10e102"
+                      id="fil_p-cm-cr_RiskWeightedExposureAmountsd10e102"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:RiskWeightedExposureAmounts</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-cm-cr_ExposureValued10e116" bindAsSequence="false"
+                             id="var_p-cm-cr_ExposureValued10e116"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_ExposureValued10e116"
+                                  xlink:to="fil_p-cm-cr_ExposureValued10e118"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureValued10e118"
+                      id="fil_p-cm-cr_ExposureValued10e118"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureValue</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3923-or-1" id="ref_val_corep_3923-or-1"
+                           xlink:type="resource">
+         <ref:Number>corep:3923-or-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3923-or-1" xlink:to="ref_val_corep_3923-or-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3923-or-2" test="$pdAssignedObligorGradePool ge 0.0009"
+                         id="val_corep_3923-or-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-or-2" xlink:to="fil_d10e152"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="pdAssignedObligorGradePool" xlink:from="val_corep_3923-or-2"
+                            xlink:to="var_p-cm-cr_PdAssignedObligorGradePoold10e140"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_corep_3923-or-2" id="lab_val_corep_3923-or-2"
+                   xlink:type="resource"
+                   xml:lang="es">Para cada grado de deudores: Columna 1 mayor o igual a 0,09%</label:label>
+      <generic:arc xlink:from="val_corep_3923-or-2" xlink:to="lab_val_corep_3923-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-cm-cr_PdAssignedObligorGradePoold10e140"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_PdAssignedObligorGradePoold10e140"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_PdAssignedObligorGradePoold10e140"
+                                  xlink:to="fil_p-cm-cr_PdAssignedObligorGradePoold10e142"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_PdAssignedObligorGradePoold10e142"
+                      id="fil_p-cm-cr_PdAssignedObligorGradePoold10e142"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:PdAssignedObligorGradePool</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:typedDimension xlink:label="fil_d10e152" id="fil_d10e152" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <reference:reference xlink:label="ref_val_corep_3923-or-2" id="ref_val_corep_3923-or-2"
+                           xlink:type="resource">
+         <ref:Number>corep:3923-or-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3923-or-2" xlink:to="ref_val_corep_3923-or-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3923-or-3" test="$pdAssignedObligorGradePool le 1"
+                         id="val_corep_3923-or-3"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-or-3" xlink:to="fil_d10e179"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="pdAssignedObligorGradePool" xlink:from="val_corep_3923-or-3"
+                            xlink:to="var_p-cm-cr_PdAssignedObligorGradePoold10e167"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_corep_3923-or-3" id="lab_val_corep_3923-or-3"
+                   xlink:type="resource"
+                   xml:lang="es">Para cada grado de deudores: Columna 1 menor o igual a 100%</label:label>
+      <generic:arc xlink:from="val_corep_3923-or-3" xlink:to="lab_val_corep_3923-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-cm-cr_PdAssignedObligorGradePoold10e167"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_PdAssignedObligorGradePoold10e167"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_PdAssignedObligorGradePoold10e167"
+                                  xlink:to="fil_p-cm-cr_PdAssignedObligorGradePoold10e169"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_PdAssignedObligorGradePoold10e169"
+                      id="fil_p-cm-cr_PdAssignedObligorGradePoold10e169"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:PdAssignedObligorGradePool</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:typedDimension xlink:label="fil_d10e179" id="fil_d10e179" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <reference:reference xlink:label="ref_val_corep_3923-or-3" id="ref_val_corep_3923-or-3"
+                           xlink:type="resource">
+         <ref:Number>corep:3923-or-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3923-or-3" xlink:to="ref_val_corep_3923-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3923-or-4" test="$exposureWeightedAverageLgd ge 0.65"
+                         id="val_corep_3923-or-4"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-or-4" xlink:to="fil_d10e207"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="exposureWeightedAverageLgd" xlink:from="val_corep_3923-or-4"
+                            xlink:to="var_p-cm-cr_ExposureWeightedAverageLgdd10e195"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_corep_3923-or-4" id="lab_val_corep_3923-or-4"
+                   xlink:type="resource"
+                   xml:lang="es">Para cada grado de deudores: Columna 11 mayor o igual a 65%</label:label>
+      <generic:arc xlink:from="val_corep_3923-or-4" xlink:to="lab_val_corep_3923-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-cm-cr_ExposureWeightedAverageLgdd10e195"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_ExposureWeightedAverageLgdd10e195"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_ExposureWeightedAverageLgdd10e195"
+                                  xlink:to="fil_p-cm-cr_ExposureWeightedAverageLgdd10e197"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureWeightedAverageLgdd10e197"
+                      id="fil_p-cm-cr_ExposureWeightedAverageLgdd10e197"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureWeightedAverageLgd</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:typedDimension xlink:label="fil_d10e207" id="fil_d10e207" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <reference:reference xlink:label="ref_val_corep_3923-or-4" id="ref_val_corep_3923-or-4"
+                           xlink:type="resource">
+         <ref:Number>corep:3923-or-4</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3923-or-4" xlink:to="ref_val_corep_3923-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3923-or-5" test="$exposureWeightedAverageLgd le 0.9"
+                         id="val_corep_3923-or-5"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-or-5" xlink:to="fil_d10e234"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="exposureWeightedAverageLgd" xlink:from="val_corep_3923-or-5"
+                            xlink:to="var_p-cm-cr_ExposureWeightedAverageLgdd10e222"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <label:label xlink:label="lab_val_corep_3923-or-5" id="lab_val_corep_3923-or-5"
+                   xlink:type="resource"
+                   xml:lang="es">Para cada grado de deudores: Columna 11 menor o igual a 90%</label:label>
+      <generic:arc xlink:from="val_corep_3923-or-5" xlink:to="lab_val_corep_3923-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-cm-cr_ExposureWeightedAverageLgdd10e222"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_ExposureWeightedAverageLgdd10e222"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_ExposureWeightedAverageLgdd10e222"
+                                  xlink:to="fil_p-cm-cr_ExposureWeightedAverageLgdd10e224"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureWeightedAverageLgdd10e224"
+                      id="fil_p-cm-cr_ExposureWeightedAverageLgdd10e224"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureWeightedAverageLgd</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:typedDimension xlink:label="fil_d10e234" id="fil_d10e234" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <reference:reference xlink:label="ref_val_corep_3923-or-5" id="ref_val_corep_3923-or-5"
+                           xlink:type="resource">
+         <ref:Number>corep:3923-or-5</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3923-or-5" xlink:to="ref_val_corep_3923-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3923-or-6"
+                         test="if ($expOrig eq 0) then $expPond eq 0 else $expPond ne 0"
+                         id="val_corep_3923-or-6"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-or-6" xlink:to="fil_d10e245"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="expOrig" xlink:from="val_corep_3923-or-6"
+                            xlink:to="var_p-cm-cr_OriginalExposurePreConversionFactorsd10e252"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="expPond" xlink:from="val_corep_3923-or-6"
+                            xlink:to="var_p-cm-cr_RiskWeightedExposureAmountsd10e266"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3923-or-6" id="lab_val_corep_3923-or-6"
+                   xlink:type="resource"
+                   xml:lang="es">Si hay importe en la columna 2 tiene que haber importe en la columna 12 y
+            viceversa</label:label>
+      <generic:arc xlink:from="val_corep_3923-or-6" xlink:to="lab_val_corep_3923-or-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:typedDimension xlink:label="fil_d10e245" id="fil_d10e245" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_p-cm-cr_OriginalExposurePreConversionFactorsd10e252"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_OriginalExposurePreConversionFactorsd10e252"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_OriginalExposurePreConversionFactorsd10e252"
+                                  xlink:to="fil_p-cm-cr_OriginalExposurePreConversionFactorsd10e254"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_OriginalExposurePreConversionFactorsd10e254"
+                      id="fil_p-cm-cr_OriginalExposurePreConversionFactorsd10e254"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:OriginalExposurePreConversionFactors</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-cm-cr_RiskWeightedExposureAmountsd10e266"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_RiskWeightedExposureAmountsd10e266"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_RiskWeightedExposureAmountsd10e266"
+                                  xlink:to="fil_p-cm-cr_RiskWeightedExposureAmountsd10e268"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_RiskWeightedExposureAmountsd10e268"
+                      id="fil_p-cm-cr_RiskWeightedExposureAmountsd10e268"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:RiskWeightedExposureAmounts</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3923-or-6" id="ref_val_corep_3923-or-6"
+                           xlink:type="resource">
+         <ref:Number>corep:3923-or-6</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3923-or-6" xlink:to="ref_val_corep_3923-or-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3923-sh-1"
+                         test="$exposicionValor - ($exposicionReasignada + $exposicionReasignadaCuentasOrden - $exposicionValorCuentasOrden) le $threshold"
+                         id="val_corep_3923-sh-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-sh-1"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBEquityPD-LGDApproachd10e284"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3923-sh-1" xlink:to="fil_d10e292"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableArc name="exposicionValor" xlink:from="val_corep_3923-sh-1"
+                            xlink:to="var_p-cm-cr_ExposureValued10e301"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="exposicionReasignada" xlink:from="val_corep_3923-sh-1"
+                            xlink:to="var_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e318"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="exposicionReasignadaCuentasOrden" xlink:from="val_corep_3923-sh-1"
+                            xlink:to="var_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e334"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="exposicionValorCuentasOrden" xlink:from="val_corep_3923-sh-1"
+                            xlink:to="var_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e350"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="threshold" xlink:from="val_corep_3923-sh-1" xlink:to="var_UmbralBasico3"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <label:label xlink:label="lab_val_corep_3923-sh-1" id="lab_val_corep_3923-sh-1"
+                   xlink:type="resource"
+                   xml:lang="es">Valor de la exposición no consistente con la exposición reasignada y las partidas incluidas en las cuentas de orden</label:label>
+      <generic:arc xlink:from="val_corep_3923-sh-1" xlink:to="lab_val_corep_3923-sh-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBEquityPD-LGDApproachd10e284"
+                            id="fil_CreditRiskDim_CreditRiskIRBEquityPD-LGDApproachd10e284"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBEquityPD-LGDApproach</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:typedDimension xlink:label="fil_d10e292" id="fil_d10e292" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_p-cm-cr_ExposureValued10e301" bindAsSequence="false"
+                             id="var_p-cm-cr_ExposureValued10e301"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-cm-cr_ExposureValued10e301"
+                                  xlink:to="fil_p-cm-cr_ExposureValued10e303"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureValued10e303"
+                      id="fil_p-cm-cr_ExposureValued10e303"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureValue</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e318"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e318"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e318"
+                                  xlink:to="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e320"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e320"
+                      id="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e320"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureCRMSubstitutionEffectsPreConversionFactors</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e334"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e334"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e334"
+                                  xlink:to="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e336"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e336"
+                      id="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e336"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItems</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e350"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e350"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e350"
+                                  xlink:to="fil_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e352"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e352"
+                      id="fil_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e352"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureValueOfWhichOffBalanceSheetItems</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3923-sh-1" id="ref_val_corep_3923-sh-1"
+                           xlink:type="resource">
+         <ref:Number>corep:3923-sh-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3923-sh-1" xlink:to="ref_val_corep_3923-sh-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

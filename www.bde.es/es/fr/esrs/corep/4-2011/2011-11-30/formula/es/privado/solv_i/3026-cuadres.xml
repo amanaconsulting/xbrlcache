@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:d-ty="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-ty-2006-07-01"
+               xmlns:es-be-d-ty="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-ty"
+               xmlns:p-sd="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-sd-2006-07-01"
+               xmlns:es-be-p-sd="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-sd"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_3026_cuadres_1"
+                           id="ref_atributosCuadres_3026_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>privado</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_3026_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_3026_cuadres_1"
+                           id="ref_moduloDefinicion_3026_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>solv_i</frRef:Modulo>
+         <frRef:Instancia>Msolv_i</frRef:Instancia>
+         <frRef:Estado>3026</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_3026_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3026-ci-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3026-ci-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3026-ci-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <uf:generalMeasures test="true()" xlink:label="fil_AnyUnit" id="fil_AnyUnit" xlink:type="resource"/>
+      <va:valueAssertion xlink:label="val_corep_3026-ci-2"
+                         test="ai:numeric-greater-equal-than((1.10 * $c0006), ai:numeric-add(($c1402,$c1403,$c0015)))"
+                         id="val_corep_3026-ci-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3026-ci-2" xlink:to="fil_d10e31"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3026-ci-2" xlink:to="fil_d10e36"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableArc name="tipoTitulacion" xlink:from="val_corep_3026-ci-2"
+                            xlink:to="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e43"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="c0005" xlink:from="val_corep_3026-ci-2"
+                            xlink:to="var_p-sd_OriginationDatemmyyyyd10e59"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="c0006" xlink:from="val_corep_3026-ci-2"
+                            xlink:to="var_p-sd_TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDated10e76"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="c1402" xlink:from="val_corep_3026-ci-2"
+                            xlink:to="var_es-be-p-sd_TramosMayorPrioridadOrdenPrelacionPagosd10e92"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="c1403" xlink:from="val_corep_3026-ci-2"
+                            xlink:to="var_es-be-p-sd_TramosIntermediosd10e108"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="c0015" xlink:from="val_corep_3026-ci-2"
+                            xlink:to="var_p-sd_FirstLossd10e124"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <generic:arc xlink:from="val_corep_3026-ci-2" xlink:to="pre_d10e138"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3026-ci-2" id="lab_val_corep_3026-ci-2"
+                   xlink:type="resource"
+                   xml:lang="es">El total de exposiciones titulizadas a la facha de originación no puede ser menor que
+				la estructura de titulización salvo en los programas ABCP o la emisión sea abierta por
+				el activo y el pasivo</label:label>
+      <generic:arc xlink:from="val_corep_3026-ci-2" xlink:to="lab_val_corep_3026-ci-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:typedDimension xlink:label="fil_d10e31" id="fil_d10e31" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:SecuritizationInternalCodeDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <df:typedDimension xlink:label="fil_d10e36" id="fil_d10e36" xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-ty:DimensionCodigoEntidad</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e43"
+                             bindAsSequence="false"
+                             id="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e43"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e43"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e43"
+                                  xlink:to="fil_p-sd_SecuritisationTypeTraditionalSyntheticd10e47"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sd_SecuritisationTypeTraditionalSyntheticd10e47"
+                      id="fil_p-sd_SecuritisationTypeTraditionalSyntheticd10e47"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sd:SecuritisationTypeTraditionalSynthetic</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sd_OriginationDatemmyyyyd10e59" bindAsSequence="false"
+                             id="var_p-sd_OriginationDatemmyyyyd10e59"
+                             xlink:type="resource"
+                             fallbackValue="()"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_p-sd_OriginationDatemmyyyyd10e59"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sd_OriginationDatemmyyyyd10e59"
+                                  xlink:to="fil_p-sd_OriginationDatemmyyyyd10e63"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sd_OriginationDatemmyyyyd10e63"
+                      id="fil_p-sd_OriginationDatemmyyyyd10e63"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sd:OriginationDatemmyyyy</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sd_TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDated10e76"
+                             bindAsSequence="false"
+                             id="var_p-sd_TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDated10e76"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-sd_TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDated10e76"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-sd_TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDated10e76"
+                                  xlink:to="fil_p-sd_TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDated10e80"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sd_TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDated10e80"
+                      id="fil_p-sd_TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDated10e80"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sd:TotalAmountOfSecuritisedExposuresOriginatedAtOriginationDate</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-sd_TramosMayorPrioridadOrdenPrelacionPagosd10e92"
+                             bindAsSequence="false"
+                             id="var_es-be-p-sd_TramosMayorPrioridadOrdenPrelacionPagosd10e92"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-sd_TramosMayorPrioridadOrdenPrelacionPagosd10e92"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_es-be-p-sd_TramosMayorPrioridadOrdenPrelacionPagosd10e92"
+                                  xlink:to="fil_es-be-p-sd_TramosMayorPrioridadOrdenPrelacionPagosd10e96"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_es-be-p-sd_TramosMayorPrioridadOrdenPrelacionPagosd10e96"
+                      id="fil_es-be-p-sd_TramosMayorPrioridadOrdenPrelacionPagosd10e96"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-sd:TramosMayorPrioridadOrdenPrelacionPagos</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-sd_TramosIntermediosd10e108" bindAsSequence="false"
+                             id="var_es-be-p-sd_TramosIntermediosd10e108"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-sd_TramosIntermediosd10e108"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-sd_TramosIntermediosd10e108"
+                                  xlink:to="fil_es-be-p-sd_TramosIntermediosd10e112"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_es-be-p-sd_TramosIntermediosd10e112"
+                      id="fil_es-be-p-sd_TramosIntermediosd10e112"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-sd:TramosIntermedios</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sd_FirstLossd10e124" bindAsSequence="false"
+                             id="var_p-sd_FirstLossd10e124"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sd_FirstLossd10e124"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sd_FirstLossd10e124"
+                                  xlink:to="fil_p-sd_FirstLossd10e128"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sd_FirstLossd10e128" id="fil_p-sd_FirstLossd10e128"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sd:FirstLoss</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:precondition test="(exists($c0005) and ($c0006 ne 0)) and ((substring($tipoTitulacion,6,1) eq 'C') or (substring($tipoTitulacion,7,1) eq 'C'))"
+                             xlink:label="pre_d10e138"
+                             id="pre_d10e138"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3026-ci-2" id="ref_val_corep_3026-ci-2"
+                           xlink:type="resource">
+         <ref:Number>corep:3026-ci-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3026-ci-2" xlink:to="ref_val_corep_3026-ci-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3026-ci-3" test="$retencion eq 6"
+                         id="val_corep_3026-ci-3"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="fecha" xlink:from="val_corep_3026-ci-3"
+                            xlink:to="var_p-sd_OriginationDatemmyyyyd10e151"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="retencion" xlink:from="val_corep_3026-ci-3"
+                            xlink:to="var_es-be-p-sd_TipoRetencionAplicadad10e167"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3026-ci-3" xlink:to="pre_d10e181"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3026-ci-3" id="lab_val_corep_3026-ci-3"
+                   xlink:type="resource"
+                   xml:lang="es">Exención de retención a titulizaciones originadas antes de enero 2011</label:label>
+      <generic:arc xlink:from="val_corep_3026-ci-3" xlink:to="lab_val_corep_3026-ci-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sd_OriginationDatemmyyyyd10e151" bindAsSequence="false"
+                             id="var_p-sd_OriginationDatemmyyyyd10e151"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sd_OriginationDatemmyyyyd10e151"
+                                  xlink:to="fil_p-sd_OriginationDatemmyyyyd10e153"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_p-sd_OriginationDatemmyyyyd10e151"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sd_OriginationDatemmyyyyd10e153"
+                      id="fil_p-sd_OriginationDatemmyyyyd10e153"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sd:OriginationDatemmyyyy</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-sd_TipoRetencionAplicadad10e167"
+                             bindAsSequence="false"
+                             id="var_es-be-p-sd_TipoRetencionAplicadad10e167"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-sd_TipoRetencionAplicadad10e167"
+                                  xlink:to="fil_es-be-p-sd_TipoRetencionAplicadad10e169"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-sd_TipoRetencionAplicadad10e167"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_es-be-p-sd_TipoRetencionAplicadad10e169"
+                      id="fil_es-be-p-sd_TipoRetencionAplicadad10e169"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-sd:TipoRetencionAplicada</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:precondition test="xs:integer(substring(xs:string($fecha),1,4)) lt 2011"
+                             xlink:label="pre_d10e181"
+                             id="pre_d10e181"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3026-ci-3" id="ref_val_corep_3026-ci-3"
+                           xlink:type="resource">
+         <ref:Number>corep:3026-ci-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3026-ci-3" xlink:to="ref_val_corep_3026-ci-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3026-ci-4" test="$retencion eq 7"
+                         id="val_corep_3026-ci-4"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="titulizacion" xlink:from="val_corep_3026-ci-4"
+                            xlink:to="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e191"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="retencion" xlink:from="val_corep_3026-ci-4"
+                            xlink:to="var_es-be-p-sd_TipoRetencionAplicadad10e207"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="c0005" xlink:from="val_corep_3026-ci-4"
+                            xlink:to="var_p-sd_OriginationDatemmyyyyd10e223"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <generic:arc xlink:from="val_corep_3026-ci-4" xlink:to="pre_d10e237"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="val_corep_3026-ci-4" xlink:to="pre_d10e240"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="2"/>
+      <label:label xlink:label="lab_val_corep_3026-ci-4" id="lab_val_corep_3026-ci-4"
+                   xlink:type="resource"
+                   xml:lang="es">No aplicabilidad de retención a ciertas titulizaciones de pasivo.</label:label>
+      <generic:arc xlink:from="val_corep_3026-ci-4" xlink:to="lab_val_corep_3026-ci-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e191"
+                             bindAsSequence="false"
+                             id="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e191"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e191"
+                                  xlink:to="fil_p-sd_SecuritisationTypeTraditionalSyntheticd10e193"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_p-sd_SecuritisationTypeTraditionalSyntheticd10e191"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sd_SecuritisationTypeTraditionalSyntheticd10e193"
+                      id="fil_p-sd_SecuritisationTypeTraditionalSyntheticd10e193"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sd:SecuritisationTypeTraditionalSynthetic</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_es-be-p-sd_TipoRetencionAplicadad10e207"
+                             bindAsSequence="false"
+                             id="var_es-be-p-sd_TipoRetencionAplicadad10e207"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-sd_TipoRetencionAplicadad10e207"
+                                  xlink:to="fil_es-be-p-sd_TipoRetencionAplicadad10e209"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_es-be-p-sd_TipoRetencionAplicadad10e207"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_es-be-p-sd_TipoRetencionAplicadad10e209"
+                      id="fil_es-be-p-sd_TipoRetencionAplicadad10e209"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>es-be-p-sd:TipoRetencionAplicada</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sd_OriginationDatemmyyyyd10e223" bindAsSequence="false"
+                             id="var_p-sd_OriginationDatemmyyyyd10e223"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_p-sd_OriginationDatemmyyyyd10e223"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sd_OriginationDatemmyyyyd10e223"
+                                  xlink:to="fil_p-sd_OriginationDatemmyyyyd10e227"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sd_OriginationDatemmyyyyd10e227"
+                      id="fil_p-sd_OriginationDatemmyyyyd10e227"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sd:OriginationDatemmyyyy</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:precondition test="fn:upper-case(substring($titulizacion,2,1)) eq 'P'"
+                             xlink:label="pre_d10e237"
+                             id="pre_d10e237"
+                             xlink:type="resource"/>
+      <variable:precondition test="xs:integer(substring(xs:string($c0005),1,4)) ge 2011"
+                             xlink:label="pre_d10e240"
+                             id="pre_d10e240"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3026-ci-4" id="ref_val_corep_3026-ci-4"
+                           xlink:type="resource">
+         <ref:Number>corep:3026-ci-4</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3026-ci-4" xlink:to="ref_val_corep_3026-ci-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

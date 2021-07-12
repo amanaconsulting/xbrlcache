@@ -1,0 +1,2800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:d-ty="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-ty-2006-07-01"
+               xmlns:p-cm-cr="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-cm-cr-2006-07-01"
+               xmlns:d-cr="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-cr-2006-07-01"
+               xmlns:p-ci="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-ci-2006-07-01"
+               xmlns:p-cm-ca="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-cm-ca-2006-07-01"
+               xmlns:d-oe="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-oe-2006-07-01"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_3922_3022_cuadres_1"
+                           id="ref_atributosCuadres_3922_3022_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_3922_3022_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_3922_3022_cuadres_1"
+                           id="ref_moduloDefinicion_3922_3022_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>solv_i</frRef:Modulo>
+         <frRef:Instancia>Msolv_i</frRef:Instancia>
+         <frRef:Estado>3922</frRef:Estado>
+         <frRef:Estado>3022</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_3922_3022_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1a"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1c"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1e"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1f"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1g"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1h"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1i"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="10"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1j"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="11"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1k"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="12"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1l"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="13"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1m"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="14"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1n"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="15"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1o"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="16"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1p"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="17"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1q"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="18"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1r"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="19"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1s"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="20"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1t"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="21"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1u"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="22"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1v"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="23"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3922-oe-1w"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="24"/>
+      <uf:generalMeasures test="true()" xlink:label="fil_AnyUnit" id="fil_AnyUnit" xlink:type="resource"/>
+      <df:typedDimension xlink:label="fil_CualquierDistGradoDeudor" id="fil_CualquierDistGradoDeudor"
+                         xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <cf:conceptName xlink:label="fil_ConceptosNoSumables3922" id="fil_ConceptosNoSumables3922"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:PdAssignedObligorGradePool</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureWeightedAverageLgd</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-2"
+                         test="if ($pdAssigned eq 0) then count($columns) eq 0 else count($columns) ne 0"
+                         id="val_corep_3922-oe-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableArc name="pdAssigned" xlink:from="val_corep_3922-oe-2"
+                            xlink:to="var_p-cm-cr_PdAssignedObligorGradePoolCreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e48"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columns" xlink:from="val_corep_3922-oe-2"
+                            xlink:to="var_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e75"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-2" id="lab_val_corep_3922-oe-2"
+                   xlink:type="resource"
+                   xml:lang="es">Sobra estado 3922, clave 5 (3022) igual a 0</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-2" xlink:to="lab_val_corep_3922-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-cm-cr_PdAssignedObligorGradePoolCreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e48"
+                             bindAsSequence="false"
+                             id="var_p-cm-cr_PdAssignedObligorGradePoolCreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e48"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_PdAssignedObligorGradePoolCreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e48"
+                                  xlink:to="fil_p-cm-cr_PdAssignedObligorGradePoold10e50"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_PdAssignedObligorGradePoolCreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e48"
+                                  xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e58"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_p-cm-cr_PdAssignedObligorGradePoolCreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e48"
+                                  xlink:to="fil_d10e66"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_PdAssignedObligorGradePoold10e50"
+                      id="fil_p-cm-cr_PdAssignedObligorGradePoold10e50"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:PdAssignedObligorGradePool</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e58"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e58"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:typedDimension xlink:label="fil_d10e66" id="fil_d10e66" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e75"
+                             bindAsSequence="true"
+                             id="var_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e75"
+                             xlink:type="resource"
+                             fallbackValue="()"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e75"
+                                  xlink:to="fil_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e77"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e75"
+                                  xlink:to="fil_d10e139"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e75"
+                                  xlink:to="fil_d10e144"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e77"
+                      id="fil_p-cm-cr_PdAssignedObligorGradePool_OrOthersd10e77"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:PdAssignedObligorGradePool</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:OriginalExposurePreConversionFactors</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:OfWhichArisingCounterpartyCreditRisk</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:UnfundedCreditProtectionGuarantees</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:UnfundedCreditProtectionCreditDerivatives</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:OtherFundedCreditProtection</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:SubstitutionExposureCRMTotalOutflows</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:SubstitutionExposureCRMTotalInflows</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureCRMSubstitutionEffectsPreConversionFactors</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItems</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureValue</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureValueOfWhichOffBalanceSheetItems</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:Guarantees</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:CreditDerivatives</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:OwnEstimatesLGDsUsedOtherFundedCreditProtection</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:EligibleFinancialCollateral</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:RealEstate</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:OtherPhysicalCollateral</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:Receivables</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:UnfundedCreditProtection</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureWeightedAverageLgd</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ci:ExposureWeightedAverageMaturityValueDays</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:RiskWeightedExposureAmounts</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-ca:CreditRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExpectedLossAmount</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-cr:MemorandumItemsValueAdjustmentsProvisions</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:typedDimension xlink:label="fil_d10e139" id="fil_d10e139" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <uf:generalMeasures test="true()" xlink:label="fil_d10e144" id="fil_d10e144" xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-2" id="ref_val_corep_3922-oe-2"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-2" xlink:to="ref_val_corep_3922-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1a"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1a"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1a"
+                                     xlink:to="fil_p-cm-cr_OriginalExposurePreConversionFactorsd10e160"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1a"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e168"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1a"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e176"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1a" xlink:to="var_d10e183"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1a" xlink:to="var_d10e197"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1a" xlink:to="pre_d10e206"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1a" id="lab_val_corep_3922-oe-1a"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1a" xlink:to="lab_val_corep_3922-oe-1a"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_OriginalExposurePreConversionFactorsd10e160"
+                      id="fil_p-cm-cr_OriginalExposurePreConversionFactorsd10e160"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:OriginalExposurePreConversionFactors</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e168"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e168"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e176"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e176"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e183" bindAsSequence="false" id="var_d10e183"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e183" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e183" xlink:to="fil_d10e187" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e187" id="fil_d10e187" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e197" bindAsSequence="true" id="var_d10e197"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e197" xlink:to="fil_d10e199" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e199" id="fil_d10e199" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e206" id="pre_d10e206"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1a" id="ref_val_corep_3922-oe-1a"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1a</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1a" xlink:to="ref_val_corep_3922-oe-1a"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1b"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1b"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1b"
+                                     xlink:to="fil_p-cm-cr_OfWhichArisingCounterpartyCreditRiskd10e214"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1b"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e222"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1b"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e230"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1b" xlink:to="var_d10e237"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1b" xlink:to="var_d10e251"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1b" xlink:to="pre_d10e260"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1b" id="lab_val_corep_3922-oe-1b"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1b" xlink:to="lab_val_corep_3922-oe-1b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_OfWhichArisingCounterpartyCreditRiskd10e214"
+                      id="fil_p-cm-cr_OfWhichArisingCounterpartyCreditRiskd10e214"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:OfWhichArisingCounterpartyCreditRisk</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e222"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e222"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e230"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e230"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e237" bindAsSequence="false" id="var_d10e237"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e237" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e237" xlink:to="fil_d10e241" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e241" id="fil_d10e241" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e251" bindAsSequence="true" id="var_d10e251"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e251" xlink:to="fil_d10e253" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e253" id="fil_d10e253" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e260" id="pre_d10e260"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1b" id="ref_val_corep_3922-oe-1b"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1b</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1b" xlink:to="ref_val_corep_3922-oe-1b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1c"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1c"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1c"
+                                     xlink:to="fil_p-cm-cr_UnfundedCreditProtectionGuaranteesd10e268"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1c"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e276"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1c"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e284"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1c" xlink:to="var_d10e291"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1c" xlink:to="var_d10e305"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1c" xlink:to="pre_d10e314"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1c" id="lab_val_corep_3922-oe-1c"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1c" xlink:to="lab_val_corep_3922-oe-1c"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_UnfundedCreditProtectionGuaranteesd10e268"
+                      id="fil_p-cm-cr_UnfundedCreditProtectionGuaranteesd10e268"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:UnfundedCreditProtectionGuarantees</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e276"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e276"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e284"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e284"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e291" bindAsSequence="false" id="var_d10e291"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e291" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e291" xlink:to="fil_d10e295" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e295" id="fil_d10e295" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e305" bindAsSequence="true" id="var_d10e305"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e305" xlink:to="fil_d10e307" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e307" id="fil_d10e307" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e314" id="pre_d10e314"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1c" id="ref_val_corep_3922-oe-1c"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1c</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1c" xlink:to="ref_val_corep_3922-oe-1c"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1d"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1d"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1d"
+                                     xlink:to="fil_p-cm-cr_UnfundedCreditProtectionCreditDerivativesd10e322"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1d"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e330"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1d"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e338"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1d" xlink:to="var_d10e345"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1d" xlink:to="var_d10e359"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1d" xlink:to="pre_d10e368"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1d" id="lab_val_corep_3922-oe-1d"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1d" xlink:to="lab_val_corep_3922-oe-1d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_UnfundedCreditProtectionCreditDerivativesd10e322"
+                      id="fil_p-cm-cr_UnfundedCreditProtectionCreditDerivativesd10e322"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:UnfundedCreditProtectionCreditDerivatives</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e330"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e330"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e338"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e338"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e345" bindAsSequence="false" id="var_d10e345"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e345" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e345" xlink:to="fil_d10e349" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e349" id="fil_d10e349" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e359" bindAsSequence="true" id="var_d10e359"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e359" xlink:to="fil_d10e361" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e361" id="fil_d10e361" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e368" id="pre_d10e368"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1d" id="ref_val_corep_3922-oe-1d"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1d</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1d" xlink:to="ref_val_corep_3922-oe-1d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1e"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1e"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1e"
+                                     xlink:to="fil_p-ci_OtherFundedCreditProtectiond10e376"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1e"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e384"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1e"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e392"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1e" xlink:to="var_d10e399"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1e" xlink:to="var_d10e413"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1e" xlink:to="pre_d10e422"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1e" id="lab_val_corep_3922-oe-1e"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1e" xlink:to="lab_val_corep_3922-oe-1e"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_OtherFundedCreditProtectiond10e376"
+                      id="fil_p-ci_OtherFundedCreditProtectiond10e376"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:OtherFundedCreditProtection</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e384"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e384"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e392"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e392"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e399" bindAsSequence="false" id="var_d10e399"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e399" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e399" xlink:to="fil_d10e403" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e403" id="fil_d10e403" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e413" bindAsSequence="true" id="var_d10e413"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e413" xlink:to="fil_d10e415" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e415" id="fil_d10e415" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e422" id="pre_d10e422"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1e" id="ref_val_corep_3922-oe-1e"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1e</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1e" xlink:to="ref_val_corep_3922-oe-1e"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1f"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1f"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1f"
+                                     xlink:to="fil_p-cm-cr_SubstitutionExposureCRMTotalOutflowsd10e430"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1f"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e438"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1f"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e446"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1f" xlink:to="var_d10e453"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1f" xlink:to="var_d10e467"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1f" xlink:to="pre_d10e476"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1f" id="lab_val_corep_3922-oe-1f"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1f" xlink:to="lab_val_corep_3922-oe-1f"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_SubstitutionExposureCRMTotalOutflowsd10e430"
+                      id="fil_p-cm-cr_SubstitutionExposureCRMTotalOutflowsd10e430"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:SubstitutionExposureCRMTotalOutflows</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e438"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e438"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e446"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e446"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e453" bindAsSequence="false" id="var_d10e453"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e453" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e453" xlink:to="fil_d10e457" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e457" id="fil_d10e457" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e467" bindAsSequence="true" id="var_d10e467"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e467" xlink:to="fil_d10e469" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e469" id="fil_d10e469" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e476" id="pre_d10e476"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1f" id="ref_val_corep_3922-oe-1f"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1f</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1f" xlink:to="ref_val_corep_3922-oe-1f"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1g"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1g"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1g"
+                                     xlink:to="fil_p-cm-cr_SubstitutionExposureCRMTotalInflowsd10e485"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1g"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e493"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1g"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e501"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1g" xlink:to="var_d10e508"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1g" xlink:to="var_d10e522"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1g" xlink:to="pre_d10e531"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1g" id="lab_val_corep_3922-oe-1g"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1g" xlink:to="lab_val_corep_3922-oe-1g"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_SubstitutionExposureCRMTotalInflowsd10e485"
+                      id="fil_p-cm-cr_SubstitutionExposureCRMTotalInflowsd10e485"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:SubstitutionExposureCRMTotalInflows</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e493"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e493"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e501"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e501"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e508" bindAsSequence="false" id="var_d10e508"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e508" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e508" xlink:to="fil_d10e512" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e512" id="fil_d10e512" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e522" bindAsSequence="true" id="var_d10e522"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e522" xlink:to="fil_d10e524" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e524" id="fil_d10e524" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e531" id="pre_d10e531"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1g" id="ref_val_corep_3922-oe-1g"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1g</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1g" xlink:to="ref_val_corep_3922-oe-1g"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1h"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1h"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1h"
+                                     xlink:to="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e539"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1h"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e547"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1h"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e555"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1h" xlink:to="var_d10e562"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1h" xlink:to="var_d10e576"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1h" xlink:to="pre_d10e585"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1h" id="lab_val_corep_3922-oe-1h"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1h" xlink:to="lab_val_corep_3922-oe-1h"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e539"
+                      id="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsd10e539"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureCRMSubstitutionEffectsPreConversionFactors</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e547"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e547"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e555"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e555"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e562" bindAsSequence="false" id="var_d10e562"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e562" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e562" xlink:to="fil_d10e566" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e566" id="fil_d10e566" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e576" bindAsSequence="true" id="var_d10e576"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e576" xlink:to="fil_d10e578" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e578" id="fil_d10e578" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e585" id="pre_d10e585"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1h" id="ref_val_corep_3922-oe-1h"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1h</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1h" xlink:to="ref_val_corep_3922-oe-1h"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1i"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1i"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1i"
+                                     xlink:to="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e593"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1i"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e601"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1i"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e609"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1i" xlink:to="var_d10e616"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1i" xlink:to="var_d10e630"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1i" xlink:to="pre_d10e639"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1i" id="lab_val_corep_3922-oe-1i"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1i" xlink:to="lab_val_corep_3922-oe-1i"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e593"
+                      id="fil_p-cm-cr_ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItemsd10e593"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureCRMSubstitutionEffectsPreConversionFactorsOfWhichOffBalanceSheetItems</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e601"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e601"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e609"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e609"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e616" bindAsSequence="false" id="var_d10e616"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e616" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e616" xlink:to="fil_d10e620" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e620" id="fil_d10e620" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e630" bindAsSequence="true" id="var_d10e630"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e630" xlink:to="fil_d10e632" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e632" id="fil_d10e632" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e639" id="pre_d10e639"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1i" id="ref_val_corep_3922-oe-1i"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1i</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1i" xlink:to="ref_val_corep_3922-oe-1i"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1j"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1j"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1j"
+                                     xlink:to="fil_p-cm-cr_ExposureValued10e647"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1j"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e655"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1j"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e663"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1j" xlink:to="var_d10e670"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1j" xlink:to="var_d10e684"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1j" xlink:to="pre_d10e693"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1j" id="lab_val_corep_3922-oe-1j"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1j" xlink:to="lab_val_corep_3922-oe-1j"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureValued10e647"
+                      id="fil_p-cm-cr_ExposureValued10e647"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureValue</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e655"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e655"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e663"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e663"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e670" bindAsSequence="false" id="var_d10e670"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e670" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e670" xlink:to="fil_d10e674" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e674" id="fil_d10e674" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e684" bindAsSequence="true" id="var_d10e684"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e684" xlink:to="fil_d10e686" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e686" id="fil_d10e686" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e693" id="pre_d10e693"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1j" id="ref_val_corep_3922-oe-1j"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1j</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1j" xlink:to="ref_val_corep_3922-oe-1j"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1k"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1k"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1k"
+                                     xlink:to="fil_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e701"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1k"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e709"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1k"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e717"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1k" xlink:to="var_d10e724"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1k" xlink:to="var_d10e738"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1k" xlink:to="pre_d10e747"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1k" id="lab_val_corep_3922-oe-1k"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1k" xlink:to="lab_val_corep_3922-oe-1k"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e701"
+                      id="fil_p-cm-cr_ExposureValueOfWhichOffBalanceSheetItemsd10e701"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExposureValueOfWhichOffBalanceSheetItems</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e709"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e709"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e717"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e717"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e724" bindAsSequence="false" id="var_d10e724"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e724" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e724" xlink:to="fil_d10e728" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e728" id="fil_d10e728" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e738" bindAsSequence="true" id="var_d10e738"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e738" xlink:to="fil_d10e740" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e740" id="fil_d10e740" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e747" id="pre_d10e747"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1k" id="ref_val_corep_3922-oe-1k"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1k</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1k" xlink:to="ref_val_corep_3922-oe-1k"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1l"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1l"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1l"
+                                     xlink:to="fil_p-ci_Guaranteesd10e755"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1l"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e763"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1l"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e771"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1l" xlink:to="var_d10e778"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1l" xlink:to="var_d10e792"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1l" xlink:to="pre_d10e801"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1l" id="lab_val_corep_3922-oe-1l"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1l" xlink:to="lab_val_corep_3922-oe-1l"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_Guaranteesd10e755" id="fil_p-ci_Guaranteesd10e755"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:Guarantees</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e763"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e763"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e771"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e771"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e778" bindAsSequence="false" id="var_d10e778"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e778" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e778" xlink:to="fil_d10e782" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e782" id="fil_d10e782" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e792" bindAsSequence="true" id="var_d10e792"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e792" xlink:to="fil_d10e794" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e794" id="fil_d10e794" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e801" id="pre_d10e801"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1l" id="ref_val_corep_3922-oe-1l"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1l</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1l" xlink:to="ref_val_corep_3922-oe-1l"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1m"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1m"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1m"
+                                     xlink:to="fil_p-ci_CreditDerivativesd10e810"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1m"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e818"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1m"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e826"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1m" xlink:to="var_d10e833"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1m" xlink:to="var_d10e847"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1m" xlink:to="pre_d10e856"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1m" id="lab_val_corep_3922-oe-1m"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1m" xlink:to="lab_val_corep_3922-oe-1m"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_CreditDerivativesd10e810"
+                      id="fil_p-ci_CreditDerivativesd10e810"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:CreditDerivatives</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e818"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e818"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e826"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e826"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e833" bindAsSequence="false" id="var_d10e833"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e833" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e833" xlink:to="fil_d10e837" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e837" id="fil_d10e837" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e847" bindAsSequence="true" id="var_d10e847"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e847" xlink:to="fil_d10e849" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e849" id="fil_d10e849" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e856" id="pre_d10e856"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1m" id="ref_val_corep_3922-oe-1m"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1m</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1m" xlink:to="ref_val_corep_3922-oe-1m"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1n"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1n"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1n"
+                                     xlink:to="fil_p-ci_OwnEstimatesLGDsUsedOtherFundedCreditProtectiond10e864"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1n"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e872"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1n"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e880"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1n" xlink:to="var_d10e887"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1n" xlink:to="var_d10e901"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1n" xlink:to="pre_d10e910"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1n" id="lab_val_corep_3922-oe-1n"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1n" xlink:to="lab_val_corep_3922-oe-1n"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_OwnEstimatesLGDsUsedOtherFundedCreditProtectiond10e864"
+                      id="fil_p-ci_OwnEstimatesLGDsUsedOtherFundedCreditProtectiond10e864"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:OwnEstimatesLGDsUsedOtherFundedCreditProtection</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e872"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e872"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e880"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e880"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e887" bindAsSequence="false" id="var_d10e887"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e887" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e887" xlink:to="fil_d10e891" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e891" id="fil_d10e891" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e901" bindAsSequence="true" id="var_d10e901"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e901" xlink:to="fil_d10e903" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e903" id="fil_d10e903" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e910" id="pre_d10e910"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1n" id="ref_val_corep_3922-oe-1n"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1n</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1n" xlink:to="ref_val_corep_3922-oe-1n"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1o"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1o"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1o"
+                                     xlink:to="fil_p-ci_EligibleFinancialCollaterald10e918"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1o"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e926"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1o"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e934"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1o" xlink:to="var_d10e941"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1o" xlink:to="var_d10e955"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1o" xlink:to="pre_d10e964"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1o" id="lab_val_corep_3922-oe-1o"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1o" xlink:to="lab_val_corep_3922-oe-1o"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_EligibleFinancialCollaterald10e918"
+                      id="fil_p-ci_EligibleFinancialCollaterald10e918"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:EligibleFinancialCollateral</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e926"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e926"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e934"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e934"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e941" bindAsSequence="false" id="var_d10e941"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e941" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e941" xlink:to="fil_d10e945" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e945" id="fil_d10e945" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e955" bindAsSequence="true" id="var_d10e955"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e955" xlink:to="fil_d10e957" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e957" id="fil_d10e957" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e964" id="pre_d10e964"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1o" id="ref_val_corep_3922-oe-1o"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1o</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1o" xlink:to="ref_val_corep_3922-oe-1o"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1p"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1p"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1p"
+                                     xlink:to="fil_p-ci_RealEstated10e972"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1p"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e980"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1p"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e988"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1p" xlink:to="var_d10e995"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1p" xlink:to="var_d10e1009"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1p" xlink:to="pre_d10e1018"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1p" id="lab_val_corep_3922-oe-1p"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1p" xlink:to="lab_val_corep_3922-oe-1p"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_RealEstated10e972" id="fil_p-ci_RealEstated10e972"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:RealEstate</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e980"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e980"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e988"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e988"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e995" bindAsSequence="false" id="var_d10e995"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e995" xlink:to="fil_AnyUnit" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e995" xlink:to="fil_d10e999" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e999" id="fil_d10e999" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e1009" bindAsSequence="true" id="var_d10e1009"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1009" xlink:to="fil_d10e1011"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e1011" id="fil_d10e1011" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e1018" id="pre_d10e1018"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1p" id="ref_val_corep_3922-oe-1p"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1p</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1p" xlink:to="ref_val_corep_3922-oe-1p"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1q"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1q"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1q"
+                                     xlink:to="fil_p-ci_OtherPhysicalCollaterald10e1026"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1q"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1034"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1q"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1042"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1q" xlink:to="var_d10e1049"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1q" xlink:to="var_d10e1063"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1q" xlink:to="pre_d10e1072"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1q" id="lab_val_corep_3922-oe-1q"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1q" xlink:to="lab_val_corep_3922-oe-1q"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_OtherPhysicalCollaterald10e1026"
+                      id="fil_p-ci_OtherPhysicalCollaterald10e1026"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:OtherPhysicalCollateral</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1034"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1034"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1042"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1042"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e1049" bindAsSequence="false" id="var_d10e1049"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1049" xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e1049" xlink:to="fil_d10e1053"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e1053" id="fil_d10e1053" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e1063" bindAsSequence="true" id="var_d10e1063"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1063" xlink:to="fil_d10e1065"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e1065" id="fil_d10e1065" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e1072" id="pre_d10e1072"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1q" id="ref_val_corep_3922-oe-1q"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1q</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1q" xlink:to="ref_val_corep_3922-oe-1q"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1r"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1r"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1r"
+                                     xlink:to="fil_p-ci_Receivablesd10e1080"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1r"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1088"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1r"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1096"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1r" xlink:to="var_d10e1103"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1r" xlink:to="var_d10e1117"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1r" xlink:to="pre_d10e1126"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1r" id="lab_val_corep_3922-oe-1r"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1r" xlink:to="lab_val_corep_3922-oe-1r"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_Receivablesd10e1080" id="fil_p-ci_Receivablesd10e1080"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:Receivables</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1088"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1088"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1096"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1096"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e1103" bindAsSequence="false" id="var_d10e1103"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1103" xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e1103" xlink:to="fil_d10e1107"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e1107" id="fil_d10e1107" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e1117" bindAsSequence="true" id="var_d10e1117"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1117" xlink:to="fil_d10e1119"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e1119" id="fil_d10e1119" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e1126" id="pre_d10e1126"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1r" id="ref_val_corep_3922-oe-1r"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1r</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1r" xlink:to="ref_val_corep_3922-oe-1r"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1s"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1s"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1s"
+                                     xlink:to="fil_p-ci_UnfundedCreditProtectiond10e1135"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1s"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1143"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1s"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1151"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1s" xlink:to="var_d10e1158"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1s" xlink:to="var_d10e1172"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1s" xlink:to="pre_d10e1181"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1s" id="lab_val_corep_3922-oe-1s"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1s" xlink:to="lab_val_corep_3922-oe-1s"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-ci_UnfundedCreditProtectiond10e1135"
+                      id="fil_p-ci_UnfundedCreditProtectiond10e1135"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ci:UnfundedCreditProtection</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1143"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1143"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1151"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1151"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e1158" bindAsSequence="false" id="var_d10e1158"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1158" xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e1158" xlink:to="fil_d10e1162"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e1162" id="fil_d10e1162" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e1172" bindAsSequence="true" id="var_d10e1172"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1172" xlink:to="fil_d10e1174"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e1174" id="fil_d10e1174" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e1181" id="pre_d10e1181"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1s" id="ref_val_corep_3922-oe-1s"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1s</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1s" xlink:to="ref_val_corep_3922-oe-1s"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1t"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1t"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1t"
+                                     xlink:to="fil_p-cm-cr_RiskWeightedExposureAmountsd10e1189"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1t"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1197"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1t"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1205"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1t" xlink:to="var_d10e1212"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1t" xlink:to="var_d10e1226"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1t" xlink:to="pre_d10e1235"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1t" id="lab_val_corep_3922-oe-1t"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1t" xlink:to="lab_val_corep_3922-oe-1t"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_RiskWeightedExposureAmountsd10e1189"
+                      id="fil_p-cm-cr_RiskWeightedExposureAmountsd10e1189"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:RiskWeightedExposureAmounts</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1197"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1197"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1205"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1205"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e1212" bindAsSequence="false" id="var_d10e1212"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1212" xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e1212" xlink:to="fil_d10e1216"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e1216" id="fil_d10e1216" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e1226" bindAsSequence="true" id="var_d10e1226"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1226" xlink:to="fil_d10e1228"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e1228" id="fil_d10e1228" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e1235" id="pre_d10e1235"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1t" id="ref_val_corep_3922-oe-1t"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1t</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1t" xlink:to="ref_val_corep_3922-oe-1t"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1u"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1u"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1u"
+                                     xlink:to="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e1243"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1u"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1251"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1u"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1259"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1u" xlink:to="var_d10e1266"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1u" xlink:to="var_d10e1280"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1u" xlink:to="pre_d10e1289"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1u" id="lab_val_corep_3922-oe-1u"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1u" xlink:to="lab_val_corep_3922-oe-1u"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e1243"
+                      id="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e1243"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:CreditRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1251"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1251"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1259"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1259"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e1266" bindAsSequence="false" id="var_d10e1266"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1266" xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e1266" xlink:to="fil_d10e1270"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e1270" id="fil_d10e1270" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e1280" bindAsSequence="true" id="var_d10e1280"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1280" xlink:to="fil_d10e1282"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e1282" id="fil_d10e1282" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e1289" id="pre_d10e1289"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1u" id="ref_val_corep_3922-oe-1u"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1u</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1u" xlink:to="ref_val_corep_3922-oe-1u"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1v"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1v"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1v"
+                                     xlink:to="fil_p-cm-cr_ExpectedLossAmountd10e1297"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1v"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1305"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1v"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1313"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1v" xlink:to="var_d10e1320"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1v" xlink:to="var_d10e1334"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1v" xlink:to="pre_d10e1343"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1v" id="lab_val_corep_3922-oe-1v"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1v" xlink:to="lab_val_corep_3922-oe-1v"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_ExpectedLossAmountd10e1297"
+                      id="fil_p-cm-cr_ExpectedLossAmountd10e1297"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:ExpectedLossAmount</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1305"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1305"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1313"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1313"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e1320" bindAsSequence="false" id="var_d10e1320"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1320" xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e1320" xlink:to="fil_d10e1324"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e1324" id="fil_d10e1324" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e1334" bindAsSequence="true" id="var_d10e1334"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1334" xlink:to="fil_d10e1336"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e1336" id="fil_d10e1336" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e1343" id="pre_d10e1343"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1v" id="ref_val_corep_3922-oe-1v"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1v</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1v" xlink:to="ref_val_corep_3922-oe-1v"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3922-oe-1w"
+                         test="ai:numeric-equal($celda_3022,ai:sum($columna))"
+                         id="val_corep_3922-oe-1w"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1w"
+                                     xlink:to="fil_p-cm-cr_MemorandumItemsValueAdjustmentsProvisionsd10e1351"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1w"
+                                     xlink:to="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1359"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3922-oe-1w"
+                                     xlink:to="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1367"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableArc name="celda_3022" xlink:from="val_corep_3922-oe-1w" xlink:to="var_d10e1374"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="columna" xlink:from="val_corep_3922-oe-1w" xlink:to="var_d10e1388"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <generic:arc xlink:from="val_corep_3922-oe-1w" xlink:to="pre_d10e1397"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3922-oe-1w" id="lab_val_corep_3922-oe-1w"
+                   xlink:type="resource"
+                   xml:lang="es">Inconsistencia entre 3022 y 3922</label:label>
+      <generic:arc xlink:from="val_corep_3922-oe-1w" xlink:to="lab_val_corep_3922-oe-1w"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-cr_MemorandumItemsValueAdjustmentsProvisionsd10e1351"
+                      id="fil_p-cm-cr_MemorandumItemsValueAdjustmentsProvisionsd10e1351"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-cr:MemorandumItemsValueAdjustmentsProvisions</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1359"
+                            id="fil_CreditRiskDim_CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPoolsd10e1359"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBCreditCounterpartyCreditDeliveryAssignedToObligorGradesPools</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1367"
+                            id="fil_OwnEstimatesofLGDAndOrConversionFactorsDim_d10e1367"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-oe:OwnEstimatesofLGDAndOrConversionFactorsDimension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e1374" bindAsSequence="false" id="var_d10e1374"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1374" xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e1374" xlink:to="fil_d10e1378"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e1378" id="fil_d10e1378" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:factVariable xlink:label="var_d10e1388" bindAsSequence="true" id="var_d10e1388"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_d10e1388" xlink:to="fil_d10e1390"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e1390" id="fil_d10e1390" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ty:ObligorGradeOrPoolDimension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <variable:precondition test="sum($columna) ne 0" xlink:label="pre_d10e1397" id="pre_d10e1397"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3922-oe-1w" id="ref_val_corep_3922-oe-1w"
+                           xlink:type="resource">
+         <ref:Number>corep:3922-oe-1w</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3922-oe-1w" xlink:to="ref_val_corep_3922-oe-1w"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>
