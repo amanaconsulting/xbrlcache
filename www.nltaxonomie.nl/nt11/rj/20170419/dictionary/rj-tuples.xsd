@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20170419
+  Release date: Wed April 19 09:00:00 2017
+-->
+<xs:schema xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nl-cd="http://www.nltaxonomie.nl/nt11/sbr/20160610/dictionary/nl-common-data" xmlns:rj-t="http://www.nltaxonomie.nl/nt11/rj/20170419/dictionary/rj-tuples" xmlns:sbr="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nltaxonomie.nl/nt11/rj/20170419/dictionary/rj-tuples">
+  <xs:annotation>
+    <xs:appinfo>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="rj-tuples-documentation-lab-nl.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="rj-tuples-lab-en.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="rj-tuples-lab-nl.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="rj-tuples-terse-lab-en.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="rj-tuples-terse-lab-nl.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="rj-tuples-ref.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:type="simple"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension" schemaLocation="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension.xsd"/>
+  <xs:import namespace="http://www.nltaxonomie.nl/nt11/sbr/20160610/dictionary/nl-common-data" schemaLocation="../../../sbr/20160610/dictionary/nl-common-data.xsd"/>
+  <xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <xs:element abstract="false" id="rj-t_EntityAddressPresentation" name="EntityAddressPresentation" nillable="false" substitutionGroup="sbr:presentationTuple">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="sbr:placeholder">
+          <xs:sequence maxOccurs="1" minOccurs="1">
+            <xs:choice maxOccurs="1" minOccurs="1">
+              <xs:sequence maxOccurs="1" minOccurs="1">
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:DescriptionLocationNL"/>
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:StreetNameNL"/>
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:HouseNumberNL"/>
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:HouseNumberAddition"/>
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:POBoxNumber"/>
+                <xs:element maxOccurs="1" minOccurs="1" ref="nl-cd:PostalCodeNL"/>
+                <xs:element maxOccurs="1" minOccurs="1" ref="nl-cd:PlaceOfResidenceNL"/>
+              </xs:sequence>
+              <xs:sequence maxOccurs="1" minOccurs="1">
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:DescriptionLocationAbroad"/>
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:StreetNameAbroad"/>
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:HouseNumberAbroad"/>
+                <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:PostalCodeAbroad"/>
+                <xs:element maxOccurs="1" minOccurs="1" ref="nl-cd:PlaceOfResidenceAbroad"/>
+              </xs:sequence>
+            </xs:choice>
+            <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:NameRegion"/>
+            <xs:element maxOccurs="1" minOccurs="0" ref="nl-cd:CountryName"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

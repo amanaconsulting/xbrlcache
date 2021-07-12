@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20161214
+  Release date: Wed Dec 14 09:00:00 2016
+-->
+<link:linkbase xmlns:acf="http://xbrl.org/2010/filter/aspect-cover" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:crf="http://xbrl.org/2010/filter/concept-relation" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:ea="http://xbrl.org/2008/assertion/existence" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:venj-bw2-dim="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-axes" xmlns:venj-bw2-dm="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-domains" xmlns:venj-bw2-i="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-data" xmlns:xff="http://www.xbrl.org/2010/function/formula" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xbrl.org/2010/filter/aspect-cover http://www.xbrl.org/2010/aspect-cover-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2010/filter/concept-relation http://www.xbrl.org/2010/concept-relation-filter.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-axes ../../../venj/20161214/dictionary/venj-bw2-axes.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-domains ../../../venj/20161214/dictionary/venj-bw2-domains.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-data ../../../venj/20161214/dictionary/venj-bw2-data.xsd">
+  <gen:link xlink:role="urn:kvk:linkrole:balance-sheet-vertical" xlink:type="extended">
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1" implicitFiltering="true" test=" $AssetsNoncurrent = - sum($varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentCredit)+ sum($varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentDebit)" xlink:label="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1" xlink:type="resource"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2" implicitFiltering="true" test=" $AssetsCurrent = - sum($varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentCredit)+ sum($varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentDebit)" xlink:label="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2" xlink:type="resource"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1" implicitFiltering="true" test=" $Equity = sum($varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityCredit)- sum($varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityDebit)" xlink:label="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1" xlink:type="resource"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetVertical_MsgSeparateTwoVariables1" implicitFiltering="true" test="+ $varArc_BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent  - $varArc_BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent =  $varArc_BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent " xlink:label="valueAssertion_BalanceSheetVertical_MsgSeparateTwoVariables1" xlink:type="resource"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetVertical_MsgSeparateThreeVariables1" implicitFiltering="true" test="+ $varArc_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent  + $varArc_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent - $varArc_BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent =  $varArc_BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent " xlink:label="valueAssertion_BalanceSheetVertical_MsgSeparateThreeVariables1" xlink:type="resource"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1" implicitFiltering="true" test="if(xff:has-fallback-value(xs:QName('varArc_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear'))) then true() else not(count($varArc_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear) ge 1)" xlink:label="valueAssertion_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1" xlink:type="resource"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1" xlink:to="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" xlink:to="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_CoverAll1" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <link:loc xlink:href="http://www.xbrl.org/2016/severities.xml#WARNING" xlink:label="WARNING_loc" xlink:type="locator"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" order="5" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1" xlink:to="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:from="valueAssertion_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1" xlink:to="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_precondition1" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" xlink:type="resource"/>
+    <variable:precondition id="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_precondition1" test="$varArc_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults eq 'Na'" xlink:label="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_precondition1" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults" xlink:to="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" xlink:label="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:ResultForTheYear</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" xlink:to="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_ResultForTheYear" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults" xlink:label="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:BalanceSheetBeforeAfterAppropriationResults</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <acf:aspectCover id="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_CoverAll1" xlink:label="BalanceSheetVertical_MsgPrecondValueConceptAndNoExistenceConcept1_CoverAll1" xlink:type="resource">
+      <acf:aspect>all</acf:aspect>
+    </acf:aspectCover>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_RelationEquityDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit3" xlink:type="arc"/>
+    <variable:variableArc name="Equity" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate3" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate3" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate3" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate3" xlink:type="arc"/>
+    <crf:conceptRelation id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_RelationEquityDebit" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_RelationEquityDebit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:Equity</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-vertical</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityCredit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityCredit" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" xlink:type="resource"/>
+    <cf:conceptBalance balance="credit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit1" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit1" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityDebit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityDebit" xlink:type="resource"/>
+    <crf:conceptRelation id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_RelationEquityCredit" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_RelationEquityCredit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:Equity</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-vertical</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityCredit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityCredit" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Equity" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:Equity</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate3" xlink:type="arc"/>
+    <cf:conceptBalance balance="credit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit3" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit3" xlink:type="resource"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate3" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate3" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <cf:conceptBalance balance="debit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit3" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit3" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit3" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_RelationEquityCredit" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityDebit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityDebit" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate3" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate3" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_Filter1FinancialStatementTypeSeparate1" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_Filter1FinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_Filter1FinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_FilterFinancialStatementTypeSeparate1" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_FilterFinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentDebit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentDebit" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentCredit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentCredit" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsNoncurrentCredit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" xlink:type="arc"/>
+    <variable:variableArc name="AssetsNoncurrent" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_Filter2FinancialStatementTypeSeparate1" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_Filter2FinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <cf:conceptBalance balance="debit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:type="resource"/>
+    <crf:conceptRelation id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsNoncurrentCredit" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsNoncurrentCredit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:AssetsNoncurrent</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-vertical</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_Filter2FinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsNoncurrentDebit" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:AssetsNoncurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentDebit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentDebit" xlink:type="arc"/>
+    <crf:conceptRelation id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsNoncurrentDebit" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsNoncurrentDebit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:AssetsNoncurrent</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-vertical</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <cf:conceptBalance balance="debit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceParentDebit1" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceParentDebit1" xlink:type="resource"/>
+    <cf:conceptBalance balance="credit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_FilterFinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentCredit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsNoncurrentCredit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_AssetsNoncurrent" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceParentDebit1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceCredit2" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentDebit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentDebit" xlink:type="arc"/>
+    <crf:conceptRelation id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_RelationAssetsCurrentDebit" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_RelationAssetsCurrentDebit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:AssetsCurrent</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-vertical</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <crf:conceptRelation id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_RelationAssetsCurrentCredit" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_RelationAssetsCurrentCredit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:AssetsCurrent</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-vertical</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" xlink:type="resource"/>
+    <cf:conceptBalance balance="debit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceDebit2" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceDebit2" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceParentDebit2" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_Filter1FinancialStatementTypeSeparate2" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_Filter1FinancialStatementTypeSeparate2" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <cf:conceptBalance balance="debit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceParentDebit2" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceParentDebit2" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceDebit2" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_Filter1FinancialStatementTypeSeparate2" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_FilterFinancialStatementTypeSeparate2" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:AssetsCurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <cf:conceptBalance balance="credit" id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceCredit2" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ConceptBalanceCredit2" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_RelationAssetsCurrentDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentCredit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_RelationAssetsCurrentCredit" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentCredit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentCredit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentDebit" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_Filter2FinancialStatementTypeSeparate2" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentCredit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentCredit" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentDebit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_ChildrenOfAssetsCurrentDebit" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" xlink:to="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_FilterFinancialStatementTypeSeparate2" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_FilterFinancialStatementTypeSeparate2" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_Filter2FinancialStatementTypeSeparate2" xlink:label="BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_Filter2FinancialStatementTypeSeparate2" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableArc name="AssetsCurrent" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2_AssetsCurrent" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter1FinancialStatementTypeSeparate5" xlink:label="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter1FinancialStatementTypeSeparate5" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateThreeVariables1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" xlink:label="BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:AssetsCurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" xlink:label="BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:AssetsNoncurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" xlink:label="BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:LiabilitiesCurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:factVariable bindAsSequence="false" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" xlink:to="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter2FinancialStatementTypeSeparate5" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" xlink:to="BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" xlink:to="BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter3FinancialStatementTypeSeparate1" xlink:label="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter3FinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateThreeVariables1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateThreeVariables1_FilterFinancialStatementTypeSeparate5" xlink:label="BalanceSheetVertical_MsgSeparateThreeVariables1_FilterFinancialStatementTypeSeparate5" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" order="3" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateThreeVariables1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" xlink:label="BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:OutcomeAssetsLessLiabilitiesCurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter2FinancialStatementTypeSeparate5" xlink:label="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter2FinancialStatementTypeSeparate5" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:factVariable bindAsSequence="false" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" xlink:to="BalanceSheetVertical_MsgSeparateThreeVariables1_FilterFinancialStatementTypeSeparate5" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" xlink:to="BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" order="5" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateThreeVariables1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_OutcomeAssetsLessLiabilitiesCurrent" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" xlink:to="BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsCurrent" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" xlink:to="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter3FinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_AssetsNoncurrent" xlink:to="BalanceSheetVertical_MsgSeparateThreeVariables1_Filter1FinancialStatementTypeSeparate5" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="false" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateThreeVariables1_LiabilitiesCurrent" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" xlink:to="BalanceSheetVertical_MsgSeparateTwoVariables1_Filter2FinancialStatementTypeSeparate4" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" xlink:to="BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateTwoVariables1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" xlink:to="BalanceSheetVertical_MsgSeparateTwoVariables1_FilterFinancialStatementTypeSeparate4" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateTwoVariables1_Filter2FinancialStatementTypeSeparate4" xlink:label="BalanceSheetVertical_MsgSeparateTwoVariables1_Filter2FinancialStatementTypeSeparate4" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateTwoVariables1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" order="5" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateTwoVariables1" xlink:to="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateTwoVariables1_Filter1FinancialStatementTypeSeparate4" xlink:label="BalanceSheetVertical_MsgSeparateTwoVariables1_Filter1FinancialStatementTypeSeparate4" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" xlink:label="BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:OutcomeAssetsCurrentLessLiabilitiesCurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" xlink:label="BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:AssetsCurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" xlink:to="BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_OutcomeAssetsCurrentLessLiabilitiesCurrent" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" xlink:type="resource"/>
+    <df:explicitDimension id="BalanceSheetVertical_MsgSeparateTwoVariables1_FilterFinancialStatementTypeSeparate4" xlink:label="BalanceSheetVertical_MsgSeparateTwoVariables1_FilterFinancialStatementTypeSeparate4" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <cf:conceptName id="BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" xlink:label="BalanceSheetVertical_MsgSeparateTwoVariables1_LiabilitiesCurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:LiabilitiesCurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" xlink:to="BalanceSheetVertical_MsgSeparateTwoVariables1_Filter1FinancialStatementTypeSeparate4" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" xlink:to="BalanceSheetVertical_MsgSeparateTwoVariables1_AssetsCurrent" xlink:type="arc"/>
+    <ea:existenceAssertion aspectModel="dimensional" id="ExistenceAssertion_BalanceSheetVertical_MsgAdimExistence1" implicitFiltering="true" xlink:label="ExistenceAssertion_BalanceSheetVertical_MsgAdimExistence1" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" fallbackValue="0" id="factVariable_BalanceSheetVertical_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" matches="false" nils="false" xlink:label="factVariable_BalanceSheetVertical_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetVertical_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:to="BalanceSheetVertical_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetVertical_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:label="BalanceSheetVertical_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:BalanceSheetBeforeAfterAppropriationResults</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableArc name="varArc_BalanceSheetVertical_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="ExistenceAssertion_BalanceSheetVertical_MsgAdimExistence1" xlink:to="factVariable_BalanceSheetVertical_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="ExistenceAssertion_BalanceSheetVertical_MsgAdimExistence1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentCredit1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateTwoVariables1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateThreeVariables1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetVertical_MsgSeparateSumOfChildrenParentDebit2" xlink:to="WARNING_loc" xlink:type="arc"/>
+  </gen:link>
+  <link:roleRef roleURI="urn:kvk:linkrole:balance-sheet-vertical" xlink:href="../dictionary/kvk-linkroles.xsd#kvk-lr_BalanceSheetVertical" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition" xlink:type="simple"/>
+</link:linkbase>

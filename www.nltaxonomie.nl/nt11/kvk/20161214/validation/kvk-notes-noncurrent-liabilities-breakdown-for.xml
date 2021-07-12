@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20161214
+  Release date: Wed Dec 14 09:00:00 2016
+-->
+<link:linkbase xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:crf="http://xbrl.org/2010/filter/concept-relation" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:venj-bw2-dim="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-axes" xmlns:venj-bw2-dm="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-domains" xmlns:venj-bw2-i="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-data" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2010/filter/concept-relation http://www.xbrl.org/2010/concept-relation-filter.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-axes ../../../venj/20161214/dictionary/venj-bw2-axes.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-domains ../../../venj/20161214/dictionary/venj-bw2-domains.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-data ../../../venj/20161214/dictionary/venj-bw2-data.xsd">
+  <link:roleRef roleURI="urn:kvk:linkrole:notes-noncurrent-liabilities-breakdown" xlink:href="../dictionary/kvk-linkroles.xsd#kvk-lr_NotesNoncurrentLiabilitiesBreakdown" xlink:type="simple"/>
+  <gen:link xlink:role="urn:kvk:linkrole:notes-noncurrent-liabilities-breakdown" xlink:type="extended">
+    <variable:variableArc name="varArc_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentDebit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentDebit" xlink:type="arc"/>
+    <df:explicitDimension id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate1" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1" implicitFiltering="true" test=" $LiabilitiesNoncurrent = sum($varArc_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentCredit)- sum($varArc_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentDebit)" xlink:label="valueAssertion_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentDebit" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <cf:conceptBalance balance="credit" id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit1" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit1" xlink:type="resource"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <link:loc xlink:href="http://www.xbrl.org/2016/severities.xml#WARNING" xlink:label="WARNING_loc" xlink:type="locator"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" xlink:type="arc"/>
+    <crf:conceptRelation id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_RelationLiabilitiesNoncurrentDebit" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_RelationLiabilitiesNoncurrentDebit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:LiabilitiesNoncurrent</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:notes-noncurrent-liabilities-breakdown</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <cf:conceptName id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:LiabilitiesNoncurrent</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <cf:conceptBalance balance="credit" id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit1" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit1" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentCredit" matches="false" nils="false" xlink:label="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentCredit" xlink:type="resource"/>
+    <df:explicitDimension id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate1" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <crf:conceptRelation id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_RelationLiabilitiesNoncurrentCredit" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_RelationLiabilitiesNoncurrentCredit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:LiabilitiesNoncurrent</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:notes-noncurrent-liabilities-breakdown</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:variableArc name="varArc_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentCredit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentCredit" xlink:type="arc"/>
+    <variable:variableArc name="LiabilitiesNoncurrent" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentCredit" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentCredit" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_RelationLiabilitiesNoncurrentCredit" xlink:type="arc"/>
+    <df:explicitDimension id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate1" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentCredit" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <cf:conceptBalance balance="debit" id="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit1" xlink:label="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit1" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentDebit" matches="false" nils="false" xlink:label="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentDebit" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" id="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" matches="false" nils="false" xlink:label="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentDebit" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfLiabilitiesNoncurrentDebit" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_RelationLiabilitiesNoncurrentDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_LiabilitiesNoncurrent" xlink:to="NotesNoncurrentLiabilitiesBreakdown_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit1" xlink:type="arc"/>
+  </gen:link>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" xlink:type="simple"/>
+</link:linkbase>

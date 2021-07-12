@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11 
+  Version: 20170301.b
+  Release date: Mon Jan 23 09:00:00 2017
+-->
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member" xlink:type="simple"/>
+	<link:roleRef roleURI="urn:ocw:linkrole:related-parties-controlling-interest-domain" xlink:href="../dictionary/ocw-linkroles.xsd#ocw-lr_RelatedPartiesControllingInterestDomain" xlink:type="simple"/>
+	<link:roleRef roleURI="urn:ocw:linkrole:related-parties-other-domain" xlink:href="../dictionary/ocw-linkroles.xsd#ocw-lr_RelatedPartiesOtherDomain" xlink:type="simple"/>
+	<link:definitionLink xlink:role="urn:ocw:linkrole:related-parties-controlling-interest-domain" xlink:type="extended">
+		<link:loc xlink:href="../dictionary/ocw-domains.xsd#ocw-dm_RelatedPartiesControllingInterestDomain" xlink:label="ocw-dm_RelatedPartiesControllingInterestDomain_loc" xlink:type="locator"/>
+		<link:loc xlink:href="../dictionary/ocw-domains.xsd#ocw-dm_RelatedPartyControllingInterestMember" xlink:label="ocw-dm_RelatedPartyControllingInterestMember_loc" xlink:type="locator"/>
+		<link:definitionArc xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ocw-dm_RelatedPartiesControllingInterestDomain_loc" xlink:to="ocw-dm_RelatedPartyControllingInterestMember_loc" order="1" xlink:type="arc"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:role="urn:ocw:linkrole:related-parties-other-domain" xlink:type="extended">
+		<link:loc xlink:href="../dictionary/ocw-domains.xsd#ocw-dm_RelatedPartiesOtherDomain" xlink:label="ocw-dm_RelatedPartiesOtherDomain_loc" xlink:type="locator"/>
+		<link:loc xlink:href="../dictionary/ocw-domains.xsd#ocw-dm_RelatedPartyNoncontrollingInterestMember" xlink:label="ocw-dm_RelatedPartyNoncontrollingInterestMember_loc" xlink:type="locator"/>
+		<link:loc xlink:href="../dictionary/ocw-domains.xsd#ocw-dm_RelatedPartyWithInterestInAuthorityMember" xlink:label="ocw-dm_RelatedPartyWithInterestInAuthorityMember_loc" xlink:type="locator"/>
+		<link:definitionArc xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ocw-dm_RelatedPartiesOtherDomain_loc" xlink:to="ocw-dm_RelatedPartyNoncontrollingInterestMember_loc" order="1" xlink:type="arc"/>
+		<link:definitionArc xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ocw-dm_RelatedPartiesOtherDomain_loc" xlink:to="ocw-dm_RelatedPartyWithInterestInAuthorityMember_loc" order="2" xlink:type="arc"/>
+	</link:definitionLink>
+</link:linkbase>

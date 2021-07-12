@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11 
+  Version: 20170419
+  Release date: Wed Apr 19 09:00:00 2017
+-->
+<link:linkbase xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:validation="http://xbrl.org/2008/validation" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="   http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd   http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd   http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd   http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd   http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd   http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd   ">
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set" xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" xlink:type="simple"/>
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" xlink:type="simple"/>
+	<gen:link xlink:role="http://www.xbrl.org/2008/role/link" xlink:type="extended">
+		<validation:assertionSet id="assertion-set-general" xlink:label="assertion-set-general" xlink:type="resource"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-general" xlink:to="va-BR-OCW-S.1-scheme" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-general" xlink:to="va-BR-OCW-S.2-identifier" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-general" xlink:to="va-BR-OCW-S.3-identifier-consistent" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-general" xlink:to="va-BR-OCW-S.4-decimals" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="dimensional" id="va-BR-OCW-S.1-scheme" implicitFiltering="false" test="count($IdentifiersWithInvalidSchemeValue) eq 0" xlink:label="va-BR-OCW-S.1-scheme" xlink:type="resource"/>
+		<variable:variableArc name="IdentifiersWithInvalidSchemeValue" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-S.1-scheme" xlink:to="v_IdentifiersWithInvalidSchemeValue" xlink:type="arc"/>
+		<variable:generalVariable bindAsSequence="true" select="/xbrli:xbrl/xbrli:context/xbrli:entity/xbrli:identifier[not(@scheme) or not(@scheme = 'http://www.duo.nl/bevoegdgezagnummer')]" xlink:label="v_IdentifiersWithInvalidSchemeValue" xlink:type="resource"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-S.1-scheme" xlink:to="sev_ERROR_loc" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="dimensional" id="va-BR-OCW-S.2-identifier" implicitFiltering="false" test="count($IdentifiersWithInvalidContent) eq 0" xlink:label="va-BR-OCW-S.2-identifier" xlink:type="resource"/>
+		<variable:variableArc name="IdentifiersWithInvalidContent" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-S.2-identifier" xlink:to="v_IdentifiersWithInvalidContent" xlink:type="arc"/>
+		<variable:generalVariable bindAsSequence="true" select="/xbrli:xbrl/xbrli:context/xbrli:entity/xbrli:identifier[not(matches(., '^[\w\d]{1,10}$'))]" xlink:label="v_IdentifiersWithInvalidContent" xlink:type="resource"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-S.2-identifier" xlink:to="sev_ERROR_loc" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="dimensional" id="va-BR-OCW-S.3-identifier-consistent" implicitFiltering="false" test="count($IdentifierUniqueContentValues) eq 1" xlink:label="va-BR-OCW-S.3-identifier-consistent" xlink:type="resource"/>
+		<variable:variableArc name="IdentifierUniqueContentValues" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-S.3-identifier-consistent" xlink:to="v_IdentifierUniqueContentValues" xlink:type="arc"/>
+		<variable:generalVariable bindAsSequence="true" select="distinct-values(/xbrli:xbrl/xbrli:context/xbrli:entity/xbrli:identifier)" xlink:label="v_IdentifierUniqueContentValues" xlink:type="resource"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-S.3-identifier-consistent" xlink:to="sev_ERROR_loc" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="dimensional" id="va-BR-OCW-S.4-decimals" implicitFiltering="false" test="count($ItemsWithInvalidDecimalsValue) eq 0" xlink:label="va-BR-OCW-S.4-decimals" xlink:type="resource"/>
+		<variable:variableArc name="ItemsWithInvalidDecimalsValue" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-S.4-decimals" xlink:to="v_ItemsWithInvalidDecimalsValue" xlink:type="arc"/>
+		<variable:generalVariable bindAsSequence="true" select="/xbrli:xbrl//*[(@precision or @decimals) and not(@decimals = 'INF')]" xlink:label="v_ItemsWithInvalidDecimalsValue" xlink:type="resource"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-S.4-decimals" xlink:to="sev_ERROR_loc" xlink:type="arc"/>
+		<link:loc xlink:href="http://www.xbrl.org/2016/severities.xml#ERROR" xlink:label="sev_ERROR_loc" xlink:type="locator"/>
+	</gen:link>
+</link:linkbase>

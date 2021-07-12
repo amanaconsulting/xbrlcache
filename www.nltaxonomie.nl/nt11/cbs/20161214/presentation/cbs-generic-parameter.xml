@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20161214
+  Release date: Wed Dec 14 09:00:00 2016
+-->
+<link:linkbase xmlns:venj-bw2-dm="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-domains" xmlns:venj-bw2-i="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-data" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-domains ../../../venj/20161214/dictionary/venj-bw2-domains.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-data ../../../venj/20161214/dictionary/venj-bw2-data.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" xlink:type="simple"/>
+  <gen:link xlink:role="http://www.xbrl.org/2008/role/link" xlink:type="extended">
+    <variable:parameter xlink:type="resource" id="FinancialReportingPeriodPrePreviousEndDateParam" xlink:label="FinancialReportingPeriodPrePreviousEndDateParam" name="FinancialReportingPeriodPrePreviousEndDateParam" select="if(exists(//venj-bw2-i:FinancialReportingPeriodPreviousStartDate))then xs:date((//venj-bw2-i:FinancialReportingPeriodPreviousStartDate) - xs:dayTimeDuration('PT24H')) else xs:date('2014-12-31')"/>
+    <variable:parameter xlink:type="resource" id="FinancialReportingPeriodPreviousStartDateParam" xlink:label="FinancialReportingPeriodPreviousStartDateParam" name="FinancialReportingPeriodPreviousStartDateParam" select="if(exists(//venj-bw2-i:FinancialReportingPeriodPreviousStartDate))then xs:date(//venj-bw2-i:FinancialReportingPeriodPreviousStartDate)else xs:date('2015-01-01')"/>
+    <variable:parameter xlink:type="resource" id="FinancialReportingPeriodPreviousEndDateParam" xlink:label="FinancialReportingPeriodPreviousEndDateParam" name="FinancialReportingPeriodPreviousEndDateParam" select="if(exists(//venj-bw2-i:FinancialReportingPeriodPreviousEndDate))then xs:date(//venj-bw2-i:FinancialReportingPeriodPreviousEndDate)else xs:date('2015-12-31')"/>
+    <variable:parameter xlink:type="resource" id="FinancialReportingPeriodCurrentStartDateParam" xlink:label="FinancialReportingPeriodCurrentStartDateParam" name="FinancialReportingPeriodCurrentStartDateParam" select="if(exists(//venj-bw2-i:FinancialReportingPeriodCurrentStartDate))then xs:date(//venj-bw2-i:FinancialReportingPeriodCurrentStartDate)else xs:date('2016-01-01')"/>
+    <variable:parameter xlink:type="resource" id="FinancialReportingPeriodCurrentEndDateParam" xlink:label="FinancialReportingPeriodCurrentEndDateParam" name="FinancialReportingPeriodCurrentEndDateParam" select="if(exists(//venj-bw2-i:FinancialReportingPeriodCurrentEndDate))then xs:date(//venj-bw2-i:FinancialReportingPeriodCurrentEndDate)else xs:date('2016-12-31')"/>
+    <variable:parameter xlink:type="resource" id="BasisOfPreparationParam" xlink:label="BasisOfPreparationParam" name="BasisOfPreparationParam" select="if(exists(//venj-bw2-i:BasisOfPreparation))then (if(//venj-bw2-i:BasisOfPreparation = 'Commercieel')then xs:QName('venj-bw2-dm:CommercialMember')else xs:QName('venj-bw2-dm:FiscalMember'))else(xs:QName('venj-bw2-dm:CommercialMember'))"/>
+    </gen:link>
+</link:linkbase>
+
+
+
+
