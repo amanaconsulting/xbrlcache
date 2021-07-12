@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20161214
+  Release date: Wed Dec 14 09:00:00 2016
+-->
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="urn:cbs:linkrole:classes-of-services" xlink:href="../dictionary/cbs-linkroles.xsd#cbs-lr_ClassesOfServices" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member" xlink:type="simple"/>
+  <link:definitionLink xlink:role="urn:cbs:linkrole:classes-of-services" xlink:type="extended">
+    <link:definitionArc xbrldt:usable="true" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="cbs-dim_ClassesOfServicesAxis_loc" xlink:to="cbs-dm_TotalServicesMember_loc" xlink:type="arc"/>
+    <link:definitionArc xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="cbs-dm_IndustrialServicesMember_loc" xlink:to="cbs-dm_IndustrialDomesticServicesMember_loc" xlink:type="arc"/>
+    <link:definitionArc xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="cbs-dm_IndustrialServicesMember_loc" xlink:to="cbs-dm_IndustrialForeignServicesMember_loc" xlink:type="arc"/>
+    <link:definitionArc xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="cbs-dm_TotalServicesMember_loc" xlink:to="cbs-dm_IndustrialServicesMember_loc" xlink:type="arc"/>
+    <link:definitionArc xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="cbs-dm_TotalServicesMember_loc" xlink:to="cbs-dm_OtherServicesMember_loc" xlink:type="arc"/>
+    <link:loc xlink:href="../dictionary/cbs-axes.xsd#cbs-dim_ClassesOfServicesAxis" xlink:label="cbs-dim_ClassesOfServicesAxis_loc" xlink:type="locator"/>
+    <link:loc xlink:href="../dictionary/cbs-domains.xsd#cbs-dm_IndustrialDomesticServicesMember" xlink:label="cbs-dm_IndustrialDomesticServicesMember_loc" xlink:type="locator"/>
+    <link:loc xlink:href="../dictionary/cbs-domains.xsd#cbs-dm_IndustrialForeignServicesMember" xlink:label="cbs-dm_IndustrialForeignServicesMember_loc" xlink:type="locator"/>
+    <link:loc xlink:href="../dictionary/cbs-domains.xsd#cbs-dm_IndustrialServicesMember" xlink:label="cbs-dm_IndustrialServicesMember_loc" xlink:type="locator"/>
+    <link:loc xlink:href="../dictionary/cbs-domains.xsd#cbs-dm_OtherServicesMember" xlink:label="cbs-dm_OtherServicesMember_loc" xlink:type="locator"/>
+    <link:loc xlink:href="../dictionary/cbs-domains.xsd#cbs-dm_TotalServicesMember" xlink:label="cbs-dm_TotalServicesMember_loc" xlink:type="locator"/>
+  </link:definitionLink>
+</link:linkbase>

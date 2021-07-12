@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11 
+  Version: 20170419
+  Release date: Wed Apr 19 09:00:00 2017
+-->
+<link:linkbase xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:validation="http://xbrl.org/2008/validation" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd   http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd   http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd   http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd   http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd   http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd      ">
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set" xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" xlink:type="simple"/>
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" xlink:type="simple"/>
+	<gen:link xlink:role="http://www.xbrl.org/2008/role/link" xlink:type="extended">
+		<validation:assertionSet id="assertion-set-general" xlink:label="assertion-set-general" xlink:type="resource"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-general" xlink:to="va-BR-OCW-WNT.S.1-durationperiod" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="dimensional" id="va-BR-OCW-WNT.S.1-durationperiod" implicitFiltering="false" test="count($InvalidPeriods) eq 0" xlink:label="va-BR-OCW-WNT.S.1-durationperiod" xlink:type="resource"/>
+		<variable:variableArc name="InvalidPeriods" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.S.1-durationperiod" xlink:to="v_InvalidPeriods" xlink:type="arc"/>
+		<variable:generalVariable bindAsSequence="true" select="/xbrli:xbrl/xbrli:context/xbrli:period[not(xfi:is-start-end-period(.)) or not(xs:date(xbrli:startDate) eq xs:date($CurrentPeriodStartDate)) or not(xs:date(xbrli:endDate) eq xs:date($CurrentPeriodEndDate))]" xlink:label="v_InvalidPeriods" xlink:type="resource"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-WNT.S.1-durationperiod" xlink:to="sev_ERROR_loc" xlink:type="arc"/>
+		<link:loc xlink:href="http://www.xbrl.org/2016/severities.xml#ERROR" xlink:label="sev_ERROR_loc" xlink:type="locator"/>
+	</gen:link>
+</link:linkbase>

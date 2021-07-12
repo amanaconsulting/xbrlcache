@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11 
+  Version: 20170301.b
+  Release date: Mon Jan 23 09:00:00 2017
+-->
+<xs:schema xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nl-cd="http://www.nltaxonomie.nl/nt11/sbr/20160610/dictionary/nl-common-data" xmlns:ocw-wnt-i="http://www.nltaxonomie.nl/nt11/ocw/20170301.b/dictionary/ocw-wnt-data" xmlns:ocw-wnt-t="http://www.nltaxonomie.nl/nt11/ocw/20170301.b/dictionary/ocw-wnt-tuples" xmlns:sbr="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="ocw-wnt-t" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nltaxonomie.nl/nt11/ocw/20170301.b/dictionary/ocw-wnt-tuples">
+	<xs:annotation>
+		<xs:appinfo>
+			<link:linkbaseRef xlink:href="ocw-wnt-tuples-documentation-lab-nl.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="ocw-wnt-tuples-lab-en.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="ocw-wnt-tuples-lab-nl.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<xs:import namespace="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension" schemaLocation="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension.xsd"/>
+	<xs:import namespace="http://www.nltaxonomie.nl/nt11/ocw/20170301.b/dictionary/ocw-wnt-data" schemaLocation="ocw-wnt-data.xsd"/>
+	<xs:import namespace="http://www.nltaxonomie.nl/nt11/sbr/20160610/dictionary/nl-common-data" schemaLocation="../../../sbr/20160610/dictionary/nl-common-data.xsd"/>
+	<xs:element id="ocw-wnt-t_PersonCompletingFormPresentation" name="PersonCompletingFormPresentation" substitutionGroup="sbr:presentationTuple" nillable="false" abstract="false">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sbr:placeholder">
+					<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:element ref="ocw-wnt-i:AuthorFullName" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="ocw-wnt-i:AuthorJobRole" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:TelephoneNumber" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:EmailAddressFull" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
