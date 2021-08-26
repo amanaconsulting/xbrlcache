@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20170705.b
+  Release date: Mon May 29 11:27:39 2017
+-->
+<xs:schema id="bd-types-ext2" targetNamespace="http://www.nltaxonomie.nl/nt11/bd/20170705.b/dictionary/bd-types-ext2" xmlns:bd-types="http://www.nltaxonomie.nl/nt11/bd/20161207/dictionary/bd-types" xmlns:bd-types-ext2="http://www.nltaxonomie.nl/nt11/bd/20170705.b/dictionary/bd-types-ext2" xmlns:xbrli="http://www.xbrl.org/2003/instance" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <xs:import namespace="http://www.nltaxonomie.nl/nt11/bd/20161207/dictionary/bd-types" schemaLocation="../../20161207/dictionary/bd-types.xsd" />
+  <xs:complexType name="anstring47VItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:tokenItemType">
+        <xs:maxLength value="47" />
+        <xs:minLength value="1" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="monetary11_2ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:monetaryItemType">
+        <xs:pattern value="\d{1,9}[.]\d{2}" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="perc3ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="bd-types:nonNegativeInteger3VItemType">
+        <xs:maxInclusive value="100" />
+        <xs:minInclusive value="0" />
+        <xs:totalDigits value="3" />
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

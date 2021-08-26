@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11 
+  Version: 20170301.b
+  Release date: Mon Jan 23 09:00:00 2017
+-->
+<link:linkbase xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:msg="http://xbrl.org/2010/message" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd">
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" xlink:type="simple"/>
+	<link:roleRef roleURI="http://www.xbrl.org/2010/role/message" xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message" xlink:type="simple"/>
+	<gen:link xlink:role="http://www.xbrl.org/2008/role/link" xlink:type="extended">
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="va-BR-OCW-S.1-scheme_loc" xlink:to="BR-OCW-S.1-scheme_msg_en" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="va-BR-OCW-S.2-identifier_loc" xlink:to="BR-OCW-S.2-identifier_msg_en" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="va-BR-OCW-S.3-identifier-consistent_loc" xlink:to="BR-OCW-S.3-identifier-consistent_msg_en" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="va-BR-OCW-S.4-decimals_loc" xlink:to="BR-OCW-S.4-decimals_msg_en" xlink:type="arc"/>
+		<link:loc xlink:href="ocw-structure-rules-for.xml#va-BR-OCW-S.1-scheme" xlink:label="va-BR-OCW-S.1-scheme_loc" xlink:type="locator"/>
+		<link:loc xlink:href="ocw-structure-rules-for.xml#va-BR-OCW-S.2-identifier" xlink:label="va-BR-OCW-S.2-identifier_loc" xlink:type="locator"/>
+		<link:loc xlink:href="ocw-structure-rules-for.xml#va-BR-OCW-S.3-identifier-consistent" xlink:label="va-BR-OCW-S.3-identifier-consistent_loc" xlink:type="locator"/>
+		<link:loc xlink:href="ocw-structure-rules-for.xml#va-BR-OCW-S.4-decimals" xlink:label="va-BR-OCW-S.4-decimals_loc" xlink:type="locator"/>
+		<msg:message id="BR-OCW-S.1-scheme_msg_en" xlink:label="BR-OCW-S.1-scheme_msg_en" xlink:role="http://www.xbrl.org/2010/role/message" xlink:type="resource" xml:lang="en">The following invalid entity identifier scheme values have been found in this report: {string-join((for $d in $IdentifiersWithInvalidSchemeValue return concat('''', $d/@scheme , ''' (context-id: ', $d/../../@id, ')')), ', ')}. Elements 'xbrli:identifier' of all contexts MUST specify attribute 'scheme' with value 'http://www.duo.nl/bevoegdgezagnummer'.</msg:message>
+		<msg:message id="BR-OCW-S.2-identifier_msg_en" xlink:label="BR-OCW-S.2-identifier_msg_en" xlink:role="http://www.xbrl.org/2010/role/message" xlink:type="resource" xml:lang="en">The following invalid entity identifier content values have been found in this report: {string-join((for $d in $IdentifiersWithInvalidContent return concat('''', $d , ''' (context-id: ', $d/../../@id, ')')), ', ')}. The contents of element 'xbrli:identifier' MUST specify at most 10 alphanumeric characters.</msg:message>
+		<msg:message id="BR-OCW-S.3-identifier-consistent_msg_en" xlink:label="BR-OCW-S.3-identifier-consistent_msg_en" xlink:role="http://www.xbrl.org/2010/role/message" xlink:type="resource" xml:lang="en">Multiple entity identifiers have been found in this report: {string-join((for $d in $IdentifierUniqueContentValues return string($d)), ', ')}. Element 'xbrli:identifier' of all contexts MUST specify the same value.</msg:message>
+		<msg:message id="BR-OCW-S.4-decimals_msg_en" xlink:label="BR-OCW-S.4-decimals_msg_en" xlink:role="http://www.xbrl.org/2010/role/message" xlink:type="resource" xml:lang="en">Numeric items with invalid values for attribute 'decimals' have been found in this report: {string-join((for $d in $ItemsWithInvalidDecimalsValue return concat('''', name($d) , ''' (context ', $d/@contextRef, ')')), ', ')}. Numeric facts MUST be reported with attribute value decimals="INF".</msg:message>
+	</gen:link>
+</link:linkbase>
