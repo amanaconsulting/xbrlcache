@@ -30,6 +30,8 @@ A single repository with all XBRL taxonomy files
 * Bundesbank 3.0 G-SII
 * Bundesbank 3.0 REM
 * Bundesbank EZB-SFRDP 5.0.0
+* Bundesbank 3.1 SBP
+* Bundesbank 3.1 FI
 
 ### Bundesbank FinaRisikoV
 
