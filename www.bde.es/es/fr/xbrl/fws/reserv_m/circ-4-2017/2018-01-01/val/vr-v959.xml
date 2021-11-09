@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:ebacrr_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:ebacrr_CU="http://www.eba.europa.eu/xbrl/crr/dict/dom/CU" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:es_dim="http://www.bde.es/xbrl/dict/dim" xmlns:ebacrr_GA="http://www.eba.europa.eu/xbrl/crr/dict/dom/GA" xmlns:ebacrr_SC="http://www.eba.europa.eu/xbrl/crr/dict/dom/SC" xmlns:ebacrr_met="http://www.eba.europa.eu/xbrl/crr/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ebacrr_BA="http://www.eba.europa.eu/xbrl/crr/dict/dom/BA" xmlns:ebacrr_BT="http://www.eba.europa.eu/xbrl/crr/dict/dom/BT" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pf="http://xbrl.org/2008/filter/period" xmlns:bf="http://xbrl.org/2008/filter/boolean" xmlns:ebacrr_MC="http://www.eba.europa.eu/xbrl/crr/dict/dom/MC" xmlns:es_met="http://www.bde.es/xbrl/dict/met" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_v959" test="$c != 0" aspectModel="dimensional" implicitFiltering="true" id="es_v959" />
+    <variable:precondition xlink:type="resource" xlink:label="es_v959.p1" test="sum($a) - sum($b) &gt; 10000" id="es_v959.p1" />
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:from="es_v959" xlink:to="es_v959.p1" order="1" />
+    <link:loc xlink:type="locator" xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/filt.xml#eu_fnumeric" xlink:label="loc_eu_fnumeric" />
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v959" xlink:to="loc_eu_fnumeric" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.f322" id="es_v959.f322">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CUE</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CU:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v959" xlink:to="es_v959.f322" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.f323" id="es_v959.f323">
+      <df:dimension>
+        <df:qname>es_dim:GAH</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_GA:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v959" xlink:to="es_v959.f323" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.f324" id="es_v959.f324">
+      <df:dimension>
+        <df:qname>ebacrr_dim:SCO</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_SC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v959" xlink:to="es_v959.f324" complement="false" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v959.a" bindAsSequence="true" fallbackValue="()" xlink:title="../../../../finrep_ind/circ-4-2017/2018-01-01/mod/finrep_ind.xsd" id="es_v959.a" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_v959.a.f219" id="es_v959.a.f219">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi53</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.a" xlink:to="es_v959.a.f219" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.a.f220" id="es_v959.a.f220">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x2</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.a" xlink:to="es_v959.a.f220" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.a.f221" id="es_v959.a.f221">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CNO</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BT:x4</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.a" xlink:to="es_v959.a.f221" cover="true" complement="false" order="3" />
+    <pf:period xlink:type="resource" xlink:label="es_v959.a.f252" test="if (xfi:is-instant-period(.)) then xs:date(xfi:period-instant(.) - xs:dayTimeDuration('P1D')) = $refPeriodEndDate else false()" id="es_v959.a.f252" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.a" xlink:to="es_v959.a.f252" cover="true" complement="false" order="4" />
+    <bf:orFilter xlink:type="resource" xlink:label="es_v959.a.f261" id="es_v959.a.f261" />
+    <bf:andFilter xlink:type="resource" xlink:label="es_v959.a.f261.f262" id="es_v959.a.f261.f262" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.a.f261.f262.f263" id="es_v959.a.f261.f262.f263">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x816</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.a.f261.f262" xlink:to="es_v959.a.f261.f262.f263" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.a.f261.f262.f264" id="es_v959.a.f261.f262.f264">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x132</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.a.f261.f262" xlink:to="es_v959.a.f261.f262.f264" cover="true" complement="false" order="2" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.a.f261" xlink:to="es_v959.a.f261.f262" cover="true" complement="false" order="1" />
+    <bf:andFilter xlink:type="resource" xlink:label="es_v959.a.f261.f265" id="es_v959.a.f261.f265" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.a.f261.f265.f266" id="es_v959.a.f261.f265.f266">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.a.f261.f265" xlink:to="es_v959.a.f261.f265.f266" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.a.f261.f265.f267" id="es_v959.a.f261.f265.f267">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x322</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.a.f261.f265" xlink:to="es_v959.a.f261.f265.f267" cover="true" complement="false" order="2" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.a.f261" xlink:to="es_v959.a.f261.f265" cover="true" complement="false" order="2" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.a" xlink:to="es_v959.a.f261" cover="true" complement="false" order="5" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v959" xlink:to="es_v959.a" name="a" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v959.b" bindAsSequence="true" fallbackValue="()" xlink:title="../../../../finrep_ind/circ-4-2017/2018-01-01/mod/finrep_ind.xsd#1-0-0-0-1--" id="es_v959.b" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_v959.b.f271" id="es_v959.b.f271">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi53</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.b" xlink:to="es_v959.b.f271" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.b.f272" id="es_v959.b.f272">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x2</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.b" xlink:to="es_v959.b.f272" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.b.f273" id="es_v959.b.f273">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CNO</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BT:x4</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.b" xlink:to="es_v959.b.f273" cover="true" complement="false" order="3" />
+    <pf:period xlink:type="resource" xlink:label="es_v959.b.f304" test="if (xfi:is-instant-period(.)) then xs:date(xfi:period-instant(.) - xs:dayTimeDuration('P1D')) = $refPeriodEndDate + xs:dayTimeDuration('P1D') - xs:yearMonthDuration('P1M') - xs:dayTimeDuration('P1D') else false()" id="es_v959.b.f304" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.b" xlink:to="es_v959.b.f304" cover="true" complement="false" order="4" />
+    <bf:orFilter xlink:type="resource" xlink:label="es_v959.b.f313" id="es_v959.b.f313" />
+    <bf:andFilter xlink:type="resource" xlink:label="es_v959.b.f313.f314" id="es_v959.b.f313.f314" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.b.f313.f314.f315" id="es_v959.b.f313.f314.f315">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x816</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.b.f313.f314" xlink:to="es_v959.b.f313.f314.f315" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.b.f313.f314.f316" id="es_v959.b.f313.f314.f316">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x132</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.b.f313.f314" xlink:to="es_v959.b.f313.f314.f316" cover="true" complement="false" order="2" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.b.f313" xlink:to="es_v959.b.f313.f314" cover="true" complement="false" order="1" />
+    <bf:andFilter xlink:type="resource" xlink:label="es_v959.b.f313.f317" id="es_v959.b.f313.f317" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.b.f313.f317.f318" id="es_v959.b.f313.f317.f318">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.b.f313.f317" xlink:to="es_v959.b.f313.f317.f318" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.b.f313.f317.f319" id="es_v959.b.f313.f317.f319">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x322</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.b.f313.f317" xlink:to="es_v959.b.f313.f317.f319" cover="true" complement="false" order="2" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/boolean-filter" xlink:from="es_v959.b.f313" xlink:to="es_v959.b.f313.f317" cover="true" complement="false" order="2" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.b" xlink:to="es_v959.b.f313" cover="true" complement="false" order="5" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v959" xlink:to="es_v959.b" name="b" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v959.c" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/fi_m1.xsd" id="es_v959.c" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_v959.c.f173" id="es_v959.c.f173">
+      <cf:concept>
+        <cf:qname>es_met:md1456</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.c" xlink:to="es_v959.c.f173" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.c.f174" id="es_v959.c.f174">
+      <df:dimension>
+        <df:qname>ebacrr_dim:BAS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BA:x17</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.c" xlink:to="es_v959.c.f174" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.c.f191" id="es_v959.c.f191">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.c" xlink:to="es_v959.c.f191" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.c.f194" id="es_v959.c.f194">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x28</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.c" xlink:to="es_v959.c.f194" cover="true" complement="false" order="4" />
+    <pf:period xlink:type="resource" xlink:label="es_v959.c.f212" test="if (xfi:is-instant-period(.)) then xs:date(xfi:period-instant(.) - xs:dayTimeDuration('P1D')) = $refPeriodEndDate else false()" id="es_v959.c.f212" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.c" xlink:to="es_v959.c.f212" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v959.c.f321" id="es_v959.c.f321">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CNO</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_BT:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v959.c" xlink:to="es_v959.c.f321" cover="true" complement="false" order="6" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v959" xlink:to="es_v959.c" name="c" order="3" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_v959" id="ref_es_v959">
+      <ref:Number>reserv_m:v959</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_v959" xlink:to="ref_es_v959" />
+  </gen:link>
+</link:linkbase>

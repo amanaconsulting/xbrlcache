@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11 
+  Version: 20170419
+  Release date: Wed Apr 19 09:00:00 2017
+-->
+<xs:schema xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nl-cd="http://www.nltaxonomie.nl/nt11/sbr/20160610/dictionary/nl-common-data" xmlns:ocw-i="http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-data" xmlns:ocw-t="http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-tuples" xmlns:sbr="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="ocw-t" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-tuples">
+	<xs:annotation>
+		<xs:appinfo>
+			<link:linkbaseRef xlink:href="ocw-tuples-commentary-lab-nl.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="ocw-tuples-documentation-lab-nl.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="ocw-tuples-lab-en.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="ocw-tuples-lab-nl.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<xs:import namespace="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension" schemaLocation="http://www.nltaxonomie.nl/2011/xbrl/xbrl-syntax-extension.xsd"/>
+	<xs:import namespace="http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-data" schemaLocation="ocw-data.xsd"/>
+	<xs:import namespace="http://www.nltaxonomie.nl/nt11/sbr/20160610/dictionary/nl-common-data" schemaLocation="../../../sbr/20160610/dictionary/nl-common-data.xsd"/>
+	<xs:element id="ocw-t_AdministrationManagementContactPresentation" name="AdministrationManagementContactPresentation" substitutionGroup="sbr:presentationTuple" nillable="false" abstract="false">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sbr:placeholder">
+					<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:element ref="ocw-i:AdministrationManagementName" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="ocw-i:AdministrationManagementAdministrationNumber" minOccurs="1" maxOccurs="1"/>
+						<xs:choice maxOccurs="1" minOccurs="1">
+							<xs:sequence minOccurs="1" maxOccurs="1">
+								<xs:element ref="nl-cd:StreetNameNL" minOccurs="1" maxOccurs="1"/>
+								<xs:element ref="nl-cd:HouseNumberNL" minOccurs="1" maxOccurs="1"/>
+								<xs:element ref="nl-cd:HouseNumberAddition" minOccurs="0" maxOccurs="1"/>
+							</xs:sequence>
+							<xs:element ref="nl-cd:POBoxNumber" minOccurs="1" maxOccurs="1"/>
+						</xs:choice>
+						<xs:element ref="nl-cd:PostalCodeNL" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:PlaceOfResidenceNL" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="ocw-i:AdministrationManagementContactFullName" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="ocw-i:ContactSalutation" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="nl-cd:TelephoneNumber" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:EmailAddressFull" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element id="ocw-t_AuditorDataPresentation" name="AuditorDataPresentation" substitutionGroup="sbr:presentationTuple" nillable="false" abstract="false">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sbr:placeholder">
+					<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:element ref="ocw-i:AuditFirmName" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="ocw-i:AuditorName" minOccurs="0" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element id="ocw-t_ContactForDocumentPresentation" name="ContactForDocumentPresentation" substitutionGroup="sbr:presentationTuple" nillable="false" abstract="false">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sbr:placeholder">
+					<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:element ref="ocw-i:ContactFullName" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="ocw-i:ContactSalutation" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="ocw-i:ContactJobRole" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:TelephoneNumber" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:EmailAddressFull" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element id="ocw-t_PostalAddressPresentation" name="PostalAddressPresentation" substitutionGroup="sbr:presentationTuple" nillable="false" abstract="false">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sbr:placeholder">
+					<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:choice maxOccurs="1" minOccurs="1">
+							<xs:sequence minOccurs="1" maxOccurs="1">
+								<xs:element ref="nl-cd:StreetNameNL" minOccurs="1" maxOccurs="1"/>
+								<xs:element ref="nl-cd:HouseNumberNL" minOccurs="1" maxOccurs="1"/>
+								<xs:element ref="nl-cd:HouseNumberAddition" minOccurs="0" maxOccurs="1"/>
+							</xs:sequence>
+							<xs:element ref="nl-cd:POBoxNumber" minOccurs="1" maxOccurs="1"/>
+						</xs:choice>
+						<xs:element ref="nl-cd:PostalCodeNL" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:PlaceOfResidenceNL" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element id="ocw-t_StatutoryAddressPresentation" name="StatutoryAddressPresentation" substitutionGroup="sbr:presentationTuple" nillable="false" abstract="false">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sbr:placeholder">
+					<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:element ref="nl-cd:StreetNameNL" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:HouseNumberNL" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:HouseNumberAddition" minOccurs="0" maxOccurs="1"/>
+						<xs:element ref="nl-cd:PostalCodeNL" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="nl-cd:PlaceOfResidenceNL" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

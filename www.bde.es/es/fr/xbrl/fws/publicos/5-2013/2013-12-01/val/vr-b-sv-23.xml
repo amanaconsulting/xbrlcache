@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:estr_base="http://www.bde.es/es/fr/xbrl/main/base" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_b-sv-23" test="abs($totalRdo - ($capitalFondoDotacion + $primaEmision + $reservas + $otrosInstrumentosCapital - $menosValoresPropios + $rdoEjercicio - $menosDividendosRetribuciones)) le $threshold" aspectModel="dimensional" implicitFiltering="true" id="es_b-sv-23" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-23.capitalFondoDotacion" bindAsSequence="false" fallbackValue="0" id="es_b-sv-23.capitalFondoDotacion" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-23.capitalFondoDotacion.fil_es-be-p-FINREP_CapitalFondoDotaciond10e1609" id="es_b-sv-23.capitalFondoDotacion.fil_es-be-p-FINREP_CapitalFondoDotaciond10e1609">
+      <cf:concept>
+        <cf:qname>estr_base:mi108909</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-23.capitalFondoDotacion" xlink:to="es_b-sv-23.capitalFondoDotacion.fil_es-be-p-FINREP_CapitalFondoDotaciond10e1609" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.capitalFondoDotacion" name="capitalFondoDotacion" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-23.primaEmision" bindAsSequence="false" fallbackValue="0" id="es_b-sv-23.primaEmision" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-23.primaEmision.fil_ifrs-gp_SharePremiumTotald10e1623" id="es_b-sv-23.primaEmision.fil_ifrs-gp_SharePremiumTotald10e1623">
+      <cf:concept>
+        <cf:qname>estr_base:mi84167</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-23.primaEmision" xlink:to="es_b-sv-23.primaEmision.fil_ifrs-gp_SharePremiumTotald10e1623" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.primaEmision" name="primaEmision" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-23.reservas" bindAsSequence="false" fallbackValue="0" id="es_b-sv-23.reservas" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-23.reservas.fil_p-FINREP_ReservesIncludingRetainedEarningsd10e1637" id="es_b-sv-23.reservas.fil_p-FINREP_ReservesIncludingRetainedEarningsd10e1637">
+      <cf:concept>
+        <cf:qname>estr_base:mi67289</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-23.reservas" xlink:to="es_b-sv-23.reservas.fil_p-FINREP_ReservesIncludingRetainedEarningsd10e1637" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.reservas" name="reservas" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-23.otrosInstrumentosCapital" bindAsSequence="false" fallbackValue="0" id="es_b-sv-23.otrosInstrumentosCapital" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-23.otrosInstrumentosCapital.fil_p-FINREP_OtherEquityInstrumentsd10e1651" id="es_b-sv-23.otrosInstrumentosCapital.fil_p-FINREP_OtherEquityInstrumentsd10e1651">
+      <cf:concept>
+        <cf:qname>estr_base:mi79813</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-23.otrosInstrumentosCapital" xlink:to="es_b-sv-23.otrosInstrumentosCapital.fil_p-FINREP_OtherEquityInstrumentsd10e1651" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.otrosInstrumentosCapital" name="otrosInstrumentosCapital" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-23.menosValoresPropios" bindAsSequence="false" fallbackValue="0" id="es_b-sv-23.menosValoresPropios" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-23.menosValoresPropios.fil_ifrs-gp_TreasurySharesd10e1666" id="es_b-sv-23.menosValoresPropios.fil_ifrs-gp_TreasurySharesd10e1666">
+      <cf:concept>
+        <cf:qname>estr_base:mi57210</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-23.menosValoresPropios" xlink:to="es_b-sv-23.menosValoresPropios.fil_ifrs-gp_TreasurySharesd10e1666" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.menosValoresPropios" name="menosValoresPropios" order="5" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-23.rdoEjercicio" bindAsSequence="false" fallbackValue="0" id="es_b-sv-23.rdoEjercicio" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-23.rdoEjercicio.fil_p-FINREP_IncomeFromCurrentYeard10e1680" id="es_b-sv-23.rdoEjercicio.fil_p-FINREP_IncomeFromCurrentYeard10e1680">
+      <cf:concept>
+        <cf:qname>estr_base:mi94368</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-23.rdoEjercicio" xlink:to="es_b-sv-23.rdoEjercicio.fil_p-FINREP_IncomeFromCurrentYeard10e1680" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.rdoEjercicio" name="rdoEjercicio" order="6" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-23.menosDividendosRetribuciones" bindAsSequence="false" fallbackValue="0" id="es_b-sv-23.menosDividendosRetribuciones" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-23.menosDividendosRetribuciones.fil_p-FINREP_InterimDividendsBalanceSheetTotald10e1694" id="es_b-sv-23.menosDividendosRetribuciones.fil_p-FINREP_InterimDividendsBalanceSheetTotald10e1694">
+      <cf:concept>
+        <cf:qname>estr_base:mi99013</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-23.menosDividendosRetribuciones" xlink:to="es_b-sv-23.menosDividendosRetribuciones.fil_p-FINREP_InterimDividendsBalanceSheetTotald10e1694" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.menosDividendosRetribuciones" name="menosDividendosRetribuciones" order="7" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-23.totalRdo" bindAsSequence="false" fallbackValue="0" id="es_b-sv-23.totalRdo" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-23.totalRdo.fil_es-be-p-FINREP_FondosPropiosd10e1708" id="es_b-sv-23.totalRdo.fil_es-be-p-FINREP_FondosPropiosd10e1708">
+      <cf:concept>
+        <cf:qname>estr_base:mi104218</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-23.totalRdo" xlink:to="es_b-sv-23.totalRdo.fil_es-be-p-FINREP_FondosPropiosd10e1708" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.totalRdo" name="totalRdo" order="8" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_b-sv-23.threshold" bindAsSequence="false" select="(7 idiv 2 + 1) * 1000" id="es_b-sv-23.threshold" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-23" xlink:to="es_b-sv-23.threshold" name="threshold" order="9" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_b-sv-23" id="ref_es_b-sv-23">
+      <ref:Number>publicos:b-sv-23</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_b-sv-23" xlink:to="ref_es_b-sv-23" />
+  </gen:link>
+</link:linkbase>

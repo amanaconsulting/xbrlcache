@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:estr_base="http://www.bde.es/es/fr/xbrl/main/base" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_b-sv-1" test="abs($totalRdo - ($depositoEntidadesCredito + $creditoClientela + $valoresRepresentativosDeuda + $instrumentosCapital + $derivadosNegociacion)) le $threshold" aspectModel="dimensional" implicitFiltering="true" id="es_b-sv-1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-1.depositoEntidadesCredito" bindAsSequence="false" fallbackValue="0" id="es_b-sv-1.depositoEntidadesCredito" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-1.depositoEntidadesCredito.fil_es-be-p-FINREP_CarteraNegociacionDepositoEntidadesCreditod10e43" id="es_b-sv-1.depositoEntidadesCredito.fil_es-be-p-FINREP_CarteraNegociacionDepositoEntidadesCreditod10e43">
+      <cf:concept>
+        <cf:qname>estr_base:mi40636</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-1.depositoEntidadesCredito" xlink:to="es_b-sv-1.depositoEntidadesCredito.fil_es-be-p-FINREP_CarteraNegociacionDepositoEntidadesCreditod10e43" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-1" xlink:to="es_b-sv-1.depositoEntidadesCredito" name="depositoEntidadesCredito" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-1.creditoClientela" bindAsSequence="false" fallbackValue="0" id="es_b-sv-1.creditoClientela" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-1.creditoClientela.fil_es-be-p-FINREP_CarteraNegociacionCreditoClientelad10e57" id="es_b-sv-1.creditoClientela.fil_es-be-p-FINREP_CarteraNegociacionCreditoClientelad10e57">
+      <cf:concept>
+        <cf:qname>estr_base:mi91378</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-1.creditoClientela" xlink:to="es_b-sv-1.creditoClientela.fil_es-be-p-FINREP_CarteraNegociacionCreditoClientelad10e57" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-1" xlink:to="es_b-sv-1.creditoClientela" name="creditoClientela" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-1.valoresRepresentativosDeuda" bindAsSequence="false" fallbackValue="0" id="es_b-sv-1.valoresRepresentativosDeuda" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-1.valoresRepresentativosDeuda.fil_ifrs-gp_FinancialAssetsHeldForTradingOtherDebtInstrumentsd10e71" id="es_b-sv-1.valoresRepresentativosDeuda.fil_ifrs-gp_FinancialAssetsHeldForTradingOtherDebtInstrumentsd10e71">
+      <cf:concept>
+        <cf:qname>estr_base:mi49660</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-1.valoresRepresentativosDeuda" xlink:to="es_b-sv-1.valoresRepresentativosDeuda.fil_ifrs-gp_FinancialAssetsHeldForTradingOtherDebtInstrumentsd10e71" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-1" xlink:to="es_b-sv-1.valoresRepresentativosDeuda" name="valoresRepresentativosDeuda" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-1.instrumentosCapital" bindAsSequence="false" fallbackValue="0" id="es_b-sv-1.instrumentosCapital" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-1.instrumentosCapital.fil_ifrs-gp_FinancialAssetsHeldForTradingEquityInstrumentsd10e85" id="es_b-sv-1.instrumentosCapital.fil_ifrs-gp_FinancialAssetsHeldForTradingEquityInstrumentsd10e85">
+      <cf:concept>
+        <cf:qname>estr_base:mi33022</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-1.instrumentosCapital" xlink:to="es_b-sv-1.instrumentosCapital.fil_ifrs-gp_FinancialAssetsHeldForTradingEquityInstrumentsd10e85" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-1" xlink:to="es_b-sv-1.instrumentosCapital" name="instrumentosCapital" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-1.derivadosNegociacion" bindAsSequence="false" fallbackValue="0" id="es_b-sv-1.derivadosNegociacion" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-1.derivadosNegociacion.fil_ifrs-gp_FinancialAssetsHeldForTradingTradingDerivativesd10e100" id="es_b-sv-1.derivadosNegociacion.fil_ifrs-gp_FinancialAssetsHeldForTradingTradingDerivativesd10e100">
+      <cf:concept>
+        <cf:qname>estr_base:mi20082</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-1.derivadosNegociacion" xlink:to="es_b-sv-1.derivadosNegociacion.fil_ifrs-gp_FinancialAssetsHeldForTradingTradingDerivativesd10e100" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-1" xlink:to="es_b-sv-1.derivadosNegociacion" name="derivadosNegociacion" order="5" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b-sv-1.totalRdo" bindAsSequence="false" fallbackValue="0" id="es_b-sv-1.totalRdo" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b-sv-1.totalRdo.fil_ifrs-gp_FinancialAssetsHeldForTradingTotald10e114" id="es_b-sv-1.totalRdo.fil_ifrs-gp_FinancialAssetsHeldForTradingTotald10e114">
+      <cf:concept>
+        <cf:qname>estr_base:mi62737</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b-sv-1.totalRdo" xlink:to="es_b-sv-1.totalRdo.fil_ifrs-gp_FinancialAssetsHeldForTradingTotald10e114" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-1" xlink:to="es_b-sv-1.totalRdo" name="totalRdo" order="6" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_b-sv-1.threshold" bindAsSequence="false" select="(5 idiv 2 + 1) * 1000" id="es_b-sv-1.threshold" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b-sv-1" xlink:to="es_b-sv-1.threshold" name="threshold" order="7" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_b-sv-1" id="ref_es_b-sv-1">
+      <ref:Number>publicos:b-sv-1</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_b-sv-1" xlink:to="ref_es_b-sv-1" />
+  </gen:link>
+</link:linkbase>

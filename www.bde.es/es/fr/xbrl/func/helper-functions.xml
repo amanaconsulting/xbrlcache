@@ -9,6 +9,7 @@
  xmlns:variable="http://xbrl.org/2008/variable"
  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:instance="http://xbrl.org/2010/variable/instance"
  xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+ xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
 
  <!-- Library with general purpose helper functions -->
@@ -96,8 +97,63 @@
   
   <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_codigo-postal-valido" xlink:to="implementation_codigo-postal-valido" order="1.0"/>
 
+  <!-- Función que obtiene el código de la entidad presentada a partir de la instancia recibida como parámetro-->
+  <variable:function xlink:type="resource" xlink:label="function_codigo-entidad-presentada" name="behfn:codigo-entidad-presentada" output="xs:string">
+  	<variable:input type="element()"/>
+  </variable:function>
+  
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_codigo-entidad-presentada">
+  	<cfi:input name="instancia"/>
+	<cfi:output>$instancia/descendant::xbrli:identifier[1]</cfi:output>
+  </cfi:implementation>
+  
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_codigo-entidad-presentada" xlink:to="implementation_codigo-entidad-presentada" order="1.0"/>
+  
+  
+  <!-- Función que obtiene el código de la entidad presentadora de la instancia estándar-->
+  <variable:function xlink:type="resource" xlink:label="function_codigo-entidad-presentadora" name="behfn:codigo-entidad-presentadora" output="xs:string">  	
+  </variable:function>
+  
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_codigo-entidad-presentadora">
+  	<cfi:output>substring(xfi:identifier(//es-be-cm-pblo:EntidadPresentadora),3,4)</cfi:output>
+  </cfi:implementation>
+  
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_codigo-entidad-presentadora" xlink:to="implementation_codigo-entidad-presentadora" order="1.0"/>
 
-
-
+ <!-- 
+ Función que nos indica si en una instancia se está reportado el estado indicado en el parámetro de entrada "estado" de tipo texto (tiene que ir entre comillas simples)
+              
+ Si el resultado es "true" el estado SI está reportado 
+ Si el resultado es "false" el estado NO está reportado 
+  -->
+   
+  <variable:function xlink:type="resource" xlink:label="function_EsEstadoReportado" name="behfn:es-estado-reportado" output="xs:boolean">
+    <variable:input type="xs:string"/>	  
+  </variable:function>
+  
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_EsEstadoReportado">
+    <cfi:input name="estado"/>    
+	<cfi:step name="match">//es-be-cm-pblo:EstadosReportados/es-be-cm-pblo:CodigoEstado[. eq $estado and not(data(@es-be-cm-pblo:blanco))]</cfi:step>
+    <cfi:output>if (count($match) > 0) then ($match eq $estado) else xs:boolean(false())</cfi:output>
+  </cfi:implementation>
+    
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_EsEstadoReportado" xlink:to="implementation_EsEstadoReportado" order="1.0"/>   
+  
+  
+  <variable:function xlink:type="resource" xlink:label="function_EsEstadoReportado2" name="behfn:es-estado-reportado" output="xs:boolean">
+    <variable:input type="xs:string"/>
+	<variable:input type="element()"/>   
+  </variable:function>
+  
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_EsEstadoReportado2">
+    <cfi:input name="estado"/>
+    <cfi:input name="instancia"/>
+	<cfi:step name="match">$instancia//es-be-cm-pblo:EstadosReportados/es-be-cm-pblo:CodigoEstado[. eq $estado and not(data(@es-be-cm-pblo:blanco))]</cfi:step>
+    <cfi:output>if (count($match) > 0) then ($match eq $estado) else xs:boolean(false())</cfi:output>
+  </cfi:implementation>
+    
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_EsEstadoReportado2" xlink:to="implementation_EsEstadoReportado2" order="1.0"/>   
+  
  </gen:link>
+ 
 </link:linkbase>

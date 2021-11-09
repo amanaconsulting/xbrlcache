@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11 
+  Version: 20170419
+  Release date: Wed Apr 19 09:00:00 2017
+-->
+<xs:schema xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:ocw-codes="http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-codes" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-codes">
+	<xs:annotation>
+		<xs:appinfo>
+			<link:linkbaseRef xlink:href="ocw-codes-generic-lab-en.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="ocw-codes-generic-lab-nl.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<xs:complexType name="sectorItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_Sector_PO" value="PO"/>
+				<xs:enumeration id="ocw-codes_Sector_VO" value="VO"/>
+				<xs:enumeration id="ocw-codes_Sector_MBO" value="MBO"/>
+				<xs:enumeration id="ocw-codes_Sector_HBO" value="HBO"/>
+				<xs:enumeration id="ocw-codes_Sector_WO" value="WO"/>
+				<xs:enumeration id="ocw-codes_Sector_EMI" value="EMI"/>
+				<xs:enumeration id="ocw-codes_Sector_OGI" value="OGI"/>
+				<xs:enumeration id="ocw-codes_Sector_CUL" value="CUL"/>
+				<xs:enumeration id="ocw-codes_Sector_MED" value="MED"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="fixedVariableItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_FV_Fixed" value="Vast"/>
+				<xs:enumeration id="ocw-codes_FV_Variable" value="Variabel"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="yesNoPartlyItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_YNP_Yes" value="Ja"/>
+				<xs:enumeration id="ocw-codes_YNP_No" value="Nee"/>
+				<xs:enumeration id="ocw-codes_YNP_Partly" value="Deels"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="misterMissesItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_MM_Mister" value="De heer"/>
+				<xs:enumeration id="ocw-codes_MM_Misses" value="Mevrouw"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="projectSubsidyStatusItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_GS_Ongoing" value="Lopend"/>
+				<xs:enumeration id="ocw-codes_GS_ToBeDetermined" value="Vast te stellen"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType id="ocw-codes_financialStatementItemType" name="financialStatementItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_FinancialStatement_C" value="Geconsolideerd"/>
+				<xs:enumeration id="ocw-codes_FinancialStatement_I" value="Enkelvoudig"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType id="ocw-codes_includedInFinancialReportingLocalGovernmentItemType" name="includedInFinancialReportingLocalGovernmentItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_inclFRLG_Niet" value="Niet"/>
+				<xs:enumeration id="ocw-codes_inclFRLG_WelZelfstandig" value="Wel, rapporteert zelfstandig"/>
+				<xs:enumeration id="ocw-codes_inclFRLG_WelNietZelfstandig" value="Wel, rapporteert niet zelfstandig"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="managerSupervisorDirectorItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_ManagerSupervisorDirector_Manager" value="Bestuurder"/>
+				<xs:enumeration id="ocw-codes_ManagerSupervisorDirector_Supervisor" value="Toezichthouder"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType id="ocw-codes_yesNoNAItemType" name="yesNoNAItemType">
+		<xs:simpleContent>
+			<xs:restriction base="xbrli:stringItemType">
+				<xs:enumeration id="ocw-codes_Yes" value="Ja"/>
+				<xs:enumeration id="ocw-codes_No" value="Nee"/>
+				<xs:enumeration id="ocw-codes_NA" value="Niet van toepassing"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/7144" xlink:type="simple" xlink:href="tas-rol.xsd#FinalidadTasaciones"/>
+  <link:roleRef roleURI="http://www.bde.es/2009/tas/FinalidadTotal" xlink:type="simple" xlink:href="tas-rol.xsd#FinalidadTotal"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/tas/7144">
+    <link:loc xlink:type="locator" xlink:href="t-tas-VI.xsd#t-tas-VI_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_NumeroTasaciones" xlink:label="NumeroTasaciones" xlink:title="NumeroTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="NumeroTasaciones" xlink:title="definition: Anejo to NumeroTasaciones" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_ValorTasaciones" xlink:label="ValorTasaciones" xlink:title="ValorTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="ValorTasaciones" xlink:title="definition: Anejo to ValorTasaciones" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-VI.xsd#t-tas-VI_FinalidadTasacionesHypercube" xlink:label="FinalidadTasacionesHypercube" xlink:title="FinalidadTasacionesHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="FinalidadTasacionesHypercube" xlink:title="definition: Anejo to FinalidadTasacionesHypercube" use="optional" order="3.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_FinalidadDimension" xlink:label="FinalidadDimension" xlink:title="FinalidadDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="FinalidadTasacionesHypercube" xlink:to="FinalidadDimension" xlink:title="definition: FinalidadTasacionesHypercube to FinalidadDimension" order="1.0" xbrldt:targetRole="http://www.xbrl.org/2003/role/link"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/2009/tas/FinalidadTotal">
+    <link:loc xlink:type="locator" xlink:href="t-tas-VI.xsd#t-tas-VI_Anejo" xlink:label="Anejo" xlink:title="Anejo"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_NumeroTasaciones" xlink:label="NumeroTasaciones" xlink:title="NumeroTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="NumeroTasaciones" xlink:title="definition: Anejo to NumeroTasaciones" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="p-tas.xsd#p-tas_ValorTasaciones" xlink:label="ValorTasaciones" xlink:title="ValorTasaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Anejo" xlink:to="ValorTasaciones" xlink:title="definition: Anejo to ValorTasaciones" use="optional" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="t-tas-VI.xsd#t-tas-VI_FinalidadTasacionesHypercube" xlink:label="FinalidadTasacionesHypercube" xlink:title="FinalidadTasacionesHypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="Anejo" xlink:to="FinalidadTasacionesHypercube" xlink:title="definition: Anejo to FinalidadTasacionesHypercube" order="3.0" xbrldt:contextElement="scenario" xbrldt:closed="true"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_FinalidadDimension" xlink:label="FinalidadDimension" xlink:title="FinalidadDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="FinalidadTasacionesHypercube" xlink:to="FinalidadDimension" xlink:title="definition: FinalidadTasacionesHypercube to FinalidadDimension" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-finalidad.xsd#d-tas-fin_FinalidadTotal" xlink:label="FinalidadTotal" xlink:title="FinalidadTotal"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="FinalidadDimension" xlink:to="FinalidadTotal" xlink:title="definition: FinalidadDimension to FinalidadTotal" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-totalInmuebles.xsd#d-tas-tot_TotalInmueblesDimension" xlink:label="TotalInmueblesDimension" xlink:title="TotalInmueblesDimension"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="FinalidadTasacionesHypercube" xlink:to="TotalInmueblesDimension" xlink:title="definition: FinalidadTasacionesHypercube to TotalInmueblesDimension" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="d-tas-totalInmuebles.xsd#d-tas-tot_TotalInmueblesTasacion" xlink:label="TotalInmueblesTasacion" xlink:title="TotalInmueblesTasacion"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="TotalInmueblesDimension" xlink:to="TotalInmueblesTasacion" xlink:title="definition: TotalInmueblesDimension to TotalInmueblesTasacion" order="1.0"/>
+  </link:definitionLink>
+</link:linkbase>

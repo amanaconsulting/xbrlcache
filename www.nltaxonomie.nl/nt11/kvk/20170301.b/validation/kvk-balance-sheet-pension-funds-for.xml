@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20170301.b
+  Release date: Mon Mar 01 09:00:00 2017
+-->
+<link:linkbase xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:crf="http://xbrl.org/2010/filter/concept-relation" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:ea="http://xbrl.org/2008/assertion/existence" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:rj-i="http://www.nltaxonomie.nl/nt11/rj/20170301.b/dictionary/rj-data" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:venj-bw2-dim="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-axes" xmlns:venj-bw2-dm="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-domains" xmlns:venj-bw2-i="http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-data" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2010/filter/concept-relation http://www.xbrl.org/2010/concept-relation-filter.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://www.nltaxonomie.nl/nt11/rj/20170301.b/dictionary/rj-data ../../../rj/20170301.b/dictionary/rj-data.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-axes ../../../venj/20161214/dictionary/venj-bw2-axes.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-domains ../../../venj/20161214/dictionary/venj-bw2-domains.xsd http://www.nltaxonomie.nl/nt11/venj/20161214/dictionary/venj-bw2-data ../../../venj/20161214/dictionary/venj-bw2-data.xsd">
+  <gen:link xlink:role="urn:kvk:linkrole:balance-sheet-pension-funds" xlink:type="extended">
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="ExistenceAssertion_BalanceSheetPensionFunds_MsgAdimExistence1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="arc"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetPensionFunds_MsgSeparateOneVariable1" implicitFiltering="true" test="+ $varArc_BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets =  $varArc_BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities " xlink:label="valueAssertion_BalanceSheetPensionFunds_MsgSeparateOneVariable1" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" fallbackValue="0" id="factVariable_BalanceSheetPensionFunds_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="resource"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1" implicitFiltering="true" test=" $EquityAndLiabilities = sum($varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesCredit)- sum($varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesDebit)" xlink:label="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1" xlink:type="resource"/>
+    <cf:conceptName id="BalanceSheetPensionFunds_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:label="BalanceSheetPensionFunds_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:BalanceSheetBeforeAfterAppropriationResults</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:to="BalanceSheetPensionFunds_MsgAdimExistence1_BalanceSheetBeforeAfterAppropriationResults" xlink:type="arc"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1" implicitFiltering="true" test=" $Assets = - sum($varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsCredit)+ sum($varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsDebit)" xlink:label="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1" xlink:type="resource"/>
+    <ea:existenceAssertion aspectModel="dimensional" id="ExistenceAssertion_BalanceSheetPensionFunds_MsgAdimExistence1" implicitFiltering="true" xlink:label="ExistenceAssertion_BalanceSheetPensionFunds_MsgAdimExistence1" xlink:type="resource"/>
+    <link:loc xlink:href="http://www.xbrl.org/2016/severities.xml#WARNING" xlink:label="WARNING_loc" xlink:type="locator"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateOneVariable1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="ExistenceAssertion_BalanceSheetPensionFunds_MsgAdimExistence1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" xlink:to="BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" xlink:type="resource"/>
+    <cf:conceptName id="BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" xlink:label="BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:EquityAndLiabilities</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" xlink:type="resource"/>
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" order="5" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateOneVariable1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" xlink:to="BalanceSheetPensionFunds_MsgSeparateOneVariable1_Filter1FinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateOneVariable1_Filter1FinancialStatementTypeSeparate1" xlink:label="BalanceSheetPensionFunds_MsgSeparateOneVariable1_Filter1FinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_EquityAndLiabilities" xlink:to="BalanceSheetPensionFunds_MsgSeparateOneVariable1_FilterFinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" xlink:label="BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:Assets</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" xlink:to="BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateOneVariable1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateOneVariable1_Assets" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateOneVariable1_FilterFinancialStatementTypeSeparate1" xlink:label="BalanceSheetPensionFunds_MsgSeparateOneVariable1_FilterFinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <crf:conceptRelation id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_RelationEquityAndLiabilitiesCredit" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_RelationEquityAndLiabilitiesCredit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:EquityAndLiabilities</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-pension-funds</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_RelationEquityAndLiabilitiesDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit2" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" xlink:type="arc"/>
+    <cf:conceptBalance balance="debit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit3" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit3" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit3" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesDebit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesDebit" xlink:type="resource"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate2" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate2" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <cf:conceptBalance balance="credit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit3" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceCredit3" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_Filter1FinancialStatementTypeSeparate2" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate2" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate2" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesCredit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesCredit" xlink:type="arc"/>
+    <crf:conceptRelation id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_RelationEquityAndLiabilitiesDebit" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_RelationEquityAndLiabilitiesDebit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:EquityAndLiabilities</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-pension-funds</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_FilterFinancialStatementTypeSeparate2" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate1" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesDebit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_RelationEquityAndLiabilitiesCredit" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:EquityAndLiabilities</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceDebit3" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate1" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_Filter2FinancialStatementTypeSeparate1" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" xlink:type="resource"/>
+    <variable:variableArc name="EquityAndLiabilities" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_EquityAndLiabilities" xlink:type="arc"/>
+    <cf:conceptBalance balance="credit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit2" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ConceptBalanceParentCredit2" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesCredit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit1_ChildrenOfEquityAndLiabilitiesCredit" xlink:type="resource"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Filter1FinancialStatementTypeSeparate3" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Filter1FinancialStatementTypeSeparate3" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceParentDebit2" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Filter2FinancialStatementTypeSeparate2" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Filter2FinancialStatementTypeSeparate2" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" xlink:type="resource"/>
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsCredit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsCredit" xlink:type="arc"/>
+    <cf:conceptBalance balance="debit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsDebit" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_FilterFinancialStatementTypeSeparate3" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_FilterFinancialStatementTypeSeparate3" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsCredit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsDebit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>venj-bw2-i:Assets</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Filter1FinancialStatementTypeSeparate3" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsCredit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsCredit" xlink:type="resource"/>
+    <crf:conceptRelation id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsCredit" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsCredit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:Assets</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-pension-funds</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <cf:conceptBalance balance="credit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:type="resource"/>
+    <variable:variableArc name="Assets" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Filter2FinancialStatementTypeSeparate2" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsDebit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ChildrenOfAssetsDebit" xlink:type="resource"/>
+    <crf:conceptRelation id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsDebit" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_RelationAssetsDebit" xlink:type="resource">
+      <crf:qname>venj-bw2-i:Assets</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-pension-funds</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_Assets" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_FilterFinancialStatementTypeSeparate3" xlink:type="arc"/>
+    <cf:conceptBalance balance="debit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceParentDebit2" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentDebit1_ConceptBalanceParentDebit2" xlink:type="resource"/>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2" implicitFiltering="true" test=" $FoundationCapitalAndReserves = sum($varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesCredit)- sum($varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesDebit)" xlink:label="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2" xlink:type="resource"/>
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2" xlink:to="WARNING_loc" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceCredit4" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_Filter2FinancialStatementTypeSeparate4" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FilterFinancialStatementTypeSeparate5" xlink:type="arc"/>
+    <crf:conceptRelation id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_RelationFoundationCapitalAndReservesDebit" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_RelationFoundationCapitalAndReservesDebit" xlink:type="resource">
+      <crf:qname>rj-i:FoundationCapitalAndReserves</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-pension-funds</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_RelationFoundationCapitalAndReservesCredit" xlink:type="arc"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesDebit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesDebit" xlink:type="resource"/>
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesDebit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesCredit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_Filter1FinancialStatementTypeSeparate5" xlink:type="arc"/>
+    <cf:conceptName id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>rj-i:FoundationCapitalAndReserves</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <cf:conceptBalance balance="credit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceCredit4" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceCredit4" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_RelationFoundationCapitalAndReservesDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" xlink:type="arc"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_Filter1FinancialStatementTypeSeparate5" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_Filter1FinancialStatementTypeSeparate5" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <cf:conceptBalance balance="debit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceDebit4" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceDebit4" xlink:type="resource"/>
+    <cf:conceptBalance balance="credit" id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceParentCredit1" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceParentCredit1" xlink:type="resource"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FilterFinancialStatementTypeSeparate5" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FilterFinancialStatementTypeSeparate5" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesCredit" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesCredit" xlink:type="resource"/>
+    <df:explicitDimension id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_Filter2FinancialStatementTypeSeparate4" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_Filter2FinancialStatementTypeSeparate4" xlink:type="resource">
+      <df:dimension>
+        <df:qname>venj-bw2-dim:FinancialStatementsTypeAxis</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>venj-bw2-dm:SeparateMember</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesDebit" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceDebit4" xlink:type="arc"/>
+    <crf:conceptRelation id="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_RelationFoundationCapitalAndReservesCredit" xlink:label="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_RelationFoundationCapitalAndReservesCredit" xlink:type="resource">
+      <crf:qname>rj-i:FoundationCapitalAndReserves</crf:qname>
+      <crf:linkrole>urn:kvk:linkrole:balance-sheet-pension-funds</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:factVariable bindAsSequence="false" id="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" matches="false" nils="false" xlink:label="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" xlink:to="BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ConceptBalanceParentCredit1" xlink:type="arc"/>
+    <variable:variableArc name="FoundationCapitalAndReserves" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_FoundationCapitalAndReserves" xlink:type="arc"/>
+    <variable:variableArc name="varArc_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesCredit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2" xlink:to="factVariable_BalanceSheetPensionFunds_MsgSeparateSumOfChildrenParentCredit2_ChildrenOfFoundationCapitalAndReservesCredit" xlink:type="arc"/>
+  </gen:link>
+  <link:roleRef roleURI="urn:kvk:linkrole:balance-sheet-pension-funds" xlink:href="../dictionary/kvk-linkroles-pension-funds.xsd#kvk-lr-p-f_BalanceSheetPensionFunds" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" xlink:type="simple"/>
+</link:linkbase>

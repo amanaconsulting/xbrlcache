@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-cm-xpst="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance" targetNamespace="http://www.bde.es/es/fr/esrs/comun/2008-06-01/xpreslb-types" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="xpreslb-types-label-es.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:element name="formItem" id="es-be-cm-xpst_formItem" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="zAxysItem" id="es-be-cm-xpst_zAxysItem" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="rowItem" id="es-be-cm-xpst_rowItem" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="columnItem" id="es-be-cm-xpst_columnItem" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="VariacionTemporal" id="es-be-cm-xpst_VariacionTemporal" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:attribute name="targetRole" type="xsd:anyURI"/>
+  <xsd:attribute default="false" name="newLine" type="xsd:boolean"/>
+  <xsd:attribute default="false" name="open" type="xsd:boolean"/>
+  <xsd:attribute default="true" name="usable" type="xsd:boolean"/>
+  <xsd:attribute name="code" type="xsd:integer"/>
+  <xsd:attribute name="decimales" type="xsd:integer"/>
+  <xsd:attribute name="offSet" type="xsd:integer"/>
+  <xsd:attribute default="fin" name="tipoInstante">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:token">
+        <xsd:enumeration value="inicio"/>
+        <xsd:enumeration value="fin"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:attribute>
+  <xsd:attribute default="false" name="prn_salto" type="xsd:boolean"/>
+  <xsd:attribute default="1" name="prn_escala" type="xsd:integer"/>
+</xsd:schema>

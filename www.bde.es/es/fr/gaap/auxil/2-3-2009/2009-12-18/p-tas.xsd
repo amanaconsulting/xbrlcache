@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:p-tas="http://www.bde.es/es/fr/gaap/auxil/p-tas" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:p-aux="http://www.bde.es/es/fr/gaap/auxil/p-aux" xmlns:cebs-ef-ele="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" xmlns:cebs-ef-sub="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/subs-group-elements" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/gaap/auxil/p-tas" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="p-tas-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="p-tas-label-es.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/gaap/auxil/tas-rol" schemaLocation="tas-rol.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/gaap/auxil/p-aux" schemaLocation="p-aux.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/subs-group-elements" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/subs-group-elements.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/elements.xsd"/>
+  <xsd:element name="NumeroTasaciones" id="p-tas_NumeroTasaciones" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ValorTasaciones" id="p-tas_ValorTasaciones" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SuperficieUtilizableM2" id="p-tas_SuperficieUtilizableM2" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NumeroMayoresTasaciones" id="p-tas_NumeroMayoresTasaciones" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ValorMayoresTasaciones" id="p-tas_ValorMayoresTasaciones" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="SuperficieUtilizableM2Mayores" id="p-tas_SuperficieUtilizableM2Mayores" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DesviacionTipicaPrecioM2" id="p-tas_DesviacionTipicaPrecioM2" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TasadoresMasActivos" id="p-tas_TasadoresMasActivos" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NumeroEmpleadosPlantilla" id="p-tas_NumeroEmpleadosPlantilla" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TasadoresActivosValorTasacion" id="p-tas_TasadoresActivosValorTasacion" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NumeroTasadores" id="p-tas_NumeroTasadores" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NumeroTasadoresVinculados" id="p-tas_NumeroTasadoresVinculados" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NumeroTasadoresNoVinculados" id="p-tas_NumeroTasadoresNoVinculados" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NumeroSucursalesDelegaciones" id="p-tas_NumeroSucursalesDelegaciones" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="GarantiaPrestamosHipotecarios" id="p-tas_GarantiaPrestamosHipotecarios" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="RequeridosPorNormasContablesEntidadesCredito" id="p-tas_RequeridosPorNormasContablesEntidadesCredito" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ProvisionesTecnicasAseguradoras" id="p-tas_ProvisionesTecnicasAseguradoras" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PatrimonioFondosPensiones" id="p-tas_PatrimonioFondosPensiones" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PatrimonioInstitucionesInversionColectiva" id="p-tas_PatrimonioInstitucionesInversionColectiva" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IngresosPorTasacionesBienesInmueblesOtros" id="p-tas_IngresosPorTasacionesBienesInmueblesOtros" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="RelacionPrincipalCliente" id="p-tas_RelacionPrincipalCliente" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NombreCliente" id="p-tas_NombreCliente" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PorcentajeSobreTotalIngresos" id="p-tas_PorcentajeSobreTotalIngresos" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NombreDenominacionTitular" id="p-tas_NombreDenominacionTitular" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ClavePaisTipoSocio" id="p-tas_ClavePaisTipoSocio" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ValorNominalAcciones" id="p-tas_ValorNominalAcciones" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="CapitalSocial" id="p-tas_CapitalSocial" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="CodigoIdentificacion" id="p-tas_CodigoIdentificacion" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NombreDenominacioncotitular" id="p-tas_NombreDenominacioncotitular" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="CapitalCompartido" id="p-tas_CapitalCompartido" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NumeroCotitulares" id="p-tas_NumeroCotitulares" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NombreDenominacionTitularIndirecto" id="p-tas_NombreDenominacionTitularIndirecto" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="Titular" id="p-tas_Titular" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TitularDirecto" id="p-tas_TitularDirecto" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="Cotitular" id="p-tas_Cotitular" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TitularIndirecto" id="p-tas_TitularIndirecto" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TitularParticipaDirectamente" id="p-tas_TitularParticipaDirectamente" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="TipoInmueble" id="p-tas_TipoInmueble" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="Inmuebles" id="p-tas_Inmuebles" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DerechosInmuebles" id="p-tas_DerechosInmuebles" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="EfectosValorHipotecario" id="p-tas_EfectosValorHipotecario" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NumeroAdvertencias" id="p-tas_NumeroAdvertencias" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ValorTasacionesConAdvertencia" id="p-tas_ValorTasacionesConAdvertencia" type="xbrli:monetaryItemType" substitutionGroup="cebs-ef-sub:positiveItem" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NumeroAjustes" id="p-tas_NumeroAjustes" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="ValorTasacionesConAjustes" id="p-tas_ValorTasacionesConAjustes" type="xbrli:monetaryItemType" substitutionGroup="cebs-ef-sub:positiveItem" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PorcentajeReduccion" id="p-tas_PorcentajeReduccion" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaPorcentaje" id="p-tas_MediaAritmeticaPonderadaPorcentaje" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PorcentajeMinimoReduccion" id="p-tas_PorcentajeMinimoReduccion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PorcentajeMaximoReduccion" id="p-tas_PorcentajeMaximoReduccion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="HipotesisEdificioTerminado" id="p-tas_HipotesisEdificioTerminado" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="EvolucionMercadoTasa" id="p-tas_EvolucionMercadoTasa" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaTasaEvolucion" id="p-tas_MediaAritmeticaPonderadaTasaEvolucion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TasaMinimaEvolucion" id="p-tas_TasaMinimaEvolucion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TasaMaximaEvolucion" id="p-tas_TasaMaximaEvolucion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MediaAritmeticaSimplePlazoDuracionObraEvolucion" id="p-tas_MediaAritmeticaSimplePlazoDuracionObraEvolucion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PlusvaliaMinusvaliaTerrenoTasa" id="p-tas_PlusvaliaMinusvaliaTerrenoTasa" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaTasaPlusvalia" id="p-tas_MediaAritmeticaPonderadaTasaPlusvalia" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TasaMinimaPlusvalia" id="p-tas_TasaMinimaPlusvalia" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TasaMaximaPlusvalia" id="p-tas_TasaMaximaPlusvalia" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DiferencialPositivoDeudaPuntosPorcentualesInmuebles" id="p-tas_DiferencialPositivoDeudaPuntosPorcentualesInmuebles" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaDiferencial" id="p-tas_MediaAritmeticaPonderadaDiferencial" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DiferencialMinimo" id="p-tas_DiferencialMinimo" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DiferencialMaximo" id="p-tas_DiferencialMaximo" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MediaAritmeticaPonderadaPlazo" id="p-tas_MediaAritmeticaPonderadaPlazo" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="IndicePrecios" id="p-tas_IndicePrecios" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaTasaIndice" id="p-tas_MediaAritmeticaPonderadaTasaIndice" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TasaMinimaIndice" id="p-tas_TasaMinimaIndice" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TasaMaximaIndice" id="p-tas_TasaMaximaIndice" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NumeroTasacionesPresentation" id="p-tas_NumeroTasacionesPresentation" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="NumeroTasacionesConFinanciacion" id="p-tas_NumeroTasacionesConFinanciacion" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="NumeroTasacionesSinFinanciacion" id="p-tas_NumeroTasacionesSinFinanciacion" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TipoLibreRiesgoNominal" id="p-tas_TipoLibreRiesgoNominal" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaTipoLibre" id="p-tas_MediaAritmeticaPonderadaTipoLibre" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TipoLibreMinimo" id="p-tas_TipoLibreMinimo" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="TipoLibreMaximo" id="p-tas_TipoLibreMaximo" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MediaAritmeticaSimplePlazoDuracionProyecto" id="p-tas_MediaAritmeticaSimplePlazoDuracionProyecto" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PrimaRiesgoSinFinanciacionPuntosPorcentuales" id="p-tas_PrimaRiesgoSinFinanciacionPuntosPorcentuales" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaPrimaSinFinanciacion" id="p-tas_MediaAritmeticaPonderadaPrimaSinFinanciacion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PrimaMinimaSinFinanciacion" id="p-tas_PrimaMinimaSinFinanciacion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PrimaMaximaSinFinanciacion" id="p-tas_PrimaMaximaSinFinanciacion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PrimaRiesgoConFinanciacionPuntosPorcentuales" id="p-tas_PrimaRiesgoConFinanciacionPuntosPorcentuales" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaPrimaConFinanciacion" id="p-tas_MediaAritmeticaPonderadaPrimaConFinanciacion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PrimaMinimaConFinanciacion" id="p-tas_PrimaMinimaConFinanciacion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="PrimaMaximaConFinanciacion" id="p-tas_PrimaMaximaConFinanciacion" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MargenBeneficioPromotorPuntosPorcentuales" id="p-tas_MargenBeneficioPromotorPuntosPorcentuales" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="MediaAritmeticaPonderadaMargen" id="p-tas_MediaAritmeticaPonderadaMargen" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MargenMinimo" id="p-tas_MargenMinimo" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="MargenMaximo" id="p-tas_MargenMaximo" type="xbrli:pureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="DiferencialPositivoDeudaPuntosPorcentualesDerechosInmuebles" id="p-tas_DiferencialPositivoDeudaPuntosPorcentualesDerechosInmuebles" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>

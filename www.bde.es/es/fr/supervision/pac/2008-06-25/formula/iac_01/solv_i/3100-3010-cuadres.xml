@@ -1,0 +1,2368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:p-cm-ca="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-cm-ca-2006-07-01"
+               xmlns:d-tier="http://www.bde.es/es/fr/supervision/pac/2008-06-25/d-tier"
+               xmlns:d-anno-pl="http://www.bde.es/es/fr/supervision/pac/2008-06-25/d-anno-pl"
+               xmlns:es-be-d-ty="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-d-ty"
+               xmlns:d-esc-tens="http://www.bde.es/es/fr/supervision/pac/2008-06-25/d-esc-tens"
+               xmlns:p-ca="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-ca-2006-07-01"
+               xmlns:d-desg-pac="http://www.bde.es/es/fr/supervision/pac/2008-06-25/d-desg-pac"
+               xmlns:p-pac="http://www.bde.es/es/fr/supervision/pac/2008-06-25/p-pac"
+               xmlns:d-cr="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-cr-2006-07-01"
+               xmlns:d-mr="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-mr-2006-07-01"
+               xmlns:d-ba="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/d-ba-2006-07-01"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-miac_01.xml#Miac_01"
+                xlink:label="Miac_01"/>
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-msolv_i.xml#Msolv_i"
+                xlink:label="Msolv_i"/>
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_3100_3010_cuadres_1"
+                           id="ref_atributosCuadres_3100_3010_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_3100_3010_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_3100_3010_cuadres_1"
+                           id="ref_moduloDefinicion_3100_3010_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>iac_01</frRef:Modulo>
+         <frRef:Instancia>Miac_01</frRef:Instancia>
+         <frRef:Estado>3100</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_3100_3010_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloExterno_3100_3010_cuadres_2"
+                           id="ref_moduloExterno_3100_3010_cuadres_2"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/moduloexterno">
+         <frRef:Modulo>solv_i</frRef:Modulo>
+         <frRef:Instancia>Msolv_i</frRef:Instancia>
+         <frRef:Estado>3010?</frRef:Estado>
+         <frRef:Dependiente>false</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloExterno_3100_3010_cuadres_2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="10"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="11"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="12"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="13"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="14"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="15"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="16"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3100-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="17"/>
+      <link:loc xlink:href="../../parametros.xml#var_UmbralBasico2"
+                xlink:label="var_UmbralBasico2"
+                xlink:type="locator"/>
+      <link:loc xlink:href="../../parametros.xml#var_UmbralBasico3"
+                xlink:label="var_UmbralBasico3"
+                xlink:type="locator"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-1" test="$celda0005 eq $celda0001"
+                         id="val_corep_3100-oe-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3100-oe-1"
+                                     xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e25"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <generic:arc xlink:from="Miac_01" xlink:to="var_TierDim_TotalAnnoPlanificacionDim_d10e35"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i" xlink:to="var_d10e54"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0005" xlink:from="val_corep_3100-oe-1"
+                            xlink:to="var_TierDim_TotalAnnoPlanificacionDim_d10e35"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0001" xlink:from="val_corep_3100-oe-1" xlink:to="var_d10e54"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-1" id="lab_val_corep_3100-oe-1"
+                   xlink:type="resource"
+                   xml:lang="es">0005 = 0001 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-1" xlink:to="lab_val_corep_3100-oe-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e25"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e25"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_TierDim_TotalAnnoPlanificacionDim_d10e35"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalAnnoPlanificacionDim_d10e35"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_TierDim_TotalAnnoPlanificacionDim_d10e35"
+                                  xlink:to="fil_TierDim_Totald10e37"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_TierDim_TotalAnnoPlanificacionDim_d10e35"
+                                  xlink:to="fil_AnnoPlanificacionDim_d10e45"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e37" id="fil_TierDim_Totald10e37"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_d10e45"
+                            id="fil_AnnoPlanificacionDim_d10e45"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e54" bindAsSequence="false" id="var_d10e54"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="true" xlink:from="var_d10e54" xlink:to="fil_d10e56" cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:typedDimension xlink:label="fil_d10e56" id="fil_d10e56" xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-ty:DimensionCodigoEntidad</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-1" id="ref_val_corep_3100-oe-1"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-1" xlink:to="ref_val_corep_3100-oe-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-2" test="$celda0006 eq $celda0160"
+                         id="val_corep_3100-oe-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_Tier1AnnoPlanificacionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e71"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e98"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0006" xlink:from="val_corep_3100-oe-2"
+                            xlink:to="var_TierDim_Tier1AnnoPlanificacionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e71"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0160" xlink:from="val_corep_3100-oe-2"
+                            xlink:to="var_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e98"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-2" id="lab_val_corep_3100-oe-2"
+                   xlink:type="resource"
+                   xml:lang="es">0006 = 0160 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-2" xlink:to="lab_val_corep_3100-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_Tier1AnnoPlanificacionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e71"
+                             bindAsSequence="false"
+                             id="var_TierDim_Tier1AnnoPlanificacionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e71"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_Tier1AnnoPlanificacionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e71"
+                                  xlink:to="fil_TierDim_Tier1d10e73"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_TierDim_Tier1AnnoPlanificacionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e71"
+                                  xlink:to="fil_AnnoPlanificacionDim_d10e81"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_Tier1AnnoPlanificacionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e71"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e86"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Tier1d10e73" id="fil_TierDim_Tier1d10e73"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Tier1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_d10e81"
+                            id="fil_AnnoPlanificacionDim_d10e81"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e86"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e86"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e98"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e98"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e98"
+                                  xlink:to="fil_d10e100"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e98"
+                                  xlink:to="fil_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e105"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e100" id="fil_d10e100" xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-ty:DimensionCodigoEntidad</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e105"
+                      id="fil_p-cm-ca_TotalOriginalOwnFundsGeneralSolvencyPurposesd10e105"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOriginalOwnFundsGeneralSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-2" id="ref_val_corep_3100-oe-2"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-2" xlink:to="ref_val_corep_3100-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-3" test="$celda0007 eq $celda0165"
+                         id="val_corep_3100-oe-3"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_Tier2AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e123"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_p-ca_TotalAdditionalOwnFundsGeneralSolvencyPurposesd10e155"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0007" xlink:from="val_corep_3100-oe-3"
+                            xlink:to="var_TierDim_Tier2AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e123"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0165" xlink:from="val_corep_3100-oe-3"
+                            xlink:to="var_p-ca_TotalAdditionalOwnFundsGeneralSolvencyPurposesd10e155"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-3" id="lab_val_corep_3100-oe-3"
+                   xlink:type="resource"
+                   xml:lang="es">0007 = 0165 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-3" xlink:to="lab_val_corep_3100-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_Tier2AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e123"
+                             bindAsSequence="false"
+                             id="var_TierDim_Tier2AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e123"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_Tier2AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e123"
+                                  xlink:to="fil_TierDim_Tier2d10e125"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_TierDim_Tier2AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e123"
+                                  xlink:to="fil_AnnoPlanificacionDim_d10e133"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_TierDim_Tier2AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e123"
+                                  xlink:to="fil_EscenarioTensionDim_d10e138"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_Tier2AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e123"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e143"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Tier2d10e125" id="fil_TierDim_Tier2d10e125"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Tier2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_d10e133"
+                            id="fil_AnnoPlanificacionDim_d10e133"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_EscenarioTensionDim_d10e138"
+                            id="fil_EscenarioTensionDim_d10e138"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-esc-tens:EscenarioTension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e143"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e143"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-ca_TotalAdditionalOwnFundsGeneralSolvencyPurposesd10e155"
+                             bindAsSequence="false"
+                             id="var_p-ca_TotalAdditionalOwnFundsGeneralSolvencyPurposesd10e155"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_TotalAdditionalOwnFundsGeneralSolvencyPurposesd10e155"
+                                  xlink:to="fil_p-ca_TotalAdditionalOwnFundsGeneralSolvencyPurposesd10e157"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-ca_TotalAdditionalOwnFundsGeneralSolvencyPurposesd10e157"
+                      id="fil_p-ca_TotalAdditionalOwnFundsGeneralSolvencyPurposesd10e157"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:TotalAdditionalOwnFundsGeneralSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-3" id="ref_val_corep_3100-oe-3"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-3" xlink:to="ref_val_corep_3100-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-4" test="$celda0008 eq $celda0170"
+                         id="val_corep_3100-oe-4"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_Tier3AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e175"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_p-ca_TotalAdditionalOwnFundsSpecificCoverMarketRisksd10e207"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0008" xlink:from="val_corep_3100-oe-4"
+                            xlink:to="var_TierDim_Tier3AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e175"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0170" xlink:from="val_corep_3100-oe-4"
+                            xlink:to="var_p-ca_TotalAdditionalOwnFundsSpecificCoverMarketRisksd10e207"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-4" id="lab_val_corep_3100-oe-4"
+                   xlink:type="resource"
+                   xml:lang="es">0008 = 0170 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-4" xlink:to="lab_val_corep_3100-oe-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_Tier3AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e175"
+                             bindAsSequence="false"
+                             id="var_TierDim_Tier3AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e175"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_Tier3AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e175"
+                                  xlink:to="fil_TierDim_Tier3d10e177"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_TierDim_Tier3AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e175"
+                                  xlink:to="fil_AnnoPlanificacionDim_d10e185"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_TierDim_Tier3AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e175"
+                                  xlink:to="fil_EscenarioTensionDim_d10e190"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_Tier3AnnoPlanificacionDim_EscenarioTensionDim_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e175"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e195"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="4"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Tier3d10e177" id="fil_TierDim_Tier3d10e177"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Tier3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_d10e185"
+                            id="fil_AnnoPlanificacionDim_d10e185"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_EscenarioTensionDim_d10e190"
+                            id="fil_EscenarioTensionDim_d10e190"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-esc-tens:EscenarioTension</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e195"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e195"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-ca_TotalAdditionalOwnFundsSpecificCoverMarketRisksd10e207"
+                             bindAsSequence="false"
+                             id="var_p-ca_TotalAdditionalOwnFundsSpecificCoverMarketRisksd10e207"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_TotalAdditionalOwnFundsSpecificCoverMarketRisksd10e207"
+                                  xlink:to="fil_p-ca_TotalAdditionalOwnFundsSpecificCoverMarketRisksd10e209"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-ca_TotalAdditionalOwnFundsSpecificCoverMarketRisksd10e209"
+                      id="fil_p-ca_TotalAdditionalOwnFundsSpecificCoverMarketRisksd10e209"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:TotalAdditionalOwnFundsSpecificCoverMarketRisks</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-4" id="ref_val_corep_3100-oe-4"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-4</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-4" xlink:to="ref_val_corep_3100-oe-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-5" test="$celda0111 eq $celda0205"
+                         id="val_corep_3100-oe-5"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0011p-pac_RequerimientosLegalesRRPPd10e227"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_CreditRiskDim_CreditRiskTotalp-cm-ca_CreditRiskCapitalRequirementsd10e257"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0111" xlink:from="val_corep_3100-oe-5"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0011p-pac_RequerimientosLegalesRRPPd10e227"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0205" xlink:from="val_corep_3100-oe-5"
+                            xlink:to="var_CreditRiskDim_CreditRiskTotalp-cm-ca_CreditRiskCapitalRequirementsd10e257"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-5" id="lab_val_corep_3100-oe-5"
+                   xlink:type="resource"
+                   xml:lang="es">0111 = 0205 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-5" xlink:to="lab_val_corep_3100-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0011p-pac_RequerimientosLegalesRRPPd10e227"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0011p-pac_RequerimientosLegalesRRPPd10e227"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0011p-pac_RequerimientosLegalesRRPPd10e227"
+                                  xlink:to="fil_TierDim_Totald10e229"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0011p-pac_RequerimientosLegalesRRPPd10e227"
+                                  xlink:to="fil_DesglosePACDim_d0011d10e237"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0011p-pac_RequerimientosLegalesRRPPd10e227"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e245"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e229" id="fil_TierDim_Totald10e229"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0011d10e237"
+                            id="fil_DesglosePACDim_d0011d10e237"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0011</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e245"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e245"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CreditRiskDim_CreditRiskTotalp-cm-ca_CreditRiskCapitalRequirementsd10e257"
+                             bindAsSequence="false"
+                             id="var_CreditRiskDim_CreditRiskTotalp-cm-ca_CreditRiskCapitalRequirementsd10e257"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CreditRiskDim_CreditRiskTotalp-cm-ca_CreditRiskCapitalRequirementsd10e257"
+                                  xlink:to="fil_CreditRiskDim_CreditRiskTotald10e259"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CreditRiskDim_CreditRiskTotalp-cm-ca_CreditRiskCapitalRequirementsd10e257"
+                                  xlink:to="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e267"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskTotald10e259"
+                            id="fil_CreditRiskDim_CreditRiskTotald10e259"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskTotal</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e267"
+                      id="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e267"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:CreditRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-5" id="ref_val_corep_3100-oe-5"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-5</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-5" xlink:to="ref_val_corep_3100-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-6" test="$celda0112 eq $celda0210"
+                         id="val_corep_3100-oe-6"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0012p-pac_RequerimientosLegalesRRPPd10e286"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_CreditRiskDim_CreditRiskSAp-cm-ca_CreditRiskCapitalRequirementsd10e316"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0112" xlink:from="val_corep_3100-oe-6"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0012p-pac_RequerimientosLegalesRRPPd10e286"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0210" xlink:from="val_corep_3100-oe-6"
+                            xlink:to="var_CreditRiskDim_CreditRiskSAp-cm-ca_CreditRiskCapitalRequirementsd10e316"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-6" id="lab_val_corep_3100-oe-6"
+                   xlink:type="resource"
+                   xml:lang="es">0112 = 0210 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-6" xlink:to="lab_val_corep_3100-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0012p-pac_RequerimientosLegalesRRPPd10e286"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0012p-pac_RequerimientosLegalesRRPPd10e286"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0012p-pac_RequerimientosLegalesRRPPd10e286"
+                                  xlink:to="fil_TierDim_Totald10e288"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0012p-pac_RequerimientosLegalesRRPPd10e286"
+                                  xlink:to="fil_DesglosePACDim_d0012d10e296"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0012p-pac_RequerimientosLegalesRRPPd10e286"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e304"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e288" id="fil_TierDim_Totald10e288"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0012d10e296"
+                            id="fil_DesglosePACDim_d0012d10e296"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0012</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e304"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e304"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CreditRiskDim_CreditRiskSAp-cm-ca_CreditRiskCapitalRequirementsd10e316"
+                             bindAsSequence="false"
+                             id="var_CreditRiskDim_CreditRiskSAp-cm-ca_CreditRiskCapitalRequirementsd10e316"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CreditRiskDim_CreditRiskSAp-cm-ca_CreditRiskCapitalRequirementsd10e316"
+                                  xlink:to="fil_CreditRiskDim_CreditRiskSAd10e318"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CreditRiskDim_CreditRiskSAp-cm-ca_CreditRiskCapitalRequirementsd10e316"
+                                  xlink:to="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e326"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskSAd10e318"
+                            id="fil_CreditRiskDim_CreditRiskSAd10e318"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskSA</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e326"
+                      id="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e326"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:CreditRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-6" id="ref_val_corep_3100-oe-6"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-6</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-6" xlink:to="ref_val_corep_3100-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-7"
+                         test="abs(sum($celdasPac) - $celda0240) le $threshold"
+                         id="val_corep_3100-oe-7"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0013p-pac_RequerimientosLegalesRRPPd10e344"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_CreditRiskDim_CreditRiskIRBp-cm-ca_CreditRiskCapitalRequirementsd10e376"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celdasPac" xlink:from="val_corep_3100-oe-7"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0013p-pac_RequerimientosLegalesRRPPd10e344"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0240" xlink:from="val_corep_3100-oe-7"
+                            xlink:to="var_CreditRiskDim_CreditRiskIRBp-cm-ca_CreditRiskCapitalRequirementsd10e376"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="threshold" xlink:from="val_corep_3100-oe-7" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-7" id="lab_val_corep_3100-oe-7"
+                   xlink:type="resource"
+                   xml:lang="es">0113 + 0114 = 0240 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-7" xlink:to="lab_val_corep_3100-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0013p-pac_RequerimientosLegalesRRPPd10e344"
+                             bindAsSequence="true"
+                             id="var_TierDim_TotalDesglosePACDim_d0013p-pac_RequerimientosLegalesRRPPd10e344"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0013p-pac_RequerimientosLegalesRRPPd10e344"
+                                  xlink:to="fil_TierDim_Totald10e346"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0013p-pac_RequerimientosLegalesRRPPd10e344"
+                                  xlink:to="fil_DesglosePACDim_d0013d10e354"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0013p-pac_RequerimientosLegalesRRPPd10e344"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e364"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e346" id="fil_TierDim_Totald10e346"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0013d10e354"
+                            id="fil_DesglosePACDim_d0013d10e354"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0013</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>d-desg-pac:d0014</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e364"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e364"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CreditRiskDim_CreditRiskIRBp-cm-ca_CreditRiskCapitalRequirementsd10e376"
+                             bindAsSequence="false"
+                             id="var_CreditRiskDim_CreditRiskIRBp-cm-ca_CreditRiskCapitalRequirementsd10e376"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CreditRiskDim_CreditRiskIRBp-cm-ca_CreditRiskCapitalRequirementsd10e376"
+                                  xlink:to="fil_CreditRiskDim_CreditRiskIRBd10e378"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_CreditRiskDim_CreditRiskIRBp-cm-ca_CreditRiskCapitalRequirementsd10e376"
+                                  xlink:to="fil_d10e386"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CreditRiskDim_CreditRiskIRBp-cm-ca_CreditRiskCapitalRequirementsd10e376"
+                                  xlink:to="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e391"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBd10e378"
+                            id="fil_CreditRiskDim_CreditRiskIRBd10e378"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRB</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:typedDimension xlink:label="fil_d10e386" id="fil_d10e386" xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-ty:DimensionCodigoEntidad</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e391"
+                      id="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e391"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:CreditRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-7" id="ref_val_corep_3100-oe-7"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-7</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-7" xlink:to="ref_val_corep_3100-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-8"
+                         test="abs(sum($celdasPac) - $celda0262) le $threshold"
+                         id="val_corep_3100-oe-8"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0016p-pac_RequerimientosLegalesRRPPd10e411"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_CreditRiskDim_CreditRiskIRBEquityp-cm-ca_CreditRiskCapitalRequirementsd10e445"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celdasPac" xlink:from="val_corep_3100-oe-8"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0016p-pac_RequerimientosLegalesRRPPd10e411"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0262" xlink:from="val_corep_3100-oe-8"
+                            xlink:to="var_CreditRiskDim_CreditRiskIRBEquityp-cm-ca_CreditRiskCapitalRequirementsd10e445"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="threshold" xlink:from="val_corep_3100-oe-8" xlink:to="var_UmbralBasico3"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-8" id="lab_val_corep_3100-oe-8"
+                   xlink:type="resource"
+                   xml:lang="es">0116 + 0117 + 0118 = 0262 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-8" xlink:to="lab_val_corep_3100-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0016p-pac_RequerimientosLegalesRRPPd10e411"
+                             bindAsSequence="true"
+                             id="var_TierDim_TotalDesglosePACDim_d0016p-pac_RequerimientosLegalesRRPPd10e411"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0016p-pac_RequerimientosLegalesRRPPd10e411"
+                                  xlink:to="fil_TierDim_Totald10e413"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0016p-pac_RequerimientosLegalesRRPPd10e411"
+                                  xlink:to="fil_DesglosePACDim_d0016d10e421"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0016p-pac_RequerimientosLegalesRRPPd10e411"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e433"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e413" id="fil_TierDim_Totald10e413"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0016d10e421"
+                            id="fil_DesglosePACDim_d0016d10e421"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0016</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>d-desg-pac:d0017</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>d-desg-pac:d0018</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e433"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e433"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_CreditRiskDim_CreditRiskIRBEquityp-cm-ca_CreditRiskCapitalRequirementsd10e445"
+                             bindAsSequence="false"
+                             id="var_CreditRiskDim_CreditRiskIRBEquityp-cm-ca_CreditRiskCapitalRequirementsd10e445"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CreditRiskDim_CreditRiskIRBEquityp-cm-ca_CreditRiskCapitalRequirementsd10e445"
+                                  xlink:to="fil_CreditRiskDim_CreditRiskIRBEquityd10e447"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_CreditRiskDim_CreditRiskIRBEquityp-cm-ca_CreditRiskCapitalRequirementsd10e445"
+                                  xlink:to="fil_d10e455"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_CreditRiskDim_CreditRiskIRBEquityp-cm-ca_CreditRiskCapitalRequirementsd10e445"
+                                  xlink:to="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e460"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CreditRiskDim_CreditRiskIRBEquityd10e447"
+                            id="fil_CreditRiskDim_CreditRiskIRBEquityd10e447"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-cr:CreditRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-cr:CreditRiskIRBEquity</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:typedDimension xlink:label="fil_d10e455" id="fil_d10e455" xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-ty:DimensionCodigoEntidad</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e460"
+                      id="fil_p-cm-ca_CreditRiskCapitalRequirementsd10e460"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:CreditRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-8" id="ref_val_corep_3100-oe-8"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-8</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-8" xlink:to="ref_val_corep_3100-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-9" test="$celda0121 eq $celda0275"
+                         id="val_corep_3100-oe-9"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0021p-pac_RequerimientosLegalesRRPPd10e480"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_MarketRiskDim_MRiskTotalp-cm-ca_MarketRiskCapitalRequirementsd10e510"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0121" xlink:from="val_corep_3100-oe-9"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0021p-pac_RequerimientosLegalesRRPPd10e480"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0275" xlink:from="val_corep_3100-oe-9"
+                            xlink:to="var_MarketRiskDim_MRiskTotalp-cm-ca_MarketRiskCapitalRequirementsd10e510"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-9" id="lab_val_corep_3100-oe-9"
+                   xlink:type="resource"
+                   xml:lang="es">0121 = 0275 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-9" xlink:to="lab_val_corep_3100-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0021p-pac_RequerimientosLegalesRRPPd10e480"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0021p-pac_RequerimientosLegalesRRPPd10e480"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0021p-pac_RequerimientosLegalesRRPPd10e480"
+                                  xlink:to="fil_TierDim_Totald10e482"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0021p-pac_RequerimientosLegalesRRPPd10e480"
+                                  xlink:to="fil_DesglosePACDim_d0021d10e490"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0021p-pac_RequerimientosLegalesRRPPd10e480"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e498"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e482" id="fil_TierDim_Totald10e482"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0021d10e490"
+                            id="fil_DesglosePACDim_d0021d10e490"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0021</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e498"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e498"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_MarketRiskDim_MRiskTotalp-cm-ca_MarketRiskCapitalRequirementsd10e510"
+                             bindAsSequence="false"
+                             id="var_MarketRiskDim_MRiskTotalp-cm-ca_MarketRiskCapitalRequirementsd10e510"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_MarketRiskDim_MRiskTotalp-cm-ca_MarketRiskCapitalRequirementsd10e510"
+                                  xlink:to="fil_MarketRiskDim_MRiskTotald10e512"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_MarketRiskDim_MRiskTotalp-cm-ca_MarketRiskCapitalRequirementsd10e510"
+                                  xlink:to="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e520"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_MarketRiskDim_MRiskTotald10e512"
+                            id="fil_MarketRiskDim_MRiskTotald10e512"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-mr:MarketRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-mr:MRiskTotal</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e520"
+                      id="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e520"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:MarketRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-9" id="ref_val_corep_3100-oe-9"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-9</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-9" xlink:to="ref_val_corep_3100-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-10" test="$celda0122 eq $celda0280"
+                         id="val_corep_3100-oe-10"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0022p-pac_RequerimientosLegalesRRPPd10e538"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_MarketRiskDim_MRiskSAp-cm-ca_MarketRiskCapitalRequirementsd10e568"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0122" xlink:from="val_corep_3100-oe-10"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0022p-pac_RequerimientosLegalesRRPPd10e538"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0280" xlink:from="val_corep_3100-oe-10"
+                            xlink:to="var_MarketRiskDim_MRiskSAp-cm-ca_MarketRiskCapitalRequirementsd10e568"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-10" id="lab_val_corep_3100-oe-10"
+                   xlink:type="resource"
+                   xml:lang="es">0122 = 0280 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-10" xlink:to="lab_val_corep_3100-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0022p-pac_RequerimientosLegalesRRPPd10e538"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0022p-pac_RequerimientosLegalesRRPPd10e538"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0022p-pac_RequerimientosLegalesRRPPd10e538"
+                                  xlink:to="fil_TierDim_Totald10e540"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0022p-pac_RequerimientosLegalesRRPPd10e538"
+                                  xlink:to="fil_DesglosePACDim_d0022d10e548"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0022p-pac_RequerimientosLegalesRRPPd10e538"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e556"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e540" id="fil_TierDim_Totald10e540"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0022d10e548"
+                            id="fil_DesglosePACDim_d0022d10e548"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0022</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e556"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e556"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_MarketRiskDim_MRiskSAp-cm-ca_MarketRiskCapitalRequirementsd10e568"
+                             bindAsSequence="false"
+                             id="var_MarketRiskDim_MRiskSAp-cm-ca_MarketRiskCapitalRequirementsd10e568"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_MarketRiskDim_MRiskSAp-cm-ca_MarketRiskCapitalRequirementsd10e568"
+                                  xlink:to="fil_MarketRiskDim_MRiskSAd10e570"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_MarketRiskDim_MRiskSAp-cm-ca_MarketRiskCapitalRequirementsd10e568"
+                                  xlink:to="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e578"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_MarketRiskDim_MRiskSAd10e570"
+                            id="fil_MarketRiskDim_MRiskSAd10e570"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-mr:MarketRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-mr:MRiskSA</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e578"
+                      id="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e578"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:MarketRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-10" id="ref_val_corep_3100-oe-10"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-10</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-10" xlink:to="ref_val_corep_3100-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-11" test="$celda0123 eq $celda0290"
+                         id="val_corep_3100-oe-11"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0023p-pac_RequerimientosLegalesRRPPd10e596"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_MarketRiskDim_MRiskIMTotalPositionsp-cm-ca_MarketRiskCapitalRequirementsd10e626"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0123" xlink:from="val_corep_3100-oe-11"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0023p-pac_RequerimientosLegalesRRPPd10e596"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0290" xlink:from="val_corep_3100-oe-11"
+                            xlink:to="var_MarketRiskDim_MRiskIMTotalPositionsp-cm-ca_MarketRiskCapitalRequirementsd10e626"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-11" id="lab_val_corep_3100-oe-11"
+                   xlink:type="resource"
+                   xml:lang="es">0123 = 0290 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-11" xlink:to="lab_val_corep_3100-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0023p-pac_RequerimientosLegalesRRPPd10e596"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0023p-pac_RequerimientosLegalesRRPPd10e596"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0023p-pac_RequerimientosLegalesRRPPd10e596"
+                                  xlink:to="fil_TierDim_Totald10e598"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0023p-pac_RequerimientosLegalesRRPPd10e596"
+                                  xlink:to="fil_DesglosePACDim_d0023d10e606"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0023p-pac_RequerimientosLegalesRRPPd10e596"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e614"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e598" id="fil_TierDim_Totald10e598"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0023d10e606"
+                            id="fil_DesglosePACDim_d0023d10e606"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0023</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e614"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e614"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_MarketRiskDim_MRiskIMTotalPositionsp-cm-ca_MarketRiskCapitalRequirementsd10e626"
+                             bindAsSequence="false"
+                             id="var_MarketRiskDim_MRiskIMTotalPositionsp-cm-ca_MarketRiskCapitalRequirementsd10e626"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_MarketRiskDim_MRiskIMTotalPositionsp-cm-ca_MarketRiskCapitalRequirementsd10e626"
+                                  xlink:to="fil_MarketRiskDim_MRiskIMTotalPositionsd10e628"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_MarketRiskDim_MRiskIMTotalPositionsp-cm-ca_MarketRiskCapitalRequirementsd10e626"
+                                  xlink:to="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e636"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_MarketRiskDim_MRiskIMTotalPositionsd10e628"
+                            id="fil_MarketRiskDim_MRiskIMTotalPositionsd10e628"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-mr:MarketRiskDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-mr:MRiskIMTotalPositions</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e636"
+                      id="fil_p-cm-ca_MarketRiskCapitalRequirementsd10e636"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:MarketRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-11" id="ref_val_corep_3100-oe-11"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-11</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-11" xlink:to="ref_val_corep_3100-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-12" test="$celda0125 eq $celda0295"
+                         id="val_corep_3100-oe-12"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0025p-pac_RequerimientosLegalesRRPPd10e655"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_BankActivityDim_TotalBankingActivitiesp-cm-ca_OperationalRiskCapitalRequirementsd10e685"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0125" xlink:from="val_corep_3100-oe-12"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0025p-pac_RequerimientosLegalesRRPPd10e655"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0295" xlink:from="val_corep_3100-oe-12"
+                            xlink:to="var_BankActivityDim_TotalBankingActivitiesp-cm-ca_OperationalRiskCapitalRequirementsd10e685"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-12" id="lab_val_corep_3100-oe-12"
+                   xlink:type="resource"
+                   xml:lang="es">0125 = 0295 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-12" xlink:to="lab_val_corep_3100-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0025p-pac_RequerimientosLegalesRRPPd10e655"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0025p-pac_RequerimientosLegalesRRPPd10e655"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0025p-pac_RequerimientosLegalesRRPPd10e655"
+                                  xlink:to="fil_TierDim_Totald10e657"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0025p-pac_RequerimientosLegalesRRPPd10e655"
+                                  xlink:to="fil_DesglosePACDim_d0025d10e665"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0025p-pac_RequerimientosLegalesRRPPd10e655"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e673"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e657" id="fil_TierDim_Totald10e657"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0025d10e665"
+                            id="fil_DesglosePACDim_d0025d10e665"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0025</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e673"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e673"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_BankActivityDim_TotalBankingActivitiesp-cm-ca_OperationalRiskCapitalRequirementsd10e685"
+                             bindAsSequence="false"
+                             id="var_BankActivityDim_TotalBankingActivitiesp-cm-ca_OperationalRiskCapitalRequirementsd10e685"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_BankActivityDim_TotalBankingActivitiesp-cm-ca_OperationalRiskCapitalRequirementsd10e685"
+                                  xlink:to="fil_BankActivityDim_TotalBankingActivitiesd10e687"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_BankActivityDim_TotalBankingActivitiesp-cm-ca_OperationalRiskCapitalRequirementsd10e685"
+                                  xlink:to="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e695"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_BankActivityDim_TotalBankingActivitiesd10e687"
+                            id="fil_BankActivityDim_TotalBankingActivitiesd10e687"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ba:BankActivityDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-ba:TotalBankingActivities</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e695"
+                      id="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e695"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:OperationalRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-12" id="ref_val_corep_3100-oe-12"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-12</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-12" xlink:to="ref_val_corep_3100-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-13" test="$celda0126 eq $celda0296"
+                         id="val_corep_3100-oe-13"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0026p-pac_RequerimientosLegalesRRPPd10e713"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_BankActivityDim_TotalBankingActivitiesSubjectBIAp-cm-ca_OperationalRiskCapitalRequirementsd10e743"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0126" xlink:from="val_corep_3100-oe-13"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0026p-pac_RequerimientosLegalesRRPPd10e713"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0296" xlink:from="val_corep_3100-oe-13"
+                            xlink:to="var_BankActivityDim_TotalBankingActivitiesSubjectBIAp-cm-ca_OperationalRiskCapitalRequirementsd10e743"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-13" id="lab_val_corep_3100-oe-13"
+                   xlink:type="resource"
+                   xml:lang="es">0126 = 0296 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-13" xlink:to="lab_val_corep_3100-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0026p-pac_RequerimientosLegalesRRPPd10e713"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0026p-pac_RequerimientosLegalesRRPPd10e713"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0026p-pac_RequerimientosLegalesRRPPd10e713"
+                                  xlink:to="fil_TierDim_Totald10e715"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0026p-pac_RequerimientosLegalesRRPPd10e713"
+                                  xlink:to="fil_DesglosePACDim_d0026d10e723"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0026p-pac_RequerimientosLegalesRRPPd10e713"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e731"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e715" id="fil_TierDim_Totald10e715"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0026d10e723"
+                            id="fil_DesglosePACDim_d0026d10e723"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0026</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e731"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e731"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_BankActivityDim_TotalBankingActivitiesSubjectBIAp-cm-ca_OperationalRiskCapitalRequirementsd10e743"
+                             bindAsSequence="false"
+                             id="var_BankActivityDim_TotalBankingActivitiesSubjectBIAp-cm-ca_OperationalRiskCapitalRequirementsd10e743"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_BankActivityDim_TotalBankingActivitiesSubjectBIAp-cm-ca_OperationalRiskCapitalRequirementsd10e743"
+                                  xlink:to="fil_BankActivityDim_TotalBankingActivitiesSubjectBIAd10e745"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_BankActivityDim_TotalBankingActivitiesSubjectBIAp-cm-ca_OperationalRiskCapitalRequirementsd10e743"
+                                  xlink:to="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e753"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_BankActivityDim_TotalBankingActivitiesSubjectBIAd10e745"
+                            id="fil_BankActivityDim_TotalBankingActivitiesSubjectBIAd10e745"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ba:BankActivityDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-ba:TotalBankingActivitiesSubjectBIA</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e753"
+                      id="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e753"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:OperationalRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-13" id="ref_val_corep_3100-oe-13"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-13</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-13" xlink:to="ref_val_corep_3100-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-14" test="$celda0127 eq $celda0297"
+                         id="val_corep_3100-oe-14"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0027p-pac_RequerimientosLegalesRRPPd10e771"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternativep-cm-ca_OperationalRiskCapitalRequirementsd10e801"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0127" xlink:from="val_corep_3100-oe-14"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0027p-pac_RequerimientosLegalesRRPPd10e771"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0297" xlink:from="val_corep_3100-oe-14"
+                            xlink:to="var_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternativep-cm-ca_OperationalRiskCapitalRequirementsd10e801"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-14" id="lab_val_corep_3100-oe-14"
+                   xlink:type="resource"
+                   xml:lang="es">0127 = 0297 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-14" xlink:to="lab_val_corep_3100-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0027p-pac_RequerimientosLegalesRRPPd10e771"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0027p-pac_RequerimientosLegalesRRPPd10e771"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0027p-pac_RequerimientosLegalesRRPPd10e771"
+                                  xlink:to="fil_TierDim_Totald10e773"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0027p-pac_RequerimientosLegalesRRPPd10e771"
+                                  xlink:to="fil_DesglosePACDim_d0027d10e781"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0027p-pac_RequerimientosLegalesRRPPd10e771"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e789"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e773" id="fil_TierDim_Totald10e773"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0027d10e781"
+                            id="fil_DesglosePACDim_d0027d10e781"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0027</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e789"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e789"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternativep-cm-ca_OperationalRiskCapitalRequirementsd10e801"
+                             bindAsSequence="false"
+                             id="var_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternativep-cm-ca_OperationalRiskCapitalRequirementsd10e801"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternativep-cm-ca_OperationalRiskCapitalRequirementsd10e801"
+                                  xlink:to="fil_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternatived10e803"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternativep-cm-ca_OperationalRiskCapitalRequirementsd10e801"
+                                  xlink:to="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e811"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternatived10e803"
+                            id="fil_BankActivityDim_TotalBankingActivitiesSubjectSTAAlternatived10e803"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ba:BankActivityDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-ba:TotalBankingActivitiesSubjectSTAAlternative</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e811"
+                      id="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e811"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:OperationalRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-14" id="ref_val_corep_3100-oe-14"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-14</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-14" xlink:to="ref_val_corep_3100-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-15" test="$celda0128 eq $celda0298"
+                         id="val_corep_3100-oe-15"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0028p-pac_RequerimientosLegalesRRPPd10e829"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_BankActivityDim_TotalBankingActivitiesSubjectAMAp-cm-ca_OperationalRiskCapitalRequirementsd10e859"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0128" xlink:from="val_corep_3100-oe-15"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0028p-pac_RequerimientosLegalesRRPPd10e829"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0298" xlink:from="val_corep_3100-oe-15"
+                            xlink:to="var_BankActivityDim_TotalBankingActivitiesSubjectAMAp-cm-ca_OperationalRiskCapitalRequirementsd10e859"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-15" id="lab_val_corep_3100-oe-15"
+                   xlink:type="resource"
+                   xml:lang="es">0128 = 0298 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-15" xlink:to="lab_val_corep_3100-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0028p-pac_RequerimientosLegalesRRPPd10e829"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0028p-pac_RequerimientosLegalesRRPPd10e829"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0028p-pac_RequerimientosLegalesRRPPd10e829"
+                                  xlink:to="fil_TierDim_Totald10e831"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0028p-pac_RequerimientosLegalesRRPPd10e829"
+                                  xlink:to="fil_DesglosePACDim_d0028d10e839"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0028p-pac_RequerimientosLegalesRRPPd10e829"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e847"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e831" id="fil_TierDim_Totald10e831"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0028d10e839"
+                            id="fil_DesglosePACDim_d0028d10e839"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0028</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e847"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e847"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_BankActivityDim_TotalBankingActivitiesSubjectAMAp-cm-ca_OperationalRiskCapitalRequirementsd10e859"
+                             bindAsSequence="false"
+                             id="var_BankActivityDim_TotalBankingActivitiesSubjectAMAp-cm-ca_OperationalRiskCapitalRequirementsd10e859"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_BankActivityDim_TotalBankingActivitiesSubjectAMAp-cm-ca_OperationalRiskCapitalRequirementsd10e859"
+                                  xlink:to="fil_BankActivityDim_TotalBankingActivitiesSubjectAMAd10e861"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_BankActivityDim_TotalBankingActivitiesSubjectAMAp-cm-ca_OperationalRiskCapitalRequirementsd10e859"
+                                  xlink:to="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e869"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_BankActivityDim_TotalBankingActivitiesSubjectAMAd10e861"
+                            id="fil_BankActivityDim_TotalBankingActivitiesSubjectAMAd10e861"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-ba:BankActivityDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-ba:TotalBankingActivitiesSubjectAMA</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e869"
+                      id="fil_p-cm-ca_OperationalRiskCapitalRequirementsd10e869"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:OperationalRiskCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-15" id="ref_val_corep_3100-oe-15"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-15</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-15" xlink:to="ref_val_corep_3100-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-16" test="$celda0346 eq $celda0342"
+                         id="val_corep_3100-oe-16"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0046p-ca_InternalAssessmentCapitalNeedsd10e887"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i" xlink:to="var_p-ca_InternalAssessmentCapitalNeedsd10e917"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0346" xlink:from="val_corep_3100-oe-16"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0046p-ca_InternalAssessmentCapitalNeedsd10e887"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0342" xlink:from="val_corep_3100-oe-16"
+                            xlink:to="var_p-ca_InternalAssessmentCapitalNeedsd10e917"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-16" id="lab_val_corep_3100-oe-16"
+                   xlink:type="resource"
+                   xml:lang="es">0346 = 0342 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-16" xlink:to="lab_val_corep_3100-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0046p-ca_InternalAssessmentCapitalNeedsd10e887"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0046p-ca_InternalAssessmentCapitalNeedsd10e887"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0046p-ca_InternalAssessmentCapitalNeedsd10e887"
+                                  xlink:to="fil_TierDim_Totald10e889"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0046p-ca_InternalAssessmentCapitalNeedsd10e887"
+                                  xlink:to="fil_DesglosePACDim_d0046d10e897"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0046p-ca_InternalAssessmentCapitalNeedsd10e887"
+                                  xlink:to="fil_p-ca_InternalAssessmentCapitalNeedsd10e905"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e889" id="fil_TierDim_Totald10e889"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0046d10e897"
+                            id="fil_DesglosePACDim_d0046d10e897"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0046</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-ca_InternalAssessmentCapitalNeedsd10e905"
+                      id="fil_p-ca_InternalAssessmentCapitalNeedsd10e905"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:InternalAssessmentCapitalNeeds</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-ca_InternalAssessmentCapitalNeedsd10e917"
+                             bindAsSequence="false"
+                             id="var_p-ca_InternalAssessmentCapitalNeedsd10e917"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-ca_InternalAssessmentCapitalNeedsd10e917"
+                                  xlink:to="fil_p-ca_InternalAssessmentCapitalNeedsd10e919"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-ca_InternalAssessmentCapitalNeedsd10e919"
+                      id="fil_p-ca_InternalAssessmentCapitalNeedsd10e919"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:InternalAssessmentCapitalNeeds</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-16" id="ref_val_corep_3100-oe-16"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-16</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-16" xlink:to="ref_val_corep_3100-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3100-oe-17" test="$celda0135 ge $celda0305"
+                         id="val_corep_3100-oe-17"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Miac_01"
+                   xlink:to="var_TierDim_TotalDesglosePACDim_d0035p-pac_RequerimientosLegalesRRPPd10e937"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msolv_i"
+                   xlink:to="var_p-cm-ca_OtherTransitionalCapitalRequirementsd10e967"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="celda0135" xlink:from="val_corep_3100-oe-17"
+                            xlink:to="var_TierDim_TotalDesglosePACDim_d0035p-pac_RequerimientosLegalesRRPPd10e937"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="celda0305" xlink:from="val_corep_3100-oe-17"
+                            xlink:to="var_p-cm-ca_OtherTransitionalCapitalRequirementsd10e967"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <label:label xlink:label="lab_val_corep_3100-oe-17" id="lab_val_corep_3100-oe-17"
+                   xlink:type="resource"
+                   xml:lang="es">0135 mayor o igual a 0305 (RP10)</label:label>
+      <generic:arc xlink:from="val_corep_3100-oe-17" xlink:to="lab_val_corep_3100-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_TierDim_TotalDesglosePACDim_d0035p-pac_RequerimientosLegalesRRPPd10e937"
+                             bindAsSequence="false"
+                             id="var_TierDim_TotalDesglosePACDim_d0035p-pac_RequerimientosLegalesRRPPd10e937"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0035p-pac_RequerimientosLegalesRRPPd10e937"
+                                  xlink:to="fil_TierDim_Totald10e939"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0035p-pac_RequerimientosLegalesRRPPd10e937"
+                                  xlink:to="fil_DesglosePACDim_d0035d10e947"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_TierDim_TotalDesglosePACDim_d0035p-pac_RequerimientosLegalesRRPPd10e937"
+                                  xlink:to="fil_p-pac_RequerimientosLegalesRRPPd10e955"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e939" id="fil_TierDim_Totald10e939"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DesglosePACDim_d0035d10e947"
+                            id="fil_DesglosePACDim_d0035d10e947"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-desg-pac:DesglosePAC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-desg-pac:d0035</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <cf:conceptName xlink:label="fil_p-pac_RequerimientosLegalesRRPPd10e955"
+                      id="fil_p-pac_RequerimientosLegalesRRPPd10e955"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-pac:RequerimientosLegalesRRPP</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-cm-ca_OtherTransitionalCapitalRequirementsd10e967"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_OtherTransitionalCapitalRequirementsd10e967"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="true"
+                                  xlink:from="var_p-cm-ca_OtherTransitionalCapitalRequirementsd10e967"
+                                  xlink:to="fil_d10e969"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_OtherTransitionalCapitalRequirementsd10e967"
+                                  xlink:to="fil_p-cm-ca_OtherTransitionalCapitalRequirementsd10e974"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:typedDimension xlink:label="fil_d10e969" id="fil_d10e969" xlink:type="resource">
+         <df:dimension>
+            <df:qname>es-be-d-ty:DimensionCodigoEntidad</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <cf:conceptName xlink:label="fil_p-cm-ca_OtherTransitionalCapitalRequirementsd10e974"
+                      id="fil_p-cm-ca_OtherTransitionalCapitalRequirementsd10e974"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:OtherTransitionalCapitalRequirements</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <reference:reference xlink:label="ref_val_corep_3100-oe-17" id="ref_val_corep_3100-oe-17"
+                           xlink:type="resource">
+         <ref:Number>corep:3100-oe-17</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3100-oe-17" xlink:to="ref_val_corep_3100-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

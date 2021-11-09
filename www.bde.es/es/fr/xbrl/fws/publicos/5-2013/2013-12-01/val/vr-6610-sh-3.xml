@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:estr_base="http://www.bde.es/es/fr/xbrl/main/base" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:variable="http://xbrl.org/2008/variable" xmlns:estr_dim="http://www.bde.es/es/fr/xbrl/main/dim" xmlns:estr_PZW="http://www.bde.es/es/fr/xbrl/main/d/PZW" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_6610-sh-3" test="abs($total - ($grupoConsEntCred + $entidadesSeguros + $ajustesEliminaciones + $otrasEnt)) le $threshold" aspectModel="dimensional" implicitFiltering="true" id="es_6610-sh-3" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_6610-sh-3.fil_es-be-p-FINREP_ActivosContratosSegurosReaseguros_OrOthersd10e107" id="es_6610-sh-3.fil_es-be-p-FINREP_ActivosContratosSegurosReaseguros_OrOthersd10e107">
+      <cf:concept>
+        <cf:qname>estr_base:mi61990</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>estr_base:mi39119</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_6610-sh-3" xlink:to="es_6610-sh-3.fil_es-be-p-FINREP_ActivosContratosSegurosReaseguros_OrOthersd10e107" complement="false" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_6610-sh-3.total" bindAsSequence="false" fallbackValue="0" id="es_6610-sh-3.total" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_6610-sh-3.total.fil_DistribucionDim_TotalSectoriald10e121" id="es_6610-sh-3.total.fil_DistribucionDim_TotalSectoriald10e121">
+      <df:dimension>
+        <df:qname>estr_dim:POG</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PZW:x46998</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_6610-sh-3.total" xlink:to="es_6610-sh-3.total.fil_DistribucionDim_TotalSectoriald10e121" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_6610-sh-3" xlink:to="es_6610-sh-3.total" name="total" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_6610-sh-3.grupoConsEntCred" bindAsSequence="false" fallbackValue="0" id="es_6610-sh-3.grupoConsEntCred" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_6610-sh-3.grupoConsEntCred.fil_DistribucionDim_GrupoConsolidableEntidadesCreditod10e135" id="es_6610-sh-3.grupoConsEntCred.fil_DistribucionDim_GrupoConsolidableEntidadesCreditod10e135">
+      <df:dimension>
+        <df:qname>estr_dim:POG</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PZW:x16044</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_6610-sh-3.grupoConsEntCred" xlink:to="es_6610-sh-3.grupoConsEntCred.fil_DistribucionDim_GrupoConsolidableEntidadesCreditod10e135" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_6610-sh-3" xlink:to="es_6610-sh-3.grupoConsEntCred" name="grupoConsEntCred" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_6610-sh-3.entidadesSeguros" bindAsSequence="false" fallbackValue="0" id="es_6610-sh-3.entidadesSeguros" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_6610-sh-3.entidadesSeguros.fil_DistribucionDim_EntidadesSegurosd10e149" id="es_6610-sh-3.entidadesSeguros.fil_DistribucionDim_EntidadesSegurosd10e149">
+      <df:dimension>
+        <df:qname>estr_dim:POG</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PZW:x105556</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_6610-sh-3.entidadesSeguros" xlink:to="es_6610-sh-3.entidadesSeguros.fil_DistribucionDim_EntidadesSegurosd10e149" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_6610-sh-3" xlink:to="es_6610-sh-3.entidadesSeguros" name="entidadesSeguros" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_6610-sh-3.otrasEnt" bindAsSequence="false" fallbackValue="0" id="es_6610-sh-3.otrasEnt" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_6610-sh-3.otrasEnt.fil_DistribucionDim_OtrasEntidadesd10e164" id="es_6610-sh-3.otrasEnt.fil_DistribucionDim_OtrasEntidadesd10e164">
+      <df:dimension>
+        <df:qname>estr_dim:POG</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PZW:x85996</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_6610-sh-3.otrasEnt" xlink:to="es_6610-sh-3.otrasEnt.fil_DistribucionDim_OtrasEntidadesd10e164" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_6610-sh-3" xlink:to="es_6610-sh-3.otrasEnt" name="otrasEnt" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_6610-sh-3.ajustesEliminaciones" bindAsSequence="false" fallbackValue="0" id="es_6610-sh-3.ajustesEliminaciones" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_6610-sh-3.ajustesEliminaciones.fil_DistribucionDim_AjustesEliminacionesd10e178" id="es_6610-sh-3.ajustesEliminaciones.fil_DistribucionDim_AjustesEliminacionesd10e178">
+      <df:dimension>
+        <df:qname>estr_dim:POG</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PZW:x98825</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_6610-sh-3.ajustesEliminaciones" xlink:to="es_6610-sh-3.ajustesEliminaciones.fil_DistribucionDim_AjustesEliminacionesd10e178" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_6610-sh-3" xlink:to="es_6610-sh-3.ajustesEliminaciones" name="ajustesEliminaciones" order="5" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_6610-sh-3.threshold" bindAsSequence="false" select="(4 idiv 2 + 1) * 1000" id="es_6610-sh-3.threshold" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_6610-sh-3" xlink:to="es_6610-sh-3.threshold" name="threshold" order="6" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_6610-sh-3" id="ref_es_6610-sh-3">
+      <ref:Number>publicos:6610-sh-3</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_6610-sh-3" xlink:to="ref_es_6610-sh-3" />
+  </gen:link>
+</link:linkbase>

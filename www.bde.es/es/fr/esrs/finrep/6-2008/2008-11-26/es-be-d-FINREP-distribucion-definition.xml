@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.bde.es/es/fr/esrs/finrep/6-2008/2008-11-26/role/DimensionDefault" xlink:type="simple" xlink:href="es-be-FINREP-rol.xsd#DimensionDefault"/>
+  <link:roleRef roleURI="http://www.bde.es/es/fr/esrs/finrep/6-2008/2008-11-26/role/HcDistribucionHypercube" xlink:type="simple" xlink:href="es-be-FINREP-rol.xsd#HcDistribucionHypercube"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-default"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.bde.es/es/fr/esrs/finrep/6-2008/2008-11-26/role/DimensionDefault">
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_DistribucionDimension" xlink:label="DistribucionDimension" xlink:title="DistribucionDimension"/>
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_TotalSectorial" xlink:label="TotalSectorial" xlink:title="TotalSectorial"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="DistribucionDimension" xlink:to="TotalSectorial" xlink:title="definition: DistribucionDimension to TotalSectorial" order="1.0"/>
+  </link:definitionLink>
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_DistribucionDimension" xlink:label="DistribucionDimension" xlink:title="DistribucionDimension"/>
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_TotalSectorial" xlink:label="TotalSectorial" xlink:title="TotalSectorial"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="DistribucionDimension" xlink:to="TotalSectorial" xlink:title="definition: DistribucionDimension to TotalSectorial" use="optional" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_Distribucion" xlink:label="Distribucion" xlink:title="Distribucion"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="DistribucionDimension" xlink:to="Distribucion" xlink:title="definition: DistribucionDimension to Distribucion" use="optional" order="2.0" xbrldt:usable="false"/>
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_GrupoConsolidableEntidadesCredito" xlink:label="GrupoConsolidableEntidadesCredito" xlink:title="GrupoConsolidableEntidadesCredito"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Distribucion" xlink:to="GrupoConsolidableEntidadesCredito" xlink:title="definition: Distribucion to GrupoConsolidableEntidadesCredito" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_EntidadesSeguros" xlink:label="EntidadesSeguros" xlink:title="EntidadesSeguros"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Distribucion" xlink:to="EntidadesSeguros" xlink:title="definition: Distribucion to EntidadesSeguros" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_OtrasEntidades" xlink:label="OtrasEntidades" xlink:title="OtrasEntidades"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Distribucion" xlink:to="OtrasEntidades" xlink:title="definition: Distribucion to OtrasEntidades" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="es-be-d-FINREP-distribucion.xsd#es-be-d-FR-dist_AjustesEliminaciones" xlink:label="AjustesEliminaciones" xlink:title="AjustesEliminaciones"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Distribucion" xlink:to="AjustesEliminaciones" xlink:title="definition: Distribucion to AjustesEliminaciones" order="4.0"/>
+  </link:definitionLink>
+</link:linkbase>

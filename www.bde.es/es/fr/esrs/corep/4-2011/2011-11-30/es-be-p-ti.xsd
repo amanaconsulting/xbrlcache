@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:es-be-p-ti="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-ti" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:es-be-dt="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-dt" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:cebs-ef-ele="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:cebs-ef-arc="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/arcroles" xmlns:dt="http://xbrl.c-ebs.org/dt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-p-ti" elementFormDefault="qualified">
+  <xsd:annotation>
+      <xsd:appinfo>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-ti-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-ti-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" xlink:href="es-be-p-ti-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:roleType roleURI="http://www.bde.es/2008/corep/ti" id="rt_ti">
+            <link:definition>ELR para los primary Items de presentación y definición</link:definition>
+            <link:usedOn>link:presentationLink</link:usedOn>
+            <link:usedOn>link:definitionLink</link:usedOn>
+         </link:roleType>
+      </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xsd:import namespace="http://www.bde.es/es/fr/esrs/corep/3-2008/2008-05-22/es-be-dt" schemaLocation="es-be-dt.xsd"/>
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xsd:import namespace="http://xbrl.c-ebs.org/dt" schemaLocation="http://www.c-ebs.org/eu/fr/esrs/corep/2011-12-31/dt-2005-06-30.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/arcroles" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/arcroles.xsd"/>
+  <xsd:import namespace="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/elements" schemaLocation="http://www.bde.es/es/fr/esrs/comun/2010-01-01/elements.xsd"/>
+  <xsd:element name="Saldo" id="es-be-p-ti_Saldo" type="dt:nonNegativeMonetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="PorcentajeTI" id="es-be-p-ti_PorcentajeTI" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIR" id="es-be-p-ti_DPSTIR" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRHasta1Mes" id="es-be-p-ti_DPSTIRHasta1Mes" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRHasta1MesFlujoPrincipalInteres" id="es-be-p-ti_DPSTIRHasta1MesFlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRHasta1MesPrincipalReprecia" id="es-be-p-ti_DPSTIRHasta1MesPrincipalReprecia" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRHasta1MesPorcentajeTIMedio" id="es-be-p-ti_DPSTIRHasta1MesPorcentajeTIMedio" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor1MesHasta3Meses" id="es-be-p-ti_DPSTIRMayor1MesHasta3Meses" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor1MesHasta3MesesFlujoPrincipalInteres" id="es-be-p-ti_DPSTIRMayor1MesHasta3MesesFlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor1MesHasta3MesesPrincipalReprecia" id="es-be-p-ti_DPSTIRMayor1MesHasta3MesesPrincipalReprecia" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor1MesHasta3MesesPorcentajeTIMedio" id="es-be-p-ti_DPSTIRMayor1MesHasta3MesesPorcentajeTIMedio" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor3MesesHasta6Meses" id="es-be-p-ti_DPSTIRMayor3MesesHasta6Meses" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor3MesesHasta6MesesFlujoPrincipalInteres" id="es-be-p-ti_DPSTIRMayor3MesesHasta6MesesFlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor3MesesHasta6MesesFlujoPrincipalReprecia" id="es-be-p-ti_DPSTIRMayor3MesesHasta6MesesFlujoPrincipalReprecia" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor3MesesHasta6MesesPorcentajeTIMedio" id="es-be-p-ti_DPSTIRMayor3MesesHasta6MesesPorcentajeTIMedio" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor6MesesHasta1Ano" id="es-be-p-ti_DPSTIRMayor6MesesHasta1Ano" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor6MesesHasta1AnoFlujoPrincipalInteres" id="es-be-p-ti_DPSTIRMayor6MesesHasta1AnoFlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor6MesesHasta1AnoFlujoPrincipalReprecia" id="es-be-p-ti_DPSTIRMayor6MesesHasta1AnoFlujoPrincipalReprecia" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor6MesesHasta1AnoPorcentajeTIMedio" id="es-be-p-ti_DPSTIRMayor6MesesHasta1AnoPorcentajeTIMedio" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno2" id="es-be-p-ti_DPSTIRAno2" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno2FlujoPrincipalInteres" id="es-be-p-ti_DPSTIRAno2FlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno3" id="es-be-p-ti_DPSTIRAno3" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno3FlujoPrincipalInteres" id="es-be-p-ti_DPSTIRAno3FlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno4" id="es-be-p-ti_DPSTIRAno4" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno4FlujoPrincipalInteres" id="es-be-p-ti_DPSTIRAno4FlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno5" id="es-be-p-ti_DPSTIRAno5" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno5FlujoPrincipalInteres" id="es-be-p-ti_DPSTIRAno5FlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno6Y7" id="es-be-p-ti_DPSTIRAno6Y7" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno6Y7FlujoPrincipalInteres" id="es-be-p-ti_DPSTIRAno6Y7FlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno8Y10" id="es-be-p-ti_DPSTIRAno8Y10" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno8Y10FlujoPrincipalInteres" id="es-be-p-ti_DPSTIRAno8Y10FlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno11Y15" id="es-be-p-ti_DPSTIRAno11Y15" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno11Y15FlujoPrincipalInteres" id="es-be-p-ti_DPSTIRAno11Y15FlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno16Y20" id="es-be-p-ti_DPSTIRAno16Y20" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRAno16Y20FlujoPrincipalInteres" id="es-be-p-ti_DPSTIRAno16Y20FlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor20Ano" id="es-be-p-ti_DPSTIRMayor20Ano" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="DPSTIRMayor20AnoFlujoPrincipalInteres" id="es-be-p-ti_DPSTIRMayor20AnoFlujoPrincipalInteres" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVista" id="es-be-p-ti_CaracteristicasDepositosVista" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaValorEconomico" id="es-be-p-ti_CaracteristicasDepositosVistaValorEconomico" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaPorcentajeInestable" id="es-be-p-ti_CaracteristicasDepositosVistaPorcentajeInestable" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaSensibilidadCambiosTipos" id="es-be-p-ti_CaracteristicasDepositosVistaSensibilidadCambiosTipos" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaSensibilidadCambiosTiposSubidas" id="es-be-p-ti_CaracteristicasDepositosVistaSensibilidadCambiosTiposSubidas" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaSensibilidadCambiosTiposBajadas" id="es-be-p-ti_CaracteristicasDepositosVistaSensibilidadCambiosTiposBajadas" type="es-be-dt:positivePureItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaDuracionMeses" id="es-be-p-ti_CaracteristicasDepositosVistaDuracionMeses" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaDuracionMesesSubidas" id="es-be-p-ti_CaracteristicasDepositosVistaDuracionMesesSubidas" type="xbrli:positiveIntegerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaDuracionMesesBajadas" id="es-be-p-ti_CaracteristicasDepositosVistaDuracionMesesBajadas" type="xbrli:positiveIntegerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaPlazoRepreciacionMeses" id="es-be-p-ti_CaracteristicasDepositosVistaPlazoRepreciacionMeses" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaPlazoRepreciacionMesesSubidas" id="es-be-p-ti_CaracteristicasDepositosVistaPlazoRepreciacionMesesSubidas" type="xbrli:positiveIntegerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="CaracteristicasDepositosVistaPlazoRepreciacionMesesBajadas" id="es-be-p-ti_CaracteristicasDepositosVistaPlazoRepreciacionMesesBajadas" type="xbrli:positiveIntegerItemType" substitutionGroup="xbrli:item" abstract="false" nillable="true" xbrli:periodType="instant"/>
+  <xsd:element name="RP52Domain" id="es-be-p-ti_RP52Domain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
+</xsd:schema>

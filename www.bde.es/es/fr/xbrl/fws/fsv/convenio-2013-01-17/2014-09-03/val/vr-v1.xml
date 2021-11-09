@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:acf="http://xbrl.org/2010/filter/aspect-cover" xmlns:variable="http://xbrl.org/2008/variable" xmlns:es_met="http://www.bde.es/xbrl/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2010/filter/aspect-cover http://www.xbrl.org/2010/aspect-cover-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_v1" test="$cp &gt;= 1000 and $cp &lt; 53000" aspectModel="dimensional" implicitFiltering="true" id="es_v1" />
+    <acf:aspectCover xlink:type="resource" xlink:label="unitFilter" id="unitFilter">
+      <acf:aspect>unit</acf:aspect>
+    </acf:aspectCover>
+    <variable:factVariable xlink:type="resource" xlink:label="es_v1.cp" bindAsSequence="false" fallbackValue="0" id="es_v1.cp" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_v1.cp.f1" id="es_v1.cp.f1">
+      <cf:concept>
+        <cf:qname>es_met:ii42</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v1.cp" xlink:to="es_v1.cp.f1" cover="true" complement="false" order="1" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v1.cp" xlink:to="unitFilter" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v1" xlink:to="es_v1.cp" name="cp" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v1.cq" bindAsSequence="true" fallbackValue="()" id="es_v1.cq" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_v1.cq.f2" id="es_v1.cq.f2">
+      <cf:concept>
+        <cf:qname>es_met:ei43</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>es_met:ii44</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>es_met:ii45</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>es_met:ii46</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>es_met:ii48</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v1.cq" xlink:to="es_v1.cq.f2" cover="true" complement="false" order="1" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v1.cq" xlink:to="unitFilter" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v1" xlink:to="es_v1.cq" name="cq" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v1.cr" bindAsSequence="false" fallbackValue="0" id="es_v1.cr" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_v1.cr.f4" id="es_v1.cr.f4">
+      <cf:concept>
+        <cf:qname>es_met:bi47</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v1.cr" xlink:to="es_v1.cr.f4" cover="true" complement="false" order="1" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v1.cr" xlink:to="unitFilter" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v1" xlink:to="es_v1.cr" name="cr" order="3" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_v1" id="ref_es_v1">
+      <ref:Number>fsv:v1</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_v1" xlink:to="ref_es_v1" />
+  </gen:link>
+</link:linkbase>

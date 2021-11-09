@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11
+  Version: 20161214
+  Release date: Wed Dec 14 09:00:00 2016
+-->
+<link:linkbase xmlns:cbs-i="http://www.nltaxonomie.nl/nt11/cbs/20161214/dictionary/cbs-data" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:crf="http://xbrl.org/2010/filter/concept-relation" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:sev="http://xbrl.org/2016/assertion-severity" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nltaxonomie.nl/nt11/cbs/20161214/dictionary/cbs-data ../dictionary/cbs-data.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2010/filter/concept-relation http://www.xbrl.org/2010/concept-relation-filter.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2016/assertion-severity http://www.xbrl.org/2016/assertion-severity.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd">
+  <link:roleRef roleURI="urn:cbs:linkrole:production-statistics-income-statement-corporate-taxes" xlink:href="../dictionary/cbs-linkroles.xsd#cbs-lr_ProductionStatisticsIncomeStatementCorporateTaxes" xlink:type="simple"/>
+  <gen:link xlink:role="urn:cbs:linkrole:production-statistics-income-statement-corporate-taxes" xlink:type="extended">
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesCredit" matches="false" nils="false" xlink:label="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesCredit" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="true" fallbackValue="0" id="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesDebit" matches="false" nils="false" xlink:label="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesDebit" xlink:type="resource"/>
+    <variable:factVariable bindAsSequence="false" id="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_CorporateTaxes" matches="false" nils="false" xlink:label="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_CorporateTaxes" xlink:type="resource"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesCredit" xlink:to="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesDebit" xlink:to="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:type="arc"/>
+    <crf:conceptRelation id="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_RelationCorporateTaxesCredit" xlink:label="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_RelationCorporateTaxesCredit" xlink:type="resource">
+      <crf:qname>cbs-i:CorporateTaxes</crf:qname>
+      <crf:linkrole>urn:cbs:linkrole:production-statistics-income-statement-corporate-taxes</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <va:valueAssertion aspectModel="dimensional" id="valueAssertion_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1" implicitFiltering="true" test=" $CorporateTaxes = - sum($varArc_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesCredit)+ sum($varArc_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesDebit)" xlink:label="valueAssertion_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1" xlink:type="resource"/>
+    <cf:conceptBalance balance="credit" id="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:label="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceCredit1" xlink:type="resource"/>
+    <variable:variableArc name="CorporateTaxes" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1" xlink:to="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_CorporateTaxes" xlink:type="arc"/>
+    <cf:conceptBalance balance="debit" id="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceParentDebit1" xlink:label="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceParentDebit1" xlink:type="resource"/>
+    <cf:conceptName id="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_CorporateTaxes" xlink:label="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_CorporateTaxes" xlink:type="resource">
+      <cf:concept>
+        <cf:qname>cbs-i:CorporateTaxes</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesCredit" xlink:to="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_RelationCorporateTaxesCredit" xlink:type="arc"/>
+    <variable:variableArc name="varArc_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesDebit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1" xlink:to="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesDebit" xlink:type="arc"/>
+    
+    <gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1" xlink:to="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_warning_loc" xlink:type="arc"/>
+<link:loc xlink:type="locator" xlink:href="http://www.xbrl.org/2016/severities.xml#WARNING" xlink:label="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_warning_loc"/>
+    
+    <crf:conceptRelation id="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_RelationCorporateTaxesDebit" xlink:label="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_RelationCorporateTaxesDebit" xlink:type="resource">
+      <crf:qname>cbs-i:CorporateTaxes</crf:qname>
+      <crf:linkrole>urn:cbs:linkrole:production-statistics-income-statement-corporate-taxes</crf:linkrole>
+      <crf:arcrole>http://www.xbrl.org/2003/arcrole/parent-child</crf:arcrole>
+      <crf:axis>child</crf:axis>
+    </crf:conceptRelation>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesDebit" xlink:to="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_RelationCorporateTaxesDebit" xlink:type="arc"/>
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_CorporateTaxes" xlink:to="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceParentDebit1" xlink:type="arc"/>
+    <cf:conceptBalance balance="debit" id="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:label="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ConceptBalanceDebit1" xlink:type="resource"/>
+    <variable:variableArc name="varArc_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesCredit" order="2" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1" xlink:to="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_ChildrenOfCorporateTaxesCredit" xlink:type="arc"/>
+    
+    <variable:variableFilterArc complement="false" cover="true" order="1" priority="0" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_CorporateTaxes" xlink:to="ProductionStatisticsIncomeStatementCorporateTaxes_MsgAdimSumOfChildrenParentDebit1_CorporateTaxes" xlink:type="arc"/>
+  </gen:link>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" xlink:type="simple"/>
+  
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" xlink:type="simple"/>
+</link:linkbase>

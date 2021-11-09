@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT11 
+  Version: 20170419
+  Release date: Wed Apr 19 09:00:00 2017
+-->
+<link:linkbase xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:gen="http://xbrl.org/2008/generic" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:ocw-i="http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-data" xmlns:ocw-wnt-i="http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-wnt-data" xmlns:pf="http://xbrl.org/2008/filter/period" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:validation="http://xbrl.org/2008/validation" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd   http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd   http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd   http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd   http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd   http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd   http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd   http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd   http://www.nltaxonomie.nl/nt11/ocw/20170419/dictionary/ocw-wnt-data ../dictionary/ocw-wnt-data.xsd">
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set" xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" xlink:type="simple"/>
+	<link:roleRef roleURI="urn:ocw-wnt:linkrole:remuneration-executives-general" xlink:href="../dictionary/ocw-wnt-linkroles.xsd#ocw-wnt-lr_RemunerationExecutivesGeneral" xlink:type="simple"/>
+	<gen:link xlink:role="urn:ocw-wnt:linkrole:remuneration-executives-general" xlink:type="extended">
+		<validation:assertionSet id="assertion-set-BR-OCW-WNT-Jaarrekening" xlink:label="assertion-set-BR-OCW-WNT-Jaarrekening" xlink:type="resource"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-BR-OCW-WNT-Jaarrekening" xlink:to="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-BR-OCW-WNT-Jaarrekening" xlink:to="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-BR-OCW-WNT-Jaarrekening" xlink:to="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set" xlink:from="assertion-set-BR-OCW-WNT-Jaarrekening" xlink:to="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="non-dimensional" id="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" implicitFiltering="false" test="if (number($target) gt 0 or not($Sector = ('PO','VO','MBO','HBO','WO'))) then true() else if (not($Sector = ('PO','VO'))) then false() else if ($JointVenturePOVO castable as xs:boolean) then $JointVenturePOVO cast as xs:boolean else false()" xlink:label="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:type="resource"/>
+		<variable:variableArc name="target" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:to="v_ComplexityGradeAverageIncomeTotal_cU" xlink:type="arc"/>
+		<variable:variableArc name="Sector" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:to="v_Sector" xlink:type="arc"/>
+		<variable:variableArc name="JointVenturePOVO" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:to="v_JointVenturePOVO" xlink:type="arc"/>
+		<variable:variableArc name="targetQName" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:to="gv_qname_ComplexityGradeAverageIncomeTotal" xlink:type="arc"/>
+		<variable:variableSetFilterArc complement="false" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:to="f_pe_curr" xlink:type="arc"/>
+		<variable:variableSetFilterArc complement="false" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:to="f_ps_curr" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-WNT.B.6.a-Jaarrekening-ComplexityGradeAverageIncomeTotal-required" xlink:to="sev_OCWWNT-Jaarrekening_ERROR_loc" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="non-dimensional" id="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" implicitFiltering="false" test="if (number($target) gt 0 or not($Sector = ('PO','VO','MBO','HBO','WO'))) then true() else if (not($Sector = ('PO','VO'))) then false() else if ($JointVenturePOVO castable as xs:boolean) then $JointVenturePOVO cast as xs:boolean else false()" xlink:label="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:type="resource"/>
+		<variable:variableArc name="target" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:to="v_ComplexityGradeAverageNumberOfPupilsParticipantsStudents" xlink:type="arc"/>
+		<variable:variableArc name="Sector" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:to="v_Sector" xlink:type="arc"/>
+		<variable:variableArc name="JointVenturePOVO" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:to="v_JointVenturePOVO" xlink:type="arc"/>
+		<variable:variableArc name="targetQName" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:to="gv_qname_ComplexityGradeAverageNumberOfPupilsParticipantsStudents" xlink:type="arc"/>
+		<variable:variableSetFilterArc complement="false" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:to="f_pe_curr" xlink:type="arc"/>
+		<variable:variableSetFilterArc complement="false" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:to="f_ps_curr" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-WNT.B.6.b-Jaarrekening-ComplexityGradeAverageNumberOfPupilsParticipantsStudents-required" xlink:to="sev_OCWWNT-Jaarrekening_ERROR_loc" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="non-dimensional" id="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" implicitFiltering="false" test="if (number($target) gt 0 or not($Sector = ('PO','VO','MBO','HBO','WO'))) then true() else if (not($Sector = ('PO','VO'))) then false() else if ($JointVenturePOVO castable as xs:boolean) then $JointVenturePOVO cast as xs:boolean else false()" xlink:label="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:type="resource"/>
+		<variable:variableArc name="target" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:to="v_ComplexityGradeWeightedNumberOfEducationalCategoriesSectors" xlink:type="arc"/>
+		<variable:variableArc name="Sector" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:to="v_Sector" xlink:type="arc"/>
+		<variable:variableArc name="JointVenturePOVO" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:to="v_JointVenturePOVO" xlink:type="arc"/>
+		<variable:variableArc name="targetQName" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:to="gv_qname_ComplexityGradeWeightedNumberOfEducationalCategoriesSectors" xlink:type="arc"/>
+		<variable:variableSetFilterArc complement="false" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:to="f_pe_curr" xlink:type="arc"/>
+		<variable:variableSetFilterArc complement="false" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:to="f_ps_curr" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-WNT.B.6.c-Jaarrekening-ComplexityGradeWeightedNumberOfEducationalCategoriesSectors-required" xlink:to="sev_OCWWNT-Jaarrekening_ERROR_loc" xlink:type="arc"/>
+		<va:valueAssertion aspectModel="non-dimensional" id="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" implicitFiltering="false" test="if (string-length($target) gt 0 or not($Sector = ('PO','VO','MBO','HBO','WO'))) then true() else if (not($Sector = ('PO','VO'))) then false() else if ($JointVenturePOVO castable as xs:boolean) then $JointVenturePOVO cast as xs:boolean else false()" xlink:label="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:type="resource"/>
+		<variable:variableArc name="target" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:to="v_RemunerationCategoryExemption" xlink:type="arc"/>
+		<variable:variableArc name="Sector" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:to="v_Sector" xlink:type="arc"/>
+		<variable:variableArc name="JointVenturePOVO" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:to="v_JointVenturePOVO" xlink:type="arc"/>
+		<variable:variableArc name="targetQName" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:to="gv_qname_RemunerationCategoryExemption" xlink:type="arc"/>
+		<variable:variableSetFilterArc complement="false" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:to="f_pe_curr" xlink:type="arc"/>
+		<variable:variableSetFilterArc complement="false" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:to="f_ps_curr" xlink:type="arc"/>
+		<gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="va-BR-OCW-WNT.B.7-Jaarrekening-RemunerationCategoryExemption-required" xlink:to="sev_OCWWNT-Jaarrekening_ERROR_loc" xlink:type="arc"/>
+		<variable:generalVariable bindAsSequence="false" select="xs:QName('ocw-wnt-i:ComplexityGradeAverageIncomeTotal')" xlink:label="gv_qname_ComplexityGradeAverageIncomeTotal" xlink:type="resource"/>
+		<variable:generalVariable bindAsSequence="false" select="xs:QName('ocw-wnt-i:ComplexityGradeAverageNumberOfPupilsParticipantsStudents')" xlink:label="gv_qname_ComplexityGradeAverageNumberOfPupilsParticipantsStudents" xlink:type="resource"/>
+		<variable:generalVariable bindAsSequence="false" select="xs:QName('ocw-wnt-i:ComplexityGradeWeightedNumberOfEducationalCategoriesSectors')" xlink:label="gv_qname_ComplexityGradeWeightedNumberOfEducationalCategoriesSectors" xlink:type="resource"/>
+		<variable:generalVariable bindAsSequence="false" select="xs:QName('ocw-wnt-i:RemunerationCategoryExemption')" xlink:label="gv_qname_RemunerationCategoryExemption" xlink:type="resource"/>
+		<variable:factVariable bindAsSequence="false" fallbackValue="0" xlink:label="v_ComplexityGradeAverageIncomeTotal_cU" xlink:type="resource"/>
+		<variable:variableFilterArc complement="false" cover="true" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="v_ComplexityGradeAverageIncomeTotal_cU" xlink:to="f_i_ComplexityGradeAverageIncomeTotal" xlink:type="arc"/>
+		<variable:factVariable bindAsSequence="false" fallbackValue="0" xlink:label="v_ComplexityGradeAverageNumberOfPupilsParticipantsStudents" xlink:type="resource"/>
+		<variable:variableFilterArc complement="false" cover="true" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="v_ComplexityGradeAverageNumberOfPupilsParticipantsStudents" xlink:to="f_i_ComplexityGradeAverageNumberOfPupilsParticipantsStudents" xlink:type="arc"/>
+		<variable:factVariable bindAsSequence="false" fallbackValue="0" xlink:label="v_ComplexityGradeWeightedNumberOfEducationalCategoriesSectors" xlink:type="resource"/>
+		<variable:variableFilterArc complement="false" cover="true" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="v_ComplexityGradeWeightedNumberOfEducationalCategoriesSectors" xlink:to="f_i_ComplexityGradeWeightedNumberOfEducationalCategoriesSectors" xlink:type="arc"/>
+		<variable:factVariable bindAsSequence="false" fallbackValue="''" xlink:label="v_RemunerationCategoryExemption" xlink:type="resource"/>
+		<variable:variableFilterArc complement="false" cover="true" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="v_RemunerationCategoryExemption" xlink:to="f_i_RemunerationCategoryExemption" xlink:type="arc"/>
+		<variable:factVariable bindAsSequence="false" fallbackValue="''" xlink:label="v_JointVenturePOVO" xlink:type="resource"/>
+		<variable:variableFilterArc complement="false" cover="true" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="v_JointVenturePOVO" xlink:to="f_i_JointVenturePOVO" xlink:type="arc"/>
+		<variable:factVariable bindAsSequence="false" fallbackValue="''" xlink:label="v_Sector" xlink:type="resource"/>
+		<variable:variableFilterArc complement="false" cover="true" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="v_Sector" xlink:to="f_i_Sector" xlink:type="arc"/>
+		<pf:periodEnd date="xs:date('2016-12-31')" xlink:label="f_pe_curr" xlink:type="resource"/>
+		<pf:periodStart date="xs:date('2016-01-01')" xlink:label="f_ps_curr" xlink:type="resource"/>
+		<cf:conceptName xlink:label="f_i_ComplexityGradeAverageIncomeTotal" xlink:type="resource">
+			<cf:concept>
+				<cf:qname>ocw-wnt-i:ComplexityGradeAverageIncomeTotal</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<cf:conceptName xlink:label="f_i_ComplexityGradeAverageNumberOfPupilsParticipantsStudents" xlink:type="resource">
+			<cf:concept>
+				<cf:qname>ocw-wnt-i:ComplexityGradeAverageNumberOfPupilsParticipantsStudents</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<cf:conceptName xlink:label="f_i_ComplexityGradeWeightedNumberOfEducationalCategoriesSectors" xlink:type="resource">
+			<cf:concept>
+				<cf:qname>ocw-wnt-i:ComplexityGradeWeightedNumberOfEducationalCategoriesSectors</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<cf:conceptName xlink:label="f_i_RemunerationCategoryExemption" xlink:type="resource">
+			<cf:concept>
+				<cf:qname>ocw-wnt-i:RemunerationCategoryExemption</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<cf:conceptName xlink:label="f_i_JointVenturePOVO" xlink:type="resource">
+			<cf:concept>
+				<cf:qname>ocw-i:JointVenturePOVO</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<cf:conceptName xlink:label="f_i_Sector" xlink:type="resource">
+			<cf:concept>
+				<cf:qname>ocw-i:Sector</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<link:loc xlink:href="http://www.xbrl.org/2016/severities.xml#ERROR" xlink:label="sev_OCWWNT-Jaarrekening_ERROR_loc" xlink:type="locator"/>
+	</gen:link>
+</link:linkbase>

@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:d-esc-tens="http://www.bde.es/es/fr/supervision/pac/2008-06-25/d-esc-tens"
+               xmlns:p-ca="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-ca-2006-07-01"
+               xmlns:p-cm-ca="http://www.c-ebs.org/eu/fr/esrs/corep/2006-07-01/p-cm-ca-2006-07-01"
+               xmlns:d-anno-pl="http://www.bde.es/es/fr/supervision/pac/2008-06-25/d-anno-pl"
+               xmlns:d-tier="http://www.bde.es/es/fr/supervision/pac/2008-06-25/d-tier"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_3101_cuadres_1"
+                           id="ref_atributosCuadres_3101_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_3101_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_3101_cuadres_1"
+                           id="ref_moduloDefinicion_3101_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>iac_01</frRef:Modulo>
+         <frRef:Instancia>Miac_01</frRef:Instancia>
+         <frRef:Estado>3101</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_3101_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3101-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3101-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3101-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3101-or-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_corep_3101-or-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <uf:generalMeasures test="true()" xlink:label="fil_AnyUnit" id="fil_AnyUnit" xlink:type="resource"/>
+      <ea:existenceAssertion xlink:label="val_corep_3101-or-3" id="val_corep_3101-or-3"
+                             aspectModel="dimensional"
+                             implicitFiltering="true"
+                             xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="true" xlink:from="val_corep_3101-or-3" xlink:to="fil_d10e31"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-3"
+                                     xlink:to="fil_p-ca_SolvencyRatio_OrOthersd10e36"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-3"
+                                     xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e48"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-3"
+                                     xlink:to="fil_TierDim_d10e58"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <variable:variableArc name="concepto" xlink:from="val_corep_3101-or-3" xlink:to="var_d10e66"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <generic:arc xlink:from="val_corep_3101-or-3" xlink:to="pre_d10e69"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3101-or-3" id="lab_val_corep_3101-or-3"
+                   xlink:type="resource"
+                   xml:lang="es">Al menos debe existir importe en los datos referentes a los Año N+1 y Año N+2.</label:label>
+      <generic:arc xlink:from="val_corep_3101-or-3" xlink:to="lab_val_corep_3101-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:typedDimension xlink:label="fil_d10e31" id="fil_d10e31" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-esc-tens:EscenarioTension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatio_OrOthersd10e36"
+                      id="fil_p-ca_SolvencyRatio_OrOthersd10e36"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-ca:InternalAssessmentCapitalNeeds</cf:qname>
+         </cf:concept>
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e48"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e48"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_TierDim_d10e58" id="fil_TierDim_d10e58" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e66" bindAsSequence="false" id="var_d10e66"
+                             xlink:type="resource"/>
+      <variable:precondition test="$concepto ne 0" xlink:label="pre_d10e69" id="pre_d10e69"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3101-or-3" id="ref_val_corep_3101-or-3"
+                           xlink:type="resource">
+         <ref:Number>corep:3101-or-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3101-or-3" xlink:to="ref_val_corep_3101-or-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <ea:existenceAssertion xlink:label="val_corep_3101-or-4" id="val_corep_3101-or-4"
+                             aspectModel="dimensional"
+                             implicitFiltering="true"
+                             xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="true" xlink:from="val_corep_3101-or-4" xlink:to="fil_d10e78"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-4"
+                                     xlink:to="fil_p-ca_SolvencyRatiod10e83"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-4"
+                                     xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e91"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-4"
+                                     xlink:to="fil_TierDim_d10e99"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <variable:variableArc name="concepto" xlink:from="val_corep_3101-or-4" xlink:to="var_d10e107"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <generic:arc xlink:from="val_corep_3101-or-4" xlink:to="pre_d10e110"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3101-or-4" id="lab_val_corep_3101-or-4"
+                   xlink:type="resource"
+                   xml:lang="es">Debe existir importe en al menos una de las siguientes claves: 0001, 0004, ó 0002</label:label>
+      <generic:arc xlink:from="val_corep_3101-or-4" xlink:to="lab_val_corep_3101-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:typedDimension xlink:label="fil_d10e78" id="fil_d10e78" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-esc-tens:EscenarioTension</df:qname>
+         </df:dimension>
+      </df:typedDimension>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e83" id="fil_p-ca_SolvencyRatiod10e83"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e91"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e91"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_TierDim_d10e99" id="fil_TierDim_d10e99" xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_d10e107" bindAsSequence="false" id="var_d10e107"
+                             xlink:type="resource"/>
+      <variable:precondition test="$concepto ne 0" xlink:label="pre_d10e110" id="pre_d10e110"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3101-or-4" id="ref_val_corep_3101-or-4"
+                           xlink:type="resource">
+         <ref:Number>corep:3101-or-4</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3101-or-4" xlink:to="ref_val_corep_3101-or-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3101-or-5"
+                         test="($c0006 ne 0) and              ($c0011 ne 0) and             ($c0016 ne 0) and             ($c0021 ne 0) and             ($c0026 ne 0) and             ($c0031 ne 0) and             ($c0036 ne 0) and             ($c0041 ne 0)"
+                         id="val_corep_3101-or-5"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-5"
+                                     xlink:to="fil_TierDim_Totald10e120"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="c0001" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e130"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="c0006" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN1d10e154"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="c0011" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e176"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="c0016" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e199"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="c0021" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN2d10e223"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="c0026" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e245"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <variable:variableArc name="c0031" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e267"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="7"/>
+      <variable:variableArc name="c0036" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN3d10e291"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="8"/>
+      <variable:variableArc name="c0041" xlink:from="val_corep_3101-or-5"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e313"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="9"/>
+      <generic:arc xlink:from="val_corep_3101-or-5" xlink:to="pre_d10e334"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3101-or-5" id="lab_val_corep_3101-or-5"
+                   xlink:type="resource"
+                   xml:lang="es">Si existe importe en la clave 0001, debe existir obligatoriamente importe en las claves: 0006, 0011, 0016, 0021, 0026, 0031, 0036, 0041. </label:label>
+      <generic:arc xlink:from="val_corep_3101-or-5" xlink:to="lab_val_corep_3101-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Totald10e120" id="fil_TierDim_Totald10e120"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Total</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e130"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e130"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e130"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e132"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e130"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e140"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e130"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e132" id="fil_p-ca_SolvencyRatiod10e132"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e140"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e140"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN1d10e154"
+                             bindAsSequence="false"
+                             id="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN1d10e154"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN1d10e154"
+                                  xlink:to="fil_p-ca_InternalAssessmentCapitalNeedsd10e156"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN1d10e154"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e164"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-ca_InternalAssessmentCapitalNeedsd10e156"
+                      id="fil_p-ca_InternalAssessmentCapitalNeedsd10e156"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:InternalAssessmentCapitalNeeds</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e164"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e164"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e176"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e176"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e176"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e178"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e176"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e186"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e178"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e178"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e186"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e186"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e199"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e199"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e199"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e201"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e199"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN2d10e209"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e199"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e201" id="fil_p-ca_SolvencyRatiod10e201"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN2d10e209"
+                            id="fil_AnnoPlanificacionDim_AnnoN2d10e209"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN2d10e223"
+                             bindAsSequence="false"
+                             id="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN2d10e223"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN2d10e223"
+                                  xlink:to="fil_p-ca_InternalAssessmentCapitalNeedsd10e225"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN2d10e223"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN2d10e233"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-ca_InternalAssessmentCapitalNeedsd10e225"
+                      id="fil_p-ca_InternalAssessmentCapitalNeedsd10e225"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:InternalAssessmentCapitalNeeds</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN2d10e233"
+                            id="fil_AnnoPlanificacionDim_AnnoN2d10e233"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e245"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e245"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e245"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e247"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e245"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN2d10e255"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e247"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e247"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN2d10e255"
+                            id="fil_AnnoPlanificacionDim_AnnoN2d10e255"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e267"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e267"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e267"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e269"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e267"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN3d10e277"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e267"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e269" id="fil_p-ca_SolvencyRatiod10e269"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN3d10e277"
+                            id="fil_AnnoPlanificacionDim_AnnoN3d10e277"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN3d10e291"
+                             bindAsSequence="false"
+                             id="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN3d10e291"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN3d10e291"
+                                  xlink:to="fil_p-ca_InternalAssessmentCapitalNeedsd10e293"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_InternalAssessmentCapitalNeedsAnnoPlanificacionDim_AnnoN3d10e291"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN3d10e301"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-ca_InternalAssessmentCapitalNeedsd10e293"
+                      id="fil_p-ca_InternalAssessmentCapitalNeedsd10e293"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:InternalAssessmentCapitalNeeds</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN3d10e301"
+                            id="fil_AnnoPlanificacionDim_AnnoN3d10e301"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e313"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e313"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e313"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e315"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e313"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN3d10e323"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e315"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e315"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN3d10e323"
+                            id="fil_AnnoPlanificacionDim_AnnoN3d10e323"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:precondition test="$c0001 ne 0" xlink:label="pre_d10e334" id="pre_d10e334"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3101-or-5" id="ref_val_corep_3101-or-5"
+                           xlink:type="resource">
+         <ref:Number>corep:3101-or-5</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3101-or-5" xlink:to="ref_val_corep_3101-or-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3101-or-6"
+                         test="($c0014 ne 0) and              ($c0019 ne 0) and             ($c0029 ne 0) and             ($c0034 ne 0) and             ($c0044 ne 0)"
+                         id="val_corep_3101-or-6"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-6"
+                                     xlink:to="fil_TierDim_CapOrdd10e344"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="c0004" xlink:from="val_corep_3101-or-6"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e354"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="c0014" xlink:from="val_corep_3101-or-6"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e378"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="c0019" xlink:from="val_corep_3101-or-6"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e400"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="c0029" xlink:from="val_corep_3101-or-6"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e425"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="c0034" xlink:from="val_corep_3101-or-6"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e447"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="c0044" xlink:from="val_corep_3101-or-6"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e471"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <generic:arc xlink:from="val_corep_3101-or-6" xlink:to="pre_d10e491"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3101-or-6" id="lab_val_corep_3101-or-6"
+                   xlink:type="resource"
+                   xml:lang="es">Si existe importe en la clave 0004, debe existir obligatoriamente importe en las claves: 0014, 0019, 0029, 0034, 0044.</label:label>
+      <generic:arc xlink:from="val_corep_3101-or-6" xlink:to="lab_val_corep_3101-or-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_TierDim_CapOrdd10e344" id="fil_TierDim_CapOrdd10e344"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:CapOrd</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e354"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e354"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e354"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e356"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e354"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e364"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e354"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e356" id="fil_p-ca_SolvencyRatiod10e356"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e364"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e364"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e378"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e378"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e378"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e380"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e378"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e388"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e380"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e380"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e388"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e388"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e400"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e400"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e400"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e402"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e400"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN2d10e410"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e400"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e402" id="fil_p-ca_SolvencyRatiod10e402"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN2d10e410"
+                            id="fil_AnnoPlanificacionDim_AnnoN2d10e410"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e425"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e425"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e425"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e427"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e425"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN2d10e435"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e427"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e427"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN2d10e435"
+                            id="fil_AnnoPlanificacionDim_AnnoN2d10e435"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e447"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e447"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e447"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e449"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e447"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN3d10e457"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e447"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e449" id="fil_p-ca_SolvencyRatiod10e449"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN3d10e457"
+                            id="fil_AnnoPlanificacionDim_AnnoN3d10e457"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e471"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e471"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e471"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e473"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e471"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN3d10e481"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e473"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e473"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN3d10e481"
+                            id="fil_AnnoPlanificacionDim_AnnoN3d10e481"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:precondition test="$c0004 ne 0" xlink:label="pre_d10e491" id="pre_d10e491"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3101-or-6" id="ref_val_corep_3101-or-6"
+                           xlink:type="resource">
+         <ref:Number>corep:3101-or-6</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3101-or-6" xlink:to="ref_val_corep_3101-or-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_corep_3101-or-7"
+                         test="($c0012 ne 0) and              ($c0017 ne 0) and             ($c0027 ne 0) and             ($c0032 ne 0) and             ($c0042 ne 0)"
+                         id="val_corep_3101-or-7"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_corep_3101-or-7"
+                                     xlink:to="fil_TierDim_Tier1d10e502"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableArc name="c0002" xlink:from="val_corep_3101-or-7"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e512"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="c0012" xlink:from="val_corep_3101-or-7"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e536"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="c0017" xlink:from="val_corep_3101-or-7"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e558"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="c0027" xlink:from="val_corep_3101-or-7"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e583"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <variable:variableArc name="c0032" xlink:from="val_corep_3101-or-7"
+                            xlink:to="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e605"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="5"/>
+      <variable:variableArc name="c0042" xlink:from="val_corep_3101-or-7"
+                            xlink:to="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e629"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="6"/>
+      <generic:arc xlink:from="val_corep_3101-or-7" xlink:to="pre_d10e649"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_corep_3101-or-7" id="lab_val_corep_3101-or-7"
+                   xlink:type="resource"
+                   xml:lang="es">Si existe importe en la clave 0002, debe existir obligatoriamente importe en las claves: 0012, 0017, 0027, 0032, 0042.</label:label>
+      <generic:arc xlink:from="val_corep_3101-or-7" xlink:to="lab_val_corep_3101-or-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_TierDim_Tier1d10e502" id="fil_TierDim_Tier1d10e502"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-tier:Tier</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-tier:Tier1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e512"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e512"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e512"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e514"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e512"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e522"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN1d10e512"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e514" id="fil_p-ca_SolvencyRatiod10e514"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e522"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e522"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e536"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e536"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e536"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e538"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN1d10e536"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN1d10e546"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e538"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e538"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN1d10e546"
+                            id="fil_AnnoPlanificacionDim_AnnoN1d10e546"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN1</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e558"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e558"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e558"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e560"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e558"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN2d10e568"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN2d10e558"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e560" id="fil_p-ca_SolvencyRatiod10e560"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN2d10e568"
+                            id="fil_AnnoPlanificacionDim_AnnoN2d10e568"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e583"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e583"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e583"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e585"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN2d10e583"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN2d10e593"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e585"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e585"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN2d10e593"
+                            id="fil_AnnoPlanificacionDim_AnnoN2d10e593"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e605"
+                             bindAsSequence="false"
+                             id="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e605"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e605"
+                                  xlink:to="fil_p-ca_SolvencyRatiod10e607"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e605"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN3d10e615"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-ca_SolvencyRatioAnnoPlanificacionDim_AnnoN3d10e605"
+                                  xlink:to="fil_AnyUnit"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <cf:conceptName xlink:label="fil_p-ca_SolvencyRatiod10e607" id="fil_p-ca_SolvencyRatiod10e607"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-ca:SolvencyRatio</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN3d10e615"
+                            id="fil_AnnoPlanificacionDim_AnnoN3d10e615"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e629"
+                             bindAsSequence="false"
+                             id="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e629"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e629"
+                                  xlink:to="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e631"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_p-cm-ca_TotalOwnFundsSolvencyPurposesAnnoPlanificacionDim_AnnoN3d10e629"
+                                  xlink:to="fil_AnnoPlanificacionDim_AnnoN3d10e639"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e631"
+                      id="fil_p-cm-ca_TotalOwnFundsSolvencyPurposesd10e631"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-cm-ca:TotalOwnFundsSolvencyPurposes</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <df:explicitDimension xlink:label="fil_AnnoPlanificacionDim_AnnoN3d10e639"
+                            id="fil_AnnoPlanificacionDim_AnnoN3d10e639"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-anno-pl:AnnoPlanificacion</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-anno-pl:AnnoN3</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:precondition test="$c0002 ne 0" xlink:label="pre_d10e649" id="pre_d10e649"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_corep_3101-or-7" id="ref_val_corep_3101-or-7"
+                           xlink:type="resource">
+         <ref:Number>corep:3101-or-7</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_corep_3101-or-7" xlink:to="ref_val_corep_3101-or-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

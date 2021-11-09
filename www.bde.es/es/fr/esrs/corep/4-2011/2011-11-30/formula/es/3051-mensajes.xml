@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<link:linkbase xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:xd="http://www.pnp-software.com/XSLTdoc"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-6"
+                xlink:label="val_corep_3051-or-6"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-6" xlink:to="men_corep_3051-or-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_corep_3051-or-6" id="men_corep_3051-or-6"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($eri))}({fmt:valor(($eri),($eri))} [{fmt:celdas(($eri),($eri))}] {fmt:operador('ge')} {fmt:valor(( - 0.2 ),( - 0.2 ))}) or ({fmt:valor(($eri),($eri))} [{fmt:celdas(($eri),($eri))}] debe tener aclaración)</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-7"
+                xlink:label="val_corep_3051-or-7"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-7" xlink:to="men_corep_3051-or-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <msg:message xlink:label="men_corep_3051-or-7" id="men_corep_3051-or-7"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($eri))}({fmt:valor(($eri),($eri))} [{fmt:celdas(($eri),($eri))}] {fmt:operador('ge')} {fmt:valor(( - 0.5 ),( - 0.5 ))}) or ({fmt:valor(($eri),($eri))} [{fmt:celdas(($eri),($eri))}] debe tener aclaración)</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-8d"
+                xlink:label="val_corep_3051-or-8d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-8d" xlink:to="men_corep_3051-or-8d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="3"/>
+      <msg:message xlink:label="men_corep_3051-or-8d" id="men_corep_3051-or-8d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($subidas,$bajadas))} {fmt:valor(($subidas),($subidas))} [{fmt:celdas(($subidas),($subidas,$bajadas))}] {fmt:operador('ne')} {fmt:valor(($bajadas),($bajadas))} [{fmt:celdas(($bajadas),($subidas,$bajadas))}]</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-9d"
+                xlink:label="val_corep_3051-or-9d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-9d" xlink:to="men_corep_3051-or-9d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="4"/>
+      <msg:message xlink:label="men_corep_3051-or-9d" id="men_corep_3051-or-9d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($subidasMargenEuro))} {fmt:valor(($subidasMargenEuro),($subidasMargenEuro))} [{fmt:celdas(($subidasMargenEuro),($subidasMargenEuro))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-10d"
+                xlink:label="val_corep_3051-or-10d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-10d" xlink:to="men_corep_3051-or-10d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="5"/>
+      <msg:message xlink:label="men_corep_3051-or-10d" id="men_corep_3051-or-10d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($bajadas))} {fmt:valor(($bajadas),($bajadas))} [{fmt:celdas(($bajadas),($bajadas))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-11d"
+                xlink:label="val_corep_3051-or-11d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-11d" xlink:to="men_corep_3051-or-11d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="6"/>
+      <msg:message xlink:label="men_corep_3051-or-11d" id="men_corep_3051-or-11d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($subidas))} {fmt:valor(($subidas),($subidas))} [{fmt:celdas(($subidas),($subidas))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-12d"
+                xlink:label="val_corep_3051-or-12d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-12d" xlink:to="men_corep_3051-or-12d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="7"/>
+      <msg:message xlink:label="men_corep_3051-or-12d" id="men_corep_3051-or-12d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($subidasValor,$subidasMargen))}({fmt:valor(($subidasValor),($subidasValor))} [{fmt:celdas(($subidasValor),($subidasValor,$subidasMargen))}] {fmt:operador('ne')} {fmt:valor(($subidasMargen),($subidasMargen))} [{fmt:celdas(($subidasMargen),($subidasValor,$subidasMargen))}]) or ({fmt:valor(($subidasMargen),($subidasMargen))} [{fmt:celdas(($subidasMargen),($subidasValor,$subidasMargen))}] debe tener aclaración)</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-13d"
+                xlink:label="val_corep_3051-or-13d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-13d" xlink:to="men_corep_3051-or-13d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="8"/>
+      <msg:message xlink:label="men_corep_3051-or-13d" id="men_corep_3051-or-13d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($bajadasValor,$bajadasMargen))}({fmt:valor(($bajadasValor),($bajadasValor))} [{fmt:celdas(($bajadasValor),($bajadasValor,$bajadasMargen))}] {fmt:operador('ne')} {fmt:valor(($bajadasMargen),($bajadasMargen))} [{fmt:celdas(($bajadasMargen),($bajadasValor,$bajadasMargen))}]) or ({fmt:valor(($bajadasMargen),($bajadasMargen))} [{fmt:celdas(($bajadasMargen),($bajadasValor,$bajadasMargen))}] debe tener aclaración)</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-37"
+                xlink:label="val_corep_3051-or-37"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-37" xlink:to="men_corep_3051-or-37"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="9"/>
+      <msg:message xlink:label="men_corep_3051-or-37" id="men_corep_3051-or-37"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($minimo,$importe))} si({fmt:valor(($minimo),($minimo))} [{fmt:celdas(($minimo),($minimo,$importe))}] {fmt:operador('lt')} {fmt:valor((0),(0))})entonces({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($minimo,$importe))}] {fmt:operador('lt')} {fmt:valor((0),(0))})si no({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($minimo,$importe))}] {fmt:operador('ge')} {fmt:valor((0),(0))})</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-38d"
+                xlink:label="val_corep_3051-or-38d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-38d" xlink:to="men_corep_3051-or-38d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="10"/>
+      <msg:message xlink:label="men_corep_3051-or-38d" id="men_corep_3051-or-38d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($valorAbsMinCol5Col6,$porcentaje,$importe,$threshold))}({fmt:valor(( ( $valorAbsMinCol5Col6 - $porcentaje ) ),($valorAbsMinCol5Col6,$porcentaje))} [{fmt:celdas(($valorAbsMinCol5Col6,$porcentaje),($valorAbsMinCol5Col6,$porcentaje,$importe,$threshold))}] {fmt:operador('ge')} {fmt:valor(( abs ( $importe ) ),($importe))} [{fmt:celdas(($importe),($valorAbsMinCol5Col6,$porcentaje,$importe,$threshold))}]{fmt:diferencia(abs( ( $valorAbsMinCol5Col6 - $porcentaje ) - abs ( $importe ) ))}{fmt:umbral($threshold)}) and ({fmt:valor(( abs ( $importe ) ),($importe))} [{fmt:celdas(($importe),($valorAbsMinCol5Col6,$porcentaje,$importe,$threshold))}] {fmt:operador('ge')} {fmt:valor(( ( $valorAbsMinCol5Col6 + $porcentaje ) ),($valorAbsMinCol5Col6,$porcentaje))} [{fmt:celdas(($valorAbsMinCol5Col6,$porcentaje),($valorAbsMinCol5Col6,$porcentaje,$importe,$threshold))}]{fmt:diferencia(abs( abs ( $importe ) - ( $valorAbsMinCol5Col6 + $porcentaje ) ))}{fmt:umbral($threshold)})</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-15d"
+                xlink:label="val_corep_3051-or-15d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-15d" xlink:to="men_corep_3051-or-15d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="11"/>
+      <msg:message xlink:label="men_corep_3051-or-15d" id="men_corep_3051-or-15d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe))} {fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-16d"
+                xlink:label="val_corep_3051-or-16d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-16d" xlink:to="men_corep_3051-or-16d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="12"/>
+      <msg:message xlink:label="men_corep_3051-or-16d" id="men_corep_3051-or-16d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe,$subidasEuro))}({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe,$subidasEuro))}] {fmt:operador('ge')} {fmt:valor((0),(0))}) or ({fmt:valor(($subidasEuro),($subidasEuro))} [{fmt:celdas(($subidasEuro),($importe,$subidasEuro))}] debe tener aclaración)</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-17d"
+                xlink:label="val_corep_3051-or-17d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-17d" xlink:to="men_corep_3051-or-17d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="13"/>
+      <msg:message xlink:label="men_corep_3051-or-17d" id="men_corep_3051-or-17d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe))} {fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe))}] {fmt:operador('lt')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-29d"
+                xlink:label="val_corep_3051-or-29d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-29d" xlink:to="men_corep_3051-or-29d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="14"/>
+      <msg:message xlink:label="men_corep_3051-or-29d" id="men_corep_3051-or-29d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe,$porcRecPropios,$porcValorEcon))}({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe,$porcRecPropios,$porcValorEcon))}] {fmt:operador('le')} {fmt:valor((0),(0))}) and ({fmt:valor(($porcRecPropios),($porcRecPropios))} [{fmt:celdas(($porcRecPropios),($importe,$porcRecPropios,$porcValorEcon))}] {fmt:operador('le')} {fmt:valor((0),(0))}) and ({fmt:valor(($porcValorEcon),($porcValorEcon))} [{fmt:celdas(($porcValorEcon),($importe,$porcRecPropios,$porcValorEcon))}] {fmt:operador('le')} {fmt:valor((0),(0))}) or ({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe,$porcRecPropios,$porcValorEcon))}] {fmt:operador('ge')} {fmt:valor((0),(0))}) and ({fmt:valor(($porcRecPropios),($porcRecPropios))} [{fmt:celdas(($porcRecPropios),($importe,$porcRecPropios,$porcValorEcon))}] {fmt:operador('ge')} {fmt:valor((0),(0))}) and ({fmt:valor(($porcValorEcon),($porcValorEcon))} [{fmt:celdas(($porcValorEcon),($importe,$porcRecPropios,$porcValorEcon))}] {fmt:operador('ge')} {fmt:valor((0),(0))})</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-19d"
+                xlink:label="val_corep_3051-or-19d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-19d" xlink:to="men_corep_3051-or-19d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="15"/>
+      <msg:message xlink:label="men_corep_3051-or-19d" id="men_corep_3051-or-19d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($subidasMargen,$bajadasMargen))} {fmt:valor(($subidasMargen),($subidasMargen))} [{fmt:celdas(($subidasMargen),($subidasMargen,$bajadasMargen))}] {fmt:operador('ne')} {fmt:valor(($bajadasMargen),($bajadasMargen))} [{fmt:celdas(($bajadasMargen),($subidasMargen,$bajadasMargen))}]</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-20d"
+                xlink:label="val_corep_3051-or-20d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-20d" xlink:to="men_corep_3051-or-20d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="16"/>
+      <msg:message xlink:label="men_corep_3051-or-20d" id="men_corep_3051-or-20d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($subidasEuro))} {fmt:valor(($subidasEuro),($subidasEuro))} [{fmt:celdas(($subidasEuro),($subidasEuro))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-21d"
+                xlink:label="val_corep_3051-or-21d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-21d" xlink:to="men_corep_3051-or-21d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="17"/>
+      <msg:message xlink:label="men_corep_3051-or-21d" id="men_corep_3051-or-21d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($bajadasMargen))} {fmt:valor(($bajadasMargen),($bajadasMargen))} [{fmt:celdas(($bajadasMargen),($bajadasMargen))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-22d"
+                xlink:label="val_corep_3051-or-22d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-22d" xlink:to="men_corep_3051-or-22d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="18"/>
+      <msg:message xlink:label="men_corep_3051-or-22d" id="men_corep_3051-or-22d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($subidasMargen))} {fmt:valor(($subidasMargen),($subidasMargen))} [{fmt:celdas(($subidasMargen),($subidasMargen))}] debe tener aclaración</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-23d"
+                xlink:label="val_corep_3051-or-23d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-23d" xlink:to="men_corep_3051-or-23d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="19"/>
+      <msg:message xlink:label="men_corep_3051-or-23d" id="men_corep_3051-or-23d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe))} {fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe))}] {fmt:operador('eq')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-24d"
+                xlink:label="val_corep_3051-or-24d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-24d" xlink:to="men_corep_3051-or-24d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="20"/>
+      <msg:message xlink:label="men_corep_3051-or-24d" id="men_corep_3051-or-24d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe))} {fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe))}] {fmt:operador('ge')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-25d"
+                xlink:label="val_corep_3051-or-25d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-25d" xlink:to="men_corep_3051-or-25d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="21"/>
+      <msg:message xlink:label="men_corep_3051-or-25d" id="men_corep_3051-or-25d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe))} {fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe))}] {fmt:operador('lt')} {fmt:valor((0),(0))}</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-39"
+                xlink:label="val_corep_3051-or-39"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-39" xlink:to="men_corep_3051-or-39"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="22"/>
+      <msg:message xlink:label="men_corep_3051-or-39" id="men_corep_3051-or-39"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($minimo,$importe))} si({fmt:valor(($minimo),($minimo))} [{fmt:celdas(($minimo),($minimo,$importe))}] {fmt:operador('lt')} {fmt:valor((0),(0))})entonces({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($minimo,$importe))}] {fmt:operador('lt')} {fmt:valor((0),(0))})si no({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($minimo,$importe))}] {fmt:operador('ge')} {fmt:valor((0),(0))})</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-40"
+                xlink:label="val_corep_3051-or-40"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-40" xlink:to="men_corep_3051-or-40"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="23"/>
+      <msg:message xlink:label="men_corep_3051-or-40" id="men_corep_3051-or-40"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe,$subidas,$bajadas))} {fmt:valor(( abs ( $importe ) ),($importe))} [{fmt:celdas(($importe),($importe,$subidas,$bajadas))}] {fmt:operador('eq')} {fmt:valor(( abs ( min ( ( $subidas , $bajadas ) ) ) ),($subidas,$bajadas))} [{fmt:celdas(($subidas,$bajadas),($importe,$subidas,$bajadas))}]{fmt:diferencia(abs( abs ( $importe ) - abs ( min ( ( $subidas , $bajadas ) ) ) ))}{fmt:umbral( ( abs ( min ( ( $subidas , $bajadas ) ) ) + $threshold ) * 0.02 )}</msg:message>
+      <link:loc xlink:href="3051-cuadres.xml#val_corep_3051-or-30d"
+                xlink:label="val_corep_3051-or-30d"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_corep_3051-or-30d" xlink:to="men_corep_3051-or-30d"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="24"/>
+      <msg:message xlink:label="men_corep_3051-or-30d" id="men_corep_3051-or-30d"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($importe,$porcMargenInterm))}({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe,$porcMargenInterm))}] {fmt:operador('lt')} {fmt:valor((0),(0))}) and ({fmt:valor(($porcMargenInterm),($porcMargenInterm))} [{fmt:celdas(($porcMargenInterm),($importe,$porcMargenInterm))}] {fmt:operador('lt')} {fmt:valor((0),(0))}) or ({fmt:valor(($importe),($importe))} [{fmt:celdas(($importe),($importe,$porcMargenInterm))}] {fmt:operador('gt')} {fmt:valor((0),(0))}) and ({fmt:valor(($porcMargenInterm),($porcMargenInterm))} [{fmt:celdas(($porcMargenInterm),($importe,$porcMargenInterm))}] {fmt:operador('gt')} {fmt:valor((0),(0))})</msg:message>
+   </generic:link>
+</link:linkbase>

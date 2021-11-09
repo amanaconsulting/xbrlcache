@@ -1,0 +1,2220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:p-sgr="http://www.bde.es/es/fr/esrs/sgr/EHA-1327-2009/2009-05-28/p-sgr"
+               xmlns:d-sgr-pn="http://www.bde.es/es/fr/esrs/sgr/EHA-1327-2009/2009-05-28/d-sgr-pn"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-msgr_t1.xml#Msgr_t1"
+                xlink:label="Msgr_t1"/>
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-msgr_t1.t12.xml#Msgr_t1.T12"
+                xlink:label="Msgr_t1.T12"/>
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_7228_4008_4008_cuadres_1"
+                           id="ref_atributosCuadres_7228_4008_4008_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_atributosCuadres_7228_4008_4008_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_7228_4008_4008_cuadres_1"
+                           id="ref_moduloDefinicion_7228_4008_4008_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>sgr_t1</frRef:Modulo>
+         <frRef:Instancia>Msgr_t1</frRef:Instancia>
+         <frRef:Estado>7228</frRef:Estado>
+         <frRef:Estado>4008</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloDefinicion_7228_4008_4008_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloExterno_7228_4008_4008_cuadres_2"
+                           id="ref_moduloExterno_7228_4008_4008_cuadres_2"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/moduloexterno">
+         <frRef:Modulo>sgr_t1</frRef:Modulo>
+         <frRef:Instancia>Msgr_t1.T12</frRef:Instancia>
+         <frRef:Estado>4008?</frRef:Estado>
+         <frRef:Dependiente>false</frRef:Dependiente>
+         <frRef:OffsetAbsoluto>12</frRef:OffsetAbsoluto>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1"
+                   xlink:to="ref_moduloExterno_7228_4008_4008_cuadres_2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="10"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="11"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="12"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="13"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_sgr_7228-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="14"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-5" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-5"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000237d10e27"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000005d10e41"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000005d10e60"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <variable:variableArc name="claveEfep" xlink:from="val_sgr_7228-oe-5"
+                            xlink:to="var_p-sgr_I2009000237d10e27"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-5"
+                            xlink:to="var_p-sgr_I2009000005d10e41"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-5"
+                            xlink:to="var_p-sgr_I2009000005d10e60"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-5" xlink:to="pre_d10e77"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-5" id="lab_val_sgr_7228-oe-5"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0011 (7228) != 0 implica que 0005 (4008) - 0005 (4008) de  diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-5" xlink:to="lab_val_sgr_7228-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000237d10e27" bindAsSequence="false"
+                             id="var_p-sgr_I2009000237d10e27"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000237d10e27"
+                                  xlink:to="fil_p-sgr_I2009000237d10e29"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000237d10e29" id="fil_p-sgr_I2009000237d10e29"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000237</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000005d10e41" bindAsSequence="false"
+                             id="var_p-sgr_I2009000005d10e41"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000005d10e41"
+                                  xlink:to="fil_p-sgr_I2009000005d10e43"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000005d10e41"
+                                  xlink:to="fil_d10e51"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000005d10e43" id="fil_p-sgr_I2009000005d10e43"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000005</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="claveEfep" xlink:label="fil_d10e51" id="fil_d10e51"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000005d10e60" bindAsSequence="false"
+                             id="var_p-sgr_I2009000005d10e60"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000005d10e60"
+                                  xlink:to="fil_p-sgr_I2009000005d10e62"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000005d10e60"
+                                  xlink:to="fil_d10e70"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000005d10e62" id="fil_p-sgr_I2009000005d10e62"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000005</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="claveEfep" xlink:label="fil_d10e70" id="fil_d10e70"
+                          xlink:type="resource"/>
+      <variable:precondition test="$claveEfep ne 0" xlink:label="pre_d10e77" id="pre_d10e77"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-5" id="ref_val_sgr_7228-oe-5"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-5</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-5" xlink:to="ref_val_sgr_7228-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-6" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-6"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000239d10e87"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000062d10e101"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000062d10e120"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <variable:variableArc name="claveEfep" xlink:from="val_sgr_7228-oe-6"
+                            xlink:to="var_p-sgr_I2009000239d10e87"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-6"
+                            xlink:to="var_p-sgr_I2009000062d10e101"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-6"
+                            xlink:to="var_p-sgr_I2009000062d10e120"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-6" xlink:to="pre_d10e137"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-6" id="lab_val_sgr_7228-oe-6"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0013 (7228) != 0 implica que 0102 (4008) - 0102 (4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-6" xlink:to="lab_val_sgr_7228-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000239d10e87" bindAsSequence="false"
+                             id="var_p-sgr_I2009000239d10e87"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000239d10e87"
+                                  xlink:to="fil_p-sgr_I2009000239d10e89"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000239d10e89" id="fil_p-sgr_I2009000239d10e89"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000239</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000062d10e101" bindAsSequence="false"
+                             id="var_p-sgr_I2009000062d10e101"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000062d10e101"
+                                  xlink:to="fil_p-sgr_I2009000062d10e103"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000062d10e101"
+                                  xlink:to="fil_d10e111"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000062d10e103" id="fil_p-sgr_I2009000062d10e103"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000062</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="claveEfep" xlink:label="fil_d10e111" id="fil_d10e111"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000062d10e120" bindAsSequence="false"
+                             id="var_p-sgr_I2009000062d10e120"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000062d10e120"
+                                  xlink:to="fil_p-sgr_I2009000062d10e122"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000062d10e120"
+                                  xlink:to="fil_d10e130"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000062d10e122" id="fil_p-sgr_I2009000062d10e122"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000062</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="claveEfep" xlink:label="fil_d10e130"
+                          id="fil_d10e130"
+                          xlink:type="resource"/>
+      <variable:precondition test="$claveEfep ne 0" xlink:label="pre_d10e137" id="pre_d10e137"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-6" id="ref_val_sgr_7228-oe-6"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-6</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-6" xlink:to="ref_val_sgr_7228-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-7" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-7"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000250d10e147"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000258d10e161"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000044d10e175"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000044d10e194"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0036Efep" xlink:from="val_sgr_7228-oe-7"
+                            xlink:to="var_p-sgr_I2009000250d10e147"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0051Efep" xlink:from="val_sgr_7228-oe-7"
+                            xlink:to="var_p-sgr_I2009000258d10e161"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-7"
+                            xlink:to="var_p-sgr_I2009000044d10e175"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-7"
+                            xlink:to="var_p-sgr_I2009000044d10e194"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-7" xlink:to="pre_d10e212"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-7" id="lab_val_sgr_7228-oe-7"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0036 - 0051 (7228) != 0 implica que 0060 (4008) - 0060(4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-7" xlink:to="lab_val_sgr_7228-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000250d10e147" bindAsSequence="false"
+                             id="var_p-sgr_I2009000250d10e147"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000250d10e147"
+                                  xlink:to="fil_p-sgr_I2009000250d10e149"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000250d10e149" id="fil_p-sgr_I2009000250d10e149"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000250</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000258d10e161" bindAsSequence="false"
+                             id="var_p-sgr_I2009000258d10e161"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000258d10e161"
+                                  xlink:to="fil_p-sgr_I2009000258d10e163"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000258d10e163" id="fil_p-sgr_I2009000258d10e163"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000258</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000044d10e175" bindAsSequence="false"
+                             id="var_p-sgr_I2009000044d10e175"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000044d10e175"
+                                  xlink:to="fil_p-sgr_I2009000044d10e177"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000044d10e175"
+                                  xlink:to="fil_d10e185"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000044d10e177" id="fil_p-sgr_I2009000044d10e177"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000044</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0036Efep" xlink:label="fil_d10e185"
+                          id="fil_d10e185"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000044d10e194" bindAsSequence="false"
+                             id="var_p-sgr_I2009000044d10e194"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000044d10e194"
+                                  xlink:to="fil_p-sgr_I2009000044d10e196"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000044d10e194"
+                                  xlink:to="fil_d10e204"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000044d10e196" id="fil_p-sgr_I2009000044d10e196"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000044</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0036Efep" xlink:label="fil_d10e204"
+                          id="fil_d10e204"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0036Efep - $clave0051Efep) ne 0" xlink:label="pre_d10e212"
+                             id="pre_d10e212"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-7" id="ref_val_sgr_7228-oe-7"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-7</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-7" xlink:to="ref_val_sgr_7228-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-8" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-8"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000251d10e222"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000259d10e236"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000054d10e250"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000054d10e269"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0037Efep" xlink:from="val_sgr_7228-oe-8"
+                            xlink:to="var_p-sgr_I2009000251d10e222"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0052Efep" xlink:from="val_sgr_7228-oe-8"
+                            xlink:to="var_p-sgr_I2009000259d10e236"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-8"
+                            xlink:to="var_p-sgr_I2009000054d10e250"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-8"
+                            xlink:to="var_p-sgr_I2009000054d10e269"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-8" xlink:to="pre_d10e287"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-8" id="lab_val_sgr_7228-oe-8"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0037 - 0052 (7228) != 0 implica que 0080 (4008) - 0080(4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-8" xlink:to="lab_val_sgr_7228-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000251d10e222" bindAsSequence="false"
+                             id="var_p-sgr_I2009000251d10e222"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000251d10e222"
+                                  xlink:to="fil_p-sgr_I2009000251d10e224"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000251d10e224" id="fil_p-sgr_I2009000251d10e224"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000251</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000259d10e236" bindAsSequence="false"
+                             id="var_p-sgr_I2009000259d10e236"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000259d10e236"
+                                  xlink:to="fil_p-sgr_I2009000259d10e238"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000259d10e238" id="fil_p-sgr_I2009000259d10e238"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000259</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000054d10e250" bindAsSequence="false"
+                             id="var_p-sgr_I2009000054d10e250"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000054d10e250"
+                                  xlink:to="fil_p-sgr_I2009000054d10e252"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000054d10e250"
+                                  xlink:to="fil_d10e260"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000054d10e252" id="fil_p-sgr_I2009000054d10e252"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000054</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0037Efep" xlink:label="fil_d10e260"
+                          id="fil_d10e260"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000054d10e269" bindAsSequence="false"
+                             id="var_p-sgr_I2009000054d10e269"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000054d10e269"
+                                  xlink:to="fil_p-sgr_I2009000054d10e271"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000054d10e269"
+                                  xlink:to="fil_d10e279"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000054d10e271" id="fil_p-sgr_I2009000054d10e271"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000054</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0037Efep" xlink:label="fil_d10e279"
+                          id="fil_d10e279"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0037Efep - $clave0052Efep) ne 0" xlink:label="pre_d10e287"
+                             id="pre_d10e287"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-8" id="ref_val_sgr_7228-oe-8"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-8</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-8" xlink:to="ref_val_sgr_7228-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-9" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-9"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000252d10e297"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000260d10e311"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000050d10e325"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000050d10e344"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0038Efep" xlink:from="val_sgr_7228-oe-9"
+                            xlink:to="var_p-sgr_I2009000252d10e297"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0053Efep" xlink:from="val_sgr_7228-oe-9"
+                            xlink:to="var_p-sgr_I2009000260d10e311"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-9"
+                            xlink:to="var_p-sgr_I2009000050d10e325"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-9"
+                            xlink:to="var_p-sgr_I2009000050d10e344"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-9" xlink:to="pre_d10e362"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-9" id="lab_val_sgr_7228-oe-9"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0038 - 0053 (7228) != 0 implica que 0070 (4008) - 0070(4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-9" xlink:to="lab_val_sgr_7228-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000252d10e297" bindAsSequence="false"
+                             id="var_p-sgr_I2009000252d10e297"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000252d10e297"
+                                  xlink:to="fil_p-sgr_I2009000252d10e299"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000252d10e299" id="fil_p-sgr_I2009000252d10e299"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000252</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000260d10e311" bindAsSequence="false"
+                             id="var_p-sgr_I2009000260d10e311"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000260d10e311"
+                                  xlink:to="fil_p-sgr_I2009000260d10e313"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000260d10e313" id="fil_p-sgr_I2009000260d10e313"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000260</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000050d10e325" bindAsSequence="false"
+                             id="var_p-sgr_I2009000050d10e325"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000050d10e325"
+                                  xlink:to="fil_p-sgr_I2009000050d10e327"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000050d10e325"
+                                  xlink:to="fil_d10e335"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000050d10e327" id="fil_p-sgr_I2009000050d10e327"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000050</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0038Efep" xlink:label="fil_d10e335"
+                          id="fil_d10e335"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000050d10e344" bindAsSequence="false"
+                             id="var_p-sgr_I2009000050d10e344"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000050d10e344"
+                                  xlink:to="fil_p-sgr_I2009000050d10e346"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000050d10e344"
+                                  xlink:to="fil_d10e354"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000050d10e346" id="fil_p-sgr_I2009000050d10e346"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000050</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0038Efep" xlink:label="fil_d10e354"
+                          id="fil_d10e354"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0038Efep - $clave0053Efep) ne 0" xlink:label="pre_d10e362"
+                             id="pre_d10e362"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-9" id="ref_val_sgr_7228-oe-9"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-9</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-9" xlink:to="ref_val_sgr_7228-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-10" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-10"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000253d10e373"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000261d10e387"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000053d10e401"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000053d10e420"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0039Efep" xlink:from="val_sgr_7228-oe-10"
+                            xlink:to="var_p-sgr_I2009000253d10e373"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0054Efep" xlink:from="val_sgr_7228-oe-10"
+                            xlink:to="var_p-sgr_I2009000261d10e387"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-10"
+                            xlink:to="var_p-sgr_I2009000053d10e401"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-10"
+                            xlink:to="var_p-sgr_I2009000053d10e420"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-10" xlink:to="pre_d10e438"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-10" id="lab_val_sgr_7228-oe-10"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0039 - 0054 (7228) != 0 implica que 0075 (4008) - 0075(4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-10" xlink:to="lab_val_sgr_7228-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000253d10e373" bindAsSequence="false"
+                             id="var_p-sgr_I2009000253d10e373"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000253d10e373"
+                                  xlink:to="fil_p-sgr_I2009000253d10e375"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000253d10e375" id="fil_p-sgr_I2009000253d10e375"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000253</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000261d10e387" bindAsSequence="false"
+                             id="var_p-sgr_I2009000261d10e387"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000261d10e387"
+                                  xlink:to="fil_p-sgr_I2009000261d10e389"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000261d10e389" id="fil_p-sgr_I2009000261d10e389"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000261</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000053d10e401" bindAsSequence="false"
+                             id="var_p-sgr_I2009000053d10e401"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000053d10e401"
+                                  xlink:to="fil_p-sgr_I2009000053d10e403"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000053d10e401"
+                                  xlink:to="fil_d10e411"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000053d10e403" id="fil_p-sgr_I2009000053d10e403"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000053</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0039Efep" xlink:label="fil_d10e411"
+                          id="fil_d10e411"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000053d10e420" bindAsSequence="false"
+                             id="var_p-sgr_I2009000053d10e420"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000053d10e420"
+                                  xlink:to="fil_p-sgr_I2009000053d10e422"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000053d10e420"
+                                  xlink:to="fil_d10e430"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000053d10e422" id="fil_p-sgr_I2009000053d10e422"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000053</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0039Efep" xlink:label="fil_d10e430"
+                          id="fil_d10e430"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0039Efep - $clave0054Efep) ne 0" xlink:label="pre_d10e438"
+                             id="pre_d10e438"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-10" id="ref_val_sgr_7228-oe-10"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-10</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-10" xlink:to="ref_val_sgr_7228-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-11" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-11"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000254d10e448"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000262d10e462"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000014d10e476"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000014d10e495"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0040Efep" xlink:from="val_sgr_7228-oe-11"
+                            xlink:to="var_p-sgr_I2009000254d10e448"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0055Efep" xlink:from="val_sgr_7228-oe-11"
+                            xlink:to="var_p-sgr_I2009000262d10e462"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-11"
+                            xlink:to="var_p-sgr_I2009000014d10e476"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-11"
+                            xlink:to="var_p-sgr_I2009000014d10e495"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-11" xlink:to="pre_d10e513"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-11" id="lab_val_sgr_7228-oe-11"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0040 - 0055 (7228) != 0 implica que 0020 (4008) - 0020(4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-11" xlink:to="lab_val_sgr_7228-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000254d10e448" bindAsSequence="false"
+                             id="var_p-sgr_I2009000254d10e448"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000254d10e448"
+                                  xlink:to="fil_p-sgr_I2009000254d10e450"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000254d10e450" id="fil_p-sgr_I2009000254d10e450"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000254</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000262d10e462" bindAsSequence="false"
+                             id="var_p-sgr_I2009000262d10e462"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000262d10e462"
+                                  xlink:to="fil_p-sgr_I2009000262d10e464"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000262d10e464" id="fil_p-sgr_I2009000262d10e464"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000262</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000014d10e476" bindAsSequence="false"
+                             id="var_p-sgr_I2009000014d10e476"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000014d10e476"
+                                  xlink:to="fil_p-sgr_I2009000014d10e478"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000014d10e476"
+                                  xlink:to="fil_d10e486"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000014d10e478" id="fil_p-sgr_I2009000014d10e478"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000014</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0040Efep" xlink:label="fil_d10e486"
+                          id="fil_d10e486"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000014d10e495" bindAsSequence="false"
+                             id="var_p-sgr_I2009000014d10e495"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000014d10e495"
+                                  xlink:to="fil_p-sgr_I2009000014d10e497"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000014d10e495"
+                                  xlink:to="fil_d10e505"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000014d10e497" id="fil_p-sgr_I2009000014d10e497"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000014</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0040Efep" xlink:label="fil_d10e505"
+                          id="fil_d10e505"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0040Efep - $clave0055Efep) ne 0" xlink:label="pre_d10e513"
+                             id="pre_d10e513"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-11" id="ref_val_sgr_7228-oe-11"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-11</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-11" xlink:to="ref_val_sgr_7228-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-12" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-12"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000255d10e523"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000263d10e537"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000047d10e551"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000047d10e570"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0041Efep" xlink:from="val_sgr_7228-oe-12"
+                            xlink:to="var_p-sgr_I2009000255d10e523"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0056Efep" xlink:from="val_sgr_7228-oe-12"
+                            xlink:to="var_p-sgr_I2009000263d10e537"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-12"
+                            xlink:to="var_p-sgr_I2009000047d10e551"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-12"
+                            xlink:to="var_p-sgr_I2009000047d10e570"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-12" xlink:to="pre_d10e588"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-12" id="lab_val_sgr_7228-oe-12"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0041 - 0056 (7228) != 0 implica que 0065 (4008) - 0065(4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-12" xlink:to="lab_val_sgr_7228-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000255d10e523" bindAsSequence="false"
+                             id="var_p-sgr_I2009000255d10e523"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000255d10e523"
+                                  xlink:to="fil_p-sgr_I2009000255d10e525"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000255d10e525" id="fil_p-sgr_I2009000255d10e525"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000255</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000263d10e537" bindAsSequence="false"
+                             id="var_p-sgr_I2009000263d10e537"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000263d10e537"
+                                  xlink:to="fil_p-sgr_I2009000263d10e539"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000263d10e539" id="fil_p-sgr_I2009000263d10e539"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000263</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000047d10e551" bindAsSequence="false"
+                             id="var_p-sgr_I2009000047d10e551"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000047d10e551"
+                                  xlink:to="fil_p-sgr_I2009000047d10e553"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000047d10e551"
+                                  xlink:to="fil_d10e561"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000047d10e553" id="fil_p-sgr_I2009000047d10e553"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000047</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0041Efep" xlink:label="fil_d10e561"
+                          id="fil_d10e561"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000047d10e570" bindAsSequence="false"
+                             id="var_p-sgr_I2009000047d10e570"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000047d10e570"
+                                  xlink:to="fil_p-sgr_I2009000047d10e572"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000047d10e570"
+                                  xlink:to="fil_d10e580"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000047d10e572" id="fil_p-sgr_I2009000047d10e572"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000047</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0041Efep" xlink:label="fil_d10e580"
+                          id="fil_d10e580"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0041Efep - $clave0056Efep) ne 0" xlink:label="pre_d10e588"
+                             id="pre_d10e588"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-12" id="ref_val_sgr_7228-oe-12"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-12</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-12" xlink:to="ref_val_sgr_7228-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-13" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-13"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000256d10e598"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000264d10e612"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000058d10e626"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000058d10e645"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0042Efep" xlink:from="val_sgr_7228-oe-13"
+                            xlink:to="var_p-sgr_I2009000256d10e598"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0057Efep" xlink:from="val_sgr_7228-oe-13"
+                            xlink:to="var_p-sgr_I2009000264d10e612"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-13"
+                            xlink:to="var_p-sgr_I2009000058d10e626"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-13"
+                            xlink:to="var_p-sgr_I2009000058d10e645"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-13" xlink:to="pre_d10e663"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-13" id="lab_val_sgr_7228-oe-13"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0042 - 0057 (7228) != 0 implica que 0092 (4008) - 0092(4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-13" xlink:to="lab_val_sgr_7228-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000256d10e598" bindAsSequence="false"
+                             id="var_p-sgr_I2009000256d10e598"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000256d10e598"
+                                  xlink:to="fil_p-sgr_I2009000256d10e600"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000256d10e600" id="fil_p-sgr_I2009000256d10e600"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000256</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000264d10e612" bindAsSequence="false"
+                             id="var_p-sgr_I2009000264d10e612"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000264d10e612"
+                                  xlink:to="fil_p-sgr_I2009000264d10e614"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000264d10e614" id="fil_p-sgr_I2009000264d10e614"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000264</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000058d10e626" bindAsSequence="false"
+                             id="var_p-sgr_I2009000058d10e626"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000058d10e626"
+                                  xlink:to="fil_p-sgr_I2009000058d10e628"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000058d10e626"
+                                  xlink:to="fil_d10e636"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000058d10e628" id="fil_p-sgr_I2009000058d10e628"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000058</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0042Efep" xlink:label="fil_d10e636"
+                          id="fil_d10e636"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000058d10e645" bindAsSequence="false"
+                             id="var_p-sgr_I2009000058d10e645"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000058d10e645"
+                                  xlink:to="fil_p-sgr_I2009000058d10e647"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000058d10e645"
+                                  xlink:to="fil_d10e655"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000058d10e647" id="fil_p-sgr_I2009000058d10e647"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000058</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0042Efep" xlink:label="fil_d10e655"
+                          id="fil_d10e655"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0042Efep - $clave0057Efep) ne 0" xlink:label="pre_d10e663"
+                             id="pre_d10e663"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-13" id="ref_val_sgr_7228-oe-13"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-13</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-13" xlink:to="ref_val_sgr_7228-oe-13"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-14" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-14"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000273d10e673"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000279d10e687"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000068d10e701"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000068d10e720"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0077Efep" xlink:from="val_sgr_7228-oe-14"
+                            xlink:to="var_p-sgr_I2009000273d10e673"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0083Efep" xlink:from="val_sgr_7228-oe-14"
+                            xlink:to="var_p-sgr_I2009000279d10e687"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-14"
+                            xlink:to="var_p-sgr_I2009000068d10e701"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-14"
+                            xlink:to="var_p-sgr_I2009000068d10e720"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-14" xlink:to="pre_d10e738"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-14" id="lab_val_sgr_7228-oe-14"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0077 - 0083 (7228) != 0 implica que 0111 (4008) - 0111 (4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-14" xlink:to="lab_val_sgr_7228-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000273d10e673" bindAsSequence="false"
+                             id="var_p-sgr_I2009000273d10e673"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000273d10e673"
+                                  xlink:to="fil_p-sgr_I2009000273d10e675"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000273d10e675" id="fil_p-sgr_I2009000273d10e675"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000273</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000279d10e687" bindAsSequence="false"
+                             id="var_p-sgr_I2009000279d10e687"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000279d10e687"
+                                  xlink:to="fil_p-sgr_I2009000279d10e689"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000279d10e689" id="fil_p-sgr_I2009000279d10e689"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000279</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000068d10e701" bindAsSequence="false"
+                             id="var_p-sgr_I2009000068d10e701"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000068d10e701"
+                                  xlink:to="fil_p-sgr_I2009000068d10e703"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000068d10e701"
+                                  xlink:to="fil_d10e711"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000068d10e703" id="fil_p-sgr_I2009000068d10e703"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000068</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0077Efep" xlink:label="fil_d10e711"
+                          id="fil_d10e711"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000068d10e720" bindAsSequence="false"
+                             id="var_p-sgr_I2009000068d10e720"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000068d10e720"
+                                  xlink:to="fil_p-sgr_I2009000068d10e722"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000068d10e720"
+                                  xlink:to="fil_d10e730"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000068d10e722" id="fil_p-sgr_I2009000068d10e722"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000068</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0077Efep" xlink:label="fil_d10e730"
+                          id="fil_d10e730"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0077Efep - $clave0083Efep) ne 0" xlink:label="pre_d10e738"
+                             id="pre_d10e738"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-14" id="ref_val_sgr_7228-oe-14"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-14</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-14" xlink:to="ref_val_sgr_7228-oe-14"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-15" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-15"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000274d10e748"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000280d10e762"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000069d10e776"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000069d10e795"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0078Efep" xlink:from="val_sgr_7228-oe-15"
+                            xlink:to="var_p-sgr_I2009000274d10e748"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0084Efep" xlink:from="val_sgr_7228-oe-15"
+                            xlink:to="var_p-sgr_I2009000280d10e762"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-15"
+                            xlink:to="var_p-sgr_I2009000069d10e776"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-15"
+                            xlink:to="var_p-sgr_I2009000069d10e795"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-15" xlink:to="pre_d10e813"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-15" id="lab_val_sgr_7228-oe-15"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0078 - 0084 (7228) != 0 implica que 0112 (4008) - 0112 (4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-15" xlink:to="lab_val_sgr_7228-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000274d10e748" bindAsSequence="false"
+                             id="var_p-sgr_I2009000274d10e748"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000274d10e748"
+                                  xlink:to="fil_p-sgr_I2009000274d10e750"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000274d10e750" id="fil_p-sgr_I2009000274d10e750"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000274</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000280d10e762" bindAsSequence="false"
+                             id="var_p-sgr_I2009000280d10e762"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000280d10e762"
+                                  xlink:to="fil_p-sgr_I2009000280d10e764"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000280d10e764" id="fil_p-sgr_I2009000280d10e764"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000280</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000069d10e776" bindAsSequence="false"
+                             id="var_p-sgr_I2009000069d10e776"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000069d10e776"
+                                  xlink:to="fil_p-sgr_I2009000069d10e778"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000069d10e776"
+                                  xlink:to="fil_d10e786"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000069d10e778" id="fil_p-sgr_I2009000069d10e778"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000069</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0078Efep" xlink:label="fil_d10e786"
+                          id="fil_d10e786"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000069d10e795" bindAsSequence="false"
+                             id="var_p-sgr_I2009000069d10e795"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000069d10e795"
+                                  xlink:to="fil_p-sgr_I2009000069d10e797"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000069d10e795"
+                                  xlink:to="fil_d10e805"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000069d10e797" id="fil_p-sgr_I2009000069d10e797"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000069</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0078Efep" xlink:label="fil_d10e805"
+                          id="fil_d10e805"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0078Efep - $clave0084Efep) ne 0" xlink:label="pre_d10e813"
+                             id="pre_d10e813"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-15" id="ref_val_sgr_7228-oe-15"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-15</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-15" xlink:to="ref_val_sgr_7228-oe-15"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-16" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-16"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000275d10e824"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000281d10e838"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000069d10e852"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000069d10e871"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0079Efep" xlink:from="val_sgr_7228-oe-16"
+                            xlink:to="var_p-sgr_I2009000275d10e824"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0085Efep" xlink:from="val_sgr_7228-oe-16"
+                            xlink:to="var_p-sgr_I2009000281d10e838"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-16"
+                            xlink:to="var_p-sgr_I2009000069d10e852"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-16"
+                            xlink:to="var_p-sgr_I2009000069d10e871"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-16" xlink:to="pre_d10e889"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-16" id="lab_val_sgr_7228-oe-16"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0079 - 0085 (7228) != 0 implica que 0113 (4008) - 0113 (4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-16" xlink:to="lab_val_sgr_7228-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000275d10e824" bindAsSequence="false"
+                             id="var_p-sgr_I2009000275d10e824"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000275d10e824"
+                                  xlink:to="fil_p-sgr_I2009000275d10e826"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000275d10e826" id="fil_p-sgr_I2009000275d10e826"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000275</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000281d10e838" bindAsSequence="false"
+                             id="var_p-sgr_I2009000281d10e838"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000281d10e838"
+                                  xlink:to="fil_p-sgr_I2009000281d10e840"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000281d10e840" id="fil_p-sgr_I2009000281d10e840"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000281</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000069d10e852" bindAsSequence="false"
+                             id="var_p-sgr_I2009000069d10e852"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000069d10e852"
+                                  xlink:to="fil_p-sgr_I2009000069d10e854"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000069d10e852"
+                                  xlink:to="fil_d10e862"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000069d10e854" id="fil_p-sgr_I2009000069d10e854"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000069</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0079Efep" xlink:label="fil_d10e862"
+                          id="fil_d10e862"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000069d10e871" bindAsSequence="false"
+                             id="var_p-sgr_I2009000069d10e871"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000069d10e871"
+                                  xlink:to="fil_p-sgr_I2009000069d10e873"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000069d10e871"
+                                  xlink:to="fil_d10e881"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000069d10e873" id="fil_p-sgr_I2009000069d10e873"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000069</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0079Efep" xlink:label="fil_d10e881"
+                          id="fil_d10e881"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0079Efep - $clave0085Efep) ne 0" xlink:label="pre_d10e889"
+                             id="pre_d10e889"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-16" id="ref_val_sgr_7228-oe-16"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-16</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-16" xlink:to="ref_val_sgr_7228-oe-16"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-17" test="($claveT1 - $claveT1Ant) ne 0"
+                         id="val_sgr_7228-oe-17"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000276d10e899"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000282d10e913"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000071d10e927"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1.T12" xlink:to="var_p-sgr_I2009000071d10e946"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="clave0080Efep" xlink:from="val_sgr_7228-oe-17"
+                            xlink:to="var_p-sgr_I2009000276d10e899"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="clave0086Efep" xlink:from="val_sgr_7228-oe-17"
+                            xlink:to="var_p-sgr_I2009000282d10e913"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="claveT1" xlink:from="val_sgr_7228-oe-17"
+                            xlink:to="var_p-sgr_I2009000071d10e927"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="claveT1Ant" xlink:from="val_sgr_7228-oe-17"
+                            xlink:to="var_p-sgr_I2009000071d10e946"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-17" xlink:to="pre_d10e964"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-17" id="lab_val_sgr_7228-oe-17"
+                   xlink:type="resource"
+                   xml:lang="es">Si 0080 - 0086 (7228) != 0 implica que 0114 (4008) - 0114 (4008) de diciembre anterior != 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-17" xlink:to="lab_val_sgr_7228-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000276d10e899" bindAsSequence="false"
+                             id="var_p-sgr_I2009000276d10e899"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000276d10e899"
+                                  xlink:to="fil_p-sgr_I2009000276d10e901"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000276d10e901" id="fil_p-sgr_I2009000276d10e901"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000276</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000282d10e913" bindAsSequence="false"
+                             id="var_p-sgr_I2009000282d10e913"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000282d10e913"
+                                  xlink:to="fil_p-sgr_I2009000282d10e915"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000282d10e915" id="fil_p-sgr_I2009000282d10e915"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000282</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000071d10e927" bindAsSequence="false"
+                             id="var_p-sgr_I2009000071d10e927"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000071d10e927"
+                                  xlink:to="fil_p-sgr_I2009000071d10e929"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000071d10e927"
+                                  xlink:to="fil_d10e937"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000071d10e929" id="fil_p-sgr_I2009000071d10e929"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000071</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="end" variable="clave0080Efep" xlink:label="fil_d10e937"
+                          id="fil_d10e937"
+                          xlink:type="resource"/>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000071d10e946" bindAsSequence="false"
+                             id="var_p-sgr_I2009000071d10e946"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000071d10e946"
+                                  xlink:to="fil_p-sgr_I2009000071d10e948"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000071d10e946"
+                                  xlink:to="fil_d10e956"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000071d10e948" id="fil_p-sgr_I2009000071d10e948"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000071</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <pf:instantDuration boundary="start" variable="clave0080Efep" xlink:label="fil_d10e956"
+                          id="fil_d10e956"
+                          xlink:type="resource"/>
+      <variable:precondition test="($clave0080Efep - $clave0086Efep) ne 0" xlink:label="pre_d10e964"
+                             id="pre_d10e964"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-17" id="ref_val_sgr_7228-oe-17"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-17</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-17" xlink:to="ref_val_sgr_7228-oe-17"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_sgr_7228-oe-3" test="(($capSuscrito + $capSuscritoAnt) ne 0)"
+                         id="val_sgr_7228-oe-3"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <generic:arc xlink:from="Msgr_t1"
+                   xlink:to="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e974"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Msgr_t1.T12"
+                   xlink:to="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e1001"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000268d10e1028"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="Msgr_t1" xlink:to="var_p-sgr_I2009000269d10e1042"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="4"/>
+      <variable:variableArc name="capSuscrito" xlink:from="val_sgr_7228-oe-3"
+                            xlink:to="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e974"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="capSuscritoAnt" xlink:from="val_sgr_7228-oe-3"
+                            xlink:to="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e1001"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="emisionCapital" xlink:from="val_sgr_7228-oe-3"
+                            xlink:to="var_p-sgr_I2009000268d10e1028"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="amortCapital" xlink:from="val_sgr_7228-oe-3"
+                            xlink:to="var_p-sgr_I2009000269d10e1042"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <generic:arc xlink:from="val_sgr_7228-oe-3" xlink:to="pre_d10e1055"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                   xlink:type="arc"
+                   order="1"/>
+      <label:label xlink:label="lab_val_sgr_7228-oe-3" id="lab_val_sgr_7228-oe-3"
+                   xlink:type="resource"
+                   xml:lang="es">Si la emisión del capital menos la amortización del capital
+				es distinto de 0 entonces el capital suscrito menos el capital
+				suscrito del ejercicio anterior será distinto de 0</label:label>
+      <generic:arc xlink:from="val_sgr_7228-oe-3" xlink:to="lab_val_sgr_7228-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e974"
+                             bindAsSequence="false"
+                             id="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e974"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e974"
+                                  xlink:to="fil_PatrimonioNetoDim_D2009001d10e976"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e974"
+                                  xlink:to="fil_d10e984"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e974"
+                                  xlink:to="fil_p-sgr_I2009000092d10e989"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_D2009001d10e976"
+                            id="fil_PatrimonioNetoDim_D2009001d10e976"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-pn:D2009001</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <pf:instantDuration boundary="end" variable="emisionCapital" xlink:label="fil_d10e984"
+                          id="fil_d10e984"
+                          xlink:type="resource"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000092d10e989" id="fil_p-sgr_I2009000092d10e989"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000092</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e1001"
+                             bindAsSequence="false"
+                             id="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e1001"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e1001"
+                                  xlink:to="fil_PatrimonioNetoDim_D2009001d10e1003"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e1001"
+                                  xlink:to="fil_d10e1011"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false"
+                                  xlink:from="var_PatrimonioNetoDim_D2009001p-sgr_I2009000092d10e1001"
+                                  xlink:to="fil_p-sgr_I2009000092d10e1016"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_PatrimonioNetoDim_D2009001d10e1003"
+                            id="fil_PatrimonioNetoDim_D2009001d10e1003"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>d-sgr-pn:PatrimonioNetoDimension</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>d-sgr-pn:D2009001</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <pf:instantDuration boundary="start" variable="emisionCapital" xlink:label="fil_d10e1011"
+                          id="fil_d10e1011"
+                          xlink:type="resource"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000092d10e1016" id="fil_p-sgr_I2009000092d10e1016"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000092</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000268d10e1028" bindAsSequence="false"
+                             id="var_p-sgr_I2009000268d10e1028"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000268d10e1028"
+                                  xlink:to="fil_p-sgr_I2009000268d10e1030"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000268d10e1030" id="fil_p-sgr_I2009000268d10e1030"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000268</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:factVariable xlink:label="var_p-sgr_I2009000269d10e1042" bindAsSequence="false"
+                             id="var_p-sgr_I2009000269d10e1042"
+                             xlink:type="resource"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_p-sgr_I2009000269d10e1042"
+                                  xlink:to="fil_p-sgr_I2009000269d10e1044"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <cf:conceptName xlink:label="fil_p-sgr_I2009000269d10e1044" id="fil_p-sgr_I2009000269d10e1044"
+                      xlink:type="resource">
+         <cf:concept>
+            <cf:qname>p-sgr:I2009000269</cf:qname>
+         </cf:concept>
+      </cf:conceptName>
+      <variable:precondition test="($emisionCapital - $amortCapital) ne 0" xlink:label="pre_d10e1055"
+                             id="pre_d10e1055"
+                             xlink:type="resource"/>
+      <reference:reference xlink:label="ref_val_sgr_7228-oe-3" id="ref_val_sgr_7228-oe-3"
+                           xlink:type="resource">
+         <ref:Number>sgr:7228-oe-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_sgr_7228-oe-3" xlink:to="ref_val_sgr_7228-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>

@@ -29,6 +29,9 @@ A single repository with all XBRL taxonomy files
 * Bundesbank 3.0 FIN IND
 * Bundesbank 3.0 G-SII
 * Bundesbank 3.0 REM
+* Bundesbank EZB-SFRDP 5.0.0
+* Bundesbank 3.1 SBP
+* Bundesbank 3.1 FI
 
 ### Bundesbank FinaRisikoV
 
@@ -54,11 +57,13 @@ A single repository with all XBRL taxonomy files
 * EBA 2.10.1.0 (Phase 2)
 * EBA 3.0 (Phase 1)
 * EBA 3.0 (Phase 2) (incl. Errata from April 8th, 2021; incl. Errata from June 3rd, 2021)
+* EBA 3.1 (Phase 2)
 
 ### EIOPA Pension Funds
 
 * EIOPA Pension Funds 2.3.0
 * EIOPA Pension Funds 2.5.0 Hotfix (03.11.2020)
+* EIOPA Pension Funds 2.6.0
 
 ### EIOPA Solvency II
 
@@ -69,6 +74,7 @@ A single repository with all XBRL taxonomy files
 * EIOPA Solvency II 2.3.0 Hotfix
 * EIOPA Solvency II 2.4.0 Hotfix
 * EIOPA Solvency II 2.5.0 Hotfix (03.11.2020)
+* EIOPA Solvency II 2.6.0
 
 ### DNB
 
@@ -158,7 +164,17 @@ A single repository with all XBRL taxonomy files
 * SRB LDR 3.0.2 - 2019
 * SRB RES 4.0.3.2 - 2020
 * SRB Full 5.0.7 - 2021
+* SRB Full 6.0.3 - 2021
+* SRB Ex-ante contributions 2021 6.0.2
+* SRB Ex-ante contributions 2020 5.1.1
+* SRB Ex-ante contributions 2019 4.0.3
+* SRB Ex-ante contributions 2018 3.0.1
+* SRB Ex-ante contributions 2017 2.1.3
+* SRB Ex-ante contributions 2016 1.0.3
 
 ### DCCA Danish GAAP
 
 * Danish GAAP 2020
+
+### Banco de España
+* Taxonomía Tasas de descuento y de intercambio percibidas (es-be-tid) 2015-11-26
