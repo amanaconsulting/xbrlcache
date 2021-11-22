@@ -36,6 +36,34 @@
         </cfi:implementation>
         <gen:arc xlink:type="arc" xlink:to="distinct-typed-values-impl" xlink:from="distinct-typed-values" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
 
+        <variable:function xlink:type="resource" output="xs:QName?" name="es_dimfn:id-agrupacion" xlink:label="function-id-agrupacion">
+            <variable:input type="item()"/>
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-id-agrupacion">
+            <cfi:input name="item"/>
+            <cfi:step name="value">xfi:fact-explicit-dimension-value($item, xs:QName('es-be-cm-dim:Agrupacion'))</cfi:step>
+            <cfi:output>if ($value = (xs:QName('es-be-cm-dim:AgrupacionGrupoConsolidado'), xs:QName('es-be-cm-dim:AgrupacionSubgrupoConsolidado'))) then xs:QName('eba_SC:x7') else if ($value = (xs:QName('es-be-cm-dim:AgrupacionIndividual'), xs:QName('es-be-cm-dim:AgrupacionIndividualConInstrumentales'))) then xs:QName('eba_SC:x6') else ()</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:to="implementation-id-agrupacion" xlink:from="function-id-agrupacion" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
+        
+        <variable:function xlink:type="resource" output="xs:string" name="es_dimfn:agrupacion" xlink:label="function-agrupacion">
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-agrupacion">
+            <cfi:output>substring-after(normalize-space(xfi:segment(//es-be-cm-pblo:EntidadPresentadora)/child::*/text()),':')</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:to="implementation-agrupacion" xlink:from="function-agrupacion" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
+        
+        
+        <!--Funcion general de agrupación: coge el valor de la agrupacion independientemente de la dimension -->
+        <variable:function xlink:type="resource" output="xs:string" name="es_dimfn:agrupacion_general" xlink:label="function-agrupacion_general">
+        </variable:function>
+        <cfi:implementation xlink:type="resource" xlink:label="implementation-agrupacion_general">
+            <cfi:step name="agrup_tipada">xs:string(xfi:segment(//es-be-cm-pblo:EntidadPresentadora)//child::es-be-cm-dim:AgrupacionGestionDomain/text())</cfi:step>
+            <cfi:output>if (string-length(es_dimfn:agrupacion()) > 0) then es_dimfn:agrupacion() else $agrup_tipada</cfi:output>
+        </cfi:implementation>
+        <gen:arc xlink:type="arc" xlink:to="implementation-agrupacion_general" xlink:from="function-agrupacion_general" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
+        
+        
         <!-- Estas funciones quedan obsoletas... Se hicieron para evitar el problema de introducción en la declaración de los prefijos -->        
         <variable:function xlink:type="resource" output="xs:integer" name="es_dimfn:MUS" xlink:label="function-mus">
             <variable:input type="item()"/>
@@ -90,25 +118,8 @@
             <cfi:output>xfi:fact-typed-dimension-value($item, xs:QName('es_dim:CCA'))/child::*</cfi:output>
         </cfi:implementation>
         <gen:arc xlink:type="arc" xlink:to="implementation-cca" xlink:from="function-cca" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
-
-		<variable:function xlink:type="resource" output="xs:QName?" name="es_dimfn:id-agrupacion" xlink:label="function-id-agrupacion">
-            <variable:input type="item()"/>
-        </variable:function>
-        <cfi:implementation xlink:type="resource" xlink:label="implementation-id-agrupacion">
-            <cfi:input name="item"/>
-            <cfi:step name="value">xfi:fact-explicit-dimension-value($item, xs:QName('es-be-cm-dim:Agrupacion'))</cfi:step>
-            <cfi:output>if ($value = (xs:QName('es-be-cm-dim:AgrupacionGrupoConsolidado'), xs:QName('es-be-cm-dim:AgrupacionSubgrupoConsolidado'))) then xs:QName('eba_SC:x7') else if ($value = (xs:QName('es-be-cm-dim:AgrupacionIndividual'), xs:QName('es-be-cm-dim:AgrupacionIndividualConInstrumentales'))) then xs:QName('eba_SC:x6') else ()</cfi:output>
-        </cfi:implementation>
-        <gen:arc xlink:type="arc" xlink:to="implementation-id-agrupacion" xlink:from="function-id-agrupacion" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
-
-        <variable:function xlink:type="resource" output="xs:string" name="es_dimfn:agrupacion" xlink:label="function-agrupacion">
-        </variable:function>
-        <cfi:implementation xlink:type="resource" xlink:label="implementation-agrupacion">
-            <cfi:output>substring-after(normalize-space(xfi:segment(//es-be-cm-pblo:EntidadPresentadora)/child::*/text()),':')</cfi:output>
-        </cfi:implementation>
-        <gen:arc xlink:type="arc" xlink:to="implementation-agrupacion" xlink:from="function-agrupacion" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"/>
         
-        		<variable:function xlink:type="resource" output="xs:string" name="es_dimfn:INC" xlink:label="function-inc">
+        <variable:function xlink:type="resource" output="xs:string" name="es_dimfn:INC" xlink:label="function-inc">
             <variable:input type="item()"/>
         </variable:function>
         <cfi:implementation xlink:type="resource" xlink:label="implementation-inc">
