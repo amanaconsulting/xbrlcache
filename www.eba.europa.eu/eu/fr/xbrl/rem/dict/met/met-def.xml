@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?taxonomy-version 2.0.0.0.IWD4?>
+<!--(C) EBA-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2005/xbrldt http://www.xbrl.org/2005/xbrldt-2005.xsd "> 
+
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension" />
+
+  <link:roleRef roleURI="http://www.eba.europa.eu/eu/fr/xbrl/ext/BlockDefaultUseOfMetrics" xlink:type="simple" xlink:href="http://www.eba.europa.eu/eu/fr/xbrl/ext/model.xsd#BlockDefaultUseOfMetrics" />
+
+  <!-- linking all metrics to the null hypercube is used to prohibit the use of metrics by "accident"/default, i.e. unless specifically allowed by an entrypoint -->
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.eba.europa.eu/eu/fr/xbrl/ext/BlockDefaultUseOfMetrics">
+    <link:loc xlink:type="locator" xlink:href="http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd#hyp" xlink:label="loc_hyp" />
+	
+    <link:loc xlink:type="locator" xlink:href="http://www.eba.europa.eu/eu/fr/xbrl/ext/model.xsd#eba_NULL" xlink:label="loc_eba_NULL" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="loc_hyp" xlink:to="loc_eba_NULL" order="0" use="optional" />
+
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM021" xlink:label="loc_eba_mdRM021" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM021" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="0" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM032" xlink:label="loc_eba_mdRM032" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM032" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="1" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM016" xlink:label="loc_eba_mdRM016" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM016" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="2" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_idRM003" xlink:label="loc_eba_idRM003" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_idRM003" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="3" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM020" xlink:label="loc_eba_mdRM020" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM020" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="4" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM033" xlink:label="loc_eba_mdRM033" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM033" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="5" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_piRM025" xlink:label="loc_eba_piRM025" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_piRM025" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="6" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM023" xlink:label="loc_eba_mdRM023" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM023" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="7" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_idRM007" xlink:label="loc_eba_idRM007" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_idRM007" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="8" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM014" xlink:label="loc_eba_mdRM014" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM014" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="9" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_iiRM029" xlink:label="loc_eba_iiRM029" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_iiRM029" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="10" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_iiRM002" xlink:label="loc_eba_iiRM002" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_iiRM002" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="11" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_iiRM001" xlink:label="loc_eba_iiRM001" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_iiRM001" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="12" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM022" xlink:label="loc_eba_mdRM022" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM022" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="13" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM012" xlink:label="loc_eba_mdRM012" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM012" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="14" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM015" xlink:label="loc_eba_mdRM015" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM015" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="15" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM017" xlink:label="loc_eba_mdRM017" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM017" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="16" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_idRM004" xlink:label="loc_eba_idRM004" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_idRM004" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="17" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_idRM009" xlink:label="loc_eba_idRM009" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_idRM009" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="18" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM011" xlink:label="loc_eba_mdRM011" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM011" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="19" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_iiRM006" xlink:label="loc_eba_iiRM006" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_iiRM006" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="20" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_siRM027" xlink:label="loc_eba_siRM027" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_siRM027" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="21" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_miRM030" xlink:label="loc_eba_miRM030" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_miRM030" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="22" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM018" xlink:label="loc_eba_mdRM018" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM018" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="23" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM013" xlink:label="loc_eba_mdRM013" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM013" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="24" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_idRM008" xlink:label="loc_eba_idRM008" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_idRM008" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="25" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM010" xlink:label="loc_eba_mdRM010" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM010" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="26" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_iiRM005" xlink:label="loc_eba_iiRM005" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_iiRM005" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="27" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM024" xlink:label="loc_eba_mdRM024" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM024" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="28" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM019" xlink:label="loc_eba_mdRM019" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM019" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="29" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM026" xlink:label="loc_eba_mdRM026" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM026" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="30" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM031" xlink:label="loc_eba_mdRM031" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM031" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="31" />
+    <link:loc xlink:type="locator" xlink:href="met.xsd#eba_mdRM028" xlink:label="loc_eba_mdRM028" />
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="loc_eba_mdRM028" xlink:to="loc_hyp" xbrldt:contextElement="scenario" xbrldt:closed="true" order="32" />
+
+  </link:definitionLink>
+
+</link:linkbase>
