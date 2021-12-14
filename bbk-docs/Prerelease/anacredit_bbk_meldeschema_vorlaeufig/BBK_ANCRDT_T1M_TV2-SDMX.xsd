@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 sp1 (http://www.altova.com) by 59 users / SMP-Expiration: 2016-02-29 (DEUTSCHE BUNDESBANK) -->
+<!--- ENTWURF-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsd="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:SDDcommonTypes="http://www.escb.eu/rf/sdmx/SDDcommonTypes" xmlns:BBKCommonTypes="http://www.bundesbank.de/statistik/bbk/CommonTypes/tv1" xmlns="http://www.bundesbank.de/statistik/anacredit/t1m/tv2" xmlns:ns1="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:ns2="http://www.bundesbank.de/statistik/anacredit/t1m/tv2" xmlns:bcl="http://www.bundesbank.de/statistik/bbk/codelists/tv2" xmlns:ecl="http://www.bundesbank.de/statistik/ecb/codelists/tv2" targetNamespace="http://www.bundesbank.de/statistik/anacredit/t1m/tv2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" schemaLocation="SDMXMessage.xsd"/>
+	<xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/structurespecific" schemaLocation="SDMXDataStructureSpecific.xsd"/>
+	<xs:import namespace="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" schemaLocation="SDMXCommon.xsd"/>
+	<xs:import namespace="http://www.bundesbank.de/statistik/bbk/codelists/tv2" schemaLocation="BBK_CDLST_TV2-SDMX.xsd"/>
+	<xs:import namespace="http://www.bundesbank.de/statistik/ecb/codelists/tv2" schemaLocation="ECB_CDLST_TV2-SDMX.xsd"/>
+	<xs:import namespace="http://www.bundesbank.de/statistik/bbk/CommonTypes/tv1" schemaLocation="BBKCommonTypes_TV1-SDMX.xsd"/>
+	<xs:import namespace="http://www.escb.eu/rf/sdmx/SDDcommonTypes" schemaLocation="SDDCommonTypes.xsd"/>
+	<!-- Data Structur Definitions (DataSetType) -->
+	<!--- ENTWURF-->
+	<xs:complexType name="ObsBBK_ANCRDT_HDR_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:ObsType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="RPRTNG_AGNT_CD" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="OBSRVD_AGNT_CD" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="DT_RFRNC" type="BBKCommonTypes:BBK_DT_YYYY_MM" use="required"/>
+				<xs:attribute name="SRVY_ID" type="bcl:CL_BBK_ANCRDT_SRVY" use="required" fixed="TestCode_ANCRDT_T1M"/>
+				<xs:attribute name="SBMSSN_TYP" type="bcl:CL_BBK_ANCRDT_SBMSSN" use="required"/>
+				<xs:attribute name="PRT_MSSG" type="BBKCommonTypes:BBK_STRNG_PRT_FL_INF"/>
+				<xs:attribute name="type" type="common:IDType" use="prohibited"/>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="BBK_ANCRDT_HDR_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:DataSetType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+					<xs:element name="DataProvider" type="common:DataProviderReferenceType" form="unqualified" minOccurs="0"/>
+					<xs:choice minOccurs="1">
+						<xs:element name="Obs" type="ObsBBK_ANCRDT_HDR_C" form="unqualified" maxOccurs="1"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="ObsBBK_ANCRDT_ENTTY_INSTRMNT_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:ObsType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="ENTTY_CD" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="TYP_ENTTY_CD" type="bcl:CL_BBK_ANCRDT_TYP_ENTTY_CD" use="required"/>
+				<xs:attribute name="CNTRCT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="INSTRMNT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="ENTTY_RL" type="ecl:CL_ECBSDD_ENTTY_RL_ANCRDT_CLLCTN" use="required"/>
+				<xs:attribute name="type" type="common:IDType" use="prohibited"/>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="BBK_ANCRDT_ENTTY_INSTRMNT_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:DataSetType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+					<xs:element name="DataProvider" type="common:DataProviderReferenceType" form="unqualified" minOccurs="0"/>
+					<xs:choice minOccurs="1">
+						<xs:element name="Obs" type="ObsBBK_ANCRDT_ENTTY_INSTRMNT_C" form="unqualified" maxOccurs="unbounded"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="ObsBBK_ANCRDT_FNNCL_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:ObsType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="CNTRCT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="INSTRMNT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="ANNLSD_AGRD_RT" type="SDDcommonTypes:ECBSDD_ALL_6D"/>
+				<xs:attribute name="DT_NXT_INTRST_RT_RST" type="SDDcommonTypes:ECBSDD_FLL_YYYY_MM_DD"/>
+				<xs:attribute name="DFLT_STTS" type="ecl:CL_ECBSDD_CRDT_QLTY_DFLT_STTS_ANCRDT_CLLCTN"/>
+				<xs:attribute name="DT_DFLT_STTS" type="SDDcommonTypes:ECBSDD_FLL_YYYY_MM_DD"/>
+				<xs:attribute name="TRNSFRRD_AMNT" type="SDDcommonTypes:ECBSDD_NN_NGTV_2D"/>
+				<xs:attribute name="ARRRS" type="SDDcommonTypes:ECBSDD_NN_NGTV_2D"/>
+				<xs:attribute name="DT_PST_D" type="SDDcommonTypes:ECBSDD_FLL_YYYY_MM_DD"/>
+				<xs:attribute name="TYP_SCRTSTN" type="ecl:CL_ECBSDD_TYP_TRNSFR_ANCRDT_CLLCTN"/>
+				<xs:attribute name="OTSTNDNG_NMNL_AMNT" type="SDDcommonTypes:ECBSDD_NN_NGTV_2D"/>
+				<xs:attribute name="ACCRD_INTRST" type="SDDcommonTypes:ECBSDD_NN_NGTV_2D"/>
+				<xs:attribute name="OFF_BLNC_SHT_AMNT" type="SDDcommonTypes:ECBSDD_NN_NGTV_2D"/>
+				<xs:attribute name="type" type="common:IDType" use="prohibited"/>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="BBK_ANCRDT_FNNCL_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:DataSetType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+					<xs:element name="DataProvider" type="common:DataProviderReferenceType" form="unqualified" minOccurs="0"/>
+					<xs:choice minOccurs="1">
+						<xs:element name="Obs" type="ObsBBK_ANCRDT_FNNCL_C" form="unqualified" maxOccurs="unbounded"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="ObsBBK_ANCRDT_INSTRMNT_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:ObsType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="CNTRCT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="INSTRMNT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="TYP_INSTRMNT" type="ecl:CL_ECBSDD_TYP_INSTRMNT_ANCRDT_CLLCTN"/>
+				<xs:attribute name="TYP_AMRTSTN" type="ecl:CL_ECBSDD_TYP_AMRTSTN_ANCRDT_CLLCTN"/>
+				<xs:attribute name="CRRNCY_DNMNTN" type="ecl:CL_ECBSDD_ISO4217"/>
+				<xs:attribute name="FDCRY" type="ecl:CL_ECBSDD_FDCRY_ANCRDT_CLLCTN"/>
+				<xs:attribute name="DT_INCPTN" type="SDDcommonTypes:ECBSDD_FLL_YYYY_MM_DD"/>
+				<xs:attribute name="DT_END_INTRST_ONLY" type="SDDcommonTypes:ECBSDD_FLL_YYYY_MM_DD"/>
+				<xs:attribute name="INTRST_RT_CP" type="SDDcommonTypes:ECBSDD_ALL_6D"/>
+				<xs:attribute name="INTRST_RT_FLR" type="SDDcommonTypes:ECBSDD_ALL_6D"/>
+				<xs:attribute name="INTRST_RT_RST_FRQNCY" type="ecl:CL_ECBSDD_FRQNCY_INTRST_RT_RST_ANCRDT_CLLCTN"/>
+				<xs:attribute name="INTRST_RT_SPRD" type="SDDcommonTypes:ECBSDD_ALL_6D"/>
+				<xs:attribute name="TYP_INTRST_RT" type="ecl:CL_ECBSDD_TYP_INTRST_RT_ANCRDT_CLLCTN"/>
+				<xs:attribute name="DT_LGL_FNL_MTRTY" type="SDDcommonTypes:ECBSDD_FLL_YYYY_MM_DD"/>
+				<xs:attribute name="CMMTMNT_INCPTN" type="SDDcommonTypes:ECBSDD_NN_NGTV_2D"/>
+				<xs:attribute name="PYMNT_FRQNCY" type="ecl:CL_ECBSDD_FRQNCY_PYMNT_ANCRDT_CLLCTN"/>
+				<xs:attribute name="PRJCT_FNNC_LN" type="ecl:CL_ECBSDD_PRJCT_FNNC_LN_ANCRDT_CLLCTN"/>
+				<xs:attribute name="PRPS" type="ecl:CL_ECBSDD_PRPS_ANCRDT_CLLCTN"/>
+				<xs:attribute name="RCRS" type="ecl:CL_ECBSDD_RCRSE_ANCRDT_CLLCTN"/>
+				<xs:attribute name="RFRNC_RT" type="ecl:CL_ECBSDD_RFRNC_RT_ANCRDT_CLLCTN"/>
+				<xs:attribute name="DT_STTLMNT" type="SDDcommonTypes:ECBSDD_FLL_YYYY_MM_DD"/>
+				<xs:attribute name="SBRDNTD_DBT" type="ecl:CL_ECBSDD_SBRDNTD_DBT_ANCRDT_CLLCTN"/>
+				<xs:attribute name="SYNDCTD_CNTRCT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID"/>
+				<xs:attribute name="RPYMNT_RGHTS" type="ecl:CL_ECBSDD_RPYMNT_RGHTS_ANCRDT_CLLCTN"/>
+				<xs:attribute name="FV_CHNG_CR_BFR_PRCHS" type="SDDcommonTypes:ECBSDD_NN_NGTV_2D"/>
+				<xs:attribute name="type" type="common:IDType" use="prohibited"/>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="BBK_ANCRDT_INSTRMNT_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:DataSetType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+					<xs:element name="DataProvider" type="common:DataProviderReferenceType" form="unqualified" minOccurs="0"/>
+					<xs:choice minOccurs="1">
+						<xs:element name="Obs" type="ObsBBK_ANCRDT_INSTRMNT_C" form="unqualified" maxOccurs="unbounded"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="ObsBBK_ANCRDT_JNT_LBLTS_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:ObsType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="ENTTY_CD" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="ENTTY_CD_TYP" type="bcl:CL_BBK_ANCRDT_TYP_ENTTY_CD" use="required"/>
+				<xs:attribute name="CNTRCT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="INSTRMNT_ID" type="SDDcommonTypes:ECBSDD_RSTRCTD_ID" use="required"/>
+				<xs:attribute name="JNT_LBLTY_AMNT" type="SDDcommonTypes:ECBSDD_NN_NGTV_2D"/>
+				<xs:attribute name="type" type="common:IDType" use="prohibited"/>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--- ENTWURF-->
+	<xs:complexType name="BBK_ANCRDT_JNT_LBLTS_C">
+		<xs:complexContent>
+			<xs:restriction base="dsd:DataSetType">
+				<xs:sequence>
+					<xs:element ref="common:Annotations" minOccurs="0"/>
+					<xs:element name="DataProvider" type="common:DataProviderReferenceType" form="unqualified" minOccurs="0"/>
+					<xs:choice minOccurs="1">
+						<xs:element name="Obs" type="ObsBBK_ANCRDT_JNT_LBLTS_C" form="unqualified" maxOccurs="unbounded"/>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="REPORTING_YEAR_START_DAY" type="xs:gMonthDay" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
