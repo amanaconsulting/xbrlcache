@@ -101,6 +101,7 @@ A single repository with all XBRL taxonomy files
 ### Finanzmarktaufsicht Liechtenstein (FMA)
 
 * Statutory Taxonomy
+* Statutory Taxonomy 1.2
 
 ### FRC
 
