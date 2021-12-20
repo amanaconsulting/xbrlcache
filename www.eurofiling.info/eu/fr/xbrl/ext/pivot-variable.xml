@@ -1,5 +1,5 @@
-<!--
-(C) Eurofiling Foundation p.f.
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
 Version History
 1.0.0 original version from Banco de España. Reservados todos los derechos
 1.0.1 2017-11-19 includes version numbering and commenting, fixed schemalocation for aspect-cover
@@ -8,23 +8,39 @@ Version History
 1.1.2 2021-09-07 added schemalocations (thanks Bartosz)
 -->
 <?version 1.1.2?>
-<link:linkbase xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2010/filter/aspect-cover http://www.xbrl.org/2010/aspect-cover-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd">
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"/>
-	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-		<variable:factVariable xlink:type="resource" xlink:label="pivot-var" bindAsSequence="true" matches="true" id="pivot-var"/>
-		<cf:conceptName xlink:type="resource" xlink:label="fi-filter" id="fi-filter">
-			<cf:concept>
-				<cf:qname>find:fIndicators</cf:qname>
-			</cf:concept>
-			<cf:concept>
-				<cf:qname>fi:filed</cf:qname>
-			</cf:concept>
-		</cf:conceptName>
-		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="pivot-var" xlink:to="fi-filter" cover="true" complement="false" order="1"/>
-			<acf:aspectCover xlink:type="resource" xlink:label="all-cover-filter">
-				<acf:aspect>all</acf:aspect>
-			</acf:aspectCover>
-		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="pivot-var" xlink:to="all-cover-filter" cover="true" complement="false" order="2"/>
-	</gen:link>
+<link:linkbase 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:link="http://www.xbrl.org/2003/linkbase" 
+  xmlns:gen="http://xbrl.org/2008/generic" 
+  xmlns:variable="http://xbrl.org/2008/variable"
+  xmlns:tf="http://xbrl.org/2008/filter/tuple"
+  xmlns:acf="http://xbrl.org/2010/filter/aspect-cover"  
+  xmlns:find="http://www.eurofiling.info/xbrl/ext/filing-indicators" 
+  xmlns:fi="http://www.xbrl.org/taxonomy/int/filing-indicators/REC/2021-02-03"  
+  xmlns:xfi="http://www.xbrl.org/2008/function/instance" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:bf="http://xbrl.org/2008/filter/boolean"
+  xmlns:cf="http://xbrl.org/2008/filter/concept"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2010/filter/aspect-cover http://www.xbrl.org/2010/aspect-cover-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd">
+  
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <variable:factVariable xlink:type="resource" xlink:label="pivot-var" bindAsSequence="true" matches="true" id="pivot-var" />
+	<cf:conceptName xlink:type="resource" xlink:label="fi-filter" id="fi-filter">
+      <cf:concept>
+        <cf:qname>find:fIndicators</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>fi:filed</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="pivot-var" xlink:to="fi-filter" cover="true" complement="false" order="1"/>
+        <acf:aspectCover xlink:type="resource" xlink:label="all-cover-filter">
+      <acf:aspect>all</acf:aspect>
+    </acf:aspectCover>
+	<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="pivot-var" xlink:to="all-cover-filter" cover="true" complement="false" order="2"/>    
+  </gen:link>
 </link:linkbase>
