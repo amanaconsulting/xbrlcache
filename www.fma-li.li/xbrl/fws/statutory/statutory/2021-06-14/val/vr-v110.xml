@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--(C) FMA-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:iaf="http://www.eurofiling.info/xbrl/func/interval-arithmetics" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:fma_dim="https://www.fma-li.li/xbrl/dict/dim" xmlns:fma_EA="https://www.fma-li.li/xbrl/dict/dom/EA" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:variable="http://xbrl.org/2008/variable" xmlns:fma_met="https://www.fma-li.li/xbrl/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:fma_LA="https://www.fma-li.li/xbrl/dict/dom/LA" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="fma_v110" test="iaf:numeric-equal(iaf:sum(($d, $a, $b)), $c)" aspectModel="dimensional" implicitFiltering="true" id="fma_v110" />
+    <df:explicitDimension xlink:type="resource" xlink:label="fma_v110.f13" id="fma_v110.f13">
+      <df:dimension>
+        <df:qname>fma_dim:EAR</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>fma_EA:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="fma_v110" xlink:to="fma_v110.f13" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="fma_v110.f10" id="fma_v110.f10">
+      <df:dimension>
+        <df:qname>fma_dim:COU</df:qname>
+      </df:dimension>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="fma_v110" xlink:to="fma_v110.f10" complement="true" order="2" />
+    <cf:conceptName xlink:type="resource" xlink:label="fma_v110.f9" id="fma_v110.f9">
+      <cf:concept>
+        <cf:qname>fma_met:mi44</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="fma_v110" xlink:to="fma_v110.f9" complement="false" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="fma_v110.a" bindAsSequence="false" fallbackValue="0" id="fma_v110.a" />
+    <df:explicitDimension xlink:type="resource" xlink:label="fma_v110.a.f12" id="fma_v110.a.f12">
+      <df:dimension>
+        <df:qname>fma_dim:LVA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>fma_LA:x2</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fma_v110.a" xlink:to="fma_v110.a.f12" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fma_v110" xlink:to="fma_v110.a" name="a" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="fma_v110.b" bindAsSequence="false" fallbackValue="0" id="fma_v110.b" />
+    <df:explicitDimension xlink:type="resource" xlink:label="fma_v110.b.f6" id="fma_v110.b.f6">
+      <df:dimension>
+        <df:qname>fma_dim:LVA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>fma_LA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fma_v110.b" xlink:to="fma_v110.b.f6" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fma_v110" xlink:to="fma_v110.b" name="b" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="fma_v110.c" bindAsSequence="false" fallbackValue="0" id="fma_v110.c" />
+    <df:explicitDimension xlink:type="resource" xlink:label="fma_v110.c.f11" id="fma_v110.c.f11">
+      <df:dimension>
+        <df:qname>fma_dim:LVA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>fma_LA:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fma_v110.c" xlink:to="fma_v110.c.f11" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fma_v110" xlink:to="fma_v110.c" name="c" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="fma_v110.d" bindAsSequence="false" fallbackValue="0" id="fma_v110.d" />
+    <df:explicitDimension xlink:type="resource" xlink:label="fma_v110.d.f14" id="fma_v110.d.f14">
+      <df:dimension>
+        <df:qname>fma_dim:LVA</df:qname>
+      </df:dimension>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fma_v110.d" xlink:to="fma_v110.d.f14" cover="true" complement="true" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="fma_v110" xlink:to="fma_v110.d" name="d" order="4" />
+  </gen:link>
+</link:linkbase>
