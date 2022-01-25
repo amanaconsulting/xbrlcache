@@ -39,6 +39,7 @@ A single repository with all XBRL taxonomy files
 * Bundesbank FinaRisikoV 1.1
 * Bundesbank FinaRisikoV 1.2
 * Bundesbank FinaRisikoV 2.0 (incl. backwards compatible data dictionary)
+* Bundesbank FinaRisikoV 2.1
 
 ### EBA
 
@@ -101,7 +102,9 @@ A single repository with all XBRL taxonomy files
 
 ### Finanzmarktaufsicht Liechtenstein (FMA)
 
-* Statutory Taxonomy
+* VVE Taxonomy 1.0
+* VVE Taxonomy 1.1
+* VVE Taxonomy 1.2
 
 ### FRC
 
