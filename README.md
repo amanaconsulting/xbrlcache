@@ -181,6 +181,7 @@ A single repository with all XBRL taxonomy files
 ### DCCA Danish GAAP
 
 * Danish GAAP 2020
+* Danish GAAP 2021
 
 ### Banco de España
 * Taxonomía Tasas de descuento y de intercambio percibidas (es-be-tid) 2015-11-26
