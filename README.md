@@ -189,3 +189,4 @@ A single repository with all XBRL taxonomy files
 
 ### Bank of England
 * Bank of England XBRL Taxonomy Version 3.2.1
+* Bank of England XBRL Taxonomy Version 3.5.0
