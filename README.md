@@ -186,3 +186,6 @@ A single repository with all XBRL taxonomy files
 ### Banco de España
 * Taxonomía Tasas de descuento y de intercambio percibidas (es-be-tid) 2015-11-26
 * Banco de España 2021
+
+### Bank of England
+* Bank of England XBRL Taxonomy Version 3.2.1
