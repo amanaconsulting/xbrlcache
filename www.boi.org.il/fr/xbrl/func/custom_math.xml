@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+	xmlns:gen="http://xbrl.org/2008/generic" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cfi="http://xbrl.org/2010/custom-function"
+	xmlns:cust_math="http://www.boi.org.il/xbrl/func/custom_math"
+	xmlns:variable="http://xbrl.org/2008/variable"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+	xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+	
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+	
+	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+		<variable:function xlink:type="resource" xlink:label="exp" name="cust_math:exp" output="item()">
+			<variable:input type="item()"/>
+			<variable:input type="xs:integer"/>
+			<variable:input type="xs:integer"/>
+		</variable:function>  
+		
+		<cfi:implementation xlink:type="resource" xlink:label="impl_exp">
+			<cfi:input name="base"/>
+			<cfi:input name="exp_numerator"/>
+			<cfi:input name="exp_denominator"/>
+			<cfi:step name="exponent">$exp_numerator div $exp_denominator</cfi:step>
+			<cfi:output>if ($exponent eq 0) 
+											then 1 
+											else 
+												if ($exponent gt 0) 
+													then $base * cust_math:exp($base, $exponent - 1, 1)
+													else 1 div cust_math:exp($base, abs($exponent), 1)</cfi:output>
+		</cfi:implementation>
+		
+		<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="exp" xlink:to="impl_exp"/>
+
+	</gen:link>
+
+</link:linkbase>

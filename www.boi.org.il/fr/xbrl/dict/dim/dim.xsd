@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.boi.org.il/xbrl/dict/dim"
+    xmlns:boi_dim="http://www.boi.org.il/xbrl/dict/dim"
+    xmlns:link="http://www.xbrl.org/2003/linkbase"
+    xmlns:model="http://www.eurofiling.info/xbrl/ext/model"
+    xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+    xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd http://www.eurofiling.info/xbrl/ext/model http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd http://www.xbrl.org/2003/instance http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd http://xbrl.org/2005/xbrldt http://www.xbrl.org/2005/xbrldt-2005.xsd">
+    <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <xs:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+    <xs:import namespace="http://www.eurofiling.info/xbrl/ext/model" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/exp" schemaLocation="../dom/exp.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/PL" schemaLocation="../dom/pl/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/RP" schemaLocation="../dom/rp/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/PU" schemaLocation="../dom/pu/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/RT" schemaLocation="../dom/rt/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/CS" schemaLocation="../dom/cs/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/CU" schemaLocation="../dom/cu/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/EC" schemaLocation="../dom/ec/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/TT" schemaLocation="../dom/tt/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/PI" schemaLocation="../dom/pi/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/EF" schemaLocation="../dom/ef/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/TI" schemaLocation="../dom/ti/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/CC" schemaLocation="../dom/cc/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/CN" schemaLocation="../dom/cn/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/NE" schemaLocation="../dom/ne/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/AP" schemaLocation="../dom/ap/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/CL" schemaLocation="../dom/cl/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/IP" schemaLocation="../dom/ip/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/ST" schemaLocation="../dom/st/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/VI" schemaLocation="../dom/vi/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/SE" schemaLocation="../dom/se/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/FN" schemaLocation="../dom/fn/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/GA" schemaLocation="../dom/ga/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/MC" schemaLocation="../dom/mc/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/typ" schemaLocation="../dom/typ.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/BC" schemaLocation="../dom/bc/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/BI" schemaLocation="../dom/bi/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/BA" schemaLocation="../dom/ba/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/GD" schemaLocation="../dom/gd/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/MU" schemaLocation="../dom/mu/mem.xsd"/>
+    <xs:import namespace="http://www.boi.org.il/xbrl/dict/dom/CB" schemaLocation="../dom/cb/mem.xsd"/>
+    <xs:annotation>
+        <xs:appinfo>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="dim-lab-he.xml"
+                xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="dim-lab-en.xml"
+                xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="dim-def.xml"
+                xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple"/>
+        </xs:appinfo>
+    </xs:annotation>
+    <xs:element abstract="true" id="boi_PLA"
+        model:creationDate="2015-04-21" name="PLA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLC"
+        model:creationDate="2015-04-21" name="PLC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLP"
+        model:creationDate="2015-04-21" name="PLP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLB"
+        model:creationDate="2015-04-21" name="PLB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLF"
+        model:creationDate="2015-04-21" name="PLF" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLV"
+        model:creationDate="2015-04-21" name="PLV" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLM"
+        model:creationDate="2015-04-21" name="PLM" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_RPP"
+        model:creationDate="2015-04-21" name="RPP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_RPC"
+        model:creationDate="2015-04-21" name="RPC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_RPH"
+        model:creationDate="2015-04-21" name="RPH" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PUD"
+        model:creationDate="2015-04-19" name="PUD" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PUL"
+        model:creationDate="2015-04-19" name="PUL" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PUS"
+        model:creationDate="2015-04-19" name="PUS" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_RTT"
+        model:creationDate="2015-04-19" name="RTT" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_RTA"
+        model:creationDate="2015-04-19" name="RTA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CSC"
+        model:creationDate="2015-04-19" name="CSC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CUO"
+        model:creationDate="2015-04-19" name="CUO" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CUI"
+        model:creationDate="2015-04-19" name="CUI" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CUD"
+        model:creationDate="2015-04-19" name="CUD" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CUR"
+        model:creationDate="2015-04-19" name="CUR" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CUG"
+        model:creationDate="2015-04-19" name="CUG" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_ECC"
+        model:creationDate="2015-04-19" name="ECC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TTR"
+        model:creationDate="2015-04-19" name="TTR" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TTI"
+        model:creationDate="2015-04-19" name="TTI" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TTM"
+        model:creationDate="2015-04-19" name="TTM" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TTC"
+        model:creationDate="2015-04-19" name="TTC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PIV"
+        model:creationDate="2015-04-19" name="PIV" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PII"
+        model:creationDate="2015-04-19" name="PII" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PIC"
+        model:creationDate="2015-04-19" name="PIC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PIR"
+        model:creationDate="2015-04-19" name="PIR" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PIA"
+        model:creationDate="2015-04-19" name="PIA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PIP"
+        model:creationDate="2015-04-19" name="PIP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PIF"
+        model:creationDate="2015-04-19" name="PIF" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_EFD"
+        model:creationDate="2015-04-19" name="EFD" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_EFC"
+        model:creationDate="2015-04-19" name="EFC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TIO"
+        model:creationDate="2015-04-19" name="TIO" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TIP"
+        model:creationDate="2015-04-19" name="TIP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TIR"
+        model:creationDate="2015-04-19" name="TIR" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TII"
+        model:creationDate="2015-04-19" name="TII" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TIU"
+        model:creationDate="2015-04-19" name="TIU" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TIT"
+        model:creationDate="2015-04-19" name="TIT" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CCT"
+        model:creationDate="2015-04-22" name="CCT" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CCB"
+        model:creationDate="2015-04-22" name="CCB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CCA"
+        model:creationDate="2015-04-22" name="CCA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CNN"
+        model:creationDate="2015-04-22" name="CNN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_NEA"
+        model:creationDate="2015-04-22" name="NEA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_APP"
+        model:creationDate="2015-04-23" name="APP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CLG"
+        model:creationDate="2015-04-21" name="CLG" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CLY"
+        model:creationDate="2015-04-21" name="CLY" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CLB"
+        model:creationDate="2015-04-21" name="CLB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_IPR"
+        model:creationDate="2015-04-21" name="IPR" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_IPE"
+        model:creationDate="2015-04-21" name="IPE" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_IPI"
+        model:creationDate="2015-04-21" name="IPI" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STL"
+        model:creationDate="2015-04-21" name="STL" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STA"
+        model:creationDate="2015-04-21" name="STA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STI"
+        model:creationDate="2015-04-21" name="STI" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STE"
+        model:creationDate="2015-04-21" name="STE" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STN"
+        model:creationDate="2015-04-21" name="STN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STB"
+        model:creationDate="2015-04-21" name="STB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STC"
+        model:creationDate="2015-04-21" name="STC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STU"
+        model:creationDate="2015-04-21" name="STU" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_VIA"
+        model:creationDate="2015-04-21" name="VIA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_VIP"
+        model:creationDate="2015-04-21" name="VIP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_VIT"
+        model:creationDate="2015-04-21" name="VIT" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_VIN"
+        model:creationDate="2015-04-21" name="VIN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SED"
+        model:creationDate="2015-04-22" name="SED" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEC"
+        model:creationDate="2015-04-22" name="SEC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEL"
+        model:creationDate="2015-04-22" name="SEL" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SET"
+        model:creationDate="2015-04-22" name="SET" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEP"
+        model:creationDate="2015-04-22" name="SEP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEF"
+        model:creationDate="2015-04-22" name="SEF" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEB"
+        model:creationDate="2015-04-22" name="SEB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEE"
+        model:creationDate="2015-04-22" name="SEE" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEO"
+        model:creationDate="2015-04-22" name="SEO" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEI"
+        model:creationDate="2015-04-22" name="SEI" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SES"
+        model:creationDate="2015-04-22" name="SES" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SEV"
+        model:creationDate="2015-04-22" name="SEV" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_SER"
+        model:creationDate="2015-04-22" name="SER" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_FNN"
+        model:creationDate="2015-04-23" name="FNN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GAC"
+        model:creationDate="2015-04-24" name="GAC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GAA"
+        model:creationDate="2015-04-24" name="GAA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GAT"
+        model:creationDate="2015-04-24" name="GAT" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GAI"
+        model:creationDate="2015-04-24" name="GAI" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GAB"
+        model:creationDate="2015-04-24" name="GAB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GAM"
+        model:creationDate="2015-04-24" name="GAM" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GAU"
+        model:creationDate="2015-04-24" name="GAU" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GAL"
+        model:creationDate="2015-04-24" name="GAL" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCC"
+        model:creationDate="2015-04-23" name="MCC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCG"
+        model:creationDate="2015-04-23" name="MCG" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCO"
+        model:creationDate="2015-04-23" name="MCO" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCR"
+        model:creationDate="2015-04-23" name="MCR" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCA"
+        model:creationDate="2015-04-23" name="MCA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCS"
+        model:creationDate="2015-04-23" name="MCS" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCI"
+        model:creationDate="2015-04-23" name="MCI" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCT"
+        model:creationDate="2015-04-23" name="MCT" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDA"
+        model:creationDate="2015-04-24" name="TDA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDB"
+        model:creationDate="2015-04-24" name="TDB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TCA"
+        model:creationDate="2015-04-27" name="TCA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TCB"
+        model:creationDate="2015-04-27" name="TCB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TCC"
+        model:creationDate="2015-04-27" name="TCC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TCD"
+        model:creationDate="2015-04-27" name="TCD" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDC"
+        model:creationDate="2015-04-27" name="TDC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDD"
+        model:creationDate="2015-04-27" name="TDD" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDE"
+        model:creationDate="2015-04-27" name="TDE" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDF"
+        model:creationDate="2015-04-27" name="TDF" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDG"
+        model:creationDate="2015-04-27" name="TDG" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDH"
+        model:creationDate="2015-04-27" name="TDH" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDI"
+        model:creationDate="2015-04-27" name="TDI" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDJ"
+        model:creationDate="2015-04-27" name="TDJ" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDK"
+        model:creationDate="2015-04-27" name="TDK" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDL"
+        model:creationDate="2015-04-27" name="TDL" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDM"
+        model:creationDate="2015-04-27" name="TDM" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDN"
+        model:creationDate="2015-04-27" name="TDN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDO"
+        model:creationDate="2015-04-27" name="TDO" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDP"
+        model:creationDate="2015-04-27" name="TDP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDQ"
+        model:creationDate="2015-04-27" name="TDQ" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDR"
+        model:creationDate="2015-04-27" name="TDR" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDS"
+        model:creationDate="2015-04-27" name="TDS" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDT"
+        model:creationDate="2015-04-27" name="TDT" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDU"
+        model:creationDate="2015-04-27" name="TDU" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDV"
+        model:creationDate="2015-04-27" name="TDV" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDW"
+        model:creationDate="2015-04-27" name="TDW" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDX"
+        model:creationDate="2015-04-27" name="TDX" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_BCC"
+        model:creationDate="2015-04-27" name="BCC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDY"
+        model:creationDate="2015-05-11" name="TDY" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CLC"
+        model:creationDate="2015-05-12" name="CLC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CUV"
+        model:creationDate="2015-07-15" name="CUV" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_BIC"
+        model:creationDate="2015-10-30" name="BIC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_BAO"
+        model:creationDate="2016-01-26" name="BAO" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TDZ"
+        model:creationDate="2016-01-28" name="TDZ" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MCP"
+        model:creationDate="2016-03-07" model:fromDate="2015-01-01"
+        name="MCP" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PIE"
+        model:creationDate="2016-03-07" model:fromDate="2015-01-01"
+        name="PIE" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STF"
+        model:creationDate="2016-03-07" model:fromDate="2015-01-01"
+        name="STF" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STG"
+        model:creationDate="2016-03-07" model:fromDate="2015-01-01"
+        name="STG" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STV"
+        model:creationDate="2016-03-07" name="STV" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLS"
+        model:creationDate="2016-06-01" model:fromDate="2016-06-30"
+        name="PLS" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STD"
+        model:creationDate="2016-06-16" model:fromDate="2016-06-30"
+        name="STD" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_VII"
+        model:creationDate="2016-06-16" model:fromDate="2016-06-30"
+        name="VII" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_VIF"
+        model:creationDate="2016-06-17" model:fromDate="2016-06-30"
+        name="VIF" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TCO"
+        model:creationDate="2016-06-24" name="TCO" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TTB"
+        model:creationDate="2016-06-28" model:fromDate="2016-06-30"
+        name="TTB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TFN"
+        model:creationDate="2016-11-14" model:fromDate="2016-12-31"
+        name="TFN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TSN"
+        model:creationDate="2016-11-14" model:fromDate="2016-12-31"
+        name="TSN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TBN"
+        model:creationDate="2016-11-14" model:fromDate="2016-12-31"
+        name="TBN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TXD"
+        model:creationDate="2016-11-18" name="TXD" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TXC"
+        model:creationDate="2016-11-18" name="TXC" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STH"
+        model:creationDate="2016-11-18" model:fromDate="2016-04-30"
+        name="STH" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TTL"
+        model:creationDate="2016-12-19" name="TTL" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_GDB"
+        model:creationDate="2016-12-23" model:fromDate="2017-01-01"
+        name="GDB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_MUU"
+        model:creationDate="2017-03-23" name="MUU" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TST"
+        model:creationDate="2017-12-31" model:fromDate="2017-12-31"
+        name="TST" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TXE"
+        model:creationDate="2017-12-12" name="TXE" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_EFF"
+        model:creationDate="2018-03-09" name="EFF" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TXB"
+        model:creationDate="2018-06-07" name="TXB" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TCE"
+        model:creationDate="2018-12-14" model:fromDate="2018-12-31"
+        name="TCE" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TCG"
+        model:creationDate="2018-12-14" model:fromDate="2018-12-31"
+        name="TCG" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_CBQ"
+        model:creationDate="2019-02-26" model:fromDate="2019-03-31"
+        name="CBQ" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_RTD"
+        model:creationDate="2020-03-31" model:fromDate="2020-03-31"
+        name="RTD" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLO"
+        model:creationDate="2020-09-30" model:fromDate="2020-09-30"
+        name="PLO" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TID"
+        model:creationDate="2020-09-30" model:fromDate="2020-09-30"
+        name="TID" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TIE"
+        model:creationDate="2020-09-30" model:fromDate="2020-09-30"
+        name="TIE" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TXF"
+        model:creationDate="2020-12-31" model:fromDate="2020-12-31"
+        name="TXF" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PIM"
+        model:creationDate="2021-01-31" model:fromDate="2021-01-31"
+        name="PIM" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLZ"
+        model:creationDate="2021-05-31" model:fromDate="2021-05-31"
+        name="PLZ" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TIA"
+        model:creationDate="2021-06-30" model:fromDate="2021-06-30"
+        name="TIA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_PLN"
+        model:creationDate="2021-12-31" model:fromDate="2021-12-31"
+        name="PLN" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_STJ"
+        model:creationDate="2021-12-31" model:fromDate="2021-12-31"
+        name="STJ" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TTA"
+        model:creationDate="2021-12-31" model:fromDate="2021-12-31"
+        name="TTA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TD" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TBS"
+        model:creationDate="2015-04-27" name="TBS" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+    <xs:element abstract="true" id="boi_TFA"
+        model:creationDate="2016-11-14" name="TFA" nillable="true"
+        substitutionGroup="xbrldt:dimensionItem"
+        type="xbrli:stringItemType"
+        xbrldt:typedDomainRef="../dom/typ.xsd#boi_TX" xbrli:periodType="instant"/>
+</xs:schema>
