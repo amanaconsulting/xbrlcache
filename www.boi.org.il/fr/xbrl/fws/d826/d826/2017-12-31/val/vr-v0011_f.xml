@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Bank of Israel-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:boi_dim="http://www.boi.org.il/xbrl/dict/dim" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:variable="http://xbrl.org/2008/variable" xmlns:acf="http://xbrl.org/2010/filter/aspect-cover" xmlns:boi_met="http://www.boi.org.il/xbrl/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/filter/aspect-cover http://www.xbrl.org/2010/aspect-cover-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="boi_v0011_f" test="not(empty($a))" aspectModel="dimensional" implicitFiltering="true" id="boi_v0011_f" />
+    <df:typedDimension xlink:type="resource" xlink:label="boi_v0011_f.f2" id="boi_v0011_f.f2">
+      <df:dimension>
+        <df:qname>boi_dim:TCO</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="boi_v0011_f" xlink:to="boi_v0011_f.f2" complement="false" order="1" />
+    <df:typedDimension xlink:type="resource" xlink:label="boi_v0011_f.f3" id="boi_v0011_f.f3">
+      <df:dimension>
+        <df:qname>boi_dim:TDX</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="boi_v0011_f" xlink:to="boi_v0011_f.f3" complement="false" order="2" />
+    <acf:aspectCover xlink:type="resource" xlink:label="unitFilter" id="unitFilter">
+      <acf:aspect>unit</acf:aspect>
+    </acf:aspectCover>
+    <variable:factVariable xlink:type="resource" xlink:label="boi_v0011_f.a" bindAsSequence="false" fallbackValue="()" id="boi_v0011_f.a" />
+    <cf:conceptName xlink:type="resource" xlink:label="boi_v0011_f.a.f6" id="boi_v0011_f.a.f6">
+      <cf:concept>
+        <cf:qname>boi_met:ei926</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v0011_f.a" xlink:to="boi_v0011_f.a.f6" cover="true" complement="false" order="1" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v0011_f.a" xlink:to="unitFilter" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="boi_v0011_f" xlink:to="boi_v0011_f.a" name="a" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="boi_v0011_f.b" bindAsSequence="true" fallbackValue="()" id="boi_v0011_f.b" />
+    <cf:conceptName xlink:type="resource" xlink:label="boi_v0011_f.b.f5" id="boi_v0011_f.b.f5">
+      <cf:concept>
+        <cf:qname>boi_met:di929</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:di930</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:ei923</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:ei924</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:ei1197</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:ei926</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:ei927</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:mi931</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:ei922</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:ei928</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>boi_met:ei932</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v0011_f.b" xlink:to="boi_v0011_f.b.f5" cover="true" complement="false" order="1" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v0011_f.b" xlink:to="unitFilter" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="boi_v0011_f" xlink:to="boi_v0011_f.b" name="b" order="2" />
+  </gen:link>
+</link:linkbase>

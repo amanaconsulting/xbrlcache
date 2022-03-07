@@ -190,3 +190,6 @@ A single repository with all XBRL taxonomy files
 ### Bank of England
 * Bank of England XBRL Taxonomy Version 3.2.1
 * Bank of England XBRL Taxonomy Version 3.5.0
+
+###Bank of Israel Financial Reporting Taxonomy
+* 7.0 (2018-06-30)

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Bank of Israel-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:boi_met="http://www.boi.org.il/xbrl/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:boi_dim="http://www.boi.org.il/xbrl/dict/dim" xmlns:boi_BC="http://www.boi.org.il/xbrl/dict/dom/BC" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:boi_CS="http://www.boi.org.il/xbrl/dict/dom/CS" xmlns:boi_GA="http://www.boi.org.il/xbrl/dict/dom/GA" xmlns:boi_MC="http://www.boi.org.il/xbrl/dict/dom/MC" xmlns:boi_SE="http://www.boi.org.il/xbrl/dict/dom/SE" xmlns:boi_ST="http://www.boi.org.il/xbrl/dict/dom/ST" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="boi_v2011_f" test="if (contains(string($a), &quot;.&quot;)) then (string-length(substring-after(string($a), &quot;.&quot;)) &lt;= 2) else true()" aspectModel="dimensional" implicitFiltering="true" id="boi_v2011_f" />
+    <variable:factVariable xlink:type="resource" xlink:label="boi_v2011_f.a" bindAsSequence="false" fallbackValue="0" id="boi_v2011_f.a" />
+    <cf:conceptName xlink:type="resource" xlink:label="boi_v2011_f.a.f1" id="boi_v2011_f.a.f1">
+      <cf:concept>
+        <cf:qname>boi_met:mi2</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v2011_f.a" xlink:to="boi_v2011_f.a.f1" cover="true" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="boi_v2011_f.a.f2" id="boi_v2011_f.a.f2">
+      <df:dimension>
+        <df:qname>boi_dim:BCC</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>boi_BC:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v2011_f.a" xlink:to="boi_v2011_f.a.f2" cover="true" complement="false" order="2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="boi_v2011_f.a.f3" id="boi_v2011_f.a.f3">
+      <df:dimension>
+        <df:qname>boi_dim:CSC</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>boi_CS:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v2011_f.a" xlink:to="boi_v2011_f.a.f3" cover="true" complement="false" order="3" />
+    <df:explicitDimension xlink:type="resource" xlink:label="boi_v2011_f.a.f4" id="boi_v2011_f.a.f4">
+      <df:dimension>
+        <df:qname>boi_dim:GAA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>boi_GA:x1</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v2011_f.a" xlink:to="boi_v2011_f.a.f4" cover="true" complement="false" order="4" />
+    <df:explicitDimension xlink:type="resource" xlink:label="boi_v2011_f.a.f5" id="boi_v2011_f.a.f5">
+      <df:dimension>
+        <df:qname>boi_dim:MCC</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>boi_MC:x8</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v2011_f.a" xlink:to="boi_v2011_f.a.f5" cover="true" complement="false" order="5" />
+    <df:explicitDimension xlink:type="resource" xlink:label="boi_v2011_f.a.f6" id="boi_v2011_f.a.f6">
+      <df:dimension>
+        <df:qname>boi_dim:SEC</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>boi_SE:x16</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v2011_f.a" xlink:to="boi_v2011_f.a.f6" cover="true" complement="false" order="6" />
+    <df:explicitDimension xlink:type="resource" xlink:label="boi_v2011_f.a.f7" id="boi_v2011_f.a.f7">
+      <df:dimension>
+        <df:qname>boi_dim:STL</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>boi_ST:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v2011_f.a" xlink:to="boi_v2011_f.a.f7" cover="true" complement="false" order="7" />
+    <df:typedDimension xlink:type="resource" xlink:label="boi_v2011_f.a.f8" id="boi_v2011_f.a.f8">
+      <df:dimension>
+        <df:qname>boi_dim:TDX</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="boi_v2011_f.a" xlink:to="boi_v2011_f.a.f8" cover="true" complement="false" order="8" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="boi_v2011_f" xlink:to="boi_v2011_f.a" name="a" order="1" />
+  </gen:link>
+</link:linkbase>
