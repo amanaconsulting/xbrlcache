@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?taxonomy-version 7.0.2 ?>
+<?taxonomy-dictionary-version 2020.06.24 ?>
+<!--(c) Single Resolution Board-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:srb_met="http://www.srb.europa.eu/xbrl/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd">
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"/>
+	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<va:valueAssertion xlink:type="resource" xlink:label="srb_srf_v0078" test="xs:date($a) &gt;= xs:date(string-join((string(year-from-date($refPeriodEndDate) - 2),'-06-30'),'')) and xs:date($a) &lt;= xs:date(string-join((string(year-from-date($refPeriodEndDate) - 1),'-12-30'),''))" aspectModel="dimensional" implicitFiltering="true" id="srb_srf_v0078"/>
+		<variable:precondition xlink:type="resource" xlink:label="srb_srf_v0078.p1" test="empty($b)" id="srb_srf_v0078.p1"/>
+		<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:from="srb_srf_v0078" xlink:to="srb_srf_v0078.p1" order="1"/>
+		<variable:factVariable xlink:type="resource" xlink:label="srb_srf_v0078.a" bindAsSequence="false" fallbackValue="0" id="srb_srf_v0078.a"/>
+		<cf:conceptName xlink:type="resource" xlink:label="srb_srf_v0078.a.f1" id="srb_srf_v0078.a.f1">
+			<cf:concept>
+				<cf:qname>srb_met:di14</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="srb_srf_v0078.a" xlink:to="srb_srf_v0078.a.f1" cover="true" complement="false" order="1"/>
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="srb_srf_v0078" xlink:to="srb_srf_v0078.a" name="a" order="1"/>
+		<variable:factVariable xlink:type="resource" xlink:label="srb_srf_v0078.b" bindAsSequence="false" fallbackValue="()" id="srb_srf_v0078.b"/>
+		<cf:conceptName xlink:type="resource" xlink:label="srb_srf_v0078.b.f14" id="srb_srf_v0078.b.f14">
+			<cf:concept>
+				<cf:qname>srb_met:di13</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="srb_srf_v0078.b" xlink:to="srb_srf_v0078.b.f14" cover="true" complement="false" order="1"/>
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="srb_srf_v0078" xlink:to="srb_srf_v0078.b" name="b" order="2"/>
+		<link:loc xlink:href="http://www.xbrl.org/2016/severities.xml#ERROR" xlink:type="locator" xlink:label="severity"/><gen:arc xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:type="arc" xlink:from="srb_srf_v0078" xlink:to="severity"/></gen:link>
+	<link:arcroleRef xlink:type="simple" arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity"/></link:linkbase>
