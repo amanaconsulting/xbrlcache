@@ -1,0 +1,70 @@
+{
+    "dimensions": {
+        "entity": "$entityID",
+        "language": "$baseLanguage",
+        "period": "$refPeriod@end"
+    },
+    "documentInfo": {
+        "documentType": "https://xbrl.org/CR/2021-02-03/xbrl-csv",
+        "extends": [
+            "http://www.eba.europa.eu/eu/fr/xbrl/ext/2020/FilingIndicators.json",
+            "http://www.eba.europa.eu/eu/fr/xbrl/ext/2020/FootNotes.json",
+            "../tab/i_10.01/i_10.01.json",
+            "../tab/i_10.02/i_10.02.json"
+        ],
+        "features": {
+            "xbrl:allowedDuplicates": "complete"
+        },
+        "final": {
+            "dimensions": true,
+            "linkGroups": true,
+            "linkTypes": true,
+            "namespaces": true,
+            "parameters": true,
+            "tableTemplates": true,
+            "tables": true,
+            "taxonomy": true
+        },
+        "linkGroups": {
+            "disclosure": "http://www.eba.europa.eu/role/disclosure"
+        },
+        "linkTypes": {
+            "footnote": "http://www.xbrl.org/2003/arcrole/fact-footnote"
+        },
+        "namespaces": {
+            "eba": "http://www.eba.europa.eu",
+            "iso4217": "http://www.xbrl.org/2003/iso4217",
+            "lei": "http://standards.iso.org/iso/17442",
+            "rs": "https://eba.europa.eu/eu/rs",
+            "xbrl": "https://xbrl.org/CR/2021-02-03"
+        },
+        "taxonomy": [
+            "http://www.eba.europa.eu/eu/fr/xbrl/crr/fws/if/its-002-2021/2022-03-01/mod/if_tm.xsd"
+        ]
+    },
+    "parameterURL": "parameters.csv",
+    "parameters": {
+        "baseLanguage": "en"
+    },
+    "tables": {
+        "tFI": {
+            "template": "FilingIndicators",
+            "url": "FilingIndicators.csv"
+        },
+        "tFootNotes": {
+            "optional": true,
+            "template": "FootNotes",
+            "url": "FootNotes.csv"
+        },
+        "tI_10-01": {
+            "optional": true,
+            "template": "I_10-01",
+            "url": "i_10.01.csv"
+        },
+        "tI_10-02": {
+            "optional": true,
+            "template": "I_10-02",
+            "url": "i_10.02.csv"
+        }
+    }
+}
