@@ -109,9 +109,11 @@ A single repository with all XBRL taxonomy files
 
 ### FRC
 
-* 2019 Taxonomy suite Version 1.1.0
+* 2019 Taxonomy suite version 1.1.0
 * 2021 SECR Taxonomy 
-* 2021 UKSEF 1.0
+* UKSEF 2021
+* 2022 Taxonomy suite version 1.0.0
+* UKSEF 2022 2.0.0
 
 ### xbrl.de (HGB)
 
@@ -193,5 +195,5 @@ A single repository with all XBRL taxonomy files
 * Bank of England XBRL Taxonomy Version 3.2.1
 * Bank of England XBRL Taxonomy Version 3.5.0
 
-###Bank of Israel Financial Reporting Taxonomy
+### Bank of Israel Financial Reporting Taxonomy
 * 7.0 (2018-06-30)
