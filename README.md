@@ -60,6 +60,8 @@ A single repository with all XBRL taxonomy files
 * EBA 3.0 (Phase 2) (incl. Errata from April 8th, 2021; incl. Errata from June 3rd, 2021)
 * EBA 3.1 (Phase 2)
 * EBA 3.2 (Phase 1)
+* EBA 3.2 (Phase 2)
+* EBA Small validation rules packages 03/2022
 
 ### EIOPA Pension Funds
 
