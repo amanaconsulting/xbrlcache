@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.boi.org.il/xbrl/fws/d889/d889/2022-06-01/mod/d889m"
+    xmlns:boi_mod_d889m="http://www.boi.org.il/xbrl/fws/d889/d889/2022-06-01/mod/d889m"
+    xmlns:link="http://www.xbrl.org/2003/linkbase"
+    xmlns:model="http://www.eurofiling.info/xbrl/ext/model"
+    xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+    xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd http://www.eurofiling.info/xbrl/ext/model http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd http://www.xbrl.org/2003/instance http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd">
+    <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <xs:import
+        namespace="http://www.eurofiling.info/xbrl/ext/filing-indicators" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/ext/filing-indicators.xsd"/>
+    <xs:import
+        namespace="http://www.boi.org.il/xbrl/fws/d889/d889/2022-06-01" schemaLocation="../tax.xsd"/>
+    <xs:import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
+    <xs:import namespace="http://www.eurofiling.info/xbrl/ext/model" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd"/>
+    <xs:import
+        namespace="http://www.boi.org.il/xbrl/fws/d889/d889/2022-06-01/tab" schemaLocation="../tab/tab.xsd"/>
+    <xs:import
+        namespace="http://www.boi.org.il/xbrl/fws/d889/d889/2022-06-01/tab/889-0" schemaLocation="../tab/889-0/889-0.xsd"/>
+    <xs:import
+        namespace="http://www.boi.org.il/xbrl/fws/d889/d889/2022-06-01/tab/889-23" schemaLocation="../tab/889-23/889-23.xsd"/>
+    <xs:import
+        namespace="http://www.boi.org.il/xbrl/fws/d889/d889/2022-06-01/tab/889-24" schemaLocation="../tab/889-24/889-24.xsd"/>
+    <xs:import namespace="http://www.eurofiling.info/xbrl/func" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/func/func.xsd"/>
+    <xs:annotation>
+        <xs:appinfo>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="d889m-lab-he.xml"
+                xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="d889m-lab-en.xml"
+                xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="d889m-pre.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/aset-global.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100004_f.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100001_f.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100004_f-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100004_f-err-he.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100001_f-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100001_f-err-he.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/find-params.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="d889m-find-prec.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/aset-889-0.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100003_f.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100002_f.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100003_f-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100003_f-err-he.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100002_f-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v100002_f-err-he.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/aset-889-23.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200548_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200549_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200550_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200551_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200552_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200553_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200554_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200555_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200556_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200557_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200558_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200559_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200560_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200561_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200562_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200563_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200564_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200565_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200566_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200567_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200568_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200569_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200570_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200571_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200572_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200573_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200574_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200575_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200576_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200577_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200578_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200579_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200580_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200581_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200582_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200583_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200584_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200585_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200586_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200587_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200588_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200589_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200590_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200591_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200592_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200593_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200594_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200595_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200596_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200597_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200598_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200599_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200600_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200601_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200602_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200613_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200614_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200615_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200616_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200617_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200618_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200619_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200620_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200621_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200622_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200623_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200624_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200548_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200549_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200550_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200551_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200552_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200553_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200554_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200555_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200556_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200557_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200558_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200559_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200560_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200561_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200562_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200563_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200564_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200565_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200566_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200567_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200568_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200569_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200570_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200571_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200572_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200573_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200574_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200575_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200576_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200577_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200578_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200579_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200580_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200581_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200582_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200583_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200584_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200585_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200586_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200587_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200588_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200589_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200590_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200591_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200592_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200593_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200594_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200595_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200596_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200597_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200598_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200599_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200600_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200601_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200602_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200613_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200614_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200615_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200616_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200617_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200618_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200619_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200620_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200621_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200622_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200623_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200624_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/aset-889-24.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200625_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200626_v_w.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200625_v_w-err-en.xml" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="../val/vr-boi_v200626_v_w-err-en.xml" xlink:type="simple"/>
+        </xs:appinfo>
+    </xs:annotation>
+    <xs:element abstract="true" id="boi_d889m"
+        model:creationDate="2022-06-01" name="d889m" nillable="true"
+        substitutionGroup="xbrli:item" type="model:moduleType" xbrli:periodType="instant"/>
+</xs:schema>
