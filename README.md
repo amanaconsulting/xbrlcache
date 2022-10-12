@@ -61,6 +61,7 @@ A single repository with all XBRL taxonomy files
 * EBA 3.1 (Phase 2)
 * EBA 3.2 (Phase 1)
 * EBA 3.2 (Phase 2)
+* EBA 3.2 (Phase 3)
 * EBA Small validation rules packages 03/2022
 
 ### EIOPA Pension Funds
