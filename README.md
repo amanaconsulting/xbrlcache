@@ -83,6 +83,9 @@ A single repository with all XBRL taxonomy files
 * EIOPA Solvency II 2.6.0
 * EIOPA Solvency II 2.6.0 Hotfix (03.11.2021)
 
+### EIOPA PEPP
+* EIOPA KID PEPP 2.6.1
+
 ### DNB
 
 * DNB Pension Funds 1.0.3 FTK reporting
