@@ -70,6 +70,7 @@ A single repository with all XBRL taxonomy files
 * EIOPA Pension Funds 2.5.0 Hotfix (03.11.2020)
 * EIOPA Pension Funds 2.6.0
 * EIOPA Pension Funds 2.6.0 Hotfix (03.11.2021)
+* EIOPA Pension Funds 2.7.0
 
 ### EIOPA Solvency II
 
