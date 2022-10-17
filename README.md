@@ -87,6 +87,7 @@ A single repository with all XBRL taxonomy files
 
 ### EIOPA PEPP
 * EIOPA KID PEPP 2.6.1
+* EIOPA PEPP PR 2.7.0
 
 ### DNB
 
