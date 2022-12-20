@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--(C) European Central Bank--><?officialURI http://www.bankingsupervision.europa.eu/ssm-taxonomy/fr/xbrl/crr/fws/finrep/its-006-2022-dp/2022-09-30/val/params.xml?>
+<?taxonomy-version 5.1.0?>
+<?taxonomy-date 2022-09-30?>
+
+<link:linkbase xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd' xmlns:find='http://www.eurofiling.info/xbrl/ext/filing-indicators' xmlns:gen='http://xbrl.org/2008/generic' xmlns:label='http://xbrl.org/2008/label' xmlns:link='http://www.xbrl.org/2003/linkbase' xmlns:variable='http://xbrl.org/2008/variable' xmlns:xbrli='http://www.xbrl.org/2003/instance' xmlns:xlink='http://www.w3.org/1999/xlink'>
+  <gen:link xlink:role='http://www.xbrl.org/2003/role/link' xlink:type='extended'>
+<!-- from 3.2, the CON information in entity instead of schemaRef 
+  
+<variable:parameter xlink:type="resource" xlink:label="eba_ReportingLevel" name="ReportingLevel" select="if (contains(link:schemaRef/@xlink:href, 'con')) then 'con' else 'ind'" as="xs:string" id="eba_ReportingLevel" />
+  -->
+    <variable:parameter name='ReportingLevel' id='eba_ReportingLevel' select="if (contains((xbrli:context/xbrli:entity/xbrli:identifier)[1], '.CON')) then 'con' else 'ind'" as='xs:string' xlink:label='eba_ReportingLevel' xlink:type='resource' />
+    <variable:parameter name='tC_13.01' id='eba_tC_13.01' select="find:fIndicators/find:filingIndicator[not(@find:filed) or @find:filed != false()] = 'C_13.01'" as='xs:boolean' xlink:label='eba_tC_13.01' xlink:type='resource' />
+    <variable:parameter name='tC_14.01' id='eba_tC_14.01' select="find:fIndicators/find:filingIndicator[not(@find:filed) or @find:filed != false()] = 'C_14.01'" as='xs:boolean' xlink:label='eba_tC_14.01' xlink:type='resource' />
+  </gen:link>
+</link:linkbase>
