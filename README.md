@@ -32,6 +32,15 @@ A single repository with all XBRL taxonomy files
 * Bundesbank EZB-SFRDP 5.0.0
 * Bundesbank 3.1 SBP
 * Bundesbank 3.1 FI
+* Bundesbank 3.2 COREP
+* Bundesbank 3.2 IF
+* Bundesbank 3.2 G-SII
+* Bundesbank 3.2 COVID19
+* Bundesbank 3.2 FP
+* Bundesbank 3.2 SBP
+* Bundesbank 3.2 REM
+* Bundesbank 3.2 FP
+* Bundesbank 3.2 AE
 
 ### Bundesbank FinaRisikoV
 
