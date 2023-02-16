@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<!-- (c) XBRL International.  See www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/2003/role"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:role="http://www.xbrl.org/2003/role"
+	xmlns:link="http://www.xbrl.org/2003/linkbase"
+	elementFormDefault="qualified">
+
+	<import namespace="http://www.xbrl.org/2003/linkbase"
+		schemaLocation="xbrl-linkbase-2003-07-31.xsd"/>
+
+	<annotation>
+		<documentation>
+		linkbaseRef role type definitions
+		</documentation>
+		<appinfo>
+			<link:roleType name="calculationLinkbaseRef" usedOn="linkbaseRef">
+				<link:definition>Must contain only calculationLink elements</link:definition>
+			</link:roleType>
+			<link:roleType name="definitionLinkbaseRef" usedOn="linkbaseRef">
+				<link:definition>Must contain only definitionLink elements</link:definition>
+			</link:roleType>
+			<link:roleType name="labelLinkbaseRef" usedOn="linkbaseRef">
+				<link:definition>Must contain only labelLink elements</link:definition>
+			</link:roleType>
+			<link:roleType name="presentationLinkbaseRef" usedOn="linkbaseRef">
+				<link:definition>Must contain only presentationLink elements</link:definition>
+			</link:roleType>
+			<link:roleType name="referenceLinkbaseRef" usedOn="linkbaseRef">
+				<link:definition>Must contain only referenceLink elements</link:definition>
+			</link:roleType>
+			<link:roleType name="footnoteLinkbaseRef" usedOn="linkbaseRef">
+				<link:definition>Must contain only footnoteLink elements</link:definition>
+			</link:roleType>
+		</appinfo>
+	</annotation>
+
+	<annotation>
+		<documentation>
+		default extended link role type definitions
+		</documentation>
+		<appinfo>
+			<link:roleType name="link" usedOn="calculationLink">
+				<link:definition>The default standard extended link role for calculation links</link:definition>
+			</link:roleType>
+			<link:roleType name="link" usedOn="definitionLink">
+				<link:definition>The default standard extended link role for definition links</link:definition>
+			</link:roleType>
+			<link:roleType name="link" usedOn="presentationLink">
+				<link:definition>The default standard extended link role for presentation links</link:definition>
+			</link:roleType>
+			<link:roleType name="link" usedOn="labelLink">
+				<link:definition>The default standard extended link role for label links</link:definition>
+			</link:roleType>
+			<link:roleType name="link" usedOn="referenceLink">
+				<link:definition>The default standard extended link role for reference links</link:definition>
+			</link:roleType>
+			<link:roleType name="link" usedOn="footnoteLink">
+				<link:definition>MuThe default standard extended link role for footnote links</link:definition>
+			</link:roleType>
+		</appinfo>
+	</annotation>
+
+	<annotation>
+		<documentation>
+		label resource role type definitions
+		</documentation>
+		<appinfo>
+			<link:roleType name="label" usedOn="label">
+				<link:definition>
+				Standard label for a concept.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="terseLabel" usedOn="label">
+				<link:definition>
+				Short label for a concept, often omitting text that should be
+				inferable when the concept is reported in the context of other
+				related concepts.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="verboseLabel" usedOn="label">
+				<link:definition>
+				Extended label for a concept, making sure not to omit text that is
+				required to enable the label to be understood on a stand alone basis.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="positiveLabel" usedOn="label">
+				<link:definition>
+				Standard label for a concept when the value of the concept is positive.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="positiveTerseLabel" usedOn="label">
+				<link:definition>
+				Terse label for a concept when the value of the concept is positive.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="positiveVerboseLabel" usedOn="label">
+				<link:definition>
+				Verbose label for a concept when the value of the concept is positive.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="zeroLabel" usedOn="label">
+				<link:definition>
+				Standard label of a concept when the value of the concept is negative.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="zeroTerseLabel" usedOn="label">
+				<link:definition>
+				Terse label of a concept when the value of the concept is negative.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="zeroVerboseLabel" usedOn="label">
+				<link:definition>
+				Verbose label of a concept when the value of the concept is negative.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="negativeLabel" usedOn="label">
+				<link:definition>
+				Standard label of a concept when the value of the concept is negative.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="negativeTerseLabel" usedOn="label">
+				<link:definition>
+				Terse label of a concept when the value of the concept is negative.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="negativeVerboseLabel" usedOn="label">
+				<link:definition>
+				Verbose label of a concept when the value of the concept is negative.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="totalLabel" usedOn="label">
+				<link:definition>
+				The label for a concept for use in presenting values associated with
+				the concept when it is being reported as the total of a set of other values.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="periodStartLabel" usedOn="label">
+				<link:definition>
+				The label for a concept with instantaneous="true" for use in presenting
+				values associated with the concept when it is being report as a beginning
+				of period value.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="periodEndLabel" usedOn="label">
+				<link:definition>
+				The label for a concept with instantaneous="true" for use in presenting
+				values associated with the concept when it is being reported as an
+				end of period value.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="documentation" usedOn="label">
+				<link:definition>
+				Documentation of a concept, providing an explanation of its meaning and
+				its appropriate usage and any other documentation deemed necessary.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="definitionGuidance" usedOn="label">
+				<link:definition>
+				A precise definition of a concept, providing an explanation of its meaning
+				and its appropriate usage.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="disclosureGuidance" usedOn="label">
+				<link:definition>
+				An explanation of the disclosure requirements relating to the concept.
+				Indicates whether the disclosure is mandatory (i.e. prescribed by
+				authoritative literature), recommended (i.e. encouraged by authoritative literature),
+				common practice (i.e. not prescribed by authoritative literature, but
+				disclosure is common place), or structural completeness (i.e. merely
+				included to complete the structure of the taxonomy).
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="presentationGuidance" usedOn="label">
+				<link:definition>
+				An explanation of the rules guiding presentation (placement and/or labeling)
+				of this concept in the context of other concepts in one or more specific types
+				of business reports.  For example, "Net Surplus should be disclosed on the face
+				of the Profit and Loss statement".
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="placementGuidance" usedOn="label">
+				<link:definition>
+				An explanation of the rules guiding placement of this concept in the context
+				of other concepts in one or more specific types of business reporting.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="measurementGuidance" usedOn="label">
+				<link:definition>
+				An explanation of the method(s) required to be used when measuring values
+				associated with this concept in business reports.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="commentary" usedOn="label">
+				<link:definition>
+				Any other general commentary on the concept that assists in determining
+				definition, disclosure, measurement, presentation or usage.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="example" usedOn="label">
+				<link:definition>
+				An example of the type of information intended to be captured by the concept.
+				</link:definition>
+			</link:roleType>
+		</appinfo>
+	</annotation>
+
+	<annotation>
+		<documentation>
+		Reference Resource Role Types
+		</documentation>
+		<appinfo>
+			<link:roleType name="reference" usedOn="reference">
+				<link:definition>Standard reference for a concept</link:definition>
+			</link:roleType>
+			<link:roleType name="definitionRef" usedOn="reference">
+				<link:definition>
+				Reference to documentation that details a precise definition of the concept.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="disclosureGuidanceRef" usedOn="reference">
+				<link:definition>
+				Reference to documentation that details an explanation of the disclosure
+				requirements relating to the concept.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="mandatoryDisclosureGuidanceRef" usedOn="reference">
+				<link:definition>
+				Reference to documentation that details an explanation of the mandatory
+				disclosure requirements relating to the concept.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="recommendedDisclosureGuidanceRef" usedOn="reference">
+				<link:definition>
+				Reference to documentation that details an explanation of the recommended
+				disclosure requirements relating to the concept.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="unspecifiedDisclosureGuidanceRef" usedOn="reference">
+				<link:definition>
+				Reference to documentation that details an explanation of the disclosure
+				requirements relating to the concept.  Unspecified categories include,
+				but are not limited to common practice and structural completeness.  The
+				latter categories do not reference documentation but are indicated in the
+				link role to indicate why the concept has been included in the taxonomy.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="presentationRef" usedOn="reference">
+				<link:definition>
+				Reference to documentation which details an explanation of the presentation or
+				labeling of this concept in the context of other concepts in one or more
+				specific types of financial reports.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="measurementRef" usedOn="reference">
+				<link:definition>
+				Reference concerning the method(s) required to be used when measuring values
+				associated with this concept in business reports.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="commentaryRef" usedOn="reference">
+				<link:definition>
+				Any other general commentary on the concept that assist in determining
+				appropriate usage.
+				</link:definition>
+			</link:roleType>
+			<link:roleType name="exampleRef" usedOn="reference">
+				<link:definition>
+				Reference to documentation that illustrates by example the application of
+				the concept that assists in determining appropriate usage.
+				</link:definition>
+			</link:roleType>
+		</appinfo>
+	</annotation>
+
+	<annotation>
+		<documentation>
+		arc role type definitions
+		</documentation>
+		<appinfo>
+			<link:arcroleType name="parent-child" usedOn="presentationArc" cyclesAllowed="undirected">
+				<link:definition>
+				This arc role value is used to form a tree. It contains end points
+				that represent a parent and the related child.
+				</link:definition>
+			</link:arcroleType>
+			<link:arcroleType name="summation-item" usedOn="calculationArc" cyclesAllowed="none">
+				<link:definition>
+				This arc role value is used to show how an item participates in a summation.
+				It consists of an item end point and a summation end point where the item is
+				summed into the summation.
+			</link:definition>
+			</link:arcroleType>
+			<link:arcroleType name="general-special" usedOn="definitionArc" cyclesAllowed="undirected" >
+				<link:definition>
+				This arc role value is used to show a definitional relationship between a
+				generalised concept and its related specialised concept.
+				</link:definition>
+			</link:arcroleType>
+			<link:arcroleType name="essence-alias" usedOn="definitionArc" cyclesAllowed="undirected" >
+				<link:definition>
+				This arc role value is used to show a definitional relationship between a
+				concept that represents a different perspective of another concept.
+				</link:definition>
+			</link:arcroleType>
+			<link:arcroleType name="similar-tuples" usedOn="definitionArc" cyclesAllowed="any" >
+				<link:definition>
+				This arc role value is used to relate tuples that are similar at a definition level
+				despite differences at a content model level.
+				</link:definition>
+			</link:arcroleType>
+			<link:arcroleType name="requires-element" usedOn="definitionArc" cyclesAllowed="any" >
+				<link:definition>
+				If an instance of the concept at the source of the arc occurs in an XBRL instance
+				then a c-equal instance of the arc’s target concept MUST also occur in the XBRL
+				instance. Fully conformant XBRL processors MUST detect and signal instances in
+				which this relationship is violated.
+				</link:definition>
+			</link:arcroleType>
+			<link:arcroleType name="concept-label" usedOn="labelArc" cyclesAllowed="none">
+				<link:definition>
+				This arc role value is used to connect from a concept to a label.
+				</link:definition>
+			</link:arcroleType>
+			<link:arcroleType name="concept-reference" usedOn="referenceArc" cyclesAllowed="none">
+				<link:definition>
+				This arc role is used to connect from a concept to a reference.
+				</link:definition>
+			</link:arcroleType>
+			<link:arcroleType name="fact-footnote" usedOn="footnoteArc" cyclesAllowed="none">
+				<link:definition>
+				This arc role is used to connect from a facts in an XBRL instance to a footnote.
+				</link:definition>
+			</link:arcroleType>
+		</appinfo>
+	</annotation>
+</schema>

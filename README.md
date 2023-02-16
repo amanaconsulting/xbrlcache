@@ -117,6 +117,7 @@ A single repository with all XBRL taxonomy files
 * ESMA ESEF 2019
 * ESMA ESEF 2020
 * ESMA ESEF 2021
+* ESMA ESEF 2022
 
 ### FASB SEC Reporting Taxonomy (SRT)
 
@@ -131,12 +132,12 @@ A single repository with all XBRL taxonomy files
 
 ### FRC
 
+* 2021 SECR Taxonomy 1.1.0
 * 2019 Taxonomy suite version 1.1.0
-* 2021 SECR Taxonomy 
-* UKSEF 2021
 * 2022 Taxonomy suite version 1.0.0
+* 2023 Taxonomy suite version 1.0.0
+* UKSEF 2021 1.1.0
 * UKSEF 2022 2.0.0
-
 ### xbrl.de (HGB)
 
 * HGB 5.0
@@ -220,3 +221,7 @@ A single repository with all XBRL taxonomy files
 
 ### Bank of Israel Financial Reporting Taxonomy
 * 7.0 (2018-06-30)
+
+### Erhvervsstyrelsen
+* ÅRL-taksonomien 2022
+* ÅRL-taksonomien 2021
