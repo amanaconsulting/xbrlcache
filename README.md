@@ -198,6 +198,7 @@ A single repository with all XBRL taxonomy files
 * SRB RES 4.0.3.2 - 2020
 * SRB Full 5.0.7 - 2021
 * SRB Full 6.0.3 - 2021
+* SRB Full 7.0.2 - 2022
 * SRB Ex-ante contributions 2022 8.0.2
 * SRB Ex-ante contributions 2022 7.0.2
 * SRB Ex-ante contributions 2021 6.0.2
