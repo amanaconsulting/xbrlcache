@@ -95,6 +95,7 @@ A single repository with all XBRL taxonomy files
 * EIOPA Solvency II 2.6.0 Hotfix (03.11.2021)
 * EIOPA Solvency II 2.7.0
 * EIOPA Solvency II 2.7.0 Hotfix (08.11.2022)
+* EIOPA Solvency II 2.8.0
 
 ### EIOPA PEPP
 
