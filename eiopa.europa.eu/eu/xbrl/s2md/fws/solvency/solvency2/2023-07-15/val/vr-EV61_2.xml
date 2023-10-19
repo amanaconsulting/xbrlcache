@@ -10,7 +10,7 @@
   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:type="simple" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" />
   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter" />
   <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <va:valueAssertion xlink:type="resource" xlink:label="s2md_EV61_2" test="if (matches($v1,&quot;^..((1)|(2)|(5)|(6)|(8).$&quot;)) then (not(empty($v0))) else (true())" aspectModel="dimensional" implicitFiltering="true" id="s2md_EV61_2" />
+    <va:valueAssertion xlink:type="resource" xlink:label="s2md_EV61_2" test="if (matches($v1,&quot;^..((1)|(2)|(5)|(6)|(8)).$&quot;)) then (not(empty($v0))) else (true())" aspectModel="dimensional" implicitFiltering="true" id="s2md_EV61_2" />
     <df:explicitDimension xlink:type="resource" xlink:label="s2md_EV61_2.f0" id="s2md_EV61_2.f0">
       <df:dimension>
         <df:qname>s2c_dim:AF</df:qname>
@@ -776,7 +776,7 @@
       </df:dimension>
     </df:typedDimension>
     <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="s2md_EV61_2" xlink:to="s2md_EV61_2.f99" order="99" complement="true" />
-    <variable:factVariable xlink:type="resource" xlink:label="s2md_EV61_2.v0" bindAsSequence="false" id="s2md_EV61_2.v0" />
+    <variable:factVariable xlink:type="resource" xlink:label="s2md_EV61_2.v0" bindAsSequence="false" fallbackValue="()" id="s2md_EV61_2.v0" />
     <gf:general xlink:type="resource" xlink:label="s2md_EV61_2.v0.f0" id="s2md_EV61_2.v0.f0" test="matches(xfi:fact-typed-dimension-value(., QName('http://eiopa.europa.eu/xbrl/s2c/dict/dim','UI'))/s2c_typ:ID,&quot;^((ISIN/.*)|(CAU/ISIN/.*))&quot;)" />
     <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="s2md_EV61_2.v0" xlink:to="s2md_EV61_2.v0.f0" order="0" complement="true" cover="true" />
     <cf:conceptName xlink:type="resource" xlink:label="s2md_EV61_2.v0.f1" id="s2md_EV61_2.v0.f1">
@@ -787,14 +787,16 @@
     <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="s2md_EV61_2.v0" xlink:to="s2md_EV61_2.v0.f1" order="1" complement="false" cover="true" />
     <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="s2md_EV61_2" xlink:to="s2md_EV61_2.v0" order="1" name="v0" />
     <variable:factVariable xlink:type="resource" xlink:label="s2md_EV61_2.v1" bindAsSequence="false" id="s2md_EV61_2.v1" />
-    <cf:conceptName xlink:type="resource" xlink:label="s2md_EV61_2.v1.f0" id="s2md_EV61_2.v1.f0">
+    <gf:general xlink:type="resource" xlink:label="s2md_EV61_2.v1.f0" id="s2md_EV61_2.v1.f0" test="matches(xfi:fact-typed-dimension-value(., QName('http://eiopa.europa.eu/xbrl/s2c/dict/dim','UI'))/s2c_typ:ID,&quot;^((ISIN/.*)|(CAU/ISIN/.*))&quot;)" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="s2md_EV61_2.v1" xlink:to="s2md_EV61_2.v1.f0" order="0" complement="true" cover="true" />
+    <cf:conceptName xlink:type="resource" xlink:label="s2md_EV61_2.v1.f1" id="s2md_EV61_2.v1.f1">
       <cf:concept>
         <cf:qname>s2md_met:si1554</cf:qname>
       </cf:concept>
     </cf:conceptName>
-    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="s2md_EV61_2.v1" xlink:to="s2md_EV61_2.v1.f0" order="0" complement="false" cover="true" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="s2md_EV61_2.v1" xlink:to="s2md_EV61_2.v1.f1" order="1" complement="false" cover="true" />
     <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="s2md_EV61_2" xlink:to="s2md_EV61_2.v1" order="0" name="v1" />
-    <link:loc xlink:type="locator" xlink:href="http://www.xbrl.org/2016/severities.xml#WARNING" xlink:label="sev_warning" />
-    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="s2md_EV61_2" xlink:to="sev_warning" />
+    <link:loc xlink:type="locator" xlink:href="http://www.xbrl.org/2016/severities.xml#ERROR" xlink:label="sev_error" />
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="s2md_EV61_2" xlink:to="sev_error" />
   </gen:link>
 </link:linkbase>
