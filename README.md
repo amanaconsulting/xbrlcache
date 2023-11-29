@@ -229,3 +229,7 @@ A single repository with all XBRL taxonomy files
 ### Erhvervsstyrelsen
 * ÅRL-taksonomien 2022
 * ÅRL-taksonomien 2021
+
+### Comisión para el Mercado Financiero
+* Taxonomía CMF CL-CI 2022
+* Taxonomía CMF CL-CI 2023
