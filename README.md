@@ -120,6 +120,7 @@ A single repository with all XBRL taxonomy files
 * ESMA ESEF 2020
 * ESMA ESEF 2021
 * ESMA ESEF 2022
+* ESMA ESEF 2022 1.1
 
 ### FASB SEC Reporting Taxonomy (SRT)
 
