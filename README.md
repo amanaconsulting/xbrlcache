@@ -107,6 +107,7 @@ A single repository with all XBRL taxonomy files
 ### DNB
 
 * DNB Pension Funds 1.0.3 FTK reporting
+* DNB MSR/MER 2.0
 
 ### KvK Taxonomy
 
