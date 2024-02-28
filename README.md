@@ -143,6 +143,7 @@ A single repository with all XBRL taxonomy files
 * 2023 Taxonomy suite version 1.0.0
 * UKSEF 2021 1.1.0
 * UKSEF 2022 2.0.0
+
 ### xbrl.de (HGB)
 
 * HGB 5.0
