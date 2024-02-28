@@ -72,6 +72,7 @@ A single repository with all XBRL taxonomy files
 * EBA 3.2 (Phase 2)
 * EBA 3.2 (Phase 3)
 * EBA 3.3 (Phase 3)
+* EBA 3.4
 
 ### EIOPA Pension Funds
 
