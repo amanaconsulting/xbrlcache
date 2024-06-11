@@ -41,7 +41,6 @@ A single repository with all XBRL taxonomy files
 * Bundesbank 3.2 REM
 * Bundesbank 3.2 FP
 * Bundesbank 3.2 AE
-* Bundesbank 3.3 SBP
 
 ### Bundesbank FinaRisikoV
 
