@@ -1,3 +1,64 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4da54daea43d04518e0fc2c791b33729559c3a9f7a1e02b5ae91471e9c5385f
-size 7282
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:iaf="http://www.eurofiling.info/xbrl/func/interval-arithmetics" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:ebacrr_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:ebacrr_MC="http://www.eba.europa.eu/xbrl/crr/dict/dom/MC" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:ebacrr_CT="http://www.eba.europa.eu/xbrl/crr/dict/dom/CT" xmlns:es_dim="http://www.bde.es/xbrl/dict/dim" xmlns:es_ebacrr_CT="http://www.bde.es/xbrl/dict/dom/ebacrr_CT" xmlns:ef="http://xbrl.org/2008/filter/entity" xmlns:behfn="http://www.bde.es/xbrl/func/helper-functions" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_v312" test="iaf:numeric-equal($a, $b)" aspectModel="dimensional" implicitFiltering="true" id="es_v312" />
+    <link:loc xlink:type="locator" xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/filt.xml#eu_fnumeric" xlink:label="loc_eu_fnumeric" />
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v312" xlink:to="loc_eu_fnumeric" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v312.f62" id="es_v312.f62">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_MC:x95</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v312" xlink:to="es_v312.f62" complement="false" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v312.a" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/ind_umeint.xsd" id="es_v312.a" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v312.a.f14" id="es_v312.a.f14">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>ebacrr_CT:x0</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v312.a" xlink:to="es_v312.a.f14" cover="true" complement="false" order="1" />
+    <df:typedDimension xlink:type="resource" xlink:label="es_v312.a.f3" test="* = substring($entidadIntermediada,3,4)" id="es_v312.a.f3">
+      <df:dimension>
+        <df:qname>es_dim:CCA</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v312.a" xlink:to="es_v312.a.f3" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v312" xlink:to="es_v312.a" name="a" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v312.b" bindAsSequence="false" fallbackValue="0" xlink:title="../mod/ind_umem.xsd#0-0-0-0-1--UEM10_intermediada" id="es_v312.b" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v312.b.f32" id="es_v312.b.f32">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CPS</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_CT:x1083</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v312.b" xlink:to="es_v312.b.f32" cover="true" complement="false" order="1" />
+    <df:typedDimension xlink:type="resource" xlink:label="es_v312.b.f58" id="es_v312.b.f58">
+      <df:dimension>
+        <df:qname>es_dim:CCA</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v312.b" xlink:to="es_v312.b.f58" cover="true" complement="true" order="2" />
+    <ef:identifier xlink:type="resource" xlink:label="es_v312.b.f61" test=". = $entidadIntermediada" id="es_v312.b.f61" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v312.b" xlink:to="es_v312.b.f61" cover="true" complement="false" order="3" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v312" xlink:to="es_v312.b" name="b" order="2" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_v312.entidadIntermediada" bindAsSequence="false" select="behfn:codigo-entidad-presentada(.)" xlink:title="../mod/ind_umem.xsd#0-0-0-0-1--UEM10_intermediada" id="es_v312.entidadIntermediada" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v312" xlink:to="es_v312.entidadIntermediada" name="entidadIntermediada" order="3" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_v312" id="ref_es_v312">
+      <ref:Number>bsi:v312</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_v312" xlink:to="ref_es_v312" />
+  </gen:link>
+</link:linkbase>
