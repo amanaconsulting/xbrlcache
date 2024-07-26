@@ -1,3 +1,76 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:737fda1f2508739b82f382a326c40d0392c5bc5fc772fdc21e2424c8daf8e74f
-size 8959
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ebacrr_BT="http://www.eba.europa.eu/xbrl/crr/dict/dom/BT" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:ebacrr_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:acf="http://xbrl.org/2010/filter/aspect-cover" xmlns:ebacrr_met="http://www.eba.europa.eu/xbrl/crr/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2010/filter/aspect-cover http://www.xbrl.org/2010/aspect-cover-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_b2600_m" test="if ($tipo = xs:QName('ebacrr_BT:x16')) then substring($col20,1,2) = local-name-from-QName($col40) else  substring($col22,1,2) = local-name-from-QName($col40)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" aspectModel="dimensional" implicitFiltering="true" id="es_b2600_m" />
+    <variable:precondition xlink:type="resource" xlink:label="es_b2600_m.p1" test="string-length($col20) = 11 or string-length($col22) = 11" id="es_b2600_m.p1" />
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:from="es_b2600_m" xlink:to="es_b2600_m.p1" order="1" />
+    <df:typedDimension xlink:type="resource" xlink:label="es_b2600_m.f64" id="es_b2600_m.f64">
+      <df:dimension>
+        <df:qname>ebacrr_dim:LEN</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_b2600_m" xlink:to="es_b2600_m.f64" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_b2600_m.f65" id="es_b2600_m.f65">
+      <df:dimension>
+        <df:qname>ebacrr_dim:CER</df:qname>
+      </df:dimension>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_b2600_m" xlink:to="es_b2600_m.f65" complement="false" order="2" />
+    <acf:aspectCover xlink:type="resource" xlink:label="unitFilter" id="unitFilter">
+      <acf:aspect>unit</acf:aspect>
+    </acf:aspectCover>
+    <variable:factVariable xlink:type="resource" xlink:label="es_b2600_m._a" bindAsSequence="true" fallbackValue="()" xlink:title="../mod/solv_lcrda.xsd" id="es_b2600_m._a" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b2600_m._a.f7" id="es_b2600_m._a.f7">
+      <cf:concept>
+        <cf:qname>ebacrr_met:si168</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>ebacrr_met:si820</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>ebacrr_met:ei152</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>ebacrr_met:ei555</cf:qname>
+      </cf:concept>
+      <cf:concept>
+        <cf:qname>ebacrr_met:ei681</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b2600_m._a" xlink:to="es_b2600_m._a.f7" cover="true" complement="false" order="1" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b2600_m._a" xlink:to="unitFilter" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2600_m" xlink:to="es_b2600_m._a" name="_a" order="1" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_b2600_m.col20" bindAsSequence="false" select="distinct-values(for $i in $_a return xfi:fact-typed-dimension-value($i,xs:QName('ebacrr_dim:LEN'))/child::*)" id="es_b2600_m.col20" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2600_m" xlink:to="es_b2600_m.col20" name="col20" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b2600_m.col22" bindAsSequence="false" fallbackValue="()" xlink:title="../mod/solv_lcrda.xsd" id="es_b2600_m.col22" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b2600_m.col22.f7" id="es_b2600_m.col22.f7">
+      <cf:concept>
+        <cf:qname>ebacrr_met:si820</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b2600_m.col22" xlink:to="es_b2600_m.col22.f7" cover="true" complement="false" order="1" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b2600_m.col22" xlink:to="unitFilter" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2600_m" xlink:to="es_b2600_m.col22" name="col22" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b2600_m.col40" bindAsSequence="false" fallbackValue="()" xlink:title="../mod/solv_lcrda.xsd" id="es_b2600_m.col40" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b2600_m.col40.f7" id="es_b2600_m.col40.f7">
+      <cf:concept>
+        <cf:qname>ebacrr_met:ei152</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b2600_m.col40" xlink:to="es_b2600_m.col40.f7" cover="true" complement="false" order="1" />
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b2600_m.col40" xlink:to="unitFilter" cover="true" complement="false" order="2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2600_m" xlink:to="es_b2600_m.col40" name="col40" order="4" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_b2600_m.tipo" bindAsSequence="false" select="distinct-values(for $i in $_a return xfi:fact-explicit-dimension-value($i,xs:QName('ebacrr_dim:CER')))" id="es_b2600_m.tipo" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2600_m" xlink:to="es_b2600_m.tipo" name="tipo" order="5" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_b2600_m" id="ref_es_b2600_m">
+      <ref:Number>ebacrr_COREP:b2600_m</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_b2600_m" xlink:to="ref_es_b2600_m" />
+  </gen:link>
+</link:linkbase>

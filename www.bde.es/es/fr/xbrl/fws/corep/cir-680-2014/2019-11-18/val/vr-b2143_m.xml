@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78cef656e97b5d6ddf215a49b88484f23aa6e8dd10d71d92a8fd7691b3fa8ec4
-size 5911
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:ebacrr_met="http://www.eba.europa.eu/xbrl/crr/dict/met" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:ebacrr_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_b2143_m" test="every $i in $_comparacion satisfies $i" aspectModel="dimensional" implicitFiltering="true" id="es_b2143_m" />
+    <cf:conceptName xlink:type="resource" xlink:label="es_b2143_m.f85" id="es_b2143_m.f85">
+      <cf:concept>
+        <cf:qname>ebacrr_met:mi534</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_b2143_m" xlink:to="es_b2143_m.f85" complement="false" order="1" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_b2143_m._comparacion" bindAsSequence="true" select="distinct-values(for $i  in  $_lista2 return if ((xs:double(xs:untypedAtomic((substring-before(substring-after($i,'_'),'/'))))) &gt; (xs:double(xs:untypedAtomic( substring-after(substring-after($i,'/'),'_'))))) then (xs:double(xs:untypedAtomic(substring-before($i,'_')))) &lt; (xs:double(xs:untypedAtomic(substring-before(substring-after($i,'/'),'_')))) else  (xs:double(xs:untypedAtomic(substring-before($i,'_')))) &gt; (xs:double(xs:untypedAtomic(substring-before(substring-after($i,'/'),'_')))))" id="es_b2143_m._comparacion" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2143_m" xlink:to="es_b2143_m._comparacion" name="_comparacion" order="1" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_b2143_m._lista1" bindAsSequence="true" select="distinct-values(for $i in $a return (for $j in 1 to count($a) return if($i = $a[$j]) then 0 else concat(xfi:fact-typed-dimension-value($i,xs:QName('ebacrr_dim:RAC'))/child::*,'_',$i,'/',xfi:fact-typed-dimension-value($a[$j],xs:QName('ebacrr_dim:RAC'))/child::*,'_',$a[$j])))" id="es_b2143_m._lista1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2143_m" xlink:to="es_b2143_m._lista1" name="_lista1" order="2" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_b2143_m._lista2" bindAsSequence="true" select="remove($_lista1,index-of($_lista1,0))" id="es_b2143_m._lista2" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2143_m" xlink:to="es_b2143_m._lista2" name="_lista2" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_b2143_m.a" bindAsSequence="true" fallbackValue="(0)" xlink:title="../mod/solv_iii.xsd" id="es_b2143_m.a" />
+    <df:typedDimension xlink:type="resource" xlink:label="es_b2143_m.a.f84" id="es_b2143_m.a.f84">
+      <df:dimension>
+        <df:qname>ebacrr_dim:RAC</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_b2143_m.a" xlink:to="es_b2143_m.a.f84" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_b2143_m" xlink:to="es_b2143_m.a" name="a" order="4" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_b2143_m" id="ref_es_b2143_m">
+      <ref:Number>COREP:b2143_m</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_b2143_m" xlink:to="ref_es_b2143_m" />
+  </gen:link>
+</link:linkbase>

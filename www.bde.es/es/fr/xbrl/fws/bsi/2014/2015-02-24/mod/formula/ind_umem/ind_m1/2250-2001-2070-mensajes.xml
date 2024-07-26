@@ -1,3 +1,632 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9e7e89f2840cb735cffbe548440b99d588c4177285b23ac2181335c43205f75
-size 84306
+<?xml version="1.0" encoding="iso-8859-1"?>
+<link:linkbase xmlns:cebs-ef-att="http://www.c-ebs.org/eu/fr/esrs/eurofiling/2010-01-01/attributes"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:xd="http://www.pnp-software.com/XSLTdoc"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-3b"
+                xlink:label="val_bsi_2250-oe-3b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-3b" xlink:to="men_bsi_2250-oe-3b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="1"/>
+      <msg:message xlink:label="men_bsi_2250-oe-3b" id="men_bsi_2250-oe-3b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda0006_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(($celda0006_2250),($celda0006_2250))} [{fmt:celdas(($celda0006_2250),($celda0006_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:numeric-subtract ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celda0006_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda0006_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070)))))}{fmt:umbral(ai:numeric-threshold($celda0006_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070)))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-252b"
+                xlink:label="val_bsi_2250-oe-252b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-252b" xlink:to="men_bsi_2250-oe-252b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="2"/>
+      <msg:message xlink:label="men_bsi_2250-oe-252b" id="men_bsi_2250-oe-252b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:numeric-subtract ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070)))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070)))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-12b"
+                xlink:label="val_bsi_2250-oe-12b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-12b" xlink:to="men_bsi_2250-oe-12b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="3"/>
+      <msg:message xlink:label="men_bsi_2250-oe-12b" id="men_bsi_2250-oe-12b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-49b"
+                xlink:label="val_bsi_2250-oe-49b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-49b" xlink:to="men_bsi_2250-oe-49b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="4"/>
+      <msg:message xlink:label="men_bsi_2250-oe-49b" id="men_bsi_2250-oe-49b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( ( $posValue2070 ) ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-51b"
+                xlink:label="val_bsi_2250-oe-51b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-51b" xlink:to="men_bsi_2250-oe-51b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="5"/>
+      <msg:message xlink:label="men_bsi_2250-oe-51b" id="men_bsi_2250-oe-51b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$celda_1503_2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$celda_1503_2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( $celda_1503_2001 , ai:numeric-subtract ( ai:sum ( ( $posValue2070 ) ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($celda_1503_2001,$posValue2070,$negValue2070))} [{fmt:celdas(($celda_1503_2001,$posValue2070,$negValue2070),($celda_2250,$celda_1503_2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum(($celda_1503_2001,ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum(($celda_1503_2001,ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-52b"
+                xlink:label="val_bsi_2250-oe-52b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-52b" xlink:to="men_bsi_2250-oe-52b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="6"/>
+      <msg:message xlink:label="men_bsi_2250-oe-52b" id="men_bsi_2250-oe-52b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( ( $posValue2070 ) ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-61b"
+                xlink:label="val_bsi_2250-oe-61b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-61b" xlink:to="men_bsi_2250-oe-61b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="7"/>
+      <msg:message xlink:label="men_bsi_2250-oe-61b" id="men_bsi_2250-oe-61b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( ( $posValue2070 ) ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-78b"
+                xlink:label="val_bsi_2250-oe-78b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-78b" xlink:to="men_bsi_2250-oe-78b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="8"/>
+      <msg:message xlink:label="men_bsi_2250-oe-78b" id="men_bsi_2250-oe-78b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( ( $posValue2070 ) ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-80b"
+                xlink:label="val_bsi_2250-oe-80b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-80b" xlink:to="men_bsi_2250-oe-80b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="9"/>
+      <msg:message xlink:label="men_bsi_2250-oe-80b" id="men_bsi_2250-oe-80b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$celda3003_2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$celda3003_2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( $celda3003_2001 , ai:numeric-subtract ( ai:sum ( ( $posValue2070 ) ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($celda3003_2001,$posValue2070,$negValue2070))} [{fmt:celdas(($celda3003_2001,$posValue2070,$negValue2070),($celda_2250,$celda3003_2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum(($celda3003_2001,ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum(($celda3003_2001,ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-81b"
+                xlink:label="val_bsi_2250-oe-81b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-81b" xlink:to="men_bsi_2250-oe-81b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="10"/>
+      <msg:message xlink:label="men_bsi_2250-oe-81b" id="men_bsi_2250-oe-81b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( ( $posValue2070 ) ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-90b"
+                xlink:label="val_bsi_2250-oe-90b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-90b" xlink:to="men_bsi_2250-oe-90b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="11"/>
+      <msg:message xlink:label="men_bsi_2250-oe-90b" id="men_bsi_2250-oe-90b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( ( $posValue2070 ) ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum(($posValue2070)),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-111b"
+                xlink:label="val_bsi_2250-oe-111b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-111b" xlink:to="men_bsi_2250-oe-111b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="12"/>
+      <msg:message xlink:label="men_bsi_2250-oe-111b" id="men_bsi_2250-oe-111b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$celda0006_2001,$celda0601_2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$celda0006_2001,$celda0601_2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( $celda0006_2001 , $celda0601_2001 ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($celda0006_2001,$celda0601_2001,$posValue2070))} [{fmt:celdas(($celda0006_2001,$celda0601_2001,$posValue2070),($celda_2250,$celda0006_2001,$celda0601_2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract($celda0006_2001,$celda0601_2001),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract($celda0006_2001,$celda0601_2001),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-112b"
+                xlink:label="val_bsi_2250-oe-112b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-112b" xlink:to="men_bsi_2250-oe-112b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="13"/>
+      <msg:message xlink:label="men_bsi_2250-oe-112b" id="men_bsi_2250-oe-112b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$celda0006_2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$celda0006_2001,$posValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( $celda0006_2001 , ai:sum ( ( $posValue2070 ) ) ) ) ),($celda0006_2001,$posValue2070))} [{fmt:celdas(($celda0006_2001,$posValue2070),($celdas_2250,$celda0006_2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum(($celda0006_2001,ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum(($celda0006_2001,ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-113b"
+                xlink:label="val_bsi_2250-oe-113b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-113b" xlink:to="men_bsi_2250-oe-113b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="14"/>
+      <msg:message xlink:label="men_bsi_2250-oe-113b" id="men_bsi_2250-oe-113b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-130b"
+                xlink:label="val_bsi_2250-oe-130b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-130b" xlink:to="men_bsi_2250-oe-130b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="15"/>
+      <msg:message xlink:label="men_bsi_2250-oe-130b" id="men_bsi_2250-oe-130b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue_2001,$negValue_2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue_2001,$negValue_2001,$posValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:numeric-subtract ( ai:numeric-subtract ( ai:sum ( ( $posValue_2001 ) ) , ai:sum ( ( $negValue_2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ),($posValue_2001,$negValue_2001,$posValue2070))} [{fmt:celdas(($posValue_2001,$negValue_2001,$posValue2070),($celda_2250,$posValue_2001,$negValue_2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue_2001)),ai:sum(($negValue_2001))),ai:sum(($posValue2070)))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue_2001)),ai:sum(($negValue_2001))),ai:sum(($posValue2070)))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-132b"
+                xlink:label="val_bsi_2250-oe-132b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-132b" xlink:to="men_bsi_2250-oe-132b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="16"/>
+      <msg:message xlink:label="men_bsi_2250-oe-132b" id="men_bsi_2250-oe-132b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:numeric-subtract ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , $negValue2001 ) , ai:sum ( ( $negValue2070 ) ) ) ),($posValue2001,$negValue2001,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),$negValue2001),ai:sum(($negValue2070)))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),$negValue2001),ai:sum(($negValue2070)))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-133b"
+                xlink:label="val_bsi_2250-oe-133b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-133b" xlink:to="men_bsi_2250-oe-133b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="17"/>
+      <msg:message xlink:label="men_bsi_2250-oe-133b" id="men_bsi_2250-oe-133b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:numeric-subtract ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $negValue2070 ) ) ) ),($posValue2001,$negValue2001,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($negValue2070)))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($negValue2070)))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-134b"
+                xlink:label="val_bsi_2250-oe-134b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-134b" xlink:to="men_bsi_2250-oe-134b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="18"/>
+      <msg:message xlink:label="men_bsi_2250-oe-134b" id="men_bsi_2250-oe-134b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:numeric-subtract ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $negValue2070 ) ) ) ),($posValue2001,$negValue2001,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$negValue2070),($celdas_2250,$posValue2001,$negValue2001,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($negValue2070)))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:numeric-subtract(ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($negValue2070)))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-136b"
+                xlink:label="val_bsi_2250-oe-136b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-136b" xlink:to="men_bsi_2250-oe-136b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="19"/>
+      <msg:message xlink:label="men_bsi_2250-oe-136b" id="men_bsi_2250-oe-136b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$celda0576_2001,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$celda0576_2001,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:numeric-subtract ( $celda0576_2001 , ai:sum ( ( $negValue2070 ) ) ) ),($celda0576_2001,$negValue2070))} [{fmt:celdas(($celda0576_2001,$negValue2070),($celdas_2250,$celda0576_2001,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:numeric-subtract($celda0576_2001,ai:sum(($negValue2070)))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:numeric-subtract($celda0576_2001,ai:sum(($negValue2070)))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-138b"
+                xlink:label="val_bsi_2250-oe-138b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-138b" xlink:to="men_bsi_2250-oe-138b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="20"/>
+      <msg:message xlink:label="men_bsi_2250-oe-138b" id="men_bsi_2250-oe-138b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$posValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$posValue2070),($celdas_2250,$posValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-146b"
+                xlink:label="val_bsi_2250-oe-146b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-146b" xlink:to="men_bsi_2250-oe-146b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="21"/>
+      <msg:message xlink:label="men_bsi_2250-oe-146b" id="men_bsi_2250-oe-146b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($posValue2250,$negValue2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(( ai:numeric-subtract ( ai:sum ( ( $posValue2250 ) ) , $negValue2250 ) ),($posValue2250,$negValue2250))} [{fmt:celdas(($posValue2250,$negValue2250),($posValue2250,$negValue2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($posValue2250,$negValue2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:numeric-subtract(ai:sum(($posValue2250)),$negValue2250),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:numeric-subtract(ai:sum(($posValue2250)),$negValue2250),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-147b"
+                xlink:label="val_bsi_2250-oe-147b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-147b" xlink:to="men_bsi_2250-oe-147b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="22"/>
+      <msg:message xlink:label="men_bsi_2250-oe-147b" id="men_bsi_2250-oe-147b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-148b"
+                xlink:label="val_bsi_2250-oe-148b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-148b" xlink:to="men_bsi_2250-oe-148b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="23"/>
+      <msg:message xlink:label="men_bsi_2250-oe-148b" id="men_bsi_2250-oe-148b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$posValue2070),($celda_2250,$posValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-150b"
+                xlink:label="val_bsi_2250-oe-150b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-150b" xlink:to="men_bsi_2250-oe-150b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="24"/>
+      <msg:message xlink:label="men_bsi_2250-oe-150b" id="men_bsi_2250-oe-150b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$posValue2070),($celda_2250,$posValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-162b"
+                xlink:label="val_bsi_2250-oe-162b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-162b" xlink:to="men_bsi_2250-oe-162b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="25"/>
+      <msg:message xlink:label="men_bsi_2250-oe-162b" id="men_bsi_2250-oe-162b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-163b"
+                xlink:label="val_bsi_2250-oe-163b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-163b" xlink:to="men_bsi_2250-oe-163b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="26"/>
+      <msg:message xlink:label="men_bsi_2250-oe-163b" id="men_bsi_2250-oe-163b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-164b"
+                xlink:label="val_bsi_2250-oe-164b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-164b" xlink:to="men_bsi_2250-oe-164b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="27"/>
+      <msg:message xlink:label="men_bsi_2250-oe-164b" id="men_bsi_2250-oe-164b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-165b"
+                xlink:label="val_bsi_2250-oe-165b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-165b" xlink:to="men_bsi_2250-oe-165b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="28"/>
+      <msg:message xlink:label="men_bsi_2250-oe-165b" id="men_bsi_2250-oe-165b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-171b"
+                xlink:label="val_bsi_2250-oe-171b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-171b" xlink:to="men_bsi_2250-oe-171b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="29"/>
+      <msg:message xlink:label="men_bsi_2250-oe-171b" id="men_bsi_2250-oe-171b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( $posValue2001 , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum(($posValue2001,ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum(($posValue2001,ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-178b"
+                xlink:label="val_bsi_2250-oe-178b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-178b" xlink:to="men_bsi_2250-oe-178b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="30"/>
+      <msg:message xlink:label="men_bsi_2250-oe-178b" id="men_bsi_2250-oe-178b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-180b"
+                xlink:label="val_bsi_2250-oe-180b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-180b" xlink:to="men_bsi_2250-oe-180b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="31"/>
+      <msg:message xlink:label="men_bsi_2250-oe-180b" id="men_bsi_2250-oe-180b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-181b"
+                xlink:label="val_bsi_2250-oe-181b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-181b" xlink:to="men_bsi_2250-oe-181b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="32"/>
+      <msg:message xlink:label="men_bsi_2250-oe-181b" id="men_bsi_2250-oe-181b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-182b"
+                xlink:label="val_bsi_2250-oe-182b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-182b" xlink:to="men_bsi_2250-oe-182b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="33"/>
+      <msg:message xlink:label="men_bsi_2250-oe-182b" id="men_bsi_2250-oe-182b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-183b"
+                xlink:label="val_bsi_2250-oe-183b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-183b" xlink:to="men_bsi_2250-oe-183b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="34"/>
+      <msg:message xlink:label="men_bsi_2250-oe-183b" id="men_bsi_2250-oe-183b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-186b"
+                xlink:label="val_bsi_2250-oe-186b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-186b" xlink:to="men_bsi_2250-oe-186b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="35"/>
+      <msg:message xlink:label="men_bsi_2250-oe-186b" id="men_bsi_2250-oe-186b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-193b"
+                xlink:label="val_bsi_2250-oe-193b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-193b" xlink:to="men_bsi_2250-oe-193b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="36"/>
+      <msg:message xlink:label="men_bsi_2250-oe-193b" id="men_bsi_2250-oe-193b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( $posValue2001 , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum(($posValue2001,ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum(($posValue2001,ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-199b"
+                xlink:label="val_bsi_2250-oe-199b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-199b" xlink:to="men_bsi_2250-oe-199b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="37"/>
+      <msg:message xlink:label="men_bsi_2250-oe-199b" id="men_bsi_2250-oe-199b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-201b"
+                xlink:label="val_bsi_2250-oe-201b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-201b" xlink:to="men_bsi_2250-oe-201b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="38"/>
+      <msg:message xlink:label="men_bsi_2250-oe-201b" id="men_bsi_2250-oe-201b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-203b"
+                xlink:label="val_bsi_2250-oe-203b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-203b" xlink:to="men_bsi_2250-oe-203b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="39"/>
+      <msg:message xlink:label="men_bsi_2250-oe-203b" id="men_bsi_2250-oe-203b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-204b"
+                xlink:label="val_bsi_2250-oe-204b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-204b" xlink:to="men_bsi_2250-oe-204b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="40"/>
+      <msg:message xlink:label="men_bsi_2250-oe-204b" id="men_bsi_2250-oe-204b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-207b"
+                xlink:label="val_bsi_2250-oe-207b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-207b" xlink:to="men_bsi_2250-oe-207b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="41"/>
+      <msg:message xlink:label="men_bsi_2250-oe-207b" id="men_bsi_2250-oe-207b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070,$negValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-214b"
+                xlink:label="val_bsi_2250-oe-214b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-214b" xlink:to="men_bsi_2250-oe-214b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="42"/>
+      <msg:message xlink:label="men_bsi_2250-oe-214b" id="men_bsi_2250-oe-214b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$posValue2070,$negValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:numeric-subtract ( ai:sum ( $posValue2070 ) , ai:sum ( ( $negValue2070 ) ) ) ) ) ),($posValue2001,$posValue2070,$negValue2070))} [{fmt:celdas(($posValue2001,$posValue2070,$negValue2070),($celda_2250,$posValue2001,$posValue2070,$negValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:sum(($posValue2001)),ai:numeric-subtract(ai:sum($posValue2070),ai:sum(($negValue2070)))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-222b"
+                xlink:label="val_bsi_2250-oe-222b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-222b" xlink:to="men_bsi_2250-oe-222b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="43"/>
+      <msg:message xlink:label="men_bsi_2250-oe-222b" id="men_bsi_2250-oe-222b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-223b"
+                xlink:label="val_bsi_2250-oe-223b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-223b" xlink:to="men_bsi_2250-oe-223b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="44"/>
+      <msg:message xlink:label="men_bsi_2250-oe-223b" id="men_bsi_2250-oe-223b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$posValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$posValue2070),($celdas_2250,$posValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-224b"
+                xlink:label="val_bsi_2250-oe-224b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-224b" xlink:to="men_bsi_2250-oe-224b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="45"/>
+      <msg:message xlink:label="men_bsi_2250-oe-224b" id="men_bsi_2250-oe-224b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-226b"
+                xlink:label="val_bsi_2250-oe-226b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-226b" xlink:to="men_bsi_2250-oe-226b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="46"/>
+      <msg:message xlink:label="men_bsi_2250-oe-226b" id="men_bsi_2250-oe-226b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-228b"
+                xlink:label="val_bsi_2250-oe-228b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-228b" xlink:to="men_bsi_2250-oe-228b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="47"/>
+      <msg:message xlink:label="men_bsi_2250-oe-228b" id="men_bsi_2250-oe-228b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-232b"
+                xlink:label="val_bsi_2250-oe-232b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-232b" xlink:to="men_bsi_2250-oe-232b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="48"/>
+      <msg:message xlink:label="men_bsi_2250-oe-232b" id="men_bsi_2250-oe-232b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$posValue2070))}] {fmt:operador('ge')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$posValue2070),($celdas_2250,$posValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-233b"
+                xlink:label="val_bsi_2250-oe-233b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-233b" xlink:to="men_bsi_2250-oe-233b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="49"/>
+      <msg:message xlink:label="men_bsi_2250-oe-233b" id="men_bsi_2250-oe-233b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$posValue2070),($celdas_2250,$posValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:sum(($posValue2001)),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-234b"
+                xlink:label="val_bsi_2250-oe-234b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-234b" xlink:to="men_bsi_2250-oe-234b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="50"/>
+      <msg:message xlink:label="men_bsi_2250-oe-234b" id="men_bsi_2250-oe-234b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celdas_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(( ai:sum ( ( $celdas_2250 ) ) ),($celdas_2250))} [{fmt:celdas(($celdas_2250),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celdas_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold(ai:sum(($celdas_2250)),ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+      <link:loc xlink:href="2250-2001-2070-cuadres.xml#val_bsi_2250-oe-242b"
+                xlink:label="val_bsi_2250-oe-242b"
+                xlink:type="locator"/>
+      <generic:arc xlink:from="val_bsi_2250-oe-242b" xlink:to="men_bsi_2250-oe-242b"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                   xlink:type="arc"
+                   order="51"/>
+      <msg:message xlink:label="men_bsi_2250-oe-242b" id="men_bsi_2250-oe-242b"
+                   xlink:role="http://www.xbrl.org/2010/role/message"
+                   xlink:type="resource"
+                   xml:lang="es">{fmt:contenido-comun-celdas(($celda_2250,$posValue2001,$negValue2001,$posValue2070))} {fmt:valor(($celda_2250),($celda_2250))} [{fmt:celdas(($celda_2250),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}] {fmt:operador('le')} {fmt:valor(( ai:sum ( ( ai:numeric-subtract ( ai:sum ( ( $posValue2001 ) ) , ai:sum ( ( $negValue2001 ) ) ) , ai:sum ( ( $posValue2070 ) ) ) ) ),($posValue2001,$negValue2001,$posValue2070))} [{fmt:celdas(($posValue2001,$negValue2001,$posValue2070),($celda_2250,$posValue2001,$negValue2001,$posValue2070))}]{fmt:diferencia(ai:numeric-difference($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}{fmt:umbral(ai:numeric-threshold($celda_2250,ai:sum((ai:numeric-subtract(ai:sum(($posValue2001)),ai:sum(($negValue2001))),ai:sum(($posValue2070))))))}</msg:message>
+   </generic:link>
+</link:linkbase>
