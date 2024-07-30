@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b183a3ac3b07848f418b5dab1ee42685d2daddc6028d104af781b0326ff68a2
-size 2028
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:fext="http://www.bde.es/xbrl/func/external-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd">
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <variable:parameter xlink:type="resource" xlink:label="es_entidadSucursalExt" name="entidadSucursalExt" select="fext:atributo('TO_NEG_EXT')" as="xs:boolean" id="es_entidadSucursalExt" />
+    <variable:parameter xlink:type="resource" xlink:label="es_entitySize" name="entitySize" select="fext:atributo-entidad('TO_TAMAÑO',substring-after(xfi:identifier-value( //xbrli:context[1]/xbrli:entity/xbrli:identifier ) ,'ES'),$refPeriodEndDate)" id="es_entitySize" />
+    <variable:parameter xlink:type="resource" xlink:label="es_sucExtranjera" name="sucExtranjera" select="fext:atributo('TO_SUC_EX')" as="xs:string" id="es_sucExtranjera" />
+    <variable:parameter xlink:type="resource" xlink:label="es_tipoEntidad" name="tipoEntidad" select="fext:atributo('TO_TIP_ENT')" as="xs:string" id="es_tipoEntidad" />
+    <variable:parameter xlink:type="resource" xlink:label="es_TR" name="TR" select="fext:SolicitarAtributoInteger('4671', 'ES', 'TO_TRFI107', $refPeriodEndDate) div 100" id="es_TR" />
+  </gen:link>
+</link:linkbase>

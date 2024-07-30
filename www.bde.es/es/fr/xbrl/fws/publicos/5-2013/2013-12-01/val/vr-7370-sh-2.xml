@@ -1,3 +1,128 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b2fa8153a9e73d1418b1f8cbbb4e0bfd867254c84e2599cbc5ecbcd669e8c21
-size 14188
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:es-be-cm-dim="http://www.bde.es/es/fr/esrs/comun/2008-06-01/dimensiones" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:variable="http://xbrl.org/2008/variable" xmlns:estr_dim="http://www.bde.es/es/fr/xbrl/main/dim" xmlns:estr_PSR="http://www.bde.es/es/fr/xbrl/main/d/PSR" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_7370-sh-2" test="abs($totalRdo - ($capital + $primaEmision + $reservasPerdidasAcumulada + $reservasPerdidasEntidades + $otrosInstrumentosCapital - $menosValoresPropios + $resultadoEjercicio - $menosDividendosRetribuciones)) le $threshold" aspectModel="dimensional" implicitFiltering="true" id="es_7370-sh-2" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.f1" id="es_7370-sh-2.f1">
+      <df:dimension>
+        <df:qname>es-be-cm-dim:Agrupacion</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es-be-cm-dim:AgrupacionGrupoConsolidado</df:qname>
+      </df:member>
+      <df:member>
+        <df:qname>es-be-cm-dim:AgrupacionSubgrupoConsolidado</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.f1" complement="false" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.capital" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.capital" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.capital.fil_PatrimonioNetoDim_CapitalFondoDotaciond10e176" id="es_7370-sh-2.capital.fil_PatrimonioNetoDim_CapitalFondoDotaciond10e176">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x108909</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.capital" xlink:to="es_7370-sh-2.capital.fil_PatrimonioNetoDim_CapitalFondoDotaciond10e176" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.capital" name="capital" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.primaEmision" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.primaEmision" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.primaEmision.fil_PatrimonioNetoDim_PrimaEmisiond10e190" id="es_7370-sh-2.primaEmision.fil_PatrimonioNetoDim_PrimaEmisiond10e190">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x102122</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.primaEmision" xlink:to="es_7370-sh-2.primaEmision.fil_PatrimonioNetoDim_PrimaEmisiond10e190" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.primaEmision" name="primaEmision" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.reservasPerdidasAcumulada" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.reservasPerdidasAcumulada" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.reservasPerdidasAcumulada.fil_PatrimonioNetoDim_ReservasPerdidasAcumuladasd10e204" id="es_7370-sh-2.reservasPerdidasAcumulada.fil_PatrimonioNetoDim_ReservasPerdidasAcumuladasd10e204">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x12537</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.reservasPerdidasAcumulada" xlink:to="es_7370-sh-2.reservasPerdidasAcumulada.fil_PatrimonioNetoDim_ReservasPerdidasAcumuladasd10e204" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.reservasPerdidasAcumulada" name="reservasPerdidasAcumulada" order="3" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.reservasPerdidasEntidades" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.reservasPerdidasEntidades" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.reservasPerdidasEntidades.fil_PatrimonioNetoDim_ReservasPerdidasEntidadesValoradasMetodoParticipaciond10e218" id="es_7370-sh-2.reservasPerdidasEntidades.fil_PatrimonioNetoDim_ReservasPerdidasEntidadesValoradasMetodoParticipaciond10e218">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x62448</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.reservasPerdidasEntidades" xlink:to="es_7370-sh-2.reservasPerdidasEntidades.fil_PatrimonioNetoDim_ReservasPerdidasEntidadesValoradasMetodoParticipaciond10e218" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.reservasPerdidasEntidades" name="reservasPerdidasEntidades" order="4" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.otrosInstrumentosCapital" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.otrosInstrumentosCapital" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.otrosInstrumentosCapital.fil_PatrimonioNetoDim_TotalOtrosInstrumentosCapitald10e233" id="es_7370-sh-2.otrosInstrumentosCapital.fil_PatrimonioNetoDim_TotalOtrosInstrumentosCapitald10e233">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x53391</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.otrosInstrumentosCapital" xlink:to="es_7370-sh-2.otrosInstrumentosCapital.fil_PatrimonioNetoDim_TotalOtrosInstrumentosCapitald10e233" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.otrosInstrumentosCapital" name="otrosInstrumentosCapital" order="5" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.menosValoresPropios" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.menosValoresPropios" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.menosValoresPropios.fil_PatrimonioNetoDim_MenosValoresPropiosd10e247" id="es_7370-sh-2.menosValoresPropios.fil_PatrimonioNetoDim_MenosValoresPropiosd10e247">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x85616</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.menosValoresPropios" xlink:to="es_7370-sh-2.menosValoresPropios.fil_PatrimonioNetoDim_MenosValoresPropiosd10e247" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.menosValoresPropios" name="menosValoresPropios" order="6" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.resultadoEjercicio" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.resultadoEjercicio" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.resultadoEjercicio.fil_PatrimonioNetoDim_ResultadoEjerciciod10e261" id="es_7370-sh-2.resultadoEjercicio.fil_PatrimonioNetoDim_ResultadoEjerciciod10e261">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x76408</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.resultadoEjercicio" xlink:to="es_7370-sh-2.resultadoEjercicio.fil_PatrimonioNetoDim_ResultadoEjerciciod10e261" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.resultadoEjercicio" name="resultadoEjercicio" order="7" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.menosDividendosRetribuciones" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.menosDividendosRetribuciones" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.menosDividendosRetribuciones.fil_PatrimonioNetoDim_MenosDividendosRetribucionesd10e275" id="es_7370-sh-2.menosDividendosRetribuciones.fil_PatrimonioNetoDim_MenosDividendosRetribucionesd10e275">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x10113</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.menosDividendosRetribuciones" xlink:to="es_7370-sh-2.menosDividendosRetribuciones.fil_PatrimonioNetoDim_MenosDividendosRetribucionesd10e275" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.menosDividendosRetribuciones" name="menosDividendosRetribuciones" order="8" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_7370-sh-2.totalRdo" bindAsSequence="false" fallbackValue="0" id="es_7370-sh-2.totalRdo" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_7370-sh-2.totalRdo.fil_PatrimonioNetoDim_TotalFondosPropiosd10e289" id="es_7370-sh-2.totalRdo.fil_PatrimonioNetoDim_TotalFondosPropiosd10e289">
+      <df:dimension>
+        <df:qname>estr_dim:PXA</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>estr_PSR:x64962</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_7370-sh-2.totalRdo" xlink:to="es_7370-sh-2.totalRdo.fil_PatrimonioNetoDim_TotalFondosPropiosd10e289" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.totalRdo" name="totalRdo" order="9" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_7370-sh-2.threshold" bindAsSequence="false" select="(8 idiv 2 + 1) * 1000" id="es_7370-sh-2.threshold" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_7370-sh-2" xlink:to="es_7370-sh-2.threshold" name="threshold" order="10" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_7370-sh-2" id="ref_es_7370-sh-2">
+      <ref:Number>publicos:7370-sh-2</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_7370-sh-2" xlink:to="ref_es_7370-sh-2" />
+  </gen:link>
+</link:linkbase>

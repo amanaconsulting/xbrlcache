@@ -1,3 +1,2683 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f34bcd873b339ba7810972f714034da2223f5dc0865300bd8334650134a89136
-size 138287
+<?xml version="1.0" encoding="UTF-8"?>
+<!--© Copyright Banco de España. Reservados todos los derechos-->            
+<link:linkbase xmlns:generic="http://xbrl.org/2008/generic"
+               xmlns:va="http://xbrl.org/2008/assertion/value"
+               xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+               xmlns:variable="http://xbrl.org/2008/variable"
+               xmlns:fn="http://www.w3.org/2005/xpath-functions"
+               xmlns:instance="http://xbrl.org/2010/variable/instance"
+               xmlns:cf="http://xbrl.org/2008/filter/concept"
+               xmlns:ea="http://xbrl.org/2008/assertion/existence"
+               xmlns:es-be-cm-pblo="http://www.bde.es/es/fr/esrs/comun/2008-06-01/preambulo"
+               xmlns:df="http://xbrl.org/2008/filter/dimension"
+               xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+               xmlns:fext="http://www.bde.es/es/fr/xbrl/main/functions/external"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:uf="http://xbrl.org/2008/filter/unit"
+               xmlns:label="http://xbrl.org/2008/label"
+               xmlns:fdat="http://www.bde.es/es/fr/xbrl/main/functions/date"
+               xmlns:gf="http://xbrl.org/2008/filter/general"
+               xmlns:reference="http://xbrl.org/2008/reference"
+               xmlns:ai="http://www.bde.es/es/fr/xbrl/main/functions/arithmetic"
+               xmlns:r="http://www.bde.es/xbrl/util/formulae/2010/rules"
+               xmlns:tf="http://xbrl.org/2008/filter/tuple"
+               xmlns:ref="http://www.xbrl.org/2006/ref"
+               xmlns:fslv="http://www.bde.es/es/fr/xbrl/main/functions/solvency"
+               xmlns:xbrli="http://www.xbrl.org/2003/instance"
+               xmlns:pf="http://xbrl.org/2008/filter/period"
+               xmlns:mf="http://xbrl.org/2008/filter/match"
+               xmlns:fmt="http://www.bde.es/es/fr/xbrl/main/functions/format"
+               xmlns:ra="http://www.bde.es/xbrl/util/formulae/rules/auxiliar"
+               xmlns:ef="http://xbrl.org/2008/filter/entity"
+               xmlns:frRef="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias"
+               xmlns:validation="http://xbrl.org/2008/validation"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:bf="http://xbrl.org/2008/filter/boolean"
+               xmlns:bcf="http://www.bde.es/aps/sif/builds/comun/funciones"
+               xmlns:link="http://www.xbrl.org/2003/linkbase"
+               xmlns:formula="http://xbrl.org/2008/formula"
+               xmlns:msg="http://xbrl.org/2010/message"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:dim="http://www.eurofiling.info/dim"
+               xmlns:dCU="http://www.eurofiling.info/d/CU"
+               xmlns:dCT="http://www.eurofiling.info/d/CT"
+               xmlns:dGA="http://www.eurofiling.info/d/GA"
+               xmlns:dTI="http://www.eurofiling.info/d/TI"
+               xmlns:dMC="http://www.eurofiling.info/d/MC"
+               xmlns:dAT="http://www.eurofiling.info/d/AT"
+               xmlns:es_dGA="http://www.bde.es/es/fr/xbrl/main/d/GA"
+               xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd http://xbrl.org/2008/filter/boolean http://www.xbrl.org/2008/boolean-filter.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd http://xbrl.org/2010/variable/instance http://www.xbrl.org/2010/variable-instance.xsd http://www.bde.es/es/fr/xbrl/main/functions http://www.bde.es/es/fr/xbrl/main/2010-11-01/func/functions.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd ">
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/assertion-set"
+                    xlink:href="http://www.xbrl.org/2008/validation.xsd#assertion-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter"
+                    xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/boolean-filter"
+                    xlink:href="http://www.xbrl.org/2008/boolean-filter.xsd#boolean-filter"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition"
+                    xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label"
+                    xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference"
+                    xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/instance-variable"
+                    xlink:href="http://www.xbrl.org/2010/variable-instance.xsd#instance-variable"
+                    xlink:type="simple"/>
+   <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+                    xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"
+                    xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/modulodefinicion"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#modulodefinicion"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/moduloexterno"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#moduloexterno"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://bde.es/formulas/2010/atributoscuadres"
+                 xlink:href="http://www.bde.es/es/fr/esrs/comun/2010-01-01/formulareferencias.xsd#atributoscuadres"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/message"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.xbrl.org/2010/role/verboseMessage"
+                 xlink:href="http://www.xbrl.org/2010/generic-message.xsd#verbose-message"
+                 xlink:type="simple"/>
+   <link:roleRef roleURI="http://www.eurofiling.info/xbrl/role/val/params"
+                 xlink:href="http://www.eurofiling.info/eu/fr/xbrl/val/params.xsd#params"
+                 xlink:type="simple"/>
+   <generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-mind_umem.xml#Mind_umem"
+                xlink:label="Mind_umem"/>
+      <link:loc xlink:type="locator"
+                xlink:href="http://www.bde.es/es/fr/esrs/comun/2013-04-01/instances/instance-mind_umet.xml#Mind_umet"
+                xlink:label="Mind_umet"/>
+      <validation:assertionSet xlink:type="resource" xlink:label="assertionSet_1" id="assertionSet_1"/>
+      <reference:reference xlink:label="ref_atributosCuadres_4260_2250_cuadres_1"
+                           id="ref_atributosCuadres_4260_2250_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/atributoscuadres">
+         <frRef:Tipo>cuadres</frRef:Tipo>
+         <frRef:Visibilidad>publico</frRef:Visibilidad>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_atributosCuadres_4260_2250_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloDefinicion_4260_2250_cuadres_1"
+                           id="ref_moduloDefinicion_4260_2250_cuadres_1"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/modulodefinicion">
+         <frRef:Modulo>ind_umet</frRef:Modulo>
+         <frRef:Instancia>Mind_umet</frRef:Instancia>
+         <frRef:Estado>4260</frRef:Estado>
+         <frRef:Dependiente>true</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloDefinicion_4260_2250_cuadres_1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <reference:reference xlink:label="ref_moduloExterno_4260_2250_cuadres_2"
+                           id="ref_moduloExterno_4260_2250_cuadres_2"
+                           xlink:type="resource"
+                           xlink:role="http://bde.es/formulas/2010/moduloexterno">
+         <frRef:Modulo>ind_umem</frRef:Modulo>
+         <frRef:Instancia>Mind_umem</frRef:Instancia>
+         <frRef:Estado>2250?</frRef:Estado>
+         <frRef:Dependiente>false</frRef:Dependiente>
+      </reference:reference>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="ref_moduloExterno_4260_2250_cuadres_2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="2"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="3"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="4"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="5"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="6"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="7"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="8"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="9"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="10"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="11"/>
+      <generic:arc xlink:from="assertionSet_1" xlink:to="val_bsi_4260-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/assertion-set"
+                   xlink:type="arc"
+                   order="12"/>
+      <link:loc xlink:href="../../comun.xml#var_UmbralBasico2" xlink:label="var_UmbralBasico2"
+                xlink:type="locator"/>
+      <link:loc xlink:href="../../comun.xml#var_UmbralBasico6" xlink:label="var_UmbralBasico6"
+                xlink:type="locator"/>
+      <link:loc xlink:href="../../comun.xml#var_UmbralBasico17"
+                xlink:label="var_UmbralBasico17"
+                xlink:type="locator"/>
+      <link:loc xlink:href="../../comun.xml#var_UmbralBasico18"
+                xlink:label="var_UmbralBasico18"
+                xlink:type="locator"/>
+      <link:loc xlink:href="../../comun.xml#var_UmbralBasico22"
+                xlink:label="var_UmbralBasico22"
+                xlink:type="locator"/>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionCN" id="fil_DefaultDimensionCN"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionCP" id="fil_DefaultDimensionCP"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CP</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionCS" id="fil_DefaultDimensionCS"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionIF" id="fil_DefaultDimensionIF"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:IF</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionLA" id="fil_DefaultDimensionLA"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LA</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:es</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionLN" id="fil_DefaultDimensionLN"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LN</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionLT" id="fil_DefaultDimensionLT"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LT</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionOM" id="fil_DefaultDimensionOM"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionRC" id="fil_DefaultDimensionRC"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionRM" id="fil_DefaultDimensionRM"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RM</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionRR" id="fil_DefaultDimensionRR"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RR</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionRS" id="fil_DefaultDimensionRS"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RS</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_DefaultDimensionSZ" id="fil_DefaultDimensionSZ"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:SZ</df:qname>
+         </df:dimension>
+      </df:explicitDimension>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-1"
+                         test="abs($DS_L_CU_All - sum($DS_L_CU_EUR_FR)) le $umbral "
+                         id="val_bsi_4260-oe-1"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-1"
+                                     xlink:to="fil_ASDim_x149d10e135"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-1"
+                                     xlink:to="fil_CSDim_x25d10e149"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-1"
+                                     xlink:to="fil_RCDim_esd10e159"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-1"
+                                     xlink:to="fil_OMDim_x0d10e169"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-1"
+                                     xlink:to="fil_ATDim_x67d10e180"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="5"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurd10e194"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0d10e212"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="DS_L_CU_EUR_FR" xlink:from="val_bsi_4260-oe-1"
+                            xlink:to="var_CNDim_eurd10e194"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="DS_L_CU_All" xlink:from="val_bsi_4260-oe-1"
+                            xlink:to="var_CNDim_x0d10e212"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-1" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-1" id="lab_val_bsi_4260-oe-1"
+                   xlink:type="resource"
+                   xml:lang="es"> 0005 (4260) = 0086 + 0126 (2250) 0065 (4260) = 0091 + 0131 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-1" xlink:to="lab_val_bsi_4260-oe-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x149d10e135" id="fil_ASDim_x149d10e135"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x149</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dMC:x139</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x25d10e149" id="fil_CSDim_x25d10e149"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x25</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_esd10e159" id="fil_RCDim_esd10e159"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:es</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e169" id="fil_OMDim_x0d10e169"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e180" id="fil_ATDim_x67d10e180"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurd10e194" bindAsSequence="true"
+                             id="var_CNDim_eurd10e194"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurd10e194"
+                                  xlink:to="fil_CNDim_eurd10e196"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e196" id="fil_CNDim_eurd10e196"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0d10e212" bindAsSequence="false"
+                             id="var_CNDim_x0d10e212"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0d10e212"
+                                  xlink:to="fil_CNDim_x0d10e214"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e214" id="fil_CNDim_x0d10e214"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-1" id="ref_val_bsi_4260-oe-1"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-1</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-1" xlink:to="ref_val_bsi_4260-oe-1"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-2"
+                         test="abs($E_CU_All - sum($E_CU_EUR_FR)) le $umbral "
+                         id="val_bsi_4260-oe-2"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-2"
+                                     xlink:to="fil_ASDim_x154d10e232"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-2"
+                                     xlink:to="fil_CSDim_x26d10e242"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-2"
+                                     xlink:to="fil_RCDim_esd10e256"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-2"
+                                     xlink:to="fil_ATDim_x67d10e266"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurd10e281"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0d10e299"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="E_CU_EUR_FR" xlink:from="val_bsi_4260-oe-2"
+                            xlink:to="var_CNDim_eurd10e281"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="E_CU_All" xlink:from="val_bsi_4260-oe-2" xlink:to="var_CNDim_x0d10e299"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-2" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-2" id="lab_val_bsi_4260-oe-2"
+                   xlink:type="resource"
+                   xml:lang="es"> 0125 (4260) = 0100 + 0140 (2250) 0155 (4260) = 0105 + 0145 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-2" xlink:to="lab_val_bsi_4260-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x154d10e232" id="fil_ASDim_x154d10e232"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x154</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x26d10e242" id="fil_CSDim_x26d10e242"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x26</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x27</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_esd10e256" id="fil_RCDim_esd10e256"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:es</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e266" id="fil_ATDim_x67d10e266"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurd10e281" bindAsSequence="true"
+                             id="var_CNDim_eurd10e281"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurd10e281"
+                                  xlink:to="fil_CNDim_eurd10e283"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e283" id="fil_CNDim_eurd10e283"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0d10e299" bindAsSequence="false"
+                             id="var_CNDim_x0d10e299"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0d10e299"
+                                  xlink:to="fil_CNDim_x0d10e301"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e301" id="fil_CNDim_x0d10e301"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-2" id="ref_val_bsi_4260-oe-2"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-2</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-2" xlink:to="ref_val_bsi_4260-oe-2"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-3"
+                         test="abs($DS_MFIs_CU_All - sum($DS_MFIs_CU_EUR_FR)) le $umbral "
+                         id="val_bsi_4260-oe-3"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-3"
+                                     xlink:to="fil_ASDim_x139d10e319"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-3"
+                                     xlink:to="fil_CSDim_x25d10e329"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-3"
+                                     xlink:to="fil_RCDim_esd10e339"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-3"
+                                     xlink:to="fil_OMDim_x15d10e349"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-3"
+                                     xlink:to="fil_ATDim_x67d10e362"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="5"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurd10e376"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0d10e394"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="DS_MFIs_CU_EUR_FR" xlink:from="val_bsi_4260-oe-3"
+                            xlink:to="var_CNDim_eurd10e376"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="DS_MFIs_CU_All" xlink:from="val_bsi_4260-oe-3"
+                            xlink:to="var_CNDim_x0d10e394"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-3" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-3" id="lab_val_bsi_4260-oe-3"
+                   xlink:type="resource"
+                   xml:lang="es"> 0245 (4260) = 0092 + 0132 (2250) 0275 (4260) = 0093 + 0133 (2250) 0305 (4260) =
+                0094 + 0134 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-3" xlink:to="lab_val_bsi_4260-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x139d10e319" id="fil_ASDim_x139d10e319"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x139</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x25d10e329" id="fil_CSDim_x25d10e329"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x25</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_esd10e339" id="fil_RCDim_esd10e339"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:es</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x15d10e349" id="fil_OMDim_x15d10e349"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x15</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x2</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x6</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e362" id="fil_ATDim_x67d10e362"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurd10e376" bindAsSequence="true"
+                             id="var_CNDim_eurd10e376"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurd10e376"
+                                  xlink:to="fil_CNDim_eurd10e378"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e378" id="fil_CNDim_eurd10e378"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0d10e394" bindAsSequence="false"
+                             id="var_CNDim_x0d10e394"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0d10e394"
+                                  xlink:to="fil_CNDim_x0d10e396"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e396" id="fil_CNDim_x0d10e396"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-3" id="ref_val_bsi_4260-oe-3"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-3</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-3" xlink:to="ref_val_bsi_4260-oe-3"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-4"
+                         test="abs($L_DS_nMFIs_CU_All - sum($L_DS_nMFIs_CU_EUR_FR)) le $umbral "
+                         id="val_bsi_4260-oe-4"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-4"
+                                     xlink:to="fil_ASDim_x139d10e415"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-4"
+                                     xlink:to="fil_RCDim_esd10e429"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-4"
+                                     xlink:to="fil_OMDim_x0d10e439"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-4"
+                                     xlink:to="fil_ATDim_x67d10e449"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurCSDim_x16d10e464"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0CSDim_x30d10e500"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="L_DS_nMFIs_CU_EUR_FR" xlink:from="val_bsi_4260-oe-4"
+                            xlink:to="var_CNDim_eurCSDim_x16d10e464"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="L_DS_nMFIs_CU_All" xlink:from="val_bsi_4260-oe-4"
+                            xlink:to="var_CNDim_x0CSDim_x30d10e500"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-4" xlink:to="var_UmbralBasico6"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-4" id="lab_val_bsi_4260-oe-4"
+                   xlink:type="resource"
+                   xml:lang="es"> 0035 (4260) = 0087 + 0088 + 0089 + 0127 + 0128 + 0129 (2250) 0095 (4260) = 0095 +
+                0096 + 0097 + 0135 + 0136 + 0137 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-4" xlink:to="lab_val_bsi_4260-oe-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x139d10e415" id="fil_ASDim_x139d10e415"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x139</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dMC:x149</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_esd10e429" id="fil_RCDim_esd10e429"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:es</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e439" id="fil_OMDim_x0d10e439"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e449" id="fil_ATDim_x67d10e449"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurCSDim_x16d10e464" bindAsSequence="true"
+                             id="var_CNDim_eurCSDim_x16d10e464"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurCSDim_x16d10e464"
+                                  xlink:to="fil_CNDim_eurd10e466"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurCSDim_x16d10e464"
+                                  xlink:to="fil_CSDim_x16d10e476"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e466" id="fil_CNDim_eurd10e466"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x16d10e476" id="fil_CSDim_x16d10e476"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x16</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x33</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x31</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0CSDim_x30d10e500" bindAsSequence="false"
+                             id="var_CNDim_x0CSDim_x30d10e500"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0CSDim_x30d10e500"
+                                  xlink:to="fil_CNDim_x0d10e502"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0CSDim_x30d10e500"
+                                  xlink:to="fil_CSDim_x30d10e510"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e502" id="fil_CNDim_x0d10e502"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x30d10e510" id="fil_CSDim_x30d10e510"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x30</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-4" id="ref_val_bsi_4260-oe-4"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-4</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-4" xlink:to="ref_val_bsi_4260-oe-4"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-5"
+                         test="abs($D_CU_All - sum($D_CU_EUR_FR)) le $umbral "
+                         id="val_bsi_4260-oe-5"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-5"
+                                     xlink:to="fil_LIDim_x141d10e530"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-5"
+                                     xlink:to="fil_CSDim_x25d10e540"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-5"
+                                     xlink:to="fil_RCDim_esd10e550"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-5"
+                                     xlink:to="fil_OMDim_x0d10e560"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-5"
+                                     xlink:to="fil_ATDim_x67d10e571"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="5"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurd10e585"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0d10e603"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="D_CU_EUR_FR" xlink:from="val_bsi_4260-oe-5"
+                            xlink:to="var_CNDim_eurd10e585"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="D_CU_All" xlink:from="val_bsi_4260-oe-5" xlink:to="var_CNDim_x0d10e603"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-5" xlink:to="var_UmbralBasico2"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-5" id="lab_val_bsi_4260-oe-5"
+                   xlink:type="resource"
+                   xml:lang="es"> 0185 (4260) = 0452 + 0502 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-5" xlink:to="lab_val_bsi_4260-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_LIDim_x141d10e530" id="fil_LIDim_x141d10e530"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LI</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x141</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x25d10e540" id="fil_CSDim_x25d10e540"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x25</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_esd10e550" id="fil_RCDim_esd10e550"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:es</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e560" id="fil_OMDim_x0d10e560"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e571" id="fil_ATDim_x67d10e571"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurd10e585" bindAsSequence="true"
+                             id="var_CNDim_eurd10e585"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurd10e585"
+                                  xlink:to="fil_CNDim_eurd10e587"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e587" id="fil_CNDim_eurd10e587"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0d10e603" bindAsSequence="false"
+                             id="var_CNDim_x0d10e603"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0d10e603"
+                                  xlink:to="fil_CNDim_x0d10e605"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e605" id="fil_CNDim_x0d10e605"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-5" id="ref_val_bsi_4260-oe-5"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-5</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-5" xlink:to="ref_val_bsi_4260-oe-5"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-6"
+                         test="abs($D_nMFIs_CU_All - sum($D_nMFIs_CU_EUR_FR)) le $umbral "
+                         id="val_bsi_4260-oe-6"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-6"
+                                     xlink:to="fil_LIDim_x141d10e623"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-6"
+                                     xlink:to="fil_RCDim_esd10e633"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-6"
+                                     xlink:to="fil_OMDim_x0d10e643"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-6"
+                                     xlink:to="fil_ATDim_x67d10e653"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurCSDim_x16d10e668"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0CSDim_x30d10e704"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="D_nMFIs_CU_EUR_FR" xlink:from="val_bsi_4260-oe-6"
+                            xlink:to="var_CNDim_eurCSDim_x16d10e668"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="D_nMFIs_CU_All" xlink:from="val_bsi_4260-oe-6"
+                            xlink:to="var_CNDim_x0CSDim_x30d10e704"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-6" xlink:to="var_UmbralBasico6"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-6" id="lab_val_bsi_4260-oe-6"
+                   xlink:type="resource"
+                   xml:lang="es"> 0215 (4260) = 0454 + 0455 + 0465 + 0504 + 0505 + 0515 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-6" xlink:to="lab_val_bsi_4260-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_LIDim_x141d10e623" id="fil_LIDim_x141d10e623"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LI</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x141</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_esd10e633" id="fil_RCDim_esd10e633"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:es</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e643" id="fil_OMDim_x0d10e643"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e653" id="fil_ATDim_x67d10e653"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurCSDim_x16d10e668" bindAsSequence="true"
+                             id="var_CNDim_eurCSDim_x16d10e668"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurCSDim_x16d10e668"
+                                  xlink:to="fil_CNDim_eurd10e670"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurCSDim_x16d10e668"
+                                  xlink:to="fil_CSDim_x16d10e680"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e670" id="fil_CNDim_eurd10e670"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x16d10e680" id="fil_CSDim_x16d10e680"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x16</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x33</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x31</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0CSDim_x30d10e704" bindAsSequence="false"
+                             id="var_CNDim_x0CSDim_x30d10e704"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0CSDim_x30d10e704"
+                                  xlink:to="fil_CNDim_x0d10e706"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0CSDim_x30d10e704"
+                                  xlink:to="fil_CSDim_x30d10e714"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e706" id="fil_CNDim_x0d10e706"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x30d10e714" id="fil_CSDim_x30d10e714"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x30</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-6" id="ref_val_bsi_4260-oe-6"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-6</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-6" xlink:to="ref_val_bsi_4260-oe-6"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-7"
+                         test="abs(sum($DS_L_CU_EUR_FR) - sum($DS_L_CU_ALL_CbC)) le $umbral"
+                         id="val_bsi_4260-oe-7"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-7"
+                                     xlink:to="fil_ASDim_x149d10e734"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-7"
+                                     xlink:to="fil_CSDim_x25d10e748"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-7"
+                                     xlink:to="fil_OMDim_x0d10e758"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-7"
+                                     xlink:to="fil_ATDim_x67d10e768"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurRCDim_x2d10e783"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_RCDim_atd10e811"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="DS_L_CU_EUR_FR" xlink:from="val_bsi_4260-oe-7"
+                            xlink:to="var_CNDim_eurRCDim_x2d10e783"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="DS_L_CU_ALL_CbC" xlink:from="val_bsi_4260-oe-7"
+                            xlink:to="var_RCDim_atd10e811"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-7" xlink:to="var_UmbralBasico17"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-7" id="lab_val_bsi_4260-oe-7"
+                   xlink:type="resource"
+                   xml:lang="es"> 0001 + 0002 + 0003 + 0016 + 0017 + 0018 + 0019 + 0006 + 0007 + 0009 + 0010 + 0011
+                + 0012 + 0013 + 0023 + 0014 (4260) = 0206 + 0246 (2250) 0061 + 0062 + 0063 + 0076 +
+                0077 + 0078 + 0079 + 0066 + 0067 + 0069 + 0070 + 0071 + 0072 + 0073 + 0083 + 0074
+                (4260) = 0211 + 0251 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-7" xlink:to="lab_val_bsi_4260-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x149d10e734" id="fil_ASDim_x149d10e734"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x149</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dMC:x139</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x25d10e748" id="fil_CSDim_x25d10e748"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x25</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e758" id="fil_OMDim_x0d10e758"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e768" id="fil_ATDim_x67d10e768"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurRCDim_x2d10e783" bindAsSequence="true"
+                             id="var_CNDim_eurRCDim_x2d10e783"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurRCDim_x2d10e783"
+                                  xlink:to="fil_CNDim_eurd10e785"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurRCDim_x2d10e783"
+                                  xlink:to="fil_RCDim_x2d10e795"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e785" id="fil_CNDim_eurd10e785"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_x2d10e795" id="fil_RCDim_x2d10e795"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:x2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_RCDim_atd10e811" bindAsSequence="true"
+                             id="var_RCDim_atd10e811"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_RCDim_atd10e811"
+                                  xlink:to="fil_RCDim_atd10e813"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_RCDim_atd10e813" id="fil_RCDim_atd10e813"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:at</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:be</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fi</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:de</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ie</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:it</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:lu</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:pt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:gr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:si</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ee</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:cy</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:mt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:nl</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:sk</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-7" id="ref_val_bsi_4260-oe-7"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-7</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-7" xlink:to="ref_val_bsi_4260-oe-7"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-8"
+                         test="abs(sum($E_CU_EUR_FR) - (sum($E_CU_All_CbC)) + $mecanismoEuropeoEstabilidad) le $umbral "
+                         id="val_bsi_4260-oe-8"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-8"
+                                     xlink:to="fil_ASDim_x154d10e863"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-8"
+                                     xlink:to="fil_CSDim_x26d10e873"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-8"
+                                     xlink:to="fil_ATDim_x67d10e887"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurRCDim_x2d10e916"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0RCDim_atd10e944"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="mecanismoEuropeoEstabilidad" xlink:from="val_bsi_4260-oe-8"
+                            xlink:to="var_RCDim_meed10e899"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="E_CU_EUR_FR" xlink:from="val_bsi_4260-oe-8"
+                            xlink:to="var_CNDim_eurRCDim_x2d10e916"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="E_CU_All_CbC" xlink:from="val_bsi_4260-oe-8"
+                            xlink:to="var_CNDim_x0RCDim_atd10e944"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-8" xlink:to="var_UmbralBasico18"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-8" id="lab_val_bsi_4260-oe-8"
+                   xlink:type="resource"
+                   xml:lang="es"> 0121 + 0122 + 0123 + 0136 + 0137 + 0138 + 0139 + 0126 + 0127 + 0129 + 0130 + 0131
+                + 0132 + 0133 + 0143 + 0134 (4260) = 0220 + 0260 (2250) 0151 + 0152 + 0153 + 0166 +
+                0167 + 0168 + 0169 + 0156 + 0157 + 0159 + 0160 + 0161 + 0162 + 0163 + 0173 + 0164
+                (4260) = 0225 + 0265 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-8" xlink:to="lab_val_bsi_4260-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x154d10e863" id="fil_ASDim_x154d10e863"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x154</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x26d10e873" id="fil_CSDim_x26d10e873"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x26</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x27</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e887" id="fil_ATDim_x67d10e887"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_RCDim_meed10e899" bindAsSequence="false"
+                             id="var_RCDim_meed10e899"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_RCDim_meed10e899"
+                                  xlink:to="fil_RCDim_meed10e901"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_RCDim_meed10e901" id="fil_RCDim_meed10e901"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es_dGA:mee</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurRCDim_x2d10e916" bindAsSequence="true"
+                             id="var_CNDim_eurRCDim_x2d10e916"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurRCDim_x2d10e916"
+                                  xlink:to="fil_CNDim_eurd10e918"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurRCDim_x2d10e916"
+                                  xlink:to="fil_RCDim_x2d10e928"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e918" id="fil_CNDim_eurd10e918"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_x2d10e928" id="fil_RCDim_x2d10e928"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:x2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0RCDim_atd10e944" bindAsSequence="true"
+                             id="var_CNDim_x0RCDim_atd10e944"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atd10e944"
+                                  xlink:to="fil_CNDim_x0d10e946"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atd10e944"
+                                  xlink:to="fil_RCDim_atd10e954"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e946" id="fil_CNDim_x0d10e946"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_atd10e954" id="fil_RCDim_atd10e954"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:at</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:be</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fi</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:de</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ie</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:it</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:lu</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:pt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:gr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ee</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:si</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:cy</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:mt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:nl</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:sk</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-8" id="ref_val_bsi_4260-oe-8"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-8</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-8" xlink:to="ref_val_bsi_4260-oe-8"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-9"
+                         test="abs(sum($DS_MFIs_CU_EUR_FR) - sum($DS_MFIs_CU_All_CbC)) le $umbral "
+                         id="val_bsi_4260-oe-9"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-9"
+                                     xlink:to="fil_ASDim_x139d10e1004"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-9"
+                                     xlink:to="fil_CSDim_x25d10e1014"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-9"
+                                     xlink:to="fil_OMDim_x15d10e1024"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-9"
+                                     xlink:to="fil_ATDim_x67d10e1036"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurRCDim_x2d10e1051"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0RCDim_atd10e1079"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="DS_MFIs_CU_EUR_FR" xlink:from="val_bsi_4260-oe-9"
+                            xlink:to="var_CNDim_eurRCDim_x2d10e1051"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="DS_MFIs_CU_All_CbC" xlink:from="val_bsi_4260-oe-9"
+                            xlink:to="var_CNDim_x0RCDim_atd10e1079"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-9" xlink:to="var_UmbralBasico18"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-9" id="lab_val_bsi_4260-oe-9"
+                   xlink:type="resource"
+                   xml:lang="es"> 0241 + 0242 + 0243 + 0256 + 0257 + 0258 + 0259 + 0246 + 0247 + 0249 + 0250 + 0251
+                + 0252 + 0253 + 0263 + 0254 (4260) = 0212 + 0252 (2250) 0271 + 0272 + 0273 + 0286 +
+                0287 + 0288 + 0276 + 0289 + 0277 + 0279 + 0280 + 0281 + 0282 + 0283 + 0293 + 0284
+                (4260) = 0213 + 0253 (2250) 0301 + 0302 + 0303 + 0316 + 0317 + 0318 + 0306 + 0319 +
+                0307 + 0309 + 0310 + 0311 + 0312 + 0313 + 0323 + 0314 (4260) = 0214 + 0254 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-9" xlink:to="lab_val_bsi_4260-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x139d10e1004" id="fil_ASDim_x139d10e1004"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x139</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x25d10e1014" id="fil_CSDim_x25d10e1014"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x25</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x15d10e1024" id="fil_OMDim_x15d10e1024"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x15</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x2</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dTI:x6</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e1036" id="fil_ATDim_x67d10e1036"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurRCDim_x2d10e1051" bindAsSequence="true"
+                             id="var_CNDim_eurRCDim_x2d10e1051"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurRCDim_x2d10e1051"
+                                  xlink:to="fil_CNDim_eurd10e1053"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurRCDim_x2d10e1051"
+                                  xlink:to="fil_RCDim_x2d10e1063"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e1053" id="fil_CNDim_eurd10e1053"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_x2d10e1063" id="fil_RCDim_x2d10e1063"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:x2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0RCDim_atd10e1079" bindAsSequence="true"
+                             id="var_CNDim_x0RCDim_atd10e1079"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atd10e1079"
+                                  xlink:to="fil_CNDim_x0d10e1081"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atd10e1079"
+                                  xlink:to="fil_RCDim_atd10e1089"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e1081" id="fil_CNDim_x0d10e1081"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_atd10e1089" id="fil_RCDim_atd10e1089"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:at</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:be</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fi</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:de</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ie</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:it</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:lu</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:pt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:gr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:si</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ee</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:cy</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:mt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:nl</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:sk</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-9" id="ref_val_bsi_4260-oe-9"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-9</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-9" xlink:to="ref_val_bsi_4260-oe-9"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-10"
+                         test="abs(sum($DS_L_nMFIs_CU_EUR_FR) - (sum($DS_L_nMFIs_CU_ALL_CbC)+ $mecanismoEuropeoEstabilidad) ) le $umbral "
+                         id="val_bsi_4260-oe-10"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-10"
+                                     xlink:to="fil_ASDim_x149d10e1140"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-10"
+                                     xlink:to="fil_OMDim_x0d10e1154"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-10"
+                                     xlink:to="fil_ATDim_x67d10e1164"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_x4CSDim_x16RCDim_x2d10e1179"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CSDim_x30CNDim_x0RCDim_atd10e1227"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="DS_L_nMFIs_CU_EUR_FR" xlink:from="val_bsi_4260-oe-10"
+                            xlink:to="var_CNDim_x4CSDim_x16RCDim_x2d10e1179"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="DS_L_nMFIs_CU_ALL_CbC" xlink:from="val_bsi_4260-oe-10"
+                            xlink:to="var_CSDim_x30CNDim_x0RCDim_atd10e1227"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="mecanismoEuropeoEstabilidad" xlink:from="val_bsi_4260-oe-10"
+                            xlink:to="var_RCDim_meed10e1291"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-10" xlink:to="var_UmbralBasico22"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-10" id="lab_val_bsi_4260-oe-10"
+                   xlink:type="resource"
+                   xml:lang="es"> 0031 + 0032 + 0033 + 0046 + 0047 + 0048 + 0049 + 0036 + 0037 + 0039 + 0040 + 0041
+                + 0042 + 0043 + 0053 + 0044 + 0058 (4260) = 0207 + 0208 + 0209 + 0247 + 0248 + 0249 (2250)
+                0091 + 0092 + 0093 + 0106 + 0107 + 0108 + 0109 + 0096 + 0097 + 0099 + 0100 + 0101 +
+                0102 + 0103 + 0113 + 0104 +0118 (4260) = 0215 + 0216 + 0217 + 0255 + 0256 + 0257  (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-10" xlink:to="lab_val_bsi_4260-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_ASDim_x149d10e1140" id="fil_ASDim_x149d10e1140"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x149</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dMC:x139</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e1154" id="fil_OMDim_x0d10e1154"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e1164" id="fil_ATDim_x67d10e1164"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x4CSDim_x16RCDim_x2d10e1179" bindAsSequence="true"
+                             id="var_CNDim_x4CSDim_x16RCDim_x2d10e1179"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x4CSDim_x16RCDim_x2d10e1179"
+                                  xlink:to="fil_CNDim_x4d10e1181"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x4CSDim_x16RCDim_x2d10e1179"
+                                  xlink:to="fil_CSDim_x16d10e1193"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x4CSDim_x16RCDim_x2d10e1179"
+                                  xlink:to="fil_RCDim_x2d10e1211"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x4d10e1181" id="fil_CNDim_x4d10e1181"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x16d10e1193" id="fil_CSDim_x16d10e1193"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x16</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x33</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x31</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_x2d10e1211" id="fil_RCDim_x2d10e1211"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:x2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CSDim_x30CNDim_x0RCDim_atd10e1227" bindAsSequence="true"
+                             id="var_CSDim_x30CNDim_x0RCDim_atd10e1227"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CSDim_x30CNDim_x0RCDim_atd10e1227"
+                                  xlink:to="fil_CSDim_x30d10e1229"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CSDim_x30CNDim_x0RCDim_atd10e1227"
+                                  xlink:to="fil_CNDim_x0d10e1239"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CSDim_x30CNDim_x0RCDim_atd10e1227"
+                                  xlink:to="fil_RCDim_atd10e1247"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CSDim_x30d10e1229" id="fil_CSDim_x30d10e1229"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x30</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e1239" id="fil_CNDim_x0d10e1239"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_atd10e1247" id="fil_RCDim_atd10e1247"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:at</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:be</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fi</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:de</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ie</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:it</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:lu</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:pt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:gr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:si</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ee</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:cy</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:mt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:nl</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:sk</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_RCDim_meed10e1291" bindAsSequence="false"
+                             id="var_RCDim_meed10e1291"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_RCDim_meed10e1291"
+                                  xlink:to="fil_RCDim_meed10e1293"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_RCDim_meed10e1293" id="fil_RCDim_meed10e1293"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es_dGA:mee</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-10" id="ref_val_bsi_4260-oe-10"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-10</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-10" xlink:to="ref_val_bsi_4260-oe-10"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-11"
+                         test="abs(sum($D_MFIs_oEMU_CU_All_CbC) - sum($D_MFIs_oEMU_CU_EUR_FR)) le $umbral "
+                         id="val_bsi_4260-oe-11"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-11"
+                                     xlink:to="fil_LIDim_x141d10e1311"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-11"
+                                     xlink:to="fil_CSDim_x25d10e1321"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-11"
+                                     xlink:to="fil_OMDim_x0d10e1331"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-11"
+                                     xlink:to="fil_ATDim_x67d10e1341"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="4"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurRCDim_x2d10e1356"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0RCDim_atd10e1382"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="D_MFIs_oEMU_CU_EUR_FR" xlink:from="val_bsi_4260-oe-11"
+                            xlink:to="var_CNDim_eurRCDim_x2d10e1356"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="D_MFIs_oEMU_CU_All_CbC" xlink:from="val_bsi_4260-oe-11"
+                            xlink:to="var_CNDim_x0RCDim_atd10e1382"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-11" xlink:to="var_UmbralBasico17"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-11" id="lab_val_bsi_4260-oe-11"
+                   xlink:type="resource"
+                   xml:lang="es"> 0181 + 0182 + 0183 + 0196 + 0197 + 0198 + 0199 + 0186 + 0187 + 0189 + 0190 + 0191
+                + 0192 + 0193 + 0203 + 0194 (4260) = 0602 + 0652 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-11" xlink:to="lab_val_bsi_4260-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_LIDim_x141d10e1311" id="fil_LIDim_x141d10e1311"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LI</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x141</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x25d10e1321" id="fil_CSDim_x25d10e1321"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x25</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e1331" id="fil_OMDim_x0d10e1331"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e1341" id="fil_ATDim_x67d10e1341"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurRCDim_x2d10e1356" bindAsSequence="true"
+                             id="var_CNDim_eurRCDim_x2d10e1356"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurRCDim_x2d10e1356"
+                                  xlink:to="fil_CNDim_eurd10e1358"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurRCDim_x2d10e1356"
+                                  xlink:to="fil_RCDim_x2d10e1368"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e1358" id="fil_CNDim_eurd10e1358"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_x2d10e1368" id="fil_RCDim_x2d10e1368"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:x2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0RCDim_atd10e1382" bindAsSequence="true"
+                             id="var_CNDim_x0RCDim_atd10e1382"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atd10e1382"
+                                  xlink:to="fil_CNDim_x0d10e1384"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atd10e1382"
+                                  xlink:to="fil_RCDim_atd10e1392"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e1384" id="fil_CNDim_x0d10e1384"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_atd10e1392" id="fil_RCDim_atd10e1392"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:at</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:be</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fi</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:de</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ie</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:it</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:lu</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:pt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:gr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:si</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ee</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:cy</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:mt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:nl</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:sk</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-11" id="ref_val_bsi_4260-oe-11"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-11</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-11" xlink:to="ref_val_bsi_4260-oe-11"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+      <va:valueAssertion xlink:label="val_bsi_4260-oe-12"
+                         test="abs(sum($D_nMFIs_oEMU_CU_All_CbC) - (sum($D_nMFIs_oEMU_CU_EUR_FR)) + $mecanismoEuropeoEstabilidad) le $umbral "
+                         id="val_bsi_4260-oe-12"
+                         aspectModel="dimensional"
+                         implicitFiltering="true"
+                         xlink:type="resource"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-12"
+                                     xlink:to="fil_LIDim_x141d10e1442"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="1"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-12"
+                                     xlink:to="fil_OMDim_x0d10e1452"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="2"/>
+      <variable:variableSetFilterArc complement="false" xlink:from="val_bsi_4260-oe-12"
+                                     xlink:to="fil_ATDim_x67d10e1462"
+                                     xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter"
+                                     xlink:type="arc"
+                                     order="3"/>
+      <generic:arc xlink:from="Mind_umem" xlink:to="var_CNDim_eurCSDim_x16RCDim_x2d10e1477"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="1"/>
+      <generic:arc xlink:from="Mind_umet" xlink:to="var_CNDim_x0RCDim_atCSDim_x30d10e1523"
+                   xlink:arcrole="http://xbrl.org/arcrole/2010/instance-variable"
+                   xlink:type="arc"
+                   order="2"/>
+      <variable:variableArc name="D_nMFIs_oEMU_CU_EUR_FR" xlink:from="val_bsi_4260-oe-12"
+                            xlink:to="var_CNDim_eurCSDim_x16RCDim_x2d10e1477"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="1"/>
+      <variable:variableArc name="D_nMFIs_oEMU_CU_All_CbC" xlink:from="val_bsi_4260-oe-12"
+                            xlink:to="var_CNDim_x0RCDim_atCSDim_x30d10e1523"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="2"/>
+      <variable:variableArc name="mecanismoEuropeoEstabilidad" xlink:from="val_bsi_4260-oe-12"
+                            xlink:to="var_RCDim_meed10e1589"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="3"/>
+      <variable:variableArc name="umbral" xlink:from="val_bsi_4260-oe-12" xlink:to="var_UmbralBasico22"
+                            xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set"
+                            xlink:type="arc"
+                            order="4"/>
+      <label:label xlink:label="lab_val_bsi_4260-oe-12" id="lab_val_bsi_4260-oe-12"
+                   xlink:type="resource"
+                   xml:lang="es"> 0211 + 0212 + 0213 + 0226 + 0227 + 0228 + 0229 + 0216 + 0217 + 0219 + 0220 + 0221
+                + 0222 + 0223 + 0233 + 0224 + 0238 (4260) = 0604 + 0605 + 0615 + 0654 + 0655 + 0665 (2250) </label:label>
+      <generic:arc xlink:from="val_bsi_4260-oe-12" xlink:to="lab_val_bsi_4260-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-label"
+                   xlink:type="arc"
+                   order="1"/>
+      <df:explicitDimension xlink:label="fil_LIDim_x141d10e1442" id="fil_LIDim_x141d10e1442"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:LI</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dMC:x141</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_OMDim_x0d10e1452" id="fil_OMDim_x0d10e1452"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:OM</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dTI:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_ATDim_x67d10e1462" id="fil_ATDim_x67d10e1462"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:AT</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dAT:x67</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_eurCSDim_x16RCDim_x2d10e1477" bindAsSequence="true"
+                             id="var_CNDim_eurCSDim_x16RCDim_x2d10e1477"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurCSDim_x16RCDim_x2d10e1477"
+                                  xlink:to="fil_CNDim_eurd10e1479"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurCSDim_x16RCDim_x2d10e1477"
+                                  xlink:to="fil_CSDim_x16d10e1489"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_eurCSDim_x16RCDim_x2d10e1477"
+                                  xlink:to="fil_RCDim_x2d10e1507"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CNDim_eurd10e1479" id="fil_CNDim_eurd10e1479"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:eur</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCU:x4</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x16d10e1489" id="fil_CSDim_x16d10e1489"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x16</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x33</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dCT:x31</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_x2d10e1507" id="fil_RCDim_x2d10e1507"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:x2</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_CNDim_x0RCDim_atCSDim_x30d10e1523" bindAsSequence="true"
+                             id="var_CNDim_x0RCDim_atCSDim_x30d10e1523"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atCSDim_x30d10e1523"
+                                  xlink:to="fil_CNDim_x0d10e1525"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atCSDim_x30d10e1523"
+                                  xlink:to="fil_RCDim_atd10e1533"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="2"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_CNDim_x0RCDim_atCSDim_x30d10e1523"
+                                  xlink:to="fil_CSDim_x30d10e1575"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="3"/>
+      <df:explicitDimension xlink:label="fil_CNDim_x0d10e1525" id="fil_CNDim_x0d10e1525"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CN</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCU:x0</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_RCDim_atd10e1533" id="fil_RCDim_atd10e1533"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dGA:at</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:be</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fi</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:fr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:de</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ie</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:it</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:lu</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:pt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:gr</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:si</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ee</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:ee</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:cy</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:mt</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:nl</df:qname>
+         </df:member>
+         <df:member>
+            <df:qname>dGA:sk</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <df:explicitDimension xlink:label="fil_CSDim_x30d10e1575" id="fil_CSDim_x30d10e1575"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:CS</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>dCT:x30</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <variable:factVariable xlink:label="var_RCDim_meed10e1589" bindAsSequence="false"
+                             id="var_RCDim_meed10e1589"
+                             xlink:type="resource"
+                             fallbackValue="0"/>
+      <variable:variableFilterArc complement="false" xlink:from="var_RCDim_meed10e1589"
+                                  xlink:to="fil_RCDim_meed10e1591"
+                                  cover="true"
+                                  xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+                                  xlink:type="arc"
+                                  order="1"/>
+      <df:explicitDimension xlink:label="fil_RCDim_meed10e1591" id="fil_RCDim_meed10e1591"
+                            xlink:type="resource">
+         <df:dimension>
+            <df:qname>dim:RC</df:qname>
+         </df:dimension>
+         <df:member>
+            <df:qname>es_dGA:mee</df:qname>
+         </df:member>
+      </df:explicitDimension>
+      <reference:reference xlink:label="ref_val_bsi_4260-oe-12" id="ref_val_bsi_4260-oe-12"
+                           xlink:type="resource">
+         <ref:Number>bsi:4260-oe-12</ref:Number>
+      </reference:reference>
+      <generic:arc xlink:from="val_bsi_4260-oe-12" xlink:to="ref_val_bsi_4260-oe-12"
+                   xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference"
+                   xlink:type="arc"
+                   order="1"/>
+   </generic:link>
+</link:linkbase>
