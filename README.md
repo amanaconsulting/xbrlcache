@@ -42,6 +42,12 @@ A single repository with all XBRL taxonomy files
 * Bundesbank 3.2 FP
 * Bundesbank 3.2 AE
 * Bundesbank 3.3 SBP
+* Bundesbank RTF 1.0
+* Bundesbank RTF 1.1
+* Bundesbank RTF 1.2
+* Bundesbank RTF 2.0
+* Bundesbank RTF 2.1
+* Bundesbank RTF 2.2
 
 ### Bundesbank FinaRisikoV
 
@@ -207,14 +213,16 @@ A single repository with all XBRL taxonomy files
 * SRB Full 5.0.7 - 2021
 * SRB Full 6.0.3 - 2021
 * SRB Full 7.0.2 - 2022
-* SRB Ex-ante contributions 2022 8.0.2
-* SRB Ex-ante contributions 2022 7.0.2
-* SRB Ex-ante contributions 2021 6.0.2
-* SRB Ex-ante contributions 2020 5.1.1
-* SRB Ex-ante contributions 2019 4.0.3
-* SRB Ex-ante contributions 2018 3.0.1
-* SRB Ex-ante contributions 2017 2.1.3
 * SRB Ex-ante contributions 2016 1.0.3
+* SRB Ex-ante contributions 2017 2.1.3
+* SRB Ex-ante contributions 2018 3.0.1
+* SRB Ex-ante contributions 2019 4.0.3
+* SRB Ex-ante contributions 2020 5.1.1
+* SRB Ex-ante contributions 2021 6.0.2
+* SRB Ex-ante contributions 2022 7.0.2
+* SRB Ex-ante contributions 2023 8.0.2
+* SRB Ex-ante contributions 2024 9.1.0
+* SRB Ex-ante contributions 2025 10.0.1
 
 ### DCCA Danish GAAP
 
