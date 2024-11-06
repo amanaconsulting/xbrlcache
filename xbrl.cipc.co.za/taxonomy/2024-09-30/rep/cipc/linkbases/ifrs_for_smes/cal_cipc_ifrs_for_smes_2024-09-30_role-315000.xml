@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Companies & Intellectual Property Commission  -->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="https://xbrl.cipc.co.za/taxonomy/role/ifrs_for_smes_role_315.000" xlink:type="simple" xlink:href="../rol_ifrs-smes_2024-09-30.xsd#ifrs_for_smes_role_315.000"/>
+  <link:arcroleRef arcroleURI="https://xbrl.org/2023/arcrole/summation-item" xlink:type="simple" xlink:href="https://www.xbrl.org/2023/calculation-1.1.xsd#summation-item"/>
+  <link:calculationLink xlink:type="extended" xlink:role="https://xbrl.cipc.co.za/taxonomy/role/ifrs_for_smes_role_315.000">
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_ProfitLoss" xlink:label="ProfitLoss"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_ProfitLossFromDiscontinuedOperations" xlink:label="ProfitLossFromDiscontinuedOperations"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLoss" xlink:to="ProfitLossFromDiscontinuedOperations" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_ProfitLossFromContinuingOperations" xlink:label="ProfitLossFromContinuingOperations"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLoss" xlink:to="ProfitLossFromContinuingOperations" order="1.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_IncomeTaxExpenseContinuingOperations" xlink:label="IncomeTaxExpenseContinuingOperations"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossFromContinuingOperations" xlink:to="IncomeTaxExpenseContinuingOperations" order="2.0" weight="-1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_ProfitLossBeforeTax" xlink:label="ProfitLossBeforeTax"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossFromContinuingOperations" xlink:to="ProfitLossBeforeTax" order="1.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod" xlink:label="ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod" order="9.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_FinanceCosts" xlink:label="FinanceCosts"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="FinanceCosts" order="8.0" weight="-1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_FinanceIncome" xlink:label="FinanceIncome"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="FinanceIncome" order="7.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_OtherGainsLosses" xlink:label="OtherGainsLosses"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="OtherGainsLosses" order="6.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_OtherExpenseByFunction" xlink:label="OtherExpenseByFunction"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="OtherExpenseByFunction" order="5.0" weight="-1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_AdministrativeExpense" xlink:label="AdministrativeExpense"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="AdministrativeExpense" order="4.0" weight="-1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_DistributionCosts" xlink:label="DistributionCosts"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="DistributionCosts" order="3.0" weight="-1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_OtherIncome" xlink:label="OtherIncome"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="OtherIncome" order="2.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_GrossProfit" xlink:label="GrossProfit"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="ProfitLossBeforeTax" xlink:to="GrossProfit" order="1.0" weight="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_CostOfSales" xlink:label="CostOfSales"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="GrossProfit" xlink:to="CostOfSales" order="2.0" weight="-1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs_for_smes/ifrs_for_smes-cor_2024-03-27.xsd#ifrs-smes_Revenue" xlink:label="Revenue"/>
+    <link:calculationArc xlink:type="arc" xlink:arcrole="https://xbrl.org/2023/arcrole/summation-item" xlink:from="GrossProfit" xlink:to="Revenue" order="1.0" weight="1.0"/>
+  </link:calculationLink>
+</link:linkbase>

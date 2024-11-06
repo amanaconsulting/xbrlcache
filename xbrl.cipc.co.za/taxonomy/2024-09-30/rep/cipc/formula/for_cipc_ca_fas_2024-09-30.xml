@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Companies & Intellectual Property Commission  -->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd http://xbrl.org/2010/message/validation http://www.xbrl.org/2010/validation-message.xsd http://xbrl.org/2010/filter/aspect-cover http://www.xbrl.org/2010/aspect-cover-filter.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd" xmlns:ca="http://xbrl.org/2008/assertion/consistency" xmlns:gen="http://xbrl.org/2008/generic" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:variable="http://xbrl.org/2008/variable" xmlns:cipc-ca-enum="https://xbrl.cipc.co.za/taxonomy/ca/enum" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:valm="http://xbrl.org/2010/message/validation" xmlns:mf="http://xbrl.org/2008/filter/match" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:ea="http://xbrl.org/2008/assertion/existence" xmlns:ifrs-full="https://xbrl.ifrs.org/taxonomy/2024-03-27/ifrs-full" xmlns:asf="http://xbrl.org/2010/filter/aspect-cover" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:validation="http://xbrl.org/2008/validation" xmlns:cipc-ca="https://xbrl.cipc.co.za/taxonomy/ca" xmlns:formula="http://xbrl.org/2008/formula" xmlns:msg="http://xbrl.org/2010/message" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:label="http://xbrl.org/2008/label">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2010/role/message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:type="simple" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity"/>
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion" xlink:title="valueAssertion" id="va_01" test="if (count($v3) &gt; 0) then (if ($v1 = true()) then ($v2 = false()) else ($v2 = true())) else (false())" aspectModel="dimensional" implicitFiltering="true"/>
+    <link:loc xlink:type="locator" xlink:href="http://www.xbrl.org/2016/severities.xml#ERROR" xlink:label="sev_error"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable" xlink:title="factVariable" id="fv_12" bindAsSequence="false" fallbackValue="false()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion" xlink:to="factVariable" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName" xlink:title="conceptName" id="cn_12">
+      <cf:concept>
+        <cf:qname>cipc-ca:ManualMaintenanceOfFinancialRecordsPaperBased</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable" xlink:to="conceptName" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_2" xlink:title="factVariable" id="fv_13" bindAsSequence="false" fallbackValue="false()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion" xlink:to="factVariable_2" xlink:title="user-defined: valueAssertion to factVariable" order="3.0" name="v2"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_2" xlink:title="conceptName" id="cn_13">
+      <cf:concept>
+        <cf:qname>cipc-ca:ElectronicMaintenanceOfFinancialRecordsComputerBased</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_2" xlink:to="conceptName_2" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <msg:message xlink:type="resource" xlink:label="message" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_68">ERROR: Process of maintenance of financial record MUST be described (either manual or electronic) </msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion" xlink:to="message" xlink:title="user-defined: valueAssertion to message" order="2.0"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_3" xlink:title="factVariable" id="fv_11" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion" xlink:to="factVariable_3" xlink:title="user-defined: valueAssertion to factVariable" order="4.0" name="v3"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_3" xlink:title="conceptName" id="cn_11">
+      <cf:concept>
+        <cf:qname>ifrs-full:NameOfReportingEntityOrOtherMeansOfIdentification</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_3" xlink:to="conceptName_3" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_4" xlink:title="valueAssertion" id="ec_03" test="if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D')))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_4" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_6" xlink:title="factVariable" id="fv_14" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_4" xlink:to="factVariable_6" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_6" xlink:title="conceptName" id="cn_14">
+      <cf:concept>
+        <cf:qname>cipc-ca:RegistrationNumberOfCompany</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_6" xlink:to="conceptName_6" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <asf:aspectCover xlink:type="resource" xlink:label="aspectCover" xlink:title="aspectCover" id="ac_01">
+      <asf:aspect>unit</asf:aspect>
+    </asf:aspectCover>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_6" xlink:to="aspectCover" xlink:title="user-defined: factVariable to aspectCover" order="2.0" cover="true" complement="false"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_5" xlink:title="factVariable" id="fv_10" bindAsSequence="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_4" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_5" xlink:title="conceptName" id="cn_06">
+      <cf:concept>
+        <cf:qname>ifrs-full:DateOfEndOfReportingPeriod2013</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_5" xlink:to="conceptName_5" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <msg:message xlink:type="resource" xlink:label="message_4" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_4">ERROR: The value of "Registration number of company" MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_4" xlink:to="message_4" xlink:title="user-defined: valueAssertion to message"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_5" xlink:title="valueAssertion" id="ec_04" test="if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D')))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_5" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_7" xlink:title="factVariable" id="fv_02" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_5" xlink:to="factVariable_7" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_7" xlink:title="conceptName" id="cn_02">
+      <cf:concept>
+        <cf:qname>cipc-ca:NameOfDesignatedPersonResponsibleForFinancialAccountabilityOfCompany</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_7" xlink:to="conceptName_7" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <df:typedDimension xlink:type="resource" xlink:label="typedDimension" xlink:title="typedDimension" id="td_01">
+      <df:dimension>
+        <df:qname>cipc-ca:PersonnelIdentificationAxis</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_7" xlink:to="typedDimension" xlink:title="user-defined: factVariable to typedDimension" order="2.0" cover="true" complement="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_5" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <msg:message xlink:type="resource" xlink:label="message_5" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_5">ERROR: The value of "Name of designated person responsible for financial accountability of company" MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_5" xlink:to="message_5" xlink:title="user-defined: valueAssertion to message"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_6" xlink:title="valueAssertion" id="ec_05" test="if (empty($v3)) then (false()) else (if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D'))))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_6" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_8" xlink:title="factVariable" id="fv_03" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_6" xlink:to="factVariable_8" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_8" xlink:title="conceptName" id="cn_03">
+      <cf:concept>
+        <cf:qname>cipc-ca:TelephoneNumberOfDesignatedPersonResponsibleForFinancialAccountabilityOfCompany</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_8" xlink:to="conceptName_8" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_8" xlink:to="typedDimension" xlink:title="user-defined: factVariable to typedDimension" order="2.0" cover="true" complement="false"/>
+    <mf:matchDimension xlink:type="resource" xlink:label="matchDimension" xlink:title="matchDimension" id="matchDimension" variable="v3" dimension="cipc-ca:PersonnelIdentificationAxis"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_8" xlink:to="matchDimension" xlink:title="factVariable to matchDimension" order="3.0" cover="true" complement="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_6" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <msg:message xlink:type="resource" xlink:label="message_6" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_6">ERROR: The value of "Telephone number of designated person responsible for financial accountability of company" MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_6" xlink:to="message_6" xlink:title="user-defined: valueAssertion to message"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_6" xlink:to="factVariable_7" xlink:title="valueAssertion to factVariable" order="3.0" name="v3"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_7" xlink:title="valueAssertion" id="ec_06" test="if (empty($v3)) then (false()) else (if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D'))))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_7" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_9" xlink:title="factVariable" id="fv_04" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_7" xlink:to="factVariable_9" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_9" xlink:title="conceptName" id="cn_04">
+      <cf:concept>
+        <cf:qname>cipc-ca:ResponsibilityForRecordingDayToDayFinancialTransactionsAndMaintainingCompanysFinancialRecords</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_9" xlink:to="conceptName_9" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_9" xlink:to="typedDimension" xlink:title="user-defined: factVariable to typedDimension" order="2.0" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_9" xlink:to="matchDimension" xlink:title="factVariable to matchDimension" order="3.0" cover="true" complement="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_7" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <msg:message xlink:type="resource" xlink:label="message_7" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_7">ERROR: The value of "Responsibility for recording day to day financial transactions and maintaining company's financial records" MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_7" xlink:to="message_7" xlink:title="user-defined: valueAssertion to message"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_7" xlink:to="factVariable_7" xlink:title="valueAssertion to factVariable" order="3.0" name="v3"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_8" xlink:title="valueAssertion" id="ec_07" test="if (empty($v3)) then (false()) else (if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D'))))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_8" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_10" xlink:title="factVariable" id="fv_05" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_8" xlink:to="factVariable_10" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_10" xlink:title="conceptName" id="cn_05">
+      <cf:concept>
+        <cf:qname>cipc-ca:ResponsibilityForCompilingFinancialInformationAndPreparingReportsOrStatements</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_10" xlink:to="conceptName_10" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_10" xlink:to="typedDimension" xlink:title="user-defined: factVariable to typedDimension" order="2.0" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_10" xlink:to="matchDimension" xlink:title="factVariable to matchDimension" order="3.0" cover="true" complement="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_8" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <msg:message xlink:type="resource" xlink:label="message_8" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_8">ERROR: The value of "Responsibility for compiling financial information and preparing reports or statements " MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_8" xlink:to="message_8" xlink:title="user-defined: valueAssertion to message"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_8" xlink:to="factVariable_7" xlink:title="valueAssertion to factVariable" order="3.0" name="v3"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_9" xlink:title="valueAssertion" id="ec_08" test="if (empty($v3)) then (false()) else (if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D'))))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_9" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_11" xlink:title="factVariable" id="fv_06" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_9" xlink:to="factVariable_11" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_11" xlink:title="conceptName" id="cn_07">
+      <cf:concept>
+        <cf:qname>cipc-ca:ResponsibilityForProvidingAdviceToCompanyConcerningMaintenanceOfFinancialRecords</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_11" xlink:to="conceptName_11" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_11" xlink:to="typedDimension" xlink:title="user-defined: factVariable to typedDimension" order="2.0" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_11" xlink:to="matchDimension" xlink:title="factVariable to matchDimension" order="3.0" cover="true" complement="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_9" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <msg:message xlink:type="resource" xlink:label="message_9" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_9">ERROR: The value of "Responsibility for providing advice to company concerning maintenance of financial records" MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_9" xlink:to="message_9" xlink:title="user-defined: valueAssertion to message"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_9" xlink:to="factVariable_7" xlink:title="valueAssertion to factVariable" order="3.0" name="v3"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_10" xlink:title="valueAssertion" id="ec_09" test="if (empty($v3)) then (false()) else (if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D'))))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_10" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_12" xlink:title="factVariable" id="fv_07" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_10" xlink:to="factVariable_12" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_12" xlink:title="conceptName" id="cn_08">
+      <cf:concept>
+        <cf:qname>cipc-ca:ResponsibilityForPerformingIndependentReviewOfAnnualFinancialStatements</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_12" xlink:to="conceptName_12" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_12" xlink:to="typedDimension" xlink:title="user-defined: factVariable to typedDimension" order="2.0" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_12" xlink:to="matchDimension" xlink:title="factVariable to matchDimension" order="3.0" cover="true" complement="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_10" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <msg:message xlink:type="resource" xlink:label="message_10" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_10">ERROR: The value of "Responsibility for performing Independent review of Annual Financial Statements" MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_10" xlink:to="message_10" xlink:title="user-defined: valueAssertion to message"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_10" xlink:to="factVariable_7" xlink:title="valueAssertion to factVariable" order="3.0" name="v3"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_11" xlink:title="valueAssertion" id="ec_10" test="if (empty($v3)) then (false()) else (if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D'))))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_11" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_13" xlink:title="factVariable" id="fv_08" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_11" xlink:to="factVariable_13" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_13" xlink:title="conceptName" id="cn_09">
+      <cf:concept>
+        <cf:qname>cipc-ca-enum:RecognisedProfessionOfDesignatedPersonPerformingIndependentReviewOfAnnualFinancialStatements</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_13" xlink:to="conceptName_13" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_13" xlink:to="typedDimension" xlink:title="user-defined: factVariable to typedDimension" order="2.0" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_13" xlink:to="matchDimension" xlink:title="factVariable to matchDimension" order="3.0" cover="true" complement="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_11" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <msg:message xlink:type="resource" xlink:label="message_11" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_11">ERROR: The value of "Recognised profession of designated person performing Independent review of Annual Financial Statements" MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_11" xlink:to="message_11" xlink:title="user-defined: valueAssertion to message"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_11" xlink:to="factVariable_7" xlink:title="valueAssertion to factVariable" order="3.0" name="v3"/>
+    <va:valueAssertion xlink:type="resource" xlink:label="valueAssertion_12" xlink:title="valueAssertion" id="ec_11" test="if (empty($v3)) then (false()) else (if (empty($v1)) then false() else (xs:date(xfi:period-end(xfi:period($v1))) eq (xs:date($v2) + xs:dayTimeDuration('P1D'))))" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="valueAssertion_12" xlink:to="sev_error"/>
+    <variable:factVariable xlink:type="resource" xlink:label="factVariable_14" xlink:title="factVariable" id="fv_09" bindAsSequence="false" fallbackValue="()"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_12" xlink:to="factVariable_14" xlink:title="user-defined: valueAssertion to factVariable" name="v1"/>
+    <cf:conceptName xlink:type="resource" xlink:label="conceptName_14" xlink:title="conceptName" id="cn_10">
+      <cf:concept>
+        <cf:qname>cipc-ca:PracticeNumberOfDesignatedPersonPerformingIndependentReviewOfAnnualFinancialStatements</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_14" xlink:to="conceptName_14" xlink:title="user-defined: factVariable to conceptName" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_14" xlink:to="typedDimension" xlink:title="user-defined: factVariable to typedDimension" order="2.0" cover="true" complement="false"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="factVariable_14" xlink:to="matchDimension" xlink:title="factVariable to matchDimension" order="3.0" cover="true" complement="false"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_12" xlink:to="factVariable_5" xlink:title="user-defined: valueAssertion to factVariable" order="2.0" name="v2"/>
+    <msg:message xlink:type="resource" xlink:label="message_12" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg_12">ERROR: The value of "Practice number of designated person performing Independent review of Annual Financial Statements" MUST be reported for the current reporting period.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="valueAssertion_12" xlink:to="message_12" xlink:title="user-defined: valueAssertion to message"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="valueAssertion_12" xlink:to="factVariable_7" xlink:title="valueAssertion to factVariable" order="3.0" name="v3"/>
+    <ea:existenceAssertion xlink:type="resource" xlink:label="existenceAssertion" xlink:title="existenceAssertion" id="ea_01" test=". &gt; 0" aspectModel="dimensional" implicitFiltering="true"/>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:from="existenceAssertion" xlink:to="sev_error"/>
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="existenceAssertion" xlink:to="factVariable_5" xlink:title="user-defined: existenceAssertion to factVariable" name="v1"/>
+    <msg:message xlink:type="resource" xlink:label="message_13" xlink:role="http://www.xbrl.org/2010/role/message" xlink:title="message" xml:lang="en" id="msg">ERROR: The value of "Date of end of reporting period" MUST be reported.</msg:message>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="existenceAssertion" xlink:to="message_13" xlink:title="user-defined: existenceAssertion to message"/>
+  </gen:link>
+</link:linkbase>

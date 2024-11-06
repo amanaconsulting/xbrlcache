@@ -1,0 +1,106 @@
+__Final Taxonomy (2024 Annual)__
+
+Points of interest:
+* "Sustainability metrics [domain]" is intended to include all the possible reportable metrics from both the main body of the Standards (sds entry point) and the Industry based guidance (ibg entry point). The members of this domain are therefore of non asbtract xbrli:item, rather than domainItemType. Filers are expected to include any additional reported items they need to disclose structured meta data under S1 or S2 into this domain (to be used with the appropriate disclosure table structures).
+* "Essential" entry point is intended as a suitable base for building filer taxonomies. Includes labels and references for end-user information, defintions of extensible enum domains and dimension defaults for reporting consistency, but omits the other ISSB presentation and definition structures that are primarily for understanding of the taxonomy rather than necessarily reporting.
+
+Corrections:
+* Typo in the documentation of all dimensions. Should have been “[...] An axis of a table defines the nature of the relationship _between_ the" (Corporatings)
+* Typo in the documentation of “Disclosure of assessment of resilience of strategy and business model in relation to risks [text block]” : 'quantiative'
+* OtherDisclosuresAboutGovernanceProcessesControlsAndProceduresUsedToMonitorManageAndOverseeRisksAndOpportunitiesExplanatory was listed as the child of a table abstract instead of the main Governance [abstract].
+* DisclosureOfConcentrationOfRisksAndOpportunitiesInEntitysBusinessModelAndValueChainExplanatory was listed as child of the Disclosure of current and anticipated effects of climate-related risks and opportunities on business model and value chain [table] element, rather than the pline item] element
+* Mismatch between the presentation and the definition linkbases for Absolute gross financed emissions related to AUM. In the presentation it has children, which should be siblings.
+* Corrected reference of element 'Disclosure of approach entity uses to measure its greenhouse gas emissions [text block]' to IFRS S2 29(a)(iii)
+* Corrected layout of “Retrospective application and retrospective restatement [axis]”, making increase (decrease) member a sibling of Previously stated.
+* Correct id of element 'ifrs-sds_BusinessActivitiesAlignedWithClimateRelatedOpportunitiesRisks' to remove trailing 'Risks'
+* remove unused element EnergyAffordabilityDisclosureAbstract
+* remove OtherApproachMember
+* remove "Other scope 3 greenhouse gas emissions [member]" from "Scope 3 emissions categories [domain]" in ELR 995000
+
+Changes:
+* Removed terse labels that did not map to metric/sub-metric codes (eg CG-AA) 
+* Changed terse labels (many per element) to commentary references (comma separated list), the least inappropriate standard reference type.
+* Changed all references applied to abstract elements (members etc) to be simply "reference" type (rather than disclosure or example).
+* Split IM pres ELRs (830300 and 830800) into parts (830301 and 830801) where the defs conflict with each other.
+* Add TopicsCoveredByIntegratedGovernanceDisclosure, TopicsCoveredByIntegratedRiskManagementDisclosure, TopicsOfRiskOrOpportunity (S1 and S2)
+* Add 5 elements in S2 strategy and decision-making section, rearrange presentation
+* Add Start (and end) of reporting period in which climate-related scenario analysis was carried out
+* Add four additional elements for subparagraphs under IFRS S2.25(a)
+* Correct reference for Disclosure of approach entity uses to measure its greenhouse gas emissions [text block]
+* add additional reference ( S2.29(a)(iii)(1) ) to Measurement approach entity uses in calculating greenhouse gas emissions
+* add 'metric used to set target' and 'metrics used to monitor progress' categoricals, also three sub elements for value of target to S1 and S2.
+* add 'target has been revised' to disclosures of targets.
+* add 'planned use of carbon credits'
+* add elements for emission factors and approach to calculating GHG emissions when not in accordance with GHG
+* add elements for extent scope 2 emissions measured using inputs from specific activities within value chain and using verified inputs (S2 B56)
+* add tables for Metric(s) related to risks and opportunities
+* add tables for Disclosure of risk management of (sustainability/climate)-related risks and opportunities 
+* add Climate-related considerations are factored into executive remuneration
+* add Disclosure of source of metrics (other than IFRS Standards) table, and enum element for 'Source from which metric was drawn'
+* add 3*elements for metric value
+* one entry point, referencing S1, S2 and S2 incorporated industry metrics 
+* alter industry metrics with durationItemType to specify their units in their label and name, and be of pureItemType (durationItemType does not allow fractional values for anything other than seconds).
+* add separate element for S2.36 e (i)
+* Change type of GreenhouseGasFootprintAcrossTransportModes to decimal (to facilitate unit of Metric tons (t) CO2-e per ton-kilometre ).
+* add risk and opportunities axis to Strategy and decision-making and resilience sections
+* add metrics axis to S1.B54
+* add enclosing text element for "Amounts disclosed in sustainability-related financial disclosures are not entirely comparable due to change in length of reporting period"
+* combine elements behind S2.29(g)(i) and S2.6 a (v)
+* add list of sustainability metrics from the taxonomy under SustainabilityMetricsDomain
+* add containing text element 'Statement of compliance with IFRS Sustainability Disclosure Standards' for 'Entity has made explicit and unreserved statement of compliance'
+* remove OtherAssetClassMember
+* made "GHGEmission target details [text block]" parent to S2.36 a-d categoricals, remove greenhouse gas emission targets [abstract]
+* Improve various labels 
+* Link enum domain linkbase into core schema file so that enum values should always be EE 2.0 valid.
+* Changed ifrs_im to ifrs_ibg to better align to the wording/naming of the Standards
+* Separate measurement approach info into two fields - one enum if you follow GHG, one text if you don't. Added specific field for 'Reason why measurement approach, inputs and assumptions used to measure GHG emissions chosen [text block]'
+* Add 'essentials' entry point similar to IFRS Accounting, to provide a sensible starting point for filer definition without having to start from just the core schema (so getting labels and refs etc.).
+* Add 'Sources of guidance applied in preparing sustainability-related financial disclosures'
+* Change appropriate elements (back) to instants. Everything seems to have accidentally become a duration element at some point.
+* Add subclause element to references where needed.
+* Add xbrl type hints in square brackets (for example '[utr:m3]') to the measurement guidance labels.
+
+
+
+__Proposed Taxonomy__
+Corrections to staff draft:
+
+* Corrected the date in the linkroles on enum elements (BR-AG)
+* Added missing trailing '/' to rewrite URL (XII, Corefiling)
+* Added missing children of IECWindTurbineClassAxis (BR-AG)
+* Removed duplicative "OtherStandardMember", coalesce on "OtherStandardsMember"
+* Fixed missing ELR for PriorityFoodIngredientsListing enum2:linkrole: Added FoodIngredientDomain to ELR 995000, set enum2:linkrole of PriorityFoodIngredientsListing to that ELR "https://xbrl.ifrs.org/role/ifrs_sds/ifrs_sds-dim_2022-05-25_role-995000" (Corefiling)
+* Corrected references in Appendix B that have extra letter at the end that does not correspond to content of Appendix B, eg IF-EU-540a.2a or IF-HB-000.Ca (DFIN)
+* Removed double presentationLink in pre_im_1_2022-05-25.xml for https://xbrl.ifrs.org/role/ifrs_sds/industry/ApplianceManufacturing-2022-05-25_role-805200 (BR-AG)
+* Removed spurious import of dtr 2020 from ifrs_sds_entry_point_2022-05-25.xsd
+* Fixed definition linkbase entries for IF-RS that were in 830500 but should have been in 830600
+* Corrected pre and def linkbases for 820600
+* Corrected casing of label "STeP By OEKO-TEX"
+* Corrected some discrepencies between definition and presentation linkbases in the industry metrics
+* Corrected typo in documentation label of  ifrs-sds_GrossOrNetGreenhouseGasEmissionsTarget
+
+
+Changes (Alignment with published standards and improvements):
+
+* Extensive changes to content, labels, references etc to align to published (rather than exposure draft) version of Standards
+* Changed all the 'Abstract' elements that were being used as parents of domain member lists in ELR 995000 to 'Domain' Elements - more consistent with use in Axes, avoids mix of types of top level item (Abstract and Domain) - Required changing ClimateRelatedRiskOrOpportunityAbstract to IsClimateRelatedRiskOrOpportunityDomain (BR-AG)
+* Changed all references to Appendix B to example not disclosure references
+* Remove "dual-layout" ELRs (700000,710000,720000,730000) that combined S1 and S2 elements (that are all also present in the main S1 and S2 ELRs 200000,210000)
+* Change "RiskOrOpportunityAxis" to "RisksAndOpportunitiesAxis"
+* Remove balance attribute from Revenue element (balance attribute not used elsewhere in ISSB Taxonomy)
+* Change "Extensible enumeration domain members [Abstract]" to "Extensible enumeration domain members [Domain]"
+* Change type of BatteriesSoldStorageCapacity to energyItemType from powerItemType (XBRL Europe ESG WG)
+* Change type of DataProcessingCapacity from dtr-types:flowItemType to xbrli:decimalItemType
+* Change references of the abstract headers for metric groups from "Appendix B" to direct to the relevant section for the metric
+* Added references to Domains, Members and Axes in the industry metrics section
+* Changed dtr-types prefix to dtr-2022 to clarify version used
+* Switched ClimateRelatedRisksAndOpportunitiesAxis/Domain to SustainabilityRelated... (merging them)
+* Changed roleUri and ids in im_1 to match pattern in ifrs_s1/s2
+* Split def and pre file in im_1 by role number to match pattern in ifrs_s1/s2
+* Moved refs relating to industry metrics to im_1 (from ifrs_s2)
+* Changed phrase "carbon offset" to "carbon credit"
+* Removed financed emissions sections from Industry metrics
+* Separated IFRS S2 industry metric content (now in ifrs_im) from body of Standards (in ifrs_sds)
+
+
+
