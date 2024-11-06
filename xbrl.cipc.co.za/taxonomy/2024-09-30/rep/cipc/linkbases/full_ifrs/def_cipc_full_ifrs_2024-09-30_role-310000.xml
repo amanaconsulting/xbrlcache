@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Companies & Intellectual Property Commission  -->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link:roleRef roleURI="https://xbrl.cipc.co.za/taxonomy/role/ifrs_full_role_310.000" xlink:type="simple" xlink:href="../rol_full_ifrs_2024-09-30.xsd#ifrs_full_role_310.000"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:definitionLink xlink:type="extended" xlink:role="https://xbrl.cipc.co.za/taxonomy/role/ifrs_full_role_310.000">
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_ConsolidatedMember" xlink:label="ConsolidatedMember"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_SeparateMember" xlink:label="SeparateMember"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="ConsolidatedMember" xlink:to="SeparateMember"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_ConsolidatedAndSeparateFinancialStatementsAxis" xlink:label="ConsolidatedAndSeparateFinancialStatementsAxis"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="ConsolidatedAndSeparateFinancialStatementsAxis" xlink:to="ConsolidatedMember"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_EarningsPerShareAbstract" xlink:label="EarningsPerShareAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_EarningsPerShareTable" xlink:label="EarningsPerShareTable"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="EarningsPerShareAbstract" xlink:to="EarningsPerShareTable" order="1.0" xbrldt:closed="true" xbrldt:contextElement="scenario"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_ClassesOfOrdinarySharesAxis" xlink:label="ClassesOfOrdinarySharesAxis"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="EarningsPerShareTable" xlink:to="ClassesOfOrdinarySharesAxis" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_ClassesOfOrdinarySharesDomain" xlink:label="ClassesOfOrdinarySharesDomain"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="ClassesOfOrdinarySharesAxis" xlink:to="ClassesOfOrdinarySharesDomain" order="1.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="EarningsPerShareTable" xlink:to="ConsolidatedAndSeparateFinancialStatementsAxis" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_EarningsPerShareLineItems" xlink:label="EarningsPerShareLineItems"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="EarningsPerShareAbstract" xlink:to="EarningsPerShareLineItems" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_BasicEarningsPerShareAbstract" xlink:label="BasicEarningsPerShareAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="EarningsPerShareLineItems" xlink:to="BasicEarningsPerShareAbstract" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_BasicEarningsLossPerShareFromContinuingOperations" xlink:label="BasicEarningsLossPerShareFromContinuingOperations"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BasicEarningsPerShareAbstract" xlink:to="BasicEarningsLossPerShareFromContinuingOperations" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_BasicEarningsLossPerShareFromDiscontinuedOperations" xlink:label="BasicEarningsLossPerShareFromDiscontinuedOperations"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BasicEarningsPerShareAbstract" xlink:to="BasicEarningsLossPerShareFromDiscontinuedOperations" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_BasicEarningsLossPerShare" xlink:label="BasicEarningsLossPerShare"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BasicEarningsPerShareAbstract" xlink:to="BasicEarningsLossPerShare" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_DilutedEarningsPerShareAbstract" xlink:label="DilutedEarningsPerShareAbstract"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="EarningsPerShareLineItems" xlink:to="DilutedEarningsPerShareAbstract" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_DilutedEarningsLossPerShareFromContinuingOperations" xlink:label="DilutedEarningsLossPerShareFromContinuingOperations"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DilutedEarningsPerShareAbstract" xlink:to="DilutedEarningsLossPerShareFromContinuingOperations" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_DilutedEarningsLossPerShareFromDiscontinuedOperations" xlink:label="DilutedEarningsLossPerShareFromDiscontinuedOperations"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DilutedEarningsPerShareAbstract" xlink:to="DilutedEarningsLossPerShareFromDiscontinuedOperations" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="https://xbrl.ifrs.org/taxonomy/2024-03-27/full_ifrs/full_ifrs-cor_2024-03-27.xsd#ifrs-full_DilutedEarningsLossPerShare" xlink:label="DilutedEarningsLossPerShare"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DilutedEarningsPerShareAbstract" xlink:to="DilutedEarningsLossPerShare" order="3.0"/>
+  </link:definitionLink>
+</link:linkbase>
