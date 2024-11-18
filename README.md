@@ -86,10 +86,10 @@ A single repository with all XBRL taxonomy files
 
 * EIOPA Pension Funds 2.3.0
 * EIOPA Pension Funds 2.5.0 Hotfix (03.11.2020)
-* EIOPA Pension Funds 2.6.0
 * EIOPA Pension Funds 2.6.0 Hotfix (03.11.2021)
-* EIOPA Pension Funds 2.7.0
 * EIOPA Pension Funds 2.7.0 Hotfix (08.11.2022)
+* EIOPA Pension Funds 2.7.1
+* EIOPA Pension Funds 2.9.0 Hotfix (16.07.2024)
 
 ### EIOPA Solvency II
 
@@ -100,17 +100,14 @@ A single repository with all XBRL taxonomy files
 * EIOPA Solvency II 2.3.0 Hotfix
 * EIOPA Solvency II 2.4.0 Hotfix
 * EIOPA Solvency II 2.5.0 Hotfix (03.11.2020)
-* EIOPA Solvency II 2.6.0
 * EIOPA Solvency II 2.6.0 Hotfix (03.11.2021)
-* EIOPA Solvency II 2.7.0
 * EIOPA Solvency II 2.7.0 Hotfix (08.11.2022)
-* EIOPA Solvency II 2.8.0
 * EIOPA Solvency II 2.8.0 Hotfix (13.10.2023)
+* EIOPA Solvency II 2.8.2
 
 ### EIOPA PEPP
 
 * EIOPA KID PEPP 2.6.1
-* EIOPA PEPP PR 2.7.0
 * EIOPA PEPP PR 2.7.0 Hotfix (08.11.2022)
 
 ### DNB
