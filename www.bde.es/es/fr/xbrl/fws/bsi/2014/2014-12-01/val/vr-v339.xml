@@ -1,3 +1,66 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad612221ce96bf597fe2f1792b6f0bfdd86575f153333b45b64f6c3c83458a2b
-size 9379
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:variable="http://xbrl.org/2008/variable" xmlns:ebacrr_dim="http://www.eba.europa.eu/xbrl/crr/dict/dim" xmlns:es_ebacrr_MC="http://www.bde.es/xbrl/dict/dom/ebacrr_MC" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:es_dim="http://www.bde.es/xbrl/dict/dim" xmlns:es_ebacrr_TI="http://www.bde.es/xbrl/dict/dom/ebacrr_TI" xmlns:es_dimfn="http://www.bde.es/xbrl/func/dimension-access" xmlns:fext="http://www.bde.es/xbrl/func/external-functions" xmlns:behfn="http://www.bde.es/xbrl/func/helper-functions" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:reference="http://xbrl.org/2008/reference" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://www.xbrl.org/2006/ref http://www.xbrl.org/2006/ref-2006-02-27.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="es_v339" test="$numeroIntermediadasDeclaradas eq $numeroIntermediadasDebeDeclarar" aspectModel="dimensional" implicitFiltering="true" id="es_v339" />
+    <variable:precondition xlink:type="resource" xlink:label="es_v339.p1" test="month-from-date($refPeriodEndDate) = (3,6,9,12) or (month-from-date($refPeriodEndDate) = (1,2,4,5,7,8,10,11) and $_tamanioGrande)" id="es_v339.p1" />
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:from="es_v339" xlink:to="es_v339.p1" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v339.f53" id="es_v339.f53">
+      <df:dimension>
+        <df:qname>ebacrr_dim:MCY</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_MC:x110</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v339" xlink:to="es_v339.f53" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="es_v339.f54" id="es_v339.f54">
+      <df:dimension>
+        <df:qname>es_dim:TIB</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>es_ebacrr_TI:x1009</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="es_v339" xlink:to="es_v339.f54" complement="false" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v339.lstmrTodasEntidades" bindAsSequence="true" fallbackValue="(0)" xlink:title="../mod/ind_umeint.xsd" id="es_v339.lstmrTodasEntidades" />
+    <df:typedDimension xlink:type="resource" xlink:label="es_v339.lstmrTodasEntidades.f52" id="es_v339.lstmrTodasEntidades.f52">
+      <df:dimension>
+        <df:qname>es_dim:CCA</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v339.lstmrTodasEntidades" xlink:to="es_v339.lstmrTodasEntidades.f52" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339.lstmrTodasEntidades" name="lstmrTodasEntidades" order="1" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_v339._intermediadas" bindAsSequence="true" select="if (count($lstmrTodasEntidades) ne 0) then (for $i in $lstmrTodasEntidades return  es_dimfn:CCA($i)) else ()" id="es_v339._intermediadas" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339._intermediadas" name="_intermediadas" order="2" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_v339._tamanioEntidadesIntermediadas" bindAsSequence="true" select="for $i in $_intermediadas return fext:SolicitarAtributoString($i,'EF','TO_TAMAÑO',$refPeriodEndDate)" id="es_v339._tamanioEntidadesIntermediadas" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339._tamanioEntidadesIntermediadas" name="_tamanioEntidadesIntermediadas" order="3" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_v339._tamanioGrande" bindAsSequence="false" select="every $i in $_tamanioEntidadesIntermediadas satisfies ($i = 'GRANDE')" id="es_v339._tamanioGrande" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339._tamanioGrande" name="_tamanioGrande" order="4" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_v339.numeroIntermediadasDebeDeclarar" bindAsSequence="false" select="number(substring-after($_entidadesIntermediadas,':'))" id="es_v339.numeroIntermediadasDebeDeclarar" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339.numeroIntermediadasDebeDeclarar" name="numeroIntermediadasDebeDeclarar" order="5" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_v339.numeroIntermediadasDeclaradas" bindAsSequence="false" select="if (every $i in $lstmr satisfies $i instance of element()) then count($lstmr) else 0" id="es_v339.numeroIntermediadasDeclaradas" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339.numeroIntermediadasDeclaradas" name="numeroIntermediadasDeclaradas" order="6" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_v339._entidadesIntermediadas" bindAsSequence="false" select="fext:SolicitarAtributoEFString('BA_CRM_INT')" id="es_v339._entidadesIntermediadas" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339._entidadesIntermediadas" name="_entidadesIntermediadas" order="7" />
+    <variable:factVariable xlink:type="resource" xlink:label="es_v339.lstmr" bindAsSequence="true" fallbackValue="0" id="es_v339.lstmr" />
+    <df:typedDimension xlink:type="resource" xlink:label="es_v339.lstmr.f51" test="not(normalize-space(child::*) = $intermediadora)" id="es_v339.lstmr.f51">
+      <df:dimension>
+        <df:qname>es_dim:CCA</df:qname>
+      </df:dimension>
+    </df:typedDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="es_v339.lstmr" xlink:to="es_v339.lstmr.f51" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339.lstmr" name="lstmr" order="8" />
+    <variable:generalVariable xlink:type="resource" xlink:label="es_v339.intermediadora" bindAsSequence="false" select="behfn:codigo-entidad-presentadora()" id="es_v339.intermediadora" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="es_v339" xlink:to="es_v339.intermediadora" name="intermediadora" order="9" />
+    <reference:reference xlink:type="resource" xlink:label="ref_es_v339" id="ref_es_v339">
+      <ref:Number>bsi:v339</ref:Number>
+    </reference:reference>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/element-reference" xlink:from="es_v339" xlink:to="ref_es_v339" />
+  </gen:link>
+</link:linkbase>
