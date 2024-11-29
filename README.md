@@ -140,6 +140,7 @@ A single repository with all XBRL taxonomy files
 * VVE Taxonomy 1.1
 * VVE Taxonomy 1.2
 * VVE Taxonomy 1.31
+* VVE Taxonomy 1.4
 
 ### FRC
 
