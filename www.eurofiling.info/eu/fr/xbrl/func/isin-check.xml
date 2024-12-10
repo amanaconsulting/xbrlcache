@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
+Version History
+2.0.0 2023-10-17 original version received from EIOPA - XBRL Taxonomy
+-->
+<?version 2.0.0?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:gen="http://xbrl.org/2008/generic"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:cfi="http://xbrl.org/2010/custom-function"
+ xmlns:ifn="http://www.eurofiling.info/xbrl/func/isin"
+ xmlns:variable="http://xbrl.org/2008/variable"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" xlink:type="simple" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+    <variable:function xlink:type="resource" xlink:label="isin-checksum" name="ifn:_isin-checksum" output="xs:integer">
+      <variable:input type="xs:string" />
+      <variable:input type="xs:integer" />
+      <variable:input type="xs:integer" />
+      <variable:input type="xs:integer" />
+      <variable:input type="xs:integer" />
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="isin-checksum-impl">
+      <cfi:input name="isin_number" />
+      <cfi:input name="position" />
+      <cfi:input name="isin_numberlength" />
+      <cfi:input name="mod" />
+      <cfi:input name="checksum" />
+      <cfi:step name="nextmod">if ($mod eq 1) then 2 else 1</cfi:step>
+      <cfi:step name="part">xs:integer(substring($isin_number,$position,1)) * $mod</cfi:step>
+      <cfi:step name="numbervalue">
+		if ($part lt 10)
+			then $part
+			else xs:integer(substring(string($part),1,1)) + xs:integer(substring(string($part),2,1))</cfi:step>
+      <cfi:output>
+		if ($position lt $isin_numberlength)
+			then (ifn:_isin-checksum($isin_number,$position+1,$isin_numberlength,$nextmod,$checksum+$numbervalue))
+			else ($checksum+$numbervalue)
+			</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="isin-checksum" xlink:to="isin-checksum-impl" />
+    <variable:function xlink:type="resource" xlink:label="validate-isin" name="ifn:validate-isin" output="xs:boolean">
+      <variable:input type="xs:string" />
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="validate-isin-impl">
+      <cfi:input name="isin_code" />
+      <cfi:step name="charttonumber">
+	  string-join((for $c in string-to-codepoints(substring($isin_code,1,11)) return xs:string(if ($c le 57) then ($c - 48) else ($c - 55))),'')</cfi:step>
+      <cfi:output>
+	  if (string-length($isin_code) ne 12)
+			then false()
+			else
+				(if (not(matches(substring($isin_code,1,2),"[A-Z]{2}")) or not(matches(substring($isin_code,12,1),"[0-9]")))
+					then false()
+					else
+						(if (((10 - (ifn:_isin-checksum($charttonumber,1,string-length($charttonumber),(xs:integer(string-length($charttonumber)) mod 2)+1,0) mod 10)) mod 10) eq xs:integer(substring($isin_code,12,1)))
+						then
+							true()
+							else false()) )</cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="validate-isin" xlink:to="validate-isin-impl" />
+  </gen:link>
+</link:linkbase>
