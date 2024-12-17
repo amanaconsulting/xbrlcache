@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d68e174905ac07efd46a5115a1f95badd467d40b85da476d50dd21f1320a616d
-size 2251
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--© Banco de España. Reservados todos los derechos-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:variable="http://xbrl.org/2008/variable" xmlns:fext="http://www.bde.es/xbrl/func/external-functions" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd">
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <variable:parameter xlink:type="resource" xlink:label="es_AccountingStandard" name="AccountingStandard" select="if (contains(link:schemaRef/@xlink:href, 'gaap')) then 'GAAP' else 'IFRS'" as="xs:string" id="es_AccountingStandard" />
+    <variable:parameter xlink:type="resource" xlink:label="es_entidadSucursalExt" name="entidadSucursalExt" select="fext:atributo('TO_NEG_EXT')" as="xs:boolean" id="es_entidadSucursalExt" />
+    <variable:parameter xlink:type="resource" xlink:label="es_entitySize" name="entitySize" select="fext:atributo-entidad('TO_TAMAÑO',substring-after(xfi:identifier-value( //xbrli:context[1]/xbrli:entity/xbrli:identifier ) ,'ES'),$refPeriodEndDate)" as="xs:string" id="es_entitySize" />
+    <variable:parameter xlink:type="resource" xlink:label="es_SucComunitaria" name="SucComunitaria" select="fext:atributo('TO_SUC_EX')" id="es_SucComunitaria" />
+    <variable:parameter xlink:type="resource" xlink:label="es_TipoEntidad" name="TipoEntidad" select="fext:atributo('TO_TIP_ENT')" as="xs:string" id="es_TipoEntidad" />
+    <variable:parameter xlink:type="resource" xlink:label="es_TipoEntidadCRR2" name="TipoEntidadCRR2" select="fext:atributo('TO_TAM_COM') " id="es_TipoEntidadCRR2" />
+  </gen:link>
+</link:linkbase>
