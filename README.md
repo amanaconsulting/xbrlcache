@@ -111,6 +111,10 @@ A single repository with all XBRL taxonomy files
 * EIOPA KID PEPP 2.6.1
 * EIOPA PEPP PR 2.7.0 Hotfix (08.11.2022)
 
+### EIOPA FICOD - Financial Conglomerates 
+
+* EIOPA FICOD 2.8.1 Hotfix (6.11.2023)
+
 ### DNB
 
 * DNB Pension Funds 1.0.3 FTK reporting
