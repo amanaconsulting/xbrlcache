@@ -5,9 +5,8 @@ Version History
 1.0.1 2016-01-01 element null-dimension created
 1.0.2 2017-11-19 includes version numbering and commenting
 2.0.0 2023-12-08 enumeration versioning, compound definition, data types, null elements, version attribute
-2.1.0 2024-11-11 move compound item to generic linkbase
 -->
-<?version 2.1.0?>
+<?version 2.0.0?>
 <schema targetNamespace="http://www.eurofiling.info/xbrl/ext/model" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:label="http://xbrl.org/2008/label" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:gen="http://xbrl.org/2008/generic" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:model="http://www.eurofiling.info/xbrl/ext/model" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<annotation>
 		<documentation>Schema for definitions of the model</documentation>
@@ -55,7 +54,7 @@ Version History
 			<!-- Role used to compose compound items -->
 			<link:arcroleType id="compoundItem-definition" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/compoundItem-definition">
 				<link:definition>This arc connects a compound item to its components</link:definition>
-				<link:usedOn>gen:arc</link:usedOn>
+				<link:usedOn>link:definitionArc</link:usedOn>
 			</link:arcroleType>
 			<!-- Role for filing indicator code labels-->
 			<link:roleType roleURI="http://www.eurofiling.info/xbrl/role/filing-indicator-code" id="filing-indicator-code">
@@ -95,8 +94,8 @@ Version History
 			</link:roleType>
 			<!-- linking compound items to components -->		
 			<link:roleType roleURI="http://www.eurofiling.info/eu/fr/xbrl/ext/CompoundItemBreakdown" id="CompoundItemBreakdown">
-				<link:definition>Links a compound item to dimension domain member pairs</link:definition>
-				<link:usedOn>gen:link</link:usedOn>
+				<link:definition>Links dimension domain member pairs to compound items</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
 			</link:roleType>
 		</appinfo>
 	</annotation>
