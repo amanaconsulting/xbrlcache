@@ -3,6 +3,10 @@ A single repository with all XBRL taxonomy files
 
 ## Included taxonomies
 
+### BaFin
+
+* BaFin Nationales Meldewesen 1.0.0
+
 ### Bundesbank
 
 * Bundesbank COREP/FINREP 2.0.1.0

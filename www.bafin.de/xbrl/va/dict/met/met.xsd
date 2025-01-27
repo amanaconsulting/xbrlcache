@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.bafin.de/xbrl/dict/met"
+    xmlns:bafin_va_exp="http://www.bafin.de/xbrl/dict/exp"
+    xmlns:bafin_va_met="http://www.bafin.de/xbrl/dict/met"
+    xmlns:enum="http://xbrl.org/2014/extensible-enumerations"
+    xmlns:link="http://www.xbrl.org/2003/linkbase"
+    xmlns:model="http://www.eurofiling.info/xbrl/ext/model"
+    xmlns:num="http://www.xbrl.org/dtr/type/numeric"
+    xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+    xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd http://www.eurofiling.info/xbrl/ext/model http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd http://www.xbrl.org/2003/instance http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://www.w3.org/1999/xlink http://www.xbrl.org/2003/xlink-2003-12-31.xsd http://xbrl.org/2014/extensible-enumerations http://www.xbrl.org/2014/extensible-enumerations.xsd">
+    <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <xs:import namespace="http://www.eurofiling.info/xbrl/ext/model" schemaLocation="http://www.eurofiling.info/eu/fr/xbrl/ext/model.xsd"/>
+    <xs:import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+    <xs:import namespace="http://www.bafin.de/xbrl/dict/dom/SPARTE/hier" schemaLocation="../dom/sparte/hier.xsd"/>
+    <xs:import namespace="http://xbrl.org/2014/extensible-enumerations" schemaLocation="http://www.xbrl.org/2014/extensible-enumerations.xsd"/>
+    <xs:import namespace="http://www.bafin.de/xbrl/dict/dom/EN/hier" schemaLocation="../dom/en/hier.xsd"/>
+    <xs:import namespace="http://www.bafin.de/xbrl/dict/dom/WHR/hier" schemaLocation="../dom/whr/hier.xsd"/>
+    <xs:annotation>
+        <xs:appinfo>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="met-lab-de.xml"
+                xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+            <link:linkbaseRef
+                xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+                xlink:href="met-def.xml"
+                xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple"/>
+        </xs:appinfo>
+    </xs:annotation>
+    <xs:element id="bafin_va_mi1" name="mi1" nillable="true"
+        substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:periodType="instant"/>
+    <xs:element id="bafin_va_si2" name="si2" nillable="true"
+        substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+    <xs:element id="bafin_va_di3" name="di3" nillable="true"
+        substitutionGroup="xbrli:item" type="xbrli:dateItemType" xbrli:periodType="instant"/>
+    <xs:element id="bafin_va_ii4" name="ii4" nillable="true"
+        substitutionGroup="xbrli:item" type="xbrli:integerItemType" xbrli:periodType="instant"/>
+    <xs:element id="bafin_va_ri5" name="ri5" nillable="true"
+        substitutionGroup="xbrli:item" type="xbrli:decimalItemType" xbrli:periodType="instant"/>
+    <xs:element id="bafin_va_pi6" name="pi6" nillable="true"
+        substitutionGroup="xbrli:item" type="num:percentItemType" xbrli:periodType="instant"/>
+    <xs:element id="bafin_va_bi7" name="bi7" nillable="true"
+        substitutionGroup="xbrli:item" type="xbrli:booleanItemType" xbrli:periodType="instant"/>
+    <xs:element enum:domain="bafin_va_exp:SPARTE"
+        enum:linkrole="http://www.bafin.de/xbrl/role/dict/dom/SPARTE/1"
+        id="bafin_va_ei2" model:domain="bafin_va_exp:SPARTE"
+        model:hierarchy="http://www.bafin.de/xbrl/role/dict/dom/SPARTE/1"
+        name="ei2" nillable="true" substitutionGroup="xbrli:item"
+        type="enum:enumerationItemType" xbrli:periodType="instant"/>
+    <xs:element enum:domain="bafin_va_exp:EN"
+        enum:linkrole="http://www.bafin.de/xbrl/role/dict/dom/EN/1"
+        id="bafin_va_ei1" model:domain="bafin_va_exp:EN"
+        model:hierarchy="http://www.bafin.de/xbrl/role/dict/dom/EN/1"
+        name="ei1" nillable="true" substitutionGroup="xbrli:item"
+        type="enum:enumerationItemType" xbrli:periodType="instant"/>
+    <xs:element enum:domain="bafin_va_exp:WHR"
+        enum:linkrole="http://www.bafin.de/xbrl/role/dict/dom/WHR/2"
+        id="bafin_va_ei3" model:domain="bafin_va_exp:WHR"
+        model:hierarchy="http://www.bafin.de/xbrl/role/dict/dom/WHR/2"
+        name="ei3" nillable="true" substitutionGroup="xbrli:item"
+        type="enum:enumerationItemType" xbrli:periodType="instant"/>
+</xs:schema>
