@@ -3,6 +3,10 @@ A single repository with all XBRL taxonomy files
 
 ## Included taxonomies
 
+### BaFin
+
+* BaFin Nationales Meldewesen 1.0.0
+
 ### Bundesbank
 
 * Bundesbank COREP/FINREP 2.0.1.0
@@ -110,6 +114,10 @@ A single repository with all XBRL taxonomy files
 
 * EIOPA KID PEPP 2.6.1
 * EIOPA PEPP PR 2.7.0 Hotfix (08.11.2022)
+
+### EIOPA FICOD - Financial Conglomerates 
+
+* EIOPA FICOD 2.8.1 Hotfix (6.11.2023)
 
 ### DNB
 
