@@ -179,11 +179,20 @@ A single repository with all XBRL taxonomy files
 
 ### IFRS
 
+* IFRS 2012
+* IFRS 2013
+* IFRS 2014
+* IFRS 2015
 * IFRS 2016
 * IFRS 2017
 * IFRS 2018
 * IFRS 2018-spanish
 * IFRS 2019
+* IFRS 2020
+* IFRS 2021
+* IFRS 2022
+* IFRS 2023
+* IFRS 2024
 
 ### SASB
 
