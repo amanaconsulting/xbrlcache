@@ -162,6 +162,10 @@ A single repository with all XBRL taxonomy files
 * UKSEF 2021 1.1.0
 * UKSEF 2022 2.0.0
 
+### GlobalReporting.org (GRI)
+
+* GRI Sustainability Taxonomy (Draft)
+
 ### xbrl.de (HGB)
 
 * HGB 5.0
