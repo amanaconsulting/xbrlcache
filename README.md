@@ -248,10 +248,13 @@ A single repository with all XBRL taxonomy files
 * SRB Ex-ante contributions 2024 9.1.0
 * SRB Ex-ante contributions 2025 10.0.1
 
-### DCCA Danish GAAP
+### DK-GAAP Financial Reporting Taxonomy
 
 * Danish GAAP 2020
 * Danish GAAP 2021
+* Danish GAAP 2022
+* Danish GAAP 2023
+* Danish GAAP 2024
 
 ### Banco de España
 * Taxonomía Tasas de descuento y de intercambio percibidas (es-be-tid) 2015-11-26
