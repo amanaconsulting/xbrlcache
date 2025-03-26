@@ -3,29 +3,63 @@
         "documentType": "https://xbrl.org/2021/xbrl-csv",
         "namespaces": {
             "eba": "http://www.eba.europa.eu",
-            "eba_CR": "http://www.eba.europa.eu/xbrl/crr/dict/dom/CR",
             "eba_dim": "http://www.eba.europa.eu/xbrl/crr/dict/dim",
-            "eba_met": "http://www.eba.europa.eu/xbrl/crr/dict/met"
+            "eba_met": "http://www.eba.europa.eu/xbrl/crr/dict/met",
+            "tc": "https://xbrl.org/PWD/2024-05-21/tc"
         }
     },
     "tableTemplates": {
         "B_03-01": {
             "columns": {
-                "c0010": {},
-                "c0020": {},
+                "c0010": {
+                    "eba:documentation": {
+                        "KeyVariableID": "480197",
+                        "KeyVariableVID": "480197",
+                        "PropertyID": "1012401908",
+                        "headerCode": "0010",
+                        "headerDirection": "X",
+                        "headerVID": "218681",
+                        "type": "s"
+                    }
+                },
+                "c0020": {
+                    "eba:documentation": {
+                        "KeyVariableID": "480198",
+                        "KeyVariableVID": "480198",
+                        "PropertyID": "1012401910",
+                        "headerCode": "0020",
+                        "headerDirection": "X",
+                        "headerVID": "218682",
+                        "type": "s"
+                    }
+                },
                 "c0030": {
                     "dimensions": {
                         "concept": "eba_met:ti761"
                     },
                     "eba:documentation": {
-                        "DataPointId": "480865",
-                        "DataPointVersionId": "480865"
+                        "CellCode": "{B_03.01, r*, c0030}",
+                        "CellID": 201684,
+                        "ColumnVID": 218683,
+                        "FactVariableID": 480865,
+                        "FactVariableVersionID": 480865,
+                        "RowVID": null,
+                        "SheetVID": null,
+                        "type": "t"
                     }
                 }
             },
             "dimensions": {
                 "eba_dim:CRZ": "$c0010",
                 "eba_dim:LEA": "$c0020"
+            },
+            "tc:keys": {
+                "primary": {
+                    "fields": [
+                        "c0010",
+                        "c0020"
+                    ]
+                }
             }
         }
     }
