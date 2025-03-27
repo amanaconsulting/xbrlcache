@@ -85,7 +85,7 @@ A single repository with all XBRL taxonomy files
 * EBA 3.3 (Phase 3)
 * EBA 3.4
 * EBA 3.5
-* EBA 4.0
+* EBA 4.0 (20.03.2025)
 
 ### EIOPA Pension Funds
 
