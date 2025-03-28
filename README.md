@@ -85,7 +85,7 @@ A single repository with all XBRL taxonomy files
 * EBA 3.3 (Phase 3)
 * EBA 3.4
 * EBA 3.5
-* EBA 4.0
+* EBA 4.0 (20.03.2025)
 
 ### EIOPA Pension Funds
 
@@ -261,6 +261,7 @@ A single repository with all XBRL taxonomy files
 * Banco de España 2021
 
 ### Bank of England
+* Bank of England - Solvenvy II 2.0.1 (10.10.2024)
 * Bank of England XBRL Taxonomy Version 3.2.1
 * Bank of England XBRL Taxonomy Version 3.5.0
 
