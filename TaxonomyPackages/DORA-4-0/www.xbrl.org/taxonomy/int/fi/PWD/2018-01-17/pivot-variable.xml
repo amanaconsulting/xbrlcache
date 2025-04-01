@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
+Version History
+1.0.0 original version from Banco de España. Reservados todos los derechos
+1.0.1 2017-11-19 includes version numbering and commenting, fixed schemalocation for aspect-cover
+-->
+<?version 1.0.1?>
+<link:linkbase 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:fi = "http://www.xbrl.org/taxonomy/int/fi/PWD/2018-01-17"
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:link="http://www.xbrl.org/2003/linkbase" 
+  xmlns:gen="http://xbrl.org/2008/generic" 
+  xmlns:variable="http://xbrl.org/2008/variable"
+  xmlns:cf="http://xbrl.org/2008/filter/concept"
+  xmlns:acf="http://xbrl.org/2010/filter/aspect-cover"    
+  xmlns:xfi="http://www.xbrl.org/2008/function/instance" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd  http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2010/filter/aspect-cover http://www.xbrl.org/2010/aspect-cover-filter.xsd">
+  
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <variable:factVariable xlink:type="resource" xlink:label="pivot-var" bindAsSequence="true" matches="true" id="pivot-var" />
+	 <cf:conceptName xlink:type="resource" xlink:label="pivot-concept" id="pivot-concept">
+      <cf:concept>
+        <cf:qname>fi:filed</cf:qname>
+      </cf:concept>
+    </cf:conceptName>
+    <acf:aspectCover xlink:type="resource" xlink:label="all-cover-filter">
+      <acf:aspect>all</acf:aspect>
+    </acf:aspectCover>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="pivot-var" xlink:to="concept" cover="true" complement="false" order="1"/>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="pivot-var" xlink:to="all-cover-filter" cover="true" complement="false" order="2"/>    
+  </gen:link>
+</link:linkbase>

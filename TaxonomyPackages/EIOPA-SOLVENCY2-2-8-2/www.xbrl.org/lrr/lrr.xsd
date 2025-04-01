@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) 2005-2008 XBRL International. All Rights Reserved. http://www.XBRL.org/legal/ 
+     This document may be copied and furnished to others, and derivative works that 
+     comment on or otherwise explain it or assist in its implementation may be 
+     prepared, copied, published and distributed, in whole or in part, without 
+     restriction of any kind, provided that the above copyright notice and this
+     paragraph are included on all such copies and derivative works. XBRL(r), is a
+     trademark or service mark of XBRL International, Inc., registered in the
+     United States and in other countries. -->
+<xs:schema xmlns:lrr="http://www.xbrl.org/2005/lrr" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.xbrl.org/2005/lrr" elementFormDefault="qualified" 
+attributeFormDefault="unqualified">
+	<xs:simpleType name="useType">
+		<xs:annotation>
+			<xs:documentation>Three possible values of use</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="optional"/>
+			<xs:enumeration value="required"/>
+			<xs:enumeration value="prohibited"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DocumentationType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Definition of a type to contain mixed text and XHTML markup</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent mixed="true">
+			<xs:restriction base="xs:anyType">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:any namespace="http://www.w3.org/1999/xhtml" processContents="lax"/>
+				</xs:sequence>
+				<xs:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:group name="roleGroup">
+		<xs:sequence>
+			<xs:element ref="lrr:roleURI"/>
+			<xs:element ref="lrr:status"/>
+			<xs:element ref="lrr:versionDate"/>
+			<xs:element ref="lrr:authoritativeHref"/>
+			<xs:element ref="lrr:requirement" maxOccurs="unbounded"/>
+			<xs:element ref="lrr:definition" maxOccurs="unbounded"/>
+			<xs:element ref="lrr:versionOfXBRL"/>
+			<xs:element ref="lrr:minimumEditionDate"/>
+			<xs:element ref="lrr:impactsTaxonomyValidation"/>
+			<xs:element ref="lrr:impactsInstanceValidation"/>
+			<xs:sequence minOccurs="0">
+				<xs:element ref="lrr:conformanceSuiteURI"/>
+				<xs:element ref="lrr:validation" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="lrr">
+		<xs:annotation>
+			<xs:documentation>Root element of the XBRL Linkbase Role Registry</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="roles">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="role">
+								<xs:complexType>
+									<xs:group ref="lrr:roleGroup"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="arcroles">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="arcrole">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:group ref="lrr:roleGroup"/>
+										<xs:element ref="lrr:attributes"/>
+										<xs:element name="sourceAbstract" type="lrr:useType" default="optional">
+											<xs:annotation>
+												<xs:documentation>For arc roles, whether the "from" concept is abstract; otherwise empty.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="targetAbstract" type="lrr:useType" default="optional">
+											<xs:annotation>
+												<xs:documentation>For arc roles, whether the "to" concept is abstract; otherwise empty. </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:token" fixed="1.0"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="roleURI" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>This is the role URI being defined.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="status">
+		<xs:annotation>
+			<xs:documentation>The XBRL International status of this role.  PWD, CR, REC, NIE, PROPOSED, IWD, ACK or RR.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:token">
+				<xs:enumeration value="PWD"/>
+				<xs:enumeration value="CR"/>
+				<xs:enumeration value="REC"/>
+				<xs:enumeration value="NIE"/>
+				<xs:enumeration value="PROPOSED"/>
+				<xs:enumeration value="IWD"/>
+				<xs:enumeration value="ACK"/>
+				<xs:enumeration value="RR"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="versionDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Effective date of this version of the role; all versions of the same role with earlier dates are effectively superseded</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="attributes">
+		<xs:annotation>
+			<xs:documentation>Lists any attributes that are allowed or required.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="attribute">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:NCName">
+								<xs:attribute name="namespaceURI" type="xs:anyURI" use="optional"/>
+								<xs:attribute name="use" type="lrr:useType" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="versionOfXBRL" type="xs:token">
+		<xs:annotation>
+			<xs:documentation>The XBRL version for which this an extension.  In principle, a role could be "promoted" into a standard role in some future version of the specification.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="minimumEditionDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>The XBRL edition date and beyond for which this is an extension. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="impactsTaxonomyValidation" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Whether elements using this role impact XBRL instance validation.  If so, then the role cannot appear in FRTA taxonomies [FRTA].</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="impactsInstanceValidation">
+		<xs:annotation>
+			<xs:documentation>Whether elements using this role impact XBRL instance validation.  If so, then the role cannot appear in FRTA taxonomies [FRTA].</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="validation" type="lrr:DocumentationType">
+		<xs:annotation>
+			<xs:documentation>A textual or pseudocode specification of the intended impact on XBRL validation of instances.  If Instance Validation Impact is "optional" then this would be empty.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="conformanceSuiteURI" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>A URI locating a testcases element containing testcase elements with relative URIs to files illustrating valid and invalid usage.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="requirement" type="lrr:DocumentationType">
+		<xs:annotation>
+			<xs:documentation>A statement of the requirements that gave rise to this role.  Requirements in different languages are distinguished using the xml:lang attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="definition" type="lrr:DocumentationType">
+		<xs:annotation>
+			<xs:documentation>The meaning of the role described in the same way as if it were in the Specification.  Definitions in different languages are distinguished using the xml:lang attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="authoritativeHref" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>The absolute URI where the schema defition of the role or arc role is found.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

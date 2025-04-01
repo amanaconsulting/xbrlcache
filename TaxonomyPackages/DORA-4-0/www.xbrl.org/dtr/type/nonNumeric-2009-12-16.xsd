@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Schema for non-numeric types -->
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.xbrl.org/dtr/type/non-numeric" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+
+
+<!--The domain item type indicates that an element is a domain or domain member. Domain item types may or may not have attribute abstract=”true”.-->
+<complexType name="domainItemType" xmlns="http://www.w3.org/2001/XMLSchema">
+<simpleContent>
+<restriction base="xbrli:stringItemType">
+<length fixed="true" value="0" />
+</restriction>
+</simpleContent>
+</complexType>
+
+<!-- There is an implicit type hierarchy of escaped content. All escaped item types contain text that is meant to be un-escaped before processing:
+•	string
+•	escapedItemType specializes string.  There is no constraint on whether the resulting unescaped content is well-formed or not; this base type is exists so that processors know what to do with the content.  It is a suitable base type for (say) a data type whose unescaped content must be valid HTML 4.0 (which is not XML).
+•	xmlNodesItemType specializes escapedItemType.  The unescaped content MUST be a sequence of XML text and well-formed XML nodes.  This content constraint cannot be captured by a finite length regular expression.
+•	xmlItemType specializes xmlNodesItemType.  The unescaped content MUST be well formed XML.  This is a suitable base type for the SEC EDGAR “text block” item type which must conform to an EDGAR-specific XML Schema or DTD.  This content constraint cannot be captured by a finite length regular expression, other than that “<” must be the first non whitespace character and “>” the last non-whitespace character.
+ -->
+
+<complexType name="escapedItemType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+
+  <complexType name="xmlNodesItemType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <simpleContent>
+      <restriction base="nonnum:escapedItemType">
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+  </complexType>
+
+  <complexType name="xmlItemType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <simpleContent>
+      <restriction base="nonnum:xmlNodesItemType">
+        <attributeGroup ref="xbrli:nonNumericItemAttrs"/>
+      </restriction>
+    </simpleContent>
+</complexType>
+
+
+</xs:schema>

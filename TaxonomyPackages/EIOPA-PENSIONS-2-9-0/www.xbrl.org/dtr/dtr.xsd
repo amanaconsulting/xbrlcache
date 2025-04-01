@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) 2005-2010 XBRL International. All Rights Reserved. http://www.XBRL.org/legal/ 
+     This document may be copied and furnished to others, and derivative works that 
+     comment on or otherwise explain it or assist in its implementation may be 
+     prepared, copied, published and distributed, in whole or in part, without 
+     restriction of any kind, provided that the above copyright notice and this
+     paragraph are included on all such copies and derivative works. XBRL(r), is a
+     trademark or service mark of XBRL International, Inc., registered in the
+     United States and in other countries. -->
+<xs:schema xmlns:dtr="http://www.xbrl.org/2009/dtr" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.xbrl.org/2009/dtr" elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+	<xs:complexType name="DocumentationType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Definition of a type to contain mixed text and XHTML
+				markup</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent mixed="true">
+			<xs:restriction base="xs:anyType">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:any namespace="http://www.w3.org/1999/xhtml" processContents="lax"/>
+				</xs:sequence>
+				<xs:anyAttribute namespace="http://www.w3.org/XML/1998/namespace"
+					processContents="lax"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:group name="typeGroup">
+		<xs:sequence>
+			<xs:element ref="dtr:typeNamespace"/>
+			<xs:element ref="dtr:typeName"/>
+			<xs:element ref="dtr:status"/>
+			<xs:element ref="dtr:versionDate"/>
+			<xs:element ref="dtr:authoritativeHref"/>
+			<xs:element ref="dtr:requirement" maxOccurs="unbounded"/>
+			<xs:element ref="dtr:definition" maxOccurs="unbounded"/>
+			<xs:element ref="dtr:versionOfXBRL"/>
+			<xs:element ref="dtr:minimumEditionDate"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="dtr">
+		<xs:annotation>
+			<xs:documentation>Root element of the XBRL Data Type Registry</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="types">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="type">
+								<xs:complexType>
+									<xs:group ref="dtr:typeGroup"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:token" fixed="1.0"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="typeNamespace" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>This is the namespace for type being defined.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="typeName" type="xs:NCName">
+		<xs:annotation>
+			<xs:documentation>This is the local name of the type being defined.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="status">
+		<xs:annotation>
+			<xs:documentation>The XBRL International status of this type. CR, REC, NIE,
+				PROPOSED, ACK or RR.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:token">
+				<xs:enumeration value="CR"/>
+				<xs:enumeration value="REC"/>
+				<xs:enumeration value="NIE"/>
+				<xs:enumeration value="PROPOSED"/>
+				<xs:enumeration value="ACK"/>
+				<xs:enumeration value="RR"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="versionDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Effective date of this version of the type; all versions of the same
+				type with earlier dates are effectively superseded</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="versionOfXBRL" type="xs:token">
+		<xs:annotation>
+			<xs:documentation>The XBRL version for which this is an extension. In principle, a type
+				could be "promoted" into a standard type in some future version of the
+				specification.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="minimumEditionDate" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>The XBRL edition date and beyond for which this is an extension.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="requirement" type="dtr:DocumentationType">
+		<xs:annotation>
+			<xs:documentation>A statement of the requirements that gave rise to this type.
+				Requirements in different languages are distinguished using the xml:lang
+				attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="definition" type="dtr:DocumentationType">
+		<xs:annotation>
+			<xs:documentation>The meaning of the type described in the same way as if it were in the
+				Specification. Definitions in different languages are distinguished using the
+				xml:lang attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="authoritativeHref">
+		<xs:annotation>
+			<xs:documentation>The absolute URI where the schema definition of the type is
+				found.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:anyURI">
+				<xs:pattern value=".*#.*"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>
