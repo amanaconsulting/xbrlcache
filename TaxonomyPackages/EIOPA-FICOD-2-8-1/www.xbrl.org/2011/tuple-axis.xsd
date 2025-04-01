@@ -1,0 +1,31 @@
+<schema xmlns:table="http://xbrl.org/2011/table" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:formula="http://xbrl.org/2008/formula" xmlns:link="http://www.xbrl.org/2003/linkbase" targetNamespace="http://xbrl.org/2011/table" elementFormDefault="qualified">
+    <import namespace="http://xbrl.org/2008/formula"  schemaLocation="http://www.xbrl.org/2008/formula.xsd"/>
+    
+    <complexType name="tupleAxis.type">
+        <complexContent mixed="true">
+            <extension base="table:ruleAxis.type">
+                <!-- substitution rule axis aspects are expected to specify a concept aspect -->
+                <!-- tuple axis must specify a name, so that the tuple can be referred to for a location rule and contents -->
+                <attribute name="name" type="QName" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <element id="xml-tuple-axis" name="tupleAxis" substitutionGroup="table:ruleAxis"
+        type="table:tupleAxis.type"/>
+        
+
+    <annotation>
+        <appinfo>
+            <link:arcroleType id="tuple-content" cyclesAllowed="undirected" arcroleURI="http://xbrl.org/arcrole/2011/axis/tuple-content">
+                <link:definition>
+                    relationship to ruleAxis elements that specify tuple contents (nested items and tuples)
+                </link:definition>
+                <link:usedOn>
+                    gen:arc
+                </link:usedOn>
+            </link:arcroleType>
+        </appinfo>
+    </annotation>
+
+</schema>

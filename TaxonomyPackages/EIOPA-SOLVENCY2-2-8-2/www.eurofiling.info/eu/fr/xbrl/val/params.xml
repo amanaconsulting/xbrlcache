@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
+Version History
+1.0.0 original version
+1.0.1 2017-11-19 includes version numbering and commenting
+1.1.0 2021-09-03 narrowing down xpath search wildcards
+1.1.1 2021-09-07 fix root
+-->
+<?version 1.1.1?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:variable="http://xbrl.org/2008/variable" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd">
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <variable:parameter xlink:type="resource" xlink:label="var_refPeriodEndDate" name="refPeriodEndDate" select="max(/xbrli:xbrl/xbrli:context/xbrli:period/(xbrli:instant | xbrli:endDate))" as="xs:date" id="var_refPeriodEndDate" />
+    <variable:parameter xlink:type="resource" xlink:label="var_refPeriodStartDate" name="refPeriodStartDate" select="if (exists(/xbrli:xbrl/xbrli:context/xbrli:period/xbrli:startDate)) then max(/xbrli:xbrl/xbrli:context/xbrli:period/xbrli:startDate) else max(/xbrli:xbrl/xbrli:context/xbrli:period/xbrli:instant)" as="xs:date" id="var_refPeriodStartDate" />
+	<variable:parameter xlink:type="resource" xlink:label="var_ReportingEntity" name="RepEntity" select="distinct-values(/xbrli:xbrl/xbrli:context/xbrli:entity/xbrli:identifier)" id="RepEntity" />
+  </gen:link>
+</link:linkbase>

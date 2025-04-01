@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
+Version History
+1.0.0 original version
+1.0.1 2017-11-19 includes version numbering and commenting
+-->
+<?version 1.0.1?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:gen="http://xbrl.org/2008/generic" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:cfi="http://xbrl.org/2010/custom-function"
+ xmlns:cmf="http://www.eurofiling.info/xbrl/func/custom-margin"
+ xmlns:variable="http://xbrl.org/2008/variable" xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:instance="http://xbrl.org/2010/variable/instance"
+ xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+ <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation"
+  xlink:type="simple"
+  xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+ <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-equal"
+   xlink:title="function" name="cmf:numeric-equal" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-equal"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:input name="paramC"/>
+   <cfi:step name="output">abs($paramA - $paramB) le $paramC</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-equal" xlink:to="implementation_numeric-equal"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+  
+  <variable:function xlink:type="resource" xlink:label="function_numeric-less-than"
+   xlink:title="function" name="cmf:numeric-less-than" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-less-than"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:input name="paramC"/>
+   <cfi:step name="output">($paramA - $paramB) lt $paramC</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-less-than" xlink:to="implementation_numeric-less-than"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-less-equal-than"
+   xlink:title="function" name="cmf:numeric-less-equal-than" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-less-equal-than"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:input name="paramC"/>
+   <cfi:step name="output">($paramA - $paramB) le $paramC</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-less-equal-than" xlink:to="implementation_numeric-less-equal-than"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+  
+  
+  <variable:function xlink:type="resource" xlink:label="function_numeric-greater-than"
+   xlink:title="function" name="cmf:numeric-greater-than" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-greater-than"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:input name="paramC"/>
+   <cfi:step name="output">($paramB - $paramA) lt $paramC</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-greater-than" xlink:to="implementation_numeric-greater-than"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+  
+  
+  <variable:function xlink:type="resource" xlink:label="function_numeric-greater-equal-than"
+   xlink:title="function" name="cmf:numeric-greater-equal-than" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-greater-equal-than"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:input name="paramC"/>
+   <cfi:step name="output">($paramB - $paramA) le $paramC</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-greater-equal-than"
+   xlink:to="implementation_numeric-greater-equal-than"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+  
+  
+ </gen:link>
+</link:linkbase>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
+Version History
+2.0.0 2023-10-17 original version received from EIOPA - XBRL Taxonomy
+-->
+<?version 2.0.0?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:gen="http://xbrl.org/2008/generic"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:cfi="http://xbrl.org/2010/custom-function"
+ xmlns:mfn="http://www.eurofiling.info/xbrl/func/math"
+ xmlns:variable="http://xbrl.org/2008/variable"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <variable:function xlink:type="resource" xlink:label="exp" name="mfn:exp" output="item()">
+      <variable:input type="item()" />
+      <variable:input type="xs:integer" />
+      <variable:input type="xs:integer" />
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="impl_exp">
+      <cfi:input name="base" />
+      <cfi:input name="exp_numerator" />
+      <cfi:input name="exp_denominator" />
+      <cfi:step name="exponent">$exp_numerator div $exp_denominator</cfi:step>
+      <cfi:output>
+if ($exponent eq 0) then 1 else if ($exponent lt 0) then 1 div mfn:exp($base, abs($exp_numerator), abs($exp_denominator)) else if ($exponent ge 1) then $base * mfn:exp($base, $exp_numerator - $exp_denominator, $exp_denominator) else mfn:root($base, $exp_numerator, $exp_denominator, 0, 100000000000, 15)
+            </cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="exp" xlink:to="impl_exp" />
+    <variable:function xlink:type="resource" xlink:label="root" name="mfn:root" output="item()">
+      <variable:input type="item()" />
+      <variable:input type="xs:decimal" />
+      <variable:input type="xs:decimal" />
+      <variable:input type="xs:decimal" />
+      <variable:input type="xs:decimal" />
+      <variable:input type="xs:decimal" />
+    </variable:function>
+    <cfi:implementation xlink:type="resource" xlink:label="impl_root">
+      <cfi:input name="base" />
+      <cfi:input name="root_numerator" />
+      <cfi:input name="root_denominator" />
+      <cfi:input name="root_number" />
+      <cfi:input name="root_step" />
+      <cfi:input name="root_rounding" />
+      <cfi:step name="root_step_value">
+if (mfn:exp($root_number + $root_step, $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number else if (mfn:exp($root_number + ($root_step * 2), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + $root_step else if (mfn:exp($root_number + ($root_step * 3), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + ($root_step * 2) else if (mfn:exp($root_number + ($root_step * 4), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + ($root_step * 3) else if (mfn:exp($root_number + ($root_step * 5), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + ($root_step * 4) else if (mfn:exp($root_number + ($root_step * 6), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + ($root_step * 5) else if (mfn:exp($root_number + ($root_step * 7), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + ($root_step * 6) else if (mfn:exp($root_number + ($root_step * 8), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + ($root_step * 7) else if (mfn:exp($root_number + ($root_step * 9), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + ($root_step * 8) else if (mfn:exp($root_number + ($root_step * 10), $root_denominator, 1) gt mfn:exp($base, $root_numerator, 1)) then $root_number + ($root_step * 9) else 0
+            </cfi:step>
+      <cfi:output>
+if ($root_rounding eq 0) then $root_step_value else mfn:root($base, $root_numerator, $root_denominator, $root_step_value, $root_step * 0.1, $root_rounding - 1)
+            </cfi:output>
+    </cfi:implementation>
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="root" xlink:to="impl_root" />
+  </gen:link>
+</link:linkbase>
