@@ -1,5 +1,5 @@
 EntryPoint(s): http://www.eba.europa.eu/eu/fr/xbrl/crr/fws/dora/4.0
-## Taxonomy Package from eba.europe.eu (Last Updated to 20/03/2025)
+## Taxonomy Package from eba.europe.eu (Last Updated - 20/03/2025)
 
 ```xml
 <CacheSubfolder>
