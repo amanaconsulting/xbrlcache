@@ -1,0 +1,88 @@
+{
+    "dimensions": {
+        "entity": "$entityID",
+        "language": "$baseLanguage",
+        "period": "$refPeriod@end"
+    },
+    "documentInfo": {
+        "documentType": "https://xbrl.org/2021/xbrl-csv",
+        "eba:documentation": {
+            "FromReferenceDate": "2025-06-30",
+            "ModuleVID": 447,
+            "ModuleVersion": "1.0.0",
+            "toReferenceDate": "None"
+        },
+        "extends": [
+            "http://www.eba.europa.eu/eu/fr/xbrl/ext/2020/FilingIndicators.json",
+            "http://www.eba.europa.eu/eu/fr/xbrl/ext/2020/FootNotes.json",
+            "../tab/k_00.06/k_00.06.json",
+            "../tab/k_101.00/k_101.00.json"
+        ],
+        "features": {
+            "xbrl:allowedDuplicates": "complete"
+        },
+        "final": {
+            "dimensions": true,
+            "linkGroups": true,
+            "linkTypes": true,
+            "namespaces": true,
+            "parameters": true,
+            "tableTemplates": true,
+            "tables": true,
+            "taxonomy": true
+        },
+        "linkGroups": {
+            "_": "http://www.xbrl.org/2003/role/link"
+        },
+        "linkTypes": {
+            "footnote": "http://www.xbrl.org/2003/arcrole/fact-footnote"
+        },
+        "namespaces": {
+            "eba": "http://www.eba.europa.eu",
+            "iso4217": "http://www.xbrl.org/2003/iso4217",
+            "lei": "http://standards.iso.org/iso/17442",
+            "rs": "https://eurofiling.info/eu/rs",
+            "xbrl": "https://xbrl.org/2021"
+        },
+        "taxonomy": [
+            "http://www.eba.europa.eu/eu/fr/xbrl/crr/fws/pillar3/4.1/mod/gsiidis.xsd"
+        ]
+    },
+    "parameterURL": "parameters.csv",
+    "parameters": {
+        "baseLanguage": "en"
+    },
+    "tables": {
+        "tFI": {
+            "template": "FilingIndicators",
+            "url": "FilingIndicators.csv"
+        },
+        "tFootNotes": {
+            "optional": true,
+            "template": "FootNotes",
+            "url": "FootNotes.csv"
+        },
+        "tK_00-06": {
+            "eba:documentation": {
+                "FilingIndicator": "K_00.06",
+                "TableKeyID": null,
+                "tableVID": 6317,
+                "templateID": 2049
+            },
+            "optional": true,
+            "template": "K_00-06",
+            "url": "k_00.06.csv"
+        },
+        "tK_101-00": {
+            "eba:documentation": {
+                "FilingIndicator": "K_101.00",
+                "TableKeyID": null,
+                "tableVID": 6131,
+                "templateID": 1904
+            },
+            "optional": true,
+            "template": "K_101-00",
+            "url": "k_101.00.csv"
+        }
+    }
+}
