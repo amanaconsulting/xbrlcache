@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
+Version History
+1.0.0 original version
+1.0.1 2017-11-19 includes version numbering and commenting
+-->
+<?version 1.0.1?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:gen="http://xbrl.org/2008/generic" 
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xbrli="http://www.xbrl.org/2003/instance"
+ xmlns:cfi="http://xbrl.org/2010/custom-function"
+ xmlns:efn="http://www.eurofiling.info/xbrl/func/extra-functions"
+ xmlns:variable="http://xbrl.org/2008/variable"
+ xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:instance="http://xbrl.org/2010/variable/instance"
+ xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+
+ <!-- Library with general purpose extra functions -->
+ 
+ <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation"
+  xlink:type="simple"
+  xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+ <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+ <!-- If and only if function -->
+  <variable:function xlink:type="resource" xlink:label="function_iff" name="efn:iff" output="xs:boolean">
+   <variable:input type="xs:boolean"/>
+   <variable:input type="xs:boolean"/>
+  </variable:function>
+
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_iff">   
+   <cfi:input name="cond1"/>
+   <cfi:input name="cond2"/>
+   <cfi:output>if ($cond1) then $cond2 else not($cond2)</cfi:output>
+  </cfi:implementation>
+  
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_iff" xlink:to="implementation_iff" order="1.0"/>
+
+ <!-- Logical implication function. It avoids usage of if ($conditionA) then $condtionB else true() expressions --> 
+  <variable:function xlink:type="resource" xlink:label="function_imp" name="efn:imp" output="xs:boolean">
+   <variable:input type="xs:boolean"/>
+   <variable:input type="xs:boolean"/>
+  </variable:function>
+  
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_imp">   
+   <cfi:input name="precond"/>
+   <cfi:input name="test"/>
+   <cfi:output>if ($precond) then $test else true()</cfi:output>
+  </cfi:implementation>
+  
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_imp" xlink:to="implementation_imp" order="1.0"/>
+
+ </gen:link>
+</link:linkbase>
