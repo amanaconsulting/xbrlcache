@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="
+    http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd 
+    http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd 
+    http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd 
+    http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd 
+    http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd 
+    http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd 
+    http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd 
+    http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd 
+    http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd 
+    http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd" 
+  xmlns:link="http://www.xbrl.org/2003/linkbase" 
+  xmlns:gen="http://xbrl.org/2008/generic" 
+  xmlns:va="http://xbrl.org/2008/assertion/value" 
+  xmlns:xfi="http://www.xbrl.org/2008/function/instance" 
+  xmlns:label="http://xbrl.org/2008/label" 
+  xmlns:variable="http://xbrl.org/2008/variable" 
+  xmlns:ca="http://xbrl.org/2008/assertion/consistency" 
+  xmlns:ea="http://xbrl.org/2008/assertion/existence" 
+  xmlns:fn="http://www.w3.org/2005/xpath-functions" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:validation="http://xbrl.org/2008/validation" 
+  xmlns:formula="http://xbrl.org/2008/formula"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:lei="http://www.xbrl.org/taxonomy/int/lei/PWD/2017-05-03" 
+  xmlns:lei-fn="http://www.xbrl.org/taxonomy/int/lei/PWD/2017-05-03/functions" 
+  xmlns:msg="http://xbrl.org/2010/message"
+  xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+  xmlns:cfi="http://xbrl.org/2010/custom-function"
+  xmlns:ef="http://xbrl.org/2008/filter/entity"
+  xmlns:cf="http://xbrl.org/2008/filter/concept">
+
+  <link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" xlink:type="simple"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2010/role/message" xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message" xlink:type="simple"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:href= "http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation" xlink:type="simple"/>
+
+  <gen:link xlink:type="extended"
+    xlink:role="http://www.xbrl.org/2008/role/link">
+
+    <va:valueAssertion xlink:type="resource" xlink:label="assertion" 
+        id="lei-checksum-fact-value"
+        aspectModel="dimensional" implicitFiltering="true"
+        test="lei-fn:validate-checksum($v)"
+        />
+    <msg:message xlink:label="checksum-fail-message" xlink:type="resource" xlink:role="http://www.xbrl.org/2010/role/message" xml:lang="en">
+      The value '{ $v }' is not a valid Legal Entity Identifier (invalid checksum)
+    </msg:message>
+
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+      xlink:from="assertion" xlink:to="checksum-fail-message" order="1.0"/>
+
+    <variable:factVariable xlink:type="resource" xlink:label="variable"  bindAsSequence="false"/>
+
+    <cf:conceptDataType xlink:type="resource" xlink:label="typeFilter" strict="false">
+      <cf:type>
+        <cf:qname>lei:LegalEntityIdentifierItemType</cf:qname>
+      </cf:type>
+    </cf:conceptDataType> 
+
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+      name="v" xlink:from="assertion" xlink:to="variable" order="1.0"/>
+
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+      complement="false" cover="true"
+      xlink:from="variable" xlink:to="typeFilter" order="1.0"/>
+
+    <variable:function xlink:type="resource" xlink:label="checksum-sig"
+       name="lei-fn:checksum-97-10"
+       output="xs:integer" >
+         <variable:input 
+           type="xs:string" />
+    </variable:function>
+
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" 
+      xlink:from="checksum-sig" xlink:to="checksum-impl" order="1.0" />
+
+    <cfi:implementation xlink:type="resource" xlink:label="checksum-impl" >
+       <cfi:input name="s"/>
+       <cfi:output>
+          (((if (string-length($s) > 1) then
+             10 * lei-fn:checksum-97-10(substring($s, 1, string-length($s) - 1 )) 
+          else
+             0
+          )
+          + 
+            string-to-codepoints($s)[string-length($s)] - 48
+          ) ) mod 97 
+       </cfi:output>
+    </cfi:implementation>
+
+    <variable:function xlink:type="resource" xlink:label="validate-checksum-sig"
+       name="lei-fn:validate-checksum"
+       output="xs:boolean" >
+         <variable:input 
+           type="xs:string" />
+    </variable:function>
+
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" 
+      xlink:from="validate-checksum-sig" xlink:to="validate-checksum-impl" order="1.0" />
+
+    <cfi:implementation xlink:type="resource" xlink:label="validate-checksum-impl" >
+       <cfi:input name="s"/>
+       <cfi:output>
+        lei-fn:checksum-97-10(
+          string-join((for $c in string-to-codepoints($s) return xs:string(if ($c &lt;= 57) then $c - 48 else $c - 55)),'')
+        ) = 1
+       </cfi:output>
+    </cfi:implementation>
+
+    <variable:factVariable xlink:type="resource" xlink:label="identifier-variable"  bindAsSequence="false"/>
+
+    <ef:specificScheme xlink:type="resource" xlink:label="scheme-filter" scheme="'http://standards.iso.org/iso/17442'" />
+
+    <!-- Only check checksum if format is valid -->
+    <va:valueAssertion xlink:type="resource" xlink:label="identifier-assertion" 
+        id="lei-checksum-identifier-value"
+        aspectModel="dimensional" implicitFiltering="true"
+        test="not(matches(xfi:identifier-value(xfi:entity-identifier(xfi:entity($v))), '^[A-Z0-9]{20}$')) or lei-fn:validate-checksum(xfi:identifier-value(xfi:entity-identifier(xfi:entity($v))))"
+        />
+
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+      name="v" xlink:from="identifier-assertion" xlink:to="identifier-variable" order="1.0"/>
+
+    <va:valueAssertion xlink:type="resource" xlink:label="identifier-format-assertion" 
+        id="lei-format-identifier-value"
+        aspectModel="dimensional" implicitFiltering="true"
+        test="matches(xfi:identifier-value(xfi:entity-identifier(xfi:entity($v))), '^[A-Z0-9]{20}$')"
+        />
+
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+      name="v" xlink:from="identifier-format-assertion" xlink:to="identifier-variable" order="1.0"/>
+
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+      complement="false" cover="true"
+      xlink:from="identifier-variable" xlink:to="scheme-filter" order="1.0"/>
+
+    <msg:message xlink:label="identifier-checksum-fail-message" xlink:type="resource" xlink:role="http://www.xbrl.org/2010/role/message" xml:lang="en">
+      The identifier '{ xfi:identifier-value(xfi:entity-identifier(xfi:entity($v))) }' associated with this fact has scheme '{ xfi:identifier-scheme(xfi:entity-identifier(xfi:entity($v))) }' but is not a valid Legal Entity Identifier (invalid checksum)
+    </msg:message>
+
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+      xlink:from="identifier-format-assertion" xlink:to="identifier-format-fail-message" order="1.0"/>
+
+    <msg:message xlink:label="identifier-format-fail-message" xlink:type="resource" xlink:role="http://www.xbrl.org/2010/role/message" xml:lang="en">
+      The identifier '{ xfi:identifier-value(xfi:entity-identifier(xfi:entity($v))) }' associated with this fact has scheme '{ xfi:identifier-scheme(xfi:entity-identifier(xfi:entity($v))) }' but is not a valid Legal Entity Identifier (invalid format)
+    </msg:message>
+
+    <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message"
+      xlink:from="identifier-assertion" xlink:to="identifier-checksum-fail-message" order="1.0"/>
+
+  </gen:link>
+
+</link:linkbase>

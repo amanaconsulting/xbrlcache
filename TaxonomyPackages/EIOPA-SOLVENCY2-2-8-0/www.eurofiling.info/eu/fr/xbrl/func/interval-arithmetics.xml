@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
+Version History
+1.0.0 original version
+1.0.1 Correction of calculation of threshold for product and division where operands are of different sign. 
+1.0.2 Replace all usages of number() function with xs:decimal(), to avoid potential precision issues from conversion to double rather than decimal
+1.1.0 2017-10-22 iaf:abs-sequence function to enable absolute values on sequences
+1.1.1 2017-10-25 minor adjustment of iaf:abs-sequence function
+ -->
+<?version 1.1.1?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+ xmlns:gen="http://xbrl.org/2008/generic" 
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:cfi="http://xbrl.org/2010/custom-function"
+ xmlns:iaf="http://www.eurofiling.info/xbrl/func/interval-arithmetics"
+ xmlns:iaf-int="http://www.eurofiling.info/xbrl/func/interval-arithmetics-internals"
+ xmlns:variable="http://xbrl.org/2008/variable"
+ xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:instance="http://xbrl.org/2010/variable/instance"
+ xmlns:xfi="http://www.xbrl.org/2008/function/instance"
+ xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+ <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation"
+  xlink:type="simple"
+  xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>
+ <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+  
+  <variable:function xlink:type="resource" xlink:label="function_sum"
+   xlink:title="function" name="iaf:sum" output="item()+">
+   <variable:input type="item()*"/>
+  </variable:function>  
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_sum" xlink:title="implementation">
+   <cfi:input name="params"/>
+   <cfi:step name="facts">if (empty($params)) then (0) else one-or-more($params)</cfi:step>  
+   <cfi:step name="values">for $i in $facts return (iaf:splitValueThreshold($i)[1])</cfi:step>
+   <cfi:step name="thresholds">for $i in $facts return (iaf:splitValueThreshold($i)[2])</cfi:step>
+   <cfi:step name="sumValues">sum($values)</cfi:step>
+   <cfi:step name="sumThresholds">sum($thresholds)</cfi:step>
+   <cfi:step name="output">iaf:joinValueThreshold($sumValues, $sumThresholds)</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_sum" xlink:to="implementation_sum" xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-equal"
+   xlink:title="function" name="iaf:numeric-equal" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-equal"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">abs($itemA[1] - $itemB[1]) le ($itemA[2] + $itemB[2])</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-equal" xlink:to="implementation_numeric-equal"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-less-than"
+   xlink:title="function" name="iaf:numeric-less-than" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-less-than"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">($itemA[1] - $itemB[1]) lt ($itemA[2] + $itemB[2])</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-less-than" xlink:to="implementation_numeric-less-than"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-less-equal-than"
+   xlink:title="function" name="iaf:numeric-less-equal-than" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-less-equal-than"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">($itemA[1] - $itemB[1]) le ($itemA[2] + $itemB[2])</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-less-equal-than" xlink:to="implementation_numeric-less-equal-than"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-greater-than"
+   xlink:title="function" name="iaf:numeric-greater-than" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-greater-than"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">$itemA[1] gt ($itemB[1] - ($itemA[2] + $itemB[2]))</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-greater-than" xlink:to="implementation_numeric-greater-than"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-greater-equal-than"
+   xlink:title="function" name="iaf:numeric-greater-equal-than" output="xs:boolean">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-greater-equal-than"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">$itemA[1] ge ($itemB[1] - ($itemA[2] + $itemB[2]))</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-greater-equal-than"
+   xlink:to="implementation_numeric-greater-equal-than"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-add" xlink:title="function"
+   name="iaf:numeric-add" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-add"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="value">$itemA[1]+$itemB[1]</cfi:step>
+   <cfi:step name="threshold">$itemA[2]+$itemB[2]</cfi:step>
+   <cfi:step name="output">iaf:joinValueThreshold($value,$threshold)</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-add" xlink:to="implementation_numeric-add"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-subtract"
+   xlink:title="function" name="iaf:numeric-subtract" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-subtract"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="value">$itemA[1]-$itemB[1]</cfi:step>
+   <cfi:step name="threshold">$itemA[2]+$itemB[2]</cfi:step>
+   <cfi:step name="output">iaf:joinValueThreshold($value,$threshold)</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-subtract" xlink:to="implementation_numeric-subtract"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-divide"
+   xlink:title="function" name="iaf:numeric-divide" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-divide"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="A">$itemA[1]</cfi:step>
+   <cfi:step name="B">$itemB[1]</cfi:step>
+   <cfi:step name="deltaA">$itemA[2]</cfi:step>
+   <cfi:step name="deltaB">$itemB[2]</cfi:step>
+   <cfi:step name="AdivB">$A div $B</cfi:step>
+   <cfi:step name="J0">($A + $deltaA) div ($B + $deltaB)</cfi:step>
+   <cfi:step name="J1">($A + $deltaA) div ($B - $deltaB)</cfi:step>
+   <cfi:step name="J2">($A - $deltaA) div ($B + $deltaB)</cfi:step>
+   <cfi:step name="J3">($A - $deltaA) div ($B - $deltaB)</cfi:step>   
+   <cfi:step name="threshold">max((abs($AdivB - $J0), abs($AdivB - $J1), abs($AdivB - $J2), abs($AdivB - $J3)))</cfi:step>
+   <cfi:step name="output">iaf:joinValueThreshold($AdivB, $threshold)</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-divide" xlink:to="implementation_numeric-divide"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-multiply-simple"
+   xlink:title="function" name="iaf:numeric-multiply" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-multiply-simple"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:output>iaf:multiply-two-elements($paramA, $paramB)</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-multiply-simple" xlink:to="implementation_numeric-multiply-simple"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-multiply"
+   xlink:title="function" name="iaf:numeric-multiply" output="item()">
+   <variable:input type="item()+"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-multiply"
+   xlink:title="implementation">
+   <cfi:input name="params"/>
+   <cfi:step name="output">iaf:multiply-recursive($params, 1, 0)</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-multiply" xlink:to="implementation_numeric-multiply"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_abs" xlink:title="function"
+   name="iaf:abs" output="item()">
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_abs"
+   xlink:title="implementation">
+   <cfi:input name="input"/>
+   <cfi:step name="item">if (empty($input)) then 0 else $input</cfi:step>
+   <cfi:step name="output">if ($item instance of element() and empty($item[2])) then
+    iaf:joinValueThreshold(abs($item), iaf-int:fact-threshold($item)) else (if (not($item instance of
+    element()) and empty($item[2]) and not(contains(string($item), ";"))) then
+    iaf:joinValueThreshold(abs($item), 0) else
+    iaf:joinValueThreshold(abs(xs:decimal(substring-before($item, ";"))),
+    xs:decimal(substring-after($item, ";")))) </cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_abs" xlink:to="implementation_abs"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-unary-minus"
+   xlink:title="function" name="iaf:numeric-unary-minus" output="item()">
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-unary-minus"
+   xlink:title="implementation">
+   <cfi:input name="item"/>
+   <cfi:step name="output">if ($item instance of element() and empty($item[2])) then
+    iaf:joinValueThreshold(-($item), iaf-int:fact-threshold($item)) else (if (not($item instance of
+    element()) and empty($item[2]) and not(contains(string($item), ";"))) then
+    iaf:joinValueThreshold(-($item), 0) else
+    iaf:joinValueThreshold(-(xs:decimal(substring-before($item, ";"))),
+    xs:decimal(substring-after($item, ";")))) </cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-unary-minus" xlink:to="implementation_numeric-unary-minus"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_min" xlink:title="function"
+   name="iaf:min" output="item()">
+   <variable:input type="item()*"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_min"
+   xlink:title="implementation">
+   <cfi:input name="params"/>
+   <cfi:step name="facts">if (empty($params)) then (0) else one-or-more($params)</cfi:step>
+   <cfi:step name="values">for $i in $facts return (iaf:splitValueThreshold($i)[1])</cfi:step>
+   <cfi:step name="thresholds">for $i in $facts return (iaf:splitValueThreshold($i)[2])</cfi:step>
+   <cfi:step name="minValue">min($values)</cfi:step>
+   <cfi:step name="indexMin">index-of($values, $minValue)[1]</cfi:step>
+   <cfi:step name="minThreshold">$thresholds[$indexMin]</cfi:step>
+   <cfi:step name="output">iaf:joinValueThreshold($minValue,$minThreshold)</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_min" xlink:to="implementation_min"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_max" xlink:title="function"
+   name="iaf:max" output="item()">
+   <variable:input type="item()*"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_max"
+   xlink:title="implementation">
+   <cfi:input name="params"/>
+   <cfi:step name="facts">if (empty($params)) then (0) else one-or-more($params)</cfi:step>
+   <cfi:step name="values">for $i in $facts return (iaf:splitValueThreshold($i)[1])</cfi:step>
+   <cfi:step name="thresholds">for $i in $facts return (iaf:splitValueThreshold($i)[2])</cfi:step>
+   <cfi:step name="maxValue">max($values)</cfi:step>
+   <cfi:step name="indexMax">index-of($values, $maxValue)[1]</cfi:step>
+   <cfi:step name="maxThreshold">$thresholds[$indexMax]</cfi:step>
+   <cfi:step name="output">iaf:joinValueThreshold($maxValue,$maxThreshold)</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_max" xlink:to="implementation_max"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <!-- FUNCIONES PARA USO INTERNO DESDE LA LIBRERIA DE OPERACIONES ARITMETICAS -->
+
+  <!-- Funcion: "iaf:splitValueThreshold" => Devuelve el par valor-umbral como secuencia de dos elementos-->
+  <variable:function xlink:type="resource" xlink:label="function_splitValueThreshold"
+   xlink:title="function" name="iaf:splitValueThreshold" output="item()+">
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_splitValueThreshold"
+   xlink:title="implementation">
+   <cfi:input name="item"/>
+   <cfi:step name="valorUmbral">if ($item instance of element() and empty($item[2])) then ($item,
+    iaf-int:fact-threshold($item)) else (if (not($item instance of element()) and empty($item[2])
+    and not(contains(string($item), ";"))) then ($item, 0) else
+    (xs:decimal(substring-before($item, ";")), xs:decimal(substring-after($item, ";")))) </cfi:step>
+   <cfi:output>$valorUmbral</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_splitValueThreshold" xlink:to="implementation_splitValueThreshold"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <!-- iaf:joinValueThreshold - Unifica en una cadena xs:string el par valor-umbral -->
+  <variable:function xlink:type="resource" xlink:label="function_joinValueThreshold"
+   xlink:title="function" name="iaf:joinValueThreshold" output="xs:string">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_joinValueThreshold"
+   xlink:title="implementation">
+   <cfi:input name="value"/>
+   <cfi:input name="threshold"/>
+   <cfi:step name="output">concat(string($value),";",string($threshold))</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_joinValueThreshold" xlink:to="implementation_joinValueThreshold"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <!-- Funcion: "iaf:precision" => Dado un item xbrl, devuelve el valor decimals que indica la precisión del dato-->
+  <variable:function xlink:type="resource" xlink:label="function_precision" xlink:title="function"
+   name="iaf:precision" output="xs:decimal">
+   <variable:input type="item()+"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_precision"
+   xlink:title="implementation">
+   <cfi:input name="item"/>
+   <cfi:step name="ouput">xfi:decimals($item)</cfi:step>
+   <cfi:output>$ouput</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_precision" xlink:to="implementation_precision"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <!-- Funcion: "iaf:multiply-recursive"  -->
+  <variable:function xlink:type="resource" xlink:label="function_multiply-recursive"
+   xlink:title="function" name="iaf:multiply-recursive" output="item()">
+   <variable:input type="item()+"/>
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_multiply-recursive"
+   xlink:title="implementation">
+   <cfi:input name="sequence"/>
+   <cfi:input name="count"/>
+   <cfi:input name="subtotalParam"/>
+   <cfi:step name="facts">if (empty($sequence)) then (0) else
+    one-or-more($sequence)</cfi:step>
+   <cfi:step name="numberOfParams">count($facts)</cfi:step>
+   <cfi:step name="subtotal">if ($count eq 1) then $facts[1] else $subtotalParam</cfi:step>
+   <cfi:step name="multiply">if($count lt $numberOfParams) then iaf:multiply-two-elements($subtotal,
+    $facts[$count + 1]) else $subtotal</cfi:step>
+   <cfi:step name="output">if($count lt $numberOfParams) then iaf:multiply-recursive($sequence,
+    ($count +1), $multiply) else $multiply</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_multiply-recursive" xlink:to="implementation_multiply-recursive"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+
+  <!-- Funcion: "iaf:multiply-two-elements" => A partir de dos elementos, devuelve el par resultante de multiplicar el valor del primero por el segundo, y el mayor umbral posible resultado de la operacion. -->
+  <variable:function xlink:type="resource" xlink:label="function_multiply-two-elements"
+   xlink:title="function" name="iaf:multiply-two-elements" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_multiply-two-elements"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="A">$itemA[1]</cfi:step>
+   <cfi:step name="B">$itemB[1]</cfi:step>
+   <cfi:step name="deltaA">$itemA[2]</cfi:step>
+   <cfi:step name="deltaB">$itemB[2]</cfi:step>
+   <cfi:step name="AxB">$A * $B</cfi:step>
+   <cfi:step name="threshold">sum((abs($A * $deltaB), abs($B * $deltaA), $deltaA * $deltaB))</cfi:step>
+   <cfi:output>iaf:joinValueThreshold($AxB, $threshold)</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_multiply-two-elements" xlink:to="implementation_multiply-two-elements"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+
+  <!-- Helper functions useful for error messages including the threshold applied-->
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-equal-threshold"
+   xlink:title="function" name="iaf:numeric-equal-threshold" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-equal-threshold"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">($itemA[2] + $itemB[2])</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-equal-threshold" xlink:to="implementation_numeric-equal-threshold"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-less-than-threshold"
+   xlink:title="function" name="iaf:numeric-less-than-threshold" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-less-than-threshold"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">($itemA[2] + $itemB[2])</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-less-than-threshold"
+   xlink:to="implementation_numeric-less-than-threshold"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-less-equal-than-threshold"
+   xlink:title="function" name="iaf:numeric-less-equal-than-threshold" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource"
+   xlink:label="implementation_numeric-less-equal-than-threshold" xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">($itemA[2] + $itemB[2])</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-less-equal-than-threshold"
+   xlink:to="implementation_numeric-less-equal-than-threshold"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_numeric-greater-than-threshold"
+   xlink:title="function" name="iaf:numeric-greater-than-threshold" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource"
+   xlink:label="implementation_numeric-greater-than-threshold" xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">($itemA[2] + $itemB[2])</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-greater-than-threshold"
+   xlink:to="implementation_numeric-greater-than-threshold"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource"
+   xlink:label="function_numeric-greater-equal-than-threshold" xlink:title="function"
+   name="iaf:numeric-greater-equal-than-threshold" output="item()">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource"
+   xlink:label="implementation_numeric-greater-equal-than-threshold" xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+   <cfi:step name="itemB">iaf:splitValueThreshold($paramB)</cfi:step>
+   <cfi:step name="output">($itemA[2] + $itemB[2])</cfi:step>
+   <cfi:output>$output</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-greater-equal-than-threshold"
+   xlink:to="implementation_numeric-greater-equal-than-threshold"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+  <variable:function xlink:type="resource" xlink:label="function_abs-sequence"
+   xlink:title="function" name="iaf:abs-sequence" output="item()+">
+   <variable:input type="item()*"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_abs-sequence"
+   xlink:title="implementation">
+   <cfi:input name="params"/>
+   <cfi:step name="facts">if (empty($params)) then (0) else one-or-more($params)</cfi:step>
+   <cfi:step name="values">for $i in $facts return (iaf:abs($i))</cfi:step>
+   <cfi:output>($values)</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_abs-sequence" xlink:to="implementation_abs-sequence"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+   
+  <!-- Internal functions -->
+  <variable:function xlink:type="resource" xlink:label="function_numeric-equal-test"
+   xlink:title="function" name="iaf:numeric-equal-test" output="item()+">
+   <variable:input type="item()"/>
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_numeric-equal-test"
+   xlink:title="implementation">
+   <cfi:input name="paramA"/>
+   <cfi:input name="paramB"/>
+   <cfi:step name="valueA">iaf:splitValueThreshold($paramA)[1]</cfi:step>
+   <cfi:step name="valueB">iaf:splitValueThreshold($paramB)[1]</cfi:step>
+   <cfi:step name="thA">iaf:splitValueThreshold($paramA)[2]</cfi:step>
+   <cfi:step name="thB">iaf:splitValueThreshold($paramB)[2]</cfi:step>
+   <cfi:step name="absol">abs($valueA - $valueB)</cfi:step>
+   <cfi:step name="sumTh">$thA + $thB</cfi:step>
+   <cfi:output>($valueA, $valueB, $thA, $thB, $absol, $sumTh)</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_numeric-equal-test" xlink:to="implementation_numeric-equal-test"
+   xlink:title="unknown: function to implementation" order="1.0"/>
+
+ <!-- Obtains the exponentiation of 10 to the power of the argument given (only integer numbers are supported -->
+  <variable:function xlink:type="resource" xlink:label="function_exp10" name="iaf-int:exp10" output="xs:decimal">
+   <variable:input type="xs:integer"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_exp10">
+   <cfi:input name="power"/>
+   <cfi:output>if ($power eq 0) then 1 else if ($power gt 0) then 10 * iaf-int:exp10($power - 1) else 1 div iaf-int:exp10(-$power)</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_exp10" xlink:to="implementation_exp10"/>
+
+  <!-- Obtains the threshold associated to a fact -->  
+  <variable:function xlink:type="resource" xlink:label="function_fact-threshold" name="iaf-int:fact-threshold" output="xs:decimal">
+   <variable:input type="item()"/>
+  </variable:function>
+  <cfi:implementation xlink:type="resource" xlink:label="implementation_fact-threshold">
+   <cfi:input name="fact"/>
+   <cfi:step name="decimals">xfi:decimals($fact)</cfi:step>
+   <cfi:output>if (string($decimals) = 'INF') then 0 else iaf-int:exp10(-xs:integer($decimals)) div 2</cfi:output>
+  </cfi:implementation>
+  <gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation"
+   xlink:from="function_fact-threshold" xlink:to="implementation_fact-threshold"/>
+  
+ </gen:link>
+</link:linkbase>

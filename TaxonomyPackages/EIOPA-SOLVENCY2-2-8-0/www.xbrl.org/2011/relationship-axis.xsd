@@ -1,0 +1,49 @@
+<schema xmlns:table="http://xbrl.org/2011/table" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:variable="http://xbrl.org/2008/variable" xmlns:xl="http://www.xbrl.org/2003/XLink" targetNamespace="http://xbrl.org/2011/table" elementFormDefault="qualified">
+    
+   <import namespace="http://xbrl.org/2008/variable" schemaLocation="http://www.xbrl.org/2008/variable.xsd"/>
+   <import namespace="http://www.xbrl.org/2003/XLink" schemaLocation="http://www.xbrl.org/2003/xl-2003-12-31.xsd"/>
+   
+    <complexType name="relationshipAxis.type">
+        <complexContent mixed="true">
+            <extension base="table:predefinedAxis.type">
+                <attribute name="includeSource" type="boolean" default="true"/>
+                <attribute name="name" type="variable:QName" use="optional"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="conceptRelationshipAxis.type">
+        <complexContent mixed="true">
+            <extension base="table:relationshipAxis.type">
+                <sequence minOccurs="1" maxOccurs="unbounded">
+                    <element name="relationshipSource" type="variable:expression" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="linkrole" type="variable:expression" minOccurs="0" maxOccurs="1"/>
+                    <element name="arcrole" type="variable:expression" minOccurs="1" maxOccurs="1"/>
+                    <element name="axis" type="variable:expression" minOccurs="0" maxOccurs="1"/>
+                    <element name="generations" type="variable:expression" minOccurs="0" maxOccurs="1"/>
+                    <element name="linkname" type="variable:expression" minOccurs="0" maxOccurs="1"/>
+                    <element name="arcname" type="variable:expression" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="dimensionRelationshipAxis.type">
+        <complexContent mixed="true">
+            <extension base="table:relationshipAxis.type">
+                <sequence minOccurs="1" maxOccurs="unbounded">
+                    <element name="relationshipSource" type="variable:expression" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="arcrole" type="variable:expression" minOccurs="0" maxOccurs="1"/>
+                    <element name="linkrole" type="variable:expression" minOccurs="0" maxOccurs="1"/>
+                    <element name="dimension" type="variable:expression" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <element id="xml-concept-relationship-axis" name="conceptRelationshipAxis" substitutionGroup="table:predefinedAxis"
+        type="table:conceptRelationshipAxis.type"/>
+    <element id="xml-dimension-relationship-axis" name="dimensionRelationshipAxis" substitutionGroup="table:predefinedAxis"
+        type="table:dimensionRelationshipAxis.type"/>
+
+</schema>
