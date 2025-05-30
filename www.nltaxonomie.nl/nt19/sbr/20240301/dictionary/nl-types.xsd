@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  This file is part of the Dutch Taxonomy (Nederlandse Taxonomie; NT)
+  Intellectual Property of the State of the Netherlands
+  Architecture: NT19
+  Version: 20240301
+  Release date: March, 2024
+-->
+<xs:schema xmlns:dtr-types="http://www.xbrl.org/dtr/type/2020-01-21" xmlns:nl-types="http://www.nltaxonomie.nl/nt19/sbr/20240301/dictionary/nl-types" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nltaxonomie.nl/nt19/sbr/20240301/dictionary/nl-types">
+  <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xs:import namespace="http://www.xbrl.org/dtr/type/2020-01-21" schemaLocation="https://www.xbrl.org/dtr/type/2020-01-21/types.xsd"/>
+  <xs:complexType id="nl-types_area20ItemType" name="area20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="dtr-types:areaItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_chamberOfCommerceRegistrationNumberItemType" name="chamberOfCommerceRegistrationNumberItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:length value="8"/>
+        <xs:pattern value="([1-9][0-9]{7})|([0-9][1-9][0-9]{6})"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_Decimal20ItemType" name="decimal20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:decimalItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_emailItemType" name="emailItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength fixed="false" value="254"/>
+        <xs:minLength fixed="false" value="6"/>
+        <xs:pattern value="[^@]+@[^@]+"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_formattedExplanationItemType" name="formattedExplanationItemType">
+    <xs:simpleContent>
+      <xs:restriction base="nl-types:string100000ItemType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_houseLetterNLItemType" name="houseLetterNLItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:pattern value="[a-zA-Z]{1}"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_houseNumberNLItemType" name="houseNumberNLItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:pattern value="[0-9]{1,5}"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_imageItemType" name="imageItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength value="2000000"/>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_integer20ItemType" name="integer20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:integerItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_monetary20ItemType" name="monetary20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:monetaryItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_monetaryNoDecimals20ItemType" name="monetaryNoDecimals20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="dtr-types:noDecimalsMonetaryItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_nlzipItemType" name="nlzipItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:pattern value="([1-9]{1}[0-9]{3}[A-Z]{2})"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_nonNegative20ItemType" name="nonNegative20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:pattern value="([0-9]{1,20})"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_nonNegativeDecimal20ItemType" name="nonNegativeDecimal20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="nl-types:decimal20ItemType">
+        <xs:minInclusive value="0"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_nonNegativeInteger20ItemType" name="nonNegativeInteger20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:nonNegativeIntegerItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_nonNegativeMonetary20ItemType" name="nonNegativeMonetary20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="dtr-types:nonNegativeMonetaryItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_nonNegativeMonetaryNoDecimals20ItemType" name="nonNegativeMonetaryNoDecimals20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="dtr-types:nonNegativeNoDecimalsMonetaryItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_perShare20ItemType" name="perShare20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="dtr-types:perShareItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_percent20ItemType" name="percent20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="dtr-types:percentItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_shares20ItemType" name="shares20ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:sharesItemType">
+        <xs:totalDigits value="20"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_string4ItemType" name="string4ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength value="4"/>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_string24ItemType" name="string24ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength value="24"/>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_string80ItemType" name="string80ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength value="80"/>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_string250ItemType" name="string250ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength value="250"/>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_string500ItemType" name="string500ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength value="500"/>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_string1000ItemType" name="string1000ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength value="1000"/>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType id="nl-types_string100000ItemType" name="string100000ItemType">
+    <xs:simpleContent>
+      <xs:restriction base="xbrli:stringItemType">
+        <xs:maxLength value="100000"/>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType id="nl-types_string255" name="string255">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255"/>
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
