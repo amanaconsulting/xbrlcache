@@ -1,4 +1,4 @@
-## Taxonomy Package from eba.europe.eu (Last Updated - 27/03/2025)
+## Taxonomy Package from eba.europe.eu (Last Updated - 28/05/2025)
 https://www.eba.europa.eu/risk-and-data-analysis/reporting-frameworks/reporting-framework-41
 
 ```xml
