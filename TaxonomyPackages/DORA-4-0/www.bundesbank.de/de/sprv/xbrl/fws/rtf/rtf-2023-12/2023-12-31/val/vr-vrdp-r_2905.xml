@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?taxonomy-version 2.2?>
+<!--(C) Bundesbank-->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gen="http://xbrl.org/2008/generic" xmlns:label="http://xbrl.org/2008/label" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:de_sprv_dim="http://www.bundesbank.de/sprv/xbrl/dict/dim" xmlns:de_sprv_RO="http://www.bundesbank.de/sprv/xbrl/dict/dom/RO" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:variable="http://xbrl.org/2008/variable" xmlns:de_sprv_TE="http://www.bundesbank.de/sprv/xbrl/dict/dom/TE" xmlns:de_sprv_CL="http://www.bundesbank.de/sprv/xbrl/dict/dom/CL" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd">
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+  <link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+  <gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <va:valueAssertion xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905" test="if (empty($a)) then ($b &lt;= $c) else (true())" aspectModel="dimensional" implicitFiltering="true" id="de_sprv_vrdp-r_2905" />
+    <df:explicitDimension xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905.f68" id="de_sprv_vrdp-r_2905.f68">
+      <df:dimension>
+        <df:qname>de_sprv_dim:ROW</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>de_sprv_RO:x250</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="de_sprv_vrdp-r_2905" xlink:to="de_sprv_vrdp-r_2905.f68" complement="false" order="1" />
+    <df:explicitDimension xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905.f69" id="de_sprv_vrdp-r_2905.f69">
+      <df:dimension>
+        <df:qname>de_sprv_dim:TEM</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>de_sprv_TE:RDP-R</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableSetFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:from="de_sprv_vrdp-r_2905" xlink:to="de_sprv_vrdp-r_2905.f69" complement="false" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905.a" bindAsSequence="false" fallbackValue="()" id="de_sprv_vrdp-r_2905.a" />
+    <df:explicitDimension xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905.a.f3" id="de_sprv_vrdp-r_2905.a.f3">
+      <df:dimension>
+        <df:qname>de_sprv_dim:COL</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>de_sprv_CL:x040</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="de_sprv_vrdp-r_2905.a" xlink:to="de_sprv_vrdp-r_2905.a.f3" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="de_sprv_vrdp-r_2905" xlink:to="de_sprv_vrdp-r_2905.a" name="a" order="1" />
+    <variable:factVariable xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905.b" bindAsSequence="false" id="de_sprv_vrdp-r_2905.b" />
+    <df:explicitDimension xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905.b.f35" id="de_sprv_vrdp-r_2905.b.f35">
+      <df:dimension>
+        <df:qname>de_sprv_dim:COL</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>de_sprv_CL:x050</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="de_sprv_vrdp-r_2905.b" xlink:to="de_sprv_vrdp-r_2905.b.f35" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="de_sprv_vrdp-r_2905" xlink:to="de_sprv_vrdp-r_2905.b" name="b" order="2" />
+    <variable:factVariable xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905.c" bindAsSequence="false" id="de_sprv_vrdp-r_2905.c" />
+    <df:explicitDimension xlink:type="resource" xlink:label="de_sprv_vrdp-r_2905.c.f67" id="de_sprv_vrdp-r_2905.c.f67">
+      <df:dimension>
+        <df:qname>de_sprv_dim:COL</df:qname>
+      </df:dimension>
+      <df:member>
+        <df:qname>de_sprv_CL:x030</df:qname>
+      </df:member>
+    </df:explicitDimension>
+    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="de_sprv_vrdp-r_2905.c" xlink:to="de_sprv_vrdp-r_2905.c.f67" cover="true" complement="false" order="1" />
+    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="de_sprv_vrdp-r_2905" xlink:to="de_sprv_vrdp-r_2905.c" name="c" order="3" />
+  </gen:link>
+</link:linkbase>
