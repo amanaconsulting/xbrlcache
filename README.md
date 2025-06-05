@@ -61,6 +61,10 @@ A single repository with all XBRL taxonomy files
 * Bundesbank FinaRisikoV 2.0 (incl. backwards compatible data dictionary)
 * Bundesbank FinaRisikoV 2.1 (incl. backwards compatible data dictionary)
 
+### CIPC
+
+* CIPC XBRL Taxonomy (30.09.2024)
+
 ### EBA
 
 * EBA 2.0.1
@@ -87,6 +91,12 @@ A single repository with all XBRL taxonomy files
 * EBA 3.5
 * EBA 4.0 (20.03.2025)
 * EBA 4.1 (28.05.2025)
+
+### EFRAG
+
+* Article 8 (30.08.2024)
+* ESRS (30.08.2024)
+* VSME 2025 (27.05.2025)
 
 ### EIOPA Pension Funds
 
