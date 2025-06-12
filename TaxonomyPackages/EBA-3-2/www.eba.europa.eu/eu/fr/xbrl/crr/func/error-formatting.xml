@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?taxonomy-version 3.1.0.0 ?> <?taxonomy-set-overall-version 3.1.0.0 ?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfi="http://xbrl.org/2010/custom-function" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:reference="http://xbrl.org/2008/reference" xmlns:instance="http://xbrl.org/2010/variable/instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gen="http://xbrl.org/2008/generic" xmlns:formula="http://xbrl.org/2008/formula" xmlns:variable="http://xbrl.org/2008/variable" xmlns:ref="http://www.xbrl.org/2006/ref" xmlns:label="http://xbrl.org/2008/label" xmlns:uf="http://xbrl.org/2008/filter/unit" xmlns:va="http://xbrl.org/2008/assertion/value" xmlns:xfi="http://www.xbrl.org/2008/function/instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:ef="http://xbrl.org/2008/filter/entity" xmlns:tf="http://xbrl.org/2008/filter/tuple" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:ea="http://xbrl.org/2008/assertion/existence"  xmlns:validation="http://xbrl.org/2008/validation" xmlns:df="http://xbrl.org/2008/filter/dimension"  xmlns:pf="http://xbrl.org/2008/filter/period" xmlns:ca="http://xbrl.org/2008/assertion/consistency" xmlns:gf="http://xbrl.org/2008/filter/general" xmlns:mf="http://xbrl.org/2008/filter/match" xmlns:iaf="http://www.eurofiling.info/xbrl/func/interval-arithmetics" xmlns:eba_fmt="http://www.eba.europa.eu/xbrl/crr/func/error-formatting" xmlns:eba_fmt-int="http://www.eba.europa.eu/xbrl/crr/func/error-formatting-internals" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2010/custom-function http://www.xbrl.org/2010/custom-function-implementation.xsd">
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/function-implementation" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/custom-function-implementation.xsd#cfi-implementation"/>	
+	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		
+		<variable:function xlink:type="resource" xlink:label="function_f1" xlink:title="function_f1" name="eba_fmt:interval" output="xs:string*">
+			<variable:input type="item()*"/>
+		</variable:function>
+		<cfi:implementation xlink:type="resource" xlink:label="implementation_f1" xlink:title="implementation">			
+			<cfi:input name="items"/>	
+			<cfi:output>
+for $i in $items return( 
+	if ($i instance of element()) then
+	(
+		if (xfi:concept-data-type(fn:QName(fn:namespace-uri($i),fn:local-name($i))) 
+		    eq fn:QName('http://www.xbrl.org/2003/instance','monetaryItemType')) then
+			concat(eba_fmt:format-fact-interval($i),' ',eba_fmt:name-unit($i)) 
+			
+		else if (xfi:concept-data-type(fn:QName(fn:namespace-uri($i),fn:local-name($i)))
+				 eq fn:QName('http://www.xbrl.org/dtr/type/numeric','percentItemType')) then
+			eba_fmt:format-percent-interval($i)
+			
+		else if (xfi:concept-data-type(fn:QName(fn:namespace-uri($i),fn:local-name($i)))
+				 eq fn:QName('http://www.xbrl.org/2003/instance','decimalItemType')) then
+			eba_fmt:format-fact-interval($i)
+			
+		else if (xfi:concept-data-type(fn:QName(fn:namespace-uri($i),fn:local-name($i)))
+				 eq fn:QName('http://www.xbrl.org/2003/instance','integerItemType')) then
+			eba_fmt:format-fact-interval($i)
+		
+		else if (xfi:concept-data-type(fn:QName(fn:namespace-uri($i),fn:local-name($i))) 
+				 eq fn:QName('http://www.xbrl.org/2003/instance','stringItemType')) then
+			concat("'",xs:string($i),"'")
+
+		else xs:string($i) 
+	)
+	else 
+	(
+		if (fn:matches(xs:string($i), '\d+\.?\d*;\d+\.?\d*')) then
+			eba_fmt:format-string-interval(xs:string($i))
+		else
+			xs:string($i) <!-- fallback -->
+	)
+)
+			</cfi:output>			  
+		</cfi:implementation>
+		<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_f1" xlink:to="implementation_f1" xlink:title="unknown: function to implementation" order="1.0"/>
+		
+		<variable:function xlink:type="resource" xlink:label="function1" xlink:title="function1" name="eba_fmt:format-string-interval" output="xs:string">
+			<variable:input type="xs:string"/>
+		</variable:function>
+		<cfi:implementation xlink:type="resource" xlink:label="implementation1" xlink:title="implementation1">
+			<cfi:input name="value"/>
+			<cfi:output>eba_fmt:format-interval(xs:decimal(fn:substring-before($value, ';')),xs:decimal(fn:substring-after($value, ';')))</cfi:output>
+		</cfi:implementation>
+		<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function1" xlink:to="implementation1" xlink:title="unknown: function to implementation" order="1.0"/>
+		
+		<variable:function xlink:type="resource" xlink:label="function_format-interval" xlink:title="function_format-interval" name="eba_fmt:format-interval" output="xs:string">
+			<variable:input type="xs:decimal"/>
+			<variable:input type="xs:decimal"/>
+		</variable:function>
+		<cfi:implementation xlink:type="resource" xlink:label="implementation_format-interval" xlink:title="implementation_format-interval">
+			<cfi:input name="value"/>
+			<cfi:input name="intervalWidth"/>
+			<cfi:output>
+if ($intervalWidth eq 0) then xs:string($value) 
+else concat(xs:string($value),'±',xs:string($intervalWidth))
+			</cfi:output>
+		</cfi:implementation>
+		<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_format-interval" xlink:to="implementation_format-interval" xlink:title="unknown: function to implementation" order="1.0"/>
+		
+		<variable:function xlink:type="resource" xlink:label="function_format-fact-interval" xlink:title="function_format-fact-interval" name="eba_fmt:format-fact-interval" output="xs:string">
+			<variable:input type="item()"/>
+		</variable:function>
+		<cfi:implementation xlink:type="resource" xlink:label="implementation_format-fact-interval" xlink:title="implementation_format-fact-interval">
+			<cfi:input name="paramA"/>
+			<cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+			<cfi:output>eba_fmt:format-interval(xs:decimal($itemA[1]),xs:decimal($itemA[2]))</cfi:output>
+		</cfi:implementation>
+		<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_format-fact-interval" xlink:to="implementation_format-fact-interval" xlink:title="unknown: function to implementation" order="1.0"/>
+		
+		<variable:function xlink:type="resource" xlink:label="function_format-percent-interval" xlink:title="function_format-percent-interval" name="eba_fmt:format-percent-interval" output="xs:string">
+			<variable:input type="item()"/>
+		</variable:function>
+		<cfi:implementation xlink:type="resource" xlink:label="implementation_format-percent-interval" xlink:title="implementation_format-percent-interval">
+			<cfi:input name="paramA"/>
+			<cfi:step name="itemA">iaf:splitValueThreshold($paramA)</cfi:step>
+			<cfi:step name="value">xs:decimal($itemA[1])</cfi:step>
+			<cfi:step name="intervalWidth">xs:decimal($itemA[2])</cfi:step>
+			<cfi:output>
+					if ($intervalWidth=0) then concat(xs:string($value*100.0),'%') 
+					  else concat(xs:string($value*100.0),'±',xs:string($intervalWidth*100.0))
+			</cfi:output>
+		</cfi:implementation>
+		<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function_format-percent-interval" xlink:to="implementation_format-percent-interval" xlink:title="unknown: function to implementation" order="1.0"/>
+		
+		<variable:function xlink:type="resource" xlink:label="function5" xlink:title="function5" name="eba_fmt:name-unit" output="xs:string">			
+			<variable:input type="item()"/>
+		</variable:function>
+		<cfi:implementation xlink:type="resource" xlink:label="implementation5" xlink:title="implementation5">
+			<cfi:input name="fact"/>
+			<cfi:step name="unitFact">xfi:unit($fact)</cfi:step>
+			<cfi:step name="numerator">xfi:unit-numerator($unitFact)</cfi:step>
+			<cfi:step name="qname">xfi:measure-name($numerator)</cfi:step>				  
+			<cfi:output>		
+				 local-name-from-QName($qname)
+			</cfi:output>
+		</cfi:implementation>
+		<gen:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/function-implementation" xlink:from="function5" xlink:to="implementation5" xlink:title="unknown: function to implementation" order="1.0"/>		
+		
+
+	</gen:link>
+</link:linkbase>
