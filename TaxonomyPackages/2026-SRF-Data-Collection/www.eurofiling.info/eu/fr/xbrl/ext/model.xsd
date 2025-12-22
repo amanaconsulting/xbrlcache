@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--(C) Eurofiling Foundation p.f.
+Version History
+1.0.0 original version
+1.0.1 2016-01-01 element null-dimension created
+1.0.2 2017-11-19 includes version numbering and commenting
+2.0.0 2023-12-08 enumeration versioning, compound definition, data types, null elements, version attribute
+-->
+<?version 2.0.0?>
+<schema targetNamespace="http://www.eurofiling.info/xbrl/ext/model" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:label="http://xbrl.org/2008/label" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:gen="http://xbrl.org/2008/generic" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:model="http://www.eurofiling.info/xbrl/ext/model" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<annotation>
+		<documentation>Schema for definitions of the model</documentation>
+		<appinfo>
+			<!-- 
+				Calculation arcs between members to establish calculation relationships
+				in the context of a hierarchy
+			-->
+			<link:arcroleType id="complete-breakdown" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/complete-breakdown">
+				<link:definition>Member is equal to the aggregation of its breakdown</link:definition>
+				<link:usedOn>link:calculationArc</link:usedOn>
+			</link:arcroleType>
+			<link:arcroleType id="partial-breakdown" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/partial-breakdown">
+				<link:definition>Member is equal or greater than the aggregation of its breakdown</link:definition>
+				<link:usedOn>link:calculationArc</link:usedOn>
+			</link:arcroleType>
+			<link:arcroleType id="superset-breakdown" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/superset-breakdown">
+				<link:definition>Member is equal or less than the aggregation of its breakdown</link:definition>
+				<link:usedOn>link:calculationArc</link:usedOn>
+			</link:arcroleType>
+			<!-- Role used to link the objects of the model with additional properties. Meant for extensions of the model -->
+			<link:arcroleType id="model-properties" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/model-properties">
+				<link:definition>Model object is linked to additional information resources</link:definition>
+				<link:usedOn>gen:arc</link:usedOn>
+			</link:arcroleType>
+			<!-- Role used to establish the presentation hierarchy between table groups and tables -->
+			<link:arcroleType id="group-table" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/group-table">
+				<link:definition>Table group is the parent of other table groups and/or other tables</link:definition>
+				<link:usedOn>gen:arc</link:usedOn>
+			</link:arcroleType>
+			<!-- Role used to link assertion sets with the tables it applies to -->
+			<link:arcroleType id="applies-to-table" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/applies-to-table">
+				<link:definition>The list of assertions associated to an assertion set are applied to the table / tables pointed by this arc</link:definition>
+				<link:usedOn>gen:arc</link:usedOn>
+			</link:arcroleType>
+			<!-- Roles used to link versions of enumerated metrics -->
+			<link:arcroleType id="previous-version" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/previous-version">
+				<link:definition>This arc connects an enumerated metric to its predecessor</link:definition>
+				<link:usedOn>link:definitionArc</link:usedOn>
+			</link:arcroleType>
+			<link:arcroleType id="initial-version" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/initial-version">
+				<link:definition>This arc connects an enumerated metric to the first version of the same metric</link:definition>
+				<link:usedOn>link:definitionArc</link:usedOn>
+			</link:arcroleType>
+			<!-- Role used to compose compound items -->
+			<link:arcroleType id="compoundItem-definition" cyclesAllowed="undirected" arcroleURI="http://www.eurofiling.info/xbrl/arcrole/compoundItem-definition">
+				<link:definition>This arc connects a compound item to its components</link:definition>
+				<link:usedOn>link:definitionArc</link:usedOn>
+			</link:arcroleType>
+			<!-- Role for filing indicator code labels-->
+			<link:roleType roleURI="http://www.eurofiling.info/xbrl/role/filing-indicator-code" id="filing-indicator-code">
+				<link:definition>The code to be used in a filing indicator to indicate that a "filing unit" (usually a template) has (or has not) been reported. Used as a label applied to a table:table node. </link:definition>
+				<link:usedOn>label:label</link:usedOn>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<!-- Role for RC style labels -->
+			<link:roleType roleURI="http://www.eurofiling.info/xbrl/role/rc-code" id="rc-code">
+				<link:definition>Optional numeric code applied to the components of columns, rows and z-axes in tables, as represented in business templates</link:definition>
+				<link:usedOn>label:label</link:usedOn>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<!-- blocking of default (rather than explicit) validity for metrics -->		
+			<link:roleType roleURI="http://www.eurofiling.info/eu/fr/xbrl/ext/BlockDefaultUseOfMetrics" id="BlockDefaultUseOfMetrics">
+				<link:definition>Prevents default use of metrics (i.e. when not explicitly allowed)</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<!-- blocking of default (rather than explicit) validity for metrics, scenario -->		
+			<link:roleType roleURI="http://www.eurofiling.info/eu/fr/xbrl/ext/BlockDefaultUseOfMetricsScenario" id="BlockDefaultUseOfMetricsScenario">
+				<link:definition>Prevents default use of metrics in the scenario element (i.e. when not explicitly allowed)</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<!-- blocking of default (rather than explicit) validity for metrics, segment -->		
+			<link:roleType roleURI="http://www.eurofiling.info/eu/fr/xbrl/ext/BlockDefaultUseOfMetricsSegment" id="BlockDefaultUseOfMetricsSegment">
+				<link:definition>Prevents default use of metrics in the segment element (i.e. when not explicitly allowed)</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<!-- linking different versions of the same enumerated metric -->		
+			<link:roleType roleURI="http://www.eurofiling.info/eu/fr/xbrl/ext/EnumeratedMetricPreviousVersion" id="EnumeratedMetricPreviousVersion">
+				<link:definition>Links an enumeration to its predecessor</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType roleURI="http://www.eurofiling.info/eu/fr/xbrl/ext/EnumeratedMetricInitialVersion" id="EnumeratedMetricInitialVersion">
+				<link:definition>Links an enumeration to the version when the enumeration was first created</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<!-- linking compound items to components -->		
+			<link:roleType roleURI="http://www.eurofiling.info/eu/fr/xbrl/ext/CompoundItemBreakdown" id="CompoundItemBreakdown">
+				<link:definition>Links dimension domain member pairs to compound items</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+		</appinfo>
+	</annotation>
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/2003/XLink" schemaLocation="http://www.xbrl.org/2003/xl-2003-12-31.xsd"/>
+	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+
+	<!-- Types -->
+	<complexType name="explicitDomainType" abstract="true" id="explicitDomainType">
+		<annotation>
+			<documentation xml:lang="en">Type for elements that represent the set of elements in an explicit domain. These elements are not domain
+				items and thus, cannot appear in instance documents. Domain items are represented using the standard type defined in the type registry.</documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0" fixed="true"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="familyType" abstract="true" id="familyType">
+		<annotation>
+			<documentation xml:lang="en">Families are items used only for presentation purposes of the dimensions in the dictionary (not involved
+			in rendering of tables). They will enable a proper organization of the dimensions of the model as they are expected to grow in the future</documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0" fixed="true"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="frameworkType" abstract="true" id="frameworkType">
+		<annotation>
+			<documentation xml:lang="en">A framework represents a functional area described by taxonomy files</documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0" fixed="true"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="taxonomyType" abstract="true" id="taxonomyType">
+		<annotation>
+			<documentation xml:lang="en">A taxonomy represets a specific version of a framework. It represents a sets of data requirements of a functional area
+			in time</documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0" fixed="true"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="moduleType" abstract="true" id="moduleType">
+		<annotation>
+			<documentation xml:lang="en">A module represents a set of tables in the model (part of a taxonomy). </documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0" fixed="true"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="tableGroupType" abstract="true" id="tableGroupType">
+		<annotation>
+			<documentation xml:lang="en">A table group is a helper concept to arrange tables. Sometimes, tables defined in templates are modelled
+			as multiple normalized tables. A table group in this case can be used to represent the original table in the template</documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0" fixed="true"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<simpleType name="percent" id="percentType">
+		<annotation>
+			<documentation xml:lang="en">This data type is created to enable the definition of domains of percent type, consistently with
+			the data types available for primary items</documentation>
+		</annotation>
+		<restriction base="decimal"/>
+	</simpleType>
+	<complexType name="trueItemType">
+		<annotation>
+			<documentation xml:lang="en">Data type for which the only valid value is true, used in cases where at least one fact is necessary, eg. in an open table to indicate the existence of a row.</documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:booleanItemType">
+				<pattern value="true" />
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="notEmptyStringItemType">
+		<annotation>
+			<documentation xml:lang="en">Data type for which the empty string is not allowed in fact values</documentation>
+		</annotation>
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<minLength value="1" />
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<simpleType name="notEmptyString">
+		<annotation>
+			<documentation xml:lang="en">Data type for which the empty string is not allowed in typed domains</documentation>
+		</annotation>
+		<restriction base="string">
+			<minLength value="1" />
+		</restriction>
+	</simpleType>
+
+	<!-- Attributes -->
+	<attribute name="version" type="string">
+		<annotation>
+			<documentation>Attribute to provide information about the version of an element</documentation>
+		</annotation>
+	</attribute>
+	<attribute name="creationDate" type="date">
+		<annotation>
+			<documentation>Attribute to provide information about the time of creation of an element</documentation>
+		</annotation>
+	</attribute>
+	<attribute name="modificationDate" type="date">
+		<annotation>
+			<documentation>Attribute to provide information about the last time when an element was
+				modified. If not included, the element has not been modified since it was created</documentation>
+		</annotation>
+	</attribute>
+	<attribute name="fromDate" type="date">
+		<annotation>
+			<documentation>Establish the start date of the validity period of an element</documentation>
+		</annotation>
+	</attribute>
+	<attribute name="toDate" type="date">
+		<annotation>
+			<documentation>Establish the end date of the validity period of an element</documentation>
+		</annotation>
+	</attribute>
+	<attribute name="isDefaultMember" type="boolean" default="false">
+		<annotation>
+			<documentation>Indicates wether an explicit domain member is the explicit member of its
+				domain</documentation>
+		</annotation>
+	</attribute>
+	<attribute name="balance">
+		<annotation>
+			<documentation>Indicates the sign criteria of the data point where the member applies</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="token">
+				<enumeration value="debit"/>
+				<enumeration value="credit"/>
+			</restriction>
+		</simpleType>
+	</attribute>
+	<attribute name="domain" type="QName">
+		<annotation>
+			<documentation>Used in base items whose set of values is that of an existing domain. It represents the QName of the domain</documentation>
+		</annotation>
+	</attribute>
+	<attribute name="hierarchy" type="anyURI">
+		<annotation>
+			<documentation>Used in base items whose set of values is that of an existing domain, but restricted to the values in a hierarchy. It represents the Uri of the extended link role where the hierarchy is defined</documentation>
+		</annotation>
+	</attribute>
+
+	<!-- Attribute groups -->
+	<attributeGroup name="publicElementAttrs" id="publicElementAttrs">
+		<attribute ref="model:creationDate"/>
+		<attribute ref="model:modificationDate"/>
+	</attributeGroup>
+	<attributeGroup name="dictionaryElementAttrs" id="dictionaryElementAttrs">
+		<attributeGroup ref="model:publicElementAttrs"/>
+		<attribute ref="model:fromDate"/>
+		<attribute ref="model:toDate"/>
+	</attributeGroup>
+
+	<!-- Elements -->
+	<element name="met" type="xbrli:stringItemType" abstract="true" substitutionGroup="xbrli:item" nillable="true" id="met" xbrli:periodType="instant"/>
+	<element name="hyp" type="xbrli:stringItemType" abstract="true" substitutionGroup="xbrldt:hypercubeItem" nillable="true" id="hyp" xbrli:periodType="instant"/>
+	<element name="null-dimension" type="xbrli:stringItemType" abstract="true" substitutionGroup="xbrldt:dimensionItem" xbrli:periodType="instant" nillable="true" model:fromDate="2016-01-01" model:creationDate="2016-01-01" id="null-dimension" />
+    <element name="NullDimension" type="xbrli:stringItemType" abstract="true" substitutionGroup="xbrldt:dimensionItem" xbrli:periodType="instant" nillable="true" model:fromDate="2023-01-01" model:creationDate="2023-10-17" id="NullDimension" />  <!-- Dummy dimension used in blocking default use of metrics and filing indicators -->
+    <element name="NullHypercube" type="xbrli:stringItemType" abstract="true" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="instant" nillable="true" model:fromDate="2023-01-01" model:creationDate="2023-10-17" id="NullHypercube" /> <!-- Dummy hypercube used in blocking use of filing indicators in dimensional constructs -->
+
+	<!-- Resources -->
+	<!-- Generic resource that enables the addition of additional properties with the help of model-properties arcs -->
+	<element name="properties" abstract="false" substitutionGroup="xl:resource">		
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="xl:resourceType">
+					<attributeGroup ref="model:dictionaryElementAttrs"/>
+					<anyAttribute processContents="lax"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+</schema>
