@@ -248,10 +248,6 @@ A single repository with all XBRL taxonomy files
 * Bank of England XBRL Taxonomy Version 3.2.1
 * Bank of England XBRL Taxonomy Version 3.5.0
 
-### Erhvervsstyrelsen
-* ÅRL-taksonomien 2022
-* ÅRL-taksonomien 2021
-
 ### Comisión para el Mercado Financiero
 * Taxonomía CMF CL-CI 2022
 * Taxonomía CMF CL-CI 2023
