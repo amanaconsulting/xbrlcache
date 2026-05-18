@@ -3,10 +3,6 @@ A single repository with all XBRL taxonomy files
 
 ## Included taxonomies
 
-### BaFin
-
-* BaFin Nationales Meldewesen 1.0.0
-
 ### Bundesbank
 
 * Bundesbank COREP/FINREP 2.0.1.0
@@ -60,10 +56,6 @@ A single repository with all XBRL taxonomy files
 * Bundesbank FinaRisikoV 1.2
 * Bundesbank FinaRisikoV 2.0 (incl. backwards compatible data dictionary)
 * Bundesbank FinaRisikoV 2.1 (incl. backwards compatible data dictionary)
-
-### CIPC
-
-* CIPC XBRL Taxonomy (30.09.2024)
 
 ### EBA
 
@@ -173,10 +165,6 @@ A single repository with all XBRL taxonomy files
 * UKSEF 2021 1.1.0
 * UKSEF 2022 2.0.0
 
-### GlobalReporting.org (GRI)
-
-* GRI Sustainability Taxonomy (Draft)
-
 ### xbrl.de (HGB)
 
 * HGB 5.0
@@ -204,10 +192,6 @@ A single repository with all XBRL taxonomy files
 * IFRS 2022
 * IFRS 2023
 * IFRS 2024
-
-### SASB
-
-* 2021 SASB Draft Taxonomy
 
 ### SEC Country
 
@@ -259,25 +243,10 @@ A single repository with all XBRL taxonomy files
 * SRB Ex-ante contributions 2024 9.1.0
 * SRB Ex-ante contributions 2025 10.0.1
 
-### DK-GAAP Financial Reporting Taxonomy
-
-* Danish GAAP 2020
-* Danish GAAP 2021
-* Danish GAAP 2022
-* Danish GAAP 2023
-* Danish GAAP 2024
-
-### Banco de España
-* Taxonomía Tasas de descuento y de intercambio percibidas (es-be-tid) 2015-11-26
-* Banco de España 2021
-
 ### Bank of England
 * Bank of England - Solvenvy II 2.0.1 (10.10.2024)
 * Bank of England XBRL Taxonomy Version 3.2.1
 * Bank of England XBRL Taxonomy Version 3.5.0
-
-### Bank of Israel Financial Reporting Taxonomy
-* 7.0 (2018-06-30)
 
 ### Erhvervsstyrelsen
 * ÅRL-taksonomien 2022
